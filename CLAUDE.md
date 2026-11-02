@@ -20,7 +20,7 @@ Deadlines:
 data/raw/<source>/          Raw files — never edit, treat as read-only
 data/out/                   Panel build outputs:
                               state_panel_2015_2025.csv
-                              W_border_binary.csv (and other W matrices)
+                              W_border_binary.csv, W_inverse_distance_rowstd.csv
                               state_centroids_land.csv
 data/                       DATA_AUDIT.md, DATA_INDEX.md, DATA_CATALOG.xlsx
 data/receipts/              One .md per source documenting provenance
@@ -28,11 +28,14 @@ econ499r_starter/scripts/   Download and build scripts:
                               build_panel.py, ferc_fin.py, sec_fin.py,
                               build_xlsx.py, prelim.py, download_all.py
 outputs/                    ECON499R_Data_Workbook_<date>.xlsx
-                            ECON499R_csv_for_R/ (prior session reference)
 notes/                      Context handoffs, Grijalva transcript, methods memo
 literature/                 PDFs
+code/R/                     R analysis scripts:
+                              load_panel.R (single panel loader, call from all experiments)
 docs/<YYYY-MM-DD>/          Dated handoffs per phase
 logs/<YYYY-MM-DD>/          Move logs, build logs
+results/<YYYY-MM-DD>/       Model outputs (append-only; each row has method tag + status)
+notebooks/                  Jupyter notebooks (one per phase)
 archive/                    Saved Claude chats
 ```
 
@@ -59,21 +62,28 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
   - `ferc_fin.py <pudl_dir> <out_dir>`
 - **Dated handoffs** go in `docs/YYYY-MM-DD/`.
 - **Move logs** go in `logs/YYYY-MM-DD/phase2_moves.csv` with columns: old_path, new_path, sha256.
-- **Models are Phase 4.** Use R with packages fixest, spdep, spatialreg. Prompt: `prompts/04a_methods_spec.md`.
+- **Models are Phase 4.** Use R 4.6.2 (installed at `/opt/homebrew/bin/R`). Packages: fixest, modelsummary, spdep, splm/SDPDmod, spatialreg, boot, data.table, ggplot2, sf, IRkernel, renv. Single loader: `code/R/load_panel.R`.
+- **Results** go in `results/<YYYY-MM-DD>/<experiment>/`. Append-only. Every row carries a parseable method tag and status (ok / FAILED).
+- **R drivers** take a required `--date YYYY-MM-DD` argument and fail-fast-check inputs.
+- **Use "associated with,"** not "causes," unless the design supports causation.
+- **IRkernel status:** to be confirmed (see Phase 4a smoke check). Fallback: Python notebooks that read R result CSVs.
 
 ---
 
 ## §5 Project state (as of 2026-11-02)
 
-**Phase 2 complete.** Panel validated; all variables green or yellow (documented gaps only).
+**Phase 4a complete.** Spec locked, R environment set up, smoke check confirms N = 550.
 
 - Phase 2A (audit): done — `data/DATA_AUDIT.md`, `docs/2026-11-01/phase-2a-data-audit.md`
 - Phase 2B (build): done — `data/out/state_panel_2015_2025.csv` (561×80), workbook, receipts
 - Phase 2C (validate): done — `data/DATA_VALIDATION.md`, `logs/2026-11-02/build/validation/`
+- Phase 4a (spec + env): done — `EXPERIMENTS.md`, `code/R/load_panel.R`, `docs/2026-11-02/phase-4a-methods-spec.md`
 
 **Validation verdict:** 0 red, 3 yellow (co2_per_mwh_t, seds_mmbtu_pc, hma — 2025 gaps only), 17 green.
 
-**Next step:** `prompts/04a_methods_spec.md` (Phase 4a: lock spec, set up R, smoke check).
+**R environment:** R 4.6.2 at `/opt/homebrew/bin/R`. All required packages installed. See `code/R/load_panel.R`.
+
+**Next step:** `prompts/04b_step1_twfe.md` (Phase 4b: H1 TWFE — target 2026-11-08).
 
 ---
 

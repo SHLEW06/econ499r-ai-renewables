@@ -1,0 +1,38 @@
+
+=== SMOKE CHECK ===
+
+--- N by year (all 50 states) ---
+     year     N
+    <int> <int>
+ 1:  2015    50
+ 2:  2016    50
+ 3:  2017    50
+ 4:  2018    50
+ 5:  2019    50
+ 6:  2020    50
+ 7:  2021    50
+ 8:  2022    50
+ 9:  2023    50
+10:  2024    50
+11:  2025    50
+
+--- Lagged core sample (all core vars non-missing): N = 550 ---
+  Expected: 550 (50 states x 11 years minus 4 suppressed AK/ND/SD/WY in 2015 lag)
+
+--- Missingness for model variables ---
+                   variable n_miss pct_miss
+co2_per_mwh_t co2_per_mwh_t     50      9.1
+seds_mmbtu_pc seds_mmbtu_pc     50      9.1
+hma                     hma      4      0.7
+  (19 variables with zero missingness not shown)
+
+--- Ranges (pooled, winsorized) ---
+  ai_dc_per1000_lag1              min=  0.2578  median=  1.8923  max=  5.6468  NAs=0
+  ln_ec                           min=  1.8310  median=  2.5177  max=  3.3799  NAs=0
+  ln_ee                           min=  7.7183  median=  8.4170  max=  9.4575  NAs=0
+  renew_share                     min=  0.0211  median=  0.1350  max=  0.9975  NAs=0
+  solar_share                     min=  0.0000  median=  0.0067  max=  0.2016  NAs=0
+  wind_share                      min=  0.0000  median=  0.0270  max=  0.5768  NAs=0
+  fossil_to_renew                 min=  0.0023  median=  4.6027  max= 40.4404  NAs=0
+
+=== END SMOKE CHECK ===
