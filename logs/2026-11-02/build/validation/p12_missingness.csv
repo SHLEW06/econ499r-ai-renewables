@@ -1,0 +1,8 @@
+variable,year,n_missing,reason
+co2_power_t,2025,51,EIA CO2 data ends 2024
+co2_per_mwh_t,2025,51,EIA CO2 data ends 2024
+seds_total_energy_bbtu,2025,51,EIA SEDS ends 2024
+dc_jobs,2025,4,"2025: BLS suppressed AK,ND,SD,WY (disclosure code N)"
+ai_dc_per1000,2025,4,"2025: BLS suppressed AK,ND,SD,WY"
+seds_mmbtu_pc,2025,51,EIA SEDS ends 2024
+hma,2025,4,2025: propagated from ai_dc_per1000 suppression

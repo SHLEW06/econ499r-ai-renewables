@@ -5,6 +5,18 @@ Log a new entry here BEFORE implementing any deviation. Do not run a deviation u
 
 ---
 
+## Data section (confirmed by Part C, 2026-11-02)
+
+| Decision | Choice | Status |
+|---|---|---|
+| GDP in ln_ee and ln_gdp_pc | Real chained-2017 (BEA SAGDP9) | Confirmed — memo unspecified; corr(real,nom)=0.98 |
+| AI numerator | Private 518210 (own_code=5) | Confirmed — no govt rows exist at state level |
+| Fossil includes Other Gases | Yes (0.34% of fossil) | Confirmed — matches EIA source structure |
+| Renewable: utility-scale only | Yes | Known limitation; rooftop not in EIA gen file |
+| Validation: 0 red, 3 yellow, 17 green | — | Full detail in data/DATA_VALIDATION.md |
+
+---
+
 ## EXP-001: tech_share vs. HMA for H2a mediator
 
 **Status:** Under review

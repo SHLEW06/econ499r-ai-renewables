@@ -1,0 +1,11 @@
+source,file,vintage,note
+EIA annual generation,annual_generation_state.xlsx,Electric Power Annual 2025 (preliminary for 2025),2025 marked preliminary
+EIA capacity,existcapacity_annual.xlsx,Electric Power Annual 2025,2025 preliminary
+EIA Form 861 retail sales,HS861_2010-.xlsx,2025 data release,2025 preliminary
+EIA CO2 emissions,emission_annual.xlsx,Electric Power Annual 2024 (ends 2024),Ends 2024 — no 2025 revision possible before paper due
+EIA SEDS,use_all_btu.csv,"Monthly Energy Review supplement, through 2024",Ends 2024 — 2025 row missing
+BLS QCEW 518210/5415/10,qcew_2015-2025_*.csv,BLS annual averages; 2025 annual released mid-2026,2025 data available; AK/ND/SD/WY suppressed
+BEA SAGDP/SAINC,"SAGDP2/9, SAINC1 CSVs",BEA June 2026 GDP revision,2025 initial estimate; subject to annual revision through 2028
+Census Gazetteer,2020_Gaz_counties_national.txt,2020 Decennial Census (land area),Fixed; no update expected
+Census county adjacency,county_adj.txt,2023 version,Fixed; updated when county boundaries change
+FERC Form 1 (PUDL),ferc1_*.parquet,PUDL 2025 release,2025 data included

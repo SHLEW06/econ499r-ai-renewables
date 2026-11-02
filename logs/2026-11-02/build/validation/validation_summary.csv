@@ -1,0 +1,82 @@
+id,category,check,result,note
+D01,definition,renew_share = sum(renew_cols)/gen_total,PASS,max_abs_diff=1.11e-16
+D02,definition,gen_renew_mwh = sum of 6 renew sources,PASS,max_abs_diff=0.0000 MWh
+D03,definition,gen_fossil_mwh = coal+gas+petro+othergas,PASS,max_abs_diff=0.0000
+D04,definition,solar_share = gen_solar/gen_total,PASS,9.96e-17
+D05,definition,wind_share = gen_wind/gen_total,PASS,9.97e-17
+D06,definition,clean_share = (renew+nuclear)/total,PASS,1.11e-16
+D07,definition,fossil_to_renew = fossil/renew,PASS,3.55e-15
+D08,definition,price_c_kwh = 100*revenue_kusd/sales_mwh,PASS,3.55e-15
+D09,definition,co2_per_mwh_t = co2_power_t/gen_total,PASS,1.11e-16
+D10,definition,ai_dc_per1000 = 1000*dc_jobs/total_jobs,PASS,8.88e-16
+D11,definition,tech_share = tech5415_jobs/total_jobs,PASS,9.89e-17
+D12,definition,ln_ec = ln(sales_mwh/population),PASS,4.44e-16
+D13,definition,ln_ee = ln(real_GDP_USD/sales_mwh),PASS,1.78e-15
+D14,definition,ee_usd_per_mwh = real_GDP_USD/sales_mwh,PASS,1.82e-12
+D15,definition,ln_gdp_pc = ln(real_GDP_USD/pop),PASS,"1.78e-15  NOTE: uses real (chained) GDP, not nominal"
+D15b,definition,"corr(ln_gdp_pc_real, ln_gdp_pc_nom)",PASS,"r=0.9351  (under year FE, choice should matter little)"
+D16,definition,manuf_share = manuf_nom/gdp_nom,PASS,9.71e-17
+D17,definition,seds_mmbtu_pc = seds_bbtu*1000/pop,PASS,1.14e-13
+D18,definition,ea_nonfarm_gdp_per_sqmi=(nom-farm)*1e6/land,PASS,7.45e-09
+D19,definition,ln_ea = ln(ea_nonfarm_gdp_per_sqmi),PASS,3.55e-15
+D20,definition,energy_equity=(st_gdp/us_gdp)/(st_sales/us_sales),PASS,4.44e-16
+D21,definition,ai_dc_per1000_lag1 is 1-year lag of ai_dc_per1000,PASS,0.00e+00
+D22,definition,"ln_ee uses real (chained 2017) GDP — memo says ""State GDP in $"" without specifying",NOTE,"We use real GDP. Under year FE the choice should matter little. corr(ln_ee_real, ln_ee_nom)=0.9759"
+D23,definition,AI numerator: 518210 private (own_code=5). Denominator: all covered (own_code=0 = industry 10),NOTE,Checked against BLS QCEW: 518210 govt rows do not appear in any year at state level (agglvl 58); private rows only.
+D24,definition,fossil_to_renew includes Other Gases beyond coal+gas+oil,NOTE,gen_othergas_mwh 2015-2024 mean: 234467 MWh vs total fossil mean: 50424088 — other gases share of fossil: 0.34%
+D25,definition,renew_share: utility-scale only; rooftop solar excluded (EIA state generation file limitation),NOTE,Known limitation per CLAUDE.md. rooftop solar shows in retail sales but not generation.
+N01,numbers,EIA: fuel columns sum to gen_total_mwh (tol 5 MWh),PASS,"max_diff=2.00 MWh (≤2 MWh = EIA published-total rounding, not a data error)"
+N02,numbers,EIA: 51 states sum ≈ US-TOTAL by year,PASS,"max pct diff=0.00%. Gap = territories (PR,VI,AS,GU,MP) not in 51-state panel. See n02_*.csv"
+N03,numbers,QCEW 518210: state sum vs national row,PASS,State sum always ≤ national (suppressed states not counted in sum). Mean gap = 94 jobs. See n03_qcew_518210_state_vs_national.csv
+N04,numbers,QCEW industry 10: state sum ≈ national row,PASS,max pct diff=0.000% — small diffs expected (DC + territories not in 51-state panel). See n04_*.csv
+N05,numbers,BEA SAGDP2 line 1: states+DC sum ≈ US row,PASS,max pct diff=0.613% (DC included; small diff from territories)
+N06,numbers,"PUBLISHED: price_c_kwh for GA,VA,TX,CA,NY 2015+2024 vs EIA State Profiles",NOTE,See DATA_VALIDATION.md §C.2 — requires web lookup; values below compared manually.
+N07,numbers,"PUBLISHED: population 2015+2024 for GA,VA,TX,CA,NY vs Census estimates",NOTE,See DATA_VALIDATION.md §C.2 — requires web lookup.
+N08,numbers,PUBLISHED: GA 2024 renew_share vs EIA Georgia State Electricity Profile,NOTE,See DATA_VALIDATION.md §C.2 — requires web lookup.
+R01_2025_renew_share,reproduce,GA 2025 renew_share: expected 0.1287,NOTE,"got 0.1287, diff 0.0000"
+R01_2025_solar_share,reproduce,GA 2025 solar_share: expected 0.0768,NOTE,"got 0.0768, diff 0.0000"
+R01_2025_ai_dc_per1000,reproduce,GA 2025 ai_dc_per1000: expected 5.0346,NOTE,"got 5.0346, diff 0.0000"
+R01_2015_ai_dc_per1000,reproduce,GA 2015 ai_dc_per1000: expected 2.0106,NOTE,"got 2.0106, diff 0.0000"
+R01_2015_dc_jobs,reproduce,GA 2015 dc_jobs: expected 8346,NOTE,"got 8346.0000, diff 0.0000"
+R01_2025_dc_jobs,reproduce,GA 2025 dc_jobs: expected 24620,NOTE,"got 24620.0000, diff 0.0000"
+R01_2015_price_c_kwh,reproduce,GA 2015 price_c_kwh: expected 9.6188,NOTE,"got 9.6188, diff 0.0000"
+R01_2025_price_c_kwh,reproduce,GA 2025 price_c_kwh: expected 12.06,NOTE,"got 12.0600, diff 0.0000"
+R01_2015_ln_ec,reproduce,GA 2015 ln_ec: expected 2.5902,NOTE,"got 2.5902, diff 0.0000"
+R01_2025_ln_ec,reproduce,GA 2025 ln_ec: expected 2.6065,NOTE,"got 2.6065, diff 0.0000"
+R01_2015_ln_ee,reproduce,GA 2015 ln_ee: expected 8.2878,NOTE,"got 8.2878, diff 0.0000"
+R01_2025_ln_ee,reproduce,GA 2025 ln_ee: expected 8.4551,NOTE,"got 8.4551, diff 0.0000"
+R02,reproduce,"Panel shape = (561, 80)",PASS,"got (561, 80)"
+R03,reproduce,"dc_suppressed count (2025: AK,ND,SD,WY = 4 at minimum)",PASS,total suppressed rows = 4
+R04,reproduce,"2025 suppressed states include AK,ND,SD,WY",PASS,"2025 suppressed: ['AK', 'ND', 'SD', 'WY']"
+R05,reproduce,CO2 2025: all 51 rows NA,PASS,NA count = 51
+R06,reproduce,SEDS 2025: all 51 rows NA,PASS,NA count = 51
+R07_WA,reproduce,2025 ai_dc_per1000 WA≈6.479,PASS,got 6.4790
+R07_GA,reproduce,2025 ai_dc_per1000 GA≈5.035,PASS,got 5.0346
+R07_MO,reproduce,2025 ai_dc_per1000 MO≈4.978,PASS,got 4.9782
+R07_VA,reproduce,2025 ai_dc_per1000 VA≈4.859,PASS,got 4.8592
+T01,trace,25 random cells extracted (fixed seed=42),PASS,Saved to c4_trace_cells.csv — raw file provenance documented in DATA_VALIDATION.md §C.4
+P01,plausibility,"(state,year) unique",NOTE,0 duplicates
+P02,plausibility,561 rows: 51 states × 11 years,PASS,rows=561
+P03,plausibility,51 states (50+DC),PASS,states=51
+P04,plausibility,11 years 2015-2025,PASS,"[np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023), np.int64(2024), np.int64(2025)]"
+P05_renew_share,plausibility,"renew_share ∈ [0,1]",PASS,OK
+P05_solar_share,plausibility,"solar_share ∈ [0,1]",PASS,OK
+P05_wind_share,plausibility,"wind_share ∈ [0,1]",PASS,OK
+P05_clean_share,plausibility,"clean_share ∈ [0,1]",PASS,OK
+P05_manuf_share,plausibility,"manuf_share ∈ [0,1]",PASS,OK
+P05_tech_share,plausibility,"tech_share ∈ [0,1]",PASS,OK
+P06_dc_jobs,plausibility,dc_jobs >= 0,PASS,OK
+P06_total_jobs,plausibility,total_jobs >= 0,PASS,OK
+P06_gdp_nom_musd,plausibility,gdp_nom_musd >= 0,PASS,OK
+P06_gdp_real_musd2017,plausibility,gdp_real_musd2017 >= 0,PASS,OK
+P06_population,plausibility,population >= 0,PASS,OK
+P06_sales_mwh,plausibility,sales_mwh >= 0,PASS,OK
+P07,plausibility,Panel states match 51-state STATES list,PASS,"extra=set(), missing=set()"
+P08,plausibility,"contig48=0 for AK,HI; 1 otherwise",NOTE,"AK/HI=0, rest=1"
+P09,plausibility,"is_dc=1 for DC, 0 otherwise",NOTE,OK
+P10,plausibility,Big YoY jumps (>50%) in model vars: 200 found,FAIL,See p10_big_jumps.csv
+P11,plausibility,"Spotlight states (VA,TX,GA,WA) exported",PASS,See p11_spotlight_*.csv
+P12,plausibility,Missingness table written,PASS,7 variable-year gaps. See p12_missingness.csv
+V01,vintage,Vintage table written,PASS,See c6_vintage.csv
+V02,vintage,EIA 2025 generation/capacity: PRELIMINARY flag,NOTE,"Both annual_generation_state.xlsx and existcapacity_annual.xlsx carry 2025 as preliminary in EIA releases. Most likely to be revised: solar generation (fast-growing, reporting lags)."
+V03,vintage,"BEA 2025: initial estimate, revision risk medium",NOTE,BEA revises state GDP through 3 annual rounds. 2025 values available since June 2026 release. Revision expected to be small (<1%) for most states.
