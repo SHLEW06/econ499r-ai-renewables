@@ -1,0 +1,66 @@
+# Receipt: Georgia Power IRP and Large Load Reports
+
+## Source
+
+Georgia Public Service Commission (PSC) docket filings and Georgia Power Company publications.
+- IRP filings: `https://www.georgiapower.com/company/about-us/integrated-resource-plan.html`
+- Large Load reports: `https://www.georgiapower.com/content/dam/georgia-power/pdfs/company-pdfs/large-load-reports/`
+- PSC docket search: `https://www.psc.state.ga.us/facets/`
+
+## Raw Files
+
+| File | Description | Approx. size | Obtained |
+|---|---|---|---|
+| `data/raw/georgia/2025_IRP_Main_Document.pdf` | 2025 Georgia Power IRP, main document | ~8 MB | `download_all.py`, 2026-11-01 |
+| `data/raw/georgia/2025_IRP_TOC.pdf` | 2025 IRP table of contents | ~300 KB | `download_all.py`, 2026-11-01 |
+| `data/raw/georgia/2025_IRP_one_page_summary.pdf` | 2025 IRP one-page summary | ~400 KB | `download_all.py`, 2026-11-01 |
+| `data/raw/georgia/2023_IRP_Update_Main_Document.pdf` | 2023 IRP Update, main document | ~6 MB | `download_all.py`, 2026-11-01 |
+| `data/raw/georgia/LargeLoad_Report_Q1_2026.pdf` | Large Load interconnection queue, Q1 2026 | ~2 MB | `download_all.py`, 2026-11-01 |
+
+**Note:** The Q2 2026 Large Load report and technical appendices to the 2025 IRP were
+downloaded by hand from the Georgia PSC docket; they are not fetched automatically by
+`download_all.py`.
+
+## What We Kept
+
+These documents are reference material for the Georgia qualitative case box — they are not
+processed into tabular data. Key figures extracted manually:
+
+| Metric | Value | Source |
+|---|---|---|
+| Projected load growth (6-year horizon) | ~8,500 MW | 2025 IRP Main, executive summary |
+| New renewables planned by 2035 | Up to 4,000 MW | 2025 IRP Main, resource plan section |
+| Large Load queue size (Q1 2026) | ~40 GW of requests on file | LargeLoad_Report_Q1_2026.pdf |
+| Data center / hyperscaler share of queue | Majority of new large-load inquiries | LargeLoad_Report_Q1_2026.pdf |
+| 2023 IRP original load growth estimate | ~2,600 MW over plan period | 2023 IRP Update, p. 4 |
+
+The jump from ~2,600 MW (2023 IRP) to ~8,500 MW (2025 IRP) in projected load growth
+reflects the surge in data-center interconnection requests in 2024–2025 and is a central
+data point for the Georgia case narrative.
+
+## Transformations
+
+None — PDFs are read and cited directly. Key figures are quoted in the paper with page
+references. No automated parsing is performed; numbers above were transcribed manually.
+
+## Known Quirks
+
+- The 2025 IRP Main Document is large (~8 MB). The TOC PDF is useful for navigating to the
+  right sections quickly.
+- Georgia Power files IRPs on a roughly 3-year cycle; the 2025 IRP supersedes the 2023 Update
+  for forward-looking projections but the 2023 document provides the pre-boom baseline.
+- Large Load queue figures are not legally binding; some requests are duplicates or will be
+  withdrawn. The report notes this caveat in its methodology section.
+- Technical appendices (capacity expansion model assumptions, load forecast details) are in
+  separate PSC docket exhibits and must be retrieved manually from the PSC docket system.
+
+## Output
+
+No tabular output. Findings feed directly into the Georgia case-study section of the paper.
+Cite as: Georgia Power Company, *2025 Integrated Resource Plan*, filed with the Georgia PSC,
+[date]. Large Load Report Q1 2026, Georgia Power Company.
+
+## Script
+
+`download_all.py` fetches the five files listed above. Manual browser download required for
+Q2 2026 report and appendices.

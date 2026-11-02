@@ -1,0 +1,34 @@
+# Raw data — large files; never commit
+data/raw/
+data/out/
+data/data_download_all_pt1.zip
+
+# Phase 1 human-readable copies (duplicates of data/raw/)
+data/bea/
+data/bls/
+data/census/
+data/eia/
+data/ferc/
+
+# Cleaned outputs and workbooks — Phase 5 will decide
+data/state_panel_2015_2025.csv
+data/codebook.csv
+outputs/ECON499R_Data_Workbook_*.xlsx
+outputs/ECON499R_csv_for_R/
+
+# Licensed and personal data — never commit
+data/raw/bloomberg/
+data/raw/sec/cache/
+
+# OS / editor
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.part
+
+# Large binary reference files
+literature/*.pdf
+notes/*.pdf
+data/georgia_psc/*.pdf
+data/georgia_psc/*.zip

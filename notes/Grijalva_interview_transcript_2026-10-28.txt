@@ -1,0 +1,556 @@
+Interview with Prof. Santiago Grijalva (Georgia Tech ECE), recorded Oct 28, 2026 (27:47)
+Interviewers: Shunji Lewandowski and Alexander Hendricks, ECON 499R
+Machine transcript (Whisper small.en), names corrected by hand; expect some word errors. [mm:ss] = time in the recording.
+
+[00:02] All right. Do you want to start or do you want me to start?
+[00:06] All right. I guess I'll just introduce myself.
+[00:08] So I'm Shunji Lewandowski.
+[00:10] I'm currently a senior at Emory,
+[00:12] just doing a Bachelor's in Economics,
+[00:14] doing a specialization in data science and health economics.
+[00:18] Then currently just taking this research class,
+[00:22] which is structured research.
+[00:24] So we meet once a week to go over what we're doing in terms of our topic.
+[00:30] And then I guess, Alexander, you can introduce yourself
+[00:32] and also introduce the topic if you want.
+[00:34] Yeah. So I'm Alexander Hendricks from New York City,
+[00:38] majoring in economics and studying business as well.
+[00:43] And pursuing a career in finance.
+[00:46] The topic itself is does AI improve renewable energy and how does it do it?
+[00:54] And it's looking at it through a couple of different lenses.
+[00:56] One is the actual infrastructure as well as promoting
+[01:01] renewable energy and clean energy as a whole.
+[01:04] So with how do I guess I have a couple of questions to ask you.
+[01:10] Sure.
+[01:12] Yeah. So I guess, taking very,
+[01:15] just to start, maybe can you introduce yourself,
+[01:18] kind of just what you've been doing,
+[01:20] kind of maybe what you study and maybe some projects.
+[01:24] Yeah.
+[01:24] So I first stands for the invitation.
+[01:28] Santiago Grijalva, I'm a professor in electrical and computer engineering at Georgia Tech.
+[01:33] I direct the Advanced Computational Electricity Systems Laboratory.
+[01:38] My expertise is in electricity grids
+[01:41] and integration of renewable energy into the power grid.
+[01:46] So things associated with solar energy, wind energy,
+[01:50] energy storage, electric vehicles, data centers,
+[01:53] as connected to the electricity grid.
+[01:55] I am very interested in those topics.
+[01:57] I'm spending quite a bit of time doing research in operation control,
+[02:02] planning, economics, machine learning applications to that ecosystem.
+[02:08] Really associated with electricity grids.
+[02:11] Very, very happy to be here.
+[02:14] That's great.
+[02:16] Yeah. So I guess taking a four step out is just asking you directly,
+[02:21] do you know how the power business works in Georgia
+[02:25] and how the companies set the prices?
+[02:29] I mean, sure, yes.
+[02:31] So, yes, I'm the Georgia Power Professor at Georgia Tech.
+[02:38] So I collaborate a lot with Georgia Power,
+[02:40] an exciting company in general,
+[02:42] and how the power system is operated here in the Southeast.
+[02:48] So in the United States, there is basically two types of structures
+[02:55] for managing electricity.
+[02:58] Those states that are deregulated that have electricity markets,
+[03:04] right, and they have actual competitive electricity markets for generation.
+[03:10] And those states that are fully regulated
+[03:14] and where they have basically large utilities,
+[03:19] and there is not a competitive market, right?
+[03:21] So how it works, in the case of Georgia,
+[03:26] is Southern Company manages all the generation assets,
+[03:31] all the transmission system.
+[03:32] Transmission system is what is at 69 kilovolts and above.
+[03:37] So it's the main transmission grid, the bulk power system.
+[03:42] And then, but it also manages the distribution system,
+[03:44] which is under 69 kilovolts.
+[03:47] Distribution is basically from the bulk substations
+[03:50] all the way to medium voltage, 12.7 kilovolt.
+[03:55] That goes into the cities and towns and neighborhoods and so on,
+[03:58] all the way to the customers.
+[03:59] They manage the customers as well.
+[04:01] So it's a vertically integrated, a large utility here in Georgia.
+[04:07] In other states, there was deregulation.
+[04:10] That means that the market of the operation of the system
+[04:14] is decoupled for the ownership of the assets.
+[04:17] That means that various companies own generation fleets.
+[04:20] You have aggregators of distributed energy resources
+[04:23] that participate in the market.
+[04:25] They beat into the market for the day ahead and the small market.
+[04:29] And then the market clears,
+[04:32] which resources are actually cleared to actually produce a certain amount.
+[04:37] And correspondingly, the generators get paid
+[04:40] at the market's clearing price for day ahead
+[04:43] and the spot market and their settlements and so on.
+[04:47] So it operates as a market.
+[04:49] In addition to that, several states have opened to retail competition.
+[04:56] Like, for instance, in Texas,
+[04:58] you can basically choose your provider at their retail level.
+[05:02] That means your distribution utility
+[05:03] that is serving that particular customer.
+[05:07] Commercial, residential, industrial, industrial customers.
+[05:11] So that's at a high level of what is the structure.
+[05:14] These two big differences between regions
+[05:18] that operate under a increased market and vertically integrated utilities,
+[05:22] such as the case of Georgia.
+[05:26] There are advantages and disadvantages of that.
+[05:31] Georgia, Southern Company,
+[05:32] has been able to maintain electricity rates
+[05:35] that are below the average in the United States.
+[05:38] They have been able to finance and build infrastructure,
+[05:43] including nuclear power plants.
+[05:46] And their system, the transmission system,
+[05:48] is pretty strong in that regard.
+[05:51] They have not been very progressive with respect to renewable energy in general.
+[05:56] But there is a growing amounts of renewable energy
+[06:01] connected to the grid in Georgia.
+[06:04] They have more than about 15% of solar.
+[06:07] They have mandates in order to incorporate more solar.
+[06:11] Most of that solar, though, has been a utility-owned and large-scale,
+[06:16] as opposed to customer-owned.
+[06:19] So we have rooftop solar panels, right?
+[06:21] But it's not streamlined to have massive amount of solar
+[06:26] in residential customers,
+[06:29] at least here in Georgia.
+[06:32] So things are pretty good, I would say.
+[06:35] The reliability of the system in Georgia is pretty high.
+[06:39] Rates are below the average.
+[06:42] Renewables are increasing.
+[06:45] Right on the habit, pretty healthy and diversified generation mix
+[06:51] that includes solar, coal, gas, nuclear, etc.,
+[06:57] as well as biogas and other resources.
+[07:01] And that has attracted investment, for instance,
+[07:05] for large loads and data centers and also industrial customers,
+[07:10] new manufacturing plants, etc., for automobiles, etc.
+[07:16] So it's, I would say, in fairly good shape
+[07:19] with respect to the other states in the country.
+[07:23] That makes a lot of sense.
+[07:24] That's interesting that Georgia is below the average
+[07:28] in terms of rates.
+[07:31] So in terms of actually accessing the data,
+[07:34] what is the best way to do it from a researching standpoint?
+[07:41] OK, so the data that utilities manage is massive.
+[07:47] Usually, you can obtain generation data, prices, historical prices, etc.,
+[07:53] from the Energy Information Administration website.
+[07:57] Then you have all the generation assets,
+[08:00] all the incremental cost of those units,
+[08:05] and other information such as totals, revenues, etc.
+[08:11] They create data, electrical data,
+[08:16] that forms basically the transmission system.
+[08:19] That is considered critical infrastructure information,
+[08:23] and it's usually not available to the public,
+[08:28] the exact models of the topologies, the conductors,
+[08:31] the parameters, where things are, all of that.
+[08:34] That is usually kept very, very secure by the utilities.
+[08:39] They share with universities, researchers,
+[08:41] and the very strict data agreements,
+[08:45] because then you can run algorithms
+[08:48] that determine how the flows in the power system occur
+[08:54] based on forecasting of demand,
+[08:57] based on the generation characteristics and their cost.
+[09:01] You can start running algorithms of exactly how the system operates,
+[09:05] and then you can infer from that cost and prices,
+[09:11] as well as where the critical infrastructure is.
+[09:13] Where are the bottlenecks?
+[09:16] Which lines are congested?
+[09:18] In case of events or disruptions, what will happen?
+[09:21] Those kinds of things.
+[09:22] It's very protected, that type of information.
+[09:26] You can obtain most of the resource data
+[09:29] using the Energy Information Administration.
+[09:32] Also, the Public Utility Commission,
+[09:35] Georgia Public Utility Commission,
+[09:36] also has information about all the discussions
+[09:39] about power plants, data center, less loads.
+[09:42] They have reports, they have what is called
+[09:45] the integrated resource planning.
+[09:47] It's a process and a document.
+[09:50] It's a process where the state of Georgia
+[09:53] and Georgia Power go.
+[09:55] They plan for the next 10, 15 years.
+[09:58] It's like an 800-page document that describes
+[10:02] all the projects that are going to be built,
+[10:04] the considerations that is open to the public.
+[10:07] It's in the PUC website and provides a lot of information
+[10:12] with respect to what are the plans for building
+[10:16] more infrastructure and resources in Georgia.
+[10:19] The other aspect that is important
+[10:22] and affecting a lot of these is kind of the smaller scale
+[10:27] distributed energy resources, such as a small wind.
+[10:31] Not too much in Georgia, but a small wind
+[10:33] is also considered a DER or Distributed Energy Resource.
+[10:37] You also have energy storage.
+[10:39] So there is a mandate to have energy storage.
+[10:42] Energy storage is very important
+[10:43] because it can help firm variable renewable energy.
+[10:48] It can help stabilize the system,
+[10:50] it can help with prices and constraints, et cetera,
+[10:53] because you can store, so you can, in space and time,
+[10:56] you can arbitrage with the storage.
+[10:58] So energy storage is important.
+[11:01] Also, electrical vehicle charging, right,
+[11:03] as another type of resource connected into degrees.
+[11:09] So that is also kind of a trend
+[11:11] that is growing with more electric vehicles,
+[11:13] with more charging stations, with more storage.
+[11:17] And in some cases, these aggregations
+[11:20] of distributed energy resources can be aggregated
+[11:24] as what is called a microgrid.
+[11:25] A microgrid is a facility that has these DERs
+[11:29] and then they can be managed optimally, right,
+[11:33] to produce backup generation, for instance,
+[11:36] in the hospital, in a data center,
+[11:38] in a shelter or critical facility,
+[11:41] right, a military facility, et cetera,
+[11:43] but also can be disconnected from the grid
+[11:45] and continue to operate.
+[11:47] So in case of disruptions, such as weather events
+[11:50] and other types of failure,
+[11:53] these facilities can remain operational, right,
+[11:58] during these disruptions.
+[11:59] So those are microgrids.
+[12:00] There is also a growing trend in developing microgrids
+[12:05] and building microgrids.
+[12:07] Georgia has several pilots and facilities
+[12:11] that already are microgrids.
+[12:12] Georgia Tech has a microgrid operation,
+[12:14] a microgrid as well.
+[12:17] Are the microgrids, how does one develop them?
+[12:22] Is it related to more on a software side
+[12:25] or is it more infrastructure?
+[12:27] It's both, it's both.
+[12:28] So you can imagine, for instance,
+[12:30] you have a hospital and the hospital, of course,
+[12:33] has a very high demand of reliability,
+[12:37] reliable electricity.
+[12:38] So you want to put there some diesel generation,
+[12:43] the small DG could be gas generators,
+[12:45] maybe a fuel cell, in some cases energy storage,
+[12:50] in some cases solar panels.
+[12:52] So you have a variety of resources, local resources,
+[12:55] to, for instance, meet critical loads
+[12:59] inside the microgrids during events, right?
+[13:02] So not just as a backup generation,
+[13:04] but an entire system that is controlled,
+[13:07] optimized, managed, optimally,
+[13:09] in order to support these events.
+[13:11] In the case of disruption,
+[13:13] can actually island itself,
+[13:14] can disconnect itself from the main grid
+[13:17] and continue operation.
+[13:18] So there is a process of designing those systems.
+[13:21] There is a sophisticated process
+[13:23] in which you have short term,
+[13:25] or hour by hour forecast profiles of your demand.
+[13:30] Allows you to see how you're gonna cover that
+[13:32] with solar, with storage, et cetera,
+[13:34] and also long term increasing demand,
+[13:37] planet infrastructure, new buildings, et cetera,
+[13:39] in a hospital, for instance.
+[13:41] And then you design optimally this microgrid
+[13:43] to provide energy to that, to that facet.
+[13:46] So it's been very interesting.
+[13:48] And then there are some sophisticated algorithms
+[13:51] that are using the planning,
+[13:53] and also in real time,
+[13:54] there is sophisticated systems
+[13:56] that are used to schedule the various,
+[13:59] the ARS charges, charge,
+[14:00] curtailment of our resources,
+[14:02] as well as to send the real time signals
+[14:04] for control and to stabilize the system.
+[14:07] So it's pretty sophisticated technology.
+[14:11] So going back to what we were saying about the private,
+[14:14] the privacy of the, I guess,
+[14:17] actual financial statements
+[14:19] of the electric and utility companies,
+[14:22] how would you suggest we put a dollar value
+[14:24] on the existing plants here?
+[14:27] Oh, so they,
+[14:28] in the energy information administration
+[14:30] will have information about their incremental costs.
+[14:34] We have information about the total yearly revenue, right?
+[14:38] For the various power plants.
+[14:39] So then you have an idea, for instance,
+[14:41] of what is the cost, right?
+[14:43] And with the rates, you can compare, right?
+[14:46] And then you can see, okay,
+[14:48] this is additional infrastructure,
+[14:50] you know, cause of transmission,
+[14:52] cause of distribution, cause of mirroring,
+[14:54] cause of planning, cause of et cetera,
+[14:57] for the, for, you know,
+[15:00] kind of have a type of a balancing sheet, right?
+[15:05] Then in addition to that,
+[15:08] utilities, right?
+[15:09] Such as Southern Company or publicly traded,
+[15:13] and you may have many utilities,
+[15:16] and then you may have, you know,
+[15:18] additional information from the actual balance sheets
+[15:21] for them.
+[15:22] And as I mentioned, in the integrated resource planning,
+[15:24] you have a lot of information about,
+[15:28] you know, revenues and economics of it,
+[15:32] because ultimately the public energy commission,
+[15:34] they want to, they want to approve a expansion plan.
+[15:40] In some cases, they want to approve a rate case
+[15:43] and increasing the rates.
+[15:44] So they want to see what are the investments, right?
+[15:47] That the utilities proposing in order to justify,
+[15:50] you know, those investments for the next 10, 50 years
+[15:53] and so on.
+[15:54] And these IRPs are run, I think every three years,
+[15:57] something like that.
+[15:58] So they are pretty updated, right?
+[16:03] And so I know the,
+[16:06] one of the issues with solar energy is that it's,
+[16:10] there's not a lot of ways to store it.
+[16:12] It just burns out.
+[16:13] But how do you see the future of solar energy
+[16:21] being more efficient and optimized for that?
+[16:26] Yeah, so solar energy is less predictable, right?
+[16:30] It depends on the solar radiation.
+[16:32] The radiation, when they would have clouds, cloud areas,
+[16:36] it could be highly variable, right?
+[16:38] It could, you know, a few seconds you can have from,
+[16:41] from 100% to 20%, something like that, right?
+[16:45] So it's highly variable.
+[16:47] So it's a non-controllable,
+[16:48] non-dispatchable resource in general, right?
+[16:51] Now, depending on how it is connected to the grid,
+[16:53] it can provide other services such as voltage support,
+[16:58] you know, what's called voltage reactive power support.
+[17:01] But in general, the amount of active power
+[17:05] and current that is injected into the grid
+[17:07] is less predictable.
+[17:09] So how can you balance that?
+[17:11] You need always instantaneously,
+[17:12] you need to balance the instantaneous demand
+[17:15] with instantaneous generation plus the losses in the system.
+[17:19] And these generators are non-dispatchable.
+[17:21] You're not gonna know controllers,
+[17:23] so there has to be other generators that are dispatchable
+[17:27] and can meet the variations of the load
+[17:29] as well as of the non-controllable,
+[17:31] non-dispatchable generation,
+[17:32] that means the solar in this case.
+[17:35] So guys' units are pretty fast.
+[17:37] They are pretty effective in controlling this.
+[17:40] But even better is to have some level of storage, right?
+[17:44] So some level of storage is very good,
+[17:45] especially co-located with the solar plant
+[17:50] because otherwise, so you can maximize the utilization
+[17:53] of the capacity.
+[17:54] So imagine that you have a big solar farm
+[17:58] that is connected to a transmission line.
+[18:00] If you don't have energy storage
+[18:03] coupled with that solar farm,
+[18:05] then you need to have the maximum capacity of the line.
+[18:09] And the line will be subutilized most of the times, right?
+[18:13] Certainly at night, you won't use it.
+[18:15] And then during the day,
+[18:16] these variations you will be used some of it.
+[18:18] So it's not a good investment in transmission
+[18:21] because the utilization factor, right, is very low.
+[18:26] It will be like 20%, 25%, right?
+[18:29] But if you couple that with other resources,
+[18:32] with the storage, with other flexible resources,
+[18:35] then you're able to firm the solar energy,
+[18:38] and then you can better utilize that transmission capacity,
+[18:43] right, that line, transmission line capacity, right?
+[18:46] So storage is becoming very important,
+[18:49] also flexible demand.
+[18:51] Right on the other side,
+[18:52] there is a flexible demand in commercial buildings.
+[18:57] In, for instance, Georgia Tech,
+[18:59] they get exposed to a real-time price, right,
+[19:02] from an optimization algorithm from Georgia Power.
+[19:05] I think it's every 15 minutes.
+[19:07] Depending on that price,
+[19:08] you get also a forecast of that price for the next hours.
+[19:12] So Georgia Tech is able to manage their facilities.
+[19:15] In some cases, manage the temperature in buildings
+[19:17] and other resources,
+[19:18] minimize utilization of motors and other machines, et cetera,
+[19:26] preheat some type of buildings.
+[19:28] In some cases, manage better the cheap water
+[19:31] to basically save as much money as possible.
+[19:33] The idea is to arbitrage.
+[19:34] So you use it when the energy is cheaper,
+[19:37] and then you lose less when energy is more expensive.
+[19:42] And you have a storage.
+[19:43] Storage can help your VTRI-style quite a bit, right?
+[19:46] Purchase when energy is cheaper,
+[19:47] and then discharge when energy is cheaper,
+[19:50] and then discharge when it is.
+[19:51] So you see that just a few solar panels
+[19:55] are made demand that is varying also multiple buildings,
+[19:58] which as storage becomes a interesting problem,
+[20:01] a scheduling problem,
+[20:02] so you need algorithms and software
+[20:04] in order to fully optimize that operation.
+[20:09] That makes a lot of sense.
+[20:11] That's what the research has been getting at so far.
+[20:16] So I know you spent seven years at PowerWorld,
+[20:19] and you're working on the software development side.
+[20:23] If we wanted to build a simple model,
+[20:27] what software tools should we use?
+[20:30] PowerWorld is great, not that I was there,
+[20:32] and I have friends there,
+[20:33] but PowerWorld is great because it's very visual.
+[20:36] It has a free demo version that you can download
+[20:38] and play with it.
+[20:40] The problem is realistically the data, right?
+[20:44] Because the key for running PowerWorld
+[20:49] is actually the grid model, right?
+[20:51] It's actually the wires and the parameters
+[20:53] of that, resistances and capacitances
+[20:56] and reactances and so on.
+[20:58] So all the electric parameters.
+[20:59] So it's made for electrical engineering,
+[21:02] it's made for power system engineering that runs this,
+[21:05] and then you have exact values of the line flows,
+[21:09] so you don't have overloading the lines,
+[21:12] and the voltages, you don't have under voltages,
+[21:14] over voltage, so that's kind of the...
+[21:16] But depending on the analysis that you can do,
+[21:19] you can also do kind of resource only,
+[21:22] where you focus only on the resource,
+[21:23] you assume that the transmission grid
+[21:25] is gonna be sufficient,
+[21:27] and then you can model basically the resource costs,
+[21:30] the generation mix, what are gonna be the prices
+[21:33] and estimated rates and so on.
+[21:35] And that modeling is usually called resource planning,
+[21:38] and it's part of the IRPs as well,
+[21:40] is usually done without the grid,
+[21:42] actually in many utilities, you do the resource planning,
+[21:45] and then based on that resource,
+[21:46] you send it up to the transmission planner and say,
+[21:48] okay, give me the grid that can support this resource plan,
+[21:51] and then they iterate a little bit, right?
+[21:53] So it's done something like that.
+[21:55] So data is a big problem,
+[21:57] you can have synthetic data modeling,
+[21:59] and these models are very large, right?
+[22:01] So it takes kind of several years to,
+[22:05] of courses and the setup,
+[22:07] to get to the point where you could actually understand
+[22:11] what these PowerWorld will do, right?
+[22:13] So PowerWorld will do,
+[22:15] I teach that in my graduate classes,
+[22:17] just a teeny bit of the software, right?
+[22:20] But the software is very, very expensive and complex, right?
+[22:24] It's very extensive and complex.
+[22:26] So modalier resolvon,
+[22:29] depending on what your research objectives are,
+[22:32] you can do a resource modeling, right?
+[22:34] And then maybe start with that,
+[22:36] trying to find out the data and kind of seeing work
+[22:39] where things are going from the resource point of view.
+[22:42] Okay.
+[22:44] And if we were to add,
+[22:48] you mentioned before that if some places will give
+[22:52] the data to schools or researchers,
+[22:57] how do you suggest that we,
+[23:01] how would one go about getting that data
+[23:04] and asking in the correct way?
+[23:07] I think it's kind of a matter,
+[23:09] well, it usually have to be tied to a project, right?
+[23:15] To give you an idea, right?
+[23:16] So there's a model that includes all the Georgia,
+[23:20] and this is for every state, right?
+[23:22] Where it could be a Tennessee, Tennessee Valley Authority,
+[23:24] let's say that you want to ask them,
+[23:27] it will be kind of several months
+[23:29] because the legal people will have to be involved
+[23:32] to get you that data.
+[23:35] If you lose the data, if you misplaced it, et cetera,
+[23:38] FERC, the Federal Energy Regulatory Commission
+[23:42] will charge you a fee, right,
+[23:46] a fine of $1 million per day if you miss that data, right?
+[23:52] So even in my case, you do research,
+[23:55] we have some of that data, et cetera.
+[23:58] I'm very cautious, right?
+[24:00] And I'm protecting my students,
+[24:01] my graduate students actually
+[24:03] from getting access to that data.
+[24:06] So what I do is I take the data from any utility,
+[24:09] just myself, right?
+[24:10] You have to be used to see this and those kinds of things.
+[24:13] And then I generate synthetic data
+[24:17] so for them to develop the algorithms.
+[24:20] And only whenever all the research is done,
+[24:22] I run it in the actual data, right?
+[24:25] And then you present that to the utility
+[24:28] and you cannot publish that data, right?
+[24:30] Because it is internal private data.
+[24:33] So the results you kind of presented with synthetic data,
+[24:36] kind of, but not because you cannot disclose anything related
+[24:41] to critical information in publication,
+[24:44] right, in public documents.
+[24:45] So the actual, so the models themselves are available.
+[24:51] Are there existing ones that you know of
+[24:55] that you'd be comfortable sharing with us?
+[24:59] Not, I cannot share utility data, right?
+[25:04] No, not the data, but the models that you gave
+[25:07] to your grad students who then developed
+[25:09] with the synthetic numbers.
+[25:12] Yeah, not that also would be part of projects, right?
+[25:15] So they still work and they have liability
+[25:19] because of the legal contracts, et cetera,
+[25:21] that particular contract with DOE, et cetera, right?
+[25:25] So there are synthetic data, there are cases, right?
+[25:33] When you, for instance, when you download PowerWorld,
+[25:35] it comes with sample cases, right?
+[25:36] Toy cases that you can use.
+[25:39] There are other types of software,
+[25:40] well, like MATPOWER that has a bunch of larger cases
+[25:44] that are synthetic data, right?
+[25:46] And these, those are used for research,
+[25:48] but have nothing to do with a particular topology
+[25:51] of parameters of a given state, right?
+[25:53] And general data is a pretty lengthy process
+[25:59] to obtain data for realistic data for the grid.
+[26:04] Do you see that AI is being implemented
+[26:08] into the Power Grid right now,
+[26:11] as what some researchers are calling the Smart Grid?
+[26:17] Oh yeah, well, the Smart Grid was kind of a term
+[26:19] that started like 15 years ago.
+[26:22] So there's a lot of Smart Grid.
+[26:23] What's more about communications
+[26:25] and making the digital and so on.
+[26:27] AI basically is a new component.
+[26:32] And there's tons of research and investigators
+[26:35] and people playing without exploring opportunities.
+[26:38] I think it's gonna impact drastically.
+[26:41] The degree forecasting is gonna be better.
+[26:43] Operations is gonna be more optimized.
+[26:46] Algorithms will run faster.
+[26:47] All of that is possible.
+[26:49] We have a lot of research in that direction.
+[26:52] And in general, we'll impact everything.
+[26:54] I think we'll make it better.
+[26:56] And there is also issues, right?
+[26:58] Related to cybersecurity, related to, you know,
+[27:04] hallucinations and those kinds of things,
+[27:06] precision and so on.
+[27:07] So yes, I think it's like every industry
+[27:10] will have a huge impact in the power industry.
+[27:13] But at the same time, there are considerations,
+[27:16] especially because of security and reliability.
+[27:19] And cybersecurity as well,
+[27:20] we need to be super careful.
+[27:23] Anyway, guys, I need to jump to my 5.30.
+[27:27] Hello.
+[27:28] Well, I am a couple minutes late already.
+[27:30] But I hope this is helpful for your project, right?
+[27:35] You know, best of luck with the effort.
+[27:39] Thank you very much.
+[27:39] Thank you for taking the time speaking with us.
+[27:41] It was very, very helpful.
+[27:42] All right, sounds great.
+[27:43] Great to meet you.
+[27:44] Good to see you.
+[27:45] Okay.
+[27:46] Best of luck, take care.
+[27:47] All right.
