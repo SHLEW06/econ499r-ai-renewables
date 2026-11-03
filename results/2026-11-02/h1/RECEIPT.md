@@ -1,0 +1,58 @@
+# RECEIPT.md — h1 results
+Date: 2026-11-02
+Input panel: data/out/state_panel_2015_2025.csv
+Panel SHA256: c968c764b29cb17be1059ca9e39a0d23
+
+## Tags run
+- h1_twfe_ai518210_lag1_ctrl5_w9901_cl-state_ln_ec_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl5_w9901_cl-state_ln_ee_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl5_w9901_cl-state_renew_share_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025
+- h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_solar_share_50s2015_2025
+- h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_wind_share_50s2015_2025
+- h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_new_renew_mw_50s2015_2025
+- h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_fossil_to_renew_50s2015_2025
+- h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_coal_share_50s2015_2025
+- h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_co2_per_mwh_t_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl5_w9901_dk_ln_ec_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl5_w9901_dk_ln_ee_50s2015_2025
+- h1_twfe_ai518210_lag1_ctrl5_w9901_dk_renew_share_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_ln_ec_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_ln_ee_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_renew_share_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_solar_share_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_wind_share_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_new_renew_mw_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_fossil_to_renew_50s2015_2025
+- nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_coal_share_50s2015_2025
+- het_twfe_ai518210_lag1_net_exporter_ctrl5_w9901_cl-state_ln_ec_50s2015_2025
+- het_twfe_ai518210_lag1_high_price_ctrl5_w9901_cl-state_ln_ec_50s2015_2025
+- het_twfe_ai518210_lag1_south_ctrl5_w9901_cl-state_ln_ec_50s2015_2025
+- het_twfe_ai518210_lag1_net_exporter_ctrl5_w9901_cl-state_ln_ee_50s2015_2025
+- het_twfe_ai518210_lag1_high_price_ctrl5_w9901_cl-state_ln_ee_50s2015_2025
+- het_twfe_ai518210_lag1_south_ctrl5_w9901_cl-state_ln_ee_50s2015_2025
+- het_twfe_ai518210_lag1_net_exporter_ctrl5_w9901_cl-state_renew_share_50s2015_2025
+- het_twfe_ai518210_lag1_high_price_ctrl5_w9901_cl-state_renew_share_50s2015_2025
+- het_twfe_ai518210_lag1_south_ctrl5_w9901_cl-state_renew_share_50s2015_2025
+- dyn_twfe_ai518210_lag1_ctrl5_w9901_cl-state_ln_ec_50s2015_2025
+- dyn_twfe_ai518210_lag1_ctrl5_w9901_cl-state_ln_ee_50s2015_2025
+- dyn_twfe_ai518210_lag1_ctrl5_w9901_cl-state_renew_share_50s2015_2025
+- dyn_longdiff_ai518210_ctrl5_w9901_rob_ln_ec_50s2015_2025
+- dyn_longdiff_ai518210_ctrl5_w9901_rob_ln_ee_50s2015_2025
+- dyn_longdiff_ai518210_ctrl5_w9901_rob_renew_share_50s2015_2025
+
+## N per model
+  H1 core (ctrl5):  N=550
+  H1 extras:        N=550
+  CO2 subsample:    N=500
+  Long difference:  N=46
+
+## Warnings
+  - QCEW 2012-2013 absent: t-2 and t-3 dynamics omitted.
+  - NAICS 518210 scope: Georgia ranks 2nd in ai_dc_per1000 (above VA); likely reflects colocation/cloud hosting.
+  - south main effect absorbed by state FE in heterogeneity models.
+
+## Failures
+  None.

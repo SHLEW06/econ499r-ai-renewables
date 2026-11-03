@@ -1,0 +1,4 @@
+"part","term","statistic","ln(ec) ctrl5","ln(ec) ctrl4","ln(ee) ctrl5","ln(ee) ctrl4","renew ctrl5","renew ctrl4"
+"estimates","AI data centers (t-1)","estimate","-0.002","-0.002","0.003","0.002","-0.010","-0.010"
+"estimates","AI data centers (t-1)","std.error","(0.006)","(0.006)","(0.005)","(0.006)","(0.006)","(0.006)"
+"gof","Num.Obs.","","550","550","550","550","550","550"

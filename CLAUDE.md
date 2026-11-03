@@ -72,18 +72,25 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 ## §5 Project state (as of 2026-11-02)
 
-**Phase 4a complete.** Spec locked, R environment set up, smoke check confirms N = 550.
+**Phase 4b complete.** H1 TWFE, extras, nonlinearity, heterogeneity, dynamics, and Georgia descriptive all run. Reproduce gate passes.
 
 - Phase 2A (audit): done — `data/DATA_AUDIT.md`, `docs/2026-11-01/phase-2a-data-audit.md`
 - Phase 2B (build): done — `data/out/state_panel_2015_2025.csv` (561×80), workbook, receipts
 - Phase 2C (validate): done — `data/DATA_VALIDATION.md`, `logs/2026-11-02/build/validation/`
 - Phase 4a (spec + env): done — `EXPERIMENTS.md`, `code/R/load_panel.R`, `docs/2026-11-02/phase-4a-methods-spec.md`
+- Phase 4b (TWFE): done — `code/R/04b_step1_twfe.R`, `notebooks/04b_step1_twfe.ipynb`, `results/2026-11-02/h1/`, `docs/2026-11-02/phase-4b-step1.md`
 
 **Validation verdict:** 0 red, 3 yellow (co2_per_mwh_t, seds_mmbtu_pc, hma — 2025 gaps only), 17 green.
 
 **R environment:** R 4.6.2 at `/opt/homebrew/bin/R`. All required packages installed. See `code/R/load_panel.R`.
 
-**Next step:** `prompts/04b_step1_twfe.md` (Phase 4b: H1 TWFE — target 2026-11-08).
+**H1 headline results (2026-11-02):**
+- new_renew_mw: **+74.5 MW per unit AI, p = 0.022** (CL) — only unambiguous significant result
+- renew_share: −0.0103, p = 0.103 (CL) / p = 0.001 (DK) — negative sign (peril direction)
+- ln_ec, ln_ee: insignificant under CL; ln_ee significant under DK (p = 0.028)
+- Heterogeneity: AI × high_price on renew_share γ₁ = +0.032, p = 0.004
+
+**Next step:** `prompts/04c_step2_mediation.md` (Phase 4c: H2a/H2b mediation — target 2026-11-11).
 
 ---
 
