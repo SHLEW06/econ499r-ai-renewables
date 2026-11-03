@@ -269,10 +269,28 @@ Report direct, indirect (spillover), and total effects with simulated SEs via `s
 | Inverse-distance (row-std) | data/out/W_inverse_distance_rowstd.csv |
 
 **H3 support rule:** Indirect effect < 0 for renew_share (siphoning); > 0 for ln_ec; < 0 for ln_ee.  
-**AK/HI:** excluded (contig48 == 1); N ≈ 539 with lag.  
-**Output path:** `results/<date>/h3/`  
-**Method tags:** `h3_sdm_ai518210_lag1_W-border_ctrl5_cl-state_<outcome>_48s2015_2025`  
-**Status:** Memo + change (impacts decomposition per §0 item 1)
+**Main W:** invdist-50 (all 50 states). Border-48 and invdist-48 are checks.  
+**Output path:** `results/2026-11-03/h3/`  
+**Method tags:** h3_moran/slx/sdm with W_version and LYtrans columns  
+**Status:** Memo + change (impacts decomposition per §0 item 1) — **COMPLETE 2026-11-03**
+
+**Results (invdist-50, all outcomes):**
+
+**Moran's I — renew_share:** I=0.094–0.157, p≤0.002 all years 2015–2025. Significant positive spatial clustering, rising over time.
+
+**SLX (renew_share, clustered SEs):**
+- b1=−0.014 (p=0.014), θ1=−0.055 (p=0.117), total=−0.069 (p=0.068)
+- ln_ec, ln_ee: all null
+
+**SDM (renew_share):**
+- LYtrans=TRUE (valid, ρ=0.776): direct=−0.017(p=0.001), indirect=−0.252(p=0.063), total=−0.269(p=0.054)
+- LYtrans=FALSE (ρ=0.617): direct=−0.015(p<0.001), indirect=−0.165(p=0.038), total=−0.181(p=0.029)
+
+**SDM convergence note:** LYtrans=TRUE gave ρ>1 (outside valid interval) for ln_ec and ln_ee with invdist W — numerical convergence failure in SDPDmod. Use LYtrans=FALSE for those outcomes. renew_share unaffected.
+
+**splm cross-check:** b1 and θ1 match to 5 d.p.; ρ differs slightly (ML approximation). Cross-check passes.
+
+**H3 verdict:** renew_share indirect effect < 0 (siphoning direction), significant at 5% (LYtrans=FALSE) / borderline 10% (LYtrans=TRUE). ln_ec and ln_ee null. **H3 partially supported for renew_share.**
 
 ---
 

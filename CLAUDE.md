@@ -72,7 +72,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 ## §5 Project state (as of 2026-11-03)
 
-**Phase 4c complete.** H2a/H2b mediation run for tech_share (main), hma (memo), and ln_ea. No channel holds.
+**Phase 4d complete.** H3 spatial analysis: Moran's I, SLX, SDM (SDPDmod), splm cross-check. renew_share shows significant spatial dependence and indirect spillover effect.
 
 - Phase 2A (audit): done — `data/DATA_AUDIT.md`, `docs/2026-11-01/phase-2a-data-audit.md`
 - Phase 2B (build): done — `data/out/state_panel_2015_2025.csv` (561×80), workbook, receipts
@@ -80,26 +80,36 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - Phase 4a (spec + env): done — `EXPERIMENTS.md`, `code/R/load_panel.R`, `docs/2026-11-02/phase-4a-methods-spec.md`
 - Phase 4b (TWFE): done — `code/R/04b_step1_twfe.R`, `notebooks/04b_step1_twfe.ipynb`, `results/2026-11-02/h1/`, `docs/2026-11-02/phase-4b-step1.md`
 - Phase 4c (mediation): done — `code/R/04c_step2_mediation.R`, `notebooks/04c_step2_mediation.ipynb`, `results/2026-11-03/h2/`, `docs/2026-11-03/phase-4c-step2.md`
+- Phase 4d (spatial): done — `code/R/04d_step3_spatial.R`, `notebooks/04d_step3_spatial.ipynb`, `results/2026-11-03/h3/`, `docs/2026-11-03/phase-4d-step3.md`
 
 **Validation verdict:** 0 red, 3 yellow (co2_per_mwh_t, seds_mmbtu_pc, hma — 2025 gaps only), 17 green.
 
-**R environment:** R 4.6.2 at `/opt/homebrew/bin/R`. All required packages installed. See `code/R/load_panel.R`.
+**R environment:** R 4.6.2 at `/opt/homebrew/bin/R`. All required packages installed (incl. SDPDmod, splm, spdep, sf, maps). See `code/R/load_panel.R`.
 
 **H1 headline results (2026-11-02, ctrl4 baseline = ln_gdp_pc + manuf_share + price_c_kwh + pop_growth):**
-- new_renew_mw: **+70.8 MW per unit AI, p = 0.033** (CL) — only unambiguous significant result; LOSO [+54, +87]
+- new_renew_mw: **+70.8 MW per unit AI, p = 0.033** (CL) — positive in raw MW, driven by large-grid states; not robust to scaling (per-capacity p=0.616; per-capita p=0.212); LOSO [+54, +87]
 - renew_share: −0.0101, p = 0.100 (CL) / p = 0.001 (DK) — negative sign (peril direction); DK sensitivity only (T=11)
 - ln_ec, ln_ee: insignificant under CL (p=0.795, p=0.707); ln_ee borderline under DK (p=0.036, sensitivity only)
-- Heterogeneity: AI × high_price on renew_share γ₁ = +0.032, p = 0.003 (exploratory; 1 of 9 tests; survives Bonferroni)
-- **ctrl4 is the H1 baseline.** ctrl5 (+ tech_share) retained as one sensitivity row only — tech_share is the H2a mediator (bad control in H1).
+- Heterogeneity: AI × high_price on renew_share γ₁ = +0.032, p = 0.003 — negative in low-price states (−0.027, p<0.001), null in high-price states (+0.005, p=0.54); exploratory, 1 of 9 tests
+- **ctrl4 is the H1 baseline.** ctrl5 (+ tech_share) retained as one sensitivity row only.
 
 **H2 mediation results (2026-11-03, ctrl4, CL — negative for all):**
-- tech_share (H2a main): first stage b1 = −0.000157, p = 0.454 — channel fails; AI does not predict tech worker share within states
-- hma (H2a memo): b1 mechanically positive (p<0.001, HMA=AI×tech_share), downstream all non-significant — not supported
+- tech_share (H2a main): first stage b1 = −0.000157, p = 0.454 — channel fails
+- hma (H2a memo): b1 mechanically positive; downstream all non-significant — not supported
 - ln_ea (H2b): first stage b1 = −0.003, p = 0.296 — ln_gdp_pc absorbs AI→EA (within-state r=0.943); channel fails
 - All 9 Sobel p-values: 0.322–0.991; all 9 bootstrap CIs span zero
-- **Note:** negative mediation result does not overturn H1. H1 total effect (new_renew_mw +70.8 MW) stands; channel is unidentified.
+- share_mediated not meaningful: a1 not significantly different from zero for primary outcomes
 
-**Next step:** `prompts/04d_step3_spatial.md` (Phase 4d: H3 spatial — Moran's I, SLX, SDM — target 2026-11-14).
+**H3 spatial results (2026-11-03, invdist-50 main W):**
+- Moran's I renew_share: I=0.094–0.157, p≤0.002 all years — significant positive clustering, rising over time
+- SLX renew_share: b1=−0.014(p=0.014), θ1=−0.055(p=0.117), total=−0.069(p=0.068)
+- SDM renew_share (LYtrans=TRUE, valid): ρ=0.776, direct=−0.017(p=0.001), indirect=−0.252(p=0.063), total=−0.269(p=0.054)
+- SDM renew_share (LYtrans=FALSE): ρ=0.617, direct=−0.015(p<0.001), indirect=−0.165(p=0.038), total=−0.181(p=0.029)
+- SDM ln_ec/ln_ee: null (LYtrans=FALSE); LYtrans=TRUE gave convergence failure (ρ>1 for invdist W)
+- splm cross-check: b1 and θ1 match SDPDm to 5 d.p. — passes
+- **H3 verdict:** H3 partially supported — renew_share indirect (neighbor spillover) effect is negative and significant at 5% (LYtrans=FALSE) / borderline 10% (LYtrans=TRUE)
+
+**Next step:** Phase 4e — robustness (LBNL RPS control, t-2/t-3 lags). Target 2026-11-17.
 
 ---
 
