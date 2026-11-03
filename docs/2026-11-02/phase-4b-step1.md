@@ -63,7 +63,7 @@
 - **renew_share** is borderline CL (p=0.100) and negative (peril direction). DK is p=0.001 but **DK is sensitivity only** with T=11.
 - **ln_renew_mwh is negative (p=0.053, CL, borderline)** — more AI is associated with less renewable generation in MWh. hydro_share (p=0.490) and other_renew_share/geothermal+biomass (p=0.609) are both null. No renewable type shows a significant association.
 - **Nonlinearity retracted:** All 8 outcomes fail the proper Lind-Mehlum test (delta-method SE including cov(b₁,b₂), |t|>1.645 at both min and max). Do not cite turning-point estimates.
-- **Heterogeneity** (AI×high_price on renew_share, γ₁=+0.032, p=0.003) is exploratory — 1 of 9 tests, survives Bonferroni (0.05/9=0.0056), but the sign was not pre-specified.
+- **Heterogeneity** (AI×high_price on renew_share, γ₁=+0.032, p=0.003): negative in low-price states (−0.027, p<0.001), null in high-price states (+0.005, p=0.54). Exploratory; 1 of 9 tests; survives Bonferroni (0.05/9=0.0056). High-price states (n=25): AK, AZ, CA, CO, CT, DE, FL, **GA**, HI, KS, MA, MD, ME, MI, MS, NH, NJ, NM, NY, OH, PA, RI, SC, VT, WI. Low-price states (n=25): AL, AR, IA, ID, IL, IN, KY, LA, MN, MO, MT, NC, ND, NE, NV, OK, OR, SD, TN, TX, UT, VA, WA, WV, WY. Georgia is in the high-price group.
 - The **NAICS 518210 caveat** applies everywhere: AI variable measures all data processing and hosting, not AI compute specifically. Georgia's high rank likely reflects cloud hosting.
 
 ---
