@@ -22,8 +22,13 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 9 | H2b reports ln_ea mediation straightforwardly | Keep as memo version but include a caveat: EA is nearly redundant under state FE because land area is constant | Within-state EA variation = nonfarm GDP variation, which ln_gdp_pc and pop_growth already capture | **Adopted (caveat note)** |
 | 10 | No state EPU moderator | AI × EPU-S (Baker-Davis-Levy 2022) as a stretch moderator; mean-center before interacting | Fang et al. 2025 use EPU-S; confirms generalizability of AI-renewable link across political-economy conditions | **Stretch — blocked until EPU-S data downloaded** |
 | 11 | Georgia solar learning curve not in memo | Add Georgia solar cost projection to 2035 (Bolinger 2022 method); LR = 24% central; fan of 12/19/24/45% × 3 capacity paths | Answers "future of renewables" for Georgia case box; learning curves are correlations, not causal | **Adopted (Phase 4f)** |
+| 12 | Core H1 model: 4 controls (ln_gdp_pc, manuf_share, price_c_kwh, pop_growth) | Add tech_share (NAICS 5415 share of covered employment) as 5th control (ctrl5) | Tech-worker share is positively correlated with AI concentration and may independently affect energy outcomes; excluding it risks omitted-variable bias. Also run ctrl4 (memo version) side-by-side. Reproduce gate uses ctrl4 to match prelim.py | **Adopted** |
 
 ---
+
+### Winsorization clarification (Phase 4b, 2026-11-02)
+
+§1 specifies winsorize "outcomes (ln_ec, ln_ee, renew_share) and AI." load_panel.R extends this to all extras outcomes: solar_share, wind_share, new_renew_mw, co2_per_mwh_t, fossil_to_renew, seds_mmbtu_pc. This is an application of the same 1/99 pooled policy to the additional outcomes in §2 — consistent with the spirit of §1. **Adopted (extension).**
 
 ### Data-section confirmations (from Phase 2C, 2026-11-02)
 
@@ -125,7 +130,7 @@ $$Y_{it} = \alpha_1 \, \text{AI}_{i,t-1} + \alpha_2 \, \text{AI}_{i,t-1}^2 + \be
 **Method tags:** `nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_<outcome>_50s2015_2025`  
 **Status:** Added (replaces Hansen as main nonlinearity test) — **COMPLETE 2026-11-02**
 
-**Results (2026-11-02):** Most credible result: ln_ec inverted-U, TP = 2.75 (95% CI: 0.42–5.08), inside data range [0.26, 5.65], Lind-Mehlum opposite signs = YES, 25.5% of state-years past TP. solar_share TP = 3.30 (inside range, opposite signs). All other turning points either outside range or imprecise CIs.
+**Results (2026-11-02, updated with proper LM test):** Original sign-only LM check found opposite slopes at min/max for 4 outcomes. Proper delta-method LM test (slope b₁+2b₂·AI must be one-sided significant at both min and max of AI, SE includes cov(b₁,b₂), threshold |t|>1.645) run 2026-11-02 via `04b_step1_twfe_checks.R`: **all 8 outcomes FAIL**. b₂ p-values range 0.325–0.990. Previous inverted-U claims (ln_ec TP=2.75, solar_share TP=3.30) are not supported. **No statistically significant evidence of nonlinearity for any outcome.** Results in `lm_proper.csv`.
 
 ---
 

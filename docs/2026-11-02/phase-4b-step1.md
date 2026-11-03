@@ -11,6 +11,12 @@
 - All five reproduce-gate coefficients match `econ499r_starter/reference/prelim_step1_slx.csv` exactly (diff = 0.00000 for all).
 - Created `results/2026-11-02/h1/RECEIPT.md` documenting inputs, hashes, tags, N, and warnings.
 - Created `notebooks/04b_step1_twfe.ipynb` (ir kernel) with one section per experiment.
+- **Post-review checks (2026-11-02):** Created `code/R/04b_step1_twfe_checks.R` and ran additional checks:
+  - new_renew_mw robustness (scaled by 2015 capacity, 2015 pop, drop TX, LOSO)
+  - Generation channels (ln_renew_mwh, ln_fossil_mwh, ln_total_mwh)
+  - Proper Lind-Mehlum test replacing sign-only check (all 8 outcomes FAIL)
+  - Registered tech_share as divergence #12 in EXPERIMENTS.md
+  - New results in `h1_extras.csv` (appended) and `lm_proper.csv`
 
 ---
 
@@ -23,6 +29,8 @@
 **Dynamics:** QCEW 2012–2013 absent; t-2 and t-3 distributed lags were omitted. Only t-1 baseline and long-difference (ΔY 2015→2025 on ΔAI 2014→2024) run. Long-difference N = 46 (AK, ND, SD, WY dropped — suppressed 2025 AI counts).
 
 **DK SEs smaller than clustered:** Driscoll-Kraay SEs are ~4× smaller than state-clustered for renew_share and ln_ee. This is interpretable: after year FE removes common time shocks, cross-sectional correlation is low, so DK does not inflate the SE. Report both; baseline = clustered (more conservative).
+
+**DK is a sensitivity check only (T = 11):** With only 11 time periods, the Bartlett kernel in Driscoll-Kraay defaults to a lag window of ≈ 2, which is too short to fully capture serial correlation. DK results should not be cited as primary evidence. Every conclusion is based on clustered SEs (CRV1). The DK column is reported for completeness.
 
 ---
 
@@ -49,10 +57,12 @@
 
 ## 5. Follow-ups for Alexander
 
-- The only unambiguous significant result is **new_renew_mw** (b = +74.5 MW, p = 0.022, CL). This is the headline number for H1.
-- **renew_share** is borderline under clustered SEs (p = 0.103) and significant under DK (p = 0.001) — but the sign is **negative** (peril direction, not blessing).
-- The clearest H1 pattern is **heterogeneity**: high-electricity-price states show a significantly more positive AI–renewable share association (γ₁ = +0.032, p = 0.004). Worth emphasizing in the discussion.
-- The **NAICS 518210 caveat** applies everywhere: the AI variable measures all data processing and hosting, not AI compute specifically. Georgia's high rank (2nd nationally in 2025) likely reflects cloud hosting, not AI training.
+- **new_renew_mw** (+74.5 MW, p=0.022, CL) is the only unambiguous positive H1 result. LOSO range [+58, +91] all positive; drop-TX p=0.024. Stable.
+- **renew_share** is borderline CL (p=0.103) and negative (peril direction). DK is p=0.001 but **DK is sensitivity only** with T=11.
+- **ln_renew_mwh is negative (p=0.048, CL)** — more AI is associated with less renewable generation in MWh. Apparent contradiction with new_renew_mw; likely a timing mismatch (new capacity not yet generating) or composition effect.
+- **Nonlinearity retracted:** The inverted-U claimed for ln_ec fails the proper Lind-Mehlum test. All 8 outcomes fail. Do not cite turning-point estimates.
+- **Heterogeneity** (AI×high_price, γ₁=+0.032, p=0.004) is exploratory — 1 of 9 tests, survives Bonferroni, but the sign was not pre-specified.
+- The **NAICS 518210 caveat** applies everywhere: AI variable measures all data processing and hosting, not AI compute specifically. Georgia's high rank likely reflects cloud hosting.
 
 ---
 
