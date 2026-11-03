@@ -23,6 +23,7 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 10 | No state EPU moderator | AI × EPU-S (Baker-Davis-Levy 2022) as a stretch moderator; mean-center before interacting | Fang et al. 2025 use EPU-S; confirms generalizability of AI-renewable link across political-economy conditions | **Stretch — blocked until EPU-S data downloaded** |
 | 11 | Georgia solar learning curve not in memo | Add Georgia solar cost projection to 2035 (Bolinger 2022 method); LR = 24% central; fan of 12/19/24/45% × 3 capacity paths | Answers "future of renewables" for Georgia case box; learning curves are correlations, not causal | **Adopted (Phase 4f)** |
 | 12 | Core H1 model: 4 controls (ln_gdp_pc, manuf_share, price_c_kwh, pop_growth) | Add tech_share as 5th control (ctrl5) was considered but **rejected**: tech_share is the H2a mediator (Baron-Kenny M). Controlling for it in H1 removes the AI→tech_share→outcome pathway and a₁ no longer captures the total effect (bad control problem). Actual first-stage: tech_share on lagged AI b=−0.0165, p=0.43 — the claimed positive correlation does not hold. ctrl4 is the H1 baseline. ctrl5 retained as one labeled sensitivity row only. | **Rejected** |
+| 13 | H2a/H2b method tags used ctrl5 | Tags corrected to ctrl4 in 04c_step2_mediation.R and EXPERIMENTS.md §6/§7. ctrl4 = H1 baseline; using ctrl5 in mediation would be circular when M=tech_share and inconsistent across mediators. | **Adopted (Phase 4c, 2026-11-03)** |
 
 ---
 
@@ -200,12 +201,27 @@ $$Y_{it} = c'_1 \, \text{AI}_{i,t-1} + b_1 M_{it} + \beta X + \mu_i + \lambda_t 
 | Main | tech_share | NAICS 5415 / total covered employment |
 | Memo | hma | Built as AI × tech_share; first stage is mechanically positive — uninformative as falsification |
 
-**Indirect effect:** $\hat{a}_1 \hat{b}_1$ with Sobel test + cluster bootstrap (1,000 reps) for 95% CI.  
-**Outcomes:** renew_share (primary); ln_ec, ln_ee (secondary).  
-**Support rule:** $\hat{a}_1 \hat{b}_1 > 0$ for renew_share (AI → more tech workers → more renewables).  
-**Output path:** `results/<date>/h2a/`  
-**Method tags:** `h2a_med_ai518210_lag1_M-techshare_ctrl5_cl-state_<outcome>_50s2015_2025`  
-**Status:** Memo + change
+**Indirect effect:** $\hat{b}_1 \hat{e}_1$ with Sobel test + cluster bootstrap (999 reps, seed=42) for 95% CI.  
+**Outcomes:** ln_ec, ln_ee, renew_share.  
+**Support rule:** $\hat{b}_1 \hat{e}_1 > 0$ for renew_share (AI → more tech workers → more renewables).  
+**Output path:** `results/2026-11-03/h2/`  
+**Method tags:** `h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4; corrected from ctrl5 per §0 item 13)  
+**Status:** Memo + change — **COMPLETE 2026-11-03**
+
+**Results (2026-11-03, ctrl4, CL):**
+
+| Mediator | Outcome | b1 (AI→M) | p(b1) | e1 (M→Y) | p(e1) | Indirect | Sobel p | Boot 95% CI | Channel? |
+|---|---|---|---|---|---|---|---|---|---|
+| tech_share_c | ln_ec | −0.000157 | 0.454 | −3.872 | 0.285 | +0.000608 | 0.536 | [−0.0020, +0.0032] | **No** |
+| tech_share_c | ln_ee | −0.000157 | 0.454 | +6.006 | 0.145 | −0.000943 | 0.501 | [−0.0044, +0.0025] | **No** |
+| tech_share_c | renew_share | −0.000157 | 0.454 | −1.179 | 0.816 | +0.000185 | 0.823 | [−0.0019, +0.0044] | **No** |
+| hma | ln_ec | +0.042 | <0.001* | −0.001 | 0.991 | −0.000059 | 0.991 | [−0.0104, +0.0124] | **No** |
+| hma | ln_ee | +0.042 | <0.001* | +0.124 | 0.524 | +0.005184 | 0.522 | [−0.0104, +0.0219] | **No** |
+| hma | renew_share | +0.042 | <0.001* | −0.135 | 0.412 | −0.005613 | 0.409 | [−0.0217, +0.0066] | **No** |
+
+*hma b1>0 is mechanical (HMA = AI × tech_share). First stage uninformative.  
+tech_share mean-centered (grand mean = 0.01272 subtracted).  
+**No H2a channel holds.** tech_share first stage fails (p=0.454). HMA downstream fails despite mechanical b1.
 
 ---
 
@@ -215,10 +231,18 @@ $$Y_{it} = c'_1 \, \text{AI}_{i,t-1} + b_1 M_{it} + \beta X + \mu_i + \lambda_t 
 
 Same three-step structure as §6 with M = ln_ea.
 
-**Caveat (§0 item 9):** ln_ea is nearly redundant under state FE because land_sqmi is constant within states; within-state variation in EA is entirely driven by nonfarm GDP growth, which ln_gdp_pc and pop_growth already capture. Report as the memo version; note this caveat.  
-**Output path:** `results/<date>/h2b/`  
-**Method tags:** `h2b_med_ai518210_lag1_M-lnea_ctrl5_cl-state_<outcome>_50s2015_2025`  
-**Status:** Memo (with redundancy caveat)
+**Caveat (§0 item 9):** ln_ea is nearly redundant under state FE because land_sqmi is constant within states; within-state variation in EA is entirely driven by nonfarm GDP growth, which ln_gdp_pc and pop_growth already capture. **Confirmed 2026-11-03: within-state cor(ln_ea, ln_gdp_pc) = 0.943.**  
+**Output path:** `results/2026-11-03/h2/`  
+**Method tags:** `h2b_med_ai518210_lag1_M-lnea_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4; corrected from ctrl5 per §0 item 13)  
+**Status:** Memo (with redundancy caveat) — **COMPLETE 2026-11-03**
+
+**Results (2026-11-03, ctrl4, CL):** b1 = −0.003362, p = 0.296 for all outcomes (single first-stage equation). Channel fails at first stage for all three outcomes. ln_gdp_pc absorbs AI→EA pathway (r=0.943 within state). Downstream (eq-b, eq-c) significant for ln_ec and ln_ee but irrelevant given broken first stage.
+
+| Outcome | b1 (AI→ln_ea) | p(b1) | e1 (ln_ea→Y) | p(e1) | Indirect | Sobel p | Boot 95% CI | Channel? |
+|---|---|---|---|---|---|---|---|---|
+| ln_ec | −0.003362 | 0.296 | −0.333 | 0.018 | +0.001120 | 0.332 | [−0.0008, +0.0051] | **No** |
+| ln_ee | −0.003362 | 0.296 | +0.403 | 0.006 | −0.001355 | 0.322 | [−0.0058, +0.0010] | **No** |
+| renew_share | −0.003362 | 0.296 | −0.254 | 0.240 | +0.000855 | 0.430 | [−0.0009, +0.0050] | **No** |
 
 ---
 

@@ -70,15 +70,16 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 ---
 
-## §5 Project state (as of 2026-11-02)
+## §5 Project state (as of 2026-11-03)
 
-**Phase 4b complete.** H1 TWFE, extras, nonlinearity, heterogeneity, dynamics, and Georgia descriptive all run. Reproduce gate passes.
+**Phase 4c complete.** H2a/H2b mediation run for tech_share (main), hma (memo), and ln_ea. No channel holds.
 
 - Phase 2A (audit): done — `data/DATA_AUDIT.md`, `docs/2026-11-01/phase-2a-data-audit.md`
 - Phase 2B (build): done — `data/out/state_panel_2015_2025.csv` (561×80), workbook, receipts
 - Phase 2C (validate): done — `data/DATA_VALIDATION.md`, `logs/2026-11-02/build/validation/`
 - Phase 4a (spec + env): done — `EXPERIMENTS.md`, `code/R/load_panel.R`, `docs/2026-11-02/phase-4a-methods-spec.md`
 - Phase 4b (TWFE): done — `code/R/04b_step1_twfe.R`, `notebooks/04b_step1_twfe.ipynb`, `results/2026-11-02/h1/`, `docs/2026-11-02/phase-4b-step1.md`
+- Phase 4c (mediation): done — `code/R/04c_step2_mediation.R`, `notebooks/04c_step2_mediation.ipynb`, `results/2026-11-03/h2/`, `docs/2026-11-03/phase-4c-step2.md`
 
 **Validation verdict:** 0 red, 3 yellow (co2_per_mwh_t, seds_mmbtu_pc, hma — 2025 gaps only), 17 green.
 
@@ -91,7 +92,14 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - Heterogeneity: AI × high_price on renew_share γ₁ = +0.032, p = 0.003 (exploratory; 1 of 9 tests; survives Bonferroni)
 - **ctrl4 is the H1 baseline.** ctrl5 (+ tech_share) retained as one sensitivity row only — tech_share is the H2a mediator (bad control in H1).
 
-**Next step:** `prompts/04c_step2_mediation.md` (Phase 4c: H2a/H2b mediation — target 2026-11-11).
+**H2 mediation results (2026-11-03, ctrl4, CL — negative for all):**
+- tech_share (H2a main): first stage b1 = −0.000157, p = 0.454 — channel fails; AI does not predict tech worker share within states
+- hma (H2a memo): b1 mechanically positive (p<0.001, HMA=AI×tech_share), downstream all non-significant — not supported
+- ln_ea (H2b): first stage b1 = −0.003, p = 0.296 — ln_gdp_pc absorbs AI→EA (within-state r=0.943); channel fails
+- All 9 Sobel p-values: 0.322–0.991; all 9 bootstrap CIs span zero
+- **Note:** negative mediation result does not overturn H1. H1 total effect (new_renew_mw +70.8 MW) stands; channel is unidentified.
+
+**Next step:** `prompts/04d_step3_spatial.md` (Phase 4d: H3 spatial — Moran's I, SLX, SDM — target 2026-11-14).
 
 ---
 
