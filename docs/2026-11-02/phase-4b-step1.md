@@ -59,9 +59,9 @@
 
 **Baseline spec: ctrl4 = ln_gdp_pc + manuf_share + price_c_kwh + pop_growth.** tech_share was removed from H1 controls — it is the H2a mediator (bad control problem). ctrl5 retained as one labeled sensitivity row only.
 
-- **new_renew_mw** (+70.8 MW, p=0.033, CL) is the only unambiguous positive H1 result. LOSO range [+54, +87] all positive (min: drop NC; max: drop RI); drop-TX p=0.026. Stable.
+- **new_renew_mw** (+70.8 MW, p=0.033, CL) is the only significant H1 result. **Positive in raw MW, driven by large-grid states; not robust to scaling** (per-capacity p=0.616; per-capita p=0.212). LOSO range [+54, +87] all positive; drop-TX p=0.026.
 - **renew_share** is borderline CL (p=0.100) and negative (peril direction). DK is p=0.001 but **DK is sensitivity only** with T=11.
-- **ln_renew_mwh is negative (p=0.053, CL, borderline)** — more AI is associated with less renewable generation in MWh. Apparent contradiction with new_renew_mw; likely a timing mismatch (new capacity not yet generating) or composition effect.
+- **ln_renew_mwh is negative (p=0.053, CL, borderline)** — more AI is associated with less renewable generation in MWh. hydro_share (p=0.490) and other_renew_share/geothermal+biomass (p=0.609) are both null. No renewable type shows a significant association.
 - **Nonlinearity retracted:** All 8 outcomes fail the proper Lind-Mehlum test (delta-method SE including cov(b₁,b₂), |t|>1.645 at both min and max). Do not cite turning-point estimates.
 - **Heterogeneity** (AI×high_price on renew_share, γ₁=+0.032, p=0.003) is exploratory — 1 of 9 tests, survives Bonferroni (0.05/9=0.0056), but the sign was not pre-specified.
 - The **NAICS 518210 caveat** applies everywhere: AI variable measures all data processing and hosting, not AI compute specifically. Georgia's high rank likely reflects cloud hosting.

@@ -53,6 +53,8 @@
 - **tech_share (main H2a):** First stage fails (b1 p=0.454). AI does not predict tech worker share within states after FE.
 - **hma (memo):** First stage mechanically passes (b1 p<0.001) but downstream (c1, e1) all non-significant. The memo channel is not supported.
 - **ln_ea (H2b):** First stage fails (b1 p=0.296). ln_gdp_pc already absorbs the AI→EA path (r=0.943 within state). Downstream is significant for ln_ec and ln_ee but the broken first stage blocks the channel.
+- **share_mediated = b1·e1/a1 is not meaningful**: a1 is not significantly different from zero for the primary outcomes (renew_share p=0.100, ln_ec p=0.795, ln_ee p=0.707 under clustered SEs). Do not interpret share_mediated ratios.
+- **new_renew_mw context**: the only H1 result that reaches significance (new_renew_mw, p=0.033) is **positive in raw MW, driven by large-grid states; not robust to scaling** (per-capacity p=0.616; per-capita p=0.212). There is no unambiguous total effect to decompose via mediation.
 
 ---
 

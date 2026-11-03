@@ -1,0 +1,4 @@
+outcome,moderator,group,hp_value,hp_c_value,mean_hp,estimate,se,tstat,pval,df,vcov_type,controls,N,status
+renew_share,high_price_2015,low_price,0,-0.5,0.5,-0.0270013849650304,0.00710416876816025,-3.80078033703905,0.000399553340303018,49,CRV1-state,ctrl4,550,ok
+renew_share,high_price_2015,high_price,1,0.5,0.5,0.00463290989249677,0.00744165596066067,0.622564375051472,0.536457482143578,49,CRV1-state,ctrl4,550,ok
+renew_share,high_price_2015,interaction,,,0.5,0.0316342948575272,0.010264346970094,3.08195883768312,0.00337085623626996,,CRV1-state,ctrl4,550,ok
