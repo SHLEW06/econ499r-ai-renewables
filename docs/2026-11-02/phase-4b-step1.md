@@ -15,8 +15,8 @@
   - new_renew_mw robustness (scaled by 2015 capacity, 2015 pop, drop TX, LOSO)
   - Generation channels (ln_renew_mwh, ln_fossil_mwh, ln_total_mwh)
   - Proper Lind-Mehlum test replacing sign-only check (all 8 outcomes FAIL)
-  - Registered tech_share as divergence #12 in EXPERIMENTS.md
   - New results in `h1_extras.csv` (appended) and `lm_proper.csv`
+- **ctrl4 rerun (2026-11-02):** Created and ran `code/R/04b_step1_twfe_ctrl4.R`. tech_share rejected as H1 control (H2a mediator — bad control problem). ctrl4 is now the H1 baseline for all experiments. Appended ctrl4-tagged rows to all result CSVs; ctrl5 rows retained as one labeled sensitivity row. EXPERIMENTS.md divergence #12 rewritten as Rejected. Rebuilt `h1_coef_plot_ctrl4.pdf/.png`.
 
 ---
 
@@ -57,11 +57,13 @@
 
 ## 5. Follow-ups for Alexander
 
-- **new_renew_mw** (+74.5 MW, p=0.022, CL) is the only unambiguous positive H1 result. LOSO range [+58, +91] all positive; drop-TX p=0.024. Stable.
-- **renew_share** is borderline CL (p=0.103) and negative (peril direction). DK is p=0.001 but **DK is sensitivity only** with T=11.
-- **ln_renew_mwh is negative (p=0.048, CL)** — more AI is associated with less renewable generation in MWh. Apparent contradiction with new_renew_mw; likely a timing mismatch (new capacity not yet generating) or composition effect.
-- **Nonlinearity retracted:** The inverted-U claimed for ln_ec fails the proper Lind-Mehlum test. All 8 outcomes fail. Do not cite turning-point estimates.
-- **Heterogeneity** (AI×high_price, γ₁=+0.032, p=0.004) is exploratory — 1 of 9 tests, survives Bonferroni, but the sign was not pre-specified.
+**Baseline spec: ctrl4 = ln_gdp_pc + manuf_share + price_c_kwh + pop_growth.** tech_share was removed from H1 controls — it is the H2a mediator (bad control problem). ctrl5 retained as one labeled sensitivity row only.
+
+- **new_renew_mw** (+70.8 MW, p=0.033, CL) is the only unambiguous positive H1 result. LOSO range [+54, +87] all positive (min: drop NC; max: drop RI); drop-TX p=0.026. Stable.
+- **renew_share** is borderline CL (p=0.100) and negative (peril direction). DK is p=0.001 but **DK is sensitivity only** with T=11.
+- **ln_renew_mwh is negative (p=0.053, CL, borderline)** — more AI is associated with less renewable generation in MWh. Apparent contradiction with new_renew_mw; likely a timing mismatch (new capacity not yet generating) or composition effect.
+- **Nonlinearity retracted:** All 8 outcomes fail the proper Lind-Mehlum test (delta-method SE including cov(b₁,b₂), |t|>1.645 at both min and max). Do not cite turning-point estimates.
+- **Heterogeneity** (AI×high_price on renew_share, γ₁=+0.032, p=0.003) is exploratory — 1 of 9 tests, survives Bonferroni (0.05/9=0.0056), but the sign was not pre-specified.
 - The **NAICS 518210 caveat** applies everywhere: AI variable measures all data processing and hosting, not AI compute specifically. Georgia's high rank likely reflects cloud hosting.
 
 ---

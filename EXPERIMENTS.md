@@ -22,7 +22,7 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 9 | H2b reports ln_ea mediation straightforwardly | Keep as memo version but include a caveat: EA is nearly redundant under state FE because land area is constant | Within-state EA variation = nonfarm GDP variation, which ln_gdp_pc and pop_growth already capture | **Adopted (caveat note)** |
 | 10 | No state EPU moderator | AI × EPU-S (Baker-Davis-Levy 2022) as a stretch moderator; mean-center before interacting | Fang et al. 2025 use EPU-S; confirms generalizability of AI-renewable link across political-economy conditions | **Stretch — blocked until EPU-S data downloaded** |
 | 11 | Georgia solar learning curve not in memo | Add Georgia solar cost projection to 2035 (Bolinger 2022 method); LR = 24% central; fan of 12/19/24/45% × 3 capacity paths | Answers "future of renewables" for Georgia case box; learning curves are correlations, not causal | **Adopted (Phase 4f)** |
-| 12 | Core H1 model: 4 controls (ln_gdp_pc, manuf_share, price_c_kwh, pop_growth) | Add tech_share (NAICS 5415 share of covered employment) as 5th control (ctrl5) | Tech-worker share is positively correlated with AI concentration and may independently affect energy outcomes; excluding it risks omitted-variable bias. Also run ctrl4 (memo version) side-by-side. Reproduce gate uses ctrl4 to match prelim.py | **Adopted** |
+| 12 | Core H1 model: 4 controls (ln_gdp_pc, manuf_share, price_c_kwh, pop_growth) | Add tech_share as 5th control (ctrl5) was considered but **rejected**: tech_share is the H2a mediator (Baron-Kenny M). Controlling for it in H1 removes the AI→tech_share→outcome pathway and a₁ no longer captures the total effect (bad control problem). Actual first-stage: tech_share on lagged AI b=−0.0165, p=0.43 — the claimed positive correlation does not hold. ctrl4 is the H1 baseline. ctrl5 retained as one labeled sensitivity row only. | **Rejected** |
 
 ---
 
@@ -55,7 +55,7 @@ $$Y_{it} = \alpha_1 \, \text{AI}_{i,t-1} + \beta X_{it} + \mu_i + \lambda_t + \v
 |---|---|
 | $Y_{it}$ | ln_ec, ln_ee, renew_share (separate regressions) |
 | $\text{AI}_{i,t-1}$ | ai_dc_per1000_lag1 |
-| $X_{it}$ | ln_gdp_pc, price_c_kwh, tech_share, manuf_share, pop_growth |
+| $X_{it}$ | ln_gdp_pc, manuf_share, price_c_kwh, pop_growth (ctrl4 — baseline) |
 | $\mu_i$ | state FE |
 | $\lambda_t$ | year FE |
 
@@ -66,16 +66,18 @@ $$Y_{it} = \alpha_1 \, \text{AI}_{i,t-1} + \beta X_{it} + \mu_i + \lambda_t + \v
 **Price control variant:** run with and without price_c_kwh; report two columns.  
 **Support rule:** $\hat{\alpha}_1 > 0$ for renew_share (AI raises renewable share). For ln_ec, sign could go either way; for ln_ee, explain that efficiency can rise or fall depending on whether GDP growth outpaces the load increase from data centers.  
 **Output path:** `results/<date>/h1_core/`  
-**Method tags:** `h1_twfe_ai518210_lag1_ctrl5_w9901_cl-state_<outcome>_50s2015_2025`  
+**Method tags:** `h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4 = baseline); ctrl5 retained as one labeled sensitivity row.  
 **Status:** Memo (adapted) — **COMPLETE 2026-11-02**
 
-**Results (2026-11-02, ctrl5, CL):**
+**Results (2026-11-02, ctrl4, CL — baseline):**
 
 | Outcome | b | SE | p (CL) | p (DK) | N | Verdict |
 |---|---|---|---|---|---|---|
-| ln_ec | −0.0022 | 0.0057 | 0.704 | 0.172 | 550 | Does not support H1 |
-| ln_ee | +0.0031 | 0.0055 | 0.567 | **0.028** | 550 | Does not support under CL; supports under DK |
-| renew_share | −0.0103 | 0.0062 | 0.103 | **0.001** | 550 | Negative (peril direction); borderline CL, significant DK |
+| ln_ec | −0.0016 | 0.0060 | 0.795 | 0.246 | 550 | Does not support H1 |
+| ln_ee | +0.0022 | 0.0058 | 0.707 | **0.036** | 550 | Does not support under CL; supports under DK (sensitivity only, T=11) |
+| renew_share | −0.0101 | 0.0061 | 0.100 | **0.001** | 550 | Negative (peril direction); borderline CL, significant DK (sensitivity only) |
+
+DK results are sensitivity checks only — with T=11, Bartlett lag ≈ 2, too short to fully capture serial correlation.
 
 ---
 
@@ -95,19 +97,19 @@ Same equation as §1 with additional outcomes.
 
 **SEs:** clustered by state + Driscoll-Kraay.  
 **Output path:** `results/<date>/h1_extras/`  
-**Method tags:** `h1x_twfe_ai518210_lag1_ctrl5_w9901_cl-state_<outcome>_50s2015_2025`  
+**Method tags:** `h1x_twfe_ai518210_lag1_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4 = baseline).  
 **Status:** Added — **COMPLETE 2026-11-02**
 
-**Results (2026-11-02, ctrl5, CL):**
+**Results (2026-11-02, ctrl4, CL — baseline):**
 
 | Outcome | b | SE | p | Verdict |
 |---|---|---|---|---|
-| new_renew_mw | **+74.5 MW** | 31.5 | **0.022** | **Supports H1 — only unambiguous significant result** |
-| solar_share | +0.0002 | 0.0029 | 0.955 | Null |
-| wind_share | −0.0085 | 0.0069 | 0.222 | Null |
-| fossil_to_renew | +0.952 | 0.585 | 0.110 | Wrong sign; does not support H1 |
-| coal_share | +0.0019 | 0.0076 | 0.808 | Null — falsification passes |
-| co2_per_mwh_t | +0.0022 | 0.0063 | 0.731 | Null |
+| new_renew_mw | **+70.8 MW** | 32.3 | **0.033** | **Supports H1 — only unambiguous significant result** |
+| solar_share | −0.0001 | 0.0030 | 0.984 | Null |
+| wind_share | −0.0084 | 0.0067 | 0.213 | Null |
+| fossil_to_renew | +0.997 | 0.619 | 0.114 | Wrong sign; does not support H1 |
+| coal_share | +0.0020 | 0.0075 | 0.793 | Null — falsification passes |
+| co2_per_mwh_t | +0.0025 | 0.0061 | 0.689 | Null |
 
 ---
 
@@ -127,10 +129,10 @@ $$Y_{it} = \alpha_1 \, \text{AI}_{i,t-1} + \alpha_2 \, \text{AI}_{i,t-1}^2 + \be
 **Lind-Mehlum test:** for an interior extremum.  
 **Sample, FE, SEs:** same as §1.  
 **Output path:** `results/<date>/nonlin/`  
-**Method tags:** `nonlin_twfe_ai518210sq_lag1_ctrl5_w9901_cl-state_<outcome>_50s2015_2025`  
+**Method tags:** `nonlin_twfe_ai518210sq_lag1_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4 = baseline).  
 **Status:** Added (replaces Hansen as main nonlinearity test) — **COMPLETE 2026-11-02**
 
-**Results (2026-11-02, updated with proper LM test):** Original sign-only LM check found opposite slopes at min/max for 4 outcomes. Proper delta-method LM test (slope b₁+2b₂·AI must be one-sided significant at both min and max of AI, SE includes cov(b₁,b₂), threshold |t|>1.645) run 2026-11-02 via `04b_step1_twfe_checks.R`: **all 8 outcomes FAIL**. b₂ p-values range 0.325–0.990. Previous inverted-U claims (ln_ec TP=2.75, solar_share TP=3.30) are not supported. **No statistically significant evidence of nonlinearity for any outcome.** Results in `lm_proper.csv`.
+**Results (2026-11-02, ctrl4, proper LM test):** Proper delta-method LM test (slope b₁+2b₂·AI must be one-sided significant at both min and max of AI, SE includes cov(b₁,b₂), threshold |t|>1.645) run for all 8 outcomes: **all 8 FAIL**. b₂ p-values range 0.234–0.864. Example: ln_ec b₂=−0.003 (p=0.364), t at min=+0.84, t at max=−0.91 — neither clears 1.645. **No statistically significant evidence of nonlinearity for any outcome.** Results in `lm_proper.csv` (ctrl4 rows).
 
 ---
 
@@ -150,10 +152,10 @@ $$Y_{it} = \alpha_1 \, \text{AI}_{i,t-1} + \gamma_1 (\text{AI}_{i,t-1} \times D_
 **Note:** Mean-center AI and $D_i$ before interacting (done in load_panel.R).  
 **Outcomes:** renew_share, ln_ec, ln_ee.  
 **Output path:** `results/<date>/het/`  
-**Method tags:** `het_twfe_ai518210_lag1_<mod>_ctrl5_w9901_cl-state_<outcome>_50s2015_2025`  
+**Method tags:** `het_twfe_ai518210_lag1_<mod>_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4 = baseline).  
 **Status:** Added (from Fang et al. 2025, done better) — **COMPLETE 2026-11-02**
 
-**Results (2026-11-02, renew_share):** AI × high_price_2015: γ₁ = +0.032, p = **0.004** — significant. High-price states show more positive AI–renewable association. AI × net_exporter_2015: γ₁ = −0.019, p = 0.094 — borderline. AI × south: γ₁ = +0.0002, p = 0.984 — null.
+**Results (2026-11-02, ctrl4, renew_share):** AI × high_price_2015: γ₁ = +0.032, p = **0.003** — significant. High-price states show more positive AI–renewable association. AI × net_exporter_2015: γ₁ = −0.019, p = 0.091 — borderline. AI × south: γ₁ ≈ 0, p = 0.992 — null. Exploratory: 9 tests total (3 moderators × 3 outcomes); AI×high_price survives Bonferroni (0.05/9 = 0.0056). Sign was not pre-specified.
 
 ---
 
@@ -175,10 +177,10 @@ $$Y_{it} = \sum_{k=1}^{K} \alpha_k \, \text{AI}_{i,t-k} + \beta X_{it} + \mu_i +
 **Sample:** 50 states; t−2 sample = 2017–2025; t−3 sample = 2018–2025.  
 **Note:** Skip t−3 if 2012 QCEW not available.  
 **Output path:** `results/<date>/dyn/`  
-**Method tags:** `dyn_twfe_ai518210_lag<k>_ctrl5_w9901_cl-state_<outcome>_50s2015_2025`  
+**Method tags:** `dyn_twfe_ai518210_lag<k>_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4 = baseline). Long-diff controls: dAI + dlngdp + dprice + dmanuf + dpop (no dtech — tech_share is mediator, omitted per ctrl4 spec).  
 **Status:** Added — **PARTIAL COMPLETE 2026-11-02** (t-1 only + long difference; t-2/t-3 blocked — QCEW 2012–2013 absent)
 
-**Results (2026-11-02):** Long-difference results all insignificant (N = 46; AK, ND, SD, WY dropped). ΔAI (2014→2024) has no detectable association with ΔY (2015→2025). Consistent with small within-state AI variation (SD ≈ 0.57).
+**Results (2026-11-02, ctrl4):** Long-difference results all insignificant (N = 46; AK, ND, SD, WY dropped). renew_share: b=−0.017, p=0.163. ln_ec: b=−0.009, p=0.342. ln_ee: b=+0.008, p=0.406. ΔAI (2014→2024) has no detectable association with ΔY (2015→2025). Consistent with small within-state AI variation (SD ≈ 0.57).
 
 ---
 

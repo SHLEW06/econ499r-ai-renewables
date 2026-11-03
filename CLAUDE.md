@@ -84,11 +84,12 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 **R environment:** R 4.6.2 at `/opt/homebrew/bin/R`. All required packages installed. See `code/R/load_panel.R`.
 
-**H1 headline results (2026-11-02):**
-- new_renew_mw: **+74.5 MW per unit AI, p = 0.022** (CL) — only unambiguous significant result
-- renew_share: −0.0103, p = 0.103 (CL) / p = 0.001 (DK) — negative sign (peril direction)
-- ln_ec, ln_ee: insignificant under CL; ln_ee significant under DK (p = 0.028)
-- Heterogeneity: AI × high_price on renew_share γ₁ = +0.032, p = 0.004
+**H1 headline results (2026-11-02, ctrl4 baseline = ln_gdp_pc + manuf_share + price_c_kwh + pop_growth):**
+- new_renew_mw: **+70.8 MW per unit AI, p = 0.033** (CL) — only unambiguous significant result; LOSO [+54, +87]
+- renew_share: −0.0101, p = 0.100 (CL) / p = 0.001 (DK) — negative sign (peril direction); DK sensitivity only (T=11)
+- ln_ec, ln_ee: insignificant under CL (p=0.795, p=0.707); ln_ee borderline under DK (p=0.036, sensitivity only)
+- Heterogeneity: AI × high_price on renew_share γ₁ = +0.032, p = 0.003 (exploratory; 1 of 9 tests; survives Bonferroni)
+- **ctrl4 is the H1 baseline.** ctrl5 (+ tech_share) retained as one sensitivity row only — tech_share is the H2a mediator (bad control in H1).
 
 **Next step:** `prompts/04c_step2_mediation.md` (Phase 4c: H2a/H2b mediation — target 2026-11-11).
 
