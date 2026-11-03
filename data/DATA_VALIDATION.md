@@ -81,6 +81,34 @@ The EIA state generation file covers utility-scale generation. Rooftop solar (re
 
 ---
 
+## C.1b Full panel rebuild comparison (added 2026-11-02)
+
+**Procedure:** `build_panel.py data/raw /tmp/panel_rebuild_test` was run from the project root, outputting to a temp directory (never touching `data/out`). The rebuilt panel was then compared cell-by-cell with `data/out/state_panel_2015_2025.csv`.
+
+**Scope:**
+- 78 shared non-key columns (all columns except `state` and `year`)
+- 561 rows (51 states × 11 years)
+- **Total cells compared: 43,758**
+
+**Result: ZERO differences.** Every numeric value in every shared column matched exactly (tolerance 1e-6) or was NaN in both panels simultaneously. The rebuild produces a bit-for-bit identical panel from the same raw files.
+
+**Prelim means by year (`econ499r_starter/reference/prelim_means_by_year.csv`):**
+
+| Variable | Max abs diff (all 11 years) | Note |
+|---|---|---|
+| renew_share | 0.000493 | Reference rounds to 3 dp |
+| solar_share | 0.000480 | Reference rounds to 3 dp |
+| sales_mwh_pc | 0.000457 | Reference rounds to 3 dp |
+| ee_usd_per_mwh | 0.000469 | Reference rounds to 3 dp |
+| ai_dc_per1000 | 0.000475 | Reference rounds to 3 dp |
+| price_c_kwh | 0.000424 | Reference rounds to 3 dp |
+
+All 6 variables across all 11 years match within 0.001 — consistent with the reference file rounding to 3 decimal places. **PASS.**
+
+**`data/out/prelim_step1_slx.csv` vs `econ499r_starter/reference/prelim_step1_slx.csv`:** Files are identical (confirmed by diff). **PASS.**
+
+---
+
 ## C.2 Right numbers
 
 ### EIA generation internal consistency
@@ -289,9 +317,10 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 ## Summary
 
 - **Definitions:** 21 checked, 21 PASS. 4 explicit decisions documented (D22–D25): real vs. nominal GDP, private-only AI numerator, Other Gases in fossil, utility-scale-only renewable.
+- **Full rebuild comparison (C.1b, added 2026-11-02):** build_panel.py rerun to /tmp; 43,758 cells (78 columns × 561 rows) compared — **zero differences**. Prelim means by year all match within 0.001 (rounding). prelim_step1_slx.csv files identical.
 - **Numbers:** 5 programmatic checks all PASS. 5 published-figure comparisons all PASS (prices within 0.004 c/kWh; totals within 0.613%).
 - **Reproduce:** 12 Georgia spot checks exact (0.0000 diff). 4 top-AI states exact.
 - **Trace:** 25 cells fully traced from raw files.
 - **Plausibility:** All key checks PASS. 200 big-jump flags all explained (solar/wind from zero; 5 AI fluctuations reviewed individually).
 - **Vintage:** All sources documented. Only EIA 2025 solar has material revision risk; rebuild is trivial.
-- **Verdict: 0 red, 3 yellow (CO2, SEDS, HMA — known gaps, not blocking), 17 green. Phase 4a may proceed.**
+- **Verdict: 0 red, 3 yellow (CO2, SEDS, HMA — known gaps, not blocking), 17 green. Phase 4b may proceed.**
