@@ -14,3 +14,13 @@ Started 2026-11-04. Resume from the first section not marked done.
 | 7. Project summary | done | 2f2b7ce | 73 numbers match; 3 published figures cited |
 | 8. GitHub package | done | 441ee25 | 320 files, 16.5 MB; scans clean; one commit, no remote |
 | 9. Results and data package + PDF | | | |
+
+## Flags from sections 6-9
+
+- **Report and summary numbers:** every number in the text is traced to a tag: `results/2026-11-04/paper/number_check_summary.csv`, `number_check_report.csv`. A published figure is listed with its location.
+- **SLX with lead and lag together:** neighbors' past AI is significant for ln_ec (inverse distance and border) and, on border weights, for ln_ee. The SDM versions have CIs that include zero. Stated in the report's H3 section. `findings.md` doesn't mention it; the team should decide whether the paper does.
+- **`fig_h1_coefficients.png`:** MW and share outcomes share one axis, so the MW row squashes the others. Left out of the report; the spec curve shows them panel by panel. Replace it before using it in the paper.
+- **Notebooks 04a-04c:** they were not executed until this run. They now are, with relative paths; 04b carries the later readings at the top.
+- **NOAA:** NCEI answered a read-only link check on Nov 4, after timing out earlier that day. Nothing was downloaded; the team's decision stands unless it changes it.
+- **Workbook location in the team package:** `outputs/` inside the folder, so its receipt links keep working.
+

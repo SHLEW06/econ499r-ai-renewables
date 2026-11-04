@@ -127,7 +127,9 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 **Data corrections (2026-11-04):** `dc_wages_usd` is blank where suppressed (only change in the panel; SDM and other results stand). D23, receipts and C.6 corrected. See `data/receipts/README.md`.
 
-**Next step:** see `docs/2026-11-04/finish-run-log.md` (`prompts/06_finish.md`). The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Target 2026-11-17. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
+**Finish run complete (2026-11-04; `docs/2026-11-04/finish-run-log.md`):** results pack, master workbook (`outputs/ECON499R_Master_Data_2026-11-04.xlsx`, Variable Finder from `data/variable_registry.csv`), project summary, results report (`outputs/ECON499R_Results_2026-11-04.pdf`), clean GitHub copy (`release/github/`; not pushed; see `CHECKLIST.md`) and team package (`release/results_and_data_2026-11-04.zip`). The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Full-sample t-3 lags are dropped (`EXPERIMENTS.md` §0 item 14).
+
+**Next step:** team review for Nov 17; download the Q1-Q4 2024 large-load reports by browser; draft by Nov 24.
 
 ---
 
