@@ -1,0 +1,60 @@
+number,document,source_file,source_tag,column,in_document,match
+550,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,N,yes,yes
+-0.0016,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,estimate,yes,yes
+0.795,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,pval,yes,yes
+0.0022,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,estimate,yes,yes
+0.707,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,pval,yes,yes
+-0.0101,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,estimate,yes,yes
+0.100,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,pval,yes,yes
+70.8,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025,estimate,yes,yes
+0.033,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025,pval,yes,yes
+1.00,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_rob_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_per1000mw_50s2015_2025,estimate,yes,yes
+0.616,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_rob_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_per1000mw_50s2015_2025,pval,yes,yes
+-0.0197,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,estimate,yes,yes
+0.006,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,pval,yes,yes
+-0.0210,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lead_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,estimate,yes,yes
+0.007,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lead_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,pval,yes,yes
+0.0015,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lag_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,estimate,yes,yes
+0.827,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lag_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,pval,yes,yes
+86.8,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,estimate,yes,yes
+0.028,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,pval,yes,yes
+2.81,findings.md,results/2026-11-04/stretch/stretch.csv,stretch_iv_base2015_ai518210_lag1_ctrl4_w9901_cl-state_first_stage_50s2015_2025_KP_F,estimate,yes,yes
+0.5212,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,sd_ai,yes,yes
+-0.71,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,ci_lo_per_sd,yes,yes
+0.54,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,ci_hi_per_sd,yes,yes
+-0.50,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,ci_lo_per_sd,yes,yes
+0.73,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,ci_hi_per_sd,yes,yes
+-1.16,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,ci_lo_per_sd,yes,yes
+0.11,findings.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,ci_hi_per_sd,yes,yes
+-0.000157,findings.md,results/2026-11-03/h2/h2_results.csv,h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_renew_share_50s2015_2025_eq-a,estimate,yes,yes
+0.454,findings.md,results/2026-11-03/h2/h2_results.csv,h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_renew_share_50s2015_2025_eq-a,pval,yes,yes
+0.322,findings.md,results/2026-11-04/paper/tables/mediation_summary.csv,h2_sobel_summary,min_p,yes,yes
+0.991,findings.md,results/2026-11-04/paper/tables/mediation_summary.csv,h2_sobel_summary,max_p,yes,yes
+-0.161,findings.md,results/2026-11-03/h3_mainspec/sdm_impacts.csv,h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50,plugin,yes,yes
+0.035,findings.md,results/2026-11-03/h3_mainspec/sdm_impacts.csv,h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50,p,yes,yes
+-0.0406,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lead,estimate,yes,yes
+0.027,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lead,pval,yes,yes
+0.0098,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lag,estimate,yes,yes
+0.583,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lag,pval,yes,yes
+0.0531,findings.md,"Fang et al. 2025, Table 2, col. 6",published,,yes,published; check by hand
+-0.0188,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI,estimate,yes,yes
+0.317,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI,pval,yes,yes
+0.0342,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c2-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,estimate,yes,yes
+0.025,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c2-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,pval,yes,yes
+0.0216,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,estimate,yes,yes
+0.287,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,pval,yes,yes
+-0.0479,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI,estimate,yes,yes
+0.109,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI,pval,yes,yes
+-0.0567,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI,estimate,yes,yes
+0.208,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI,pval,yes,yes
+0.0193,findings.md,results/2026-11-04/fang/fang_results.csv,fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU,estimate,yes,yes
+0.002,findings.md,results/2026-11-04/fang/fang_results.csv,fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU,pval,yes,yes
+0.163,findings.md,results/2026-11-04/fang/fang_results.csv,fang_mod_twfe-lnEPUS_aipostings_lag1_state-year_cl_lnET_50s2019_2024_AI_x_EPU,pval,yes,yes
+63.81,findings.md,results/2026-11-04/georgia_solar/base_cost.csv,{'area': 'Georgia'},lcoe_capacity_weighted,yes,yes
+17,findings.md,results/2026-11-04/georgia_solar/base_cost.csv,{'area': 'Georgia'},n_projects,yes,yes
+37.06,findings.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr24_cap-central_2035,lcoe_2025usd_mwh,yes,yes
+14.51,findings.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr45_cap-high_2035,lcoe_2025usd_mwh,yes,yes
+50.40,findings.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr12_cap-low_2035,lcoe_2025usd_mwh,yes,yes
+"4,000",findings.md,"Georgia Power 2025 IRP, Main Document, PDF p. 67",published,,yes,published; check by hand
+49.0,findings.md,results/2026-11-04/georgia_solar/national_lcoe_lbnl_tab.csv,{'year': 2022},lcoe,yes,yes
+61.0,findings.md,results/2026-11-04/georgia_solar/national_lcoe_lbnl_tab.csv,{'year': 2025},lcoe,yes,yes

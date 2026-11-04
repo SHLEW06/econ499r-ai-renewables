@@ -1,0 +1,9 @@
+outcome,lm_pass
+ln_ec,FALSE
+ln_ee,FALSE
+renew_share,FALSE
+solar_share,FALSE
+wind_share,FALSE
+new_renew_mw,FALSE
+fossil_to_renew,FALSE
+coal_share,FALSE

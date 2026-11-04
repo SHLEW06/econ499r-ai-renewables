@@ -1,0 +1,23 @@
+table,caption
+table1_descriptives,"Descriptive statistics, before winsorizing. Zhang rows: 50 states. Fang rows: 50 states + DC."
+table2_h1,"H1: AI(t-1) with two-way FE, ctrl4, clustered by state. * p<0.1, ** p<0.05, *** p<0.01."
+table3a_nonlinearity,"AI squared with ctrl4, clustered. No curve passes the Lind-Mehlum test."
+table3b_heterogeneity,"Interactions in one model, ctrl4, clustered. Exploratory. For renew_share, AI x high price: slope -0.0270 in low-price states, 0.0046 in high-price states."
+table4_mediation,"Mediation, ctrl4, clustered. All bootstrap CIs include zero. HMA's first stage is mechanical. Share mediated isn't reported."
+table5a_moran,"Moran's I, renew_share, inverse-distance W, 50 states, 999 permutations."
+table5b_sdm,"SDM, LYtrans=FALSE, full sample. Plug-in impacts with simulated percentile CIs. Read CIs for ln_ec and ln_ee, where some draws of rho fall outside its valid range."
+table5c_spillover_placebo,"Spillover placebo, 2015-2023. N = 450 inverse distance, 432 border. SDM cells: indirect effect with percentile CI."
+table6_robustness,Robustness of the AI coefficient. Clustered by state unless the row names another. Data-center MW not run: no series.
+table7_fang_replication,Fang Table 2 replication. Data-center jobs are the consistent series.
+table8_fang_bridge,"Bridge from Fang's spec to ours, current SEDS. Data-center jobs (BLS, one consistent series) are the more reliable extension measure."
+table9_fang_moderation,EPU moderation.
+table10_fang_by_type,By renewable type.
+table11_fang_heterogeneity,Exploratory.
+table12_fang_regions,Exploratory.
+table13_fang_placebo,Final spec.
+table14_fang_robustness,Final spec.
+table15_iv_first_stage,Shift-share IV first stage. KP F below 10: uninformative.
+table16_iv,"OLS, reduced form and IV. IV is uninformative."
+table17_moderation,Broadband and R&D moderation.
+table18_georgia,"Georgia solar LCOE, 2025 $/MWh, no tax credits. Learning-curve arithmetic, not a forecast."
+table19_rule_out,"What we can rule out: effects outside these ranges, per one within-state SD of AI after removing state and year effects."
