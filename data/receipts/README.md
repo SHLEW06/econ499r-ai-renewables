@@ -6,7 +6,7 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 
 | Looking for | Where it actually is |
 |---|---|
-| **Codebook** | The `Codebook` tab of `outputs/ECON499R_Data_Workbook_2026-11-04.xlsx`. Definitions are written in `econ499r_starter/scripts/build_xlsx.py`. There's no `data/codebook.csv`. New side-table columns are defined in their receipts |
+| **Codebook** | `data/variable_registry.csv`, with `data/DATA_DICTIONARY.md` and the Variable Finder tab of `outputs/ECON499R_Master_Data_2026-11-04.xlsx` generated from it. Rebuild steps: `master_workbook.md`. There's no `data/codebook.csv` |
 | **Cleaning code** | `econ499r_starter/scripts/build_panel.py` builds the panel. `build_side_tables_nov4.py` and `build_ai_allown.py` build the side tables. There's no `code/python/clean/` |
 | **Methods Memo** | `notes/Methods_Memo_AI_Renewable_Energy_US_Test_Zhang_2026.pdf`. A byte-identical copy is `econ499r_starter/reference/Methods_Memo.pdf`. There's no `admin/` folder |
 | **Download script** | `econ499r_starter/download_all.py`, not under `scripts/` |
@@ -23,6 +23,7 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [bls_qcew.md](bls_qcew.md) | BLS QCEW NAICS 518210, 5415, 10 | `data/raw/bls/` | Panel; all-ownership check |
 | [bea.md](bea.md) | BEA state GDP and personal income | `data/raw/bea/` | Panel |
 | [census.md](census.md) | Census Gazetteer and county adjacency | `data/raw/census/` | Panel, W matrices |
+| [census_pop.md](census_pop.md) | Census state population estimates | `data/raw/census_pop/` | Check of BEA population only |
 | [ferc_pudl.md](ferc_pudl.md) | FERC Form 1 via PUDL | `data/raw/pudl/` | Finance tables |
 | [rmi.md](rmi.md) | RMI Utility Transition Hub | `data/raw/rmi/` | Optional finance |
 | [lazard.md](lazard.md) | Lazard LCOE+ | `data/raw/costs/` | Georgia case box |

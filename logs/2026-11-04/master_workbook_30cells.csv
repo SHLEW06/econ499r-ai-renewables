@@ -1,0 +1,31 @@
+tab,cell,workbook,source,match
+FERC1 Utilities,Q1310,,,True
+Raw RMI Debt Equity,AB5303,6297.78767990625,6297.787679906251,True
+NCSES Bachelors,B454,2017,2017,True
+Raw OWID Solar,D3210,12.417685,12.417685,True
+Raw Epoch Chips,A63,B200 at Oracle Batam on 2025-05-15T00:00:00.000Z,B200 at Oracle Batam on 2025-05-15T00:00:00.000Z,True
+AI Job Postings,E58,derived: state / sum of 51,derived: state / sum of 51,True
+SEDS Renewables,A232,MN,MN,True
+Raw RMI Reliability,F22264,SC,SC,True
+Raw OWID Solar,C1629,2021,2021,True
+Raw SEDS Use,AW11688,29289,29289.0,True
+Raw RMI Debt Equity,C5226,"Unitil Energy Systems, Inc.","Unitil Energy Systems, Inc.",True
+Raw EIA Plan Capacity,E92,8,8,True
+Raw RMI Housing Income,C14991,166,166.0,True
+Raw EIA Generation,C3243,"Electric Generators, Independent Power Producers","Electric Generators, Independent Power Producers",True
+Raw BEA SAGDP2,AB3779,183841.4,183841.4,True
+AI Postings Overlap,E53,2021,2021,True
+Raw RMI Housing Income,G3817,41309.9546164349,41309.95461643492,True
+Raw RMI Emission Targets,H9835,0.23555058070976,0.2355505807097595,True
+Raw Census Gazetteer,E2149,2769531008,2769531008,True
+Raw OWID Solar,D2312,0.00027400002,0.00027400002,True
+Raw RMI Debt Equity,Z4245,4672464.776,4672464.776000001,True
+ACS Broadband,D296,0.5,0.5,True
+FERC1 Cost by Tech,I14,35.34,35.34,True
+NCSES Bachelors,E369,394804,394804,True
+Raw Epoch Sites,E62,Core42 #confident,Core42 #confident,True
+Raw RMI Net Plant,B7503,The Dayton Power & Light Co.,The Dayton Power & Light Co.,True
+Raw Epoch Chillers,L122,,,True
+Raw Epoch Cooling Towers,J413,https://spxcooling.com/wp-content/uploads/TECH-NC-23.pdf,https://spxcooling.com/wp-content/uploads/TECH-NC-23.pdf,True
+Raw RMI Emission Targets,G7848,,,True
+Raw Epoch Timelines,E209,144,144.0,True

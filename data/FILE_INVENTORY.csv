@@ -1662,6 +1662,8 @@ data/raw/bls/qcew_2025_5415.csv,559735,f5304280483346c4762dd900d7aea80c848b952f2
 data/raw/census/2020_Gaz_counties_national.txt,647629,0f309672a9aa8b1bd34cbcb62d84e7e1bdbb91ceb977f1cbc9d25ab85668c13f,txt,Census county Gazetteer and adjacency,Phase 2 raw file; see data/receipts/
 data/raw/census/county_adj.txt,1116106,df62fedd7d27528af7fd870c7ec92232fb2d6bea3ec6cbc9928946b78e128f64,txt,Census county Gazetteer and adjacency,Phase 2 raw file; see data/receipts/
 data/raw/census/gaz_counties.zip,141524,02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef,zip,Census county Gazetteer and adjacency,Phase 2 raw file; see data/receipts/
+data/raw/census_pop/NST-EST2025-ALLDATA.csv,53555,92188e29cb0a67dcf95afa7d6c47359409782f086478b70ea4128eb70e223ca9,csv,"Census state population estimates, used only to check BEA population",Used: cross-source check; not in the panel
+data/raw/census_pop/sc-est2020int-alldata6.csv,18292193,a88c2879490e3283896e953d1aeddc8f9afb95cd90ab40f2910304a2548bd654,csv,"Census state population estimates, used only to check BEA population",Used: cross-source check; not in the panel
 data/raw/costs/Lazard_LCOEplus_2026.pdf,1181395,a541d1ecd2e837fb779a6370c76336d899216fc4439e2a8b7b93cb1d046f25b5,pdf,Lazard LCOE+ report,Phase 2 raw file; see data/receipts/
 data/raw/eia/HS861_2010-.xlsx,487659,e4c74d03f4a6b8c68045e3d2d3392b81bb5230f5d9989edd3c7046611092af16,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/annual_generation_state.xlsx,2681286,678535c21b30c98bb1dc27632ec12db1beb3687f3bb524e4c8850f7d89fe71a1,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/

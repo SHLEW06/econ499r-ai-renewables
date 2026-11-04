@@ -59,6 +59,8 @@ def main(raw, manifest, out_csv):
                 what, disp = NEW[rel]
             elif top == "nsf":
                 what, disp = "NSF National Patterns Table 10, R&D by state, one data year per edition", "Used: nsf_state_rd.csv"
+            elif top == "census_pop":
+                what, disp = "Census state population estimates, used only to check BEA population", "Used: cross-source check; not in the panel"
             elif top == "acs":
                 what, disp = "Census ACS 1-year S2801 API response or code list; contains no key", "Used: acs_broadband.csv"
             elif top == "aiindex":

@@ -63,3 +63,11 @@ _to_delete/
 
 # Saved Claude chats (private)
 archive/
+
+# Master workbook and packages: rebuilt by script, never committed
+outputs/ECON499R_Master_Data_*.xlsx
+outputs/old/
+release/
+
+# Georgia case-box tables, rebuilt from raw filings
+data/georgia_*.csv

@@ -27,7 +27,7 @@ data/receipts/              One .md per source documenting provenance
 econ499r_starter/scripts/   Download and build scripts:
                               build_panel.py, ferc_fin.py, sec_fin.py,
                               build_xlsx.py, prelim.py, download_all.py
-outputs/                    ECON499R_Data_Workbook_<date>.xlsx
+outputs/                    ECON499R_Master_Data_<date>.xlsx (older workbooks in outputs/old/)
 notes/                      Context handoffs, Grijalva transcript, methods memo
 literature/                 PDFs
 code/R/                     R analysis scripts:
@@ -55,7 +55,8 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 ## §4 Key Conventions
 
 - **data/raw/ is read-only.** Never edit any file under data/raw/.
-- **No invented data.** If a value is missing, leave it as NA and add a reason in the codebook.
+- **No invented data.** If a value is missing, leave it as NA and add a reason in the registry.
+- **After any data change, rerun `code/python/build_master_workbook.py --date YYYY-MM-DD`** and its companion scripts; commands are in `data/receipts/master_workbook.md`.
 - **Deviations from the Methods Memo** must be logged in EXPERIMENTS.md first with a reason, before running.
 - **Script argument convention:** positional args only.
   - `build_panel.py <raw_dir> <out_dir>`
@@ -159,5 +160,5 @@ See `data/DATA_VALIDATION.md` ("New data, Nov 4") and `data/receipts/README.md`.
 | OWID/IRENA solar, LBNL Utility-Scale Solar | **Done** | Phase 4f |
 | Fang test data (AI Index postings, SEDS renewables, TETCD, NCSES) | **Done** — `data/fang_panel.csv`; `data/receipts/ai_index.md` | Fang test |
 | NOAA HDD/CDD | **Not done** — NCEI unreachable on 2026-11-04; team chose not to substitute CPC files | Optional climate control |
-| Q1-Q4 2024 large-load reports (Docket 55378) | Needed — browser, FERC | Georgia case box |
+| Q1-Q4 2024 large-load reports (Docket 55378) | **Pending** — PSC document list returns 404 to scripts; browser download needed | Georgia case box |
 | SEC company facts | Optional — sec_fin.py + SEC_USER_AGENT env var | Finance channel |
