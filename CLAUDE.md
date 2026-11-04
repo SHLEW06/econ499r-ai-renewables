@@ -127,6 +127,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - **Suppressed 518210 counts (2025):** AK, ND, SD, WY have suppressed BLS data — 4 NA rows for dc_jobs and ai_dc_per1000.
 - **Border W matrix (W_border_binary.csv)** excludes AK and HI — neither has contiguous neighbors in the 48-state graph.
 - **ln_ee and ln_gdp_pc use real (chained 2017) GDP.** The memo says "State GDP in $" without specifying. Real preferred; corr(real, nominal) = 0.98 under two-way FE.
+- **`new_renew_mw` has one known artifact:** Gavins Point (132.3 MW hydro) moves between NE and SD in EIA's file, giving false changes in 2016 and 2018. Not adjusted; team decision open. The NE and NM 2017 blank-fuel rows are natural gas and don't affect it.
 - **Renewable share is utility-scale only.** Rooftop solar appears in retail sales but not in EIA state generation file.
 - **Phase 5 (GitHub): clean the history before pushing.** `econ499r_starter/reference/Methods_Memo.pdf` and `Zhang_et_al_2026.pdf` were untracked on 2026-11-03 but are still in past commits.
 

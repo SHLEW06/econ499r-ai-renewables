@@ -113,6 +113,10 @@ All 6 variables across all 11 years match within 0.001 — consistent with the r
 
 The four suppressed 2025 cells (AK, ND, SD, WY) showed `dc_wages_usd` = 0. They are now blank, with `dc_suppressed` = 1, matching `dc_jobs`. Comparing the builds before and after, with no tolerance, across 43,758 cells: **those 4 cells are the only differences.** Blank cells went from 216 to 220. All W and centroid files are byte-identical. Log: `logs/2026-11-04/c1b_dc_wages.log`. `dc_wages_usd` isn't used in any model.
 
+### Blank-fuel capacity rows, 2026-11-04
+
+The NE (190.8 MW) and NM (7.2 MW) blank-fuel rows in 2017 are natural gas per EIA-860 2017: Rokeby units 2 and 3, and Hobbs unit CHW-T. Neither is renewable, so `new_renew_mw` is unchanged and no rebuild was needed. A separate issue found while checking: Gavins Point (132.3 MW hydro) moves between NE and SD in EIA's file, giving false `new_renew_mw` changes in 2016 and 2018. Details: `data/receipts/eia_state.md`.
+
 ## C.2 Right numbers
 
 ### EIA generation internal consistency

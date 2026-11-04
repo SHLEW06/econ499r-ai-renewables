@@ -59,6 +59,28 @@ not needed for the panel.
 - **EIA-861 sector breakdown changed in 2013:** Prior to 2013, some states report combined
   residential+commercial totals. Use the "Total" row to avoid breaks.
 
+## Blank-fuel capacity rows (identified 2026-11-04)
+
+`existcapacity_annual.xlsx` has blank-fuel rows in 2017 only. EIA-860 2017 (`3_1_Generator_Y2017.xlsx`, Operable sheet) identifies both from their exact nameplate and summer capacity, generator count and producer type:
+
+| State | Blank row: generators, nameplate, summer | EIA-860 2017 match | Fuel |
+|---|---|---|---|
+| NE | 2 generators at 1 facility, 190.8 MW, 183 MW | Rokeby units 2 and 3 (plant 6373, Lincoln Electric System): 95.4 + 95.4 MW; 89 + 94 MW | Natural gas |
+| NM | 1 generator, 7.2 MW, 4.3 MW | Hobbs Generating Station unit CHW-T (plant 56458, Lea Power Partners): 7.2 MW; 4.3 MW | Natural gas |
+
+**Neither is renewable, so nothing was reassigned and `new_renew_mw` is unchanged.** The rows count in `cap_total_mw` but no fuel column, so `cap_gas_mw` is low by those amounts in NE and NM in 2017. `cap_gas_mw` isn't used in any model. NE's natural gas also drops by the 72.4 MW of Rokeby unit 1, which the file puts in Other that year.
+
+## Gavins Point (found 2026-11-04, not changed)
+
+Gavins Point Dam (plant 6624, 132.3 MW hydro, on the NE-SD border) is counted in SD in 2016-2017 and in NE in the other years around them. EIA-860 2017 lists it in NE.
+
+| | 2015 | 2016 | 2017 | 2018 |
+|---|---|---|---|---|
+| NE `cap_hydro_mw` | 332.3 | 200.0 | 200.0 | 332.3 |
+| SD `cap_hydro_mw` | 1,602.1 | 1,734.4 | 1,734.4 | 1,602.1 |
+
+So `new_renew_mw` carries false changes of 132.3 MW: NE down and SD up in 2016, NE up and SD down in 2018. The panel follows EIA's file as published. The team hasn't decided whether to adjust this.
+
 ## Output Columns
 
 `renew_share`, `solar_share`, `wind_share`, `clean_share`, `fossil_to_renew`, `new_renew_mw`, `ln_ec`, `ln_ee`,

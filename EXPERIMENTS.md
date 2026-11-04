@@ -51,6 +51,8 @@ These are confirmed choices embedded in the panel, not model deviations.
 | AI numerator | Private 518210 only (own_code=5, agglvl=58): "private data-center jobs per 1,000 workers" | Team choice (§0 item 24). **Corrected 2026-11-04:** government rows do exist at state level |
 | Fossil includes Other Gases | Yes | 0.34% of fossil; matches EIA source structure |
 | Renewable = utility-scale only | Yes | Rooftop not in EIA state generation file |
+| NE and NM 2017 blank-fuel capacity | Not reassigned | Natural gas per EIA-860 2017 (Rokeby 2-3; Hobbs CHW-T), so not renewable. `data/receipts/eia_state.md` |
+| Gavins Point in `new_renew_mw` | Left as EIA publishes it; **open question** | 132.3 MW hydro moves between NE and SD: false changes in 2016 and 2018 |
 | Validation verdict | 0 red, 3 yellow, 17 green | Full detail: data/DATA_VALIDATION.md |
 
 ---

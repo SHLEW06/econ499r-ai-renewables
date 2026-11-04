@@ -7,6 +7,10 @@ U.S. Energy Information Administration, Electric Power Survey forms.
 - Form EIA-861 (Annual Electric Power Industry Report): `https://www.eia.gov/electricity/data/eia861/`
 - Form EIA-923 (Power Plant Operations Report): `https://www.eia.gov/electricity/data/eia923/`
 
+## Added 2026-11-04
+
+`data/raw/eia_forms/eia8602017.zip`, 16,181,258 bytes, sha256 `da9f1a1f8528324ff47019229d0f3648efe8c5997f18449f10d6aad2daa68e5c`, from https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602017.zip . Used only to identify the 2017 blank-fuel rows (`data/receipts/eia_state.md`). It doesn't enter the panel.
+
 ## Raw Files
 
 | File | Description | Approx. size | Downloaded |
