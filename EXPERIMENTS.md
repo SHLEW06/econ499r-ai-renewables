@@ -455,6 +455,9 @@ $$C_t = C_{\text{base}} \left(\frac{X_t}{X_{\text{base}}}\right)^b, \quad b = \f
 | $X_t$ | Global cumulative PV capacity (IRENA/OWID) |
 | $C_{\text{base}}$ | Georgia utility-scale solar LCOE in base year |
 
+**Capacity paths (2026-11-04):** IEA *World Energy Outlook 2025*, Annex A: Current Policies 8,067 GW, Stated Policies 8,855 GW, Net Zero 12,499 GW in 2035, from 2,164 GW in 2024. IEA's growth ratios are applied to IRENA's series; years between are log-linear.  
+**Base:** Georgia COD 2023-2025, capacity-weighted LCOE without tax credits, $63.81/MWh, 17 projects.  
+**Readings (2026-11-04):** at 24% on the central path, $37.06/MWh in 2035; range $14.51-$50.40 across 12 trajectories. Not forecasts of ours. LCOE rose from $49.0 in 2022 to $61.0 in 2025, so the curve's assumption isn't visible in recent data.  
 **Output:** fan chart: 4 learning rates × 3 capacity paths (low/central/high) = 12 trajectories.  
 **Note:** Learning curves are correlations, not causal. Georgia has no state-specific learning rate.  
 **Output path:** `results/<date>/georgia/`  

@@ -1,0 +1,4 @@
+area,window,n_projects,mw_ac,lcoe_capacity_weighted,lcoe_median,lcoe_p25,lcoe_p75,x_base_gw,source
+Georgia,COD 2023-2025,17,1750.0,63.81,67.85,52.04,81.91,1936.3,"LBNL Utility-Scale Solar 2026 Edition, Individual_Project_Data, PV LCOE no Tax Credits (2025$/MWh)"
+Southeast (non-ISO),COD 2023-2025,131,9926.1,58.69,54.86,50.29,62.17,1844.0,"LBNL Utility-Scale Solar 2026 Edition, Individual_Project_Data, PV LCOE no Tax Credits (2025$/MWh)"
+United States,COD 2023-2025,592,66133.5,58.64,61.19,51.26,76.76,1918.9,"LBNL Utility-Scale Solar 2026 Edition, Individual_Project_Data, PV LCOE no Tax Credits (2025$/MWh)"

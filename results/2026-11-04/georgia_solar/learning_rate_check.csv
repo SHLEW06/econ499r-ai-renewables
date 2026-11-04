@@ -1,0 +1,5 @@
+series,window,n_years,b,se_b,learning_rate_pct,r2,note
+LBNL tab,2010-2024,15,-0.4938,0.0352,29.0,0.938,"LBNL's published generation-weighted national LCOE, tab LCOE Trend (PV only), on IRENA global capacity. Conventional SE. Not normalized, unlike Bolinger's 24%"
+LBNL tab,2010-2021,12,-0.5711,0.0278,32.7,0.977,"LBNL's published generation-weighted national LCOE, tab LCOE Trend (PV only), on IRENA global capacity. Conventional SE. Not normalized, unlike Bolinger's 24%"
+LBNL tab,2010-2025,16,-0.4492,0.0409,26.8,0.896,"LBNL's published generation-weighted national LCOE, tab LCOE Trend (PV only), on IRENA global capacity. Conventional SE. Not normalized, unlike Bolinger's 24%"
+Rebuilt from projects,2013-2024,12,-0.4831,0.061,28.5,0.863,"Capacity-weighted national LCOE by COD year, from LBNL project data, on IRENA global capacity. Conventional SE. Not normalized, unlike Bolinger's 24%"

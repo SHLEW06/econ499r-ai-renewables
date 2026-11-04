@@ -1,0 +1,133 @@
+tag,path,learning_rate,lr_label,b,year,global_pv_gw,lcoe_2025usd_mwh,status
+ga_solar_lc_lr12_cap-low_2025,Low,0.12,12%,-0.1844,2025,2378.0,61.44,ok
+ga_solar_lc_lr12_cap-low_2026,Low,0.12,12%,-0.1844,2026,2647.6,60.23,ok
+ga_solar_lc_lr12_cap-low_2027,Low,0.12,12%,-0.1844,2027,2947.7,59.05,ok
+ga_solar_lc_lr12_cap-low_2028,Low,0.12,12%,-0.1844,2028,3281.9,57.89,ok
+ga_solar_lc_lr12_cap-low_2029,Low,0.12,12%,-0.1844,2029,3653.9,56.76,ok
+ga_solar_lc_lr12_cap-low_2030,Low,0.12,12%,-0.1844,2030,4068.2,55.64,ok
+ga_solar_lc_lr12_cap-low_2031,Low,0.12,12%,-0.1844,2031,4529.3,54.55,ok
+ga_solar_lc_lr12_cap-low_2032,Low,0.12,12%,-0.1844,2032,5042.8,53.48,ok
+ga_solar_lc_lr12_cap-low_2033,Low,0.12,12%,-0.1844,2033,5614.4,52.44,ok
+ga_solar_lc_lr12_cap-low_2034,Low,0.12,12%,-0.1844,2034,6250.9,51.41,ok
+ga_solar_lc_lr12_cap-low_2035,Low,0.12,12%,-0.1844,2035,6959.5,50.4,ok
+ga_solar_lc_lr19_cap-low_2025,Low,0.19,19% (CapEx),-0.304,2025,2378.0,59.95,ok
+ga_solar_lc_lr19_cap-low_2026,Low,0.19,19% (CapEx),-0.304,2026,2647.6,58.02,ok
+ga_solar_lc_lr19_cap-low_2027,Low,0.19,19% (CapEx),-0.304,2027,2947.7,56.16,ok
+ga_solar_lc_lr19_cap-low_2028,Low,0.19,19% (CapEx),-0.304,2028,3281.9,54.35,ok
+ga_solar_lc_lr19_cap-low_2029,Low,0.19,19% (CapEx),-0.304,2029,3653.9,52.61,ok
+ga_solar_lc_lr19_cap-low_2030,Low,0.19,19% (CapEx),-0.304,2030,4068.2,50.92,ok
+ga_solar_lc_lr19_cap-low_2031,Low,0.19,19% (CapEx),-0.304,2031,4529.3,49.28,ok
+ga_solar_lc_lr19_cap-low_2032,Low,0.19,19% (CapEx),-0.304,2032,5042.8,47.7,ok
+ga_solar_lc_lr19_cap-low_2033,Low,0.19,19% (CapEx),-0.304,2033,5614.4,46.17,ok
+ga_solar_lc_lr19_cap-low_2034,Low,0.19,19% (CapEx),-0.304,2034,6250.9,44.68,ok
+ga_solar_lc_lr19_cap-low_2035,Low,0.19,19% (CapEx),-0.304,2035,6959.5,43.25,ok
+ga_solar_lc_lr24_cap-low_2025,Low,0.24,24% (main),-0.3959,2025,2378.0,58.82,ok
+ga_solar_lc_lr24_cap-low_2026,Low,0.24,24% (main),-0.3959,2026,2647.6,56.38,ok
+ga_solar_lc_lr24_cap-low_2027,Low,0.24,24% (main),-0.3959,2027,2947.7,54.03,ok
+ga_solar_lc_lr24_cap-low_2028,Low,0.24,24% (main),-0.3959,2028,3281.9,51.78,ok
+ga_solar_lc_lr24_cap-low_2029,Low,0.24,24% (main),-0.3959,2029,3653.9,49.62,ok
+ga_solar_lc_lr24_cap-low_2030,Low,0.24,24% (main),-0.3959,2030,4068.2,47.56,ok
+ga_solar_lc_lr24_cap-low_2031,Low,0.24,24% (main),-0.3959,2031,4529.3,45.58,ok
+ga_solar_lc_lr24_cap-low_2032,Low,0.24,24% (main),-0.3959,2032,5042.8,43.68,ok
+ga_solar_lc_lr24_cap-low_2033,Low,0.24,24% (main),-0.3959,2033,5614.4,41.86,ok
+ga_solar_lc_lr24_cap-low_2034,Low,0.24,24% (main),-0.3959,2034,6250.9,40.12,ok
+ga_solar_lc_lr24_cap-low_2035,Low,0.24,24% (main),-0.3959,2035,6959.5,38.45,ok
+ga_solar_lc_lr45_cap-low_2025,Low,0.45,45% (2014-2020 epoch),-0.8625,2025,2378.0,53.45,ok
+ga_solar_lc_lr45_cap-low_2026,Low,0.45,45% (2014-2020 epoch),-0.8625,2026,2647.6,48.72,ok
+ga_solar_lc_lr45_cap-low_2027,Low,0.45,45% (2014-2020 epoch),-0.8625,2027,2947.7,44.41,ok
+ga_solar_lc_lr45_cap-low_2028,Low,0.45,45% (2014-2020 epoch),-0.8625,2028,3281.9,40.48,ok
+ga_solar_lc_lr45_cap-low_2029,Low,0.45,45% (2014-2020 epoch),-0.8625,2029,3653.9,36.9,ok
+ga_solar_lc_lr45_cap-low_2030,Low,0.45,45% (2014-2020 epoch),-0.8625,2030,4068.2,33.64,ok
+ga_solar_lc_lr45_cap-low_2031,Low,0.45,45% (2014-2020 epoch),-0.8625,2031,4529.3,30.66,ok
+ga_solar_lc_lr45_cap-low_2032,Low,0.45,45% (2014-2020 epoch),-0.8625,2032,5042.8,27.95,ok
+ga_solar_lc_lr45_cap-low_2033,Low,0.45,45% (2014-2020 epoch),-0.8625,2033,5614.4,25.48,ok
+ga_solar_lc_lr45_cap-low_2034,Low,0.45,45% (2014-2020 epoch),-0.8625,2034,6250.9,23.22,ok
+ga_solar_lc_lr45_cap-low_2035,Low,0.45,45% (2014-2020 epoch),-0.8625,2035,6959.5,21.17,ok
+ga_solar_lc_lr12_cap-central_2025,Central,0.12,12%,-0.1844,2025,2378.0,61.44,ok
+ga_solar_lc_lr12_cap-central_2026,Central,0.12,12%,-0.1844,2026,2672.4,60.13,ok
+ga_solar_lc_lr12_cap-central_2027,Central,0.12,12%,-0.1844,2027,3003.2,58.85,ok
+ga_solar_lc_lr12_cap-central_2028,Central,0.12,12%,-0.1844,2028,3375.0,57.6,ok
+ga_solar_lc_lr12_cap-central_2029,Central,0.12,12%,-0.1844,2029,3792.7,56.37,ok
+ga_solar_lc_lr12_cap-central_2030,Central,0.12,12%,-0.1844,2030,4262.2,55.17,ok
+ga_solar_lc_lr12_cap-central_2031,Central,0.12,12%,-0.1844,2031,4789.8,53.99,ok
+ga_solar_lc_lr12_cap-central_2032,Central,0.12,12%,-0.1844,2032,5382.7,52.84,ok
+ga_solar_lc_lr12_cap-central_2033,Central,0.12,12%,-0.1844,2033,6049.0,51.72,ok
+ga_solar_lc_lr12_cap-central_2034,Central,0.12,12%,-0.1844,2034,6797.8,50.62,ok
+ga_solar_lc_lr12_cap-central_2035,Central,0.12,12%,-0.1844,2035,7639.3,49.54,ok
+ga_solar_lc_lr19_cap-central_2025,Central,0.19,19% (CapEx),-0.304,2025,2378.0,59.95,ok
+ga_solar_lc_lr19_cap-central_2026,Central,0.19,19% (CapEx),-0.304,2026,2672.4,57.86,ok
+ga_solar_lc_lr19_cap-central_2027,Central,0.19,19% (CapEx),-0.304,2027,3003.2,55.84,ok
+ga_solar_lc_lr19_cap-central_2028,Central,0.19,19% (CapEx),-0.304,2028,3375.0,53.89,ok
+ga_solar_lc_lr19_cap-central_2029,Central,0.19,19% (CapEx),-0.304,2029,3792.7,52.01,ok
+ga_solar_lc_lr19_cap-central_2030,Central,0.19,19% (CapEx),-0.304,2030,4262.2,50.2,ok
+ga_solar_lc_lr19_cap-central_2031,Central,0.19,19% (CapEx),-0.304,2031,4789.8,48.45,ok
+ga_solar_lc_lr19_cap-central_2032,Central,0.19,19% (CapEx),-0.304,2032,5382.7,46.76,ok
+ga_solar_lc_lr19_cap-central_2033,Central,0.19,19% (CapEx),-0.304,2033,6049.0,45.13,ok
+ga_solar_lc_lr19_cap-central_2034,Central,0.19,19% (CapEx),-0.304,2034,6797.8,43.56,ok
+ga_solar_lc_lr19_cap-central_2035,Central,0.19,19% (CapEx),-0.304,2035,7639.3,42.04,ok
+ga_solar_lc_lr24_cap-central_2025,Central,0.24,24% (main),-0.3959,2025,2378.0,58.82,ok
+ga_solar_lc_lr24_cap-central_2026,Central,0.24,24% (main),-0.3959,2026,2672.4,56.17,ok
+ga_solar_lc_lr24_cap-central_2027,Central,0.24,24% (main),-0.3959,2027,3003.2,53.63,ok
+ga_solar_lc_lr24_cap-central_2028,Central,0.24,24% (main),-0.3959,2028,3375.0,51.21,ok
+ga_solar_lc_lr24_cap-central_2029,Central,0.24,24% (main),-0.3959,2029,3792.7,48.9,ok
+ga_solar_lc_lr24_cap-central_2030,Central,0.24,24% (main),-0.3959,2030,4262.2,46.69,ok
+ga_solar_lc_lr24_cap-central_2031,Central,0.24,24% (main),-0.3959,2031,4789.8,44.58,ok
+ga_solar_lc_lr24_cap-central_2032,Central,0.24,24% (main),-0.3959,2032,5382.7,42.57,ok
+ga_solar_lc_lr24_cap-central_2033,Central,0.24,24% (main),-0.3959,2033,6049.0,40.65,ok
+ga_solar_lc_lr24_cap-central_2034,Central,0.24,24% (main),-0.3959,2034,6797.8,38.81,ok
+ga_solar_lc_lr24_cap-central_2035,Central,0.24,24% (main),-0.3959,2035,7639.3,37.06,ok
+ga_solar_lc_lr45_cap-central_2025,Central,0.45,45% (2014-2020 epoch),-0.8625,2025,2378.0,53.45,ok
+ga_solar_lc_lr45_cap-central_2026,Central,0.45,45% (2014-2020 epoch),-0.8625,2026,2672.4,48.33,ok
+ga_solar_lc_lr45_cap-central_2027,Central,0.45,45% (2014-2020 epoch),-0.8625,2027,3003.2,43.7,ok
+ga_solar_lc_lr45_cap-central_2028,Central,0.45,45% (2014-2020 epoch),-0.8625,2028,3375.0,39.52,ok
+ga_solar_lc_lr45_cap-central_2029,Central,0.45,45% (2014-2020 epoch),-0.8625,2029,3792.7,35.73,ok
+ga_solar_lc_lr45_cap-central_2030,Central,0.45,45% (2014-2020 epoch),-0.8625,2030,4262.2,32.31,ok
+ga_solar_lc_lr45_cap-central_2031,Central,0.45,45% (2014-2020 epoch),-0.8625,2031,4789.8,29.22,ok
+ga_solar_lc_lr45_cap-central_2032,Central,0.45,45% (2014-2020 epoch),-0.8625,2032,5382.7,26.42,ok
+ga_solar_lc_lr45_cap-central_2033,Central,0.45,45% (2014-2020 epoch),-0.8625,2033,6049.0,23.89,ok
+ga_solar_lc_lr45_cap-central_2034,Central,0.45,45% (2014-2020 epoch),-0.8625,2034,6797.8,21.6,ok
+ga_solar_lc_lr45_cap-central_2035,Central,0.45,45% (2014-2020 epoch),-0.8625,2035,7639.3,19.53,ok
+ga_solar_lc_lr12_cap-high_2025,High,0.12,12%,-0.1844,2025,2378.0,61.44,ok
+ga_solar_lc_lr12_cap-high_2026,High,0.12,12%,-0.1844,2026,2766.1,59.75,ok
+ga_solar_lc_lr12_cap-high_2027,High,0.12,12%,-0.1844,2027,3217.5,58.11,ok
+ga_solar_lc_lr12_cap-high_2028,High,0.12,12%,-0.1844,2028,3742.6,56.51,ok
+ga_solar_lc_lr12_cap-high_2029,High,0.12,12%,-0.1844,2029,4353.4,54.95,ok
+ga_solar_lc_lr12_cap-high_2030,High,0.12,12%,-0.1844,2030,5063.8,53.44,ok
+ga_solar_lc_lr12_cap-high_2031,High,0.12,12%,-0.1844,2031,5890.2,51.97,ok
+ga_solar_lc_lr12_cap-high_2032,High,0.12,12%,-0.1844,2032,6851.5,50.54,ok
+ga_solar_lc_lr12_cap-high_2033,High,0.12,12%,-0.1844,2033,7969.6,49.15,ok
+ga_solar_lc_lr12_cap-high_2034,High,0.12,12%,-0.1844,2034,9270.1,47.8,ok
+ga_solar_lc_lr12_cap-high_2035,High,0.12,12%,-0.1844,2035,10783.0,46.49,ok
+ga_solar_lc_lr19_cap-high_2025,High,0.19,19% (CapEx),-0.304,2025,2378.0,59.95,ok
+ga_solar_lc_lr19_cap-high_2026,High,0.19,19% (CapEx),-0.304,2026,2766.1,57.25,ok
+ga_solar_lc_lr19_cap-high_2027,High,0.19,19% (CapEx),-0.304,2027,3217.5,54.68,ok
+ga_solar_lc_lr19_cap-high_2028,High,0.19,19% (CapEx),-0.304,2028,3742.6,52.23,ok
+ga_solar_lc_lr19_cap-high_2029,High,0.19,19% (CapEx),-0.304,2029,4353.4,49.88,ok
+ga_solar_lc_lr19_cap-high_2030,High,0.19,19% (CapEx),-0.304,2030,5063.8,47.64,ok
+ga_solar_lc_lr19_cap-high_2031,High,0.19,19% (CapEx),-0.304,2031,5890.2,45.5,ok
+ga_solar_lc_lr19_cap-high_2032,High,0.19,19% (CapEx),-0.304,2032,6851.5,43.46,ok
+ga_solar_lc_lr19_cap-high_2033,High,0.19,19% (CapEx),-0.304,2033,7969.6,41.5,ok
+ga_solar_lc_lr19_cap-high_2034,High,0.19,19% (CapEx),-0.304,2034,9270.1,39.64,ok
+ga_solar_lc_lr19_cap-high_2035,High,0.19,19% (CapEx),-0.304,2035,10783.0,37.86,ok
+ga_solar_lc_lr24_cap-high_2025,High,0.24,24% (main),-0.3959,2025,2378.0,58.82,ok
+ga_solar_lc_lr24_cap-high_2026,High,0.24,24% (main),-0.3959,2026,2766.1,55.41,ok
+ga_solar_lc_lr24_cap-high_2027,High,0.24,24% (main),-0.3959,2027,3217.5,52.19,ok
+ga_solar_lc_lr24_cap-high_2028,High,0.24,24% (main),-0.3959,2028,3742.6,49.16,ok
+ga_solar_lc_lr24_cap-high_2029,High,0.24,24% (main),-0.3959,2029,4353.4,46.3,ok
+ga_solar_lc_lr24_cap-high_2030,High,0.24,24% (main),-0.3959,2030,5063.8,43.61,ok
+ga_solar_lc_lr24_cap-high_2031,High,0.24,24% (main),-0.3959,2031,5890.2,41.08,ok
+ga_solar_lc_lr24_cap-high_2032,High,0.24,24% (main),-0.3959,2032,6851.5,38.69,ok
+ga_solar_lc_lr24_cap-high_2033,High,0.24,24% (main),-0.3959,2033,7969.6,36.44,ok
+ga_solar_lc_lr24_cap-high_2034,High,0.24,24% (main),-0.3959,2034,9270.1,34.33,ok
+ga_solar_lc_lr24_cap-high_2035,High,0.24,24% (main),-0.3959,2035,10783.0,32.33,ok
+ga_solar_lc_lr45_cap-high_2025,High,0.45,45% (2014-2020 epoch),-0.8625,2025,2378.0,53.45,ok
+ga_solar_lc_lr45_cap-high_2026,High,0.45,45% (2014-2020 epoch),-0.8625,2026,2766.1,46.91,ok
+ga_solar_lc_lr45_cap-high_2027,High,0.45,45% (2014-2020 epoch),-0.8625,2027,3217.5,41.18,ok
+ga_solar_lc_lr45_cap-high_2028,High,0.45,45% (2014-2020 epoch),-0.8625,2028,3742.6,36.14,ok
+ga_solar_lc_lr45_cap-high_2029,High,0.45,45% (2014-2020 epoch),-0.8625,2029,4353.4,31.73,ok
+ga_solar_lc_lr45_cap-high_2030,High,0.45,45% (2014-2020 epoch),-0.8625,2030,5063.8,27.85,ok
+ga_solar_lc_lr45_cap-high_2031,High,0.45,45% (2014-2020 epoch),-0.8625,2031,5890.2,24.44,ok
+ga_solar_lc_lr45_cap-high_2032,High,0.45,45% (2014-2020 epoch),-0.8625,2032,6851.5,21.46,ok
+ga_solar_lc_lr45_cap-high_2033,High,0.45,45% (2014-2020 epoch),-0.8625,2033,7969.6,18.83,ok
+ga_solar_lc_lr45_cap-high_2034,High,0.45,45% (2014-2020 epoch),-0.8625,2034,9270.1,16.53,ok
+ga_solar_lc_lr45_cap-high_2035,High,0.45,45% (2014-2020 epoch),-0.8625,2035,10783.0,14.51,ok
