@@ -37,6 +37,9 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 25 | Memo pp. 9, 11: population from Census county data 2020-2025 and BEA 1969-2024; "population growth (Census)" | BEA SAINC1 line 2 for every year | One series with no splice. BEA's footnote gives Census midyear estimates as its source; all 3 cells the audit sampled match the newest Census series exactly | **Documented 2026-11-04** |
 | 26 | Memo p. 11: Census 2010 state area file (Georgia 57,513 sq mi) | Sum of 2020 Gazetteer county land areas (Georgia 57,716.96 sq mi, +0.35%) | Same file supplies the centroids. Land area doesn't change over time, so state FE absorb the difference in `ln_ea` | **Documented 2026-11-04** |
 | 27 | Memo p. 11: Census TIGER state boundary file for spatial weights | Centroids: land-weighted average of 2020 Gazetteer county points. Border W: 2023 county adjacency file | Built from files already downloaded. Effect on W against TIGER centroids not measured | **Documented 2026-11-04** |
+| 28 | H3 tested only on W·AI(t−1) | Spillover placebo, invdist-50 (main) and border-48 (check), SLX (clustered) and SDM (LYtrans=FALSE main spec), all core outcomes. Versions: (a) AI(t−1), W·AI(t−1) on the same sample; (b) AI(t+1), W·AI(t+1); (c) AI(t−1), W·AI(t+1); (d) AI(t−1), W·AI(t−1), W·AI(t+1); (e) version (d) plus own AI(t+1). 2015-2023, N = 450 (432 on border-48) | The own-AI placebo fails for renew_share, and the spillover uses the same timing. W·AI(t+1) in 2024 would need 2025 AI for AK, ND, SD and WY, which BLS suppresses, and inverse-distance W gives every state weight on them, so 2024 is dropped to keep the panel balanced | **Adopted 2026-11-04 (team decision)** |
+| 29 | Not specified | One labeled new_renew_mw row with Gavins Point (132.3 MW hydro) held in NE in every year. The panel keeps EIA's data as published | EIA's state file counts the plant in SD in 2016-2017, giving false changes in NE and SD in 2016 and 2018 | **Adopted 2026-11-04 (team decision)** |
+| 30 | Hansen threshold as a stretch goal | Dropped. Stretch order: the Fang test, then shift-share IV, then broadband and R&D moderation | The placebo makes reverse timing the main question, which the IV addresses. The AI² model in 4b already covers nonlinearity | **Adopted 2026-11-04 (team decision)** |
 
 ---
 
@@ -333,6 +336,8 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 | AI with all ownerships (added 2026-11-04) | §1 with AI numerator = private + published government 518210 jobs | all core, new_renew_mw | Stable | Labeled check (§0 item 24); N = 550 |
 | Next-year-AI placebo | Replace AI(t−1) with AI(t+1) | all core | Null | Falsification; 2015–2024, N = 496 (AK, ND, SD, WY lose 2024) |
 | Placebo diagnostics (added 2026-11-03) | Same placebo with the lead not winsorized; and AI(t+1) and AI(t−1) in one model | all core, new_renew_mw | — | Run because the placebo is significant for renew_share and new_renew_mw. Labeled diagnostics; N = 496 |
+| Gavins Point held in NE (added 2026-11-04) | §1 with new_renew_mw adjusted for NE and SD in 2016 and 2018 | new_renew_mw | — | Labeled check (§0 item 29); N = 550 |
+| Spillover placebo (added 2026-11-04) | §8 SLX and SDM with W·AI(t+1) | all core | θ and indirect effect about 0 | Labeled falsification (§0 item 28); `results/<date>/h3_placebo/` |
 | Spec curve: new_renew_mw | §1 model, swap Y | new_renew_mw, raw and per 1,000 MW of 2015 capacity | — | Only positive raw-MW result; not robust to scaling in 4b |
 | Driscoll-Kraay SEs | Re-run §1 | all core | Often smaller with T = 11 | Labeled sensitivity only; never the basis for a conclusion |
 | A8: Conley SEs | Re-run §1; `fixest` Conley from state centroids, 500 and 1,000 km | all core, new_renew_mw | — | Labeled check (§0 item 17) |
@@ -352,8 +357,8 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 | Moderation: broadband × AI | AI × broadband_rate + broadband_rate main effect | interaction coefficient | Medium | Data ready; 2016-2024, no 2020 (§0 item 22) |
 | Moderation: R&D share × AI | AI × rd_share + rd_share main effect | interaction coefficient | Medium | Data ready; 2017-2023 |
 | Moderation: EPU-S × AI | AI × epu_s; mean-center first | interaction coefficient | Medium | Data ready |
-| Shift-share IV | First stage: $\hat{AI}$ = national growth × base share; KP-F | IV 2nd-stage $\hat{\alpha}_1$ | Medium — weak instrument risk | Under review |
-| Hansen threshold | energy_equity as threshold variable | threshold value | Medium | Under review |
+| Shift-share IV | First stage: $\hat{AI}$ = national growth × base share; KP-F | IV 2nd-stage $\hat{\alpha}_1$ | Medium — weak instrument risk | **First stretch goal, after the Fang test** (§0 item 30) |
+| Hansen threshold | energy_equity as threshold variable | threshold value | — | **Dropped 2026-11-04** (§0 item 30) |
 
 **Output path:** `results/<date>/stretch/`  
 **Status:** Memo + added
@@ -391,7 +396,7 @@ Full tag: `<block>_<model>_<ai-var>_<lag>_<controls>_<winsor>_<se>_<outcome>_<sa
 | block | h1, h1x, nonlin, het, dyn, h2a, h2b, h3, rob, stretch, ga | h1 |
 | model | twfe, slx, sdm, med, lc | twfe |
 | ai-var | ai518210 (private), ai518210sq, ai518210allown (private + published government; check only) | ai518210 |
-| lag | lag1, lag2, lag3, lag1to3sum, longdiff, lead1 | lag1 |
+| lag | lag1, lag2, lag3, lag1to3sum, longdiff, lead1, lead1lag1 | lag1 |
 | controls | ctrl4 (ln_gdp_pc + manuf_share + price_c_kwh + pop_growth; baseline), ctrl5 (ctrl4 + tech_share; one sensitivity row only) | ctrl4 |
 | winsor | w9901 (1/99 pooled), nowins | w9901 |
 | se | cl-state (clustered by state), dk (Driscoll-Kraay), conley500, conley1000, hc1, ml (asymptotic ML) | cl-state |

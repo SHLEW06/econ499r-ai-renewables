@@ -1,0 +1,128 @@
+=== GATE ===
+                                check          new          old         diff
+                               <char>        <num>        <num>        <num>
+ 1:                      SLX b1 ln_ec -0.002553888 -0.002553888 1.097213e-16
+ 2:                   SLX se_b1 ln_ec  0.005941245  0.005941245 1.127570e-17
+ 3:                  SLX theta1 ln_ec  0.016731672  0.016731672 1.668804e-15
+ 4:               SLX se_theta1 ln_ec  0.024693113  0.024693113 1.158795e-15
+ 5:                     SDM rho ln_ec  0.136802372  0.136802372 4.429790e-14
+ 6:                      SDM b1 ln_ec -0.002655690 -0.002655690 7.415943e-17
+ 7:                  SDM theta1 ln_ec  0.015770156  0.015770156 8.708312e-16
+ 8:          SDM plug-in direct ln_ec -0.002574296 -0.002574296 1.105886e-16
+ 9:         SDM se_draws direct ln_ec  0.008442434  0.008442434 3.281667e-11
+10:        SDM plug-in indirect ln_ec  0.017767188  0.017767188 1.752071e-15
+11:       SDM se_draws indirect ln_ec  0.380413682  0.380413680 1.716403e-09
+12:           SDM plug-in total ln_ec  0.015192892  0.015192892 1.852685e-15
+13:          SDM se_draws total ln_ec  0.388282809  0.388282807 1.751716e-09
+14:                      SLX b1 ln_ee  0.003666942  0.003666942 1.196959e-16
+15:                   SLX se_b1 ln_ee  0.005527359  0.005527359 1.994932e-17
+16:                  SLX theta1 ln_ee -0.006356364 -0.006356364 1.423341e-15
+17:               SLX se_theta1 ln_ee  0.027424234  0.027424234 1.526557e-15
+18:                     SDM rho ln_ee -0.018128650 -0.018128650 5.314291e-13
+19:                      SDM b1 ln_ee  0.003662747  0.003662747 3.786034e-16
+20:                  SDM theta1 ln_ee -0.006401771 -0.006401771 4.215378e-15
+21:          SDM plug-in direct ln_ee  0.003666804  0.003666804 2.524023e-16
+22:         SDM se_draws direct ln_ee  0.034870126  0.034870126 1.260140e-10
+23:        SDM plug-in indirect ln_ee -0.006357058 -0.006357058 2.844947e-15
+24:       SDM se_draws indirect ln_ee  1.693755337  1.693755331 6.208781e-09
+25:           SDM plug-in total ln_ee -0.002690254 -0.002690254 3.096915e-15
+26:          SDM se_draws total ln_ee  1.728413452  1.728413446 6.335569e-09
+27:                SLX b1 renew_share -0.013583464 -0.013583464 3.625572e-16
+28:             SLX se_b1 renew_share  0.005323942  0.005323942 1.014813e-16
+29:            SLX theta1 renew_share -0.055056096 -0.055056096 3.656797e-15
+30:         SLX se_theta1 renew_share  0.034545770  0.034545770 1.401657e-15
+31:               SDM rho renew_share  0.616823074  0.616823074 2.808864e-13
+32:                SDM b1 renew_share -0.012838037 -0.012838037 4.943962e-16
+33:            SDM theta1 renew_share -0.054907481 -0.054907481 1.679212e-15
+34:    SDM plug-in direct renew_share -0.015548891 -0.015548891 2.383510e-15
+35:   SDM se_draws direct renew_share  0.004409995  0.004409995 5.695965e-14
+36:  SDM plug-in indirect renew_share -0.161250733 -0.161250733 1.213751e-13
+37: SDM se_draws indirect renew_share  0.076380181  0.076380181 6.125656e-13
+38:     SDM plug-in total renew_share -0.176799624 -0.176799624 1.243450e-13
+39:    SDM se_draws total renew_share  0.079374557  0.079374557 6.757372e-13
+                                check          new          old         diff
+                               <char>        <num>        <num>        <num>
+        ok
+    <lgcl>
+ 1:   TRUE
+ 2:   TRUE
+ 3:   TRUE
+ 4:   TRUE
+ 5:   TRUE
+ 6:   TRUE
+ 7:   TRUE
+ 8:   TRUE
+ 9:   TRUE
+10:   TRUE
+11:   TRUE
+12:   TRUE
+13:   TRUE
+14:   TRUE
+15:   TRUE
+16:   TRUE
+17:   TRUE
+18:   TRUE
+19:   TRUE
+20:   TRUE
+21:   TRUE
+22:   TRUE
+23:   TRUE
+24:   TRUE
+25:   TRUE
+26:   TRUE
+27:   TRUE
+28:   TRUE
+29:   TRUE
+30:   TRUE
+31:   TRUE
+32:   TRUE
+33:   TRUE
+34:   TRUE
+35:   TRUE
+36:   TRUE
+37:   TRUE
+38:   TRUE
+39:   TRUE
+        ok
+    <lgcl>
+GATE PASSED: 39 of 39
+
+invdist50  a_lag           ln_ec       rho= 0.4208 [ok] out=310
+invdist50  a_lag           ln_ee       rho= 0.3568 [ok] out=281
+invdist50  a_lag           renew_share rho= 0.6568 [ok] out=662
+invdist50  b_lead          ln_ec       rho= 0.4278 [ok] out=328
+invdist50  b_lead          ln_ee       rho= 0.3408 [ok] out=264
+invdist50  b_lead          renew_share rho= 0.6508 [ok] out=635
+invdist50  c_ownlag_wlead  ln_ec       rho= 0.4408 [ok] out=343
+invdist50  c_ownlag_wlead  ln_ee       rho= 0.3698 [ok] out=289
+invdist50  c_ownlag_wlead  renew_share rho= 0.6638 [ok] out=682
+invdist50  d_both          ln_ec       rho= 0.4248 [ok] out=273
+invdist50  d_both          ln_ee       rho= 0.3538 [ok] out=269
+invdist50  d_both          renew_share rho= 0.6598 [ok] out=694
+invdist50  e_both_ownlead  ln_ec       rho= 0.4258 [ok] out=255
+invdist50  e_both_ownlead  ln_ee       rho= 0.3408 [ok] out=276
+invdist50  e_both_ownlead  renew_share rho= 0.6668 [ok] out=642
+border48   a_lag           ln_ec       rho= 0.4012 [ok] out=198
+border48   a_lag           ln_ee       rho= 0.3722 [ok] out=0
+border48   a_lag           renew_share rho= 0.4772 [ok] out=0
+border48   b_lead          ln_ec       rho= 0.4032 [ok] out=208
+border48   b_lead          ln_ee       rho= 0.3732 [ok] out=0
+border48   b_lead          renew_share rho= 0.4422 [ok] out=0
+border48   c_ownlag_wlead  ln_ec       rho= 0.4022 [ok] out=211
+border48   c_ownlag_wlead  ln_ee       rho= 0.3782 [ok] out=0
+border48   c_ownlag_wlead  renew_share rho= 0.4552 [ok] out=0
+border48   d_both          ln_ec       rho= 0.3992 [ok] out=161
+border48   d_both          ln_ee       rho= 0.3672 [ok] out=0
+border48   d_both          renew_share rho= 0.4442 [ok] out=0
+border48   e_both_ownlead  ln_ec       rho= 0.4002 [ok] out=149
+border48   e_both_ownlead  ln_ee       rho= 0.3612 [ok] out=0
+border48   e_both_ownlead  renew_share rho= 0.4362 [ok] out=0
+   W_version     N  sd_W_lag  sd_W_lead corr_W_lag_W_lead corr_own_lag_own_lead
+      <char> <int>     <num>      <num>             <num>                 <num>
+1: invdist50   450 0.0890144 0.06551602         0.5236412             0.6835852
+2:  border48   432 0.2294223 0.20849176         0.6748952             0.6834615
+   sd_W_lead_given_W_lag_and_own_lag
+                               <num>
+1:                        0.05578019
+2:                        0.15384644
+DONE
