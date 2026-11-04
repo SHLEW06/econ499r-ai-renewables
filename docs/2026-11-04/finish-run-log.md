@@ -11,6 +11,6 @@ Started 2026-11-04. Resume from the first section not marked done.
 | 4. Georgia solar | done | see git log | Paths verified in IEA WEO 2025 Annex A. The IEA PDF is not kept in the project |
 | 5. Results pack | done | see git log | All lookups match; `number_check.csv` |
 | 6. Master workbook | done | f509104 | 28.1 MB, 61 tabs, all checks pass |
-| 7. Project summary | | | |
+| 7. Project summary | done | 2f2b7ce | 73 numbers match; 3 published figures cited |
 | 8. GitHub package | | | |
 | 9. Results and data package + PDF | | | |
