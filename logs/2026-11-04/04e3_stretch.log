@@ -1,0 +1,10 @@
+        outcome          new          old       new_se       old_se     ok
+         <char>        <num>        <num>        <num>        <num> <lgcl>
+1:        ln_ec -0.001565486 -0.001565486  0.005981435  0.005981435   TRUE
+2:        ln_ee  0.002205590  0.002205590  0.005840248  0.005840248   TRUE
+3:  renew_share -0.010129271 -0.010129271  0.006045779  0.006045779   TRUE
+4: new_renew_mw 70.844428687 70.844428687 32.340014106 32.340014106   TRUE
+GATE PASSED
+Z: mean 24.7411  within-state SD 7.626013  corr with AI lag, within state 0.3880255 
+74 rows
+DONE

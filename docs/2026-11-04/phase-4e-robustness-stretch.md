@@ -1,4 +1,4 @@
-# Phase 4e: Robustness (stretch goals still to come)
+# Phase 4e: Robustness and stretch goals
 **Date:** 2026-11-04  
 **Drivers:** `code/R/04e_robustness.R --date 2026-11-04`, `code/R/04e2_spillover_placebo.R --date 2026-11-04`, `code/python/04e_spec_curve.py --date 2026-11-04`  
 **Notebook:** `notebooks/04e_robustness_stretch.ipynb`  
@@ -10,7 +10,7 @@
 
 - Reran the gate and A1-A8, P1 and P2 under 2026-11-04. All 111 rows from Nov 3 are identical.
 - Added the RPS control and its checks, an all-ownership AI row, a Gavins Point row and the spillover placebo.
-- Stretch goals not run.
+- Stretch goals: shift-share IV (uninformative, KP F = 2.81), broadband and R&D moderation (no interaction significant). Hansen threshold not run. See `results/2026-11-04/stretch/RECEIPT.md`.
 
 ## 2. Key decisions
 

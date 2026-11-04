@@ -26,7 +26,7 @@ Keep the 8 codes and 51 areas (drop `US`), 2015-2024, and reshape. **Rows:** 8 s
 - **Against Fang's Ns, nonzero state-years 2018-2021:** renewables, solar, geothermal and biomass 204 (Fang 204); hydro 192 (Fang 192); wind 165 (Fang 164). The one-state-year wind gap is probably a later SEDS revision; I didn't confirm that.
 
 ## Quirks
-**Accounting change in the outcome.** In Oct 2023, EIA moved SEDS from the fossil fuel equivalency approach to the captured-energy approach for wind, solar, hydro and geothermal electricity, at 3,412 Btu/kWh, for all years ([SEDS change note](https://www.eia.gov/state/seds/seds-change/index.php); [MER Appendix E](https://www.eia.gov/totalenergy/data/monthly/pdf/mer_e.pdf)). Fang's data end in 2021, before this. Biomass isn't affected, so it now makes up about 62-68% of U.S. `RETCB` in 2018-2024, and total renewables follow it more closely. By-type series change little in logs. See `results/2026-11-04/fang/RECEIPT.md`.
+**Accounting change in the outcome.** In Oct 2023, EIA moved SEDS from the fossil fuel equivalency approach to the captured-energy approach for wind, solar, hydro and geothermal electricity, at 3,412 Btu/kWh, for all years ([SEDS change note](https://www.eia.gov/state/seds/seds-change/index.php); [MER Appendix E](https://www.eia.gov/totalenergy/data/monthly/pdf/mer_e.pdf)). Fang's data end in 2021, before this. Biomass isn't affected, so it now makes up about 59-68% of U.S. `RETCB` in 2018-2024, and total renewables follow it more closely. By-type series change little in logs. See `results/2026-11-04/fang/RECEIPT.md`.
 
 Zero cells 2015-2024: wind 97, hydro 30. Fang drops these in by-type models because of logs. SEDS ends in 2024, so 2025 is NA in `fang_panel.csv`.
 

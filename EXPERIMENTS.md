@@ -428,11 +428,13 @@ All are associations. Data-center jobs (BLS, one consistent series) are the more
 
 | Goal | Equation | Key parameter | Effort | Status |
 |---|---|---|---|---|
-| Moderation: broadband × AI | AI × broadband_rate + broadband_rate main effect | interaction coefficient | Medium | Data ready; 2016-2024, no 2020 (§0 item 22) |
-| Moderation: R&D share × AI | AI × rd_share + rd_share main effect | interaction coefficient | Medium | Data ready; 2017-2023 |
-| Moderation: EPU-S × AI | AI × epu_s; mean-center first | interaction coefficient | Medium | Data ready |
-| Shift-share IV | First stage: $\hat{AI}$ = national growth × base share; KP-F | IV 2nd-stage $\hat{\alpha}_1$ | Medium — weak instrument risk | **First stretch goal, after the Fang test** (§0 item 30) |
+| Moderation: broadband × AI | AI × broadband + broadband main effect, centered; AI slope at p25, p75 | interaction coefficient | Medium | 2016-2024, no 2020 (§0 item 22); N = 400 |
+| Moderation: R&D share × AI | AI × rd_share + rd_share main effect, centered; AI slope at p25, p75. rd_share = R&D / panel nominal GDP | interaction coefficient | Medium | 2017-2023; N = 350 |
+| Moderation: EPU-S × AI | Run in the Fang test (§9b), composite, national and state | interaction coefficient | — | Not repeated in the Zhang spec (`prompts/06_finish.md` section 3 lists broadband and R&D only) |
+| Shift-share IV | $Z_{it}$ = state 2015 share of national 518210 jobs × national jobs in $t-1$ excluding state $i$, indexed to 2015 ($\times$ 1,000). `feols(Y ~ ctrl4 | state + year | ai_lag1 ~ Z)`, clustered. First stage, reduced form, KP F, KP rank test. F < 10 means uninformative | IV 2nd-stage $\hat{\alpha}_1$ | Medium | Lag aligned to AI(t−1); the 2015 base falls inside the sample, so a 2014-base version is a check. N = 550 |
 | Hansen threshold | energy_equity as threshold variable | threshold value | — | **Dropped 2026-11-04** (§0 item 30) |
+
+**Readings (2026-11-04):** IV uninformative: KP F = 2.81 (below 10), KP rank LM p = 0.081. No AI x broadband or AI x R&D interaction is significant. Hansen threshold not run.
 
 **Output path:** `results/<date>/stretch/`  
 **Status:** Memo + added
