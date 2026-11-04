@@ -117,6 +117,44 @@ After:
 
 ---
 
+## Data-source differences (added 2026-11-04)
+
+The memo names different sources from the ones we built with. Registered in EXPERIMENTS.md §0 items 24-27.
+
+**12. Section on data, population row (p. 9) and control row (p. 11)**
+
+Before:
+> "Census county population 2020 to 2025 and BEA population 1969 to 2024" and "population growth (Census)"
+
+After:
+> "BEA state population (table SAINC1, line 2) for all years. BEA's source is the U.S. Census Bureau's midyear population estimates."
+
+**13. Economic agglomeration row (p. 11)**
+
+Before:
+> "Census 2010 state area file (Georgia: 57,513 square miles)"
+
+After:
+> "Land area from the Census 2020 county Gazetteer, summed to states (Georgia: 57,717 square miles). Land area is constant over time, so state fixed effects absorb the difference."
+
+**14. Spatial weights row (p. 11)**
+
+Before:
+> "Census TIGER state boundary file"
+
+After:
+> "State centroids from the Census 2020 county Gazetteer (the land-weighted average of county points). The border matrix uses the Census 2023 county adjacency file."
+
+**15. AI measure (p. 4)**
+
+Before:
+> "employment in NAICS 518210"
+
+After:
+> "private employment in NAICS 518210, per 1,000 workers in all covered jobs. We call this private data-center jobs per 1,000 workers. A robustness row adds published government jobs."
+
+---
+
 ## Non-prose changes (design decisions — review with Alexander)
 
 These are changes to what we actually estimate. Full detail in EXPERIMENTS.md §0.
