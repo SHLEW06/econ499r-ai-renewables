@@ -319,6 +319,7 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 | Border W | §8 SLX only, border-48 | all core | Stable | N = 528. The border-W SDM is not rerun; cite `results/2026-11-03/h3/h3_sdm_impacts.csv` |
 | RPS control | Add LBNL target percent by state-year | all core | Shrinks $\hat{\alpha}_1$ | Needs `data/lbnl_rps_targets.csv` (EXP-003); if absent, a "not run" row recording it as missing |
 | Next-year-AI placebo | Replace AI(t−1) with AI(t+1) | all core | Null | Falsification; 2015–2024, N = 496 (AK, ND, SD, WY lose 2024) |
+| Placebo diagnostics (added 2026-11-03) | Same placebo with the lead not winsorized; and AI(t+1) and AI(t−1) in one model | all core, new_renew_mw | — | Run because the placebo is significant for renew_share and new_renew_mw. Labeled diagnostics; N = 496 |
 | Spec curve: new_renew_mw | §1 model, swap Y | new_renew_mw, raw and per 1,000 MW of 2015 capacity | — | Only positive raw-MW result; not robust to scaling in 4b |
 | Driscoll-Kraay SEs | Re-run §1 | all core | Often smaller with T = 11 | Labeled sensitivity only; never the basis for a conclusion |
 | A8: Conley SEs | Re-run §1; `fixest` Conley from state centroids, 500 and 1,000 km | all core, new_renew_mw | — | Labeled check (§0 item 17) |

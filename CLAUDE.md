@@ -112,7 +112,9 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - splm cross-check: b1 and θ1 match SDPDm LYtrans=FALSE to 5 d.p. — passes
 - **H3 verdict (main spec: SDM, LYtrans=FALSE, invdist-50):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
-**Next step:** Phase 4e — robustness, then stretch goals (`prompts/04e_robustness_stretch.md`). Target 2026-11-17. RPS control runs if `data/lbnl_rps_targets.csv` exists. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
+**Phase 4e in progress:** robustness A1–A8, P1, P2 run 2026-11-03 (`code/R/04e_robustness.R`, `results/2026-11-03/robustness/`, not yet committed). The AI(t+1) placebo is significant for renew_share (p = 0.006). The 4e notebook and handoff are written at phase end.
+
+**Next step:** Phase 4e stretch goals (`prompts/04e_robustness_stretch.md`), after team decision. Target 2026-11-17. RPS control runs if `data/lbnl_rps_targets.csv` exists. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
 
 ---
 
