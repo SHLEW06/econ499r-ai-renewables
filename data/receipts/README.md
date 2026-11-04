@@ -39,7 +39,7 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [nsf.md](nsf.md) | NSF National Patterns Table 10 | `data/raw/nsf/` | `nsf_state_rd.csv` |
 | [acs.md](acs.md) | ACS S2801 broadband | `data/raw/acs/` | `acs_broadband.csv` |
 | [epoch.md](epoch.md) | Epoch AI data centers (context only) | `data/raw/epoch/` | `epoch_ai_campuses_by_state.csv` |
-| [noaa.md](noaa.md) | NOAA degree days: **not done** | none | none |
+| [noaa.md](noaa.md) | NOAA degree days; one check only | `data/raw/noaa/` | `noaa_degree_days.csv` |
 
 ### Added for the Fang test (Phase 4h; side tables in `data/`; the panel doesn't use them)
 | Receipt | Source | Raw folder | Output |

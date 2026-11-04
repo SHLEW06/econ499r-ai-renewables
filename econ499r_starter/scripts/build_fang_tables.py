@@ -312,7 +312,7 @@ def main(raw, data, logd):
     sp = p[["state", "year", "sales_mwh", "price_c_kwh", "gen_total_mwh"]].rename(columns={"sales_mwh": "elec_consumption_mwh", "price_c_kwh": "elec_price_c_kwh"})
     sp["net_producer"] = (sp.gen_total_mwh > sp.elec_consumption_mwh).astype(int)
     sp = sp.merge(rd, on=["state", "year"], how="left").merge(inc, on=["state", "year"], how="left")
-    sp["census_region"] = sp.state.map(reg); sp["extreme_weather"] = np.nan; sp["extreme_weather_note"] = "not run: NOAA not available"
+    sp["census_region"] = sp.state.map(reg); sp["extreme_weather"] = np.nan; sp["extreme_weather_note"] = "not run: Fang's count of extreme hot and cold occurrences wasn't built"
     sp.to_csv(f"{data}/fang_split_vars.csv", index=False)
     print("== Regions:", pd.Series(reg).value_counts().to_dict(), "| net producers 2021:", int(sp[sp.year == 2021].net_producer.sum()), "| income NA", int(sp.income_pc_usd.isna().sum()))
     # dc_jobs lag needs 2014, which the panel doesn't carry

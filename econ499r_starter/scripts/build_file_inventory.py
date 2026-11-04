@@ -29,6 +29,8 @@ NEW = {
  "epoch/data_center_chillers.csv": ("Epoch AI chillers by site", "Not used"),
  "epoch/chip_types.csv": ("Epoch AI chip reference table", "Not used"),
  "epoch/README.md": ("Epoch AI license and citation", "Reference"),
+ "eia/seds/Prod_dataset.xlsx": ("EIA SEDS primary energy production by state, 1960-2024", "Used: fang_net_producer_definitions.csv; Fang check"),
+ "noaa/state-readme.txt": ("NOAA nClimDiv statewide file format", "Reference"),
 }
 
 
@@ -57,6 +59,8 @@ def main(raw, manifest, out_csv):
             top = rel.split(os.sep)[0]
             if rel in NEW:
                 what, disp = NEW[rel]
+            elif top == "noaa":
+                what, disp = "NOAA NCEI statewide heating and cooling degree days", "Used: noaa_degree_days.csv; one check only"
             elif top == "nsf":
                 what, disp = "NSF National Patterns Table 10, R&D by state, one data year per edition", "Used: nsf_state_rd.csv"
             elif top == "census_pop":

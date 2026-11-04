@@ -18,7 +18,7 @@
 | `epu_composite`, `epu_national`, `epu_state` | Annual means | `epu.md` |
 | `dc_jobs`, `dc_jobs_lag1`, `ai_dc_per1000` and lag | QCEW private 518210, via the panel. The 2015 lag reads the 2014 raw file | `bls_qcew.md` |
 | `elec_consumption_mwh`, `elec_price_c_kwh` | EIA retail sales, via the panel | `eia_state.md` |
-| `net_producer` | 1 if `gen_total_mwh` > retail sales | `eia_state.md` |
+| `net_producer` | 1 if `gen_total_mwh` > retail sales, 120 state-years in 2018-2021 against Fang's 76; other rules in `seds_fang.md` | `eia_state.md` |
 | `rd_total_musd` | NSF, 2017-2023 | `nsf.md` |
 | `income_pc_usd` | BEA SAINC1 line 3, current dollars | `bea.md` |
 | `census_region` | Census four regions: Northeast 9, Midwest 12, South 17, West 13 | Fixed list |

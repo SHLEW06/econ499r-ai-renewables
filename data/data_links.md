@@ -54,6 +54,7 @@ Checked Nov 1, 2026. "Script" = fetched by download_all.py. "Browser" = the site
 | Data | Direct link | Used for | How |
 | --- | --- | --- | --- |
 | NOAA heating and cooling degree days by state | https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series/9/hdd/12/12/2010-2025.csv (9 = Georgia; codes 1-48 = contiguous states alphabetically; swap hdd/cdd) | Weather control | Script (no AK or HI) |
+| EIA SEDS production by state | https://www.eia.gov/state/seds/sep_prod/xls/Prod_dataset.xlsx | Net-producer check (Fang) | Script: `download_fang_sources.py` |
 | NSF state R&D, Table 10, one year per edition | https://ncses.nsf.gov/pubs/nsf26313/assets/data-tables/tables/nsf26313-tab010.xlsx (2023); nsf25326 (2022), nsf24318 (2021), nsf23321 (2020), nsf22320 (2019), nsf21325 (2018), nsf20307 (2017), same pattern | R&D moderator | Script |
 | Census ACS S2801 broadband (percent of households) | https://api.census.gov/data/2024/acs/acs1/subject?get=NAME,S2801_C02_014E&for=state:*&key=YOUR_KEY (free key: https://api.census.gov/data/key_signup.html) | Broadband moderator; 2015 uses S2801_C02_012E because 014E means mobile broadband that year; no 2020 1-year release | Script with CENSUS_KEY |
 | LBNL RPS and CES targets (June 2026 data update) | https://emp.lbl.gov/projects/renewables-portfolio ("RPS & CES Targets and Demand" XLSX); also https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0 | Renewable mandate control | Browser for emp.lbl.gov; the eta-publications host works by script |

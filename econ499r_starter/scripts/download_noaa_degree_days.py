@@ -5,8 +5,8 @@ Usage: download_noaa_degree_days.py <raw_noaa_dir> <out_csv>
 
 Uses Climate at a Glance statewide time series (12-month totals ending December), 2015-2025.
 Stops without writing the table if NCEI can't be reached. Each file's title line is checked
-against the expected state name. The parser has not yet run on real NCEI output, because
-NCEI could not be reached on 2026-11-04; check the first files by eye on the first run.
+against the expected state name. First run on real NCEI output: 2026-11-04. All 528 state-years
+match the monthly nClimDiv files summed over the year (data/receipts/noaa.md).
 """
 import os, subprocess, sys
 import pandas as pd

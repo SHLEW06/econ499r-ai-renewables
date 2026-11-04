@@ -25,7 +25,7 @@ Last updated: 2026-11-04.
 | `data/raw/owid/` | CSV, metadata, readme | IRENA solar PV via OWID | 2000-2025 | `data/owid_global_solar_capacity.csv` | `build_side_tables_nov4.py` | [owid](receipts/owid.md) |
 | `data/raw/acs/` | `s2801_<year>.json`, code list | ACS S2801 API responses | 2015-2024, no 2020 | `data/acs_broadband.csv` | `download_acs_broadband.py` | [acs](receipts/acs.md) |
 | `data/raw/epoch/` | 6 CSV, README | Epoch AI data centers | Timelines to 2030 | `data/epoch_ai_campuses_by_state.csv`; context only | `build_side_tables_nov4.py` | [epoch](receipts/epoch.md) |
-| `data/raw/noaa/` | Not done | NOAA degree days; NCEI unreachable on 2026-11-04 | None | None | `download_noaa_degree_days.py` | [noaa](receipts/noaa.md) |
+| `data/raw/noaa/` | 96 CSV, 2 nClimDiv files, readme | NOAA degree days; one check only | 2015-2025, 48 states | `data/noaa_degree_days.csv` | `download_noaa_degree_days.py` | [noaa](receipts/noaa.md) |
 
 ---
 

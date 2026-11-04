@@ -352,9 +352,9 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 | `nsf27300-tab010.xlsx` (team's file) | **Red, not used** | Business R&D by industry and size, 2024 | No states | NSF, Oct 2026 | Read directly: no state rows | Wrong table. Kept only as a record |
 | ACS S2801 (API) | **Yellow** | Household broadband, 2015-2024 | Percent, with MOE; 51 areas | Pulled Nov 4, 2026 | 9 of 9 match table B28002 | 2015 isn't comparable (Census changed the question in 2016). No 2020 |
 | Epoch AI data centers | **Green, context only** | Largest AI sites, timelines to 2030 | MW; 96 sites, 77 US | Updated Nov 1, 2026 | `data_centers.csv` byte-identical; page's TX, OH, VA, NE, IA counts match; 2 site values match | About 45% coverage per Epoch. One site's state unresolved. Not a model variable |
-| NOAA degree days | **Not done** | No file | None | None | None | NCEI timed out on every host, Nov 4. The team chose not to substitute CPC files. No table exists |
+| NOAA degree days | **Green** | Heating and cooling degree days, 2015-2025 | Degree days, base 65F; 48 states | nClimDiv v1.0.0, file date Oct 6, 2026; pulled Nov 4 | All 528 state-years match exactly between the state time series and the monthly nClimDiv files | 48 states only. One check, not in the panel |
 
-**Totals:** 5 green, 3 yellow, 1 red (not used), 1 not done. The red doesn't block anything, because its replacement is in the table above it.
+**Totals:** 6 green, 3 yellow, 1 red (not used). The red doesn't block anything, because its replacement is in the table above it.
 
 ### RPS coverage check
 - **All 50 states, 2015-2025? Yes.** 561 rows (50 states + DC x 11 years), no NA, no duplicates, and keys match the panel exactly. 18 of the states are 0 because they aren't in LBNL's file.
@@ -377,13 +377,14 @@ Each file's contents were read, not just its name. Build output: `logs/2026-11-0
 
 | File | Rating | Product and years | Units and coverage | Vintage | Spot checks | Main caveat |
 |---|---|---|---|---|---|---|
+| `Prod_dataset.xlsx` (SEDS production) | **Yellow** | Total primary energy production, 1960-2024 | Billion Btu; 51 areas | As served Nov 2026 | TETCB matches `use_all_btu.csv` exactly on 204 state-years | Net-producer check only; no rule reaches Fang's 76 |
 | AI Index job postings by state | **Yellow** | AI postings, 2018-2025 | Count; 51 areas | Editions 2019, 2022-2026 | Maps exact against public CSVs or sheets, 2021-2025; implied totals within 0.05%; report text checks by year in `ai_index.md` | Each edition is its own vintage; only 2019-2021 is one. National totals swing +97% then -42% around method changes. State shares are noisy |
 | SEDS consumption and TETCD | **Green** | 2015-2024 used | Billion Btu; $/MMBtu; 51 areas | Prices and consumption as served Nov 2026 | Codes match EIA's list; types sum to RETCB within 0.04%; TETCB matches the panel exactly; Ns match Fang's except wind (165 vs 164) | Ends 2024 |
 | NCSES bachelor's degrees | **Green** | 2000-2024 | Per 1,000 age 18-24; 51 areas | Updated July 14, 2026 | Indicator = 1,000 x degrees / population exactly; no flagged cells | Later revisions may differ from Fang's copy |
 | BEA real GDP, population, income | **Green** | Through 2025 | 51 areas | Sept 30, 2026 | Checked in Part C and the audit | GDP in chained 2017 dollars; Fang uses 2012 |
 | State EPU | **Green** | Annual means | Already rated | Jan 2026 | Already rated | |
 | NSF R&D | **Yellow** | 2017-2023 | Already rated | | Already rated | Doesn't cover all Fang split years outside 2018-2021 |
-| Extreme weather | **Not run** | None | None | None | None | NOAA not available |
+| Extreme weather | **Not run** | None | None | None | None | Fang's split counts extreme hot and cold occurrences; that count wasn't built, and degree days don't replace it |
 
 **Totals for new files:** 2 green, 1 yellow; extreme weather not run. No reds.
 

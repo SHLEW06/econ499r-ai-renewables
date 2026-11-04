@@ -21,6 +21,7 @@ data/owid_global_solar_capacity.csv
 data/epu_state_annual.csv
 data/nsf_state_rd.csv
 data/noaa_degree_days.csv
+data/fang_net_producer_definitions.csv
 data/acs_broadband.csv
 data/epoch_ai_campuses_by_state.csv
 data/ai_allown_518210.csv

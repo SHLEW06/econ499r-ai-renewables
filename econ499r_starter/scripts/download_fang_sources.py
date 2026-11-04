@@ -13,6 +13,7 @@ AI = "https://hai-production.s3.amazonaws.com/files/"
 FILES = [
     ("eia/seds/pr_all.csv", "https://www.eia.gov/state/seds/sep_prices/total/csv/pr_all.csv"),
     ("eia/seds/Codes_and_Descriptions.xlsx", "https://www.eia.gov/state/seds/CDF/Codes_and_Descriptions.xlsx"),
+    ("eia/seds/Prod_dataset.xlsx", "https://www.eia.gov/state/seds/sep_prod/xls/Prod_dataset.xlsx"),
     ("ncses/bachelors-degrees-per-1000-18-24-year-olds.json", "https://ncses.nsf.gov/indicators/states/api/v2/indicators/bachelors-degrees-per-1000-18-24-year-olds.json"),
     ("ncses/degconferred-bach.json", "https://ncses.nsf.gov/indicators/states/api/v2/dataseries/degconferred-bach.json"),
     ("ncses/population18-24.json", "https://ncses.nsf.gov/indicators/states/api/v2/dataseries/population18-24.json"),
