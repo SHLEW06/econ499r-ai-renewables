@@ -1,0 +1,7 @@
+row,basis,mean_lnET,tag,mean_ln_ai,mean_ln_epu
+Fang Table 2 col. 1: constant + 0.0428 x mean ln(AI),implied by Fang,11.785895398025,fang_level_1,7.70082705665914,5.38216961870324
+Fang Table 2 col. 2: constant + 0.0452 x mean ln(AI) - 0.0284 x mean ln(EPU),implied by Fang,11.7834237657898,fang_level_2,7.70082705665914,5.38216961870324
+Current SEDS (captured energy),current,11.4369997933148,fang_level_3,7.70082705665914,5.38216961870324
+"Approximate old basis, k = 2.3",approx. old,11.7835678906408,fang_level_4,7.70082705665914,5.38216961870324
+"Approximate old basis, k = 2.6",approx. old,11.8458333293219,fang_level_5,7.70082705665914,5.38216961870324
+"Approximate old basis, k = 2.9",approx. old,11.903766881442,fang_level_6,7.70082705665914,5.38216961870324

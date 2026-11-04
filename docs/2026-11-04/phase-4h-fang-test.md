@@ -23,7 +23,7 @@ All associations. Data-center jobs (BLS, one consistent series) are the more rel
 | + year FE | -0.1095 (p = 0.004) | -0.0628 (p = 0.262) |
 | Final: lag, clustered, longer sample, no DC | -0.0479 (p = 0.109) | -0.0567 (p = 0.208) |
 
-- **Replication:** Fang's +0.0531 doesn't reproduce on current SEDS. EIA's Oct 2023 accounting change explains the sign, not the full size.
+- **Replication:** Fang's +0.0531 doesn't reproduce on current SEDS. EIA's Oct 2023 accounting change (https://www.eia.gov/state/seds/seds-change/index.php) explains the sign, not the full size. k = 2.3-2.9 is our approximation of the old accounting.
 - **Moderation:** positive in Fang's spec; none significant under two-way FE.
 - **Placebo:** no failure, but weak evidence.
 
