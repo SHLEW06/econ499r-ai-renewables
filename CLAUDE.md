@@ -120,9 +120,11 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - **H3:** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
 - **RPS control and all-ownership AI:** they change no result. Holding Gavins Point in NE doesn't either.
 
+**Fang test done (2026-11-04):** `code/R/04h_fang_test.R`, `results/2026-11-04/fang/`, `notebooks/04h_fang_test.ipynb`. Fang's +0.053 doesn't reproduce on current SEDS (-0.019, p = 0.317). EIA's Oct 2023 change to how SEDS counts wind, solar, hydro and geothermal explains the sign (approx. old basis: +0.022 to +0.034), not the full size. Final spec: postings -0.048 (p = 0.109), data-center jobs -0.057 (p = 0.208). Data-center jobs are the more reliable extension measure.
+
 **Data corrections (2026-11-04):** `dc_wages_usd` is blank where suppressed (only change in the panel; SDM and other results stand). D23, receipts and C.6 corrected. See `data/receipts/README.md`.
 
-**Next step:** Fang test, Part B (`prompts/04h_fang_test.md`; Part A data done 2026-11-04), then shift-share IV, then broadband and R&D moderation. The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Target 2026-11-17. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
+**Next step:** see `docs/2026-11-04/finish-run-log.md` (`prompts/06_finish.md`). The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Target 2026-11-17. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
 
 ---
 

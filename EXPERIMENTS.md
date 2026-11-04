@@ -361,7 +361,7 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 
 ## §9b Fang Test
 
-Follows `prompts/04h_fang_test.md`. Tests Fang, Lee & Li (2025), *Renewable Energy* 246, 122969, on Fang's variables, alongside the Zhang test (4b-4e). Output: `results/<date>/fang/`, tags prefixed `fang_`. **Status: Part A (data) done 2026-11-04. Part B not run.**
+Follows `prompts/04h_fang_test.md`. Tests Fang, Lee & Li (2025), *Renewable Energy* 246, 122969, on Fang's variables, alongside the Zhang test (4b-4e). Output: `results/<date>/fang/`, tags prefixed `fang_`. **Status: done 2026-11-04.** Results: `results/2026-11-04/fang/`. Handoff: `docs/2026-11-04/phase-4h-fang-test.md`.
 
 **Model (Fang eq. 2, all variables in logs, state FE):**
 $$\ln ET_{it} = \beta_0 + \beta_1 \ln AI_{it} + \beta_2 \ln EPU_{it} + \sum_k \beta_k \ln CV_{kit} + \alpha_i + \varepsilon_{it}$$
@@ -370,8 +370,17 @@ $$\ln ET_{it} = \beta_0 + \beta_1 \ln AI_{it} + \beta_2 \ln EPU_{it} + \sum_k \b
 
 **Fang's Table 2 AI coefficients, columns 1-6:** 0.0428, 0.0452, 0.0396, 0.0548, 0.0561, 0.0531. N = 204.
 
+### Readings (2026-11-04)
+All are associations. Data-center jobs (BLS, one consistent series) are the more reliable extension measure.
+- **Replication doesn't reproduce on current SEDS.** Column 6 is -0.0188 (p = 0.317) against Fang's +0.0531. EIA changed how SEDS counts wind, solar, hydro and geothermal in Oct 2023, after Fang's data. On an approximate rebuild of the old basis (k = 2.6), column 2 is +0.0342 (p = 0.025; Fang +0.0452) and column 6 is +0.0216 (p = 0.287). So the accounting change explains the sign, but the rebuild is smaller than Fang's and column 6 isn't significant.
+- **Bridge:** on current SEDS, adding year FE moves postings to -0.1095 (p = 0.004). With the lag, clustering and longer sample, neither measure is significant: postings -0.0479 (p = 0.109), data-center jobs -0.0567 (p = 0.208).
+- **EPU moderation:** in Fang's spec AI x EPU is positive for all three EPU measures (state: 0.0193, p = 0.002; Fang 0.0160). Under two-way FE, none is significant.
+- **Placebo:** no failure, but it's weak evidence, because AI(t-1) isn't significant either and lead and lag correlate at about 0.71-0.72.
+- **Robustness:** only postings with ctrl4 is significant (-0.0616, p = 0.034). The RPS control changes no result.
+- **Heterogeneity:** exploratory, with no multiplicity correction. Fang's subgroup pattern doesn't reproduce.
+
 ### Reading the two AI measures
-**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally, and the share-of-national row tests that. Anything uneven stays in as noise. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.
+**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally. The share-of-national row can't test this: once year effects are in, it equals the postings row by construction (-0.0475 vs -0.0479). Anything uneven stays in as noise, and the edition overlap and share-change tables are the evidence on that. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.
 
 ### Expected samples
 | Step | Measure | N |
@@ -395,9 +404,14 @@ $$\ln ET_{it} = \beta_0 + \beta_1 \ln AI_{it} + \beta_2 \ln EPU_{it} + \sum_k \b
 | F8 | State FE only | Bridge: add year FE, lag AI, cluster, extend, drop DC, one at a time. Our test uses two-way FE, lag and clustering | Shows which step changes the answer | **Adopted (prompt)** |
 | F9 | ln(AI postings) only | Also ln(data-center jobs), with per-1,000 as a check | Our count, from one consistent series | **Adopted (prompt)** |
 | F10 | No lag step on the same sample | Added bridge row: 2019-2021 without a lag, before the lag row | There's no 2017 postings data, so the lag also drops 2018; this separates the two | **Adopted (team, 2026-11-04)** |
-| F11 | Levels of postings only | Added row after the sample extension: ln(state share of national postings) | Tests whether year effects absorb edition shifts | **Adopted (team, 2026-11-04)** |
+| F11 | Levels of postings only | Added row after the sample extension: ln(state share of national postings) | Planned as a test of whether year effects absorb edition shifts. **Corrected 2026-11-04:** with year FE it equals the postings row by construction, so it confirms the algebra and isn't a test | **Adopted (team, 2026-11-04); not a test** |
 | F12 | Separate subgroup regressions | Fang's splits for comparability; interactions in one model as our test | Same as §0 item 5 | **Adopted (prompt)** |
 | F13 | No placebo | AI(t+1), and both in one model | Same concern as the Zhang test | **Adopted (prompt)** |
+| F14 | Splits "at the mean" | Mean split as written, plus a labeled median split | Fang's group sizes (104/100, 108/96, 100/104, 96/108 state-years) look like median splits. A mean split gives 80, 56, 48 and 76 in the high group | **Adopted 2026-11-04** |
+| F15 | Net producer: production above consumption, 76 state-years | Annual average generation above retail sales: 120 state-years | Fang's source for this split isn't stated. EIA generation includes plants' sales outside the state | **Noted** |
+| F17 | Fang's source year by year isn't stated | Labeled replication variant: each year as first published (2018 and Jan-Sep 2019 from the 2019 edition; 2020 from the 2021 edition; 2021 from the 2022 edition) | Added because the main replication doesn't reproduce Fang's sign; tests whether vintage choice explains it | **Adopted 2026-11-04 (diagnostic)** |
+| F18 | SEDS renewables as published through about 2021: fossil fuel equivalency for wind, solar, hydro and geothermal | Current SEDS: captured-energy approach at 3,412 Btu/kWh, adopted Oct 2023. Labeled sensitivity rebuilds `re_bbtu` as biomass + k x (wind + solar + hydro + geothermal), k = 2.3, 2.6, 2.9. It's approximate: k is one number across years and states, and geothermal and solar direct use are treated like electricity | EIA's change came after Fang's data, and it shrinks those fuels against biomass. Tests whether the vintage of the outcome explains the failed replication | **Adopted 2026-11-04 (diagnostic)** |
+| F16 | Main postings series for the extension | Stays the stitched series, by edition. "Lightcast's own series" (`fig_4.4.12`) covers only CA, NY, TX and WA, so it can't be the main measure | `prompts/06_finish.md` section 2 | **Adopted 2026-11-04** |
 
 ### Edition overlap (`data/receipts/ai_index.md`)
 | Year | Edition A | Edition B | Pearson r, shares | Rank correlation | SD of ln(share ratio) | Median state gap |

@@ -387,4 +387,4 @@ Each file's contents were read, not just its name. Build output: `logs/2026-11-0
 
 **Totals for new files:** 2 green, 1 yellow; extreme weather not run. No reds.
 
-**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally, and the share-of-national row tests that. Anything uneven stays in as noise. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.
+**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally. The share-of-national row can't test this: once year effects are in, it equals the postings row by construction (-0.0475 vs -0.0479). Anything uneven stays in as noise, and the edition overlap and share-change tables are the evidence on that. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.

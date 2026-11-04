@@ -1,0 +1,7 @@
+check,ok,detail
+"N = 204 on the full Fang sample, 2018-2021",TRUE,""
+N = 153 on 2019-2021,TRUE,""
+fixest state FE matches LSDV,TRUE,""
+"fang_panel matches the master panel (jobs, SEDS total, GDP)",TRUE,""
+Jobs lag consistent with panel,TRUE,""
+"Sum of 51 postings, 2021 = 404,074",TRUE,""

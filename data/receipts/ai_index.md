@@ -41,7 +41,7 @@
 - **2024 edition:** "In 2023, Lightcast slightly changed its methodology... Lightcast also updated its taxonomy of AI-related skills."
 - **2026 edition:** "Historical posting counts may differ from previously published versions due to data updates and revisions."
 
-**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally, and the share-of-national row tests that. Anything uneven stays in as noise. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.
+**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally. The share-of-national row can't test this: once year effects are in, it equals the postings row by construction (-0.0475 vs -0.0479). Anything uneven stays in as noise, and the edition overlap and share-change tables are the evidence on that. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.
 
 ## Steps
 1. Parse each PDF map using word coordinates: each state label is paired with the number just below it, inside that map's part of the page. Stop unless there are 51.
