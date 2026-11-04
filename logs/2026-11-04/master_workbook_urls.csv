@@ -19,16 +19,16 @@ https://apps.bea.gov/regional/zip/SAGDP.zip,200,,ok
 https://apps.bea.gov/regional/zip/SAINC.zip,200,,ok
 https://www.census.gov/programs-surveys/popest.html,200,,ok
 https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv,200,,ok
-https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html,200,,ok
+https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html,200,TimeoutError,ok
 https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_counties_national.zip,200,,ok
-https://www.census.gov/geographies/reference-files/time-series/geo/county-adjacency.html,200,,ok
+https://www.census.gov/geographies/reference-files/time-series/geo/county-adjacency.html,200,TimeoutError,ok
 https://www2.census.gov/geo/docs/reference/county_adjacency/county_adjacency2023.txt,200,,ok
-https://www.census.gov/programs-surveys/economic-census/guidance-geographies/levels.html,200,,ok
+https://www.census.gov/programs-surveys/economic-census/guidance-geographies/levels.html,200,TimeoutError,ok
 https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf,200,,ok
 https://data.catalyst.coop/,200,,ok
 https://s3.us-west-2.amazonaws.com/pudl.catalyst.coop/stable/out_ferc1__yearly_all_plants.parquet,200,,ok
 https://www.sec.gov/edgar/sec-api-documentation,200,Forbidden,ok
-https://data.sec.gov/api/xbrl/companyfacts/CIK0000092122.json,200,Forbidden,ok
+https://data.sec.gov/api/xbrl/companyfacts/CIK0000092122.json,200,,ok
 https://utilitytransitionhub.rmi.org/data-download/,200,,ok
 https://www.lazard.com/research-insights/levelized-cost-of-energyplus-lcoeplus/,200,,ok
 https://www.lazard.com/media/kcfconhf/lazards-lcoeplus_vf.pdf,200,,ok
@@ -41,7 +41,7 @@ https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0,20
 https://eta-publications.lbl.gov/sites/default/files/rps_ces_nominal_percentage_targets_june_2023.xlsx,200,,ok
 https://eta-publications.lbl.gov/publications/us-utility-scale-solar-2026-edition,200,,ok
 https://ourworldindata.org/grapher/solar-pv-cumulative-capacity,200,Not Found,ok
-https://www.iea.org/reports/world-energy-outlook-2025,200,,ok
+https://www.iea.org/reports/world-energy-outlook-2025,403,Forbidden,blocked to scripts
 https://www.policyuncertainty.com/state_epu.html,200,,ok
 https://www.policyuncertainty.com/media/State_Policy_Uncertainty.xlsx,200,,ok
 https://ncses.nsf.gov/pubs/nsf26313,200,,ok

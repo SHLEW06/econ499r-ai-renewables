@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build release/results_and_data_<date>/ and its zip, for the team. Stays local. It mirrors the project layout so the workbook's receipt links work.
+"""Build release/results_and_data_<date>/ and its zip, for the team. Stays local. It mirrors the project layout.
 Usage: python3 code/python/build_results_package.py --date YYYY-MM-DD"""
 import argparse, glob, os, re, shutil, subprocess, sys, zipfile
 ap = argparse.ArgumentParser(); ap.add_argument("--date", required=True); D = ap.parse_args().date
@@ -11,7 +11,7 @@ def cp(src, dst=None):
 need = [f"outputs/ECON499R_Results_{D}.pdf", f"outputs/ECON499R_Master_Data_{D}.xlsx", f"docs/{D}/project-summary.md", f"docs/{D}/methods_section.tex", f"results/{D}/paper/findings.md"]
 for f in need:
     if not os.path.exists(f): sys.exit(f"missing: {f}")
-cp(need[0], os.path.basename(need[0])); cp(f"outputs/ECON499R_Results_{D}.html", f"ECON499R_Results_{D}.html"); cp(need[1])  # workbook sits in outputs/ so its ../data/receipts links work
+cp(need[0], os.path.basename(need[0])); cp(f"outputs/ECON499R_Results_{D}.html", f"ECON499R_Results_{D}.html"); cp(need[1])
 for f in sorted(glob.glob("data/*.csv") + glob.glob("data/out/*.csv") + glob.glob("data/*.md") + glob.glob("data/receipts/*.md")): cp(f)
 for r, _, fs in os.walk("results"):
     for f in fs:
@@ -24,15 +24,16 @@ for nb in sorted(glob.glob("notebooks/*.ipynb")):
 for h in glob.glob(f"{OUT}/notebooks_html/*.html"):
     t = open(h, errors="surrogateescape").read(); u = t.replace(ROOT + "/", "").replace(ROOT, ".")
     if u != t: open(h, "w", errors="surrogateescape").write(u)
+PAGES = re.search(r"Pages:\s+(\d+)", subprocess.run(["pdfinfo", need[0]], capture_output=True, text=True, check=True).stdout).group(1)
 open(f"{OUT}/README.txt", "w").write(f"""ECON 499R results and data, as of {D}. Shunji Lewandowski and Alexander Hendricks. Local only: don't post this folder. It holds tables whose sources don't clear redistribution.
 
 Start here
-  ECON499R_Results_{D}.pdf            12-page readable report (the .html is the same report)
+  ECON499R_Results_{D}.pdf            {PAGES}-page readable report (the .html is the same report)
   summary_and_methods/project-summary.md   2-page plain-English summary, with every number traced
   summary_and_methods/findings.md, methods_section.tex, memo-to-paper.md
 
 Data
-  outputs/ECON499R_Master_Data_{D}.xlsx   Master workbook. Start at README, then Variable Finder. It's in outputs/ so its receipt links work
+  outputs/ECON499R_Master_Data_{D}.xlsx   Master workbook. Start at README, then Variable Finder. Tab links work wherever the file sits. Receipt links open the team's private GitHub repo (repo access needed); the same text is on the Receipts tab
   data/                                   Cleaned CSVs, data dictionary, registry, validation
   data/out/                               Panel, W matrices, finance tables
   data/receipts/                          Where each source came from

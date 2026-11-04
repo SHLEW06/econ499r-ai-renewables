@@ -59,7 +59,7 @@ Details and every deviation from the plan: [`docs/{D}/methods_section.tex`](docs
 
 ## How to reproduce
 
-Needs Python 3.13 (pandas 3.0, numpy 2.3, openpyxl 3.1, pyarrow 21, matplotlib 3.11, nbconvert 7.16), and R 4.6 (fixest, modelsummary, spdep, splm, SDPDmod, spatialreg, boot, data.table, ggplot2, sf, IRkernel). LibreOffice recalculates the workbook.
+Needs Python 3.13 (pandas 3.0, numpy 2.3, openpyxl 3.1, pyarrow 21, matplotlib 3.11, nbconvert 7.16), and R 4.6 (fixest, modelsummary, spdep, splm, SDPDmod, spatialreg, boot, data.table, ggplot2, sf, IRkernel). LibreOffice recalculates a copy of the workbook; it never saves the final file.
 
 ```bash
 # 1. Download. Scripted files land in data/raw/
@@ -215,6 +215,9 @@ cd "release/github/econ499r-ai-renewables"
 git remote add origin https://github.com/SHLEW06/econ499r-ai-renewables.git
 git push -u origin main
 ```
+## The repo already on GitHub
+Checked 2026-11-04: `SHLEW06/econ499r-ai-renewables` is private and its `main` holds the **working repo's** history, not this clean copy. That includes the interview transcript in `notes/`, and the memo and Zhang PDFs in past commits. So `gh repo create` above will fail, and pushing this copy over `main` needs a force-push that replaces that history. That's your call; nothing here does it. The workbook's receipt links use `blob/main/data/receipts/<file>`, which exists in both histories. Anyone clicking them needs access to the repo.
+
 To rebuild, run `python3 code/python/build_github_package.py --date {D}` from the working repo. It deletes and recreates this folder and its commit.
 """
 open(f"{REL}/CHECKLIST.md", "w").write(ck); print("files", nt, "MB", round(total / 1e6, 1), "head", head, "remotes", repr(remotes))

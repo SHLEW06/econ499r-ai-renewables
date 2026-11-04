@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
-"""Recalculate the master workbook with LibreOffice, check it, and install the recalculated copy. Read-only for data.
+"""Check the final master workbook, as built by build_master_workbook.py. Read-only: it never writes the workbook. Exits 1 on any problem except a URL.
 Usage: python3 code/python/check_master_workbook.py --date YYYY-MM-DD [--skip-urls]"""
-import argparse, csv, os, random, re, shutil, subprocess, sys, tempfile, time, urllib.request, ssl
+import argparse, csv, json, os, random, re, shutil, subprocess, sys, urllib.request, ssl
 import numpy as np, pandas as pd, openpyxl
 from openpyxl.utils import get_column_letter as L, column_index_from_string as CI
-ap = argparse.ArgumentParser(); ap.add_argument("--date", required=True); ap.add_argument("--skip-urls", action="store_true"); ap.add_argument("--tmp", default=None); a = ap.parse_args()
-XL = f"outputs/ECON499R_Master_Data_{a.date}.xlsx"; T = a.tmp or tempfile.mkdtemp(); CH = []
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import check_workbook_links as CL, workbook_finalize as WF
+ap = argparse.ArgumentParser(); ap.add_argument("--date", required=True); ap.add_argument("--skip-urls", action="store_true"); a = ap.parse_args()
+XL = f"outputs/ECON499R_Master_Data_{a.date}.xlsx"; CH = []
 def chk(name, ok, ev, rating=None): CH.append(dict(check=name, result="ok" if ok else "PROBLEM", evidence=ev)); print(("ok      " if ok else "PROBLEM ") + name + ": " + str(ev)[:300], flush=True)
-t0 = time.time(); subprocess.run([shutil.which("soffice") or sys.exit("soffice not found"), "--headless", "--calc", "--convert-to", "xlsx:Calc MS Excel 2007 XML", "--outdir", T, XL], check=True, capture_output=True, timeout=1500)
-RC = os.path.join(T, os.path.basename(XL)); print("recalculated in", int(time.time() - t0), "s", round(os.path.getsize(RC) / 1e6, 1), "MB", flush=True)
-wb = openpyxl.load_workbook(RC, data_only=True); wf = openpyxl.load_workbook(XL)  # wf: pre-recalc, for what was intended
+if not os.path.exists(XL): sys.exit(f"missing: {XL}")
+wb = openpyxl.load_workbook(XL, data_only=True)  # data_only: the cached values a reader without recalculation sees
+# ---- the final file: not saved by LibreOffice, cached values, links ----
+app = WF.app_name(XL); chk("LibreOffice did not save the final file", "libreoffice" not in app.lower(), f"docProps/app.xml Application: {app}")
+un = WF.uncached(XL); chk("Every formula cell has a cached value", not un["missing"] and not un["errors"], f"{un['formula_cells']:,} formula cells; no value {un['missing'][:6]}; errors {un['errors'][:6]}")
+lr = CL.check(XL); CL.report(lr); chk("Link check", not lr["problems"], f"counts {lr['counts']}; problems {len(lr['problems'])}: {lr['problems'][:4]}")
 # ---- formula errors, emails, key ----
 ERR = {"#DIV/0!", "#N/A", "#NAME?", "#NULL!", "#NUM!", "#REF!", "#VALUE!"}; err = []; em = []; EM = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 key = None
@@ -107,18 +112,43 @@ for i, r in enumerate(reg.to_dict("records"), 2):
     if not (hs == v or v.startswith(hs + "-") or v.startswith("(column")): wrong.append((v, r["tab"], r["column"], hs))
 lk = sum(1 for i in range(2, vf.max_row + 1) if vf.cell(i, 2).hyperlink is not None)
 chk("Every registry variable is in the Variable Finder", not miss, f"{len(reg)} registry rows; missing {miss[:5]}")
-chk("Every Finder row links to a real tab and column", not wrong and lk >= (reg.tab != "none").sum(), f"{lk} internal links survive recalculation; header mismatches {wrong[:6]}. Rows with tab 'none' are Pending or Not available: {list(reg[reg.tab == 'none'].variable)}")
-# ---- formatting survives ----
+chk("Every Finder row links to a real tab and column", not wrong and lk >= (reg.tab != "none").sum(), f"{lk} internal links; header mismatches {wrong[:6]}. Rows with tab 'none' are Pending or Not available: {list(reg[reg.tab == 'none'].variable)}")
+# ---- each link goes to the right place ----
+RFS = sorted(f for f in os.listdir("data/receipts") if f.endswith(".md")); rw = wb["Receipts"]
+got = {}
+for r_ in rw.iter_rows(min_row=2, values_only=True):
+    if r_[0] != "index": got.setdefault(r_[0], []).append(r_[2] or "")
+diff = [f for f in RFS if "\n".join(got.get(f, [])) != open(f"data/receipts/{f}", encoding="utf-8", newline="").read()]
+chk("Receipts tab holds each receipt's exact text", not diff and sorted(got) == RFS, f"{len(RFS)} receipts, {sum(map(len, got.values())):,} lines; differ {diff}; extra {sorted(set(got) - set(RFS))}")
+hd = [c.value for c in vf[1]]; ci, cg = hd.index("receipt_in_workbook") + 1, hd.index("receipt") + 1; wrongl = []
+for i, r in enumerate(reg.to_dict("records"), 2):
+    if r["tab"] != "none":
+        want = f"'{r['tab']}'!{str(r['column']).split(':')[0]}1"
+        for j in (2, 3):
+            h = vf.cell(i, j).hyperlink
+            if h is None or h.location != want or h.target: wrongl.append((i, j, "tab"))
+    h = vf.cell(i, cg).hyperlink
+    if h is None or h.target != CL.REPO_BLOB + "data/receipts/" + r["receipt"] or h.location: wrongl.append((i, cg, "github"))
+    h = vf.cell(i, ci).hyperlink; m_ = re.fullmatch(r"'Receipts'!A(\d+)", (h.location or "") if h else "")
+    if not m_ or rw.cell(int(m_.group(1)), 1).value != r["receipt"] or rw.cell(int(m_.group(1)), 2).value != 1 or h.target: wrongl.append((i, ci, "receipts tab"))
+chk("Every Finder row's links go to its own tab, column and receipt", not wrongl, f"{len(reg)} rows; wrong {wrongl[:6]}")
+# ---- formatting ----
 ORDER = pd.read_csv(f"logs/{a.date}/master_workbook_tabs.csv").tab.tolist(); nofz = [s.title for s in wb.worksheets if s.title not in ("README",) and not s.freeze_panes]; nofl = [s.title for s in wb.worksheets if s.title not in ("README", "Georgia") and not s.auto_filter.ref]
 wrongf = [s.title for s in wb.worksheets if s.title != "README" and (s.cell(1, 1).font.name != "Arial")]
-cp = openpyxl.load_workbook(RC)["Core Panel"]; nform = sum(1 for r in cp.iter_rows(min_row=2) for c in r if c.data_type == "f"); blu = cp["C2"].font.color.rgb if cp["C2"].font.color else None
-chk("Tabs, frozen headers, filters and Arial survive recalculation", wb.sheetnames == ORDER and not nofz and not nofl and not wrongf, f"{len(wb.sheetnames)} tabs in order; no freeze {nofz}; no filter {nofl}; not Arial {wrongf}")
-chk("Live formulas and blue inputs survive", nform > 12000 and str(blu).endswith("0000FF"), f"{nform} live formulas on Core Panel; input color {blu}")
+cp = openpyxl.load_workbook(XL)["Core Panel"]; nform = sum(1 for r in cp.iter_rows(min_row=2) for c in r if c.data_type == "f"); blu = cp["C2"].font.color.rgb if cp["C2"].font.color else None
+chk("Tabs, frozen headers, filters and Arial are in the final file", wb.sheetnames == ORDER and not nofz and not nofl and not wrongf, f"{len(wb.sheetnames)} tabs in order; no freeze {nofz}; no filter {nofl}; not Arial {wrongf}")
+chk("Live formulas and blue inputs are in the final file", nform > 12000 and str(blu).endswith("0000FF"), f"{nform} live formulas on Core Panel; input color {blu}")
 src_ws = wb["Sources"]; lks = sum(1 for r in src_ws.iter_rows(min_row=2, min_col=3, max_col=4) for c in r if c.hyperlink is not None)
 chk("Sources: URLs are clickable and the filter covers all rows", lks == 2 * (src_ws.max_row - 1) and src_ws.auto_filter.ref.endswith(str(src_ws.max_row)), f"{lks} links; {src_ws.max_row - 1} sources; filter {src_ws.auto_filter.ref}")
 # ---- receipts exist ----
 nor = [r for r in reg.receipt.unique() if r and not os.path.exists("data/receipts/" + r)]
 chk("Every receipt link points to a real file", not nor, f"{reg.receipt.nunique()} receipts; missing {nor}")
+if not a.skip_urls and shutil.which("gh"):  # private repo, so an unauthenticated request can't see it
+    rt = subprocess.run(["gh", "api", "repos/SHLEW06/econ499r-ai-renewables/git/trees/main?recursive=1"], capture_output=True, text=True)
+    if rt.returncode == 0:
+        tree = {x["path"] for x in json.loads(rt.stdout)["tree"]}; want = {l["target"].replace(CL.REPO_BLOB, "") for l in lr["links"] if l["type"] == "github_receipt"}
+        chk("Every GitHub receipt link exists on main (read-only)", want <= tree, f"{len(want)} files; missing {sorted(want - tree)}")
+    else: print("not checked: GitHub repo tree unavailable", rt.stderr[:120], flush=True)
 # ---- URLs ----
 if not a.skip_urls:
     urls = []
@@ -140,9 +170,7 @@ if not a.skip_urls:
         print(st, u[:90], flush=True)
     ud = pd.DataFrame(out); ud.to_csv(f"logs/{a.date}/master_workbook_urls.csv", index=False)
     chk("URLs open (read-only)", not (ud.kind == "CHECK").any(), f"{len(ud)} URLs; {ud.kind.value_counts().to_dict()}; problems {ud[ud.kind == 'CHECK'][['url', 'status', 'note']].to_dict('records')}")
-# ---- install ----
-sz = os.path.getsize(RC)
-if not [c for c in CH if c["result"] == "PROBLEM" and "URL" not in c["check"]]:
-    shutil.copy(RC, XL); chk("Recalculated copy installed", True, f"{XL}, {sz / 1e6:.1f} MB")
-else: print("NOT installed: problems above. Recalculated copy at", RC)
 pd.DataFrame(CH).to_csv(f"logs/{a.date}/master_workbook_checks.csv", index=False)
+bad = [c["check"] for c in CH if c["result"] == "PROBLEM" and "URL" not in c["check"]]
+print(f"{len(CH) - len(bad)} of {len(CH)} checks ok; {os.path.getsize(XL) / 1e6:.1f} MB")
+if bad: sys.exit(f"FAILED: {bad}")

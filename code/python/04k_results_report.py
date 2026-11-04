@@ -8,8 +8,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from results_lookup import Ledger
 ap = argparse.ArgumentParser(); ap.add_argument("--date", required=True); D = ap.parse_args().date
 P = f"results/{D}/paper"; TB = f"{P}/tables"; FG = f"{P}/figures"; RB = f"results/{D}/robustness/robustness.csv"; F = f"results/{D}/fang/fang_results.csv"; SH = f"results/{D}/stretch/stretch.csv"; PI = f"results/{D}/h3_placebo/placebo_sdm_impacts.csv"; PS = f"results/{D}/h3_placebo/placebo_slx.csv"; G = f"results/{D}/georgia_solar/projection_long.csv"; BC = f"results/{D}/georgia_solar/base_cost.csv"; LR = f"results/{D}/georgia_solar/national_lcoe_lbnl_tab.csv"; WX = f"results/{D}/robustness/weather_check.csv"; NP = f"results/{D}/fang/net_producer_check.csv"; LV = f"results/{D}/fang/seds_basis_level_check.csv"
-H1 = "results/2026-11-02/h1"; C = f"{H1}/h1_core.csv"; X = f"{H1}/h1_extras.csv"; H2 = "results/2026-11-03/h2/h2_results.csv"; MS = "results/2026-11-03/h3_mainspec/sdm_impacts.csv"; MC = "results/2026-11-03/h3_mainspec/sdm_core.csv"; RU = f"{P}/rule_out.csv"; MED = f"{TB}/mediation_summary.csv"; MO = "results/2026-11-03/h3/h3_moran.csv"; GL = "data/georgia_large_load_table2.csv"
-for f in (C, X, H2, MS, RB, F, SH, PI, PS, G, BC, RU, MED, MO, GL, WX, NP, LV):
+VC = f"{P}/validation_counts.csv"; H1 = "results/2026-11-02/h1"; C = f"{H1}/h1_core.csv"; X = f"{H1}/h1_extras.csv"; H2 = "results/2026-11-03/h2/h2_results.csv"; MS = "results/2026-11-03/h3_mainspec/sdm_impacts.csv"; MC = "results/2026-11-03/h3_mainspec/sdm_core.csv"; RU = f"{P}/rule_out.csv"; MED = f"{TB}/mediation_summary.csv"; MO = "results/2026-11-03/h3/h3_moran.csv"; GL = "data/georgia_large_load_table2.csv"
+for f in (VC, C, X, H2, MS, RB, F, SH, PI, PS, G, BC, RU, MED, MO, GL, WX, NP, LV):
     if not os.path.exists(f): sys.exit(f"missing input: {f}")
 L = Ledger(f"ECON499R_Results_{D}.pdf"); W = pd.read_csv(RU)
 t = lambda y: f"h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_{y}_50s2015_2025"; xt = lambda s: f"h1x_{s}"
@@ -25,6 +25,7 @@ mi = lambda y: L.n(MO, "moran_I", "{:.3f}", variable="renew_share", W_version="i
 slxb = lambda w, y: f"{L.n(PS, 'estimate', W_version=w, outcome=y, version='d_both', term='theta_lag')}, {L.p(PS, W_version=w, outcome=y, version='d_both', term='theta_lag')}"
 gproj = lambda path, lr, yr=2035: L.n(G, "lcoe_2025usd_mwh", "{:.2f}", path=path, learning_rate=lr, year=yr)
 SEDSLINK = '<a href="https://www.eia.gov/state/seds/seds-change/index.php">eia.gov/state/seds/seds-change</a>'
+vc = lambda sc, ra: L.n(VC, "n", "{:.0f}", scope=sc, rating=ra)
 K23 = L.typed("2.3", "our approximation, EXPERIMENTS.md F18"); K29 = L.typed("2.9", "our approximation, EXPERIMENTS.md F18")
 wxe = lambda sp_: L.n(WX, "estimate", spec=sp_, coef="ai_dc_per1000_lag1"); wxp = lambda sp_, c_="ai_dc_per1000_lag1": L.p(WX, spec=sp_, coef=c_)
 npd = lambda dn: dict(definition=dn, ai_measure="aipostings", group="difference"); nps = lambda dn: L.n(NP, "net_producer_state_years", "{:.0f}", **npd(dn)); lvn = lambda r_: L.n(LV, "mean_lnET", "{:.2f}", row=r_)
@@ -84,7 +85,7 @@ prose["summary"] = f"""
 prose["data"] = f"""
 <h2>1. The question and the data</h2>
 <p>Is growth in AI-related activity associated with more or less electricity use, energy efficiency and renewable energy? Zhang et al. (2026) argue AI works through tech jobs and density and spills across borders. Fang, Lee and Li (2025) find that AI job postings go with more renewable consumption across states in 2018-2021. We test both, then look at Georgia, a large data-center market with a regulated utility.</p>
-<p><b>Panel:</b> 50 states and DC, 2015-2025, 561 rows. All sources are public: EIA (generation, capacity, sales, SEDS), BLS QCEW (jobs), BEA (GDP, population), Census (land, borders). The Zhang models use the 50 states (N = {L.n(C, "N", "{:.0f}", tag=t("ln_ec"))}). Validation found 0 red, 3 yellow and 17 green variables, and cross-source checks are green, except one reported gap: no net-producer rule reaches Fang's count. The master workbook has every check, source and limitation.</p>
+<p><b>Panel:</b> 50 states and DC, 2015-2025, 561 rows. All sources are public: EIA (generation, capacity, sales, SEDS), BLS QCEW (jobs), BEA (GDP, population), Census (land, borders). The Zhang models use the 50 states (N = {L.n(C, "N", "{:.0f}", tag=t("ln_ec"))}). The workbook's Validation tab has {vc("all", "total")} checks: {vc("all", "green")} green, {vc("all", "yellow")} yellow, {vc("all", "red")} red and {vc("all", "not run")} not run. The red is the team's NSF file with no state rows, which isn't used. The {vc("model_variables", "total")} model variables rate {vc("model_variables", "green")} green, {vc("model_variables", "yellow")} yellow and {vc("model_variables", "red")} red. Cross-source checks are green, except one reported gap: no net-producer rule reaches Fang's count. The master workbook has every check, source and limitation.</p>
 <p><b>Two AI measures:</b> <i>private data-center jobs per 1,000 workers</i> (NAICS 518210), one consistent series, but a proxy for data-center activity rather than AI use; and <i>AI job postings</i> (Stanford AI Index), Fang's measure, where almost every year comes from a different report edition. <b>Data-center jobs are the more reliable measure when we extend the sample.</b></p>
 """
 prose["methods"] = f"""
@@ -205,7 +206,7 @@ figure{margin:0}.tbl{margin:4pt 0 9pt;break-inside:avoid}.tbl figcaption,.fig fi
 .eq{margin:0 0 5pt;padding:4pt 7pt;border-left:2.5pt solid var(--head);background:var(--tint);font-size:9pt;line-height:1.3;break-inside:avoid}
 .figs{margin:3pt 0 6pt}.fig{break-inside:avoid;margin-bottom:7pt}.fig img{width:100%;display:block}.figs.stack .fig img{width:80%;margin:0 auto}.fig figcaption{margin:2pt 0 0}.figs.two{display:grid;grid-template-columns:1fr 1fr;gap:10pt}
 ul.tight{margin:0 0 6pt;padding-left:13pt}ul.tight li{margin-bottom:2.5pt}
-.appx{font-size:8pt}.appx p{margin-bottom:4pt}.appx table{font-size:5.7pt;line-height:1.1}.appx td,.appx th{padding:.6pt 2.5pt;word-break:break-word}.appx code{font-size:7pt}.tags td:nth-child(1){width:6%;white-space:nowrap}.tags td:nth-child(2){width:24%}.tags td:nth-child(4){width:11%;word-break:normal}
+.appx{font-size:8pt}.appx p{margin-bottom:4pt}.appx table{font-size:8pt;line-height:1.15}.appx td,.appx th{padding:.8pt 2.5pt;word-break:break-word}.appx code{font-size:8pt}.tags td:nth-child(1){width:6%;white-space:nowrap}.tags td:nth-child(2){width:24%}.tags td:nth-child(4){width:11%;word-break:normal}
 """
 doc = f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ECON 499R Results Report</title><style>{css}</style></head><body>{body}</body></html>'
 HT = f"outputs/ECON499R_Results_{D}.html"; PDF = f"outputs/ECON499R_Results_{D}.pdf"; open(HT, "w").write(doc)

@@ -4,8 +4,9 @@ Usage: python3 code/python/build_master_workbook.py --date YYYY-MM-DD   (run fro
 
 Reads cleaned outputs, receipts and validation files. Copies whole raw tables under the size rule, read-only. Edits no data.
 Run code/python/build_cross_source_checks.py, build_raw_file_shapes.py and build_georgia_tables.py first.
-Output is not yet recalculated; code/python/check_master_workbook.py recalculates it with LibreOffice and checks it."""
-import argparse, csv, glob, os, re, sys
+LibreOffice recalculates a copy only. The final file is this script's build plus the copy's cached values, and it's installed only if the link check passes (workbook_finalize.py).
+Then run code/python/check_master_workbook.py, which checks the final file."""
+import argparse, csv, glob, os, re, sys, tempfile
 import numpy as np, pandas as pd
 from openpyxl import Workbook
 from openpyxl.cell.cell import ERROR_CODES
@@ -13,9 +14,12 @@ from openpyxl.cell.cell import ILLEGAL_CHARACTERS_RE
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter as L
+from openpyxl.worksheet.hyperlink import Hyperlink
 from openpyxl.utils.indexed_list import IndexedList
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import master_workbook_meta as M
+import workbook_finalize as WF
+from check_workbook_links import REPO_BLOB
 
 ap = argparse.ArgumentParser(); ap.add_argument("--date", required=True); ap.add_argument("--out", default=None); A = ap.parse_args()
 DATE = A.date; XL = A.out or f"outputs/ECON499R_Master_Data_{DATE}.xlsx"
@@ -60,8 +64,11 @@ def write_df(name, df, fmt=None, widths=None, freeze=None, font=None):
     for j, c in enumerate(df.columns, 1): ws.column_dimensions[L(j)].width = max(10, min(18, len(str(c)) + 2)) if j > 2 else 12
     for k, w in (widths or {}).items(): ws.column_dimensions[k].width = w
     ws.auto_filter.ref = f"A1:{L(len(df.columns))}{len(df) + 1}"; return ws
-def link(c, url, internal=False):
+def link(c, url):  # web and GitHub links: a target, no location
     if url: c.hyperlink = url; c.font = LINK
+def ilink(c, sheet, cell="A1"):  # internal links: a location, no target. Real sheet name, quoted
+    c.hyperlink = Hyperlink(ref=c.coordinate, location="'" + sheet.replace("'", "''") + f"'!{cell}"); c.font = LINK
+def receipt_url(name): return REPO_BLOB + "data/receipts/" + name
 def read_csv_rows(path):
     for enc in ("utf-8-sig", "latin1"):
         try:
@@ -386,23 +393,44 @@ if UNKNOWN_GAPS: sys.exit(f"gaps with no reason: {UNKNOWN_GAPS}")
 reg = pd.DataFrame(REG); reg.to_csv("data/variable_registry.csv", index=False)
 print("registry", reg.shape, reg.status.value_counts().to_dict())
 
+# ---- Receipts: each receipt's full text, one row per line, so the workbook also works offline ----
+ws = wb.create_sheet("Receipts"); header(ws, ["receipt", "line", "text"], freeze="A2")
+RFILES = sorted(os.path.basename(f) for f in glob.glob("data/receipts/*.md"))
+for n in set(reg.receipt) | {s["receipt"] for s in M.SOURCES}:
+    if n not in RFILES: sys.exit(f"receipt not in data/receipts/: {n}")
+RTEXT = {n: open(f"data/receipts/{n}", encoding="utf-8", newline="").read() for n in RFILES}
+RECEIPT_ROW = {}; i = len(RFILES) + 2
+for n in RFILES:
+    RECEIPT_ROW[n] = i; i += RTEXT[n].count("\n") + 1
+for k, n in enumerate(RFILES, 2):  # index
+    ws.cell(k, 1, "index"); ws.cell(k, 2, k - 1); ilink(ws.cell(k, 3, n), "Receipts", f"A{RECEIPT_ROW[n]}")
+WRAP = Alignment(wrap_text=True, vertical="top")
+for n in RFILES:
+    for j, ln in enumerate(RTEXT[n].split("\n"), 1):
+        if len(ln) > 32000 or ILLEGAL_CHARACTERS_RE.search(ln): sys.exit(f"{n} line {j} can't go in a cell as is")
+        r_ = RECEIPT_ROW[n] + j - 1; ws.cell(r_, 1, n); ws.cell(r_, 2, j); c = ws.cell(r_, 3, ln if ln else None); c.alignment = WRAP
+        fix_text(ws, r_, [n, j, ln])
+    ws.cell(RECEIPT_ROW[n], 1).font = BOLD
+ws.column_dimensions["A"].width = 20; ws.column_dimensions["B"].width = 7; ws.column_dimensions["C"].width = 140
+ws.auto_filter.ref = f"A1:C{i - 1}"
+
 # ---- Variable Finder ----
 ws = wb.create_sheet("Variable Finder")
-vf = ["variable", "tab", "column", "definition", "unit", "formula", "source", "source_url", "receipt", "validation_rating", "status", "used_in", "years", "states", "missing_cells", "missing_reason", "limitations"]
+vf = ["variable", "tab", "column", "definition", "unit", "formula", "source", "source_url", "receipt", "receipt_in_workbook", "validation_rating", "status", "used_in", "years", "states", "missing_cells", "missing_reason", "limitations"]
 header(ws, vf, freeze="B2")
 RCOL = {"green": "green", "yellow": "yellow", "red": "red"}
 for i, r in enumerate(reg.to_dict("records"), 2):
     for j, c in enumerate(vf, 1):
-        v = {"source_url": r["file_link"]}.get(c, r.get(c, "")); v = "" if isinstance(v, float) and np.isnan(v) else v
+        v = {"source_url": r["file_link"], "receipt_in_workbook": f"Receipts, row {RECEIPT_ROW[r['receipt']]}"}.get(c, r.get(c, "")); v = "" if isinstance(v, float) and np.isnan(v) else v
         x = ws.cell(i, j, ("'" + v if isinstance(v, str) and v.startswith("=") else v) if c != "formula" else (str(v).lstrip("=") if v else ""))
     if r["tab"] != "none":
-        col1 = str(r["column"]).split(":")[0]; here = f"#'{r['tab']}'!{col1}1"
-        link(ws.cell(i, 2), here); link(ws.cell(i, 3), here)
+        col1 = str(r["column"]).split(":")[0]; here = f"{col1}1"
+        ilink(ws.cell(i, 2), r["tab"], here); ilink(ws.cell(i, 3), r["tab"], here)
     if r["file_link"]: link(ws.cell(i, 8), r["file_link"])
-    if r["receipt"]: link(ws.cell(i, 9), "../data/receipts/" + r["receipt"])
-    rt = str(r["validation_rating"]); ws.cell(i, 10).fill = FILL.get(rt.split(",")[0], FILL["grey"])
-    ws.cell(i, 11).fill = {"Ready": FILL["green"], "Pending": FILL["yellow"], "Not available": FILL["red"]}[r["status"]]
-for k, w in zip("ABCDEFGHIJKLMNOPQ", (34, 22, 8, 60, 14, 28, 44, 44, 16, 14, 13, 14, 11, 9, 9, 40, 60)): ws.column_dimensions[k].width = w
+    link(ws.cell(i, 9), receipt_url(r["receipt"])); ilink(ws.cell(i, 10), "Receipts", f"A{RECEIPT_ROW[r['receipt']]}")
+    rt = str(r["validation_rating"]); ws.cell(i, vf.index("validation_rating") + 1).fill = FILL.get(rt.split(",")[0], FILL["grey"])
+    ws.cell(i, vf.index("status") + 1).fill = {"Ready": FILL["green"], "Pending": FILL["yellow"], "Not available": FILL["red"]}[r["status"]]
+for k, w in zip("ABCDEFGHIJKLMNOPQR", (34, 22, 8, 60, 14, 28, 44, 44, 16, 20, 14, 13, 14, 11, 9, 9, 40, 60)): ws.column_dimensions[k].width = w
 ws.auto_filter.ref = f"A1:{L(len(vf))}{len(reg) + 1}"
 
 # ---- Data dictionary ----
@@ -428,7 +456,7 @@ for i, s in enumerate(M.SOURCES, 2):
         if not ms: sys.exit(f"source raw path not in inventory: {pth}")
     vals = [s["dataset"], s["publisher"], s["landing"], s["link"], s["access"], s["vintage"], s["ptype"], citation(s), s["license"], "; ".join(rf) or "No raw file", s["receipt"], s.get("note", "")]
     for j, v in enumerate(vals, 1): ws.cell(i, j, v)
-    link(ws.cell(i, 3), s["landing"]); link(ws.cell(i, 4), s["link"]); link(ws.cell(i, 11), "../data/receipts/" + s["receipt"])
+    link(ws.cell(i, 3), s["landing"]); link(ws.cell(i, 4), s["link"]); link(ws.cell(i, 11), receipt_url(s["receipt"]))
 for k, w in zip("ABCDEFGHIJKL", (46, 30, 44, 44, 13, 26, 24, 70, 34, 60, 15, 50)): ws.column_dimensions[k].width = w
 ws.auto_filter.ref = f"A1:{L(len(sc))}{len(M.SOURCES) + 1}"
 
@@ -467,6 +495,11 @@ for r in pd.read_csv(f"logs/{DATE}/cross_source_checks.csv").itertuples(): vrow(
 vd = pd.DataFrame(V); ws = write_df("Validation", vd, widths=dict(A=24, B=48, C=56, D=16, E=80, F=12, G=14), freeze="C2")
 for i, r in enumerate(vd.rating, 2):
     ws.cell(i, 6).fill = FILL.get(str(r).split(",")[0], FILL["grey"])
+VC = [dict(scope="all", rating=x, n=int((vd.rating == x).sum())) for x in ("green", "yellow", "red", "not run")] + [dict(scope="all", rating="total", n=len(vd))]
+vv = vd[vd.section == "Part C verdict by variable"]; VC += [dict(scope="model_variables", rating=x, n=int((vv.rating == x).sum())) for x in ("green", "yellow", "red")] + [dict(scope="model_variables", rating="total", n=len(vv))]
+if sum(x["n"] for x in VC[:4]) != len(vd): sys.exit("a Validation row has a rating outside green, yellow, red, not run")
+os.makedirs(f"results/{DATE}/paper", exist_ok=True)
+pd.DataFrame([dict(tag=f"validation_counts_{x['scope']}_{x['rating'].replace(' ', '')}", status="ok", **x) for x in VC]).to_csv(f"results/{DATE}/paper/validation_counts.csv", index=False)
 if (vd.rating == "red").any(): print("RED ROWS:", vd[vd.rating == "red"][["check", "result"]].to_string())
 
 # ---- Limitations ----
@@ -600,14 +633,14 @@ write_df("Changelog", pd.DataFrame(M.CHANGELOG, columns=["build_date", "file", "
 
 # ---- README ----
 ws = wb.create_sheet("README")
-ORDER = ["README", "Variable Finder", "Core Panel", "Full Panel", "Fang Panel", "Georgia", "Validation", "Limitations", "Missing Data", "Sources", "Raw Files", "Raw Table Summary", "Changelog"] + [t for t, *_ in CLEAN if t not in ("Full Panel", "Fang Panel")] + ["W Inverse Distance", "W Border", "W Distance Miles"] + [t for t, *_ in RAWTABS]
-DESC = {"Variable Finder": "Start here. Every variable in every tab, with links to its tab and column, source and receipt; rating and status colored. Comes from data/variable_registry.csv.", "Core Panel": "50 states + DC, 2015-2025. The memo variables. Blue = downloaded values; black = formulas you can audit. Includes sample flags.", "Full Panel": "Same rows, all 80 built variables. Values only. Same as data/out/state_panel_2015_2025.csv.", "Fang Panel": "Fang's variables, with AI postings and their edition and vendor. Same as data/fang_panel.csv.", "Georgia": "Georgia next to the U.S. median; large-load table; IRP figures with document and page; Epoch's Georgia sites.", "Validation": "Every check: Part C, Nov 4 new data, Nov 4 audit, Fang Part A, cross-source.", "Limitations": "Per variable and overall, with how each affects interpretation.", "Missing Data": "Variable x year, with the reason for each gap.", "Sources": "Every source: links, dates, citation, license note, raw files with hashes, receipt.", "Raw Files": "One row per file in data/raw/: size, sha256, shape, and whether it's here whole or summarized.", "Raw Table Summary": "Raw tables that aren't here whole: columns, rows, years, what we kept, path, why.", "Changelog": "What changed in each build."}
+ORDER = ["README", "Variable Finder", "Core Panel", "Full Panel", "Fang Panel", "Georgia", "Validation", "Limitations", "Missing Data", "Sources", "Receipts", "Raw Files", "Raw Table Summary", "Changelog"] + [t for t, *_ in CLEAN if t not in ("Full Panel", "Fang Panel")] + ["W Inverse Distance", "W Border", "W Distance Miles"] + [t for t, *_ in RAWTABS]
+DESC = {"Variable Finder": "Start here. Every variable in every tab, with links to its tab and column, source and receipt (on GitHub and on the Receipts tab); rating and status colored. Comes from data/variable_registry.csv.", "Core Panel": "50 states + DC, 2015-2025. The memo variables. Blue = downloaded values; black = formulas you can audit. Includes sample flags.", "Full Panel": "Same rows, all 80 built variables. Values only. Same as data/out/state_panel_2015_2025.csv.", "Fang Panel": "Fang's variables, with AI postings and their edition and vendor. Same as data/fang_panel.csv.", "Georgia": "Georgia next to the U.S. median; large-load table; IRP figures with document and page; Epoch's Georgia sites.", "Validation": "Every check: Part C, Nov 4 new data, Nov 4 audit, Fang Part A, cross-source.", "Limitations": "Per variable and overall, with how each affects interpretation.", "Missing Data": "Variable x year, with the reason for each gap.", "Sources": "Every source: links, dates, citation, license note, raw files with hashes, receipt.", "Receipts": "Each receipt's full text from data/receipts/, one row per line, with an index at the top. Works offline.", "Raw Files": "One row per file in data/raw/: size, sha256, shape, and whether it's here whole or summarized.", "Raw Table Summary": "Raw tables that aren't here whole: columns, rows, years, what we kept, path, why.", "Changelog": "What changed in each build."}
 for t, *_ in CLEAN: DESC.setdefault(t, f"Cleaned table, whole. Same as {_[0]}.")
 for t in ("W Inverse Distance", "W Border", "W Distance Miles"): DESC[t] = "Spatial matrix, whole, from data/out/."
 for t, f, sh, key, used in RAWTABS: DESC[t] = f"Raw table, whole, exactly as in {f}{' (sheet: ' + sh + ')' if isinstance(sh, str) and sh not in ('tab', 'pipe') else ''}. {used}."
 lines_ = [("ECON 499R master data workbook: U.S. state panel, Fang test data, Georgia case box, finance tables", TITLE), (f"As of {DATE}. Shunji Lewandowski and Alexander Hendricks, Prof. Fohlin, Emory University.", BODY), ("", BODY),
  ("What this is", BOLD), ("One workbook with all our cleaned data, showing where every variable came from, how it was checked and what limits it. Model results aren't here: see results/ and results/2026-11-04/paper/ (the results pack). The old Prelim Results tab stays in outputs/old/.", BODY), ("Read the Limitations tab before using any number.", BOLD), ("", BODY),
- ("How to rebuild", BOLD), (f"From the project root, after any data change: python3 code/python/build_cross_source_checks.py --date {DATE}; python3 code/python/build_raw_file_shapes.py --date {DATE}; python3 code/python/build_georgia_tables.py --date {DATE}; python3 code/python/build_master_workbook.py --date {DATE}; python3 code/python/check_master_workbook.py --date {DATE}", BODY), ("Panel: python3 econ499r_starter/scripts/build_panel.py data/raw data/out. Receipt links are relative: they work from outputs/ in the project, and from outputs/ in the results package.", BODY), ("", BODY),
+ ("How to rebuild", BOLD), (f"From the project root, after any data change: python3 code/python/build_cross_source_checks.py --date {DATE}; python3 code/python/build_raw_file_shapes.py --date {DATE}; python3 code/python/build_georgia_tables.py --date {DATE}; python3 code/python/build_master_workbook.py --date {DATE}; python3 code/python/check_master_workbook.py --date {DATE}", BODY), ("Panel: python3 econ499r_starter/scripts/build_panel.py data/raw data/out. Links: tab links are internal, so they keep working if this file is moved, renamed or downloaded. Receipt links open data/receipts/ in the team's private GitHub repo, which needs sign-in and repo access. The receipt_in_workbook column on Variable Finder opens the same text on the Receipts tab, offline. LibreOffice never saves this file: it recalculates a copy, and the build adds that copy's values as cached values.", BODY), ("", BODY),
  ("Pending or not available", BOLD), ("Pending: Georgia large-load reports Q1-Q4 2024 (browser download from https://psc.ga.gov/search/facts-docket/?docketId=55378 ; the PSC list returns 404 to scripts).", BODY), ("Not run: Fang's extreme weather split, which counts occurrences; NOAA degree days are in, for one check only (48 states).", BODY), ("Optional, not run: SEC company facts refresh. No raw copy of SEC data, so no hash.", BODY), ("Not in this workbook, by rule: licensed Bloomberg data, interview transcripts, keys and personal emails. The Lazard PDF and journal PDFs are pointed to, not copied.", BODY), ("", BODY),
  ("Size rule", BOLD), ("Every cleaned dataset is whole. Raw tables go in whole if they're under about 200,000 rows, except: county-level QCEW, EIA-860/923 and full PUDL tables, as the rule directs; and folders of many small files (BEA, NSF, ACS, NCSES, AI Index) whose kept values are whole in a cleaned tab. Those are on Raw Table Summary.", BODY), ("", BODY),
  ("Colors", BOLD), ("Blue = downloaded or transcribed inputs on Core Panel, Fang Panel and Georgia. Black = formulas or computed values. Other data tabs are plain copies in black, as in earlier builds. Green, yellow and red are validation ratings.", BODY), ("", BODY), ("Tabs", BOLD)]
@@ -615,12 +648,14 @@ for i, (t, f) in enumerate(lines_, 1):
     c = ws.cell(i, 1, t); c.font = f; c.alignment = Alignment(wrap_text=True, vertical="top")
 i = len(lines_) + 1
 for t in ORDER[1:]:
-    c = ws.cell(i, 1, t); link(c, f"#'{t}'!A1"); ws.cell(i, 2, DESC[t]); i += 1
+    c = ws.cell(i, 1, t); ilink(c, t); ws.cell(i, 2, DESC[t]); i += 1
 ws.column_dimensions["A"].width = 150 if False else 30; ws.column_dimensions["B"].width = 130
 for j in range(1, len(lines_) + 1):
     ws.merge_cells(start_row=j, start_column=1, end_row=j, end_column=2)
     ln = len(str(lines_[j - 1][0])); ws.row_dimensions[j].height = max(14, 14 * (ln // 145 + 1)) if j > 1 else 20
 wb._sheets = [wb[t] for t in ORDER]
 for s in wb.worksheets: s.sheet_view.zoomScale = 90
-os.makedirs(os.path.dirname(XL), exist_ok=True); wb.save(XL); print("saved", XL, round(os.path.getsize(XL) / 1e6, 1), "MB;", len(wb.sheetnames), "tabs; validation", len(vd), vd.rating.value_counts().to_dict())
+os.makedirs(os.path.dirname(XL) or ".", exist_ok=True); BT = tempfile.mkdtemp(prefix="wb_build_"); built = os.path.join(BT, os.path.basename(XL)); wb.save(built)
+print("built", round(os.path.getsize(built) / 1e6, 1), "MB;", len(wb.sheetnames), "tabs; validation", len(vd), vd.rating.value_counts().to_dict(), flush=True)
 pd.DataFrame({"tab": ORDER}).to_csv(f"logs/{DATE}/master_workbook_tabs.csv", index=False)
+WF.finalize(built, XL, f"logs/{DATE}/master_workbook_links.csv"); os.remove(built); os.rmdir(BT)

@@ -57,6 +57,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - **data/raw/ is read-only.** Never edit any file under data/raw/.
 - **No invented data.** If a value is missing, leave it as NA and add a reason in the registry.
 - **After any data change, rerun `code/python/build_master_workbook.py --date YYYY-MM-DD`** and its companion scripts; commands are in `data/receipts/master_workbook.md`.
+- **LibreOffice never saves the final workbook.** It recalculates a copy only; the build adds that copy's cached values and fails on a bad link (`code/python/workbook_finalize.py`, `code/python/check_workbook_links.py`).
 - **Deviations from the Methods Memo** must be logged in EXPERIMENTS.md first with a reason, before running.
 - **Script argument convention:** positional args only.
   - `build_panel.py <raw_dir> <out_dir>`
@@ -130,6 +131,8 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 **Finish run complete (2026-11-04; `docs/2026-11-04/finish-run-log.md`):** results pack, master workbook (`outputs/ECON499R_Master_Data_2026-11-04.xlsx`, Variable Finder from `data/variable_registry.csv`), project summary, results report (`outputs/ECON499R_Results_2026-11-04.pdf`), clean GitHub copy (`release/github/`; not pushed; see `CHECKLIST.md`) and team package (`release/results_and_data_2026-11-04.zip`). The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Full-sample t-3 lags are dropped (`EXPERIMENTS.md` §0 item 14).
 
 **Fixes before push (2026-11-04; `docs/2026-11-04/fixes-before-push.md`):** exploratory SLX note in findings; new `fig_h1_coefficients.png`; citations for Georgia commitments (Q2 2026 report, PDF p. 8), EIA's SEDS notice and IEA WEO tables; net-producer definitions (`code/R/04h2_fang_net_producer.R`); NOAA weather check on ln_ec (AI -0.0021, p = 0.711).
+
+**Workbook links fix (2026-11-04; `docs/2026-11-04/workbook-links-fix.md`):** internal links are now true internal links, receipt links go to the private GitHub repo, and a Receipts tab covers offline use. No data changed. The repo's only collaborator is SHLEW06, so others need access for GitHub links.
 
 **Next step:** team review for Nov 17; download the Q1-Q4 2024 large-load reports by browser; draft by Nov 24.
 

@@ -1,4 +1,7 @@
 check,result,evidence
+LibreOffice did not save the final file,ok,docProps/app.xml Application: Microsoft Excel Compatible / Openpyxl 3.1.5
+Every formula cell has a cached value,ok,"13,923 formula cells; no value []; errors []"
+Link check,ok,"counts {'internal': 2933, 'github_receipt': 995, 'web': 1028}; problems 0: []"
 Zero formula errors after recalculation,ok,0 error cells []
 No Census key in any cell,ok,0 cells; key checked without printing
 No email addresses in any cell,ok,0 cells []
@@ -8,10 +11,12 @@ Sample flags,ok,in_zhang_sample 550 of 561 (DC excluded); in_fang_sample 204 (N 
 Every tab's row count matches its source,ok,71 data tabs checked; mismatches []
 30 random cells (seed 2026) match their source files,ok,30 of 30 match; 25 tabs; logs/2026-11-04/master_workbook_30cells.csv. Misses: []
 Every registry variable is in the Variable Finder,ok,949 registry rows; missing []
-Every Finder row links to a real tab and column,ok,948 internal links survive recalculation; header mismatches []. Rows with tab 'none' are Pending or Not available: ['large_load_q1_q4_2024']
-"Tabs, frozen headers, filters and Arial survive recalculation",ok,63 tabs in order; no freeze []; no filter []; not Arial []
-Live formulas and blue inputs survive,ok,13923 live formulas on Core Panel; input color FF0000FF
+Every Finder row links to a real tab and column,ok,948 internal links; header mismatches []. Rows with tab 'none' are Pending or Not available: ['large_load_q1_q4_2024']
+Receipts tab holds each receipt's exact text,ok,"25 receipts, 3,177 lines; differ []; extra []"
+"Every Finder row's links go to its own tab, column and receipt",ok,949 rows; wrong []
+"Tabs, frozen headers, filters and Arial are in the final file",ok,64 tabs in order; no freeze []; no filter []; not Arial []
+Live formulas and blue inputs are in the final file,ok,13923 live formulas on Core Panel; input color 000000FF
 Sources: URLs are clickable and the filter covers all rows,ok,92 links; 46 sources; filter A1:L47
 Every receipt link points to a real file,ok,22 receipts; missing []
-URLs open (read-only),ok,64 URLs; {'ok': 64}; problems []
-Recalculated copy installed,ok,"outputs/ECON499R_Master_Data_2026-11-04.xlsx, 28.1 MB"
+Every GitHub receipt link exists on main (read-only),ok,24 files; missing []
+URLs open (read-only),ok,"64 URLs; {'ok': 63, 'blocked to scripts': 1}; problems []"

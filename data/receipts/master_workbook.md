@@ -1,6 +1,6 @@
 # Receipt: master data workbook
 
-**File:** `outputs/ECON499R_Master_Data_2026-11-04.xlsx`, 28.1 MB, 63 tabs, 949 registry rows. Stays out of git.
+**File:** `outputs/ECON499R_Master_Data_2026-11-04.xlsx`, about 29 MB, 64 tabs, 949 registry rows. Stays out of git.
 
 **Rebuild, from the project root:**
 ```
@@ -10,7 +10,9 @@ python3 code/python/build_georgia_tables.py --date 2026-11-04
 python3 code/python/build_master_workbook.py --date 2026-11-04
 python3 code/python/check_master_workbook.py --date 2026-11-04
 ```
-`check_master_workbook.py` recalculates with LibreOffice and installs the recalculated copy only if the checks pass, so formula values are cached for readers that don't recalculate.
+**LibreOffice never saves the final file.** When LibreOffice saves a workbook, it rewrites internal links as external links to the file's own path. So `build_master_workbook.py` recalculates a copy with LibreOffice, stops on any formula error, and copies the results into its own build as cached values (`code/python/workbook_finalize.py`). It installs the file only if the link check passes. `check_master_workbook.py` then checks the final file and never writes it.
+
+**Links.** Tab links are internal: a location and no target. Receipt links go to `https://github.com/SHLEW06/econ499r-ai-renewables/blob/main/data/receipts/`, which needs sign-in and repo access. The Receipts tab holds each receipt's text, and Variable Finder's `receipt_in_workbook` column links to it, so the workbook also works offline. Web links are unchanged. To check any copy: `python3 code/python/check_workbook_links.py <file.xlsx>`.
 
 **One source of truth:** `data/variable_registry.csv` generates the Variable Finder tab and `data/DATA_DICTIONARY.md`. Hand-written sources, definitions and limitations are in `code/python/master_workbook_meta.py`. Citations for the sources the audit covered are read from `data/INDEPENDENT_AUDIT_2026-11-04.md` section 4.
 
@@ -19,14 +21,18 @@ python3 code/python/check_master_workbook.py --date 2026-11-04
 ## Checks (`logs/2026-11-04/master_workbook_checks.csv`)
 | Check | Result |
 |---|---|
-| Formula errors after LibreOffice recalculation | 0 |
+| Final file not saved by LibreOffice | `docProps/app.xml` names openpyxl |
+| Formula errors after LibreOffice recalculates a copy | 0; 13,923 formula cells, all with cached values |
+| Link check (`logs/2026-11-04/master_workbook_links.csv`) | 2,933 internal, 995 GitHub receipt, 1,028 web; 0 problems |
+| Receipts tab equals `data/receipts/` | 25 receipts, exact text |
+| Finder links go to their own tab, column and receipt | 949 of 949; all 24 linked receipts exist on GitHub `main` |
 | Core Panel formulas equal the panel | 19 formula columns x 561 rows, no differences. `net_exporter_2015`: 30 net exporters, 0 rows differ. `in_zhang_sample` 550; `in_fang_sample` 204 |
 | Row counts match source | 71 data tabs, no mismatches |
 | 30 random cells, seed 2026 | 30 of 30 match, 25 tabs (`logs/2026-11-04/master_workbook_30cells.csv`) |
 | Registry to Finder to tab and column | 949 of 949; 948 links, and the 1 row without a tab is Pending |
-| Frozen headers, filters, Arial, 13,923 live formulas, blue inputs | Survive recalculation |
+| Frozen headers, filters, Arial, 13,923 live formulas, blue inputs | In the final file |
 | Sources tab | 46 sources, 92 clickable links, filter covers all rows |
-| URLs, read-only | 64 unique: all open on Nov 4 |
+| URLs, read-only | 64 unique on Nov 4: 63 open; the IEA WEO 2025 page returns 403 to scripts |
 | Census key or email addresses in any cell | None |
 
 ## Cross-source checks (`logs/2026-11-04/cross_source_checks.csv`)

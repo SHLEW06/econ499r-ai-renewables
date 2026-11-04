@@ -22,10 +22,10 @@ Raw RMI Housing Income,A16975,WEC Energy Group,WEC Energy Group,True
 Raw OWID Solar,B3138,SWE,SWE,True
 OWID Solar,E47,"IRENA (2026), Renewable Energy Statistics; processed by Our World in Data","IRENA (2026), Renewable Energy Statistics; processed by Our World in Data",True
 NCSES Bachelors,E369,394804,394804,True
-Raw EPU Monthly,AK241,47.9337148445662,47.933714844566225,True
+Raw EPU Monthly,AK241,47.93371484456623,47.933714844566225,True
 Raw Epoch Cooling Towers,D236,4.27,4.27,True
 Raw Epoch Chips,H174,Anthropic #speculative,Anthropic #speculative,True
-Raw Epoch Chip Types,K27,2.33148054573017,2.331480545730167,True
-Raw RMI Emission Targets,K8982,33759449.1905199,33759449.19051988,True
+Raw Epoch Chip Types,K27,2.331480545730167,2.331480545730167,True
+Raw RMI Emission Targets,K8982,33759449.19051988,33759449.19051988,True
 Raw RMI Reliability,H22884,normal_conditions,normal_conditions,True
 Raw Census Pop V2025,Z57,9872,9872,True

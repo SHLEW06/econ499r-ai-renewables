@@ -42,6 +42,15 @@ number,document,source_file,source_tag,column,in_document,match
 "15,600",ECON499R_Results_2026-11-04.pdf,data/georgia_large_load_table2.csv,{'row': 'Commitments'},q2_2026_mid2030s,yes,yes
 "3,600",ECON499R_Results_2026-11-04.pdf,data/georgia_large_load_table2.csv,{'row': 'Commitments'},ifiling_mid2030s,yes,yes
 550,ECON499R_Results_2026-11-04.pdf,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,N,yes,yes
+214,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_all_total,n,yes,yes
+173,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_all_green,n,yes,yes
+39,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_all_yellow,n,yes,yes
+1,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_all_red,n,yes,yes
+1,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_all_notrun,n,yes,yes
+20,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_model_variables_total,n,yes,yes
+17,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_model_variables_green,n,yes,yes
+3,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_model_variables_yellow,n,yes,yes
+0,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/paper/validation_counts.csv,validation_counts_model_variables_red,n,yes,yes
 0.100,ECON499R_Results_2026-11-04.pdf,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,pval,yes,yes
 0.001,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/robustness.csv,rob_dk_ai518210_lag1_ctrl4_w9901_dk_renew_share_50s2015_2025,pval,yes,yes
 0.094,ECON499R_Results_2026-11-04.pdf,results/2026-11-03/h3/h3_moran.csv,"{'variable': 'renew_share', 'W_version': 'invdist50', 'type': 'raw', 'year': 2015}",moran_I,yes,yes
