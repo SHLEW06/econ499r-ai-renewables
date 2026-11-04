@@ -110,14 +110,14 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - Main-spec rule: LYtrans=TRUE with demn=TRUE gives ρ=1.406 for renew_share, so LYtrans=FALSE is main for all three (`EXPERIMENTS.md` §0 item 15)
 - W·AI within-state SD after FE: 0.086 (invdist-50) vs 0.248 (border-48). Indirect per one SD: −1.4 vs −1.1 percentage points
 - splm cross-check: b1 and θ1 match SDPDm LYtrans=FALSE to 5 d.p. — passes
-- **H3 verdict (main spec: SDM, LYtrans=FALSE, invdist-50):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
+- **Earlier H3 verdict, before the spillover placebo; replaced by the readings below (main spec: SDM, LYtrans=FALSE, invdist-50):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
 **Phase 4e robustness done (2026-11-04):** gate, A1-A8, P1, P2, RPS control, all-ownership AI, Gavins Point row and spillover placebo (`code/R/04e_robustness.R`, `code/R/04e2_spillover_placebo.R`, `results/2026-11-04/`, `notebooks/04e_robustness_stretch.ipynb`, `docs/2026-11-04/phase-4e-robustness-stretch.md`).
 
 **Readings (team, 2026-11-04; these override the H1 and H3 wording above):**
 - **renew_share:** next year's AI predicts this year's share (p = 0.006), and with both in one model the lag is about zero. Describe the negative association as reflecting where and when data-center jobs grow (reverse timing or selection), not AI lowering the renewable share.
 - **new_renew_mw:** positive in raw MW, not robust to scaling, and its lead is also positive. With both in one model, neither is significant. Same caution.
-- **H3:** wording on hold. Spillover placebo is in; the team hasn't settled the wording.
+- **H3:** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
 - **RPS control and all-ownership AI:** they change no result. Holding Gavins Point in NE doesn't either.
 
 **Data corrections (2026-11-04):** `dc_wages_usd` is blank where suppressed (only change in the panel; SDM and other results stand). D23, receipts and C.6 corrected. See `data/receipts/README.md`.

@@ -104,7 +104,9 @@ Driver: `code/R/04d2_sdm_mainspec.R --date 2026-11-03`. Results: `results/2026-1
 
 For ln_ec and ln_ee, 7–10% of ρ draws fall out of range and inflate the draw SE, so read the CIs rather than the p-values.
 
-**H3 verdict (main spec: SDM, LYtrans=FALSE, inverse-distance W, 50 states):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
+**H3 reading (team, 2026-11-04):** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
+
+**Earlier verdict, 2026-11-03, before the spillover placebo (main spec: SDM, LYtrans=FALSE, inverse-distance W, 50 states):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
 **Other renew_share indirect effects:** LYtrans=TRUE on invdist-50 −0.244 (p = 0.058); LYtrans=FALSE on invdist-48 −0.159 (p = 0.037); LYtrans=FALSE on border-48 −0.045 (p = 0.087); LYtrans=TRUE on border-48 −0.032 (p = 0.033). LYtrans=TRUE with demn=TRUE fails the rule, so its rows are not counted.
 

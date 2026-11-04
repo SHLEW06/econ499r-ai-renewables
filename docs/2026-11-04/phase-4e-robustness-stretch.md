@@ -25,7 +25,7 @@
 **Readings (team):**
 - **`renew_share`:** next year's AI predicts this year's share, and with both in one model the lag is about zero. Describe the negative association as reflecting where and when data-center jobs grow (reverse timing or selection), not AI lowering the renewable share.
 - **`new_renew_mw`:** positive in raw MW, not robust to scaling, and its lead is also positive. With both in one model, neither is significant. Same caution.
-- **H3:** wording on hold until the team has reviewed the spillover placebo.
+- **H3:** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
 - **RPS control and all-ownership AI:** they change no result.
 
 | Own-AI placebo, N = 496 | AI(t+1) | In one model: lead | In one model: lag |
@@ -49,7 +49,6 @@
 
 | Item | Status |
 |---|---|
-| H3 wording | On hold for team review of the spillover placebo |
 | Fang test | Next. Needs its specification |
 | Older notebooks and handoffs (4b, 4d) | Their reading text predates the placebo. `CLAUDE.md` §5 says the new readings override it |
 

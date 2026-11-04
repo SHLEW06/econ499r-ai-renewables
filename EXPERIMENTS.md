@@ -312,7 +312,9 @@ Report direct, indirect (spillover), and total effects with simulated SEs via `s
 
 **Revised main spec (2026-11-03, §0 items 15–16):** LYtrans=FALSE for all three outcomes, because LYtrans=TRUE with demn=TRUE gives ρ = 1.406 for renew_share. Plug-in impacts on invdist-50: renew_share ρ=0.617, direct=−0.0155 (p<0.001), indirect=−0.1613 (p=0.035), total=−0.1768 (p=0.026). Results: `results/2026-11-03/h3_mainspec/`. The results listed above are the original 4d runs, and their impacts are means of draws.
 
-**H3 verdict (main spec: SDM, LYtrans=FALSE, inverse-distance W, 50 states):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
+**H3 reading (team, 2026-11-04; replaces the verdict below):** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
+
+**Earlier H3 verdict, 2026-11-03, before the spillover placebo (main spec: SDM, LYtrans=FALSE, inverse-distance W, 50 states):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
 ---
 
@@ -348,7 +350,7 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 
 - **renew_share:** next year's AI predicts this year's share, and with both in one model the lag is about zero. Describe the negative association as reflecting where and when data-center jobs grow (reverse timing or selection), not AI lowering the renewable share.
 - **new_renew_mw:** positive in raw MW, not robust to scaling, and its lead is also positive. With both in one model, neither is significant. Same caution.
-- **H3:** wording on hold. The spillover placebo is in (`results/2026-11-04/h3_placebo/`); the team hasn't settled the wording.
+- **H3:** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported. (`results/2026-11-04/h3_placebo/`)
 - **RPS control and all-ownership AI:** they change no result.
 
 **Output path:** `results/<date>/robustness/`  

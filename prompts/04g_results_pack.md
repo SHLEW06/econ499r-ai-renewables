@@ -24,7 +24,7 @@ ECON 499R project. The project root is "AI impact on Renewables". The draft is d
 - **Nonlinearity:** no curve passes Lind-Mehlum, so there are no turning-point claims.
 - **Mediation:** no channel. All bootstrap CIs include zero, and "share mediated" is not reported.
 - **Driscoll-Kraay:** a sensitivity check only. Never the basis for a "significant" claim.
-- **H3: wording on hold.** The spillover placebo is in `results/2026-11-04/h3_placebo/`; the team hasn't settled the wording. Don't write the H3 paragraph until it has. The tables still use the SDM impacts with the main inverse-distance W, the SLX (clustered), the border-W checks and the spillover placebo.
+- **H3 (decided 2026-11-04):** "On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported." Use this wording. The tables use the SDM impacts with the main inverse-distance W, the SLX (clustered), the border-W checks and the spillover placebo (`results/2026-11-04/h3_placebo/`).
 
 **Tools:** tables and figures are built by a script from the result CSVs. The notebook is a Python notebook that reads those CSVs and .tex files; it doesn't need an R kernel.
 

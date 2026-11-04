@@ -28,7 +28,7 @@ Driver: `code/R/04e2_spillover_placebo.R --date 2026-11-04`. Spec: EXPERIMENTS.m
 - **ln_ec and ln_ee:** no lead is significant. With both in one model, SLX W*AI(t-1) has the harmful sign and is significant in 3 of 4 rows (`ln_ec` on both W; `ln_ee` on border-48), but the same-sample lag-only rows aren't significant and the SDM CIs include zero. Treat this as exploratory.
 
 ## Wording
-H3 wording is on hold for team review. See `prompts/04g_results_pack.md`.
+On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
 
 ## Files
 `gate.csv`, `placebo_slx.csv`, `placebo_sdm_core.csv`, `placebo_sdm_impacts.csv`, `lead_lag_variation.csv`
