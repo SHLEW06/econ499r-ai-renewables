@@ -47,7 +47,7 @@ class Ledger:
             else:
                 row = self._row(r["source_file"], **eval(r["filters"])); v = float(row[r["column"]])
                 if r["fmt"] == "p":
-                    match = "yes" if (r["number"] == "0.001" and v < .001) or (r["number"] != "0.001" and f"{v:.3f}" == r["number"]) else "NO"
+                    match = "yes" if (r["number"] == "0.001" and v < .001) or f"{v:.3f}" == r["number"] else "NO"
                 else:
                     match = "yes" if r["fmt"].format(v * r["scale"]) == r["number"] else "NO"
             out.append(dict(number=r["number"], document=r["document"], source_file=r["source_file"], source_tag=r["tag"], column=r["column"], in_document="yes" if ok_doc else "NO", match=match))
