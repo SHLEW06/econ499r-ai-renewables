@@ -13,7 +13,7 @@ for pat in ["code/R/*.R", "code/python/*.py", "econ499r_starter/scripts/*.py", "
     ALLOW += sorted(glob.glob(pat))
 for r, _, fs in os.walk("results"):
     ALLOW += [os.path.join(r, f) for f in fs if os.path.splitext(f)[1].lower() in (".csv", ".tex", ".png", ".md", ".txt") and f != ".DS_Store"]
-CLEAN_IN = {"data/out/state_panel_2015_2025.csv": "EIA, BLS, BEA, Census", "data/out/W_border_binary.csv": "Census", "data/out/W_inverse_distance_rowstd.csv": "Census", "data/out/W_distance_miles.csv": "Census", "data/out/state_centroids_land.csv": "Census", "data/ai_allown_518210.csv": "BLS", "data/seds_renewables_state.csv": "EIA", "data/ncses_bachelors_state.csv": "NCSES (NSF)", "data/nsf_state_rd.csv": "NCSES (NSF)", "data/acs_broadband.csv": "Census", "data/fang_split_vars.csv": "EIA, NSF, BEA, Census", "data/epu_state_annual.csv": "Baker, Davis and Levy, CC BY 4.0", "data/epoch_ai_campuses_by_state.csv": "Epoch AI, CC BY", "data/out/ferc1_utility_financials.csv": "PUDL, CC BY 4.0", "data/out/ferc1_cost_by_technology.csv": "PUDL, CC BY 4.0", "data/out/ferc1_plant_costs.csv": "PUDL, CC BY 4.0"}
+CLEAN_IN = {"data/out/state_panel_2015_2025.csv": "EIA, BLS, BEA, Census", "data/out/W_border_binary.csv": "Census", "data/out/W_inverse_distance_rowstd.csv": "Census", "data/out/W_distance_miles.csv": "Census", "data/out/state_centroids_land.csv": "Census", "data/ai_allown_518210.csv": "BLS", "data/seds_renewables_state.csv": "EIA", "data/ncses_bachelors_state.csv": "NCSES (NSF)", "data/nsf_state_rd.csv": "NCSES (NSF)", "data/acs_broadband.csv": "Census", "data/fang_split_vars.csv": "EIA, NSF, BEA, Census", "data/fang_net_producer_definitions.csv": "EIA", "data/noaa_degree_days.csv": "NOAA NCEI", "data/epu_state_annual.csv": "Baker, Davis and Levy, CC BY 4.0", "data/epoch_ai_campuses_by_state.csv": "Epoch AI, CC BY", "data/out/ferc1_utility_financials.csv": "PUDL, CC BY 4.0", "data/out/ferc1_cost_by_technology.csv": "PUDL, CC BY 4.0", "data/out/ferc1_plant_costs.csv": "PUDL, CC BY 4.0"}
 ALLOW += list(CLEAN_IN)
 ALLOW = [f for f in ALLOW if os.path.basename(f) not in ("build_github_package.py", "build_results_package.py")]  # hold the scan patterns; stay in the working repo
 for f in ALLOW: copy(f)
@@ -41,7 +41,7 @@ Is growth in AI-related activity associated with more or less electricity use, e
 
 ## Data
 
-50 states and DC, 2015-2025. Sources: EIA, BLS QCEW, BEA, Census, Stanford AI Index, NCSES, LBNL, the state EPU index, Epoch AI, and FERC Form 1 through PUDL. Every variable, with its source, script line, coverage, rating and limitations, is in [`data/DATA_DICTIONARY.md`](data/DATA_DICTIONARY.md). Checks are in [`data/DATA_VALIDATION.md`](data/DATA_VALIDATION.md). Provenance by source is in [`data/receipts/`](data/receipts/).
+50 states and DC, 2015-2025. Sources: EIA, BLS QCEW, BEA, Census, Stanford AI Index, NCSES, LBNL, the state EPU index, NOAA, Epoch AI, and FERC Form 1 through PUDL. Every variable, with its source, script line, coverage, rating and limitations, is in [`data/DATA_DICTIONARY.md`](data/DATA_DICTIONARY.md). Checks are in [`data/DATA_VALIDATION.md`](data/DATA_VALIDATION.md). Provenance by source is in [`data/receipts/`](data/receipts/).
 
 **Raw data aren't here.** This repo holds cleaned tables only where every source allows redistribution: see [`DATA_LICENSES.md`](DATA_LICENSES.md). The rest rebuild from the download scripts.
 
@@ -84,7 +84,9 @@ Rscript code/R/04d_step3_spatial.R --date YYYY-MM-DD
 Rscript code/R/04e_robustness.R --date YYYY-MM-DD
 Rscript code/R/04e2_spillover_placebo.R --date YYYY-MM-DD
 Rscript code/R/04e3_stretch.R --date YYYY-MM-DD
+Rscript code/R/04e4_weather_check.R --date YYYY-MM-DD
 Rscript code/R/04h_fang_test.R --date YYYY-MM-DD
+Rscript code/R/04h2_fang_net_producer.R --date YYYY-MM-DD
 python3 code/python/04f_georgia_solar.py --date YYYY-MM-DD
 python3 code/python/04g_results_pack.py --date YYYY-MM-DD
 
@@ -99,10 +101,11 @@ Raw data, licensed data, interview material, journal PDFs, the Lazard PDF and ke
 """
 open(f"{OUT}/README.md", "w").write(readme)
 open(f"{OUT}/.gitignore", "w").write(".env\n*.env\ndata/raw/\narchive/\nliterature/\noutputs/\nrelease/\nlogs/\n_to_delete/\n*.pdf\n*.zip\n*.xlsx\n.DS_Store\n__pycache__/\n*.pyc\n.ipynb_checkpoints/\n*.part\n")
-rows = [("EIA: state electricity data, SEDS", "`state_panel_2015_2025.csv`, `seds_renewables_state.csv`, `fang_split_vars.csv`", "In", "Public domain. EIA: \"U.S. government publications are in the public domain\" (https://www.eia.gov/about/copyrights_reuse.php, read Nov 4, 2026). Cite EIA"),
+rows = [("EIA: state electricity data, SEDS", "`state_panel_2015_2025.csv`, `seds_renewables_state.csv`, `fang_split_vars.csv`, `fang_net_producer_definitions.csv`", "In", "Public domain. EIA: \"U.S. government publications are in the public domain\" (https://www.eia.gov/about/copyrights_reuse.php, read Nov 4, 2026). Cite EIA"),
  ("BLS QCEW", "`state_panel_2015_2025.csv`, `ai_allown_518210.csv`", "In", "U.S. government work, public domain (17 U.S.C. 105). BLS's copyright page returned 403 to the script, so it wasn't read. Cite BLS"),
  ("BEA", "`state_panel_2015_2025.csv`, `fang_split_vars.csv`", "In", "U.S. government work, public domain (17 U.S.C. 105). Cite BEA"),
  ("Census: Gazetteer, adjacency, ACS", "panel, `W_*`, centroids, `acs_broadband.csv`", "In", "U.S. government work, public domain (17 U.S.C. 105). Cite Census"),
+ ("NOAA NCEI", "`noaa_degree_days.csv`", "In", "U.S. government work, public domain (17 U.S.C. 105). Cite NOAA NCEI"),
  ("NCSES, NSF", "`nsf_state_rd.csv`, `ncses_bachelors_state.csv`", "In", "U.S. government work, public domain (17 U.S.C. 105). Cite NCSES"),
  ("PUDL (FERC Form 1)", "`ferc1_*.csv`", "In", "CC BY 4.0, per the PUDL README (read Nov 4, 2026). Cite Catalyst Cooperative"),
  ("Epoch AI", "`epoch_ai_campuses_by_state.csv`", "In", "CC BY, per Epoch's data README. Cite Epoch AI"),

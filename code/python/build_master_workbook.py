@@ -140,6 +140,8 @@ CLEAN = [  # tab, file, sources rule, script, receipt
  ("SEDS Renewables", "data/seds_renewables_state.csv", ["seds", "seds_prices"], "econ499r_starter/scripts/build_fang_tables.py", "seds_fang.md"),
  ("NCSES Bachelors", "data/ncses_bachelors_state.csv", ["ncses"], "econ499r_starter/scripts/build_fang_tables.py", "ncses.md"),
  ("Fang Split Vars", "data/fang_split_vars.csv", None, "econ499r_starter/scripts/build_fang_tables.py", "fang_panel.md"),
+ ("Net Producer Defs", "data/fang_net_producer_definitions.csv", ["seds", "seds_prod", "eia_gen", "eia_sales"], "econ499r_starter/scripts/build_net_producer_defs.py", "seds_fang.md"),
+ ("NOAA Degree Days", "data/noaa_degree_days.csv", ["noaa"], "econ499r_starter/scripts/download_noaa_degree_days.py", "noaa.md"),
  ("FERC1 Utilities", "data/out/ferc1_utility_financials.csv", ["pudl"], "econ499r_starter/scripts/ferc_fin.py", "ferc_pudl.md"),
  ("FERC1 Cost by Tech", "data/out/ferc1_cost_by_technology.csv", ["pudl"], "econ499r_starter/scripts/ferc_fin.py", "ferc_pudl.md"),
  ("FERC1 Plants", "data/out/ferc1_plant_costs.csv", ["pudl"], "econ499r_starter/scripts/ferc_fin.py", "ferc_pudl.md"),
@@ -216,6 +218,8 @@ def used_in(tab, v, rawused=None):
     if tab in ("OWID Solar", "LBNL Solar Projects"): return "Georgia"
     if tab in ("W Inverse Distance", "W Border", "W Distance Miles", "State Centroids"): return "Zhang"
     if tab == "AI Postings Overlap": return "Fang (check)"
+    if tab == "NOAA Degree Days" and v not in ("state", "year"): return "Zhang (check)"
+    if tab == "Net Producer Defs" and v not in ("state", "year"): return "Fang (check)"
     if v in ("state", "year"): return "Key"
     wd = lambda t: re.search(rf"\b{re.escape(v)}\b", t) is not None
     out = []
@@ -243,9 +247,9 @@ def src_keys(tab, v):
     if v.startswith("gdp_"): return ["bea_gdp"]
     sys.exit(f"no source rule: {tab} {v}")
 FAMILY = [("gen_", "green", "N01 fuels sum to total; N02 states sum to U.S."), ("cap_", "green", "C.4 trace; audit cells for new_renew_mw"), ("new_", "green", "C.4 trace; audit cells for new_renew_mw"), ("sales_", "green", "Audit: 3 of 3 sales_mwh cells exact; cross-source vs SEDS"), ("revenue", "green", "D08 price identity"), ("price_com", "green", "D08 price identity"), ("population", "green", "Cross-source: 561 of 561 match Census"), ("gdp_", "green", "N05 states vs U.S.; audit raw-file cells"), ("dc_", "green", "N03 state vs national; R07 top states; audit cells"), ("tech5415", "green", "Audit: 3 of 3 cells exact"), ("total_jobs", "green", "N04 state vs national; audit cells"), ("land_sqmi", "green", "D18"), ("co2_power_t", "yellow", "Ends 2024"), ("seds_total", "yellow", "Ends 2024"), ("sales_mwh_pc", "green", "D12"), ("ee_usd", "green", "D14"), ("ea_nonfarm", "green", "D18"), ("contig48", "green", "P08"), ("is_dc", "green", "P09"), ("state", "green", "P02-P07 keys"), ("year", "green", "P02-P07 keys")]
-SIDE_RATING = {"RPS Targets": ("yellow", "New data, Nov 4: LBNL RPS"), "ACS Broadband": ("yellow", "New data, Nov 4: ACS"), "EPU Annual": ("green", "New data, Nov 4: EPU"), "NSF State RD": ("yellow", "New data, Nov 4: NSF"), "OWID Solar": ("green", "New data, Nov 4: OWID"), "LBNL Solar Projects": ("green", "New data, Nov 4: LBNL solar"), "Epoch by State": ("green, context only", "New data, Nov 4: Epoch"), "AI Job Postings": ("yellow", "Fang data, Nov 4: AI Index"), "AI Postings Overlap": ("yellow", "Fang data, Nov 4: AI Index"), "SEDS Renewables": ("green", "Fang data, Nov 4: SEDS"), "NCSES Bachelors": ("green", "Fang data, Nov 4: NCSES")}
+SIDE_RATING = {"NOAA Degree Days": ("green", "Cross-source: Climate at a Glance matches nClimDiv on all 528 state-years"), "Net Producer Defs": ("yellow", "Cross-source: none of the rules reaches Fang's 76"), "RPS Targets": ("yellow", "New data, Nov 4: LBNL RPS"), "ACS Broadband": ("yellow", "New data, Nov 4: ACS"), "EPU Annual": ("green", "New data, Nov 4: EPU"), "NSF State RD": ("yellow", "New data, Nov 4: NSF"), "OWID Solar": ("green", "New data, Nov 4: OWID"), "LBNL Solar Projects": ("green", "New data, Nov 4: LBNL solar"), "Epoch by State": ("green, context only", "New data, Nov 4: Epoch"), "AI Job Postings": ("yellow", "Fang data, Nov 4: AI Index"), "AI Postings Overlap": ("yellow", "Fang data, Nov 4: AI Index"), "SEDS Renewables": ("green", "Fang data, Nov 4: SEDS"), "NCSES Bachelors": ("green", "Fang data, Nov 4: NCSES")}
 def rating(tab, v):
-    if v == "extreme_weather" or v == "extreme_weather_note": return "not run", "NOAA not available"
+    if v == "extreme_weather" or v == "extreme_weather_note": return "not run", "Fang's count of extreme hot and cold occurrences wasn't built"
     if tab.startswith("Raw "): return "not rated", "Raw as published; hash on Raw Files tab"
     if tab in SIDE_RATING: return SIDE_RATING[tab]
     if tab in ("FERC1 Utilities", "FERC1 Cost by Tech", "FERC1 Plants", "SEC Companies"): return "not rated", "Finance tables aren't used in any model and have no Part C rating"
@@ -270,7 +274,7 @@ FANG_SEDS = set(M.SIDE_DEFS["SEDS Renewables"])
 def gap_reason(tab, v):
     rules = [(("co2_power_t", "co2_per_mwh_t", "co2_per_mwh"), "EIA emissions end in 2024"), (("seds_total_energy_bbtu", "seds_mmbtu_pc", "re_bbtu", "wind_bbtu", "solar_bbtu", "geothermal_bbtu", "hydro_bbtu", "biomass_bbtu", "total_energy_bbtu", "ep_tetcd"), "SEDS ends in 2024"), (("edu_bach_per1000",), "NCSES table ends in 2024"),
              (("dc_jobs", "dc_wages_usd", "ai_dc_per1000", "hma", "dc_jobs_private", "dc_jobs_allown", "gov_share_pct", "ai_allown_per1000"), "BLS suppressed AK, ND, SD and WY in 2025"), (("ai_postings", "ai_share_us_pct", "ai_share_source", "ai_share_of_state_pct", "ai_edition", "ai_vendor", "ai_vintage"), "No state postings published before 2018"), (("rd_total_musd",), "The NSF editions used cover 2017-2023"),
-             (("broadband_pct", "broadband_pct_moe", "broadband_households", "total_households", "census_var"), "No ACS 1-year release for 2020"), (("ta_achievement_pct",), "LBNL gives no achievement value; ta_status says why"), (("rd_nonprofit_musd", "rd_state_internal_musd"), "NSF printed a non-numeric cell; text in published_not_numeric"), (("published_not_numeric",), "Filled only where a cell is non-numeric"), (("extreme_weather",), "Not run: NOAA not available")]
+             (("broadband_pct", "broadband_pct_moe", "broadband_households", "total_households", "census_var"), "No ACS 1-year release for 2020"), (("ta_achievement_pct",), "LBNL gives no achievement value; ta_status says why"), (("rd_nonprofit_musd", "rd_state_internal_musd"), "NSF printed a non-numeric cell; text in published_not_numeric"), (("published_not_numeric",), "Filled only where a cell is non-numeric"), (("extreme_weather",), "Not run: Fang's count of extreme hot and cold occurrences wasn't built")]
     if v == "note": return "Text column; blank means no note"
     if tab == "EPU Annual": return "Blank in the publisher's file before the state's series starts; complete in 2015-2025"
     if v == "page": return "No report prints 2019-2020"
@@ -376,7 +380,7 @@ for tab, f, sh, key, usedas in RAWTABS:
             vn, col = f"{v}-{head[k]} (year columns)", f"{L(j + 1)}:{L(k + 1)}"; j = k
         else: vn, col = (v or f"(column {L(j + 1)}, no header)"), L(j + 1)
         REG.append(dict(variable=re.sub(r"\s+", " ", vn), definition=f"Column as published in {os.path.basename(f)}. Not cleaned", unit="As published", formula="", **sf, script="", script_lines="", tab=tab, column=col, years="", states="", missing_cells="", missing_reason="", used_in=usedas, validation_rating="not rated", validation_check="Raw as published; hash on Raw Files tab", limitations="See Limitations tab", status="Ready")); j += 1
-for v, dfn, k, stat, why in [("large_load_q1_q4_2024", "Georgia Power large-load reports for Q1-Q4 2024", "ga_ll_2024", "Pending", "Need a browser download; the PSC list returns 404 to scripts"), ("hdd, cdd", "NOAA heating and cooling degree days, optional climate control", "noaa", "Not available", "NCEI timed out on every host, Nov 4, 2026; team chose not to substitute CPC files")]:
+for v, dfn, k, stat, why in [("large_load_q1_q4_2024", "Georgia Power large-load reports for Q1-Q4 2024", "ga_ll_2024", "Pending", "Need a browser download; the PSC list returns 404 to scripts"), ]:
     REG.append(dict(variable=v, definition=dfn, unit="", formula="", **src_fields([k]), script="", script_lines="", tab="none", column="", years="", states="", missing_cells="", missing_reason=why, used_in="Georgia" if k == "ga_ll_2024" else "not used", validation_rating="not run", validation_check=why, limitations=why, status=stat))
 if UNKNOWN_GAPS: sys.exit(f"gaps with no reason: {UNKNOWN_GAPS}")
 reg = pd.DataFrame(REG); reg.to_csv("data/variable_registry.csv", index=False)
@@ -492,7 +496,7 @@ for tab, f, *_ in CLEAN:
             rec = dict(tab=tab, variable=v, table_years="not a state-year table"); rec.update({str(y): None for y in YS}); rec.update(total_missing=int(m.sum()), states="", reason=gap_reason(tab, v) or "UNKNOWN"); MR.append(rec)
 md = pd.DataFrame(MR)
 if (md.reason == "UNKNOWN").any() or md.reason.isna().any(): sys.exit("Missing Data reason gap:\n" + md[md.reason.isna() | (md.reason == "UNKNOWN")][["tab", "variable"]].to_string())
-extra = pd.DataFrame([dict(tab="not in workbook", variable=v, table_years="none", total_missing="all", states="", reason=w) for v, w in (("hdd, cdd (NOAA)", "Not available: NCEI timed out on Nov 4, 2026; no CPC substitute by team decision"), ("Large-load reports Q1-Q4 2024", "Pending: PSC document list returns 404 to scripts; browser download needed"))])
+extra = pd.DataFrame([dict(tab="not in workbook", variable=v, table_years="none", total_missing="all", states="", reason=w) for v, w in (("Large-load reports Q1-Q4 2024", "Pending: PSC document list returns 404 to scripts; browser download needed"),)])
 md = pd.concat([md, extra], ignore_index=True); write_df("Missing Data", md, widths=dict(A=20, B=30, C=14, Q=70), freeze="C2")
 
 # ---- Georgia ----
@@ -527,8 +531,8 @@ for j in range(1, 24): ws.column_dimensions[L(j)].width = 15
 GEO_ROWS = r
 
 # ---- Raw Files ----
-RCPT = {"acs": "acs.md", "aiindex": "ai_index.md", "bea": "bea.md", "bls": "bls_qcew.md", "census": "census.md", "census_pop": "census_pop.md", "costs": "lazard.md", "eia_forms": "eia_forms.md", "epoch": "epoch.md", "epu": "epu.md", "georgia": "georgia_psc.md", "ncses": "ncses.md", "nsf": "nsf.md", "owid": "owid.md", "pudl": "ferc_pudl.md", "rmi": "rmi.md"}
-CLEANED = {"acs": "ACS Broadband", "aiindex": "AI Job Postings", "ncses": "NCSES Bachelors", "nsf": "NSF State RD", "pudl": "FERC1 tabs"}
+RCPT = {"noaa": "noaa.md", "acs": "acs.md", "aiindex": "ai_index.md", "bea": "bea.md", "bls": "bls_qcew.md", "census": "census.md", "census_pop": "census_pop.md", "costs": "lazard.md", "eia_forms": "eia_forms.md", "epoch": "epoch.md", "epu": "epu.md", "georgia": "georgia_psc.md", "ncses": "ncses.md", "nsf": "nsf.md", "owid": "owid.md", "pudl": "ferc_pudl.md", "rmi": "rmi.md"}
+CLEANED = {"noaa": "NOAA Degree Days", "acs": "ACS Broadband", "aiindex": "AI Job Postings", "ncses": "NCSES Bachelors", "nsf": "NSF State RD", "pudl": "FERC1 tabs"}
 agg = {}
 for s in shapes.itertuples():
     rc = f"{int(s.rows):,} x {int(s.cols)}" if pd.notna(s.rows) and pd.notna(s.cols) else (f"{int(s.rows):,} records" if pd.notna(s.rows) else "")
@@ -582,6 +586,7 @@ for f_ in ("operations_emissions", "operations_emissions_by_tech", "assets_earni
 rs("Census intercensal population", "data/raw/census_pop/sc-est2020int", BIGN, "2010-2020", "POPESTIMATE2015-2019 totals, for the BEA check only", collist("data/raw/census_pop/sc-est2020int-alldata6.csv"), where="Validation")
 rs("NSF Table 10, editions", "data/raw/nsf/", "One small file per edition; every kept value is in the cleaned tab", "2017-2023", "One data year per edition", where="NSF State RD")
 rs("ACS S2801 API responses", "data/raw/acs/", "One JSON per year; every kept value is in the cleaned tab", "2015-2024", "Broadband percent, MOE, households", where="ACS Broadband")
+rs("NOAA degree-day files", "data/raw/noaa/", "One small file per state and measure, plus two nClimDiv files used as a check; every kept value is in the cleaned tab", "2015-2025", "Annual HDD and CDD, 48 states", where="NOAA Degree Days")
 rs("NCSES API responses", "data/raw/ncses/", "JSON; every kept value is in the cleaned tab", "2000-2024", "2015-2024 by state", where="NCSES Bachelors")
 rs("AI Index sheets, CSVs and PDFs", "data/raw/aiindex/", "One small file per figure and edition; every kept value is in the cleaned tab, with edition, figure and page", "2018-2025", "State postings and shares", where="AI Job Postings")
 rs("LBNL RPS and CES files", "data/raw/lbnl/", "Wide multi-sheet workbooks; cleaned table holds what was kept", "2000-2050", "Total RPS and Total CES rows for 2015-2025, and target achievement", pat="RPS|rps", where="RPS Targets")
@@ -603,7 +608,7 @@ for t, f, sh, key, used in RAWTABS: DESC[t] = f"Raw table, whole, exactly as in 
 lines_ = [("ECON 499R master data workbook: U.S. state panel, Fang test data, Georgia case box, finance tables", TITLE), (f"As of {DATE}. Shunji Lewandowski and Alexander Hendricks, Prof. Fohlin, Emory University.", BODY), ("", BODY),
  ("What this is", BOLD), ("One workbook with all our cleaned data, showing where every variable came from, how it was checked and what limits it. Model results aren't here: see results/ and results/2026-11-04/paper/ (the results pack). The old Prelim Results tab stays in outputs/old/.", BODY), ("Read the Limitations tab before using any number.", BOLD), ("", BODY),
  ("How to rebuild", BOLD), (f"From the project root, after any data change: python3 code/python/build_cross_source_checks.py --date {DATE}; python3 code/python/build_raw_file_shapes.py --date {DATE}; python3 code/python/build_georgia_tables.py --date {DATE}; python3 code/python/build_master_workbook.py --date {DATE}; python3 code/python/check_master_workbook.py --date {DATE}", BODY), ("Panel: python3 econ499r_starter/scripts/build_panel.py data/raw data/out. Receipt links are relative: they work from outputs/ in the project, and from outputs/ in the results package.", BODY), ("", BODY),
- ("Pending or not available", BOLD), ("Pending: Georgia large-load reports Q1-Q4 2024 (browser download from https://psc.ga.gov/search/facts-docket/?docketId=55378 ; the PSC list returns 404 to scripts).", BODY), ("Not available: NOAA degree days and Fang's extreme weather split (NCEI timed out when tried on Nov 4, 2026; no CPC substitute, by team decision). NCEI's link answered a later read-only check the same day; nothing was downloaded.", BODY), ("Optional, not run: SEC company facts refresh. No raw copy of SEC data, so no hash.", BODY), ("Not in this workbook, by rule: licensed Bloomberg data, interview transcripts, keys and personal emails. The Lazard PDF and journal PDFs are pointed to, not copied.", BODY), ("", BODY),
+ ("Pending or not available", BOLD), ("Pending: Georgia large-load reports Q1-Q4 2024 (browser download from https://psc.ga.gov/search/facts-docket/?docketId=55378 ; the PSC list returns 404 to scripts).", BODY), ("Not run: Fang's extreme weather split, which counts occurrences; NOAA degree days are in, for one check only (48 states).", BODY), ("Optional, not run: SEC company facts refresh. No raw copy of SEC data, so no hash.", BODY), ("Not in this workbook, by rule: licensed Bloomberg data, interview transcripts, keys and personal emails. The Lazard PDF and journal PDFs are pointed to, not copied.", BODY), ("", BODY),
  ("Size rule", BOLD), ("Every cleaned dataset is whole. Raw tables go in whole if they're under about 200,000 rows, except: county-level QCEW, EIA-860/923 and full PUDL tables, as the rule directs; and folders of many small files (BEA, NSF, ACS, NCSES, AI Index) whose kept values are whole in a cleaned tab. Those are on Raw Table Summary.", BODY), ("", BODY),
  ("Colors", BOLD), ("Blue = downloaded or transcribed inputs on Core Panel, Fang Panel and Georgia. Black = formulas or computed values. Other data tabs are plain copies in black, as in earlier builds. Green, yellow and red are validation ratings.", BODY), ("", BODY), ("Tabs", BOLD)]
 for i, (t, f) in enumerate(lines_, 1):

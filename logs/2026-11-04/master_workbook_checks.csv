@@ -5,13 +5,13 @@ No email addresses in any cell,ok,0 cells []
 "Core Panel formulas equal the panel, every row",ok,19 formula columns x 561 rows; differences: {}
 net_exporter_2015 is fixed per state and matches the 2015 rule,ok,30 net exporters; 0 rows differ
 Sample flags,ok,in_zhang_sample 550 of 561 (DC excluded); in_fang_sample 204 (N = 204)
-Every tab's row count matches its source,ok,69 data tabs checked; mismatches []
-30 random cells (seed 2026) match their source files,ok,30 of 30 match; 23 tabs; logs/2026-11-04/master_workbook_30cells.csv. Misses: []
-Every registry variable is in the Variable Finder,ok,936 registry rows; missing []
-Every Finder row links to a real tab and column,ok,"934 internal links survive recalculation; header mismatches []. Rows with tab 'none' are Pending or Not available: ['large_load_q1_q4_2024', 'hdd, cdd']"
-"Tabs, frozen headers, filters and Arial survive recalculation",ok,61 tabs in order; no freeze []; no filter []; not Arial []
+Every tab's row count matches its source,ok,71 data tabs checked; mismatches []
+30 random cells (seed 2026) match their source files,ok,30 of 30 match; 25 tabs; logs/2026-11-04/master_workbook_30cells.csv. Misses: []
+Every registry variable is in the Variable Finder,ok,949 registry rows; missing []
+Every Finder row links to a real tab and column,ok,948 internal links survive recalculation; header mismatches []. Rows with tab 'none' are Pending or Not available: ['large_load_q1_q4_2024']
+"Tabs, frozen headers, filters and Arial survive recalculation",ok,63 tabs in order; no freeze []; no filter []; not Arial []
 Live formulas and blue inputs survive,ok,13923 live formulas on Core Panel; input color FF0000FF
-Sources: URLs are clickable and the filter covers all rows,ok,88 links; 44 sources; filter A1:L45
+Sources: URLs are clickable and the filter covers all rows,ok,92 links; 46 sources; filter A1:L47
 Every receipt link points to a real file,ok,22 receipts; missing []
-URLs open (read-only),ok,"62 URLs; {'ok': 61, 'blocked to scripts': 1}; problems []"
+URLs open (read-only),ok,64 URLs; {'ok': 64}; problems []
 Recalculated copy installed,ok,"outputs/ECON499R_Master_Data_2026-11-04.xlsx, 28.1 MB"

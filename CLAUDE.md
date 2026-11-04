@@ -121,13 +121,15 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - **H3:** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
 - **RPS control and all-ownership AI:** they change no result. Holding Gavins Point in NE doesn't either.
 
-**Fang test done (2026-11-04):** `code/R/04h_fang_test.R`, `results/2026-11-04/fang/`, `notebooks/04h_fang_test.ipynb`. Fang's +0.053 doesn't reproduce on current SEDS (-0.019, p = 0.317). EIA's Oct 2023 change to how SEDS counts wind, solar, hydro and geothermal explains the sign (approx. old basis: +0.022 to +0.034), not the full size. Final spec: postings -0.048 (p = 0.109), data-center jobs -0.057 (p = 0.208). Data-center jobs are the more reliable extension measure.
+**Fang test done (2026-11-04):** `code/R/04h_fang_test.R`, `results/2026-11-04/fang/`, `notebooks/04h_fang_test.ipynb`. Fang's +0.053 doesn't reproduce on current SEDS (-0.019, p = 0.317). EIA's Oct 2023 change to how SEDS counts wind, solar, hydro and geothermal (https://www.eia.gov/state/seds/seds-change/index.php) explains the sign (approx. old basis: +0.022 to +0.034; k = 2.3-2.9 is our approximation), not the full size. Final spec: postings -0.048 (p = 0.109), data-center jobs -0.057 (p = 0.208). Data-center jobs are the more reliable extension measure.
 
 **Stretch and Georgia (2026-11-04):** shift-share IV uninformative (KP F = 2.81); no broadband or R&D interaction significant; Hansen not run (`results/2026-11-04/stretch/`). Georgia solar at 24% on IEA Stated Policies: $37.06/MWh in 2035, range $14.51-$50.40; not forecasts of ours (`results/2026-11-04/georgia_solar/`).
 
 **Data corrections (2026-11-04):** `dc_wages_usd` is blank where suppressed (only change in the panel; SDM and other results stand). D23, receipts and C.6 corrected. See `data/receipts/README.md`.
 
 **Finish run complete (2026-11-04; `docs/2026-11-04/finish-run-log.md`):** results pack, master workbook (`outputs/ECON499R_Master_Data_2026-11-04.xlsx`, Variable Finder from `data/variable_registry.csv`), project summary, results report (`outputs/ECON499R_Results_2026-11-04.pdf`), clean GitHub copy (`release/github/`; not pushed; see `CHECKLIST.md`) and team package (`release/results_and_data_2026-11-04.zip`). The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Full-sample t-3 lags are dropped (`EXPERIMENTS.md` §0 item 14).
+
+**Fixes before push (2026-11-04; `docs/2026-11-04/fixes-before-push.md`):** exploratory SLX note in findings; new `fig_h1_coefficients.png`; citations for Georgia commitments (Q2 2026 report, PDF p. 8), EIA's SEDS notice and IEA WEO tables; net-producer definitions (`code/R/04h2_fang_net_producer.R`); NOAA weather check on ln_ec (AI -0.0021, p = 0.711).
 
 **Next step:** team review for Nov 17; download the Q1-Q4 2024 large-load reports by browser; draft by Nov 24.
 
@@ -161,6 +163,6 @@ See `data/DATA_VALIDATION.md` ("New data, Nov 4") and `data/receipts/README.md`.
 | State EPU | **Done** — `data/epu_state_annual.csv` | Stretch moderator |
 | OWID/IRENA solar, LBNL Utility-Scale Solar | **Done** | Phase 4f |
 | Fang test data (AI Index postings, SEDS renewables, TETCD, NCSES) | **Done** — `data/fang_panel.csv`; `data/receipts/ai_index.md` | Fang test |
-| NOAA HDD/CDD | **Not done** — NCEI unreachable on 2026-11-04; team chose not to substitute CPC files | Optional climate control |
+| NOAA HDD/CDD | **Done** — `data/noaa_degree_days.csv`, 48 states. Not in the panel; one check only (`code/R/04e4_weather_check.R`) | Weather check on ln_ec |
 | Q1-Q4 2024 large-load reports (Docket 55378) | **Pending** — PSC document list returns 404 to scripts; browser download needed | Georgia case box |
 | SEC company facts | Optional — sec_fin.py + SEC_USER_AGENT env var | Finance channel |

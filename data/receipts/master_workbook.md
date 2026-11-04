@@ -1,6 +1,6 @@
 # Receipt: master data workbook
 
-**File:** `outputs/ECON499R_Master_Data_2026-11-04.xlsx`, 28.1 MB, 61 tabs, 936 registry rows. Stays out of git.
+**File:** `outputs/ECON499R_Master_Data_2026-11-04.xlsx`, 28.1 MB, 63 tabs, 949 registry rows. Stays out of git.
 
 **Rebuild, from the project root:**
 ```
@@ -21,12 +21,12 @@ python3 code/python/check_master_workbook.py --date 2026-11-04
 |---|---|
 | Formula errors after LibreOffice recalculation | 0 |
 | Core Panel formulas equal the panel | 19 formula columns x 561 rows, no differences. `net_exporter_2015`: 30 net exporters, 0 rows differ. `in_zhang_sample` 550; `in_fang_sample` 204 |
-| Row counts match source | 69 data tabs, no mismatches |
-| 30 random cells, seed 2026 | 30 of 30 match, 23 tabs (`logs/2026-11-04/master_workbook_30cells.csv`) |
-| Registry to Finder to tab and column | 936 of 936; 934 links, and the 2 rows without a tab are Pending or Not available |
+| Row counts match source | 71 data tabs, no mismatches |
+| 30 random cells, seed 2026 | 30 of 30 match, 25 tabs (`logs/2026-11-04/master_workbook_30cells.csv`) |
+| Registry to Finder to tab and column | 949 of 949; 948 links, and the 1 row without a tab is Pending |
 | Frozen headers, filters, Arial, 13,923 live formulas, blue inputs | Survive recalculation |
-| Sources tab | 44 sources, 88 clickable links, filter covers all rows |
-| URLs, read-only | 62 unique: 61 open; IEA returns 403 to scripts (blocked, not broken) |
+| Sources tab | 46 sources, 92 clickable links, filter covers all rows |
+| URLs, read-only | 64 unique: all open on Nov 4 |
 | Census key or email addresses in any cell | None |
 
 ## Cross-source checks (`logs/2026-11-04/cross_source_checks.csv`)

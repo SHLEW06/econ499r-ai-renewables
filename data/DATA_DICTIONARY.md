@@ -405,8 +405,32 @@ Ratings come from `data/DATA_VALIDATION.md`. "Not rated" means no Part C or Nov 
 | rd_total_musd | Total R&D, NSF, 2017-2023 | $ million, current |  | NSF National Patterns Table 10, seven editions | 2015-2025 | 51 areas | 204: The NSF editions used cover 2017-2023 | Zhang / Fang | yellow | Ready |
 | income_pc_usd | Per capita personal income, BEA SAINC1 line 3 | $, current |  | BEA state personal income and population (SAINC1) | 2015-2025 | 51 areas |  | Fang | green | Ready |
 | census_region | Census four regions | text |  | Census region lookup (four regions) | 2015-2025 | 51 areas |  | Fang | green | Ready |
-| extreme_weather | Not run: NOAA not available. Column is blank | n/a |  | NOAA heating and cooling degree days | 2015-2025 | 51 areas | 561: Not run: NOAA not available | Fang | not run | Not available |
+| extreme_weather | Not run: Fang's count of extreme hot and cold occurrences wasn't built. Column is blank | n/a |  | NOAA heating and cooling degree days | 2015-2025 | 51 areas | 561: Not run: Fang's count of extreme hot and cold occurrences wasn't built | Fang | not run | Not available |
 | extreme_weather_note | Reason the column is blank | text |  | NOAA heating and cooling degree days | 2015-2025 | 51 areas |  | Fang | not run | Not available |
+
+## Net Producer Defs
+
+| Variable | Definition | Unit | Formula | Source | Years | Areas | Missing | Used in | Rating | Status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| state | Two-letter state code (50 states + DC) |  |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Key | yellow | Ready |
+| year | Calendar year |  |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Key | yellow | Ready |
+| gen_total_mwh | Total generation, from the panel | MWh |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| retail_sales_mwh | Retail sales, from the panel | MWh |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| seds_net_interstate_flow_bbtu | SEDS net interstate flow of electricity and associated losses (ELISB); negative is flow out of state | billion Btu |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| seds_total_consumption_bbtu | SEDS total energy consumption (TETCB) | billion Btu |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| seds_total_production_bbtu | SEDS total primary energy production (TEPRB) | billion Btu |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| gen_gt_sales | 1 if 2018-2021 average generation is above retail sales: our main rule | 0/1 |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| teprb_gt_tetcb | 1 if 2018-2021 average SEDS total energy production is above consumption | 0/1 |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+| elisb_negative | 1 if 2018-2021 average SEDS net interstate electricity flow is below zero | 0/1 |  | EIA SEDS consumption + EIA SEDS production + EIA net generation by state + 1 more | 2018-2021 | 51 areas |  | Fang (check) | yellow | Ready |
+
+## NOAA Degree Days
+
+| Variable | Definition | Unit | Formula | Source | Years | Areas | Missing | Used in | Rating | Status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| state | Two-letter state code (50 states + DC) |  |  | NOAA heating and cooling degree days | 2015-2025 | 48 areas |  | Key | green | Ready |
+| year | Calendar year |  |  | NOAA heating and cooling degree days | 2015-2025 | 48 areas |  | Key | green | Ready |
+| cdd | Cooling degree days, base 65F, January-December. State value population-weighted by NOAA (2010 Census) | degree days |  | NOAA heating and cooling degree days | 2015-2025 | 48 areas |  | Zhang (check) | green | Ready |
+| hdd | Heating degree days, base 65F, January-December. State value population-weighted by NOAA (2010 Census) | degree days |  | NOAA heating and cooling degree days | 2015-2025 | 48 areas |  | Zhang (check) | green | Ready |
 
 ## FERC1 Utilities
 
@@ -1203,4 +1227,3 @@ Ratings come from `data/DATA_VALIDATION.md`. "Not rated" means no Part C or Nov 
 | Variable | Definition | Unit | Formula | Source | Years | Areas | Missing | Used in | Rating | Status |
 |---|---|---|---|---|---|---|---|---|---|---|
 | large_load_q1_q4_2024 | Georgia Power large-load reports for Q1-Q4 2024 |  |  | Georgia Power large-load reports, Q1-Q4 2024 |  |  | Need a browser download; the PSC list returns 404 to scripts | Georgia | not run | Pending |
-| hdd, cdd | NOAA heating and cooling degree days, optional climate control |  |  | NOAA heating and cooling degree days |  |  | NCEI timed out on every host, Nov 4, 2026; team chose not to substitute CPC files | not used | not run | Not available |
