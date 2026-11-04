@@ -1,0 +1,150 @@
+== RPS: rows 561 states 51 years 2015 2025 NA target 0 dupes 0
+panel key match: {'both': 561, 'left_only': 0, 'right_only': 0}
+in LBNL file: 33 absent: ['AK', 'AL', 'AR', 'FL', 'GA', 'ID', 'IN', 'KY', 'LA', 'MS', 'ND', 'OK', 'SC', 'SD', 'TN', 'UT', 'WV', 'WY']
+not in Target Achievement: ['NE']
+states with target>0 by year: {2015: 29, 2016: 29, 2017: 30, 2018: 30, 2019: 30, 2020: 30, 2021: 30, 2022: 30, 2023: 30, 2024: 30, 2025: 29}
+cells where CES>RPS: {'MA': {'min': 2021, 'max': 2025, 'count': 5}, 'VA': {'min': 2021, 'max': 2025, 'count': 5}}
+in_force_check: {'obligation_confirmed': 294, 'zero_no_policy': 209, 'not_checkable': 30, 'zero_consistent': 24, 'conflict_target_but_no_obligation': 3, 'zero_not_checkable': 1}
+in_force_check by year:
+ in_force_check  conflict_target_but_no_obligation  not_checkable  obligation_confirmed  zero_consistent  zero_no_policy  zero_not_checkable
+year                                                                                                                                       
+2015                                            1              0                    28                3              19                   0
+2016                                            1              0                    28                3              19                   0
+2017                                            0              0                    30                2              19                   0
+2018                                            0              0                    30                2              19                   0
+2019                                            0              1                    29                2              19                   0
+2020                                            1              4                    25                2              19                   0
+2021                                            0              2                    28                2              19                   0
+2022                                            0              0                    30                2              19                   0
+2023                                            0              0                    30                2              19                   0
+2024                                            0              4                    26                2              19                   0
+2025                                            0             19                    10                2              19                   1
+conflicts:
+ state  year  target_pct     ta_status                    in_force_check
+   MT  2020     15.0000 no_obligation conflict_target_but_no_obligation
+   NY  2015     38.3617 no_obligation conflict_target_but_no_obligation
+   NY  2016     38.4595 no_obligation conflict_target_but_no_obligation
+revised cells: 60 of nonzero 327 states ['CO', 'IA', 'MA', 'MD', 'MI', 'MN', 'NH', 'NJ', 'NM', 'NY', 'OR', 'TX', 'VA']
+year-over-year drops >2 pts in target_pct:
+ state  year  target_pct      chg
+   MN  2023        20.0  -4.3550
+   NH  2020        14.7  -5.0000
+   NY  2018        27.4 -11.7714
+drops to zero:
+ state  year      chg
+   MT  2021 -15.0000
+   TX  2025  -4.7178
+GA [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+VA [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 37.0, 39.0, 40.6, 41.7, 43.2]
+AZ [5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0]
+MI [10.0, 9.9, 10.2, 9.9, 12.5, 12.5, 15.0, 15.0, 15.0, 15.0, 15.0]
+WI [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]
+TX [5.9, 6.0, 6.0, 5.7, 5.7, 5.6, 5.5, 5.0, 4.8, 4.7, 0.0]
+KS [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+MT [15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+== OWID: rows in 3633 rows out 52 years 2000 2025
+       entity  year  solar_pv_ongrid_gw
+United States  2023           138.44660
+United States  2024           175.45130
+United States  2025           209.46709
+        World  2023          1410.55590
+        World  2024          1866.89780
+        World  2025          2378.04150
+== EPU: monthly rows 492 cols 155 annual rows 2091 states 51 years 1985 2025
+months per state-year: {12: 1700, 0: 382, 6: 2, 7: 2, 1: 2, 10: 2, 5: 1}
+2015-25 NA: {'epu_state': 0, 'epu_national': 0, 'epu_composite': 0}
+ year  epu_state  epu_national  epu_composite
+ 2015       40.4          69.1           97.3
+ 2016       38.4          64.2           90.4
+ 2017       69.6          89.1          126.4
+ 2018       59.9          82.8          123.2
+ 2019       52.3         110.4          143.2
+ 2020      275.2         306.6          475.9
+ 2021      133.6         117.3          181.6
+ 2022       88.8         213.3          271.0
+ 2023       75.7         255.2          300.0
+ 2024       42.9         110.8          130.0
+ 2025      106.7         179.9          241.1
+hand check GA 2025 epu_state from monthly: 106.665 table: 106.665
+== NSF: rows 357 states 51 years 2017 2023 dupes 0
+non-numeric cells by column: {('rd_nonprofit_musd', '*'): 5.0, ('rd_nonprofit_musd', 'D'): 4.0, ('rd_state_internal_musd', '*'): 51.0, ('rd_state_internal_musd', 'D'): nan}
+NA rd_total: Empty DataFrame
+Columns: [state, year, published_not_numeric]
+Index: []
+NA intensity: 0
+max |published intensity - rd/gdp|: 0.006
+NSF GDP / current BEA nominal GDP, by year: {2017: {'min': 0.913, 'max': 1.038}, 2018: {'min': 0.932, 'max': 1.026}, 2019: {'min': 0.969, 'max': 1.009}, 2020: {'min': 0.96, 'max': 1.013}, 2021: {'min': 0.951, 'max': 1.02}, 2022: {'min': 0.909, 'max': 1.019}, 2023: {'min': 0.944, 'max': 1.033}}
+  2017: sum of 51 = 528,154; published States total = 528,150
+  2018: sum of 51 = 579,584; published States total = 579,587
+  2019: sum of 51 = 642,005; published States total = 642,004
+  2020: sum of 51 = 713,523; published States total = 713,526
+  2021: sum of 51 = 779,261; published States total = 779,260
+  2022: sum of 51 = 884,783; published States total = 884,787
+  2023: sum of 51 = 930,677; published States total = 930,680
+year       2017      2018      2019      2020      2021      2022      2023
+state                                                                      
+GA       9056.0    7817.0    7823.0    8455.0    9753.0   12254.0   14088.0
+VA       8897.0   11084.0   11693.0   13317.0   14789.0   15565.0   15900.0
+CA     150552.0  164398.0  193095.0  217976.0  236140.0  260179.0  276850.0
+WY        219.0     157.0     792.0    1169.0     238.0     252.0     237.0
+largest yoy % swings in rd_total:
+state  year  rd_total_musd   pct
+   WY  2019          792.0 404.5
+   WY  2021          238.0 -79.6
+   AK  2018          297.0 -74.1
+   NH  2018         3089.0  67.4
+   AK  2021          543.0  60.2
+   MS  2022         1690.0  57.8
+== Epoch: sites 96 US 77 states 29 state source {'address': 67, 'from site name': 9, 'unresolved': 1}
+     state  n_sites  n_operating  current_it_mw  planned_it_mw  planned_facility_mw
+        TX       14            9         1730.0         6461.0               8934.0
+        WI        2            1          369.0         3165.0               4015.0
+        OH        7            5         1457.0         2852.0               3631.0
+        IN        3            2         1215.0         2966.0               3586.0
+        NM        2            1          118.0         1968.0               2723.0
+        TN        3            3         1373.0         1958.0               2621.0
+        IA        4            2          427.0         1821.0               2413.0
+        LA        1            0            0.0         1632.0               2203.0
+        VA        7            7         1044.0         1434.0               1984.0
+        MS        2            2          512.0         1523.0               1827.0
+        MI        1            0            0.0          988.0               1383.0
+        NE        4            4          695.0          995.0               1202.0
+        GA        3            3          681.0          681.0                923.0
+        AZ        3            3          449.0          605.0                767.0
+        AL        2            2          299.0          504.0                663.0
+        OK        2            1          368.0          521.0                623.0
+        UT        2            1          133.0          437.0                590.0
+        ND        1            1           68.0          400.0                520.0
+        NY        2            2          268.0          436.0                499.0
+        OR        2            2          334.0          334.0                428.0
+        NV        1            1          161.0          300.0                389.0
+        PA        2            1          108.0          261.0                336.0
+        WY        1            1          152.0          207.0                249.0
+        MN        1            1          178.0          178.0                241.0
+        ID        1            1          152.0          152.0                198.0
+        SC        1            1           69.0          129.0                168.0
+UNRESOLVED        1            1          105.0          105.0                126.0
+        NC        1            1           65.0           65.0                 91.0
+        NJ        1            1           50.0           50.0                 70.0
+Georgia sites:
+                        Name                                     Address  Current power (MW)  planned_it_mw  planned_facility_mw last_timeline_date
+Microsoft Fairwater Atlanta       1435 Hwy 54 W, Fayetteville, GA 30214           636.00000      636.00000                859.0         2026-06-14
+     CoreWeave Dalton 1 & 2 2205 Industrial South Rd, Dalton, GA, 30721            28.00000       28.00000                 40.0         2026-02-20
+            xAI QTS Atlanta 1025 Jefferson Street NW, Atlanta, GA 30318            17.32971       17.32971                 24.0         2026-07-10
+Timeline dates 2018-12-18 2030-01-01 | NA planned 0
+page says TX 14, OH 7, VA 7, NE 4, IA 4: {'TX': 14, 'OH': 7, 'VA': 7, 'NE': 4, 'IA': 4}
+== LBNL solar: rows in 2005 rows out 2005 cols 48
+['eia_id', 'project_name', 'solar_cod', 'solar_cod_year', 'region', 'state', 'latitude', 'longitude', 'avg_ghi', 'solar_tech_main', 'solar_tech_sub', 'solar_capacity_mw_dc', 'solar_capacity_mw_ac', 'ilr', 'mount', 'tracking_type', 'tilt', 'azimuth', 'hybrid', 'storage_tech', 'storage_coupling', 'storage_cod_year', 'storage_capacity_mw', 'storage_energy_mwh', '2025_energy_value_mwh', '2025_capacity_value_mwh', 'pv_lcoe_no_tax_credits_2025_mwh', 'pv_lcoe_with_federal_tax_credits_2025_mwh', 'offtaker_type', 'levelized_pv_ppa_2025_mwh']
+states 48 | COD years 1984 2025
+tech: {'PV': 1989, 'CSP': 16}
+region: {'Southeast (non-ISO)': 414, 'West (non-ISO)': 349, 'PJM': 334, 'CAISO': 306, 'MISO': 232, 'ERCOT': 191, 'ISO-NE': 81, 'NYISO': 42, 'SPP': 34, 'HI': 21, 'AK': 1}
+ID duplicates: 2 blank ID: 3 IDs ending ret: 10
+total MW-AC: 140926.0 PV only: 139152.0
+Georgia projects: 66 MW-AC 5248.8 COD 2013 2025 region {'Southeast (non-ISO)': 66}
+Georgia with PPA: 37
+Southeast region projects: 414 MW-AC 24277.7 states {'FL': 182, 'NC': 69, 'GA': 66, 'SC': 55, 'TN': 21, 'AL': 11, 'MS': 7, 'KY': 3}
+  GA: LBNL 5,249 MW-AC vs EIA panel 2025 cap_solar_mw 5,414 ratio 0.97
+  TX: LBNL 31,951 MW-AC vs EIA panel 2025 cap_solar_mw 30,767 ratio 1.04
+  CA: LBNL 23,592 MW-AC vs EIA panel 2025 cap_solar_mw 24,832 ratio 0.95
+  NC: LBNL 4,254 MW-AC vs EIA panel 2025 cap_solar_mw 7,051 ratio 0.60
+  FL: LBNL 12,303 MW-AC vs EIA panel 2025 cap_solar_mw 12,301 ratio 1.00

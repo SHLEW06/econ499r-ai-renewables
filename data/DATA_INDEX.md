@@ -1,7 +1,7 @@
 # Data Index
 
 All paths are relative to the project root.
-Last updated: 2026-11-01.
+Last updated: 2026-11-04.
 
 ---
 
@@ -19,6 +19,13 @@ Last updated: 2026-11-01.
 | `data/raw/costs/` | `Lazard_LCOEplus_2026.pdf` | Lazard LCOE+ 2026 report | 2026 | Cost benchmarks for case box | `download_all.py` | [receipts/lazard.md](receipts/lazard.md) |
 | `data/raw/rmi/` | 10 CSVs (`customers_sales`, `operations_emissions`, etc.) | RMI Utility Transition Hub | Through ~2024 | Finance side (optional) | Browser download | [receipts/rmi.md](receipts/rmi.md) |
 | `data/raw/eia_forms/` | `eia8602025.zip`, `f8612025.zip`, `f923_2025.zip`, `september_generator2026.xlsx` | EIA Forms 860 / 861 / 923 (plant- and utility-level) | 2025–2026 | Plant-level detail (optional) | `download_all.py --with-eia-forms` | [receipts/eia_forms.md](receipts/eia_forms.md) |
+| `data/raw/lbnl/` | 3 XLSX (RPS targets, target achievement, utility-scale solar) | LBNL | 2000-2050 schedule; solar through 2025 | `data/lbnl_rps_targets.csv`, `data/lbnl_utility_solar.csv` | `build_side_tables_nov4.py` | [lbnl_rps](receipts/lbnl_rps.md), [lbnl_solar](receipts/lbnl_solar.md) |
+| `data/raw/epu/` | `State_Policy_Uncertainty.xlsx` | State EPU, monthly | 1985-2025 | `data/epu_state_annual.csv` | `build_side_tables_nov4.py` | [epu](receipts/epu.md) |
+| `data/raw/nsf/` | 7 `nsf*-tab010.xlsx`, plus `nsf27300-tab010.xlsx` (wrong table, not used) | NSF R&D by state | 2017-2023 | `data/nsf_state_rd.csv` | `download_nsf_tab10.py` | [nsf](receipts/nsf.md) |
+| `data/raw/owid/` | CSV, metadata, readme | IRENA solar PV via OWID | 2000-2025 | `data/owid_global_solar_capacity.csv` | `build_side_tables_nov4.py` | [owid](receipts/owid.md) |
+| `data/raw/acs/` | `s2801_<year>.json`, code list | ACS S2801 API responses | 2015-2024, no 2020 | `data/acs_broadband.csv` | `download_acs_broadband.py` | [acs](receipts/acs.md) |
+| `data/raw/epoch/` | 6 CSV, README | Epoch AI data centers | Timelines to 2030 | `data/epoch_ai_campuses_by_state.csv`; context only | `build_side_tables_nov4.py` | [epoch](receipts/epoch.md) |
+| `data/raw/noaa/` | Not done | NOAA degree days; NCEI unreachable on 2026-11-04 | None | None | `download_noaa_degree_days.py` | [noaa](receipts/noaa.md) |
 
 ---
 

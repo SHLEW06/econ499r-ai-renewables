@@ -1,3 +1,6 @@
+# Secrets — never commit
+.env
+
 # Raw data — large files; never commit
 data/raw/
 data/out/
@@ -12,6 +15,14 @@ data/ferc/
 
 # Cleaned outputs and workbooks — Phase 5 will decide
 data/state_panel_2015_2025.csv
+data/lbnl_rps_targets.csv
+data/lbnl_utility_solar.csv
+data/owid_global_solar_capacity.csv
+data/epu_state_annual.csv
+data/nsf_state_rd.csv
+data/noaa_degree_days.csv
+data/acs_broadband.csv
+data/epoch_ai_campuses_by_state.csv
 data/codebook.csv
 outputs/ECON499R_Data_Workbook_*.xlsx
 outputs/ECON499R_csv_for_R/
