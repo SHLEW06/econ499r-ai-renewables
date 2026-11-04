@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # 04e_robustness.R
-# Phase 4e robustness: gate, then A1-A8, P1, P2 (EXPERIMENTS.md section 9). No stretch goals here.
+# Phase 4e robustness: gate, then A1-A8, P1, P2 and the all-ownership row (EXPERIMENTS.md section 9). No stretch goals here.
 # Gate: reproduce the 4b baselines and 4d SLX before anything else; stop if they do not match.
 # Usage: Rscript code/R/04e_robustness.R --date YYYY-MM-DD
 suppressPackageStartupMessages({library(fixest); library(data.table)})
@@ -10,7 +10,7 @@ args <- commandArgs(trailingOnly=TRUE); date_arg <- NULL
 for (i in seq_along(args)) if (args[i]=="--date" && i<length(args)) date_arg <- args[i+1]
 if (is.null(date_arg) || !grepl("^\\d{4}-\\d{2}-\\d{2}$", date_arg)) stop("--date YYYY-MM-DD required")
 H1 <- "results/2026-11-02/h1"; H3 <- "results/2026-11-03/h3"
-INPUTS <- c("code/R/load_panel.R","data/out/W_border_binary.csv","data/out/state_centroids_land.csv",
+INPUTS <- c("code/R/load_panel.R","data/out/W_border_binary.csv","data/out/state_centroids_land.csv","data/lbnl_rps_targets.csv","data/ai_allown_518210.csv",
             file.path(H1,c("h1_core.csv","h1_extras.csv","se_check.csv","dynamics.csv")),file.path(H3,"h3_slx.csv"))
 for (f in INPUTS) if (!file.exists(f)) stop("Missing input: ", f)
 OUT <- file.path("results", date_arg, "robustness"); dir.create(OUT, recursive=TRUE, showWarnings=FALSE)
@@ -99,11 +99,24 @@ for(y in ALL5){ m<-slx(y); ct<-coeftable(m); V<-vcov(m); th<-paste0("W_",AI); ci
   add("slxborder",y,"theta1",ct[th,1],ct[th,2],ct[th,4],m$nobs,"CRV1-state","48s2015_2025",mk_tag("slxborder-theta","lag1","cl-state",y,"48s2015_2025"),lo=ci[th,1],hi=ci[th,2])
   tot<-ct[AI,1]+ct[th,1]; st<-sqrt(sum(V[c(AI,th),c(AI,th)])); tq<-qt(.975,47)
   add("slxborder",y,"total",tot,st,2*pt(-abs(tot/st),47),m$nobs,"CRV1-state","48s2015_2025",mk_tag("slxborder-total","lag1","cl-state",y,"48s2015_2025"),lo=tot-tq*st,hi=tot+tq*st) }
-# A5 RPS
-if(file.exists(RPS_FILE)){ r<-fread(RPS_FILE); stopifnot(all(c("state","year","target_pct") %in% names(r)),!anyDuplicated(r[,.(state,year)]))
-  d<-merge(dt,r[,.(state,year,target_pct)],by=c("state","year"),all.x=TRUE); stopifnot(!anyNA(d$target_pct))
-  for(y in ALL5){ m<-twfe(y,d,extra="target_pct"); rec(m,"rps",y,"50s2015_2025") }
-} else for(y in ALL5) add("rps",y,AI,NA,NA,NA,NA_integer_,"","50s2015_2025",mk_tag("rps","lag1","cl-state",y,"50s2015_2025"),status="NOT_RUN",note="missing: no LBNL file in data/raw/lbnl/ and no data/lbnl_rps_targets.csv at run time")
+# A5 RPS control: LBNL current RPS/CES schedule (EXPERIMENTS.md section 0 item 21)
+r<-fread(RPS_FILE); stopifnot(all(c("state","year","target_pct","rps_target_pct","target_pct_ed2023") %in% names(r)),!anyDuplicated(r[,.(state,year)]))
+d<-merge(dt,r[,.(state,year,target_pct,rps_target_pct,target_pct_ed2023)],by=c("state","year"),all.x=TRUE); stopifnot(nrow(d)==550,!anyNA(d$target_pct),!anyNA(d$target_pct_ed2023))
+rps_run<-function(spec,y,dd,ctl,sample,n,note){ m<-twfe(y,dd,extra=ctl); stopifnot(m$nobs==n); rec(m,spec,y,sample,note=note)
+  ct<-coeftable(m); ci<-confint(m); add(spec,y,ctl,ct[ctl,1],ct[ctl,2],ct[ctl,4],m$nobs,"CRV1-state",sample,mk_tag(paste0(spec,"-coef"),"lag1","cl-state",y,sample),note=paste("coefficient on the RPS control;",note),lo=ci[ctl,1],hi=ci[ctl,2]) }
+for(y in ALL5){ rps_run("rps",y,d,"target_pct","50s2015_2025",550,"LBNL current RPS/CES schedule: larger of RPS and CES")
+  rps_run("rps-rpsonly",y,d,"rps_target_pct","50s2015_2025",550,"check: RPS target only")
+  rps_run("rps-ed2023",y,d,"target_pct_ed2023","50s2015_2025",550,"check: June 2023 edition; its 2024-2025 values were planned levels when published")
+  rps_run("rps-ed2023-to2023",y,d[year<=2023],"target_pct_ed2023","50s2015_2023",450,"check: June 2023 edition, 2015-2023")
+  rps_run("rps-to2023",y,d[year<=2023],"target_pct","50s2015_2023",450,"LBNL current RPS/CES schedule on 2015-2023, to compare with the 2023 edition")
+  rps_run("rps-noNY",y,d[state!="NY"],"target_pct","49s2015_2025noNY",539,"check: without NY, whose series breaks in 2018") }
+# Added 2026-11-04: AI with all ownerships in the numerator (EXPERIMENTS.md section 0 item 24)
+ao<-fread("data/ai_allown_518210.csv"); stopifnot(!anyDuplicated(ao[,.(state,year)]))
+da<-merge(dt,ao[,.(state,year,ai_allown_per1000_lag1)],by=c("state","year"),all.x=TRUE); stopifnot(nrow(da)==550,!anyNA(da$ai_allown_per1000_lag1))
+da[,ai_allown_lag1_w:=winsorize(ai_allown_per1000_lag1)]
+AO<-"ai_allown_lag1_w"
+for(y in c(CORE,"new_renew_mw")){ m<-twfe(y,da,x=AO); ct<-coeftable(m); ci<-confint(m); stopifnot(m$nobs==550)
+  add("allown",y,AO,ct[AO,1],ct[AO,2],ct[AO,4],m$nobs,"CRV1-state","50s2015_2025",sprintf("rob_allown_ai518210allown_lag1_ctrl4_w9901_cl-state_%s_50s2015_2025",y),note="check: private + published government 518210 jobs; suppressed government rows count as 0",lo=ci[AO,1],hi=ci[AO,2]) }
 # A6 placebo, plus lag1 on the same observations
 dp<-dt[year<=2024&!is.na(ai_lead1_w)]; stopifnot(nrow(dp)==496)
 for(y in ALL5){ m<-rec(twfe(y,dp,x="ai_lead1_w"),"placebo",y,"50s2015_2024",lag="lead1",x="ai_lead1_w"); stopifnot(m$nobs==496)

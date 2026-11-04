@@ -1,0 +1,36 @@
+=== GATE ===
+                                 check  new_estimate  old_estimate     ok
+                                <char>         <num>         <num> <lgcl>
+ 1:                      4b core ln_ec -1.565486e-03 -1.565486e-03   TRUE
+ 2:                        4b DK ln_ec -1.565486e-03 -1.565486e-03   TRUE
+ 3:                      4b core ln_ee  2.205590e-03  2.205590e-03   TRUE
+ 4:                        4b DK ln_ee  2.205590e-03  2.205590e-03   TRUE
+ 5:                4b core renew_share -1.012927e-02 -1.012927e-02   TRUE
+ 6:                  4b DK renew_share -1.012927e-02 -1.012927e-02   TRUE
+ 7:                    4b new_renew_mw  7.084443e+01  7.084443e+01   TRUE
+ 8:                 4b fossil_to_renew  9.968087e-01  9.968087e-01   TRUE
+ 9:            4b new_renew_per_1000mw  9.961659e-01  9.961659e-01   TRUE
+10:           4d SLX border48 b1 ln_ec -1.650473e-03 -1.650473e-03   TRUE
+11:       4d SLX border48 theta1 ln_ec -8.063507e-05 -8.063507e-05   TRUE
+12:           4d SLX border48 b1 ln_ee  2.460136e-03  2.460136e-03   TRUE
+13:       4d SLX border48 theta1 ln_ee  2.064276e-03  2.064276e-03   TRUE
+14:     4d SLX border48 b1 renew_share -1.350286e-02 -1.350286e-02   TRUE
+15: 4d SLX border48 theta1 renew_share -2.985221e-02 -2.985221e-02   TRUE
+16:           4b long diff (bug) ln_ec -8.589870e-03 -8.589870e-03   TRUE
+17:           4b long diff (bug) ln_ee  7.624484e-03  7.624484e-03   TRUE
+18:     4b long diff (bug) renew_share -1.662603e-02 -1.662603e-02   TRUE
+
+GATE PASSED: 18 of 18 checks match within 1e-08
+
+Within-state corr(lead, lag): 0.716
+       outcome se_conley_1km  se_cluster se_cluster_noadj
+        <char>         <num>       <num>            <num>
+1:       ln_ec   0.006218897 0.005981435      0.005839866
+2:       ln_ee   0.006072105 0.005840248      0.005702021
+3: renew_share   0.006285795 0.006045779      0.005902687
+   cutoff_km mean_states_within states_with_none
+       <num>              <num>            <int>
+1:       500               3.92                4
+2:      1000              12.84                2
+robustness.csv: 178 rows (NOT_RUN 3, ok 175)
+DONE
