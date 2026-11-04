@@ -1,5 +1,5 @@
 # Phase 4e robustness: RECEIPT, 2026-11-04
-Driver: `code/R/04e_robustness.R --date 2026-11-04`. Spec curve: `code/python/04e_spec_curve.py --date 2026-11-04`. Spec: EXPERIMENTS.md section 9 and section 0 items 21 and 24. Log: `logs/2026-11-04/04e_robustness.log`. Stretch goals not run.
+Driver: `code/R/04e_robustness.R --date 2026-11-04`. Spec curve: `code/python/04e_spec_curve.py --date 2026-11-04`. Spec: EXPERIMENTS.md section 9 and section 0 items 21 and 24. Log: `logs/2026-11-04/04e_robustness.log`. Rerun the same day to add the Gavins Point row; every other row is unchanged. Stretch goals not run.
 
 ## Gate
 18 of 18 checks reproduce the stored 4b and 4d estimates and SEs within 1e-8 (`gate.csv`).
@@ -10,6 +10,8 @@ All 111 rows that ran on Nov 3 are identical, with no difference in any estimate
 ## New rows
 - **A5, RPS control:** main = `target_pct`, the "LBNL current RPS/CES schedule." Checks: RPS target only; June 2023 edition, 2015-2025 and 2015-2023; current schedule on 2015-2023 to compare; without NY. Each row is paired with a `-coef` row for the control's own coefficient.
 - **All-ownership AI:** private + published government 518210 jobs (`data/ai_allown_518210.csv`), winsorized by the same rule as the baseline. Suppressed government rows count as 0.
+
+- **Gavins Point held in NE:** one `new_renew_mw` row, with NE and SD adjusted by 132.3 MW in 2016 and 2018, winsorized by the same rule. The panel keeps EIA's data as published.
 
 ## Results to read first
 - **RPS:** the AI coefficient barely moves, and the control is never significant at 5%. EXPERIMENTS.md expected it to shrink; it didn't.
@@ -26,4 +28,4 @@ As in the Nov 3 receipt: the lead is winsorized at 1/99 (`placebo-nowins` shows 
 1,000 km: all five VCOVs are not positive definite and were eigenvalue-fixed, so treat those rows as unreliable (`conley_vcov_check.csv`).
 
 ## Files
-`robustness.csv` (178 rows: 175 ok, 3 NOT_RUN), `gate.csv`, `spec_curve.csv`, `spec_curve.tex`, `PROVENANCE.md`, `conley_*.csv`, `../figures/04e_spec_curve.png`
+`robustness.csv` (179 rows: 176 ok, 3 NOT_RUN), `gate.csv`, `spec_curve.csv`, `spec_curve.tex`, `PROVENANCE.md`, `conley_*.csv`, `../figures/04e_spec_curve.png`

@@ -117,6 +117,15 @@ da[,ai_allown_lag1_w:=winsorize(ai_allown_per1000_lag1)]
 AO<-"ai_allown_lag1_w"
 for(y in c(CORE,"new_renew_mw")){ m<-twfe(y,da,x=AO); ct<-coeftable(m); ci<-confint(m); stopifnot(m$nobs==550)
   add("allown",y,AO,ct[AO,1],ct[AO,2],ct[AO,4],m$nobs,"CRV1-state","50s2015_2025",sprintf("rob_allown_ai518210allown_lag1_ctrl4_w9901_cl-state_%s_50s2015_2025",y),note="check: private + published government 518210 jobs; suppressed government rows count as 0",lo=ci[AO,1],hi=ci[AO,2]) }
+# Added 2026-11-04: new_renew_mw with Gavins Point held in NE in every year (EXPERIMENTS.md section 0 item 29).
+# EIA's state file counts this 132.3 MW plant in SD in 2016-2017. The panel keeps EIA's data as published.
+GP<-132.3; pr<-fread("data/out/state_panel_2015_2025.csv")[is_dc==0,.(state,year,nr=new_renew_mw)]
+pr[,chk:=winsorize(nr)]; g0<-merge(dt[,.(state,year,new_renew_mw)],pr,by=c("state","year")); stopifnot(nrow(g0)==550,max(abs(g0$new_renew_mw-g0$chk))<1e-9)
+pr[,nr_gp:=nr]; pr[state=="NE"&year==2016,nr_gp:=nr+GP]; pr[state=="NE"&year==2018,nr_gp:=nr-GP]; pr[state=="SD"&year==2016,nr_gp:=nr-GP]; pr[state=="SD"&year==2018,nr_gp:=nr+GP]
+stopifnot(sum(pr$nr!=pr$nr_gp)==4); cat("Gavins Point cells:\n"); print(pr[nr!=nr_gp,.(state,year,published=nr,held_in_NE=nr_gp)])
+pr[,new_renew_gp:=winsorize(nr_gp)]; dg<-merge(dt,pr[,.(state,year,new_renew_gp)],by=c("state","year")); stopifnot(nrow(dg)==550)
+m<-twfe("new_renew_gp",dg); ct<-coeftable(m); ci<-confint(m); add("gavins-ne","new_renew_mw",AI,ct[AI,1],ct[AI,2],ct[AI,4],m$nobs,"CRV1-state","50s2015_2025",mk_tag("gavins-ne","lag1","cl-state","new_renew_mw","50s2015_2025"),note="check: Gavins Point held in NE in every year; NE and SD adjusted in 2016 and 2018",lo=ci[AI,1],hi=ci[AI,2])
+cat(sprintf("Winsor cutoffs: published [%.1f, %.1f]; held in NE [%.1f, %.1f]\n",quantile(pr$nr,.01),quantile(pr$nr,.99),quantile(pr$nr_gp,.01),quantile(pr$nr_gp,.99)))
 # A6 placebo, plus lag1 on the same observations
 dp<-dt[year<=2024&!is.na(ai_lead1_w)]; stopifnot(nrow(dp)==496)
 for(y in ALL5){ m<-rec(twfe(y,dp,x="ai_lead1_w"),"placebo",y,"50s2015_2024",lag="lead1",x="ai_lead1_w"); stopifnot(m$nobs==496)

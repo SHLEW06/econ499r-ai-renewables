@@ -34,6 +34,7 @@ ROWS = [  # label, group, filter
  ("RPS: June 2023 edition, 2015-2023","Controls", lambda x: (x.spec=="rps-ed2023-to2023")&(x.coef==AI)),
  ("RPS: current schedule, no NY", "Controls", lambda x: (x.spec=="rps-noNY")&(x.coef==AI)),
  ("AI: all ownerships",           "AI measure", lambda x: (x.spec=="allown")),
+ ("Gavins Point held in NE",      "AI measure", lambda x: (x.spec=="gavins-ne")),
  ("Driscoll-Kraay SE",            "SE",       lambda x: (x.spec=="dk")),
  ("Conley 500 km SE",             "SE",       lambda x: (x.spec=="conley500")),
  ("Conley 1,000 km SE (unreliable)","SE",     lambda x: (x.spec=="conley1000")),
