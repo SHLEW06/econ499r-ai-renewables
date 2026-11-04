@@ -15,7 +15,7 @@ for r, _, fs in os.walk("results"):
     ALLOW += [os.path.join(r, f) for f in fs if os.path.splitext(f)[1].lower() in (".csv", ".tex", ".png", ".md", ".txt") and f != ".DS_Store"]
 CLEAN_IN = {"data/out/state_panel_2015_2025.csv": "EIA, BLS, BEA, Census", "data/out/W_border_binary.csv": "Census", "data/out/W_inverse_distance_rowstd.csv": "Census", "data/out/W_distance_miles.csv": "Census", "data/out/state_centroids_land.csv": "Census", "data/ai_allown_518210.csv": "BLS", "data/seds_renewables_state.csv": "EIA", "data/ncses_bachelors_state.csv": "NCSES (NSF)", "data/nsf_state_rd.csv": "NCSES (NSF)", "data/acs_broadband.csv": "Census", "data/fang_split_vars.csv": "EIA, NSF, BEA, Census", "data/epu_state_annual.csv": "Baker, Davis and Levy, CC BY 4.0", "data/epoch_ai_campuses_by_state.csv": "Epoch AI, CC BY", "data/out/ferc1_utility_financials.csv": "PUDL, CC BY 4.0", "data/out/ferc1_cost_by_technology.csv": "PUDL, CC BY 4.0", "data/out/ferc1_plant_costs.csv": "PUDL, CC BY 4.0"}
 ALLOW += list(CLEAN_IN)
-ALLOW = [f for f in ALLOW if os.path.basename(f) != "build_github_package.py"]  # holds the scan patterns; stays in the working repo
+ALLOW = [f for f in ALLOW if os.path.basename(f) not in ("build_github_package.py", "build_results_package.py")]  # hold the scan patterns; stay in the working repo
 for f in ALLOW: copy(f)
 # ---- remove local paths from the copies ----
 SCR = re.compile(r"/private/tmp/[^\s\"'`|)]*"); TEXT = (".md", ".py", ".R", ".csv", ".tex", ".ipynb", ".txt")
