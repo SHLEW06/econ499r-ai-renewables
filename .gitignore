@@ -24,6 +24,12 @@ data/noaa_degree_days.csv
 data/acs_broadband.csv
 data/epoch_ai_campuses_by_state.csv
 data/ai_allown_518210.csv
+data/ai_job_postings_state.csv
+data/ai_job_postings_overlap_rows.csv
+data/seds_renewables_state.csv
+data/ncses_bachelors_state.csv
+data/fang_split_vars.csv
+data/fang_panel.csv
 data/codebook.csv
 outputs/ECON499R_Data_Workbook_*.xlsx
 outputs/ECON499R_csv_for_R/

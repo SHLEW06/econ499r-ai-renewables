@@ -357,6 +357,57 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 
 ---
 
+## §9b Fang Test
+
+Follows `prompts/04h_fang_test.md`. Tests Fang, Lee & Li (2025), *Renewable Energy* 246, 122969, on Fang's variables, alongside the Zhang test (4b-4e). Output: `results/<date>/fang/`, tags prefixed `fang_`. **Status: Part A (data) done 2026-11-04. Part B not run.**
+
+**Model (Fang eq. 2, all variables in logs, state FE):**
+$$\ln ET_{it} = \beta_0 + \beta_1 \ln AI_{it} + \beta_2 \ln EPU_{it} + \sum_k \beta_k \ln CV_{kit} + \alpha_i + \varepsilon_{it}$$
+
+**Columns (`data/fang_panel.csv`):** ET `re_bbtu`; AI `ai_postings` (Fang) and `dc_jobs` (ours), with `ai_dc_per1000` as a check; EPU `epu_composite`; EP `ep_tetcd`; GDP `gdp_real_musd2017`; POP `population`; EDU `edu_bach_per1000`.
+
+**Fang's Table 2 AI coefficients, columns 1-6:** 0.0428, 0.0452, 0.0396, 0.0548, 0.0561, 0.0531. N = 204.
+
+### Reading the two AI measures
+**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally, and the share-of-national row tests that. Anything uneven stays in as noise. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.
+
+### Expected samples
+| Step | Measure | N |
+|---|---|---|
+| Replication, 2018-2021, with DC | ln(postings) | 204 |
+| Same-vintage sample, 2019-2021, no lag (added) | ln(postings) | 153 |
+| Lag AI, 2019-2021 | ln(postings) | 153 |
+| Extension with lag, 2019-2024, with DC / no DC | ln(postings) | 306 / 300 |
+| Extension with lag, 2015-2024, with DC / no DC | ln(data-center jobs) | 510 / 500 |
+
+### Divergence list (Fang test)
+| # | What Fang does | What we run | Why | Status |
+|---|---|---|---|---|
+| F1 | Real GDP in chained 2012 dollars | Chained 2017 (BEA's current series) | The 2012-dollar series is no longer current. Logs absorb the base-year level but not chain revisions | **Adopted** |
+| F2 | AI Index postings 2018-2021; source year by year not stated | 2018 from the 2019 edition; 2019-2021 from the 2022 edition. Same-vintage 2019-2021 row beside it (N = 153) | Only route to N = 204. The 2019 edition's 2019 stops in September, and Burning Glass expanded coverage in 2020 | **Adopted (team, 2026-11-04)** |
+| F3 | SE type not stated | Conventional SEs first, as the likely match; clustered by state in the bridge | The paper says only "standard errors" | **Adopted** |
+| F4 | Extreme-weather split | Not run | NOAA not available | **Not run** |
+| F5 | Data as of the paper | Current vintages of SEDS, BEA, NCSES and EPU | Exact matches aren't possible; compare sign, size and significance | **Noted** |
+| F6 | Splits at "the mean across the 51 states," period not stated | Each state's 2018-2021 average against the mean of those averages | Keeps each state in one group | **Adopted** |
+| F7 | Wind N = 164 | Nonzero wind state-years are 165 | One state-year differs in current SEDS | **Noted** |
+| F8 | State FE only | Bridge: add year FE, lag AI, cluster, extend, drop DC, one at a time. Our test uses two-way FE, lag and clustering | Shows which step changes the answer | **Adopted (prompt)** |
+| F9 | ln(AI postings) only | Also ln(data-center jobs), with per-1,000 as a check | Our count, from one consistent series | **Adopted (prompt)** |
+| F10 | No lag step on the same sample | Added bridge row: 2019-2021 without a lag, before the lag row | There's no 2017 postings data, so the lag also drops 2018; this separates the two | **Adopted (team, 2026-11-04)** |
+| F11 | Levels of postings only | Added row after the sample extension: ln(state share of national postings) | Tests whether year effects absorb edition shifts | **Adopted (team, 2026-11-04)** |
+| F12 | Separate subgroup regressions | Fang's splits for comparability; interactions in one model as our test | Same as §0 item 5 | **Adopted (prompt)** |
+| F13 | No placebo | AI(t+1), and both in one model | Same concern as the Zhang test | **Adopted (prompt)** |
+
+### Edition overlap (`data/receipts/ai_index.md`)
+| Year | Edition A | Edition B | Pearson r, shares | Rank correlation | SD of ln(share ratio) | Median state gap |
+|---|---|---|---:|---:|---:|---:|
+| 2019 | 2019 edition, Jan-Sep | 2022 edition, full year | 0.9978 | 0.9954 | 0.162 | 14.8% |
+| 2020 | 2021 edition | 2022 edition | 1.0000 | 0.9996 | 0.012 | 0.7% |
+| 2021 | 2022 edition, PDF map | 2022 edition, sheet | 1.0000 | 1.0000 | 0.000 | 0.0% |
+
+**Reading it:** the state pattern is very similar across editions, but high correlations are driven by the ordering of large and small states, so they don't clear within-state noise. For 2019 the median state's share still differs by 14.8% (SD of the log ratio 0.162), part of which is Jan-Sep against the full year. For 2020, with both full years, the median gap is 0.7%, so a one-year revision within Burning Glass is small.
+
+---
+
 ## §10 Stretch (drop if behind on Nov 17 deadline)
 
 | Goal | Equation | Key parameter | Effort | Status |
@@ -400,7 +451,7 @@ Full tag: `<block>_<model>_<ai-var>_<lag>_<controls>_<winsor>_<se>_<outcome>_<sa
 
 | Field | Allowed values | Example |
 |---|---|---|
-| block | h1, h1x, nonlin, het, dyn, h2a, h2b, h3, rob, stretch, ga | h1 |
+| block | h1, h1x, nonlin, het, dyn, h2a, h2b, h3, rob, stretch, ga, fang | h1 |
 | model | twfe, slx, sdm, med, lc | twfe |
 | ai-var | ai518210 (private), ai518210sq, ai518210allown (private + published government; check only) | ai518210 |
 | lag | lag1, lag2, lag3, lag1to3sum, longdiff, lead1, lead1lag1 | lag1 |

@@ -61,6 +61,12 @@ def main(raw, manifest, out_csv):
                 what, disp = "NSF National Patterns Table 10, R&D by state, one data year per edition", "Used: nsf_state_rd.csv"
             elif top == "acs":
                 what, disp = "Census ACS 1-year S2801 API response or code list; contains no key", "Used: acs_broadband.csv"
+            elif top == "aiindex":
+                what, disp = "Stanford AI Index: report PDF, public-data sheet or figure CSV", "Used: ai_job_postings_state.csv; Fang test"
+            elif top == "ncses":
+                what, disp = "NCSES State Indicators API response: bachelor's degrees per 1,000 age 18-24", "Used: ncses_bachelors_state.csv; Fang test"
+            elif rel in ("eia/seds/pr_all.csv", "eia/seds/Codes_and_Descriptions.xlsx"):
+                what, disp = "EIA SEDS prices or code list", "Used: seds_renewables_state.csv; Fang test"
             elif f.startswith("._"):
                 what, disp = "macOS metadata file that came with a zip", "Not data; harmless"
             else:

@@ -1,0 +1,49 @@
+year,check,result,detail
+2018,51 rows,ok,"sum of 51 = 189,030; yoy "
+2019,51 rows,ok,"sum of 51 = 325,702; yoy +72%"
+2020,51 rows,ok,"sum of 51 = 296,937; yoy -9%"
+2021,51 rows,ok,"sum of 51 = 404,074; yoy +36%"
+2022,51 rows,ok,"sum of 51 = 795,624; yoy +97%"
+2023,51 rows,ok,"sum of 51 = 461,225; yoy -42%"
+2024,51 rows,ok,"sum of 51 = 658,548; yoy +43%"
+2025,51 rows,ok,"sum of 51 = 994,372; yoy +51%"
+2022,sum vs national total implied by published shares,ok,"implied 795,471; sum 795,624; gap -0.02%; max |published - derived share| 0.005 pts"
+2023,sum vs national total implied by published shares,ok,"implied 461,332; sum 461,225; gap +0.02%; max |published - derived share| 0.005 pts"
+2024,sum vs national total implied by published shares,ok,"implied 658,251; sum 658,548; gap -0.05%; max |published - derived share| 0.005 pts"
+2025,sum vs national total implied by published shares,ok,"implied 994,407; sum 994,372; gap +0.00%; max |published - derived share| 0.005 pts"
+2018,national total,not published,No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+2019,national total,not published,No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+2020,national total,not published,No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+2021,national total,not published,No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+2022,PDF counts vs public CSV ed2023_fig_4.1.6.csv,ok,51 states; max diff 0
+2023,PDF counts vs public CSV ed2024_fig_4.2.7.csv,ok,51 states; max diff 0
+2024,PDF counts vs public CSV ed2025_fig_4.2.8.csv,ok,51 states; max diff 0
+2025,PDF counts vs public CSV ed2026_fig_4.4.10.csv,ok,51 states; max diff 0
+2021,PDF counts vs 2022-edition sheet,ok,51 states; max diff 0
+2022,PDF shares vs public CSV ed2023_fig_4.1.8.csv,ok,max diff 0.0047 pts
+2024,PDF shares vs public CSV ed2025_fig_4.2.10.csv,ok,max diff 0.0000 pts
+2025,PDF shares vs public CSV ed2026_fig_4.4.11.csv,ok,max diff 0.0048 pts
+2021,spot check CA against report,ok,"80,238 appears in the report text"
+2021,spot check TX against report,ok,"34,021 appears on the map; state name not beside it in text"
+2021,spot check NY against report,ok,"24,494 appears in the report text"
+2022,spot check CA against report,ok,"142,154 appears in the report text"
+2022,spot check TX against report,ok,"66,624 appears in the report text"
+2022,spot check NY against report,ok,"43,899 appears in the report text"
+2023,spot check CA against report,ok,"70,630 appears in the report text"
+2023,spot check TX against report,ok,"36,413 appears in the report text"
+2023,spot check VA against report,ok,"24,417 appears on the map; state name not beside it in text"
+2024,spot check CA against report,ok,"103,375 appears in the report text"
+2024,spot check TX against report,ok,"57,785 appears in the report text"
+2024,spot check NY against report,ok,"37,944 appears in the report text"
+2025,spot check CA against report,ok,"170,881 appears on the map; state name not beside it in text"
+2025,spot check TX against report,ok,"80,547 appears on the map; state name not beside it in text"
+2025,spot check NY against report,ok,"66,029 appears on the map; state name not beside it in text"
+2020,spot check CA: 2021 edition text,ok,"text 63,433; 2021-edition sheet 63,433; table uses 2022 edition 62,521 (-1.4%)"
+2020,spot check TX: 2021 edition text,ok,"text 22,539; 2021-edition sheet 22,539; table uses 2022 edition 22,426 (-0.5%)"
+2020,spot check NY: 2021 edition text,ok,"text 18,580; 2021-edition sheet 18,580; table uses 2022 edition 18,302 (-1.5%)"
+2018,"spot check CA: 2019 edition text, 2018 + Jan-Sep 2019",ok,"sheet 2018 49,070 + 2019 44,715 = 93,785; text gives about 93,000"
+2018,"spot check NY: 2019 edition text, 2018 + Jan-Sep 2019",ok,"sheet 2018 15,541 + 2019 14,348 = 29,889; text gives about 30,000"
+2018,"spot check TX: 2019 edition text, 2018 + Jan-Sep 2019",ok,"sheet 2018 13,166 + 2019 11,049 = 24,215; text gives about 24,000"
+2019,spot check CA: share vs Lightcast's published series,ok,table 24.51%; series 24.62%. No report prints this count
+2019,spot check NY: share vs Lightcast's published series,ok,table 7.57%; series 7.69%. No report prints this count
+2019,spot check TX: share vs Lightcast's published series,ok,table 7.16%; series 7.62%. No report prints this count

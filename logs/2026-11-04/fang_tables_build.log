@@ -1,0 +1,154 @@
+== AI postings: (408, 13) states 51 years 2018 2025
+-- Checks
+  2018 | 51 rows | ok | sum of 51 = 189,030; yoy 
+  2019 | 51 rows | ok | sum of 51 = 325,702; yoy +72%
+  2020 | 51 rows | ok | sum of 51 = 296,937; yoy -9%
+  2021 | 51 rows | ok | sum of 51 = 404,074; yoy +36%
+  2022 | 51 rows | ok | sum of 51 = 795,624; yoy +97%
+  2023 | 51 rows | ok | sum of 51 = 461,225; yoy -42%
+  2024 | 51 rows | ok | sum of 51 = 658,548; yoy +43%
+  2025 | 51 rows | ok | sum of 51 = 994,372; yoy +51%
+  2022 | sum vs national total implied by published shares | ok | implied 795,471; sum 795,624; gap -0.02%; max |published - derived share| 0.005 pts
+  2023 | sum vs national total implied by published shares | ok | implied 461,332; sum 461,225; gap +0.02%; max |published - derived share| 0.005 pts
+  2024 | sum vs national total implied by published shares | ok | implied 658,251; sum 658,548; gap -0.05%; max |published - derived share| 0.005 pts
+  2025 | sum vs national total implied by published shares | ok | implied 994,407; sum 994,372; gap +0.00%; max |published - derived share| 0.005 pts
+  2018 | national total | not published | No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+  2019 | national total | not published | No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+  2020 | national total | not published | No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+  2021 | national total | not published | No national count or US-share table in this edition; share_pct is derived from the 51-state sum
+  2022 | PDF counts vs public CSV ed2023_fig_4.1.6.csv | ok | 51 states; max diff 0
+  2023 | PDF counts vs public CSV ed2024_fig_4.2.7.csv | ok | 51 states; max diff 0
+  2024 | PDF counts vs public CSV ed2025_fig_4.2.8.csv | ok | 51 states; max diff 0
+  2025 | PDF counts vs public CSV ed2026_fig_4.4.10.csv | ok | 51 states; max diff 0
+  2021 | PDF counts vs 2022-edition sheet | ok | 51 states; max diff 0
+  2022 | PDF shares vs public CSV ed2023_fig_4.1.8.csv | ok | max diff 0.0047 pts
+  2024 | PDF shares vs public CSV ed2025_fig_4.2.10.csv | ok | max diff 0.0000 pts
+  2025 | PDF shares vs public CSV ed2026_fig_4.4.11.csv | ok | max diff 0.0048 pts
+  2021 | spot check CA against report | ok | 80,238 appears in the report text
+  2021 | spot check TX against report | ok | 34,021 appears on the map; state name not beside it in text
+  2021 | spot check NY against report | ok | 24,494 appears in the report text
+  2022 | spot check CA against report | ok | 142,154 appears in the report text
+  2022 | spot check TX against report | ok | 66,624 appears in the report text
+  2022 | spot check NY against report | ok | 43,899 appears in the report text
+  2023 | spot check CA against report | ok | 70,630 appears in the report text
+  2023 | spot check TX against report | ok | 36,413 appears in the report text
+  2023 | spot check VA against report | ok | 24,417 appears on the map; state name not beside it in text
+  2024 | spot check CA against report | ok | 103,375 appears in the report text
+  2024 | spot check TX against report | ok | 57,785 appears in the report text
+  2024 | spot check NY against report | ok | 37,944 appears in the report text
+  2025 | spot check CA against report | ok | 170,881 appears on the map; state name not beside it in text
+  2025 | spot check TX against report | ok | 80,547 appears on the map; state name not beside it in text
+  2025 | spot check NY against report | ok | 66,029 appears on the map; state name not beside it in text
+  2020 | spot check CA: 2021 edition text | ok | text 63,433; 2021-edition sheet 63,433; table uses 2022 edition 62,521 (-1.4%)
+  2020 | spot check TX: 2021 edition text | ok | text 22,539; 2021-edition sheet 22,539; table uses 2022 edition 22,426 (-0.5%)
+  2020 | spot check NY: 2021 edition text | ok | text 18,580; 2021-edition sheet 18,580; table uses 2022 edition 18,302 (-1.5%)
+  2018 | spot check CA: 2019 edition text, 2018 + Jan-Sep 2019 | ok | sheet 2018 49,070 + 2019 44,715 = 93,785; text gives about 93,000
+  2018 | spot check NY: 2019 edition text, 2018 + Jan-Sep 2019 | ok | sheet 2018 15,541 + 2019 14,348 = 29,889; text gives about 30,000
+  2018 | spot check TX: 2019 edition text, 2018 + Jan-Sep 2019 | ok | sheet 2018 13,166 + 2019 11,049 = 24,215; text gives about 24,000
+-- Overlap
+  year             edition_a               edition_b  n_states  pearson_share  spearman_share  pearson_ln_share  level_ratio_b_over_a  sd_ln_share_ratio  median_abs_pct_gap              largest_gaps
+ 2019 2019 edition, Jan-Sep 2022 edition, full year        51         0.9978          0.9954            0.9969                2.0000             0.1616             14.7934 MT -45%; AK -45%; MS -41%
+ 2020          2021 edition            2022 edition        51         1.0000          0.9996            1.0000                0.9883             0.0116              0.6547    WV +4%; OR +3%; VT +3%
+ 2021 2022 edition, PDF map     2022 edition, sheet        51         1.0000          1.0000            1.0000                1.0000             0.0000              0.0000    AK +0%; PA +0%; ND +0%
+-- Select-state share history
+ state  year  series_2023  series_2024  series_2025  series_2026  table_share_pct table_edition  alt_share_pct
+   CA  2018       22.522        22.52        22.52       22.522           25.959          2019            NaN
+   CA  2019       24.619        24.62        24.62       24.619           24.512          2022         27.458
+   CA  2020       20.877        20.88        20.88       20.877           21.055          2022         21.113
+   CA  2021       19.507        19.51        19.51       19.507           19.857          2022            NaN
+   CA  2022       17.867        17.87        17.87       17.867           17.870          2023            NaN
+   CA  2023          NaN        15.31        15.31       15.314           15.310          2024            NaN
+   CA  2024          NaN          NaN        15.70       15.697           15.700          2025            NaN
+   CA  2025          NaN          NaN          NaN       17.185           17.180          2026            NaN
+   NY  2018        7.037         7.04         7.04        7.037            8.221          2019            NaN
+   NY  2019        7.686         7.69         7.69        7.686            7.573          2022          8.811
+   NY  2020        6.161         6.16         6.16        6.161            6.164          2022          6.184
+   NY  2021        6.067         6.07         6.07        6.067            6.062          2022            NaN
+   NY  2022        5.518         5.52         5.52        5.518            5.520          2023            NaN
+   NY  2023          NaN         5.29         5.29        5.290            5.290          2024            NaN
+   NY  2024          NaN          NaN         5.76        5.762            5.760          2025            NaN
+   NY  2025          NaN          NaN          NaN        6.640            6.640          2026            NaN
+   TX  2018        6.946         6.95         6.95        6.946            6.965          2019            NaN
+   TX  2019        7.621         7.62         7.62        7.621            7.158          2022          6.785
+   TX  2020        8.371         8.37         8.37        8.371            7.552          2022          7.502
+   TX  2021        8.897         8.90         8.90        8.897            8.420          2022            NaN
+   TX  2022        8.374         8.37         8.37        8.374            8.370          2023            NaN
+   TX  2023          NaN         7.89         7.89        7.895            7.890          2024            NaN
+   TX  2024          NaN          NaN         8.77        8.775            8.770          2025            NaN
+   TX  2025          NaN          NaN          NaN        8.100            8.100          2026            NaN
+   WA  2018        4.851         4.85         4.85        4.851            5.622          2019            NaN
+   WA  2019        3.957         3.96         3.96        3.957            4.563          2022          4.997
+   WA  2020        4.348         4.35         4.35        4.348            4.803          2022          4.883
+   WA  2021        3.937         3.94         3.94        3.937            4.765          2022            NaN
+   WA  2022        3.932         3.93         3.93        3.932            3.930          2023            NaN
+   WA  2023          NaN         3.19         3.19        3.193            3.190          2024            NaN
+   WA  2024          NaN          NaN         4.72        4.717            4.720          2025            NaN
+   WA  2025          NaN          NaN          NaN        3.934            3.930          2026            NaN
+  2019 | spot check CA: share vs Lightcast's published series | ok | table 24.51%; series 24.62%. No report prints this count
+  2019 | spot check NY: share vs Lightcast's published series | ok | table 7.57%; series 7.69%. No report prints this count
+  2019 | spot check TX: share vs Lightcast's published series | ok | table 7.16%; series 7.62%. No report prints this count
+max spread across editions' printed series: 0.005000000000000782
+-- Year-to-year change in ln(state share)
+       step   editions  same_edition  national_change_pct  sd_ln_share_change_postings  median_abs_ln_share_change  sd_ln_share_change_dc_jobs  n_dc_jobs                    largest
+2018->2019 2019->2022         False              72.3018                       0.2230                      0.1395                      0.1196         51  MS +90%; IN +81%; AK +81%
+2019->2020 2022->2022          True              -8.8317                       0.1738                      0.1155                      0.1294         51 HI +111%; ID +63%; ND +33%
+2020->2021 2022->2022          True              36.0807                       0.2166                      0.1761                      0.0957         51  AR +95%; WY +82%; ID +70%
+2021->2022 2022->2023         False              96.9006                       0.2663                      0.1313                      0.1045         51 AR +139%; OK +99%; KS +90%
+2022->2023 2023->2024         False             -42.0298                       0.2493                      0.1400                      0.0829         51 AK +133%; MT +85%; ND +82%
+2023->2024 2024->2025         False              42.7824                       0.2004                      0.1217                      0.0618         51  MT +93%; WV +70%; MD -36%
+2024->2025 2025->2026         False              50.9946                       0.1951                      0.0905                      0.0775         47 VT +126%; WY +78%; WV +69%
+== SEDS code list
+ BMTCB           Biomass total consumption             Billion Btu
+GETCB Geothermal energy total consumption             Billion Btu
+HYTCB        Hydropower total consumption             Billion Btu
+RETCB  Renewable energy total consumption             Billion Btu
+SOTCB      Solar energy total consumption             Billion Btu
+TETCB            Total energy consumption             Billion Btu
+TETCD          Total energy average price Dollars per million Btu
+WYTCB       Wind energy total consumption             Billion Btu
+SEDS rows (510, 10) NA 0
+nonzero state-years 2018-21 vs Fang N: {'re_bbtu': (204, 204), 'wind_bbtu': (165, 164), 'solar_bbtu': (204, 204), 'geothermal_bbtu': (204, 204), 'biomass_bbtu': (204, 204), 'hydro_bbtu': (192, 192)}
+zero cells 2015-24: {'re_bbtu': 0, 'wind_bbtu': 97, 'solar_bbtu': 0, 'geothermal_bbtu': 0, 'hydro_bbtu': 30, 'biomass_bbtu': 0, 'total_energy_bbtu': 0}
+sum of five types / RETCB: min 0.9996 max 1.0004
+== NCSES years 2000 2024 regions per year 53 non-state regions ['00', '72']
+flags 2015-2024: {'not_available': 0, 'suppressed': 0, 'rounds_to_zero': 0}
+NCSES rows (510, 5) years 2015 2024 NA 0 | max |indicator - 1000*deg/pop|: 0.0
+state  year  edu_bach_per1000  degrees  pop_18_24
+   GA  2018         52.190559    52537    1006638
+   GA  2021         55.761389    56514    1013497
+== Regions: {'South': 17, 'West': 13, 'Midwest': 12, 'Northeast': 9} | net producers 2021: 31 | income NA 0
+== fang_panel (561, 41)
+year                   2015  2016  2017  2018  2019  2020  2021  2022  2023  2024  2025  first  last
+variable                                                                                            
+re_bbtu                  51    51    51    51    51    51    51    51    51    51     0   2015  2024
+wind_bbtu                51    51    51    51    51    51    51    51    51    51     0   2015  2024
+solar_bbtu               51    51    51    51    51    51    51    51    51    51     0   2015  2024
+geothermal_bbtu          51    51    51    51    51    51    51    51    51    51     0   2015  2024
+hydro_bbtu               51    51    51    51    51    51    51    51    51    51     0   2015  2024
+biomass_bbtu             51    51    51    51    51    51    51    51    51    51     0   2015  2024
+total_energy_bbtu        51    51    51    51    51    51    51    51    51    51     0   2015  2024
+ep_tetcd                 51    51    51    51    51    51    51    51    51    51     0   2015  2024
+edu_bach_per1000         51    51    51    51    51    51    51    51    51    51     0   2015  2024
+gdp_real_musd2017        51    51    51    51    51    51    51    51    51    51    51   2015  2025
+population               51    51    51    51    51    51    51    51    51    51    51   2015  2025
+epu_composite            51    51    51    51    51    51    51    51    51    51    51   2015  2025
+epu_national             51    51    51    51    51    51    51    51    51    51    51   2015  2025
+epu_state                51    51    51    51    51    51    51    51    51    51    51   2015  2025
+ai_postings               0     0     0    51    51    51    51    51    51    51    51   2018  2025
+ai_share_us_pct           0     0     0    51    51    51    51    51    51    51    51   2018  2025
+ai_share_of_state_pct     0     0     0    51    51    51    51    51    51    51    51   2018  2025
+dc_jobs                  51    51    51    51    51    51    51    51    51    51    47   2015  2025
+dc_jobs_lag1             51    51    51    51    51    51    51    51    51    51    51   2015  2025
+ai_dc_per1000            51    51    51    51    51    51    51    51    51    51    47   2015  2025
+elec_consumption_mwh     51    51    51    51    51    51    51    51    51    51    51   2015  2025
+elec_price_c_kwh         51    51    51    51    51    51    51    51    51    51    51   2015  2025
+net_producer             51    51    51    51    51    51    51    51    51    51    51   2015  2025
+rd_total_musd             0     0    51    51    51    51    51    51    51     0     0   2017  2023
+income_pc_usd            51    51    51    51    51    51    51    51    51    51    51   2015  2025
+census_region            51    51    51    51    51    51    51    51    51    51    51   2015  2025
+target_pct               51    51    51    51    51    51    51    51    51    51    51   2015  2025
+ln_gdp_pc                51    51    51    51    51    51    51    51    51    51    51   2015  2025
+manuf_share              51    51    51    51    51    51    51    51    51    51    51   2015  2025
+price_c_kwh              51    51    51    51    51    51    51    51    51    51    51   2015  2025
+pop_growth               51    51    51    51    51    51    51    51    51    51    51   2015  2025
+Samples: postings on 2018-21 complete: 204

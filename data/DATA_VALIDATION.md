@@ -368,3 +368,23 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 | Differs from a value in an older edition (13 states; some overlap with the rows above) | 60 |
 
 Largest revisions against older editions: MD 2020 (30.5 then 18.1), NJ 2020 (28.4 then 20.6), NH 2022 (22.5 then 15.0). Reasons aren't given. Full list: `logs/2026-11-04/rps_vintage_check.csv`.
+
+---
+
+## Fang test data, Nov 4
+
+Each file's contents were read, not just its name. Build output: `logs/2026-11-04/fang_tables_build.log`.
+
+| File | Rating | Product and years | Units and coverage | Vintage | Spot checks | Main caveat |
+|---|---|---|---|---|---|---|
+| AI Index job postings by state | **Yellow** | AI postings, 2018-2025 | Count; 51 areas | Editions 2019, 2022-2026 | Maps exact against public CSVs or sheets, 2021-2025; implied totals within 0.05%; report text checks by year in `ai_index.md` | Each edition is its own vintage; only 2019-2021 is one. National totals swing +97% then -42% around method changes. State shares are noisy |
+| SEDS consumption and TETCD | **Green** | 2015-2024 used | Billion Btu; $/MMBtu; 51 areas | Prices and consumption as served Nov 2026 | Codes match EIA's list; types sum to RETCB within 0.04%; TETCB matches the panel exactly; Ns match Fang's except wind (165 vs 164) | Ends 2024 |
+| NCSES bachelor's degrees | **Green** | 2000-2024 | Per 1,000 age 18-24; 51 areas | Updated July 14, 2026 | Indicator = 1,000 x degrees / population exactly; no flagged cells | Later revisions may differ from Fang's copy |
+| BEA real GDP, population, income | **Green** | Through 2025 | 51 areas | Sept 30, 2026 | Checked in Part C and the audit | GDP in chained 2017 dollars; Fang uses 2012 |
+| State EPU | **Green** | Annual means | Already rated | Jan 2026 | Already rated | |
+| NSF R&D | **Yellow** | 2017-2023 | Already rated | | Already rated | Doesn't cover all Fang split years outside 2018-2021 |
+| Extreme weather | **Not run** | None | None | None | None | NOAA not available |
+
+**Totals for new files:** 2 green, 1 yellow; extreme weather not run. No reds.
+
+**In the postings extension (2019-2024), almost every year comes from a different edition. So a state's year-to-year change mixes real change with method changes.** Year effects remove shifts that hit all states proportionally, and the share-of-national row tests that. Anything uneven stays in as noise. Data-center jobs (BLS, one consistent series) remain the more reliable extension measure.

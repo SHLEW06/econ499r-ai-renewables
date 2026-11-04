@@ -40,6 +40,14 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [epoch.md](epoch.md) | Epoch AI data centers (context only) | `data/raw/epoch/` | `epoch_ai_campuses_by_state.csv` |
 | [noaa.md](noaa.md) | NOAA degree days: **not done** | none | none |
 
+### Added for the Fang test (Phase 4h; side tables in `data/`; the panel doesn't use them)
+| Receipt | Source | Raw folder | Output |
+|---|---|---|---|
+| [ai_index.md](ai_index.md) | Stanford AI Index job postings by state | `data/raw/aiindex/` | `ai_job_postings_state.csv` |
+| [seds_fang.md](seds_fang.md) | SEDS renewables and energy price | `data/raw/eia/seds/` | `seds_renewables_state.csv` |
+| [ncses.md](ncses.md) | NCSES bachelor's degrees indicator | `data/raw/ncses/` | `ncses_bachelors_state.csv` |
+| [fang_panel.md](fang_panel.md) | Fang panel and split variables | Several | `fang_panel.csv`, `fang_split_vars.csv` |
+
 ## Rebuild steps (from the project root)
 
 `data/raw/` is read-only. These commands rebuild everything derived from it; they don't change raw files, except that steps marked *download* add files.
@@ -66,6 +74,10 @@ python3 $S/build_ai_allown.py data/raw data/out/state_panel_2015_2025.csv data/a
 python3 $S/build_file_inventory.py data/raw logs/2026-11-04/raw_sha256_manifest.csv data/FILE_INVENTORY.csv
 python3 -I $S/build_xlsx.py data/out <scratch_dir>/wb_base.xlsx
 python3 $S/add_side_tabs_nov4.py <scratch_dir>/wb_base.xlsx data outputs/ECON499R_Data_Workbook_2026-11-04.xlsx
+
+# Fang test (Phase 4h)
+python3 -I $S/download_fang_sources.py data/raw logs/2026-11-04/fang_downloads.csv   # download
+python3 -I $S/build_fang_tables.py data/raw data logs/2026-11-04
 
 # 5. Compare two builds, cell by cell (C.1b)
 python3 $S/compare_panel_builds.py <before_dir> data/out <out_csv>

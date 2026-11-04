@@ -1,0 +1,4 @@
+year,edition_a,edition_b,comparison,n_states,pearson_share,spearman_share,pearson_ln_share,level_ratio_b_over_a,sd_ln_share_ratio,median_abs_pct_gap,largest_gaps
+2019,"2019 edition, Jan-Sep","2022 edition, full year",different editions; partial vs full year,51,0.9978,0.9954,0.9969,2.0,0.1616,14.7934,MT -45%; AK -45%; MS -41%
+2020,2021 edition,2022 edition,different editions; both full year,51,1.0,0.9996,1.0,0.9883,0.0116,0.6547,WV +4%; OR +3%; VT +3%
+2021,"2022 edition, PDF map","2022 edition, sheet","same edition; parse check, not an edition test",51,1.0,1.0,1.0,1.0,0.0,0.0,AK +0%; PA +0%; ND +0%

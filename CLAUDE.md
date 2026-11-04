@@ -122,7 +122,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 **Data corrections (2026-11-04):** `dc_wages_usd` is blank where suppressed (only change in the panel; SDM and other results stand). D23, receipts and C.6 corrected. See `data/receipts/README.md`.
 
-**Next step:** the Fang test, then shift-share IV, then broadband and R&D moderation. The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Target 2026-11-17. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
+**Next step:** Fang test, Part B (`prompts/04h_fang_test.md`; Part A data done 2026-11-04), then shift-share IV, then broadband and R&D moderation. The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Target 2026-11-17. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
 
 ---
 
@@ -153,6 +153,7 @@ See `data/DATA_VALIDATION.md` ("New data, Nov 4") and `data/receipts/README.md`.
 | ACS broadband (S2801) | **Done** — `data/acs_broadband.csv`. B1 uses 2016-2024, without 2015 and 2020 | Stretch moderator |
 | State EPU | **Done** — `data/epu_state_annual.csv` | Stretch moderator |
 | OWID/IRENA solar, LBNL Utility-Scale Solar | **Done** | Phase 4f |
+| Fang test data (AI Index postings, SEDS renewables, TETCD, NCSES) | **Done** — `data/fang_panel.csv`; `data/receipts/ai_index.md` | Fang test |
 | NOAA HDD/CDD | **Not done** — NCEI unreachable on 2026-11-04; team chose not to substitute CPC files | Optional climate control |
 | Q1-Q4 2024 large-load reports (Docket 55378) | Needed — browser, FERC | Georgia case box |
 | SEC company facts | Optional — sec_fin.py + SEC_USER_AGENT env var | Finance channel |
