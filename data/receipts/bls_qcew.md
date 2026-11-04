@@ -33,6 +33,10 @@ Each raw file contains county, MSA, state, and national rows. Keep only:
 
 `area_fips` ending in `'000'` selects the statewide row (e.g., `'04000'` = Arizona).
 
+## Government 518210 rows (corrected 2026-11-04)
+
+State-level government rows exist in every file: own_code 1 (federal), 2 (state), 3 (local), agglvl 58. They are left out of the main AI measure by team decision. `build_ai_allown.py` writes `data/ai_allown_518210.csv` for the labeled check and `logs/2026-11-04/gov_518210_shares.csv`. Suppressed government rows show 0 jobs and can't be recovered, so all-ownership counts are lower bounds.
+
 ## Key Column
 
 `annual_avg_emplvl` — annual average employment level (full- and part-time jobs, covered by UI).

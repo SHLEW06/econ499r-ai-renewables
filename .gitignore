@@ -23,6 +23,7 @@ data/nsf_state_rd.csv
 data/noaa_degree_days.csv
 data/acs_broadband.csv
 data/epoch_ai_campuses_by_state.csv
+data/ai_allown_518210.csv
 data/codebook.csv
 outputs/ECON499R_Data_Workbook_*.xlsx
 outputs/ECON499R_csv_for_R/

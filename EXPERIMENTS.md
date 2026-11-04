@@ -33,6 +33,7 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 21 | "RPS" control, form unspecified (replaces item 18's coding rules) | Main: `target_pct`, the larger of the RPS and CES targets each year, from LBNL's June 2026 file. Label: **"LBNL current RPS/CES schedule."** States with no entry = 0. Voluntary goals not coded; those states are 0. Checks: `rps_target_pct` (RPS only); the June 2023 edition's values, all of 2015-2025 and separately 2015-2023; main version without NY. Flag the 3 obligation conflicts (MT 2020; NY 2015, 2016) in the notebook | LBNL's Target Achievement file has no target levels, and LBNL revises past years between editions, so the file can't show what earlier law required. The larger-of rule avoids double counting. NY's series breaks in 2018 | **Adopted 2026-11-04 (team decision)** |
 | 22 | Moderators, stretch goal B1: broadband, "years available" | Use S2801 for 2016-2024, without 2015 and without 2020 | Census changed the internet question in 2016; there's no 2020 1-year release | **Adopted 2026-11-04 (team decision)** |
 | 23 | Not in memo; `CLAUDE.md` listed degree days as an optional control | NOAA degree days not done, and no substitute | NCEI unreachable on 2026-11-04; CPC is a different product | **Adopted 2026-11-04 (team decision)** |
+| 24 | Memo p. 4: AI is employment in NAICS 518210; ownership not stated | Main: private rows only (own_code 5), over all covered jobs. Name: **"private data-center jobs per 1,000 workers."** Check: private + published government jobs (own_code 1, 2, 3), one labeled 4e row | Government rows exist in every year, contrary to the original D23, so private-only is a choice. Keeps the main measure on commercial hosting. It also avoids a coverage break: published government rows jump from 5 in 2021 to 16 in 2022 as suppressed rows fall from 25 to 13 | **Adopted 2026-11-04 (team decision)** |
 
 ---
 
@@ -47,7 +48,7 @@ These are confirmed choices embedded in the panel, not model deviations.
 | Decision | Choice | Evidence |
 |---|---|---|
 | GDP in ln_ee and ln_gdp_pc | Real chained-2017 (BEA SAGDP9) | corr(real, nominal) = 0.976 under two-way FE; real removes inflation |
-| AI numerator | Private 518210 only (own_code=5, agglvl=58) | No government 518210 rows exist at state level |
+| AI numerator | Private 518210 only (own_code=5, agglvl=58): "private data-center jobs per 1,000 workers" | Team choice (§0 item 24). **Corrected 2026-11-04:** government rows do exist at state level |
 | Fossil includes Other Gases | Yes | 0.34% of fossil; matches EIA source structure |
 | Renewable = utility-scale only | Yes | Rooftop not in EIA state generation file |
 | Validation verdict | 0 red, 3 yellow, 17 green | Full detail: data/DATA_VALIDATION.md |

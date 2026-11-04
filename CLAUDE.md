@@ -121,6 +121,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 ## §6 Known Issues and Measurement Caveats
 
 - **NAICS 518210 scope:** counts all data processing and hosting, not AI data centers specifically. Georgia ranks 2nd (above Virginia), which is suspicious and likely reflects colocation/cloud hosting, not AI compute.
+- **AI measure is private only:** "private data-center jobs per 1,000 workers." Government 518210 rows exist (largest shares: NM 24.6%, MN 10.3%, PA 9.4%, OH 6.0%) and are left out by team decision; `EXPERIMENTS.md` §0 item 24.
 - **Within-state AI variation is small:** SD of ai_dc_per1000 is approximately 0.57 per 1,000 workers. Coefficient estimates will be imprecise.
 - **CO2 and SEDS data end in 2024:** year 2025 produces 51 NA rows in the panel (one per state).
 - **Suppressed 518210 counts (2025):** AK, ND, SD, WY have suppressed BLS data — 4 NA rows for dc_jobs and ai_dc_per1000.

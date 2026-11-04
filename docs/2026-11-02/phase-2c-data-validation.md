@@ -37,7 +37,7 @@ Part C was listed as "always runs in full" in `prompts/02_data_audit_cleaning_ex
 | Decision | Choice | Reason |
 |---|---|---|
 | GDP in ln_ee: real or nominal? | Real (chained 2017) | Memo unspecified. corr(real,nom)=0.98. Real preferred for efficiency ratio. |
-| AI numerator | Private 518210 only (own_code=5) | No govt 518210 rows exist at state level — private-only by default |
+| AI numerator | Private 518210 only (own_code=5) | Team choice. **Corrected 2026-11-04:** government 518210 rows do exist at state level; see `data/DATA_VALIDATION.md` D23 |
 | Fossil definition | Coal+gas+petroleum+**Other Gases** | Other Gases = 0.34% of fossil; matches EIA source structure |
 | Renewable | Utility-scale only | Known EIA limitation (noted in CLAUDE.md); rooftop in retail sales but not generation |
 | Big jumps flagging | 200 flagged; all explained | 195 = solar/wind from zero baseline; 5 = AI data center fluctuations |

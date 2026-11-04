@@ -164,7 +164,7 @@ chk('D22','definition','ln_ee uses real (chained 2017) GDP — memo says "State 
 
 # AI numerator private-only check
 chk('D23','definition','AI numerator: 518210 private (own_code=5). Denominator: all covered (own_code=0 = industry 10)',
-    None, 'Checked against BLS QCEW: 518210 govt rows do not appear in any year at state level (agglvl 58); private rows only.')
+    None, 'Private rows are the numerator by choice. Government 518210 rows (own_code 1, 2, 3) exist at state level in every year (agglvl 58); see logs/2026-11-04/gov_518210_shares.csv and EXPERIMENTS.md section 0 item 24.')
 
 # Fossil note: includes Other Gases
 chk('D24','definition','fossil_to_renew includes Other Gases beyond coal+gas+oil',
