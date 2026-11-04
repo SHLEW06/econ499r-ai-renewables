@@ -17,13 +17,19 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 4 | Electricity price included as control in core model | Run Step 1 with and without price control; report both columns side-by-side | Data-center demand can raise prices, so price may absorb part of the AI effect (bad control problem) | **Adopted** |
 | 5 | Heterogeneity by subgroup (Fang: separate regressions) | Heterogeneity by interaction inside the two-way FE model: AI × net_exporter, AI × high_price, AI × south | Interaction-in-one-model is valid; separate regressions inflate type-I error and cannot test whether the difference is significant | **Adopted** |
 | 6 | Core outcomes: ln_ec, ln_ee, renew_share only | Add solar_share, wind_share, new_renew_mw, co2_per_mwh_t (through 2024), coal_share as falsification | Solar largest in Fang; coal falsification check from Melguizo; all data already in panel | **Adopted** |
-| 7 | No dynamics specification | Distributed lags AI t−1, t−2, t−3 and their sum; 2015-to-2025 long difference. Needs QCEW 2012–2013 for full t−3 | Short-run null / long-run positive is theoretically motivated (Zhao et al. 2024) | **Adopted (medium effort; 2012–2013 QCEW needed for t−3)** |
+| 7 | No dynamics specification | Distributed lags AI t−1, t−2, t−3 and their sum; 2015-to-2025 long difference. Needs QCEW 2012–2013 for full t−3 | Short-run null / long-run positive is theoretically motivated (Zhao et al. 2024) | **Adopted in part; full-sample t−3 dropped (item 14)** |
 | 8 | No comment on efficiency vs consumption sign expectation | Add one paragraph in §H1 core and in the results handoff explaining why both can hold or why efficiency may fall where AI grows | Wording only, no new code; prevents a misread of "efficiency increases" when data centers sit in the numerator of the ratio | **Adopted (wording)** |
 | 9 | H2b reports ln_ea mediation straightforwardly | Keep as memo version but include a caveat: EA is nearly redundant under state FE because land area is constant | Within-state EA variation = nonfarm GDP variation, which ln_gdp_pc and pop_growth already capture | **Adopted (caveat note)** |
 | 10 | No state EPU moderator | AI × EPU-S (Baker-Davis-Levy 2022) as a stretch moderator; mean-center before interacting | Fang et al. 2025 use EPU-S; confirms generalizability of AI-renewable link across political-economy conditions | **Stretch — blocked until EPU-S data downloaded** |
 | 11 | Georgia solar learning curve not in memo | Add Georgia solar cost projection to 2035 (Bolinger 2022 method); LR = 24% central; fan of 12/19/24/45% × 3 capacity paths | Answers "future of renewables" for Georgia case box; learning curves are correlations, not causal | **Adopted (Phase 4f)** |
 | 12 | Core H1 model: 4 controls (ln_gdp_pc, manuf_share, price_c_kwh, pop_growth) | Add tech_share as 5th control (ctrl5) was considered but **rejected**: tech_share is the H2a mediator (Baron-Kenny M). Controlling for it in H1 removes the AI→tech_share→outcome pathway and a₁ no longer captures the total effect (bad control problem). Actual first-stage: tech_share on lagged AI b=−0.0165, p=0.43 — the claimed positive correlation does not hold. ctrl4 is the H1 baseline. ctrl5 retained as one labeled sensitivity row only. | **Rejected** |
 | 13 | H2a/H2b method tags used ctrl5 | Tags corrected to ctrl4 in 04c_step2_mediation.R and EXPERIMENTS.md §6/§7. ctrl4 = H1 baseline; using ctrl5 in mediation would be circular when M=tech_share and inconsistent across mediators. | **Adopted (Phase 4c, 2026-11-03)** |
+| 14 | Item 7 plans distributed lags t−1 to t−3 on the full sample | Full-sample t-3 lags not run (would need QCEW 2012-2013). The 4b long difference and 2017-2025 distributed lags cover short vs long run. | Team decision 2026-11-03: the extra QCEW years are not worth the cost, because 2017-2025 lags are possible with the existing 2014-2025 data | **Adopted 2026-11-03. 4b ran only t-1 and the long difference (`results/2026-11-02/h1/dynamics.csv`); the 2017-2025 distributed lags are approved for 4e as check P1, reporting the sum of the three lags with its SE.** |
+| 15 | H3 tested with an SDM; no estimator named. 4d used LYtrans=TRUE as main on renew_share and LYtrans=FALSE as fallback for ln_ec, ln_ee | One estimator for all three outcomes. (a) Try SDPDm LYtrans=TRUE, demn=TRUE on invdist-50; if ρ is inside (−4.74, 1) for all three outcomes, that is the main spec. (b) Otherwise LYtrans=FALSE is the main spec for all three, with renew_share LYtrans=TRUE kept as a labeled check | A verdict should not mix estimators across outcomes | **Adopted 2026-11-03. Outcome: (b); ρ = 1.406 for renew_share under (a)** |
+| 16 | Not specified | Impact point estimates are plug-in values at the estimated ρ, b1, θ1. Simulation draws are used only for SEs and CIs | `impactsSDPDm` reports means of draws; impacts are nonlinear in ρ, so the mean differs from the plug-in value (renew_share main total: −0.269 vs −0.261) | **Adopted 2026-11-03** |
+| 17 | Not specified | A8: Conley SEs from state centroids at 500 and 1,000 km on the core outcomes and new_renew_mw. Labeled a check | Residual Moran's I is significant in 10 of 11 years after two-way FE, so clustered-by-state SEs may be too small | **Adopted 2026-11-03 (check only)** |
+| 18 | "RPS" control, form unspecified | Target percent by state-year. States with no mandatory RPS/CES = 0. Voluntary goals = 0 with a flag column. Use the target in force each year under the law at that time if the file allows it; if it only has today's schedules, say so in the receipt and notebook | Dropping non-mandate states would lose them from the regression; later laws raised many targets, so current schedules overstate past targets | **Adopted 2026-11-03; waiting on the LBNL file** |
+| 19 | Long difference (item 7) | P2: rerun with ΔAI 2014→2024, N = 50. 4b's rows stay in place, labeled as the version with the bug | Both 4b scripts labeled ΔAI 2014→2024 but used the 2025 value, which dropped AK, ND, SD, WY (N = 46). They also labeled classical SEs as HC0 | **Adopted 2026-11-03** |
 
 ---
 
@@ -179,9 +185,11 @@ $$Y_{it} = \sum_{k=1}^{K} \alpha_k \, \text{AI}_{i,t-k} + \beta X_{it} + \mu_i +
 **Note:** Skip t−3 if 2012 QCEW not available.  
 **Output path:** `results/<date>/dyn/`  
 **Method tags:** `dyn_twfe_ai518210_lag<k>_ctrl4_w9901_cl-state_<outcome>_50s2015_2025` (ctrl4 = baseline). Long-diff controls: dAI + dlngdp + dprice + dmanuf + dpop (no dtech — tech_share is mediator, omitted per ctrl4 spec).  
-**Status:** Added — **PARTIAL COMPLETE 2026-11-02** (t-1 only + long difference; t-2/t-3 blocked — QCEW 2012–2013 absent)
+**Status:** Added — **PARTIAL COMPLETE 2026-11-02** (t-1 only + long difference; full-sample t-3 dropped per §0 item 14; 2017-2025 distributed lags run in 4e as P1)
 
-**Results (2026-11-02, ctrl4):** Long-difference results all insignificant (N = 46; AK, ND, SD, WY dropped). renew_share: b=−0.017, p=0.163. ln_ec: b=−0.009, p=0.342. ln_ee: b=+0.008, p=0.406. ΔAI (2014→2024) has no detectable association with ΔY (2015→2025). Consistent with small within-state AI variation (SD ≈ 0.57).
+**Bug in the results below (found 2026-11-03):** the code uses the 2025 AI value, so ΔAI is really 2014→2025, not 2014→2024 as labeled. That is why N = 46. The SEs labeled HC0 are classical. Corrected rerun: 4e check P2 (§0 item 19).
+
+**Results (2026-11-02, ctrl4; version with the bug):** Long-difference results all insignificant (N = 46; AK, ND, SD, WY dropped). renew_share: b=−0.017, p=0.163. ln_ec: b=−0.009, p=0.342. ln_ee: b=+0.008, p=0.406. ΔAI (2014→2024) has no detectable association with ΔY (2015→2025). Consistent with small within-state AI variation (SD ≈ 0.57).
 
 ---
 
@@ -286,30 +294,39 @@ Report direct, indirect (spillover), and total effects with simulated SEs via `s
 - LYtrans=TRUE (valid, ρ=0.776): direct=−0.017(p=0.001), indirect=−0.252(p=0.063), total=−0.269(p=0.054)
 - LYtrans=FALSE (ρ=0.617): direct=−0.015(p<0.001), indirect=−0.165(p=0.038), total=−0.181(p=0.029)
 
-**SDM convergence note:** LYtrans=TRUE gave ρ>1 (outside valid interval) for ln_ec and ln_ee with invdist W — numerical convergence failure in SDPDmod. Use LYtrans=FALSE for those outcomes. renew_share unaffected.
+**ρ out of range:** LYtrans=TRUE gave ρ>1 for ln_ec and ln_ee with invdist W. This is the one-step bias formula overshooting, not a convergence failure.
 
 **splm cross-check:** b1 and θ1 match to 5 d.p.; ρ differs slightly (ML approximation). Cross-check passes.
 
-**H3 verdict:** renew_share indirect effect < 0 (siphoning direction), significant at 5% (LYtrans=FALSE) / borderline 10% (LYtrans=TRUE). ln_ec and ln_ee null. **H3 partially supported for renew_share.**
+**Revised main spec (2026-11-03, §0 items 15–16):** LYtrans=FALSE for all three outcomes, because LYtrans=TRUE with demn=TRUE gives ρ = 1.406 for renew_share. Plug-in impacts on invdist-50: renew_share ρ=0.617, direct=−0.0155 (p<0.001), indirect=−0.1613 (p=0.035), total=−0.1768 (p=0.026). Results: `results/2026-11-03/h3_mainspec/`. The results listed above are the original 4d runs, and their impacts are means of draws.
+
+**H3 verdict (main spec: SDM, LYtrans=FALSE, inverse-distance W, 50 states):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
 ---
 
 ## §9 Robustness
 
+Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew_share. Controls = ctrl4 throughout. Clustered-by-state SEs are the basis for every conclusion.
+
 | Check | Model | Outcome(s) | Expected | Note |
 |---|---|---|---|---|
-| fossil_to_renew | §1 model, swap Y | fossil_to_renew | $\hat{\alpha}_1 < 0$ | More AI → lower fossil/renew |
-| SEDS energy per person | §1 model, swap Y | seds_mmbtu_pc | Ambiguous | Through 2024 only |
-| Drop 2020 | §1, year ≠ 2020 | renew_share | Stable | COVID outlier check |
-| Drop AK, HI | §1, contig48==1 | renew_share | Stable | Energy-isolated states |
-| Drop VA | §1, state ≠ 'VA' | renew_share | Stable | Outlier tech-worker state |
-| Border W only | §8 SDM, border W | renew_share | Stable | W sensitivity |
-| RPS control | Add RPS indicator | renew_share | Shrinks $\hat{\alpha}_1$ | **Blocked** — LBNL file needed (EXP-003) |
-| Next-year-AI placebo | Replace AI(t−1) with AI(t+1) | renew_share | Null | Falsification |
-| Driscoll-Kraay SEs | Re-run §1 | all core | Wider SEs expected | Cross-sectional correlation |
+| fossil_to_renew | §1 model, swap Y | fossil_to_renew | $\hat{\alpha}_1 < 0$ supports H1 | N = 550 |
+| SEDS energy per person | §1 model, swap Y | seds_mmbtu_pc | Ambiguous | 2015–2024; N = 500 |
+| Data-center MW | §1 model, swap AI | all core | — | Only if Phase 2 built a state-year series; otherwise a "not run" row with the reason |
+| Drop 2020 | §1, year ≠ 2020 | all core | Stable | COVID outlier check; N = 500 |
+| Drop AK, HI | §1, contig48==1 | all core | Stable | Energy-isolated states; N = 528 |
+| Drop VA | §1, state ≠ 'VA' | all core | Stable | Outlier state; N = 539 |
+| Border W | §8 SLX only, border-48 | all core | Stable | N = 528. The border-W SDM is not rerun; cite `results/2026-11-03/h3/h3_sdm_impacts.csv` |
+| RPS control | Add LBNL target percent by state-year | all core | Shrinks $\hat{\alpha}_1$ | Needs `data/lbnl_rps_targets.csv` (EXP-003); if absent, a "not run" row recording it as missing |
+| Next-year-AI placebo | Replace AI(t−1) with AI(t+1) | all core | Null | Falsification; 2015–2024, N = 496 (AK, ND, SD, WY lose 2024) |
+| Spec curve: new_renew_mw | §1 model, swap Y | new_renew_mw, raw and per 1,000 MW of 2015 capacity | — | Only positive raw-MW result; not robust to scaling in 4b |
+| Driscoll-Kraay SEs | Re-run §1 | all core | Often smaller with T = 11 | Labeled sensitivity only; never the basis for a conclusion |
+| A8: Conley SEs | Re-run §1; `fixest` Conley from state centroids, 500 and 1,000 km | all core, new_renew_mw | — | Labeled check (§0 item 17) |
+| P1: Distributed lags | AI t−1, t−2, t−3 and their sum with delta-method SE; lags built from ai_dc_per1000_lag1 so 2014 is usable | all core, new_renew_mw | — | 2017–2025; N = 450. t−1 alone on the same sample shown beside it (§0 item 14) |
+| P2: Corrected long difference | ΔY 2015→2025 on ΔAI 2014→2024 + Δcontrols; heteroskedasticity-robust SEs | all core | — | N = 50 (§0 item 19) |
 
-**Output path:** `results/<date>/rob/`  
-**Method tags:** `rob_<spec>_ai518210_<lag>_ctrl5_w9901_cl-state_<outcome>_<sample>`  
+**Output path:** `results/<date>/robustness/`  
+**Method tags:** `rob_<spec>_ai518210_<lag>_ctrl4_w9901_cl-state_<outcome>_<sample>`  
 **Status:** Memo + added
 
 ---
@@ -360,12 +377,12 @@ Full tag: `<block>_<model>_<ai-var>_<lag>_<controls>_<winsor>_<se>_<outcome>_<sa
 | block | h1, h1x, nonlin, het, dyn, h2a, h2b, h3, rob, stretch, ga | h1 |
 | model | twfe, slx, sdm, med, lc | twfe |
 | ai-var | ai518210, ai518210sq | ai518210 |
-| lag | lag1, lag2, lag3, longdiff, lead1 | lag1 |
-| controls | ctrl5 (ln_gdp_pc + price + tech_share + manuf_share + pop_growth), ctrl4 (no price) | ctrl5 |
+| lag | lag1, lag2, lag3, lag1to3sum, longdiff, lead1 | lag1 |
+| controls | ctrl4 (ln_gdp_pc + manuf_share + price_c_kwh + pop_growth; baseline), ctrl5 (ctrl4 + tech_share; one sensitivity row only) | ctrl4 |
 | winsor | w9901 (1/99 pooled), nowins | w9901 |
-| se | cl-state (clustered by state), dk (Driscoll-Kraay) | cl-state |
+| se | cl-state (clustered by state), dk (Driscoll-Kraay), conley500, conley1000, hc1, ml (asymptotic ML) | cl-state |
 | outcome | ln_ec, ln_ee, renew_share, solar_share, wind_share, fossil_to_renew, co2_per_mwh_t, coal_share, new_renew_mw, seds_mmbtu_pc | renew_share |
-| sample | 50s2015_2025, 48s2015_2025, 50s2015_2024 | 50s2015_2025 |
+| sample | 50s2015_2025, 48s2015_2025, 50s2015_2024, 50s2015_2025no2020, 49s2015_2025noVA, 50s2017_2025 | 50s2015_2025 |
 
 **Rule:** Never reuse a tag whose meaning has changed. Change the spec → create a new tag.
 

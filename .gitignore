@@ -32,3 +32,16 @@ literature/*.pdf
 notes/*.pdf
 data/georgia_psc/*.pdf
 data/georgia_psc/*.zip
+
+# All PDFs, except figures generated in results/ (those are model outputs)
+*.pdf
+!results/**/*.pdf
+
+# Georgia PSC raw filings, all file types
+data/georgia_psc/
+
+# Holding folder for files awaiting deletion
+_to_delete/
+
+# Saved Claude chats (private)
+archive/

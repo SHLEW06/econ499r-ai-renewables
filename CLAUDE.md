@@ -72,7 +72,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 ## §5 Project state (as of 2026-11-03)
 
-**Phase 4d complete.** H3 spatial analysis: Moran's I, SLX, SDM (SDPDmod), splm cross-check. renew_share shows significant spatial dependence and indirect spillover effect.
+**Phase 4d complete.** H3 spatial analysis: Moran's I, SLX, SDM (SDPDmod), splm cross-check. renew_share shows significant spatial dependence; its spillover is negative and borderline (main spec p = 0.035).
 
 - Phase 2A (audit): done — `data/DATA_AUDIT.md`, `docs/2026-11-01/phase-2a-data-audit.md`
 - Phase 2B (build): done — `data/out/state_panel_2015_2025.csv` (561×80), workbook, receipts
@@ -100,16 +100,19 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - All 9 Sobel p-values: 0.322–0.991; all 9 bootstrap CIs span zero
 - share_mediated not meaningful: a1 not significantly different from zero for primary outcomes
 
-**H3 spatial results (2026-11-03, invdist-50 main W):**
+**H3 spatial results (2026-11-03, main spec = SDM, LYtrans=FALSE, invdist-50; `results/2026-11-03/h3_mainspec/`; plug-in impacts):**
 - Moran's I renew_share: I=0.094–0.157, p≤0.002 all years — significant positive clustering, rising over time
+- Residual Moran's I after two-way FE: I=0.02–0.11, p<0.05 in 10 of 11 years — clustered-by-state SEs may be too small
 - SLX renew_share: b1=−0.014(p=0.014), θ1=−0.055(p=0.117), total=−0.069(p=0.068)
-- SDM renew_share (LYtrans=TRUE, valid): ρ=0.776, direct=−0.017(p=0.001), indirect=−0.252(p=0.063), total=−0.269(p=0.054)
-- SDM renew_share (LYtrans=FALSE): ρ=0.617, direct=−0.015(p<0.001), indirect=−0.165(p=0.038), total=−0.181(p=0.029)
-- SDM ln_ec/ln_ee: null (LYtrans=FALSE); LYtrans=TRUE gave convergence failure (ρ>1 for invdist W)
-- splm cross-check: b1 and θ1 match SDPDm to 5 d.p. — passes
-- **H3 verdict:** H3 partially supported — renew_share indirect (neighbor spillover) effect is negative and significant at 5% (LYtrans=FALSE) / borderline 10% (LYtrans=TRUE)
+- SDM renew_share: ρ=0.617, direct=−0.0155(p<0.001), indirect=−0.1613(p=0.035), total=−0.1768(p=0.026)
+- SDM renew_share check (LYtrans=TRUE, demn=FALSE): ρ=0.776, indirect=−0.244(p=0.058), total=−0.261(p=0.049)
+- SDM ln_ec/ln_ee: indirect CIs span zero. LYtrans=TRUE gives ρ>1 because its one-step bias formula overshoots
+- Main-spec rule: LYtrans=TRUE with demn=TRUE gives ρ=1.406 for renew_share, so LYtrans=FALSE is main for all three (`EXPERIMENTS.md` §0 item 15)
+- W·AI within-state SD after FE: 0.086 (invdist-50) vs 0.248 (border-48). Indirect per one SD: −1.4 vs −1.1 percentage points
+- splm cross-check: b1 and θ1 match SDPDm LYtrans=FALSE to 5 d.p. — passes
+- **H3 verdict (main spec: SDM, LYtrans=FALSE, invdist-50):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
-**Next step:** Phase 4e — robustness (LBNL RPS control, t-2/t-3 lags). Target 2026-11-17.
+**Next step:** Phase 4e — robustness, then stretch goals (`prompts/04e_robustness_stretch.md`). Target 2026-11-17. RPS control runs if `data/lbnl_rps_targets.csv` exists. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
 
 ---
 
@@ -122,6 +125,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - **Border W matrix (W_border_binary.csv)** excludes AK and HI — neither has contiguous neighbors in the 48-state graph.
 - **ln_ee and ln_gdp_pc use real (chained 2017) GDP.** The memo says "State GDP in $" without specifying. Real preferred; corr(real, nominal) = 0.98 under two-way FE.
 - **Renewable share is utility-scale only.** Rooftop solar appears in retail sales but not in EIA state generation file.
+- **Phase 5 (GitHub): clean the history before pushing.** `econ499r_starter/reference/Methods_Memo.pdf` and `Zhang_et_al_2026.pdf` were untracked on 2026-11-03 but are still in past commits.
 
 ---
 

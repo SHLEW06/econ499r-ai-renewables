@@ -16,10 +16,15 @@ Georgia Public Service Commission (PSC) docket filings and Georgia Power Company
 | `data/raw/georgia/2025_IRP_one_page_summary.pdf` | 2025 IRP one-page summary | ~400 KB | `download_all.py`, 2026-11-01 |
 | `data/raw/georgia/2023_IRP_Update_Main_Document.pdf` | 2023 IRP Update, main document | ~6 MB | `download_all.py`, 2026-11-01 |
 | `data/raw/georgia/LargeLoad_Report_Q1_2026.pdf` | Large Load interconnection queue, Q1 2026 | ~2 MB | `download_all.py`, 2026-11-01 |
+| `data/raw/georgia/dkt55378_large_load_report_q1_2026_attachment.xlsx` | Docket 55378 Large Load report, Q1 2026 attachment | 43 KB | Browser, Georgia PSC, 2026-11-01; moved here 2026-11-03 |
+| `data/raw/georgia/dkt55378_large_load_report_q2_2026.zip` | Docket 55378 Large Load report, Q2 2026 (6 entries: folder, PDF, XLSX, assertion PDF, report DOCX, cover letter DOCX) | 1.2 MB | Browser, Georgia PSC, 2026-11-01; moved here 2026-11-03 |
+| `data/raw/georgia/irp_2025_public_disclosure.zip` | 2025 IRP technical appendices, public disclosure (81 entries, including folders) | 104 MB | Browser, Georgia PSC, 2026-11-01; moved here 2026-11-03 |
 
 **Note:** The Q2 2026 Large Load report and technical appendices to the 2025 IRP were
 downloaded by hand from the Georgia PSC docket; they are not fetched automatically by
-`download_all.py`.
+`download_all.py`. The three files added 2026-11-03 came from the former `data/georgia_psc/`
+folder, and their SHA-256 hashes are in `logs/2026-11-03/phase4_moves.csv`. That folder's other
+five PDFs matched files already listed here by hash, so those copies went to `_to_delete/`.
 
 ## What We Kept
 

@@ -56,3 +56,6 @@ Panel SHA256: c968c764b29cb17be1059ca9e39a0d23
 
 ## Failures
   None.
+
+## Note added 2026-11-03: long-difference rows in dynamics.csv have a bug
+All `dyn_longdiff_*` rows (ctrl5 and ctrl4) are kept, and they are the version with the bug. The code labels the regressor dAI as 2014->2024 but uses the 2025 AI value, so it is really 2014->2025. That drops AK, ND, SD, WY (N = 46). Their SEs are labeled HC0 but are classical. For the corrected rerun (N = 50), see check P2 in `results/2026-11-03/robustness/` and EXPERIMENTS.md section 0 item 19.

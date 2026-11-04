@@ -6,7 +6,8 @@ ECON 499R project. The project root is "AI impact on Renewables".
 - Run `date`.
 - Read prompts/00_START_HERE.md, CLAUDE.md, EXPERIMENTS.md (Georgia section), the newest handoff in docs/, and docs/2026-11-01/methods-review.md §4 item 11.
 - Read the Bolinger, Wiser & O'Shaughnessy (2022) PDF in literature/ (iScience 25, 104378): equations 2-7 on p. 20-21, and the projection method on p. 8-10 and 21.
-- Follow the rules for every 4x phase in prompts/04a_methods_spec.md. This module can use R or Python; choose one and say why.
+- Follow the rules for every 4x phase in prompts/04a_methods_spec.md.
+- **Use Python** (pandas, numpy, matplotlib). This module is arithmetic and charts, with no econometrics package needed. The driver still takes a required `--date`.
 - Plan first and wait for my OK.
 
 ## What this module is (and is not)
