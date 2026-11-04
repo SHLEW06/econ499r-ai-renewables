@@ -54,7 +54,7 @@ the variable metadata.
 
 1. Read all 36 CSVs, parse `area_fips` as string (zero-pad to 5 chars).
 2. Map `area_fips` state prefix to USPS abbreviation via a Census FIPS lookup table.
-3. Apply filters above; verify exactly 51 rows remain per year-code file (50 states + DC).
+3. Apply filters above and keep the 51 state FIPS codes. The code doesn't assert a row count; own-code 5 files have 53 state-level rows before the FIPS filter drops PR and VI.
 4. Replace suppressed cells (`disclosure_code = 'N'`) with `NA`.
 5. Merge 518210, 5415, and 10 by state and year.
 6. Compute derived columns (see below).

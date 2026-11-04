@@ -296,7 +296,7 @@ try:
     df_bea.to_csv(f'{OUTDIR}/n05_bea_state_vs_us.csv', index=False)
     max_bea = df_bea.pct_diff.max()
     chk('N05','numbers','BEA SAGDP2 line 1: states+DC sum ≈ US row', max_bea < 1.0,
-        f'max pct diff={max_bea:.3f}% (DC included; small diff from territories)')
+        f'max pct diff={max_bea:.3f}% (DC included; BEA footnote: gap reflects overseas activity)')
 except Exception as ex:
     chk('N05','numbers','BEA SAGDP2 line 1 check', None, f'{ex}')
 
@@ -496,24 +496,24 @@ chk('P12','plausibility','Missingness table written', True,
 # ============================================================
 print("\n=== C.6 VINTAGE ===")
 vintage = [
-    ('EIA annual generation', 'annual_generation_state.xlsx', 'Electric Power Annual 2025 (preliminary for 2025)', '2025 marked preliminary'),
-    ('EIA capacity', 'existcapacity_annual.xlsx', 'Electric Power Annual 2025', '2025 preliminary'),
-    ('EIA Form 861 retail sales', 'HS861_2010-.xlsx', '2025 data release', '2025 preliminary'),
+    ('EIA annual generation', 'annual_generation_state.xlsx', 'Historical State Data, sheet Net_Generation_1990-2025 Final', '2025 labeled final by EIA'),
+    ('EIA capacity', 'existcapacity_annual.xlsx', 'Historical State Data', '2025 labeled final by EIA'),
+    ('EIA Form 861 retail sales', 'HS861_2010-.xlsx', 'Released Oct 7, 2026', '2025 labeled final by EIA'),
     ('EIA CO2 emissions', 'emission_annual.xlsx', 'Electric Power Annual 2024 (ends 2024)', 'Ends 2024 — no 2025 revision possible before paper due'),
-    ('EIA SEDS', 'use_all_btu.csv', 'Monthly Energy Review supplement, through 2024', 'Ends 2024 — 2025 row missing'),
+    ('EIA SEDS', 'use_all_btu.csv', 'State Energy Data System, released June 26, 2026, through 2024', 'Ends 2024 — 2025 row missing'),
     ('BLS QCEW 518210/5415/10', 'qcew_2015-2025_*.csv', 'BLS annual averages; 2025 annual released mid-2026', '2025 data available; AK/ND/SD/WY suppressed'),
-    ('BEA SAGDP/SAINC', 'SAGDP2/9, SAINC1 CSVs', 'BEA June 2026 GDP revision', '2025 initial estimate; subject to annual revision through 2028'),
+    ('BEA SAGDP/SAINC', 'SAGDP2/9, SAINC1 CSVs', 'File footers: Last updated September 30, 2026', '2025 initial estimate; subject to later annual revisions'),
     ('Census Gazetteer', '2020_Gaz_counties_national.txt', '2020 Decennial Census (land area)', 'Fixed; no update expected'),
     ('Census county adjacency', 'county_adj.txt', '2023 version', 'Fixed; updated when county boundaries change'),
-    ('FERC Form 1 (PUDL)', 'ferc1_*.parquet', 'PUDL 2025 release', '2025 data included'),
+    ('FERC Form 1 (PUDL)', 'ferc1_*.parquet', 'PUDL stable release, Oct 14, 2026', '2025 data included'),
 ]
 df_vintage = pd.DataFrame(vintage, columns=['source','file','vintage','note'])
 df_vintage.to_csv(f'{OUTDIR}/c6_vintage.csv', index=False)
 chk('V01','vintage','Vintage table written', True, 'See c6_vintage.csv')
-chk('V02','vintage','EIA 2025 generation/capacity: PRELIMINARY flag',
-    None, 'Both annual_generation_state.xlsx and existcapacity_annual.xlsx carry 2025 as preliminary in EIA releases. Most likely to be revised: solar generation (fast-growing, reporting lags).')
+chk('V02','vintage','EIA 2025 generation/capacity: status',
+    None, 'EIA labels 2025 final; the generation sheet is named Net_Generation_1990-2025 Final.')
 chk('V03','vintage','BEA 2025: initial estimate, revision risk medium',
-    None, 'BEA revises state GDP through 3 annual rounds. 2025 values available since June 2026 release. Revision expected to be small (<1%) for most states.')
+    None, 'BEA file footers read Last updated September 30, 2026. Later annual revisions can change 2025 values.')
 
 # ============================================================
 # SUMMARY

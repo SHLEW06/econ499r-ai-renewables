@@ -13,10 +13,10 @@ balance sheet, plant in service, fuel costs, and more.
 
 | File | Description | Approx. size | Downloaded |
 |---|---|---|---|
-| `data/raw/pudl/out_ferc1__yearly_income_statements.parquet` | Utility income and expense statements (FERC Sched 114) | ~15 MB | 2026-11-01 |
-| `data/raw/pudl/out_ferc1__yearly_plant_in_service.parquet` | Plant-in-service balances by account (FERC Sched 204) | ~25 MB | 2026-11-01 |
+| `data/raw/pudl/out_ferc1__yearly_income_statements_sched114.parquet` | Utility income and expense statements (FERC Sched 114) | ~15 MB | 2026-11-01 |
+| `data/raw/pudl/out_ferc1__yearly_plant_in_service_sched204.parquet` | Plant-in-service balances by account (FERC Sched 204) | ~25 MB | 2026-11-01 |
 | `data/raw/pudl/out_ferc1__yearly_all_plants.parquet` | All plant records with technology type | ~30 MB | 2026-11-01 |
-| `data/raw/pudl/out_ferc1__yearly_steam_plant_fuel.parquet` | Steam plant fuel receipts and costs (FERC Sched 402) | ~10 MB | 2026-11-01 |
+| `data/raw/pudl/out_ferc1__yearly_steam_plants_fuel_by_plant_sched402.parquet` | Steam plant fuel receipts and costs (FERC Sched 402) | ~10 MB | 2026-11-01 |
 | `data/raw/pudl/out_eia__yearly_utilities.parquet` | EIA utility metadata (crosswalk to FERC respondent IDs) | ~2 MB | 2026-11-01 |
 
 Script: `download_all.py`.

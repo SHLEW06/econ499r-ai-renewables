@@ -5,7 +5,8 @@
 - **2020 County Gazetteer:** U.S. Census Bureau
   `https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_counties_national.zip`
 - **2023 County Adjacency File:** U.S. Census Bureau
-  `https://www2.census.gov/geo/docs/reference/county_adjacency.txt`
+  `https://www2.census.gov/geo/docs/reference/county_adjacency/county_adjacency2023.txt`
+  (Corrected 2026-11-04: the raw file, 1,116,106 bytes, matches this link. The old link in this receipt was a 2015 file of 726,724 bytes.)
 
 ## Raw Files
 
@@ -37,9 +38,7 @@ Script: `download_all.py`.
 4. Keep 50 states (drop DC, PR, territories).
 5. Write `data/out/state_centroids_land.csv` (50 rows × 3 cols: state, lat, lon, land_sqmi).
 
-**Note:** These are land-area-weighted centroids, not population-weighted. The DATA_INDEX
-description says "population-weighted" — treat this as an approximation; land-area weighting
-is used because county population data is not merged in this step.
+**Note:** These are land-area-weighted county points, not population-weighted and not TIGER centroids. The memo names the TIGER state boundary file; see `EXPERIMENTS.md` §0.
 
 ## Distance Matrix Transformations
 

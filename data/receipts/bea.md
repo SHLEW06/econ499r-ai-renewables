@@ -10,9 +10,9 @@ U.S. Bureau of Economic Analysis, Regional Data — Interactive Data Application
 
 | File | Contents | Approx. size | Downloaded |
 |---|---|---|---|
-| `data/raw/bea/SAGDP.zip` | ZIP of ~800 CSVs covering SAGDP series | ~120 MB | 2026-11-01 |
+| `data/raw/bea/SAGDP.zip` | ZIP of ~800 CSVs covering SAGDP series | 10.4 MB | 2026-11-01 |
 | `data/raw/bea/sagdp/*.csv` | Extracted CSVs, one per table-state combination | — | extracted |
-| `data/raw/bea/SAINC.zip` | ZIP of ~787 CSVs covering SAINC series | ~80 MB | 2026-11-01 |
+| `data/raw/bea/SAINC.zip` | ZIP of ~787 CSVs covering SAINC series | 17.6 MB | 2026-11-01 |
 | `data/raw/bea/sainc/*.csv` | Extracted CSVs | — | extracted |
 
 ~1,587 CSVs total. Script: `download_all.py`.
@@ -31,14 +31,12 @@ U.S. Bureau of Economic Analysis, Regional Data — Interactive Data Application
 | SAGDP2 | 12 | Manufacturing GDP (nominal) | Millions of current USD |
 | SAGDP9 | 1 | Real GDP (chained 2017 dollars) | Millions of 2017 USD |
 | SAINC1 | 2 | Population | Persons |
-| SAINC5 | 10 | Earnings, Agriculture | Millions of current USD |
-| SAINC5 | 70 | Total earnings | Millions of current USD |
 
 ## Filters Applied
 
 - Keep rows where `GeoFIPS` ends in `'000'` (e.g., `'01000'` = Alabama state total).
   This drops county, metro, and multi-state region rows.
-- Drop rows where `Description` contains `(D)` (BEA suppressed cell) — set to NA.
+- Non-numeric values become NA through `pd.to_numeric(errors='coerce')`. There's no separate `(D)` step.
 - Drop Puerto Rico and other territories; keep 50 states + DC.
 
 ## Key Transformations
@@ -48,10 +46,12 @@ U.S. Bureau of Economic Analysis, Regional Data — Interactive Data Application
    `ln_gdp_pc = log(gdp_real_pc)`.
 3. **Manufacturing share:** `manuf_share = gdp_manuf_musd / gdp_nom_musd`.
 4. **Population growth:** `pop_growth = (pop_t - pop_{t-1}) / pop_{t-1}`.
-5. **Earnings agriculture share:** `ln_ea = log(earnings_ag_musd / total_earnings_musd)` — used
-   as an instrument or control for agricultural energy use.
-6. **Deflator:** Nominal manufacturing and farm GDP are kept in current USD. When a real series
-   is needed, the SAGDP9 implicit price deflator is applied.
+5. **Economic density (H2b mediator):** `ea_nonfarm_gdp_per_sqmi = (gdp_nom_musd - gdp_farm_musd) * 1e6 / land_sqmi`;
+   `ln_ea = log(ea_nonfarm_gdp_per_sqmi)`. Log nonfarm nominal GDP per square mile (`build_panel.py` lines 164-165).
+   SAINC5 isn't used.
+6. **Deflator:** none is applied. Nominal manufacturing and farm GDP stay in current USD, and real GDP is read directly from SAGDP9.
+
+**Corrected 2026-11-04:** an earlier version defined `ln_ea` as a log agricultural earnings share from SAINC5. No code ever did that.
 
 ## Rows In / Out
 

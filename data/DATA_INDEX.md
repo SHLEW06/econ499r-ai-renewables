@@ -37,7 +37,7 @@ Last updated: 2026-11-04.
 | `W_distance_miles.csv` | 50 x 50 | `build_panel.py` | Pairwise great-circle distances (miles) between state centroids, 50 states only (no DC). |
 | `W_inverse_distance_rowstd.csv` | 50 x 50 | `build_panel.py` | Row-standardized inverse-distance weight matrix W. |
 | `W_border_binary.csv` | 50 x 50 | `build_panel.py` | Binary contiguity matrix (1 if states share a county border). AK and HI have no neighbors. |
-| `state_centroids_land.csv` | 50 x 3 | `build_panel.py` | Population-weighted state centroids (lat, lon) and land area (sq miles). |
+| `state_centroids_land.csv` | 50 x 3 | `build_panel.py` | Land-area-weighted state centroids (lat, lon) and land area (sq miles). |
 | `ferc1_utility_financials.csv` | 2,366 x 25 | `ferc_fin.py` | Annual utility-level financials from FERC Form 1 (revenue, expenses, plant value by type). |
 | `ferc1_plant_costs.csv` | 21,332 x 24 | `ferc_fin.py` | Plant-level capital and operating costs, 2015–2025. |
 | `ferc1_cost_by_technology.csv` | 153 x 10 | `ferc_fin.py` | Technology-level cost summary (capex/kW, opex/MWh, capacity factor) by year. |

@@ -125,7 +125,7 @@ All 6 variables across all 11 years match within 0.001 — consistent with the r
 
 ### BEA consistency
 
-**N05 — SAGDP2 line 1 state sum vs. US row:** Max percentage difference = **0.613%** (across all years). This small gap reflects U.S. territories (Puerto Rico, Guam, U.S. Virgin Islands, etc.) that appear in the BEA US total but are not in our 51-state panel. Expected and consistent across all years.
+**N05 — SAGDP2 line 1 state sum vs. US row:** Max percentage difference = **0.613%** (across all years). BEA's SAGDP2 footnote says the difference between the U.S. and the sum of states "reflects overseas activity, economic activity taking place outside the borders of the United States by the military and associated federal civilian support staff." The check still passes. (Corrected 2026-11-04: an earlier version attributed the gap to U.S. territories.)
 
 ### Published figures (read-only web lookups)
 
@@ -143,13 +143,13 @@ All differences are rounding (EIA State Profile rounds to 2 decimal places). **P
 Source: EIA State Electricity Profiles for GA, VA, TX, CA, NY (2024 edition); accessed 2026-11-02.
 
 **N06b — Average retail electricity price, 2015:**  
-EIA 2015 state prices are not available in the interactive state profiles (they show current year only). However: (a) the 2024 comparison confirms our processing pipeline is correct; (b) the 2015 values in our panel come from the same EIA-861 file with the same formula, so no systematic error is possible. Values for reference: GA=9.62 c/kWh, VA=9.31, TX=8.70, CA=15.42, NY=15.28.
+EIA 2015 state prices are not available in the interactive state profiles (they show current year only). However: (a) the 2024 comparison confirms our processing pipeline is correct; (b) the 2015 values in our panel come from the same EIA-861 file with the same formula, which lowers the risk of a processing error but doesn't rule one out, and no 2015 comparison was made. A separate audit matched 2016, 2020 and 2022 prices against EIA State Profile tables, within EIA's 2-decimal rounding (`data/INDEPENDENT_AUDIT_2026-11-04.md`). (Corrected 2026-11-04.) Values for reference: GA=9.62 c/kWh, VA=9.31, TX=8.70, CA=15.42, NY=15.28.
 
 **N07 — Population (Census estimates):**  
-Our population variable is BEA SAINC1 line 2, which is the official Census Population Estimates Program series published through the BEA regional accounts. It is identical to the Census state population estimates by construction — the BEA takes them from Census without modification. No comparison gap possible.
+Our population variable is BEA SAINC1 line 2, which is the official Census Population Estimates Program series published through the BEA regional accounts. BEA's footnote gives "U.S. Census Bureau midyear population estimates," so it can differ from older Census vintages: by up to 95,554 people in the audit's sampled cells (MA 2017, Vintage 2020). All 3 sampled cells match the newest Census series exactly. (Corrected 2026-11-04: an earlier version said no gap was possible.)
 
 **N08 — Georgia 2024 renewable share vs. EIA Georgia State Electricity Profile:**  
-EIA State Profile (2024): total net generation = 139.8 billion kWh. Our panel: gen_total_mwh = 139,805,428 = **139.8 TWh** — exact match. Because the generation totals match, and our renewable share is formulaic from the same EIA source, the renew_share of 12.51% is confirmed. The profile labels natural gas as Georgia's primary source (consistent with our panel: gas = 38.6% of generation in 2024).
+EIA State Profile (2024): total net generation = 139.8 billion kWh. Our panel: gen_total_mwh = 139,805,428 = **139.8 TWh** — exact match. Matching the total confirms the denominator of the 12.51% renew_share. It can't confirm the share itself, and this check didn't compare renewable generation with a published figure. A separate audit matched `renew_share` for other states against EIA generation by fuel, and those cells didn't include Georgia 2024. (Corrected 2026-11-04.) The profile labels natural gas as Georgia's primary source (consistent with our panel: gas = 38.6% of generation in 2024).
 
 ---
 
@@ -297,20 +297,22 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 
 ## C.6 Vintage
 
+**Corrected 2026-11-04** from `data/INDEPENDENT_AUDIT_2026-11-04.md` section 2.3. The original table called EIA 2025 preliminary and gave a June 2026 BEA revision.
+
 | Source | File | Vintage / release | Preliminary years | Revision risk |
 |---|---|---|---|---|
-| EIA annual generation | annual_generation_state.xlsx | Electric Power Annual, released 2026 | 2025 marked preliminary | Medium: solar 2025 often revised upward as reporting lags |
-| EIA capacity | existcapacity_annual.xlsx | Electric Power Annual, released 2026 | 2025 preliminary | Low |
-| EIA Form 861 retail sales | HS861_2010-.xlsx | Released Oct 7, 2026 | 2025 preliminary | Low |
+| EIA annual generation | annual_generation_state.xlsx | Historical State Data; sheet `Net_Generation_1990-2025 Final`; server date Sept 11, 2026 | None: EIA labels 2025 final | Low to medium: EIA can still restate |
+| EIA capacity | existcapacity_annual.xlsx | Historical State Data; server date Sept 10, 2026 | None: EIA labels 2025 final | Low |
+| EIA Form 861 retail sales | HS861_2010-.xlsx | Released Oct 7, 2026 | None: EIA labels 2025 final | Low |
 | EIA CO2 emissions | emission_annual.xlsx | Electric Power Annual 2024 | ends 2024 | n/a (not revised) |
-| EIA SEDS | use_all_btu.csv | Monthly Energy Review supplement, through 2024 | ends 2024 | n/a |
-| BLS QCEW | qcew_2014–2025_*.csv | Annual averages; 2025 annual released mid-2026 | none | Low; annual averages rarely revised |
-| BEA SAGDP2/9, SAINC1 | CSV files | BEA June 2026 comprehensive revision | 2025 initial estimate | Medium: subject to 3 annual rounds of revision through 2028 |
+| EIA SEDS | use_all_btu.csv | State Energy Data System, its own product; released June 26, 2026; through 2024 | ends 2024 | n/a |
+| BLS QCEW | qcew_2014–2025_*.csv | Annual averages | Not confirmed: BLS's download page lists 2025 with no status label; 2025 cells matched BLS on Nov 4 | Low; annual averages rarely revised |
+| BEA SAGDP2/9, SAINC1 | CSV files | File footers: "Last updated: September 30, 2026," revising 2019-2025 (SAGDP2) and 2009-2025 (SAINC1) | 2025 initial estimate | Medium: subject to later annual revisions |
 | Census Gazetteer | 2020_Gaz_counties_national.txt | 2020 Decennial Census | n/a (fixed) | None |
 | Census county adjacency | county_adj.txt | 2023 version | n/a (fixed) | None |
-| FERC Form 1 (PUDL) | ferc1_*.parquet | PUDL 2025 release | 2025 included | Low |
+| FERC Form 1 (PUDL) | ferc1_*.parquet | PUDL stable release, Oct 14, 2026; v2026.10.0 per its release notes. Confirm the version in the raw files before citing | 2025 included | Low |
 
-**Papers-due risk:** EIA 2025 solar generation is the most likely variable to be revised before Dec 1, 2026 deadline. If revised, rebuild takes ~30 seconds (`python3 econ499r_starter/scripts/build_panel.py data/raw data/out`) and all downstream outputs regenerate. BEA 2025 revision risk is low in the near term.
+**Papers-due risk:** EIA labels its 2025 data final, so the main revision risk before the Dec 1, 2026 deadline is low. If any source is revised, rebuild takes ~30 seconds (`python3 econ499r_starter/scripts/build_panel.py data/raw data/out`) and all downstream outputs regenerate. BEA's next annual revision would change the 2025 estimates; check its calendar before the final run.
 
 ---
 
@@ -322,7 +324,7 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 - **Reproduce:** 12 Georgia spot checks exact (0.0000 diff). 4 top-AI states exact.
 - **Trace:** 25 cells fully traced from raw files.
 - **Plausibility:** All key checks PASS. 200 big-jump flags all explained (solar/wind from zero; 5 AI fluctuations reviewed individually).
-- **Vintage:** All sources documented. Only EIA 2025 solar has material revision risk; rebuild is trivial.
+- **Vintage (corrected 2026-11-04):** All sources documented. EIA labels 2025 final; BEA 2025 remains the main revision risk; rebuild is trivial.
 - **Verdict: 0 red, 3 yellow (CO2, SEDS, HMA — known gaps, not blocking), 17 green. Phase 4b may proceed.**
 
 ---
