@@ -333,7 +333,7 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 
 | File | Rating | Product and years (from contents) | Units and coverage | Vintage | Spot checks | Main caveat |
 |---|---|---|---|---|---|---|
-| LBNL RPS & CES Targets and Demand | **Yellow** | Target schedule, 2000-2050 | Percent of applicable sales; 32 states + DC in file; table covers 51 areas x 2015-2025 | June 2026 | Byte-identical to LBNL; 27 states + DC reconciles with LBNL's deck; MI and AZ match state rules | **Not targets in force.** 60 of 327 nonzero state-years differ from older editions. NY 2018 series break |
+| LBNL RPS & CES Targets and Demand | **Yellow** | Target schedule, 2000-2050 | Percent of applicable sales; 32 states + DC in file; table covers 51 areas x 2015-2025 | June 2026 | Byte-identical to LBNL; 27 states + DC reconciles with LBNL's deck; MI and AZ match state rules | Label it "LBNL current RPS/CES schedule." 60 of 327 nonzero state-years differ from older editions. NY 2018 series break |
 | LBNL Target Achievement and Compliance Costs | **Green** | Share of target achieved, 1999-2025 | Ratio, no target levels; 31 states + DC; 2025 mostly "no data" | June 2026 | Byte-identical to LBNL; 294 of 327 nonzero state-years confirm an obligation; 3 conflict | Cross-check only. It can't supply a target level |
 | LBNL Utility-Scale Solar | **Green** | Project data through 2025 | MW-AC and MW-DC; 2,005 projects, 48 states; GA 66, Southeast 414 | Oct 2026 | Byte-identical to LBNL; 1,989 PV matches LBNL's count; GA 0.97, TX 1.04, FL 1.00 of EIA capacity | Larger than 5 MW-AC only (NC 0.60 of EIA) |
 | OWID solar capacity | **Green** | IRENA on-grid PV, 2000-2025 | GW; countries and regions | Updated July 28, 2026 | World 2025 within 0.2% and USA 2025 within 0.3% of IRENA; USA 2023 matches | IRENA checked on a third-party copy of its report. On-grid gap not fully explained |
@@ -342,13 +342,13 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 | `nsf27300-tab010.xlsx` (team's file) | **Red, not used** | Business R&D by industry and size, 2024 | No states | NSF, Oct 2026 | Read directly: no state rows | Wrong table. Kept only as a record |
 | ACS S2801 (API) | **Yellow** | Household broadband, 2015-2024 | Percent, with MOE; 51 areas | Pulled Nov 4, 2026 | 9 of 9 match table B28002 | 2015 isn't comparable (Census changed the question in 2016). No 2020 |
 | Epoch AI data centers | **Green, context only** | Largest AI sites, timelines to 2030 | MW; 96 sites, 77 US | Updated Nov 1, 2026 | `data_centers.csv` byte-identical; page's TX, OH, VA, NE, IA counts match; 2 site values match | About 45% coverage per Epoch. One site's state unresolved. Not a model variable |
-| NOAA degree days | **Not done** | No file | None | None | None | NCEI timed out on every host, Nov 4. No table exists |
+| NOAA degree days | **Not done** | No file | None | None | None | NCEI timed out on every host, Nov 4. The team chose not to substitute CPC files. No table exists |
 
 **Totals:** 5 green, 3 yellow, 1 red (not used), 1 not done. The red doesn't block anything, because its replacement is in the table above it.
 
 ### RPS coverage check
 - **All 50 states, 2015-2025? Yes.** 561 rows (50 states + DC x 11 years), no NA, no duplicates, and keys match the panel exactly. 18 of the states are 0 because they aren't in LBNL's file.
-- **Target in force each year? No.** Every nonzero value is LBNL's June 2026 schedule. Target Achievement has no target levels, and LBNL revises past years between editions.
+- **Does it show what each year's law required? No.** Every nonzero value is the LBNL current RPS/CES schedule (June 2026). Target Achievement has no target levels, and LBNL revises past years between editions.
 
 | Check on the 327 nonzero state-years | Rows |
 |---|---|

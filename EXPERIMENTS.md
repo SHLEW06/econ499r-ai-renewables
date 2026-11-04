@@ -20,7 +20,7 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 7 | No dynamics specification | Distributed lags AI t−1, t−2, t−3 and their sum; 2015-to-2025 long difference. Needs QCEW 2012–2013 for full t−3 | Short-run null / long-run positive is theoretically motivated (Zhao et al. 2024) | **Adopted in part; full-sample t−3 dropped (item 14)** |
 | 8 | No comment on efficiency vs consumption sign expectation | Add one paragraph in §H1 core and in the results handoff explaining why both can hold or why efficiency may fall where AI grows | Wording only, no new code; prevents a misread of "efficiency increases" when data centers sit in the numerator of the ratio | **Adopted (wording)** |
 | 9 | H2b reports ln_ea mediation straightforwardly | Keep as memo version but include a caveat: EA is nearly redundant under state FE because land area is constant | Within-state EA variation = nonfarm GDP variation, which ln_gdp_pc and pop_growth already capture | **Adopted (caveat note)** |
-| 10 | No state EPU moderator | AI × EPU-S (Baker-Davis-Levy 2022) as a stretch moderator; mean-center before interacting | Fang et al. 2025 use EPU-S; confirms generalizability of AI-renewable link across political-economy conditions | **Stretch — blocked until EPU-S data downloaded** |
+| 10 | No state EPU moderator | AI × EPU-S (Baker-Davis-Levy 2022) as a stretch moderator; mean-center before interacting | Fang et al. 2025 use EPU-S; confirms generalizability of AI-renewable link across political-economy conditions | **Stretch — data ready (`data/epu_state_annual.csv`)** |
 | 11 | Georgia solar learning curve not in memo | Add Georgia solar cost projection to 2035 (Bolinger 2022 method); LR = 24% central; fan of 12/19/24/45% × 3 capacity paths | Answers "future of renewables" for Georgia case box; learning curves are correlations, not causal | **Adopted (Phase 4f)** |
 | 12 | Core H1 model: 4 controls (ln_gdp_pc, manuf_share, price_c_kwh, pop_growth) | Add tech_share as 5th control (ctrl5) was considered but **rejected**: tech_share is the H2a mediator (Baron-Kenny M). Controlling for it in H1 removes the AI→tech_share→outcome pathway and a₁ no longer captures the total effect (bad control problem). Actual first-stage: tech_share on lagged AI b=−0.0165, p=0.43 — the claimed positive correlation does not hold. ctrl4 is the H1 baseline. ctrl5 retained as one labeled sensitivity row only. | **Rejected** |
 | 13 | H2a/H2b method tags used ctrl5 | Tags corrected to ctrl4 in 04c_step2_mediation.R and EXPERIMENTS.md §6/§7. ctrl4 = H1 baseline; using ctrl5 in mediation would be circular when M=tech_share and inconsistent across mediators. | **Adopted (Phase 4c, 2026-11-03)** |
@@ -28,8 +28,11 @@ All 11 items from methods-review.md §4. Items 1–11 correspond to the numbered
 | 15 | H3 tested with an SDM; no estimator named. 4d used LYtrans=TRUE as main on renew_share and LYtrans=FALSE as fallback for ln_ec, ln_ee | One estimator for all three outcomes. (a) Try SDPDm LYtrans=TRUE, demn=TRUE on invdist-50; if ρ is inside (−4.74, 1) for all three outcomes, that is the main spec. (b) Otherwise LYtrans=FALSE is the main spec for all three, with renew_share LYtrans=TRUE kept as a labeled check | A verdict should not mix estimators across outcomes | **Adopted 2026-11-03. Outcome: (b); ρ = 1.406 for renew_share under (a)** |
 | 16 | Not specified | Impact point estimates are plug-in values at the estimated ρ, b1, θ1. Simulation draws are used only for SEs and CIs | `impactsSDPDm` reports means of draws; impacts are nonlinear in ρ, so the mean differs from the plug-in value (renew_share main total: −0.269 vs −0.261) | **Adopted 2026-11-03** |
 | 17 | Not specified | A8: Conley SEs from state centroids at 500 and 1,000 km on the core outcomes and new_renew_mw. Labeled a check | Residual Moran's I is significant in 10 of 11 years after two-way FE, so clustered-by-state SEs may be too small | **Adopted 2026-11-03 (check only)** |
-| 18 | "RPS" control, form unspecified | Target percent by state-year. States with no mandatory RPS/CES = 0. Voluntary goals = 0 with a flag column. Use the target in force each year under the law at that time if the file allows it; if it only has today's schedules, say so in the receipt and notebook | Dropping non-mandate states would lose them from the regression; later laws raised many targets, so current schedules overstate past targets | **Adopted 2026-11-03; waiting on the LBNL file** |
+| 18 | "RPS" control, form unspecified | Target percent by state-year. States with no mandatory RPS/CES = 0. Voluntary goals = 0 with a flag column. Use the target in force each year under the law at that time if the file allows it; if it only has today's schedules, say so in the receipt and notebook | Dropping non-mandate states would lose them from the regression; later laws raised many targets, so current schedules overstate past targets | **Superseded 2026-11-04 by item 21** |
 | 19 | Long difference (item 7) | P2: rerun with ΔAI 2014→2024, N = 50. 4b's rows stay in place, labeled as the version with the bug | Both 4b scripts labeled ΔAI 2014→2024 but used the 2025 value, which dropped AK, ND, SD, WY (N = 46). They also labeled classical SEs as HC0 | **Adopted 2026-11-03** |
+| 21 | "RPS" control, form unspecified (replaces item 18's coding rules) | Main: `target_pct`, the larger of the RPS and CES targets each year, from LBNL's June 2026 file. Label: **"LBNL current RPS/CES schedule."** States with no entry = 0. Voluntary goals not coded; those states are 0. Checks: `rps_target_pct` (RPS only); the June 2023 edition's values, all of 2015-2025 and separately 2015-2023; main version without NY. Flag the 3 obligation conflicts (MT 2020; NY 2015, 2016) in the notebook | LBNL's Target Achievement file has no target levels, and LBNL revises past years between editions, so the file can't show what earlier law required. The larger-of rule avoids double counting. NY's series breaks in 2018 | **Adopted 2026-11-04 (team decision)** |
+| 22 | Moderators, stretch goal B1: broadband, "years available" | Use S2801 for 2016-2024, without 2015 and without 2020 | Census changed the internet question in 2016; there's no 2020 1-year release | **Adopted 2026-11-04 (team decision)** |
+| 23 | Not in memo; `CLAUDE.md` listed degree days as an optional control | NOAA degree days not done, and no substitute | NCEI unreachable on 2026-11-04; CPC is a different product | **Adopted 2026-11-04 (team decision)** |
 
 ---
 
@@ -317,7 +320,11 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 | Drop AK, HI | §1, contig48==1 | all core | Stable | Energy-isolated states; N = 528 |
 | Drop VA | §1, state ≠ 'VA' | all core | Stable | Outlier state; N = 539 |
 | Border W | §8 SLX only, border-48 | all core | Stable | N = 528. The border-W SDM is not rerun; cite `results/2026-11-03/h3/h3_sdm_impacts.csv` |
-| RPS control | Add LBNL target percent by state-year | all core | Shrinks $\hat{\alpha}_1$ | Needs `data/lbnl_rps_targets.csv` (EXP-003); if absent, a "not run" row recording it as missing |
+| RPS control: LBNL current RPS/CES schedule | Add `target_pct` | all core, new_renew_mw | Shrinks $\hat{\alpha}_1$ | Main RPS version (§0 item 21); N = 550 |
+| RPS check: RPS only | Add `rps_target_pct` | all core, new_renew_mw | — | Labeled check; N = 550 |
+| RPS check: June 2023 edition | Add `target_pct_ed2023`, 2015-2025; and on 2015-2023 beside the main version on the same years | all core, new_renew_mw | — | Labeled check; N = 550 and N = 450 |
+| RPS check: without NY | Main version, state ≠ 'NY' | all core, new_renew_mw | — | NY's series breaks in 2018; N = 539 |
+| AI with all ownerships (added 2026-11-04) | §1 with AI numerator = private + published government 518210 jobs | all core, new_renew_mw | Stable | Labeled check (§0 item 24); N = 550 |
 | Next-year-AI placebo | Replace AI(t−1) with AI(t+1) | all core | Null | Falsification; 2015–2024, N = 496 (AK, ND, SD, WY lose 2024) |
 | Placebo diagnostics (added 2026-11-03) | Same placebo with the lead not winsorized; and AI(t+1) and AI(t−1) in one model | all core, new_renew_mw | — | Run because the placebo is significant for renew_share and new_renew_mw. Labeled diagnostics; N = 496 |
 | Spec curve: new_renew_mw | §1 model, swap Y | new_renew_mw, raw and per 1,000 MW of 2015 capacity | — | Only positive raw-MW result; not robust to scaling in 4b |
@@ -336,9 +343,9 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 
 | Goal | Equation | Key parameter | Effort | Status |
 |---|---|---|---|---|
-| Moderation: broadband × AI | AI × broadband_rate + broadband_rate main effect | interaction coefficient | Medium — need broadband data | Blocked |
-| Moderation: R&D share × AI | AI × rd_share + rd_share main effect | interaction coefficient | Medium — need R&D data | Blocked |
-| Moderation: EPU-S × AI | AI × epu_s; mean-center first | interaction coefficient | Medium — need EPU-S data | Blocked (EXP-010) |
+| Moderation: broadband × AI | AI × broadband_rate + broadband_rate main effect | interaction coefficient | Medium | Data ready; 2016-2024, no 2020 (§0 item 22) |
+| Moderation: R&D share × AI | AI × rd_share + rd_share main effect | interaction coefficient | Medium | Data ready; 2017-2023 |
+| Moderation: EPU-S × AI | AI × epu_s; mean-center first | interaction coefficient | Medium | Data ready |
 | Shift-share IV | First stage: $\hat{AI}$ = national growth × base share; KP-F | IV 2nd-stage $\hat{\alpha}_1$ | Medium — weak instrument risk | Under review |
 | Hansen threshold | energy_equity as threshold variable | threshold value | Medium | Under review |
 
@@ -377,13 +384,13 @@ Full tag: `<block>_<model>_<ai-var>_<lag>_<controls>_<winsor>_<se>_<outcome>_<sa
 |---|---|---|
 | block | h1, h1x, nonlin, het, dyn, h2a, h2b, h3, rob, stretch, ga | h1 |
 | model | twfe, slx, sdm, med, lc | twfe |
-| ai-var | ai518210, ai518210sq | ai518210 |
+| ai-var | ai518210 (private), ai518210sq, ai518210allown (private + published government; check only) | ai518210 |
 | lag | lag1, lag2, lag3, lag1to3sum, longdiff, lead1 | lag1 |
 | controls | ctrl4 (ln_gdp_pc + manuf_share + price_c_kwh + pop_growth; baseline), ctrl5 (ctrl4 + tech_share; one sensitivity row only) | ctrl4 |
 | winsor | w9901 (1/99 pooled), nowins | w9901 |
 | se | cl-state (clustered by state), dk (Driscoll-Kraay), conley500, conley1000, hc1, ml (asymptotic ML) | cl-state |
 | outcome | ln_ec, ln_ee, renew_share, solar_share, wind_share, fossil_to_renew, co2_per_mwh_t, coal_share, new_renew_mw, seds_mmbtu_pc | renew_share |
-| sample | 50s2015_2025, 48s2015_2025, 50s2015_2024, 50s2015_2025no2020, 49s2015_2025noVA, 50s2017_2025 | 50s2015_2025 |
+| sample | 50s2015_2025, 48s2015_2025, 50s2015_2024, 50s2015_2025no2020, 49s2015_2025noVA, 49s2015_2025noNY, 50s2017_2025, 50s2015_2023 | 50s2015_2025 |
 
 **Rule:** Never reuse a tag whose meaning has changed. Change the spec → create a new tag.
 

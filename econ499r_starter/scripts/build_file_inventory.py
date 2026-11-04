@@ -14,6 +14,8 @@ OLD = {"bea": "BEA state GDP and personal income", "bls": "BLS QCEW annual emplo
 NEW = {
  "lbnl/RPS & CES Targets and Demand_June 2026.xlsx": ("LBNL RPS and CES target schedule and demand, June 2026", "Used: lbnl_rps_targets.csv"),
  "lbnl/Historical RPS & CES Target Achievement and Compliance Costs_June 2026.xlsx": ("LBNL share of target achieved and compliance costs, June 2026; no target levels", "Used: cross-check columns in lbnl_rps_targets.csv"),
+ "lbnl/rps_ces_nominal_percentage_targets_june_2023.xlsx": ("LBNL RPS and CES target schedule, June 2023 edition", "Used: target_pct_ed2023 check in lbnl_rps_targets.csv"),
+ "eia_forms/eia8602017.zip": ("EIA Form 860 data, 2017", "Reference: identifies the NE and NM 2017 blank-fuel capacity rows"),
  "lbnl/Utility Scale Solar 2026 Edition Datafile.xlsx": ("LBNL Utility-Scale Solar, Oct 2026; 2,005 projects", "Used: lbnl_utility_solar.csv"),
  "epu/State_Policy_Uncertainty.xlsx": ("Baker, Davis and Levy state EPU, monthly, 1985-2025", "Used: epu_state_annual.csv"),
  "nsf/nsf27300-tab010.xlsx": ("NSF business R&D by industry and company size, 2024; no states; wrong table", "NOT USED: rated red"),

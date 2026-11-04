@@ -1644,6 +1644,7 @@ data/raw/eia/emission_annual.xlsx,2108776,cc481709f244412561b9bd65b7363ef204c92a
 data/raw/eia/existcapacity_annual.xlsx,2609961,5d0958ccf4445e7b9f10f1511476080b43b9e26ac8b050af51d30eef6ea19172,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/plancapacity_annual.xlsx,40162,fa7ae104ab002ad8f3af03b5ef2f098eb40a7e856ec8fe579d0bc2bd15c04f98,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/seds/use_all_btu.csv,4277144,cbf0e26022e90303d355856ce750eaeedcb1cc6642c01c8b21f46d0284a9cedc,csv,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia_forms/eia8602017.zip,16181258,da9f1a1f8528324ff47019229d0f3648efe8c5997f18449f10d6aad2daa68e5c,zip,"EIA Form 860 data, 2017",Reference: identifies the NE and NM 2017 blank-fuel capacity rows
 data/raw/eia_forms/eia8602025.zip,23622347,2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba,zip,"EIA Forms 860, 861, 923",Phase 2 raw file; see data/receipts/
 data/raw/eia_forms/f8612025.zip,4756816,f59f6c732bf685fe0a1591b32227f5ce572dc0dfd26bb5caaeed128ac4e3a396,zip,"EIA Forms 860, 861, 923",Phase 2 raw file; see data/receipts/
 data/raw/eia_forms/f923_2025.zip,23340452,1bff7092a86f6678c069c986829da5a23104048fc1aafb65b0776e3c904284de,zip,"EIA Forms 860, 861, 923",Phase 2 raw file; see data/receipts/
@@ -1667,6 +1668,7 @@ data/raw/georgia/irp_2025_public_disclosure.zip,103717722,d72ddb87723475599f575a
 data/raw/lbnl/Historical RPS & CES Target Achievement and Compliance Costs_June 2026.xlsx,75877,a440248d200198ce13a4a0af8509d922834cd71293f81dc3855352a6ab9f765c,xlsx,"LBNL share of target achieved and compliance costs, June 2026; no target levels",Used: cross-check columns in lbnl_rps_targets.csv
 data/raw/lbnl/RPS & CES Targets and Demand_June 2026.xlsx,201978,46f45337966f6e41871f896410e307d9be39ecf295a2aff97266c3e0c4a08521,xlsx,"LBNL RPS and CES target schedule and demand, June 2026",Used: lbnl_rps_targets.csv
 data/raw/lbnl/Utility Scale Solar 2026 Edition Datafile.xlsx,62885230,d3eccb46ec10c9b71cb77314908ad6ac11ebf83d5eac976492801029903ab341,xlsx,"LBNL Utility-Scale Solar, Oct 2026; 2,005 projects",Used: lbnl_utility_solar.csv
+data/raw/lbnl/rps_ces_nominal_percentage_targets_june_2023.xlsx,66554,b7d26058bb3726f948f9387a2197c794d9d075dabf22aac9868697e221aafb65,xlsx,"LBNL RPS and CES target schedule, June 2023 edition",Used: target_pct_ed2023 check in lbnl_rps_targets.csv
 data/raw/nsf/nsf20307-tab010.xlsx,19194,3ba1449e34c4cac1a984eb799919806284a34f439bfce7d915665e1f41b1d101,xlsx,"NSF National Patterns Table 10, R&D by state, one data year per edition",Used: nsf_state_rd.csv
 data/raw/nsf/nsf21325-tab010.xlsx,19315,6f3c82cc32f0e4e7eade24db6b3a36b73a3152b7fb444c97f3b4c24b41aa3d38,xlsx,"NSF National Patterns Table 10, R&D by state, one data year per edition",Used: nsf_state_rd.csv
 data/raw/nsf/nsf22320-tab010.xlsx,19473,1ecece3a4a57ad2f31e8567d2bbda3f19e69df371606f57d7d76b591cc5b9b90,xlsx,"NSF National Patterns Table 10, R&D by state, one data year per edition",Used: nsf_state_rd.csv

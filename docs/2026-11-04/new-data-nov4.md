@@ -16,19 +16,19 @@ Steps 2-7 are done, except NOAA, which is not done because NCEI was unreachable.
 
 Ratings and checks: `data/DATA_VALIDATION.md`, "New data, Nov 4." Workbook: `outputs/ECON499R_Data_Workbook_2026-11-04.xlsx`; the Nov 1 copy is unchanged.
 
+## Team decisions, 2026-11-04
+1. **`target_pct` is the larger of RPS and CES each year.** `rps_target_pct` stays as a check.
+2. **The RPS control uses the "LBNL current RPS/CES schedule."** Use that label everywhere. Checks: the June 2023 edition (`target_pct_ed2023`) and a version without NY.
+3. **NOAA is not done,** and CPC files are not substituted.
+4. **B1 broadband uses 2016-2024,** without 2015 and 2020.
+
 ## What to know before using these
-1. **RPS targets aren't targets in force.** See `data/receipts/lbnl_rps.md`. Target Achievement has no target levels, and LBNL revises past years (MD 2020: 30.5 then 18.1).
-2. **`target_pct` is the larger of RPS and CES.** This is my choice, and it matters only for MA and VA, 2021-2025. `rps_target_pct` is there if the team prefers RPS only.
-3. **Rerunning `code/R/04e_robustness.R` now runs A5.** The script runs the RPS control whenever `data/lbnl_rps_targets.csv` exists. The current A5 rows say NOT_RUN. Decide on item 2 first.
-4. **ACS 2015:** code `S2801_C02_012E`, and not comparable with later years.
-5. **NSF:** divide `rd_total_musd` by panel `gdp_nom_musd`, rather than using NSF's intensity, to keep one GDP vintage.
+- **ACS 2015:** code `S2801_C02_012E`, and not comparable with later years.
+- **NSF:** divide `rd_total_musd` by panel `gdp_nom_musd`, rather than using NSF's intensity, to keep one GDP vintage.
 
 ## Open
-- **NOAA:** rerun `download_noaa_degree_days.py` when NCEI responds, or download by hand (links in `data/receipts/noaa.md`). Its parser hasn't run on real output.
 - **Google Kansas City East:** state unresolved in the Epoch table.
 - **Not committed, by design:** raw data, side tables, the workbook.
-- **Not committed, not mine:** the changes to `CLAUDE.md` and `EXPERIMENTS.md`, the 4e robustness files, `data/INDEPENDENT_AUDIT_2026-11-04.md`, and `logs/2026-11-04/raw_sha256_manifest.csv`, which `build_file_inventory.py` needs as its baseline.
-- **`CLAUDE.md` §7 is out of date:** it still lists RPS, NSF and Epoch as needed.
 
 ## How to rebuild (from project root)
 ```bash

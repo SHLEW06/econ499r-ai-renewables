@@ -10,6 +10,9 @@ Prints rows in and out plus checks; the receipts quote this output.
 import os, re, sys, warnings
 import numpy as np, openpyxl, pandas as pd
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_rps_vintages import read as read_rps_edition
+
 warnings.filterwarnings("ignore")
 STATES = {"Alabama":"AL","Alaska":"AK","Arizona":"AZ","Arkansas":"AR","California":"CA","Colorado":"CO","Connecticut":"CT",
  "Delaware":"DE","District of Columbia":"DC","Florida":"FL","Georgia":"GA","Hawaii":"HI","Idaho":"ID","Illinois":"IL","Indiana":"IN",
@@ -54,6 +57,10 @@ def build_rps(raw, out, vintage_csv, panel):
                 ta[(r[0], y)] = r[ai[y]]
     ta_states = {k[0] for k in ta}
 
+    # June 2023 edition: used only for the labeled check in 4e. Same larger-of-RPS-and-CES rule.
+    ed = read_rps_edition(f"{raw}/lbnl/rps_ces_nominal_percentage_targets_june_2023.xlsx")
+    ed23 = ed.fillna({"pct": 0}).groupby(["state", "year"]).pct.max().to_dict()
+
     v = pd.read_csv(vintage_csv)
     revised = {(s, y) for s, y in v[v.past][["state", "year"]].itertuples(index=False)}
 
@@ -81,9 +88,10 @@ def build_rps(raw, out, vintage_csv, panel):
                 chk = {"reported": "conflict_obligation_but_no_target", "no_obligation": "zero_consistent",
                        "state_not_in_file": "zero_no_policy"}.get(status, "zero_not_checkable")
             rec.append(dict(state=st, year=y, target_pct=round(tgt, 4), rps_target_pct=round(rp, 4), ces_target_pct=round(ce, 4),
-                            target_basis="todays_schedule_june2026" if st in in_file else "not_in_lbnl_file_zero",
+                            target_pct_ed2023=round(ed23.get((st, y), 0.0), 4),
+                            target_basis="LBNL current RPS/CES schedule" if st in in_file else "not in LBNL file; set to 0",
                             ta_status=status, ta_achievement_pct=round(raw_ta * 100, 2) if status == "reported" else np.nan,
-                            in_force_check=chk, revised_vs_older_edition=int((st, y) in revised)))
+                            obligation_check=chk, revised_vs_older_edition=int((st, y) in revised)))
     df = pd.DataFrame(rec)
     df.to_csv(f"{out}/lbnl_rps_targets.csv", index=False)
     print("== RPS: rows", len(df), "states", df.state.nunique(), "years", df.year.min(), df.year.max(), "NA target", int(df.target_pct.isna().sum()),
@@ -94,9 +102,11 @@ def build_rps(raw, out, vintage_csv, panel):
     print("not in Target Achievement:", [s for s in sorted(in_file) if s not in ta_states])
     print("states with target>0 by year:", df[df.target_pct > 0].groupby("year").state.nunique().to_dict())
     print("cells where CES>RPS:", df[df.ces_target_pct > df.rps_target_pct].groupby("state").year.agg(["min", "max", "count"]).to_dict("index"))
-    print("in_force_check:", df.in_force_check.value_counts().to_dict())
-    print("in_force_check by year:\n", pd.crosstab(df.year, df.in_force_check).to_string())
-    print("conflicts:\n", df[df.in_force_check.str.startswith("conflict")][["state", "year", "target_pct", "ta_status", "in_force_check"]].to_string(index=False))
+    print("obligation_check:", df.obligation_check.value_counts().to_dict())
+    print("obligation_check by year:\n", pd.crosstab(df.year, df.obligation_check).to_string())
+    print("conflicts:\n", df[df.obligation_check.str.startswith("conflict")][["state", "year", "target_pct", "ta_status", "obligation_check"]].to_string(index=False))
+    dd = (df.target_pct - df.target_pct_ed2023).abs()
+    print("June 2023 edition vs current schedule: cells differing >0.05 pts:", int((dd > 0.05).sum()), "of 561; states", sorted(df[dd > 0.05].state.unique()))
     print("revised cells:", int(df.revised_vs_older_edition.sum()), "of nonzero", int((df.target_pct > 0).sum()), "states", sorted(df[df.revised_vs_older_edition == 1].state.unique()))
     w = df[df.target_pct > 0].sort_values(["state", "year"]).copy()
     w["chg"] = w.groupby("state").target_pct.diff()

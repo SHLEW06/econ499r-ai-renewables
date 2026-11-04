@@ -43,8 +43,9 @@
 - **Mean by year:** 76.2, 80.8, 82.8, 84.4, 85.8, NA, 89.6, 90.5, 91.6, 92.7.
 
 ## Caveats
-- **2015 isn't comparable.** Census revised the computer and internet questions in 2016 and [urges caution comparing across those years](https://www.census.gov/programs-surveys/acs/technical-documentation/user-notes/2017-03.html). The mean rises 4.6 points in 2016, against 2 or less a year after. Consider 2016-2024 for the moderator.
-- **2020 is missing,** so the moderator sample excludes it.
+- **Stretch goal B1 uses 2016-2024, without 2015 and without 2020 (team decision, 2026-11-04).** The 2015 rows stay in the table but aren't used.
+- **2015 isn't comparable.** Census revised the computer and internet questions in 2016 and [urges caution comparing across those years](https://www.census.gov/programs-surveys/acs/technical-documentation/user-notes/2017-03.html). The mean rises 4.6 points in 2016, against 2 or less a year after.
+- **2020 is missing:** there's no 1-year release.
 - **Household subscriptions, not availability.** Small-state estimates carry larger margins of error.
 
 **Rating: yellow.**

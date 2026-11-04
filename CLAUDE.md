@@ -131,15 +131,18 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 
 ---
 
-## §7 Data Still Needed
+## §7 Data Status
 
-See DATA_AUDIT.md for full details.
+See `data/DATA_VALIDATION.md` ("New data, Nov 4") and `data/receipts/README.md`.
 
-| Item | Method | Needed for |
+| Item | Status | Used for |
 |------|--------|------------|
-| LBNL RPS/CES spreadsheet | Browser download | Step 4 RPS control (EXP-003) |
-| Q1–Q4 2024 large-load reports (Docket 55378) | Browser, FERC | Georgia case box |
-| NOAA HDD/CDD | Script | Climate control (optional) |
-| NSF R&D by state | Script | Tech intensity control (optional) |
-| Epoch data center counts | Script | Alternative AI measure (optional) |
-| SEC company facts | sec_fin.py + SEC_USER_AGENT env var | Finance channel (optional) |
+| LBNL RPS/CES (label: "LBNL current RPS/CES schedule") | **Done** — `data/lbnl_rps_targets.csv` | Step 4 RPS control |
+| NSF R&D by state (National Patterns Table 10, 2017-2023) | **Done** — `data/nsf_state_rd.csv` | Stretch moderator |
+| Epoch data centers | **Done** — `data/epoch_ai_campuses_by_state.csv`. Context and Georgia box only, not a model variable | Georgia box |
+| ACS broadband (S2801) | **Done** — `data/acs_broadband.csv`. B1 uses 2016-2024, without 2015 and 2020 | Stretch moderator |
+| State EPU | **Done** — `data/epu_state_annual.csv` | Stretch moderator |
+| OWID/IRENA solar, LBNL Utility-Scale Solar | **Done** | Phase 4f |
+| NOAA HDD/CDD | **Not done** — NCEI unreachable on 2026-11-04; team chose not to substitute CPC files | Optional climate control |
+| Q1-Q4 2024 large-load reports (Docket 55378) | Needed — browser, FERC | Georgia case box |
+| SEC company facts | Optional — sec_fin.py + SEC_USER_AGENT env var | Finance channel |

@@ -1,5 +1,7 @@
 # Receipt: LBNL RPS and CES targets and target achievement
 
+**Label everywhere: "LBNL current RPS/CES schedule."** Team decision, 2026-11-04.
+
 **Source:** Galen Barbose, Lawrence Berkeley National Laboratory, *U.S. State Electricity Resource Standards: 2026 Data Update*, June 2026.
 **Link:** https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0 (emp.lbl.gov returns 403 to scripts; this LBNL host works)
 **How:** Team browser download; moved from the project root on 2026-11-04 (`logs/2026-11-04/moves.csv`).
@@ -11,9 +13,9 @@
 
 Both files are byte-identical to the copies LBNL serves today.
 
-## Main limit: this is today's schedule, not a record of targets in force
+## Main limit: LBNL's current schedule, which LBNL revises
 - **Target Achievement has no target levels.** LBNL defines it as "the percentage of the annual RPS or CES target achieved." It can show that an obligation existed in a year, but not its size.
-- **Every nonzero `target_pct` therefore comes from the June 2026 schedule.**
+- **Every nonzero `target_pct` therefore comes from the June 2026 schedule.** The table can't show what any earlier year's law required at the time.
 - **LBNL revises past years.** Against the June 2023, Aug 2024 and Aug 2025 editions, 60 of the 327 nonzero state-years (13 states) differ by more than 0.05 points from a value printed in an edition of that year or later. Largest: MD 2020, 30.5 then 18.1. 19 program-years moved by more than 2 points (MD, NH, NJ, NY). The files don't say why. See `logs/2026-11-04/rps_vintage_check.csv`.
 - **No test before 2023.** I found no editions older than June 2023 on the LBNL host.
 
@@ -24,10 +26,11 @@ Both files are byte-identical to the copies LBNL serves today.
 |---|---|
 | `target_pct` | Larger of `rps_target_pct` and `ces_target_pct`, in percent. Differs from the RPS only in MA and VA, 2021-2025 |
 | `rps_target_pct`, `ces_target_pct` | "Total RPS" and "Total CES" rows, times 100 |
-| `target_basis` | `todays_schedule_june2026`, or `not_in_lbnl_file_zero` for the 18 states not in the file |
+| `target_pct_ed2023` | Same rule, from the June 2023 edition. Labeled check only. That file prints all of 2015-2025; its 2024-2025 values were planned levels when published. MI's CES row isn't in it (0 anyway) |
+| `target_basis` | `LBNL current RPS/CES schedule`, or `not in LBNL file; set to 0` for the 18 states not in the file |
 | `ta_status` | `reported`, `no_obligation` ("-"), `no_data`, `not_applicable` ("n/a"), or `state_not_in_file` |
 | `ta_achievement_pct` | Share of the target achieved. Not a target |
-| `in_force_check` | Target Achievement compared with the schedule (counts below) |
+| `obligation_check` | Target Achievement compared with the schedule (counts below) |
 | `revised_vs_older_edition` | 1 if an older edition printed a different value for that year or a later one |
 
 **Voluntary flag:** dropped as you directed. voluntary goals not coded; those states are 0. Neither file has voluntary goals, and LBNL's summary deck says "Targets adopted voluntarily by utilities or corporations, or targets established through executive order" are excluded. A 0 therefore does not mean a state has no goal of any kind.
@@ -36,14 +39,14 @@ Both files are byte-identical to the copies LBNL serves today.
 1. `check_rps_vintages.py`: download three older editions to a scratch folder, compare the Total rows, write the log.
 2. `build_side_tables_nov4.py`: read the "RPS & CES Targets (%)" sheet and take rows whose label starts with `Total RPS` or `Total CES`.
 3. Multiply by 100. States absent from the file get 0.
-4. Take `target_pct` as the larger of RPS and CES, not the sum, so that overlapping obligations aren't counted twice. This is my choice; LBNL doesn't define a combined figure.
+4. Take `target_pct` as the larger of RPS and CES each year, not the sum, so that overlapping obligations aren't counted twice (team decision, 2026-11-04). `rps_target_pct` stays as a check.
 5. Read the "Target Achievement" Total row for each state-year and classify it.
 6. Flag revised cells from the log.
 
 **Rows:** targets sheet, 33 areas with Total rows; output 561 rows (33 x 11 from the file, 18 x 11 set to 0). No NA, no duplicates.
 
 ## Coverage check
-| `in_force_check` | Rows | Meaning |
+| `obligation_check` | Rows | Meaning |
 |---|---|---|
 | `obligation_confirmed` | 294 | Target above 0 and an achievement value reported |
 | `not_checkable` | 30 | Target above 0, but "no data" so far. 19 of these are in 2025 |
@@ -67,5 +70,9 @@ Both files are byte-identical to the copies LBNL serves today.
 - **MI (independent):** 10% in 2015, 12.5% in 2019-2020, 15% from 2021, matching [PA 342 as summarized by Michigan](https://www.michigan.gov/mpsc/regulatory/electricity/renewable-energy). The table's 2016-2018 values are 9.9-10.2.
 - **AZ (independent):** 15% in 2025 matches the REST rule; 0 from 2026 matches the deck's "Repealed RPS." Secondary sources report a rehearing request on the repeal, and I didn't confirm its current status.
 - **KS:** 0 from 2015, matching LBNL's note and [news coverage of the 2015 change to a voluntary goal](https://digital-release.thehill.com/?p=242353).
+
+**Files used in the 4e check (June 2023 edition):** `data/raw/lbnl/rps_ces_nominal_percentage_targets_june_2023.xlsx`, sha256 `b7d26058bb3726f948f9387a2197c794d9d075dabf22aac9868697e221aafb65`, from https://eta-publications.lbl.gov/sites/default/files/rps_ces_nominal_percentage_targets_june_2023.xlsx
+
+**How 4e uses this table:** main = `target_pct`. Labeled checks: `rps_target_pct`, `target_pct_ed2023`, and the main version without NY because its series breaks in 2018.
 
 **Rating: yellow.** See `data/DATA_VALIDATION.md`.

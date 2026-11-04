@@ -4,26 +4,27 @@ in LBNL file: 33 absent: ['AK', 'AL', 'AR', 'FL', 'GA', 'ID', 'IN', 'KY', 'LA', 
 not in Target Achievement: ['NE']
 states with target>0 by year: {2015: 29, 2016: 29, 2017: 30, 2018: 30, 2019: 30, 2020: 30, 2021: 30, 2022: 30, 2023: 30, 2024: 30, 2025: 29}
 cells where CES>RPS: {'MA': {'min': 2021, 'max': 2025, 'count': 5}, 'VA': {'min': 2021, 'max': 2025, 'count': 5}}
-in_force_check: {'obligation_confirmed': 294, 'zero_no_policy': 209, 'not_checkable': 30, 'zero_consistent': 24, 'conflict_target_but_no_obligation': 3, 'zero_not_checkable': 1}
-in_force_check by year:
- in_force_check  conflict_target_but_no_obligation  not_checkable  obligation_confirmed  zero_consistent  zero_no_policy  zero_not_checkable
-year                                                                                                                                       
-2015                                            1              0                    28                3              19                   0
-2016                                            1              0                    28                3              19                   0
-2017                                            0              0                    30                2              19                   0
-2018                                            0              0                    30                2              19                   0
-2019                                            0              1                    29                2              19                   0
-2020                                            1              4                    25                2              19                   0
-2021                                            0              2                    28                2              19                   0
-2022                                            0              0                    30                2              19                   0
-2023                                            0              0                    30                2              19                   0
-2024                                            0              4                    26                2              19                   0
-2025                                            0             19                    10                2              19                   1
+obligation_check: {'obligation_confirmed': 294, 'zero_no_policy': 209, 'not_checkable': 30, 'zero_consistent': 24, 'conflict_target_but_no_obligation': 3, 'zero_not_checkable': 1}
+obligation_check by year:
+ obligation_check  conflict_target_but_no_obligation  not_checkable  obligation_confirmed  zero_consistent  zero_no_policy  zero_not_checkable
+year                                                                                                                                         
+2015                                              1              0                    28                3              19                   0
+2016                                              1              0                    28                3              19                   0
+2017                                              0              0                    30                2              19                   0
+2018                                              0              0                    30                2              19                   0
+2019                                              0              1                    29                2              19                   0
+2020                                              1              4                    25                2              19                   0
+2021                                              0              2                    28                2              19                   0
+2022                                              0              0                    30                2              19                   0
+2023                                              0              0                    30                2              19                   0
+2024                                              0              4                    26                2              19                   0
+2025                                              0             19                    10                2              19                   1
 conflicts:
- state  year  target_pct     ta_status                    in_force_check
+ state  year  target_pct     ta_status                  obligation_check
    MT  2020     15.0000 no_obligation conflict_target_but_no_obligation
    NY  2015     38.3617 no_obligation conflict_target_but_no_obligation
    NY  2016     38.4595 no_obligation conflict_target_but_no_obligation
+June 2023 edition vs current schedule: cells differing >0.05 pts: 70 of 561; states ['CO', 'IA', 'MD', 'MI', 'MN', 'NH', 'NJ', 'NM', 'NY', 'OR', 'TX', 'VA']
 revised cells: 60 of nonzero 327 states ['CO', 'IA', 'MA', 'MD', 'MI', 'MN', 'NH', 'NJ', 'NM', 'NY', 'OR', 'TX', 'VA']
 year-over-year drops >2 pts in target_pct:
  state  year  target_pct      chg

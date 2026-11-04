@@ -12,7 +12,7 @@ TABS = [("RPS Targets", "lbnl_rps_targets.csv"), ("ACS Broadband", "acs_broadban
         ("NSF State RD", "nsf_state_rd.csv"), ("OWID Solar", "owid_global_solar_capacity.csv"), ("LBNL Solar Projects", "lbnl_utility_solar.csv"),
         ("Epoch by State", "epoch_ai_campuses_by_state.csv")]
 SOURCES = [
- ("LBNL RPS and CES targets and achievement (June 2026)", "https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0", "Schedule of targets, not a record of targets in force; see data/receipts/lbnl_rps.md"),
+ ("LBNL RPS and CES targets and achievement (June 2026)", "https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0", "LBNL current RPS/CES schedule; see data/receipts/lbnl_rps.md"),
  ("LBNL Utility-Scale Solar, 2026 Edition", "https://eta-publications.lbl.gov/publications/us-utility-scale-solar-2026-edition", "Individual_Project_Data tab"),
  ("State EPU (Baker, Davis, Levy)", "https://www.policyuncertainty.com/state_epu.html", "Monthly values averaged to years"),
  ("NSF National Patterns Table 10", "https://ncses.nsf.gov/pubs/nsf26313/assets/data-tables/tables/nsf26313-tab010.xlsx", "One edition per data year, 2017-2023"),
