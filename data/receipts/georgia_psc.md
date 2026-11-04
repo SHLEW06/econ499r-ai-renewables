@@ -33,15 +33,14 @@ processed into tabular data. Key figures extracted manually:
 
 | Metric | Value | Source |
 |---|---|---|
-| Projected load growth (6-year horizon) | ~8,500 MW | 2025 IRP Main, executive summary |
-| New renewables planned by 2035 | Up to 4,000 MW | 2025 IRP Main, resource plan section |
-| Large Load queue size (Q1 2026) | ~40 GW of requests on file | LargeLoad_Report_Q1_2026.pdf |
-| Data center / hyperscaler share of queue | Majority of new large-load inquiries | LargeLoad_Report_Q1_2026.pdf |
-| 2023 IRP original load growth estimate | ~2,600 MW over plan period | 2023 IRP Update, p. 4 |
+| Commitments, Oct 2023 to June 30, 2026 | 3,600 MW to 15,600 MW | Q2 2026 Large Load Economic Development Report, filed Aug. 17, 2026, Docket 55378, PDF p. 8: "Customer commitments expanded from 3,600 MW to 15,600 MW" |
+| Load growth, next six years | About 8,500 MW | `2025_IRP_one_page_summary.pdf`, p. 1 |
+| Higher peak by end of 2030 vs the 2023 IRP Update | About 2,600 MW | `2025_IRP_one_page_summary.pdf`, p. 1 |
+| Renewable procurement | Up to 4,000 MW by 2035 | `2025_IRP_Main_Document.pdf`, PDF p. 67 |
 
-The jump from ~2,600 MW (2023 IRP) to ~8,500 MW (2025 IRP) in projected load growth
-reflects the surge in data-center interconnection requests in 2024–2025 and is a central
-data point for the Georgia case narrative.
+**Which docket:** the cover letter is captioned Docket No. 55378, and the report's page headers say Docket No. 56002, Georgia Power's 2025 IRP docket. The letter says the report responds to orders in both.
+
+**Corrected Nov 4:** this table used to list a "~40 GW" queue and a data-center "majority" from the Q1 2026 report, and neither is in that document. It also read 2,600 MW as the 2023 IRP's load growth, which misreads the one-page summary: 2,600 MW is the increase in peak demand against the 2023 IRP Update, inside the 8,500 MW. No result used those rows. All cited figures are in `data/georgia_filing_figures.csv`, which `build_georgia_tables.py` checks against the cited page.
 
 ## Transformations
 

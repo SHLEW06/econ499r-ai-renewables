@@ -6,7 +6,7 @@
 
 **`fig_georgia_trends.png`.** Georgia and the U.S.: private data-center jobs per 1,000 workers and renewable share.
 
-**`fig_h1_coefficients.png`.** H1: the AI(t-1) coefficient with 95% CIs, two-way FE, ctrl4, clustered by state.
+**`fig_h1_coefficients.png`.** H1: AI(t-1) per one within-state SD of AI (0.5212: winsorized lagged AI after removing state and year effects), with 95% CIs. One panel per unit. Two-way FE, ctrl4, clustered by state.
 
 **`fig_spec_curve.png`.** The AI coefficient across specifications. Next-year AI is significant for renew_share, while AI(t-1) isn't on the same sample.
 
@@ -16,4 +16,4 @@
 
 **`fig_moderation.png`.** AI slope at the 25th and 75th percentiles of broadband and R&D share.
 
-**`fig_georgia_fan.png`.** Georgia solar: learning-curve arithmetic to 2035 on IEA scenario paths. Not a forecast of ours.
+**`fig_georgia_fan.png`.** Georgia solar: learning-curve arithmetic to 2035 on IEA WEO 2025 paths (Annex A, Tables A.3a, A.3b and A.3c; pp. 417, 423 and 429). Not a forecast of ours.

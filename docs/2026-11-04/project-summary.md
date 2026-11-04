@@ -11,7 +11,7 @@ Is growth in AI-related activity associated with more or less electricity use, e
 - **Panel:** 50 states and DC, 2015-2025 (561 rows, 80 variables), from public sources: EIA, BLS, BEA and Census. CO2 and SEDS end in 2024.
 - **AI measure:** private data-center jobs per 1,000 workers (NAICS 518210, BLS). It's a proxy for data-center activity, not AI use. BLS suppressed four states in 2025.
 - **Fang's measure:** AI job postings from the Stanford AI Index, 2018-2025. Almost every year comes from a different report edition, so **data-center jobs are the more reliable measure** when we extend the sample.
-- **Checks:** Part C validation: 0 red, 3 yellow, 17 green. A separate cell-by-cell audit, and cross-source checks that are all green. Everything is in the master workbook, with sources, ratings and limitations.
+- **Checks:** Part C validation: 0 red, 3 yellow, 17 green. A separate cell-by-cell audit, and cross-source checks that are green, except one reported gap: no net-producer rule reaches Fang's count. Everything is in the master workbook, with sources, ratings and limitations.
 
 ## What we ran
 
@@ -33,11 +33,12 @@ Is growth in AI-related activity associated with more or less electricity use, e
 - **H1, new renewable capacity: doesn't hold up.** 70.8 MW (p = 0.033) in raw MW, but 1.00 (p = 0.616) per 1,000 MW of 2015 capacity. Its lead is positive too (86.8, p = 0.028), and with both in one model neither is significant.
 - **H2, mediation: no channel.** AI isn't associated with the tech-job share (-0.000157, p = 0.454). Sobel p-values run from 0.322 to 0.991, and every bootstrap CI includes zero.
 - **H3, spillovers: not supported.** On 2015-2023, the only years the timing test can run, the renew_share spillover isn't significant, and with border weights neighbors' future AI carries the association rather than their past AI. The full-sample estimate (-0.161, p = 0.035) can't be separated from this reverse timing. H3 is not supported.
-- **Robustness: no change.** The RPS control (LBNL current RPS/CES schedule) and all-ownership AI change no result. Holding Gavins Point in Nebraska gives 71.0 MW.
-- **Fang: doesn't reproduce.** Fang's 0.0531 is -0.0188 (p = 0.317) on current SEDS. EIA's October 2023 change to how SEDS counts wind, solar, hydro and geothermal explains the sign, not the full size: on an approximate old basis, 0.0216 (p = 0.287). In our final spec, postings are -0.0479 (p = 0.109) and data-center jobs -0.0567 (p = 0.208): neither significant.
+- **Robustness: no change.** The RPS control (LBNL current RPS/CES schedule) and all-ownership AI change no result. Holding Gavins Point in Nebraska gives 71.0 MW. With NOAA heating and cooling degree days on the 48 contiguous states, ln_ec is -0.0021 (p = 0.711), against -0.0009 (p = 0.880) on the same states without them.
+- **Fang: doesn't reproduce.** Fang's 0.0531 is -0.0188 (p = 0.317) on current SEDS. EIA's October 2023 change to how SEDS counts wind, solar, hydro and geothermal ([notice](https://www.eia.gov/state/seds/seds-change/index.php)) explains the sign, not the full size: on an approximate old basis, 0.0216 (p = 0.287). k = 2.3-2.9 is our approximation of the old accounting, not EIA's. In our final spec, postings are -0.0479 (p = 0.109) and data-center jobs -0.0567 (p = 0.208): neither significant.
 - **EPU moderation: only in Fang's spec.** AI x state EPU is 0.0193 (p = 0.002) there and not significant under two-way FE (p = 0.163).
+- **Net-producer split: depends on the definition.** Our rule gives 120 net-producer state-years against Fang's 76; SEDS total energy gives 40 and SEDS net interstate flow 104. The gap between groups in Fang's spec is significant only on our rule (p = 0.003). Exploratory.
 - **Shift-share IV: uninformative.** KP F = 2.81, below 10. **Broadband and R&D:** no interaction is significant. **Hansen threshold:** not run, dropped by the team.
-- **Georgia solar.** At a 24% learning rate on IEA's Stated Policies path, the arithmetic implies $37.06/MWh in 2035, with a range across cases of $14.51 to $50.40. It starts from $63.81/MWh. These aren't forecasts of ours, and national LCOE has risen since 2022 (49.0 to 61.0), so the curve assumes costs resume falling.
+- **Georgia solar.** At a 24% learning rate on IEA's Stated Policies path (*World Energy Outlook 2025*, Table A.3b, p. 423), the arithmetic implies $37.06/MWh in 2035, with a range across cases, also using Current Policies (Table A.3a, p. 417) and Net Zero Emissions by 2050 (Table A.3c, p. 429), of $14.51 to $50.40. It starts from $63.81/MWh. These aren't forecasts of ours, and national LCOE has risen since 2022 (49.0 to 61.0), so the curve assumes costs resume falling.
 
 ## What we can rule out
 
@@ -57,12 +58,12 @@ So a typical within-state swing in data-center jobs isn't associated with a fall
 
 ## What it means
 
-At the state level over 2015-2025, we don't find that data-center job growth is associated with lower efficiency, higher electricity use or a lower renewable share once timing is taken into account. Neither the "blessing" nor the "peril" holds up in this data. The most useful result is the placebo: associations that look real in a standard panel are explained as well or better by next year's AI, so they're likely about where data-center jobs go. Our main limits are that jobs are a rough proxy for AI power use, states have little within-state variation, and we have no strong instrument. Georgia Power reports commitments from large-load customers of 15,600 MW as of June 2026, up from 3,600 MW at its October 2023 filing. That's the utility's own reporting, and most of that load is scheduled after our sample ends, so these results describe the past, not that build-out.
+At the state level over 2015-2025, we don't find that data-center job growth is associated with lower efficiency, higher electricity use or a lower renewable share once timing is taken into account. Neither the "blessing" nor the "peril" holds up in this data. The most useful result is the placebo: associations that look real in a standard panel are explained as well or better by next year's AI, so they're likely about where data-center jobs go. Our main limits are that jobs are a rough proxy for AI power use, states have little within-state variation, and we have no strong instrument. Georgia Power reports commitments from large-load customers of 15,600 MW as of June 2026, up from 3,600 MW at its October 2023 filing (Q2 2026 Large Load Economic Development Report, filed Aug. 17, 2026, Georgia PSC Docket 55378, PDF p. 8). That's the utility's own reporting, and most of that load is scheduled after our sample ends, so these results describe the past, not that build-out.
 
 ## Status and next steps
 
 - **Done:** data, validation, H1-H3, robustness, Fang test, stretch, Georgia solar, results pack, master workbook.
-- **Pending, needs a person:** Q1-Q4 2024 Georgia large-load reports (browser download from PSC Docket 55378). NOAA degree days weren't obtained; the team chose not to substitute.
+- **Pending, needs a person:** Q1-Q4 2024 Georgia large-load reports (browser download from PSC Docket 55378). Fang's extreme-weather split isn't run.
 - **Next:** team review of the results by Nov 17; draft by Nov 24 from `methods_section.tex` and `findings.md`; turn-in Dec 1. `methods_section.tex` hasn't been compiled here, since no LaTeX is installed.
 
 ## Where things are
@@ -116,11 +117,17 @@ At the state level over 2015-2025, we don't find that data-center job growth is 
 | -0.161 | `results/2026-11-03/h3_mainspec/sdm_impacts.csv` | `h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50` | plugin |
 | 0.035 | `results/2026-11-03/h3_mainspec/sdm_impacts.csv` | `h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50` | p |
 | 71.0 | `results/2026-11-04/robustness/robustness.csv` | `rob_gavins-ne_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025` | estimate |
+| -0.0021 | `results/2026-11-04/robustness/weather_check.csv` | `rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1` | estimate |
+| 0.711 | `results/2026-11-04/robustness/weather_check.csv` | `rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1` | pval |
+| -0.0009 | `results/2026-11-04/robustness/weather_check.csv` | `rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1` | estimate |
+| 0.880 | `results/2026-11-04/robustness/weather_check.csv` | `rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1` | pval |
 | 0.0531 | `Fang et al. 2025, Table 2, col. 6` | `published` |  |
 | -0.0188 | `results/2026-11-04/fang/fang_results.csv` | `fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI` | estimate |
 | 0.317 | `results/2026-11-04/fang/fang_results.csv` | `fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI` | pval |
 | 0.0216 | `results/2026-11-04/fang/fang_results.csv` | `fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI` | estimate |
 | 0.287 | `results/2026-11-04/fang/fang_results.csv` | `fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI` | pval |
+| 2.3 | `our approximation, EXPERIMENTS.md F18` | `published` |  |
+| 2.9 | `our approximation, EXPERIMENTS.md F18` | `published` |  |
 | -0.0479 | `results/2026-11-04/fang/fang_results.csv` | `fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI` | estimate |
 | 0.109 | `results/2026-11-04/fang/fang_results.csv` | `fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI` | pval |
 | -0.0567 | `results/2026-11-04/fang/fang_results.csv` | `fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI` | estimate |
@@ -128,6 +135,10 @@ At the state level over 2015-2025, we don't find that data-center job growth is 
 | 0.0193 | `results/2026-11-04/fang/fang_results.csv` | `fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU` | estimate |
 | 0.002 | `results/2026-11-04/fang/fang_results.csv` | `fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU` | pval |
 | 0.163 | `results/2026-11-04/fang/fang_results.csv` | `fang_mod_twfe-lnEPUS_aipostings_lag1_state-year_cl_lnET_50s2019_2024_AI_x_EPU` | pval |
+| 120 | `results/2026-11-04/fang/net_producer_check.csv` | `fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer` | net_producer_state_years |
+| 40 | `results/2026-11-04/fang/net_producer_check.csv` | `fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer` | net_producer_state_years |
+| 104 | `results/2026-11-04/fang/net_producer_check.csv` | `fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer` | net_producer_state_years |
+| 0.003 | `results/2026-11-04/fang/net_producer_check.csv` | `fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer` | pval |
 | 2.81 | `results/2026-11-04/stretch/stretch.csv` | `stretch_iv_base2015_ai518210_lag1_ctrl4_w9901_cl-state_first_stage_50s2015_2025_KP_F` | estimate |
 | 37.06 | `results/2026-11-04/georgia_solar/projection_long.csv` | `ga_solar_lc_lr24_cap-central_2035` | lcoe_2025usd_mwh |
 | 14.51 | `results/2026-11-04/georgia_solar/projection_long.csv` | `ga_solar_lc_lr45_cap-high_2035` | lcoe_2025usd_mwh |
@@ -155,5 +166,5 @@ At the state level over 2015-2025, we don't find that data-center job growth is 
 | 0.70 | `results/2026-11-04/paper/rule_out.csv` | `fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI` | ci_hi_per_sd |
 | 0.71 | `results/2026-11-04/paper/rule_out.csv` | `rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025` | ci_lo_per_sd |
 | 1.16 | `results/2026-11-04/paper/rule_out.csv` | `rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025` | ci_lo_per_sd |
-| 15,600 | `Georgia Power Q2 2026 large-load report, PDF p. 5` | `published` |  |
-| 3,600 | `Georgia Power Q1 2026 large-load report, PDF p. 8` | `published` |  |
+| 15,600 | `Georgia Power Q2 2026 Large Load Economic Development Report, PSC Docket 55378, PDF p. 8` | `published` |  |
+| 3,600 | `Georgia Power Q2 2026 Large Load Economic Development Report, PSC Docket 55378, PDF p. 8` | `published` |  |

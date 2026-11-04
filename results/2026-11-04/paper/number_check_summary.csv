@@ -33,11 +33,17 @@ number,document,source_file,source_tag,column,in_document,match
 -0.161,project-summary.md,results/2026-11-03/h3_mainspec/sdm_impacts.csv,h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50,plugin,yes,yes
 0.035,project-summary.md,results/2026-11-03/h3_mainspec/sdm_impacts.csv,h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50,p,yes,yes
 71.0,project-summary.md,results/2026-11-04/robustness/robustness.csv,rob_gavins-ne_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025,estimate,yes,yes
+-0.0021,project-summary.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,estimate,yes,yes
+0.711,project-summary.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,pval,yes,yes
+-0.0009,project-summary.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,estimate,yes,yes
+0.880,project-summary.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,pval,yes,yes
 0.0531,project-summary.md,"Fang et al. 2025, Table 2, col. 6",published,,yes,published; check by hand
 -0.0188,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI,estimate,yes,yes
 0.317,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI,pval,yes,yes
 0.0216,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,estimate,yes,yes
 0.287,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,pval,yes,yes
+2.3,project-summary.md,"our approximation, EXPERIMENTS.md F18",published,,yes,published; check by hand
+2.9,project-summary.md,"our approximation, EXPERIMENTS.md F18",published,,yes,published; check by hand
 -0.0479,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI,estimate,yes,yes
 0.109,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI,pval,yes,yes
 -0.0567,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI,estimate,yes,yes
@@ -45,6 +51,10 @@ number,document,source_file,source_tag,column,in_document,match
 0.0193,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU,estimate,yes,yes
 0.002,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU,pval,yes,yes
 0.163,project-summary.md,results/2026-11-04/fang/fang_results.csv,fang_mod_twfe-lnEPUS_aipostings_lag1_state-year_cl_lnET_50s2019_2024_AI_x_EPU,pval,yes,yes
+120,project-summary.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+40,project-summary.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+104,project-summary.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+0.003,project-summary.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,pval,yes,yes
 2.81,project-summary.md,results/2026-11-04/stretch/stretch.csv,stretch_iv_base2015_ai518210_lag1_ctrl4_w9901_cl-state_first_stage_50s2015_2025_KP_F,estimate,yes,yes
 37.06,project-summary.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr24_cap-central_2035,lcoe_2025usd_mwh,yes,yes
 14.51,project-summary.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr45_cap-high_2035,lcoe_2025usd_mwh,yes,yes
@@ -73,5 +83,5 @@ number,document,source_file,source_tag,column,in_document,match
 0.71,project-summary.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,ci_lo_per_sd,yes,yes
 0.54,project-summary.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,ci_hi_per_sd,yes,yes
 1.16,project-summary.md,results/2026-11-04/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,ci_lo_per_sd,yes,yes
-"15,600",project-summary.md,"Georgia Power Q2 2026 large-load report, PDF p. 5",published,,yes,published; check by hand
-"3,600",project-summary.md,"Georgia Power Q1 2026 large-load report, PDF p. 8",published,,yes,published; check by hand
+"15,600",project-summary.md,"Georgia Power Q2 2026 Large Load Economic Development Report, PSC Docket 55378, PDF p. 8",published,,yes,published; check by hand
+"3,600",project-summary.md,"Georgia Power Q2 2026 Large Load Economic Development Report, PSC Docket 55378, PDF p. 8",published,,yes,published; check by hand

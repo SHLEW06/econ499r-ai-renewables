@@ -1,4 +1,6 @@
 number,document,source_file,source_tag,column,in_document,match
+2.3,ECON499R_Results_2026-11-04.pdf,"our approximation, EXPERIMENTS.md F18",published,,yes,published; check by hand
+2.9,ECON499R_Results_2026-11-04.pdf,"our approximation, EXPERIMENTS.md F18",published,,yes,published; check by hand
 -0.0016,ECON499R_Results_2026-11-04.pdf,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,estimate,yes,yes
 0.795,ECON499R_Results_2026-11-04.pdf,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,pval,yes,yes
 0.0022,ECON499R_Results_2026-11-04.pdf,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,estimate,yes,yes
@@ -64,10 +66,27 @@ number,document,source_file,source_tag,column,in_document,match
 0.219,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lead_ai518210_lead1lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,pval,yes,yes
 37.5,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lag_ai518210_lead1lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,estimate,yes,yes
 0.191,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lag_ai518210_lead1lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,pval,yes,yes
+-0.0021,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,estimate,yes,yes
+0.711,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,pval,yes,yes
+-0.0009,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,estimate,yes,yes
+0.880,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,pval,yes,yes
+0.001,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_hdd_k,pval,yes,yes
+"3,412",ECON499R_Results_2026-11-04.pdf,EIA SEDS change notice,published,,yes,published; check by hand
 0.0342,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/fang_results.csv,fang_rep_c2-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,estimate,yes,yes
 0.025,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/fang_results.csv,fang_rep_c2-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,pval,yes,yes
 0.0216,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/fang_results.csv,fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,estimate,yes,yes
 0.287,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/fang_results.csv,fang_rep_c6-ffe26_aipostings_contemp_state_iid_lnET_k_51s2018_2021_AI,pval,yes,yes
+11.79,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_1,mean_lnET,yes,yes
+11.78,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_4,mean_lnET,yes,yes
+11.90,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_6,mean_lnET,yes,yes
+11.44,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_3,mean_lnET,yes,yes
+120,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+40,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+104,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+0.0864,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/fang_results.csv,fang_inter_fang-net_producer_aipostings_contemp_state_iid_lnET_51s2018_2021_difference_high_minus_low,estimate,yes,yes
+0.003,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/fang_results.csv,fang_inter_fang-net_producer_aipostings_contemp_state_iid_lnET_51s2018_2021_difference_high_minus_low,pval,yes,yes
+0.316,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,pval,yes,yes
+0.177,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer,pval,yes,yes
 2.81,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/stretch/stretch.csv,stretch_iv_base2015_ai518210_lag1_ctrl4_w9901_cl-state_first_stage_50s2015_2025_KP_F,estimate,yes,yes
 63.81,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/georgia_solar/base_cost.csv,{'area': 'Georgia'},lcoe_capacity_weighted,yes,yes
 17,ECON499R_Results_2026-11-04.pdf,results/2026-11-04/georgia_solar/base_cost.csv,{'area': 'Georgia'},n_projects,yes,yes

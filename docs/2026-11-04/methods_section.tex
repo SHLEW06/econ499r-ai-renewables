@@ -45,6 +45,8 @@ We add $AI^2$ and use a Lind-Mehlum test, which requires the slope to change sig
 \subsection{Timing tests}
 A next-year placebo replaces $AI_{s,t-1}$ with $AI_{s,t+1}$. Next year's AI cannot affect this year's outcome, so a significant coefficient indicates reverse timing or selection. We also put both in one model. A shift-share instrument interacts each state's 2015 share of national NAICS 518210 jobs with national growth excluding that state; we report the first stage, the reduced form and the Kleibergen-Paap statistics, and treat the instrument as uninformative if the first-stage $F$ is below 10.
 
+One check adds NOAA heating and cooling degree days to the $\ln EC$ model, on the 48 contiguous states, beside the same sample without them.
+
 \subsection{Mediation}
 We use the three-step approach of Zhang et al.\ (2026), with a mediator $M$:
 \begin{align}
@@ -67,8 +69,10 @@ We also estimate Fang, Lee and Li's equation on their variables, all in logs:
 \end{equation}
 We then change one thing at a time: add year effects, lag AI, cluster by state, extend the sample and drop DC. We run two AI measures side by side: AI job postings, Fang's measure, and data-center jobs. Data-center jobs are one consistent BLS series and the more reliable extension measure. Almost every postings year comes from a different AI Index edition, so a state's year-to-year change mixes real change with method changes; year effects remove only shifts that hit all states proportionally. EIA also changed how SEDS counts wind, solar, hydro and geothermal in October 2023, so we show an approximate rebuild of the earlier basis.
 
+EIA changed how SEDS counts wind, solar, hydro and geothermal in October 2023, from the 2022 data cycle and for all years (\texttt{eia.gov/state/seds/seds-change/index.php}). So the replication also rebuilds renewables on an approximate old basis, biomass plus $k$ times the other four. The range $k = 2.3$--$2.9$ is our approximation of the old accounting, not EIA's.
+
 \subsection{Georgia solar costs}
-For Georgia we apply the learning curve of Bolinger, Wiser and O'Shaughnessy (2022), $C_t = C_{\mathrm{base}} (X_t / X_{\mathrm{base}})^{b}$ with $b = \ln(1 - LR) / \ln 2$, where $X$ is global cumulative solar capacity. Capacity paths use the growth in the International Energy Agency's World Energy Outlook 2025 scenarios. This module has no AI variable, and its results are arithmetic rather than forecasts; learning curves are correlations.
+For Georgia we apply the learning curve of Bolinger, Wiser and O'Shaughnessy (2022), $C_t = C_{\mathrm{base}} (X_t / X_{\mathrm{base}})^{b}$ with $b = \ln(1 - LR) / \ln 2$, where $X$ is global cumulative solar capacity. Capacity paths use the growth in the International Energy Agency's World Energy Outlook 2025, Annex A: Current Policies (Table A.3a, p.\ 417), Stated Policies (Table A.3b, p.\ 423) and Net Zero Emissions by 2050 (Table A.3c, p.\ 429). This module has no AI variable, and its results are arithmetic rather than forecasts; learning curves are correlations.
 
 \subsection{Why our design differs}
 \paragraph{From the memo.} We report spatial impacts rather than the W$\cdot$AI coefficient, use the tech share as the main mediator, add $AI^2$, interactions, dynamics, a placebo and a spillover placebo, use BEA population throughout, and take land area and centroids from the 2020 Gazetteer.
