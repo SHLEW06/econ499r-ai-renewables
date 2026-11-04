@@ -1,0 +1,13 @@
+state_panel_2015_2025.csv: DIFFERENT
+W_inverse_distance_rowstd.csv: byte-identical
+W_distance_miles.csv: byte-identical
+W_border_binary.csv: byte-identical
+state_centroids_land.csv: byte-identical
+cells compared: 43,758 (78 non-key columns x 561 rows)
+blank cells: before 216, after 220
+changed cells: 4; columns changed: ['dc_wages_usd']
+state  year       column  before  after
+   AK  2025 dc_wages_usd     0.0    NaN
+   ND  2025 dc_wages_usd     0.0    NaN
+   SD  2025 dc_wages_usd     0.0    NaN
+   WY  2025 dc_wages_usd     0.0    NaN

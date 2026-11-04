@@ -10,7 +10,7 @@ from openpyxl.styles import Font, PatternFill
 
 TABS = [("RPS Targets", "lbnl_rps_targets.csv"), ("ACS Broadband", "acs_broadband.csv"), ("EPU Annual", "epu_state_annual.csv"),
         ("NSF State RD", "nsf_state_rd.csv"), ("OWID Solar", "owid_global_solar_capacity.csv"), ("LBNL Solar Projects", "lbnl_utility_solar.csv"),
-        ("Epoch by State", "epoch_ai_campuses_by_state.csv")]
+        ("Epoch by State", "epoch_ai_campuses_by_state.csv"), ("AI All Ownerships", "ai_allown_518210.csv")]
 SOURCES = [
  ("LBNL RPS and CES targets and achievement (June 2026)", "https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0", "LBNL current RPS/CES schedule; see data/receipts/lbnl_rps.md"),
  ("LBNL Utility-Scale Solar, 2026 Edition", "https://eta-publications.lbl.gov/publications/us-utility-scale-solar-2026-edition", "Individual_Project_Data tab"),

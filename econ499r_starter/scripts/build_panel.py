@@ -114,7 +114,8 @@ for y in range(2014, Y1 + 1):
                      'tech5415_suppressed': int(len(i) == 0 or str(i.disclosure_code.iloc[0]) == 'N'),
                      'total_jobs': t.annual_avg_emplvl.iloc[0] if len(t) else np.nan})
 q = pd.DataFrame(rows).set_index(['state', 'year'])
-q.loc[q.dc_suppressed == 1, 'dc_jobs'] = np.nan
+# BLS shows suppressed cells as 0; they must be blank, with dc_suppressed = 1.
+q.loc[q.dc_suppressed == 1, ['dc_jobs', 'dc_wages_usd']] = np.nan
 q.loc[q.tech5415_suppressed == 1, 'tech5415_jobs'] = np.nan
 P = P.join(q)
 P['ai_dc_per1000'] = 1000 * P.dc_jobs / P.total_jobs

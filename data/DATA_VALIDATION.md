@@ -109,6 +109,10 @@ All 6 variables across all 11 years match within 0.001 — consistent with the r
 
 ---
 
+### C.1b rerun, 2026-11-04: `dc_wages_usd` fix
+
+The four suppressed 2025 cells (AK, ND, SD, WY) showed `dc_wages_usd` = 0. They are now blank, with `dc_suppressed` = 1, matching `dc_jobs`. Comparing the builds before and after, with no tolerance, across 43,758 cells: **those 4 cells are the only differences.** Blank cells went from 216 to 220. All W and centroid files are byte-identical. Log: `logs/2026-11-04/c1b_dc_wages.log`. `dc_wages_usd` isn't used in any model.
+
 ## C.2 Right numbers
 
 ### EIA generation internal consistency
