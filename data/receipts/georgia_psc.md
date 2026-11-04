@@ -69,3 +69,18 @@ Cite as: Georgia Power Company, *2025 Integrated Resource Plan*, filed with the 
 
 `download_all.py` fetches the five files listed above. Manual browser download required for
 Q2 2026 report and appendices.
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 8 files.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/georgia/2023_IRP_Update_Main_Document.pdf` | 1,266,719 | `90385754caee266cc4ff0a34d8e90c75ef2963332513cb8f057dd32ef3d23922` |
+| `data/raw/georgia/2025_IRP_Main_Document.pdf` | 3,038,316 | `0ff3f6e87e2d8b28abb39776d1ac5cc420818b872b407faeba4e5ee94b56225c` |
+| `data/raw/georgia/2025_IRP_TOC.pdf` | 152,920 | `88ab1c93cb6ea2d70a3ab0747cbe90a45e34d7f41ae5d17428f62a77aa0f1cab` |
+| `data/raw/georgia/2025_IRP_one_page_summary.pdf` | 141,915 | `45ce3cf13152482cb678d416e0dd9ac2fad59e77bf7cc2a67acb02393d1d32c9` |
+| `data/raw/georgia/LargeLoad_Report_Q1_2026.pdf` | 841,648 | `5dfc4c931f75509f93ed7dc1b44307ddf613aa0f4397914b1330ab34aca703de` |
+| `data/raw/georgia/dkt55378_large_load_report_q1_2026_attachment.xlsx` | 42,604 | `8c1e4da55b10b83643dc5fb8d9dc77d530368448c1bb613469ee0df38b96f0b9` |
+| `data/raw/georgia/dkt55378_large_load_report_q2_2026.zip` | 1,192,071 | `52f89780cef574bfa888515a2d4a4b0e8366ac2cd4e30d29b95327ff0eb0ff55` |
+| `data/raw/georgia/irp_2025_public_disclosure.zip` | 103,717,722 | `d72ddb87723475599f575acbef01438b08f5aacdf712e5f8fcb653d3ff9cbe6a` |

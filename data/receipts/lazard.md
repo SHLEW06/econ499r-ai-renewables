@@ -21,3 +21,11 @@ PDF reference document — not parsed by a script. Consulted manually for:
 ## Output
 
 Used as a citation and cost benchmark in the Georgia case box and methods writeup. No CSV output.
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 1 file.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/costs/Lazard_LCOEplus_2026.pdf` | 1,181,395 | `a541d1ecd2e837fb779a6370c76336d899216fc4439e2a8b7b93cb1d046f25b5` |

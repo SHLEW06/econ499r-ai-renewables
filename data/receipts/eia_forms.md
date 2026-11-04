@@ -78,3 +78,14 @@ future plant-level analysis.
 ## Script
 
 `download_all.py --with-eia-forms` fetches the four files. No processing script yet.
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 4 files.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/eia_forms/eia8602025.zip` | 23,622,347 | `2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba` |
+| `data/raw/eia_forms/f8612025.zip` | 4,756,816 | `f59f6c732bf685fe0a1591b32227f5ce572dc0dfd26bb5caaeed128ac4e3a396` |
+| `data/raw/eia_forms/f923_2025.zip` | 23,340,452 | `1bff7092a86f6678c069c986829da5a23104048fc1aafb65b0776e3c904284de` |
+| `data/raw/eia_forms/september_generator2026.xlsx` | 14,013,970 | `bcef74e1af991680731aeecfda967f5950db4ce739bb584edd8b8774c7e6da17` |

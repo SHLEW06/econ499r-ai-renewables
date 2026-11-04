@@ -85,3 +85,13 @@ and all its neighbors.
 ## Script
 
 `scripts/build_panel.py` (Census/spatial section), after `download_all.py`.
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 3 files.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/census/2020_Gaz_counties_national.txt` | 647,629 | `0f309672a9aa8b1bd34cbcb62d84e7e1bdbb91ceb977f1cbc9d25ab85668c13f` |
+| `data/raw/census/county_adj.txt` | 1,116,106 | `df62fedd7d27528af7fd870c7ec92232fb2d6bea3ec6cbc9928946b78e128f64` |
+| `data/raw/census/gaz_counties.zip` | 141,524 | `02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef` |

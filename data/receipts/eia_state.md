@@ -89,3 +89,15 @@ So `new_renew_mw` carries false changes of 132.3 MW: NE down and SD up in 2016, 
 ## Script
 
 `scripts/build_panel.py` (EIA electricity section), after `download_all.py`.
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 5 files.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/eia/HS861_2010-.xlsx` | 487,659 | `e4c74d03f4a6b8c68045e3d2d3392b81bb5230f5d9989edd3c7046611092af16` |
+| `data/raw/eia/annual_generation_state.xlsx` | 2,681,286 | `678535c21b30c98bb1dc27632ec12db1beb3687f3bb524e4c8850f7d89fe71a1` |
+| `data/raw/eia/emission_annual.xlsx` | 2,108,776 | `cc481709f244412561b9bd65b7363ef204c92a91cf091f51f5c08397f9b9cdc1` |
+| `data/raw/eia/existcapacity_annual.xlsx` | 2,609,961 | `5d0958ccf4445e7b9f10f1511476080b43b9e26ac8b050af51d30eef6ea19172` |
+| `data/raw/eia/plancapacity_annual.xlsx` | 40,162 | `fa7ae104ab002ad8f3af03b5ef2f098eb40a7e856ec8fe579d0bc2bd15c04f98` |

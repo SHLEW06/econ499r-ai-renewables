@@ -1,0 +1,76 @@
+# Data receipts: index and rebuild steps
+
+Each receipt records a source's link, files, SHA-256 hashes, what was kept, steps, row counts and checks. Validation ratings are in `data/DATA_VALIDATION.md`. Every raw file is listed in `data/FILE_INVENTORY.csv`.
+
+## Where things are
+
+| Looking for | Where it actually is |
+|---|---|
+| **Codebook** | The `Codebook` tab of `outputs/ECON499R_Data_Workbook_2026-11-04.xlsx`. Definitions are written in `econ499r_starter/scripts/build_xlsx.py`. There's no `data/codebook.csv`. New side-table columns are defined in their receipts |
+| **Cleaning code** | `econ499r_starter/scripts/build_panel.py` builds the panel. `build_side_tables_nov4.py` and `build_ai_allown.py` build the side tables. There's no `code/python/clean/` |
+| **Methods Memo** | `notes/Methods_Memo_AI_Renewable_Energy_US_Test_Zhang_2026.pdf`. A byte-identical copy is `econ499r_starter/reference/Methods_Memo.pdf`. There's no `admin/` folder |
+| **Download script** | `econ499r_starter/download_all.py`, not under `scripts/` |
+| **Registered deviations from the memo** | `EXPERIMENTS.md` §0; proposed wording in `docs/2026-11-02/memo-corrections.md` |
+
+## Index
+
+### Phase 2 sources (master panel and finance tables)
+| Receipt | Source | Raw folder | Used for |
+|---|---|---|---|
+| [eia_state.md](eia_state.md) | EIA state generation, capacity, sales, emissions | `data/raw/eia/` | Panel |
+| [eia_seds.md](eia_seds.md) | EIA SEDS | `data/raw/eia/seds/` | Panel, `seds_mmbtu_pc` |
+| [eia_forms.md](eia_forms.md) | EIA Forms 860, 861, 923 | `data/raw/eia_forms/` | Reference; identifies 2017 blank-fuel rows |
+| [bls_qcew.md](bls_qcew.md) | BLS QCEW NAICS 518210, 5415, 10 | `data/raw/bls/` | Panel; all-ownership check |
+| [bea.md](bea.md) | BEA state GDP and personal income | `data/raw/bea/` | Panel |
+| [census.md](census.md) | Census Gazetteer and county adjacency | `data/raw/census/` | Panel, W matrices |
+| [ferc_pudl.md](ferc_pudl.md) | FERC Form 1 via PUDL | `data/raw/pudl/` | Finance tables |
+| [rmi.md](rmi.md) | RMI Utility Transition Hub | `data/raw/rmi/` | Optional finance |
+| [lazard.md](lazard.md) | Lazard LCOE+ | `data/raw/costs/` | Georgia case box |
+| [georgia_psc.md](georgia_psc.md) | Georgia Power IRP and large-load filings | `data/raw/georgia/` | Georgia case box |
+
+### Added Nov 4 (side tables in `data/`; the panel doesn't use them)
+| Receipt | Source | Raw folder | Output |
+|---|---|---|---|
+| [lbnl_rps.md](lbnl_rps.md) | LBNL current RPS/CES schedule, target achievement | `data/raw/lbnl/` | `lbnl_rps_targets.csv` |
+| [lbnl_solar.md](lbnl_solar.md) | LBNL Utility-Scale Solar | `data/raw/lbnl/` | `lbnl_utility_solar.csv` |
+| [owid.md](owid.md) | IRENA solar capacity via OWID | `data/raw/owid/` | `owid_global_solar_capacity.csv` |
+| [epu.md](epu.md) | State EPU | `data/raw/epu/` | `epu_state_annual.csv` |
+| [nsf.md](nsf.md) | NSF National Patterns Table 10 | `data/raw/nsf/` | `nsf_state_rd.csv` |
+| [acs.md](acs.md) | ACS S2801 broadband | `data/raw/acs/` | `acs_broadband.csv` |
+| [epoch.md](epoch.md) | Epoch AI data centers (context only) | `data/raw/epoch/` | `epoch_ai_campuses_by_state.csv` |
+| [noaa.md](noaa.md) | NOAA degree days: **not done** | none | none |
+
+## Rebuild steps (from the project root)
+
+`data/raw/` is read-only. These commands rebuild everything derived from it; they don't change raw files, except that steps marked *download* add files.
+
+```bash
+S=econ499r_starter/scripts
+
+# 1. Master panel, W matrices, centroids (about 30 seconds)
+python3 -I $S/build_panel.py data/raw data/out
+
+# 2. Finance tables and preliminary results, used by the workbook
+python3 -I $S/ferc_fin.py data/raw/pudl data/out
+python3 -I $S/prelim.py data/out
+# SEC needs the SEC_USER_AGENT environment variable: sec_fin.py <cache_dir> <out_csv>
+
+# 3. Side tables
+python3 $S/download_nsf_tab10.py data/raw/nsf                # download
+python3 $S/download_acs_broadband.py .env data/raw/acs data/acs_broadband.csv logs/2026-11-04/acs_spot_check.csv   # download; key from .env only
+python3 $S/check_rps_vintages.py "data/raw/lbnl/RPS & CES Targets and Demand_June 2026.xlsx" <scratch_dir> logs/2026-11-04/rps_vintage_check.csv
+python3 $S/build_side_tables_nov4.py data/raw data logs/2026-11-04/rps_vintage_check.csv data/out/state_panel_2015_2025.csv
+python3 $S/build_ai_allown.py data/raw data/out/state_panel_2015_2025.csv data/ai_allown_518210.csv logs/2026-11-04/gov_518210_shares.csv
+
+# 4. Inventory and workbook
+python3 $S/build_file_inventory.py data/raw logs/2026-11-04/raw_sha256_manifest.csv data/FILE_INVENTORY.csv
+python3 -I $S/build_xlsx.py data/out <scratch_dir>/wb_base.xlsx
+python3 $S/add_side_tabs_nov4.py <scratch_dir>/wb_base.xlsx data outputs/ECON499R_Data_Workbook_2026-11-04.xlsx
+
+# 5. Compare two builds, cell by cell (C.1b)
+python3 $S/compare_panel_builds.py <before_dir> data/out <out_csv>
+```
+
+## Checking raw files
+
+`logs/2026-11-04/raw_sha256_manifest.csv` is the audit's baseline of 1,664 files. `build_file_inventory.py` stops if any of them has changed or is missing. Files added later carry their hashes in their own receipts and in `data/FILE_INVENTORY.csv`.

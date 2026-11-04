@@ -94,3 +94,15 @@ PUDL produces both `reported_value` and `calculated_value` columns for some fiel
 ## Script
 
 `scripts/ferc_fin.py`, after `download_all.py`.
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 5 files.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/pudl/out_eia__yearly_utilities.parquet` | 1,678,289 | `cb8298ee84242808dadeae309bd398b256f64804881ac444230d681ecaf8e276` |
+| `data/raw/pudl/out_ferc1__yearly_all_plants.parquet` | 7,799,175 | `a5c3085527e70e6e721e6de3243dcc49ae7fd0a003b79e263aea0d55616a856a` |
+| `data/raw/pudl/out_ferc1__yearly_income_statements_sched114.parquet` | 2,668,969 | `e586a147267ad9a02ac1cae3137d3acd53dfab1e630fdb22855068ac1ba99efe` |
+| `data/raw/pudl/out_ferc1__yearly_plant_in_service_sched204.parquet` | 6,142,375 | `de406e1cfdee90cbdca1e5f1c70c808a5e72a8a0fda89530c57a991bb1f23e82` |
+| `data/raw/pudl/out_ferc1__yearly_steam_plants_fuel_by_plant_sched402.parquet` | 1,052,704 | `4fa8fce9462f109ac8372eda4385b3f36ac63a14386a70f97f8dd7438876606a` |

@@ -23,3 +23,11 @@ Ends 2024. Covers all energy end uses, not just electricity — it is the paper-
 ## Output columns
 
 seds_total_energy_bbtu, seds_mmbtu_pc in data/out/state_panel_2015_2025.csv
+
+## Raw file hashes
+
+From `logs/2026-11-04/raw_sha256_manifest.csv`, recomputed 2026-11-04: 1 file.
+
+| File | Bytes | SHA-256 |
+|---|---:|---|
+| `data/raw/eia/seds/use_all_btu.csv` | 4,277,144 | `cbf0e26022e90303d355856ce750eaeedcb1cc6642c01c8b21f46d0284a9cedc` |
