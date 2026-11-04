@@ -7,7 +7,7 @@ from openpyxl.utils import get_column_letter as L, column_index_from_string as C
 ap = argparse.ArgumentParser(); ap.add_argument("--date", required=True); ap.add_argument("--skip-urls", action="store_true"); ap.add_argument("--tmp", default=None); a = ap.parse_args()
 XL = f"outputs/ECON499R_Master_Data_{a.date}.xlsx"; T = a.tmp or tempfile.mkdtemp(); CH = []
 def chk(name, ok, ev, rating=None): CH.append(dict(check=name, result="ok" if ok else "PROBLEM", evidence=ev)); print(("ok      " if ok else "PROBLEM ") + name + ": " + str(ev)[:300], flush=True)
-t0 = time.time(); subprocess.run(["/opt/homebrew/bin/soffice", "--headless", "--calc", "--convert-to", "xlsx:Calc MS Excel 2007 XML", "--outdir", T, XL], check=True, capture_output=True, timeout=1500)
+t0 = time.time(); subprocess.run([shutil.which("soffice") or sys.exit("soffice not found"), "--headless", "--calc", "--convert-to", "xlsx:Calc MS Excel 2007 XML", "--outdir", T, XL], check=True, capture_output=True, timeout=1500)
 RC = os.path.join(T, os.path.basename(XL)); print("recalculated in", int(time.time() - t0), "s", round(os.path.getsize(RC) / 1e6, 1), "MB", flush=True)
 wb = openpyxl.load_workbook(RC, data_only=True); wf = openpyxl.load_workbook(XL)  # wf: pre-recalc, for what was intended
 # ---- formula errors, emails, key ----
