@@ -31,5 +31,5 @@
 
 ## Checks
 - 561 rows, no duplicate keys.
-- Fang's sample is complete: 204 of 204 state-years in 2018-2021 have all of his variables.
+- Fang's sample is complete: 204 of 204 state-years in 2018-2021 have all of the paper's variables.
 - Coverage by variable and year: `logs/2026-11-04/fang_coverage.csv`.

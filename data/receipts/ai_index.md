@@ -23,7 +23,7 @@
 | `postings` | AI job postings |
 | `share_pct` | State's share of U.S. AI postings |
 | `share_source` | `published` for 2022-2025; `derived: state / sum of 51` for 2018-2021, because those editions publish no such table |
-| `ai_share_of_state_postings_pct` | AI's share of that state's own postings, in percent. A different measure. 2018 is rounded to 1 decimal |
+| `ai_share_of_state_postings_pct` | AI's share of that state's own postings, in percent. A different measure |
 | `vintage` | Break group: each edition is its own group, and 2019-2021 is the only multi-year group |
 | `figure`, `page` | Where the value is. Page is the PDF page. Blank for 2019-2020, which no report prints |
 
@@ -48,7 +48,7 @@
 2. Read the sheets. Drop territories to leave 51 areas.
 3. Set `share_pct` as published where available, otherwise state / sum of 51.
 
-**Rows:** sheets have 53 to 57 areas per year; PDFs 51. Output 51 per year.
+**Rows:** sheets have 51 to 57 areas per year; PDFs 51. Output 51 per year.
 
 ## Checks (`logs/2026-11-04/ai_postings_checks.csv`)
 - **51 rows per year:** pass.
@@ -87,7 +87,7 @@ SD across states of the year-to-year change in ln(state share).
 | 2023->2024 | 2024->2025 | +43% | 0.200 | 0.062 |
 | 2024->2025 | 2025->2026 | +51% | 0.195 | 0.077 |
 
-Postings shares move 2 to 3 times as much as data-center jobs in nearly every step, **including same-edition steps** (0.174 and 0.217). Steps across editions are somewhat larger on average (0.227 against 0.195). So postings are noisy at the state level for more reasons than edition changes, and small states drive the largest moves.
+Postings shares move 1.3 to 3.2 times as much as data-center jobs in every step, **including same-edition steps** (0.174 and 0.217). Steps across editions are somewhat larger on average (0.227 against 0.195). So postings are noisy at the state level for more reasons than edition changes, and small states drive the largest moves.
 
 **Rating: yellow.**
 
