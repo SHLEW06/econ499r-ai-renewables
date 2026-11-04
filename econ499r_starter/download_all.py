@@ -6,7 +6,7 @@ Usage:
     python download_all.py --with-eia-forms  # also EIA-860/860M/923/861 plant- and utility-level zips (~80 MB)
 
 Environment variables (optional):
-    SEC_USER_AGENT   e.g. "Shunji Lewandowski your.email@emory.edu"  (SEC asks for a name and email)
+    SEC_USER_AGENT   set this yourself; SEC asks for a name and contact address (no default here)
     CENSUS_KEY       free key from https://api.census.gov/data/key_signup.html (broadband table)
 
 Files land in ./raw/ in the layout scripts/build_panel.py and scripts/ferc_fin.py expect.
