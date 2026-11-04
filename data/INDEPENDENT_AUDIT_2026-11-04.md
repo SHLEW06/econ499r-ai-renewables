@@ -1,5 +1,7 @@
 # Independent data audit, 2026-11-04
 
+> **This was a self-check, not an independent review.** It ran in the same working session as the Phase 4d and 4e analysis, by the same assistant. Treat it as a careful self-check; an outside reviewer has not looked at this work. The file name is kept so existing references still work. Added 2026-11-04.
+
 **Result: every sampled value checked is correct, and no raw file changed. The issues are in decisions and documentation.** All 30 sampled cells match the raw files. The 25 cells with a same-measure published value also match the agency's number, apart from published rounding. Three cells could only be checked on a different capacity measure, and two real GDP cells could not be checked online.
 
 The issues that matter most:
