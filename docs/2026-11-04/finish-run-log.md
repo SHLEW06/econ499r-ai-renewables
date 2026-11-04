@@ -26,3 +26,5 @@ Started 2026-11-04. Resume from the first section not marked done.
 
 ## Fixes before push (Nov 4, after the run)
 Five team fixes, and four corrections found while tracing: `docs/2026-11-04/fixes-before-push.md`. PDF, findings, summary, workbook, team zip and GitHub copy rebuilt. Nothing pushed.
+
+Final sizes: workbook 28.1 MB, 63 tabs, 949 registry rows, all 16 checks pass, 64 of 64 URLs open. PDF 12 pages, 16 tables, 8 figures, 93 numbers match, 5 published or typed figures cited. Team folder 50.8 MB, zip 38.0 MB, 283 files. GitHub copy 335 files, 16.7 MB, one commit, no remote.
