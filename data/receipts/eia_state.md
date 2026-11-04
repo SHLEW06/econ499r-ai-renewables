@@ -79,7 +79,7 @@ Gavins Point Dam (plant 6624, 132.3 MW hydro, on the NE-SD border) is counted in
 | NE `cap_hydro_mw` | 332.3 | 200.0 | 200.0 | 332.3 |
 | SD `cap_hydro_mw` | 1,602.1 | 1,734.4 | 1,734.4 | 1,602.1 |
 
-So `new_renew_mw` carries false changes of 132.3 MW: NE down and SD up in 2016, NE up and SD down in 2018. The panel follows EIA's file as published. The team hasn't decided whether to adjust this.
+So `new_renew_mw` carries false changes of 132.3 MW: NE down and SD up in 2016, NE up and SD down in 2018. The panel follows EIA's file as published (team decision, 2026-11-04). A labeled 4e row holds the plant in NE in every year and changes nothing: 71.0 vs 70.8 MW, both p = 0.033.
 
 ## Output Columns
 

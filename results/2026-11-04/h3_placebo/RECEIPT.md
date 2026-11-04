@@ -19,7 +19,7 @@ Driver: `code/R/04e2_spillover_placebo.R --date 2026-11-04`. Spec: EXPERIMENTS.m
 
 ## How to read the SDM rows
 - **Use the percentile CIs (`ci_lo`, `ci_hi`) where `rho_draws_out` is above 0.** The draw SEs and `p` are then dominated by draws with rho outside its valid range. That applies to every invdist-50 row (255-694 of 2,000 draws) and to border-48 `ln_ec`. They're reliable for border-48 `ln_ee` and `renew_share`, where no draws fall outside.
-- **rho is less precise on this sample.** Its SE is listed in `placebo_sdm_core.csv`.
+- **rho is much less precise on this sample on invdist-50.** For renew_share, its SE is 0.743 at N = 450, against 0.075 at N = 550 (`placebo_sdm_core.csv`).
 
 ## Results
 - **Dropping 2024-2025 alone removes the main-spec renew_share spillover.** Indirect effect on invdist-50: -0.161 (N = 550, CI excludes 0) becomes -0.082 (N = 450, CI -0.588 to 0.447).

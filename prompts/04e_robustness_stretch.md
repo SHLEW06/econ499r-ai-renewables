@@ -31,6 +31,8 @@ Rerun the Step 1 core models (ln_ec, ln_ee, renew_share) with these changes:
 7. **Spec curve also covers new_renew_mw.** Include it raw and per 1,000 MW of 2015 capacity, since it is the only positive raw-MW result and it isn't robust to scaling (4b).
 
 ## B. Stretch goals (only after A is done; check the time first)
+**Order set 2026-11-04:** the Fang test first, then B2 (shift-share IV), then broadband and R&D moderation. B3 (Hansen threshold) is dropped. Broadband uses 2016-2024, without 2015 and 2020. See EXPERIMENTS.md section 0 items 22 and 30.
+
 1. **Moderation, following the paper's equation 8 (p. 6503), with each moderator's main effect:**
    - AI x broadband share (ACS S2801; years available only, and no 2020)
    - AI x R&D share of GDP (NSF Table 10, 2017-2023 only; restrict the sample and say so)

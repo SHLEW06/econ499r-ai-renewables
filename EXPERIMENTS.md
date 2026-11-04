@@ -58,7 +58,7 @@ These are confirmed choices embedded in the panel, not model deviations.
 | Fossil includes Other Gases | Yes | 0.34% of fossil; matches EIA source structure |
 | Renewable = utility-scale only | Yes | Rooftop not in EIA state generation file |
 | NE and NM 2017 blank-fuel capacity | Not reassigned | Natural gas per EIA-860 2017 (Rokeby 2-3; Hobbs CHW-T), so not renewable. `data/receipts/eia_state.md` |
-| Gavins Point in `new_renew_mw` | Left as EIA publishes it; **open question** | 132.3 MW hydro moves between NE and SD: false changes in 2016 and 2018 |
+| Gavins Point in `new_renew_mw` | Left as EIA publishes it (team decision; §0 item 29) | 132.3 MW hydro moves between NE and SD: false changes in 2016 and 2018. Holding it in NE changes nothing (71.0 vs 70.8 MW) |
 | Validation verdict | 0 red, 3 yellow, 17 green | Full detail: data/DATA_VALIDATION.md |
 
 ---
@@ -343,6 +343,13 @@ Follows `prompts/04e_robustness_stretch.md`. Core outcomes = ln_ec, ln_ee, renew
 | A8: Conley SEs | Re-run §1; `fixest` Conley from state centroids, 500 and 1,000 km | all core, new_renew_mw | — | Labeled check (§0 item 17) |
 | P1: Distributed lags | AI t−1, t−2, t−3 and their sum with delta-method SE; lags built from ai_dc_per1000_lag1 so 2014 is usable | all core, new_renew_mw | — | 2017–2025; N = 450. t−1 alone on the same sample shown beside it (§0 item 14) |
 | P2: Corrected long difference | ΔY 2015→2025 on ΔAI 2014→2024 + Δcontrols; heteroskedasticity-robust SEs | all core | — | N = 50 (§0 item 19) |
+
+### Readings (team, 2026-11-04)
+
+- **renew_share:** next year's AI predicts this year's share, and with both in one model the lag is about zero. Describe the negative association as reflecting where and when data-center jobs grow (reverse timing or selection), not AI lowering the renewable share.
+- **new_renew_mw:** positive in raw MW, not robust to scaling, and its lead is also positive. With both in one model, neither is significant. Same caution.
+- **H3:** wording on hold. The spillover placebo is in (`results/2026-11-04/h3_placebo/`); the team hasn't settled the wording.
+- **RPS control and all-ownership AI:** they change no result.
 
 **Output path:** `results/<date>/robustness/`  
 **Method tags:** `rob_<spec>_ai518210_<lag>_ctrl4_w9901_cl-state_<outcome>_<sample>`  

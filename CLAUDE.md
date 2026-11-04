@@ -112,11 +112,17 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - splm cross-check: b1 and θ1 match SDPDm LYtrans=FALSE to 5 d.p. — passes
 - **H3 verdict (main spec: SDM, LYtrans=FALSE, invdist-50):** borderline: the renew_share spillover is negative (indirect −0.161) with p = 0.035 in the main spec, and p between about 0.03 and 0.09 across the other SDM versions and border W; in the SLX, θ1 has p about 0.11–0.12 and the total has p about 0.06–0.07. No spillover for ln_ec or ln_ee in the main spec.
 
-**Phase 4e robustness done (2026-11-04):** gate, A1-A8, P1, P2, RPS control and all-ownership row (`code/R/04e_robustness.R`, `results/2026-11-04/robustness/`, `notebooks/04e_robustness_stretch.ipynb`). The AI(t+1) placebo is significant for renew_share (p = 0.006), and in one model the lead keeps the effect while the lag is about zero. RPS control (label: "LBNL current RPS/CES schedule") barely moves the AI coefficient; nor does adding government jobs.
+**Phase 4e robustness done (2026-11-04):** gate, A1-A8, P1, P2, RPS control, all-ownership AI, Gavins Point row and spillover placebo (`code/R/04e_robustness.R`, `code/R/04e2_spillover_placebo.R`, `results/2026-11-04/`, `notebooks/04e_robustness_stretch.ipynb`, `docs/2026-11-04/phase-4e-robustness-stretch.md`).
+
+**Readings (team, 2026-11-04; these override the H1 and H3 wording above):**
+- **renew_share:** next year's AI predicts this year's share (p = 0.006), and with both in one model the lag is about zero. Describe the negative association as reflecting where and when data-center jobs grow (reverse timing or selection), not AI lowering the renewable share.
+- **new_renew_mw:** positive in raw MW, not robust to scaling, and its lead is also positive. With both in one model, neither is significant. Same caution.
+- **H3:** wording on hold. Spillover placebo is in; the team hasn't settled the wording.
+- **RPS control and all-ownership AI:** they change no result. Holding Gavins Point in NE doesn't either.
 
 **Data corrections (2026-11-04):** `dc_wages_usd` is blank where suppressed (only change in the panel; SDM and other results stand). D23, receipts and C.6 corrected. See `data/receipts/README.md`.
 
-**Next step:** Phase 4e stretch goals (`prompts/04e_robustness_stretch.md`), after team decision. Target 2026-11-17. The 4e handoff is written at phase end. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
+**Next step:** the Fang test, then shift-share IV, then broadband and R&D moderation. The Hansen threshold is dropped (`EXPERIMENTS.md` §0 item 30). Target 2026-11-17. Full-sample t-3 lags are dropped; see `EXPERIMENTS.md` §0 item 14.
 
 ---
 
@@ -129,7 +135,7 @@ Dependencies: pandas, numpy, openpyxl, pyarrow.
 - **Suppressed 518210 counts (2025):** AK, ND, SD, WY have suppressed BLS data — 4 NA rows for dc_jobs and ai_dc_per1000.
 - **Border W matrix (W_border_binary.csv)** excludes AK and HI — neither has contiguous neighbors in the 48-state graph.
 - **ln_ee and ln_gdp_pc use real (chained 2017) GDP.** The memo says "State GDP in $" without specifying. Real preferred; corr(real, nominal) = 0.98 under two-way FE.
-- **`new_renew_mw` has one known artifact:** Gavins Point (132.3 MW hydro) moves between NE and SD in EIA's file, giving false changes in 2016 and 2018. Not adjusted; team decision open. The NE and NM 2017 blank-fuel rows are natural gas and don't affect it.
+- **`new_renew_mw` has one known artifact:** Gavins Point (132.3 MW hydro) moves between NE and SD in EIA's file, giving false changes in 2016 and 2018. The panel keeps EIA's data as published (team decision); a labeled row holding it in NE changes nothing (71.0 vs 70.8 MW). The NE and NM 2017 blank-fuel rows are natural gas and don't affect it.
 - **Renewable share is utility-scale only.** Rooftop solar appears in retail sales but not in EIA state generation file.
 - **Phase 5 (GitHub): clean the history before pushing.** `econ499r_starter/reference/Methods_Memo.pdf` and `Zhang_et_al_2026.pdf` were untracked on 2026-11-03 but are still in past commits.
 

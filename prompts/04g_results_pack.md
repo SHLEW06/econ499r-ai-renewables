@@ -8,12 +8,15 @@ ECON 499R project. The project root is "AI impact on Renewables". The draft is d
 - Plan first and wait for my OK.
 - Do not run any new models.
 
-**Readings already settled in 4b-4d.** findings.md must keep these and not overstate them:
+**Readings settled in 4b-4e.** findings.md must keep these and not overstate them:
 - **H1 core:** ln_ec, ln_ee and renew_share are not significant under clustered SEs. That is no support for H1.
+- **renew_share (placebo, 4e):** next year's AI predicts this year's share, and with both in one model the lag is about zero. Describe the negative association as reflecting where and when data-center jobs grow (reverse timing or selection), not AI lowering the renewable share.
 - **new_renew_mw:**
   - It is positive in raw MW (about +71 MW per 1-unit increase in AI).
   - It survives dropping TX and leave-one-state-out, but not scaling by state size.
   - Describe it as "driven by large-grid states."
+  - Its lead is also positive, and with both in one model neither is significant. Same caution as renew_share.
+- **RPS control and all-ownership AI:** they change no result. Say so. The RPS control's label is "LBNL current RPS/CES schedule."
 - **Generation:** total generation does not move with AI; renewable generation falls (p = 0.053). Don't add a timing or composition story without evidence.
 - **AI x high_price:**
   - The slope is negative in low-price states (-0.027) and null in high-price states.
@@ -21,7 +24,7 @@ ECON 499R project. The project root is "AI impact on Renewables". The draft is d
 - **Nonlinearity:** no curve passes Lind-Mehlum, so there are no turning-point claims.
 - **Mediation:** no channel. All bootstrap CIs include zero, and "share mediated" is not reported.
 - **Driscoll-Kraay:** a sensitivity check only. Never the basis for a "significant" claim.
-- **H3:** use the 4d SDM impacts with the main inverse-distance W. Add the SLX (clustered) and the border-W checks.
+- **H3: wording on hold.** The spillover placebo is in `results/2026-11-04/h3_placebo/`; the team hasn't settled the wording. Don't write the H3 paragraph until it has. The tables still use the SDM impacts with the main inverse-distance W, the SLX (clustered), the border-W checks and the spillover placebo.
 
 **Tools:** tables and figures are built by a script from the result CSVs. The notebook is a Python notebook that reads those CSVs and .tex files; it doesn't need an R kernel.
 
