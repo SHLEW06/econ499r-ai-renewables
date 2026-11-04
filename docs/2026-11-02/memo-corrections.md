@@ -145,13 +145,13 @@ Before:
 After:
 > "State centroids from the Census 2020 county Gazetteer (the land-weighted average of county points). The border matrix uses the Census 2023 county adjacency file."
 
-**15. AI measure (p. 4)**
+**15. AI measure (p. 4 step 1, and the AI row on p. 10)**
 
 Before:
-> "employment in NAICS 518210"
+> "Take annual average employment in NAICS ... code 518210" and "Data-center jobs per 1,000 workers"
 
 After:
-> "private employment in NAICS 518210, per 1,000 workers in all covered jobs. We call this private data-center jobs per 1,000 workers. A robustness row adds published government jobs."
+> "Take annual average private employment in NAICS ... code 518210" and "Private data-center jobs per 1,000 workers." A robustness row adds published government jobs.
 
 ---
 
