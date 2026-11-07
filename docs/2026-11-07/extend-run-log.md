@@ -9,7 +9,7 @@ Started 2026-11-07. Plan approved with changes (team, 2026-11-07): two passes. P
 | 2. By type and Georgia | **done** | 7d0f63a | ln geothermal generation not estimable (7 states). Small-scale solar not in the panel |
 | 3. AI-impact family | **done** | 209e302 | No q < 0.10 (min 0.44); no lead placebo or restructuring model needed. Battery storage not in the panel. Deviations X1 (Texas), X2 (price controls) |
 | 4. National trend drivers | **done (interim)** | 9fd4fbb | Drivers model without wind cost and PTC (CRS, LBNL wind blocked: HTTP 403). NREL unreachable; EIA CF fallback (X4). Full model in pass 2 if the files are provided |
-| 5. Better AI measure | **done** | 45b6b6f, 0d1b0f4 | Infrastructure + talent index, 2018-2023, 43 states; innovation dropped (no inventor locations); add-on run except Queued Up (403) |
+| 5. Better AI measure | **done** | 45b6b6f, bd3ede6 | Infrastructure + talent index, 2018-2023, 43 states; innovation dropped (no inventor locations); add-on run except Queued Up (403) |
 | 6. Notebook 09_extend.ipynb | **done** (all sections) | debf237 | Executed top to bottom, 6 code cells, 0 errors |
 | 7. Refresh outputs | **done** | 25ceac8, 4b7ed37 | Results pack, findings Extensions, summary, PDF (19 pages: 13 body + 6 appendix), workbook (73 tabs, link check 0 problems), team zip, GitHub copy (scans clean) |
 | 8. Show me | **done** | | Final report in the session |
