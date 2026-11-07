@@ -54,6 +54,7 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 |---|---|---|---|
 | [seds_old_basis.md](seds_old_basis.md) | EIA SEDS archive (June 2023), bulk MER, SEDS physical units | `data/raw/eia/seds_archive/`, `data/raw/eia/mer/`, `data/raw/eia/seds/` | `seds_old_basis.csv` |
 | [noaa_storm_events.md](noaa_storm_events.md) | NOAA Storm Events details files | `data/raw/noaa/storm_events/` | `storm_events_state.csv` |
+| [qcew_placebo.md](qcew_placebo.md) | BLS QCEW, two placebo industries | `data/raw/bls/placebo/` | read directly by `09a_fang_crosscheck.R` |
 
 ## Rebuild steps (from the project root)
 
