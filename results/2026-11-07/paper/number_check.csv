@@ -1,0 +1,137 @@
+number,document,source_file,source_tag,column,in_document,match
+550,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,N,yes,yes
+-0.0016,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,estimate,yes,yes
+0.795,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,pval,yes,yes
+0.0022,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,estimate,yes,yes
+0.707,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,pval,yes,yes
+-0.0101,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,estimate,yes,yes
+0.100,findings.md,results/2026-11-02/h1/h1_core.csv,h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,pval,yes,yes
+70.8,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025,estimate,yes,yes
+0.033,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025,pval,yes,yes
+1.00,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_rob_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_per1000mw_50s2015_2025,estimate,yes,yes
+0.616,findings.md,results/2026-11-02/h1/h1_extras.csv,h1x_rob_twfe_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_per1000mw_50s2015_2025,pval,yes,yes
+-0.0197,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,estimate,yes,yes
+0.006,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,pval,yes,yes
+-0.0210,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lead_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,estimate,yes,yes
+0.007,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lead_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,pval,yes,yes
+0.0015,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lag_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,estimate,yes,yes
+0.827,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo-joint-lag_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2024,pval,yes,yes
+86.8,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,estimate,yes,yes
+0.028,findings.md,results/2026-11-04/robustness/robustness.csv,rob_placebo_ai518210_lead1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2024,pval,yes,yes
+2.81,findings.md,results/2026-11-04/stretch/stretch.csv,stretch_iv_base2015_ai518210_lag1_ctrl4_w9901_cl-state_first_stage_50s2015_2025_KP_F,estimate,yes,yes
+-0.0021,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,estimate,yes,yes
+0.711,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,pval,yes,yes
+-0.0009,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,estimate,yes,yes
+0.880,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,pval,yes,yes
+0.001,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_hdd_k,pval,yes,yes
+0.001,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_cdd_k,pval,yes,yes
+0.22,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,within_r2,yes,yes
+0.33,findings.md,results/2026-11-04/robustness/weather_check.csv,rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1,within_r2,yes,yes
+0.5212,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,sd_ai,yes,yes
+-0.71,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,ci_lo_per_sd,yes,yes
+0.54,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025,ci_hi_per_sd,yes,yes
+-0.50,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,ci_lo_per_sd,yes,yes
+0.73,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ee_50s2015_2025,ci_hi_per_sd,yes,yes
+-1.16,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,ci_lo_per_sd,yes,yes
+0.11,findings.md,results/2026-11-07/paper/rule_out.csv,rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025,ci_hi_per_sd,yes,yes
+-0.000157,findings.md,results/2026-11-03/h2/h2_results.csv,h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_renew_share_50s2015_2025_eq-a,estimate,yes,yes
+0.454,findings.md,results/2026-11-03/h2/h2_results.csv,h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_renew_share_50s2015_2025_eq-a,pval,yes,yes
+0.322,findings.md,results/2026-11-07/paper/tables/mediation_summary.csv,h2_sobel_summary,min_p,yes,yes
+0.991,findings.md,results/2026-11-07/paper/tables/mediation_summary.csv,h2_sobel_summary,max_p,yes,yes
+-0.161,findings.md,results/2026-11-03/h3_mainspec/sdm_impacts.csv,h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50,plugin,yes,yes
+0.035,findings.md,results/2026-11-03/h3_mainspec/sdm_impacts.csv,h3_sdm-ML_ai518210_lag1_ctrl4_w9901_ml_renew_share_50s2015_2025_invdist50,p,yes,yes
+-0.0406,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lead,estimate,yes,yes
+0.027,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lead,pval,yes,yes
+0.0098,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lag,estimate,yes,yes
+0.583,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_renew_share_48s2015_2023_border48_theta_lag,pval,yes,yes
+0.0419,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2023_invdist50_theta_lag,estimate,yes,yes
+0.034,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2023_invdist50_theta_lag,pval,yes,yes
+0.0234,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2023_border48_theta_lag,estimate,yes,yes
+0.024,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2023_border48_theta_lag,pval,yes,yes
+-0.0209,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_ln_ee_48s2015_2023_border48_theta_lag,estimate,yes,yes
+0.033,findings.md,results/2026-11-04/h3_placebo/placebo_slx.csv,h3_slx-placebo-d_both_ai518210_lead1lag1_ctrl4_w9901_cl-state_ln_ee_48s2015_2023_border48_theta_lag,pval,yes,yes
+0.0531,findings.md,"Fang et al. 2025, Table 2, col. 6",published,,yes,published; check by hand
+-0.0188,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI,estimate,yes,yes
+0.317,findings.md,results/2026-11-04/fang/fang_results.csv,fang_rep_c6_aipostings_contemp_state_iid_lnET_51s2018_2021_AI,pval,yes,yes
+"3,412",findings.md,EIA SEDS change notice,published,,yes,published; check by hand
+0.0346,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_t2_c1-archived_aipostings_contemp_state_iid_lnET_arch_51s2018_2021_AI,estimate,yes,yes
+0.0435,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_t2_c2-archived_aipostings_contemp_state_iid_lnET_arch_51s2018_2021_AI,estimate,yes,yes
+0.0428,findings.md,"Fang et al. 2025, Table 2, col. 1",published,,yes,published; check by hand
+0.0452,findings.md,"Fang et al. 2025, Table 2, col. 2",published,,yes,published; check by hand
+0.0348,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_t2_c6-archived_aipostings_contemp_state_iid_lnET_arch_51s2018_2021_AI,estimate,yes,yes
+0.057,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_t2_c6-archived_aipostings_contemp_state_iid_lnET_arch_51s2018_2021_AI,pval,yes,yes
+0.0137,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_t2_c6-rebuilt_aipostings_contemp_state_iid_lnET_rb_51s2018_2021_AI,estimate,yes,yes
+0.500,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_t2_c6-rebuilt_aipostings_contemp_state_iid_lnET_rb_51s2018_2021_AI,pval,yes,yes
+61%,findings.md,results/2026-11-07/extend/tables/p2_gap_decomposition.csv,"{'ai_measure': 'ln AI postings', 'column': 6}",share_accounting_rebuild,yes,yes
+-0.0479,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI,estimate,yes,yes
+0.109,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_aipostings_lag1_state-year_cl-state_lnET_50s2019_2024_AI,pval,yes,yes
+-0.0567,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI,estimate,yes,yes
+0.208,findings.md,results/2026-11-04/fang/fang_results.csv,fang_bridge_s6-noDC_dcjobs_lag1_state-year_cl-state_lnET_50s2015_2024_AI,pval,yes,yes
+-0.0211,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1final_twfe_aipostings_lnET_arch_50s2019_2021_AI,estimate,yes,yes
+0.635,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1final_twfe_aipostings_lnET_arch_50s2019_2021_AI,pval,yes,yes
+0.0193,findings.md,results/2026-11-04/fang/fang_results.csv,fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU,estimate,yes,yes
+0.002,findings.md,results/2026-11-04/fang/fang_results.csv,fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_EPU,pval,yes,yes
+0.163,findings.md,results/2026-11-04/fang/fang_results.csv,fang_mod_twfe-lnEPUS_aipostings_lag1_state-year_cl_lnET_50s2019_2024_AI_x_EPU,pval,yes,yes
+-0.0419,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1trend_fang6trend_aipostings_lnET_arch_51s2018_2021_AI,estimate,yes,yes
+0.121,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1trend_fang6trend_aipostings_lnET_arch_51s2018_2021_AI,pval,yes,yes
+0.2980,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1placebo_fang6_petcare_lnET_arch_51s2018_2021_AI,estimate,yes,yes
+0.003,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1placebo_fang6_petcare_lnET_arch_51s2018_2021_AI,pval,yes,yes
+0.014,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_es_current_aishare2019_event_state-year_cl-state_lnET_50s2015_2024_joint_pre_2015_2020,pval,yes,yes
+0.001,findings.md,results/2026-11-07/fang/fang8_results.csv,fang8_es_current_aishare2019_event_state-year_cl-state_lnET_50s2015_2024_joint_post_2022_2024,pval,yes,yes
+120,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+40,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+104,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
+0.0864,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,estimate,yes,yes
+0.003,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,pval,yes,yes
+0.0336,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,estimate,yes,yes
+0.316,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,pval,yes,yes
+0.0368,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer,estimate,yes,yes
+0.177,findings.md,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_elisb_negative_difference_aipostings_producer_minus_consumer,pval,yes,yes
+2.3,findings.md,"our approximation, EXPERIMENTS.md F18",published,,yes,published; check by hand
+2.9,findings.md,"our approximation, EXPERIMENTS.md F18",published,,yes,published; check by hand
+11.79,findings.md,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_1,mean_lnET,yes,yes
+11.78,findings.md,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_4,mean_lnET,yes,yes
+11.90,findings.md,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_6,mean_lnET,yes,yes
+11.44,findings.md,results/2026-11-04/fang/seds_basis_level_check.csv,fang_level_3,mean_lnET,yes,yes
+63.81,findings.md,results/2026-11-04/georgia_solar/base_cost.csv,{'area': 'Georgia'},lcoe_capacity_weighted,yes,yes
+17,findings.md,results/2026-11-04/georgia_solar/base_cost.csv,{'area': 'Georgia'},n_projects,yes,yes
+37.06,findings.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr24_cap-central_2035,lcoe_2025usd_mwh,yes,yes
+14.51,findings.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr45_cap-high_2035,lcoe_2025usd_mwh,yes,yes
+50.40,findings.md,results/2026-11-04/georgia_solar/projection_long.csv,ga_solar_lc_lr12_cap-low_2035,lcoe_2025usd_mwh,yes,yes
+"4,000",findings.md,"Georgia Power 2025 IRP, Main Document, p. 60 [PDF p. 67]",published,,yes,published; check by hand
+49.0,findings.md,results/2026-11-04/georgia_solar/national_lcoe_lbnl_tab.csv,{'year': 2022},lcoe,yes,yes
+61.0,findings.md,results/2026-11-04/georgia_solar/national_lcoe_lbnl_tab.csv,{'year': 2025},lcoe,yes,yes
+-0.32,findings.md,results/2026-11-07/extend/tables/s1_descriptives_comparison.csv,{'variable': 'lnET'},diff_sd,yes,yes
+0.0791,findings.md,results/2026-11-07/extend/p2b_distillery_rerun.csv,ext_p2b_distill_twfe_trend_lnRE_never_suppressed_states,estimate,yes,yes
+0.014,findings.md,results/2026-11-07/extend/p2b_distillery_rerun.csv,ext_p2b_distill_twfe_trend_lnRE_never_suppressed_states,pval,yes,yes
+1,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_bytype_rows_q10,value,yes,yes
+-0.0477,findings.md,results/2026-11-07/extend/s2_bytype_family.csv,ext_bytype_twfe_aipostp1000_lag1_ctrl4_w9901_cl-state_ln_gen_wind_50s,estimate,yes,yes
+0.086,findings.md,results/2026-11-07/extend/s2_bytype_family.csv,ext_bytype_twfe_aipostp1000_lag1_ctrl4_w9901_cl-state_ln_gen_wind_50s,qval,yes,yes
+0.135,findings.md,results/2026-11-07/extend/p2_checks.csv,ext_p2_p2bytype_twfe-trend_aipostp1000_ln_gen_wind_50s_AI,pval,yes,yes
+0.076,findings.md,results/2026-11-07/extend/s2_georgia_implied.csv,ext_bytype_twfe_ai518210_lag1_ctrl4_w9901_cl-state_share_solar_50s,actual_change,yes,yes
+25%,findings.md,results/2026-11-07/extend/s2_georgia_implied.csv,ext_bytype_twfe_ai518210_lag1_ctrl4_w9901_cl-state_share_solar_50s,at_most_share_of_actual,yes,yes
+"8,200",findings.md,"2025 IRP, p. 1 [PDF p. 8]",published,,yes,published; check by hand
+"9,500",findings.md,"2025 IRP, p. 3 [PDF p. 10]",published,,yes,published; check by hand
+"1,323",findings.md,"2025 IRP, p. 126 [PDF p. 133]",published,,yes,published; check by hand
+0.436,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_impact_min_q,value,yes,yes
+-1.6%,findings.md,results/2026-11-07/extend/tables/s3_bounds_per_within_sd.csv,ext_impact_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_sales_com_pc_50s,per_sd_lo,yes,yes
+1.2%,findings.md,results/2026-11-07/extend/tables/s3_bounds_per_within_sd.csv,ext_impact_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_sales_com_pc_50s,per_sd_hi,yes,yes
+-0.012,findings.md,results/2026-11-07/extend/s4_drivers_models.csv,ext_natl_statefe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s,estimate,yes,yes
+-0.011,findings.md,results/2026-11-07/extend/s4_drivers_models.csv,ext_natl_drivers_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s,estimate,yes,yes
+-0.010,findings.md,results/2026-11-07/extend/s4_drivers_models.csv,ext_natl_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s,estimate,yes,yes
+0.95,findings.md,results/2026-11-07/extend/s4_path_fit.csv,ext_natl_pathfit_ai518210_drivers_renew_share,correlation,yes,yes
+-0.0037,findings.md,results/2026-11-07/extend/p2b_relevance_index.csv,ext_p2b_relevance_ai518210_ln_sales_com_pc_all50_pooled,slope,yes,yes
+0.764,findings.md,results/2026-11-07/extend/p2b_relevance_index.csv,ext_p2b_relevance_ai518210_ln_sales_com_pc_all50_pooled,pval,yes,yes
+3,findings.md,results/2026-11-07/extend/p2b_permutation_ranks.csv,ext_p2b_permrank_ai518210_all50_VA,rank_desc,yes,yes
+7,findings.md,results/2026-11-07/extend/p2b_permutation_ranks.csv,ext_p2b_permrank_ai518210_all50_TX,rank_desc,yes,yes
+21,findings.md,results/2026-11-07/extend/p2b_permutation_ranks.csv,ext_p2b_permrank_ai518210_all50_GA,rank_desc,yes,yes
+0.73,findings.md,logs/2026-11-07/ai_index_diagnostics.csv,"{'statistic': 'Cronbach alpha, 5 components'}",value,yes,yes
+0.55,findings.md,logs/2026-11-07/ai_index_crossstate_checks.csv,{'check': 'BTOS 2024 average share of firms using AI'},pearson_index_a_2024,yes,yes
+0.715,findings.md,results/2026-11-07/extend/p2b_relevance_index.csv,ext_p2b_relevance_indexA_ln_sales_com_pc_all50_pooled,pval,yes,yes
+136,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_index_rows_per_sample,value,yes,yes
+0.863,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_index_min_q_all50,value,yes,yes
+0.900,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_index_min_q_noCACODE,value,yes,yes
+0.5,findings.md,results/2026-11-07/extend/p2b_2sls.csv,ext_p2b_2sls_post_lag1_ln_ec_all50,first_stage_F,yes,yes
+0.158,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_group_min_q_all50,value,yes,yes
+11,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_land_rows_q10_all50,value,yes,yes
+44,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_land_rows_all50,value,yes,yes

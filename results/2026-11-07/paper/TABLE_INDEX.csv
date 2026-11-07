@@ -1,0 +1,44 @@
+table,caption
+table1_descriptives,"Descriptive statistics, before winsorizing. Zhang rows: 50 states. Fang rows: 50 states + DC."
+table2_h1,"H1: AI(t-1) with two-way FE, ctrl4, clustered by state. * p<0.1, ** p<0.05, *** p<0.01."
+table3a_nonlinearity,"AI squared with ctrl4, clustered. No curve passes the Lind-Mehlum test."
+table3b_heterogeneity,"Interactions in one model, ctrl4, clustered. Exploratory. For renew_share, AI x high price: slope -0.0270 in low-price states, 0.0046 in high-price states."
+table4_mediation,"Mediation, ctrl4, clustered. All bootstrap CIs include zero. HMA's first stage is mechanical. Share mediated isn't reported."
+table5a_moran,"Moran's I, renew_share, inverse-distance W, 50 states, 999 permutations."
+table5b_sdm,"SDM, LYtrans=FALSE, full sample. Plug-in impacts with simulated percentile CIs. Read CIs for ln_ec and ln_ee, where some draws of rho fall outside its valid range."
+table5c_spillover_placebo,"Spillover placebo, 2015-2023. N = 450 inverse distance, 432 border. SDM cells: indirect effect with percentile CI."
+table6_robustness,Robustness of the AI coefficient. Clustered by state unless the row names another. Data-center MW not run: no series.
+table7_fang_replication,"Fang Table 2 replication. Approx. old SEDS rows: k = 2.3 to 2.9 is our approximation of the old accounting, not EIA's (see https://www.eia.gov/state/seds/seds-change/index.php). Data-center jobs are the consistent series."
+table8_fang_bridge,"Bridge from Fang's spec to ours, current SEDS. Data-center jobs (BLS, one consistent series) are the more reliable extension measure."
+table9_fang_moderation,EPU moderation.
+table10_fang_by_type,By renewable type.
+table11_fang_heterogeneity,Exploratory.
+table12_fang_regions,Exploratory.
+table13_fang_placebo,Final spec.
+table14_fang_robustness,Final spec.
+table15_iv_first_stage,Shift-share IV first stage. KP F below 10: uninformative.
+table16_iv,"OLS, reduced form and IV. IV is uninformative."
+table17_moderation,Broadband and R&D moderation.
+table18_georgia,"Georgia solar LCOE, 2025 $/MWh, no tax credits. Learning-curve arithmetic, not a forecast. Paths: IEA WEO 2025, Annex A: Low = Current Policies, Table A.3a, p. 417; Central = Stated Policies, Table A.3b, p. 423; High = Net Zero Emissions by 2050, Table A.3c, p. 429."
+table20_weather_check,"ln_ec with NOAA degree days. Two-way FE, ctrl4, clustered by state. Degree days cover the 48 contiguous states, so the middle row shows the sample change alone."
+table21_net_producer,"Net-producer definitions against Fang's count, 2018-2021, Fang's spec with AI postings on current SEDS. Each rule uses the state's 2018-2021 average. Exploratory."
+table22_fang_table2_by_basis,"Fang Table 2 on each SEDS basis, columns 1-6, Fang spec. Main old basis: SEDS as published in June 2023 (archived release). Rebuilt: year-by-year heat rates on current data. k = 2.6: check only."
+table23_gap_decomposition,"Gap between current and June 2023 SEDS, Table 2 columns 1, 2 and 6: share from the accounting change (current to rebuilt) vs later data revisions (rebuilt to June 2023)."
+table24_fang_splits,"Fang Tables 3-5 splits: Fang published, our Fang-spec mean and median splits, interaction tests in both specs, and (F27, exploratory, added after Table 2) the June 2023 basis."
+table25_fang_negative_indicator,Negative indicator: SEDS fossil-fuel consumption (ln) and fossil share of total energy.
+table26_fang_event_study,"Event study: 2019 postings share x year, base 2021, two-way FE, ctrl4, 50 states, clustered."
+table27_ext_descriptives,Our descriptives vs means implied by Fang's Table 2 constants (Table A1 not available). Differences in our SD units; flag > 0.25 SD.
+table28_ext_trend_placebo_june2023,"June 2023 SEDS: Fang col. 6 with a linear trend, placebo industries, and the final spec on the years the release covers."
+table29_ext_state_trends,"Main spec with and without state linear trends: H1 core, by-type, final bridge spec and placebo industries."
+table30_ext_bytype,"AI(t-1) by renewable type, main spec, both AI measures, BH q-values within the family; lead placebo for p < 0.10."
+table31_ext_impact,"What AI is associated with: 15 outcomes x 2 measures, main spec, BH q-values. None has q < 0.10."
+table32_ext_bounds_per_sd,Section 3 estimates and CIs per one within-state SD of AI.
+table33_ext_drivers_ai,"AI coefficient with state FE only, the full measured-drivers model, and two-way FE."
+table34_ext_national_drivers,"National drivers 2015-2025 with sources (CRS R43453, IF10479; P.L. 116-260, 117-169; LBNL; EIA). Printed page with PDF page in brackets."
+table35_ext_relevance,"Relevance test, reported first: ln commercial sales per person on each AI measure and index; VA, TX and GA slopes are descriptive (one cluster each)."
+table36_ext_slope_ranks,"Ranks of VA, TX and GA among per-state slopes of commercial sales on AI(t-1)."
+table37_ext_index_diagnostics,AI index (infrastructure + talent) diagnostics.
+table38_ext_2sls,2SLS measurement-error check. First-stage F below 10: uninformative.
+table39_ext_index_family_summary,"Index family: H1 core, by-type and section 3 outcomes on each index, BH within sample."
+table40_addon_groupings,"Add-on groupings: AI(t-1) x group, joint Wald test of group differences, BH within grouping."
+table19_rule_out,"What we can rule out: effects outside these ranges, per one within-state SD of AI after removing state and year effects."

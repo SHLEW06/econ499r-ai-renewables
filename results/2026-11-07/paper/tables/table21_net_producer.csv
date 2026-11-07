@@ -1,0 +1,5 @@
+Definition,Net-producer state-years,"Slope, net producers","Slope, net consumers",Difference
+"Fang et al. 2025: electricity production above consumption, EIA, series not stated (PDF p. 4; Table 3)",76,-0.0060 (0.034),0.0425* (0.024),not reported
+EIA generation above retail sales (main),120,0.0024 (0.0205),-0.1401*** (0.0353),0.0864*** (0.0281)
+SEDS total energy production above consumption,40,-0.0478 (0.0432),-0.0110 (0.0203),0.0336 (0.0334)
+SEDS net interstate electricity flow below zero,104,0.0154 (0.0272),-0.0717*** (0.0252),0.0368 (0.0271)

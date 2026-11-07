@@ -1,0 +1,28 @@
+Variable,Mean,SD,Min,Max,N,Source
+"Private data-center jobs per 1,000 workers, t-1",2.102,1.246,0.215,7.452,550,BLS QCEW
+ln(retail MWh per person),2.495,0.344,1.802,3.634,550,"EIA, BEA"
+ln(real GDP / retail MWh),8.484,0.443,7.676,9.555,550,"BEA, EIA"
+Renewable share of generation,0.242,0.239,0.014,0.999,550,EIA
+"Change in renewable capacity, MW",430.629,934.298,-242.3,9956.0,550,EIA
+Solar share,0.025,0.042,0.0,0.308,550,EIA
+Wind share,0.094,0.131,0.0,0.628,550,EIA
+Fossil to renewable ratio,7.884,9.617,0.001,69.19,550,EIA
+"Total energy per person, MMBtu",332.205,177.569,151.32,1031.928,500,EIA SEDS
+"CO2 per MWh, tons",0.431,0.211,0.003,0.97,500,EIA
+ln(real GDP per person),10.979,0.188,10.509,11.457,550,BEA
+Manufacturing share of GDP,0.105,0.047,0.016,0.264,550,BEA
+"Electricity price, cents per kWh",12.047,4.758,7.401,39.72,550,EIA
+Population growth,0.006,0.006,-0.014,0.03,550,BEA
+Tech jobs share (NAICS 5415),0.013,0.007,0.003,0.045,550,BLS QCEW
+HMA coupling index,0.47,0.147,0.0,0.872,546,BLS QCEW
+ln(nonfarm GDP per sq mile),15.624,1.445,11.402,18.608,550,"BEA, Census"
+"Renewable consumption, billion Btu (Fang)",149835.565,151535.967,1644.0,1173475.0,510,EIA SEDS
+AI job postings (Fang),10111.549,16953.27,94.0,170881.0,408,Stanford AI Index
+"Total energy price, $/MMBtu (Fang)",20.382,4.991,8.47,44.7,510,EIA SEDS
+"Bachelor's degrees per 1,000 age 18-24 (Fang)",70.052,25.945,20.493,257.782,510,NCSES
+EPU composite (Fang),237.113,182.399,51.811,1458.818,561,"Baker, Davis, Levy"
+EPU national,161.737,133.017,24.532,1152.883,561,"Baker, Davis, Levy"
+EPU state,129.125,114.678,14.491,938.276,561,"Baker, Davis, Levy"
+"LBNL current RPS/CES schedule, percent",11.72,14.278,0.0,63.0,561,LBNL
+"Household broadband, percent (2016-2024)",87.283,5.031,70.7,95.3,408,Census ACS
+"R&D, $M (2017-2023)",14168.031,31384.564,157.0,276850.0,357,NSF

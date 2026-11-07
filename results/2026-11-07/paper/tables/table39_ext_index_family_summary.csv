@@ -1,0 +1,9 @@
+sample,index,rows,min_q,q_below_10
+all50,index_a,35,0.863,0
+all50,index_b,35,0.863,0
+all50,sub_infra,35,0.863,0
+all50,sub_talent,35,0.863,0
+noCACODE,index_a,35,0.9,0
+noCACODE,index_b,35,0.9,0
+noCACODE,sub_infra,35,0.9,0
+noCACODE,sub_talent,35,0.9,0

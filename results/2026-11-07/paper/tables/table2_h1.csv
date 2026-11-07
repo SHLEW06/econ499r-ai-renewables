@@ -1,0 +1,14 @@
+Outcome,Group,AI,N
+ln_ec,Core,-0.0016 (0.0060),550
+ln_ee,Core,0.0022 (0.0058),550
+renew_share,Core,-0.0101 (0.0060),550
+solar_share,Extra,-0.0001 (0.0030),550
+wind_share,Extra,-0.0084 (0.0067),550
+fossil_to_renew,Extra,0.9968 (0.6192),550
+coal_share,Extra,0.0020 (0.0075),550
+co2_per_mwh_t,Extra,0.0025 (0.0061),500
+new_renew_mw,Extra,70.84** (32.34),550
+"new_renew_mw per 1,000 MW of 2015 capacity",Extra,0.9962 (1.9762),550
+new_renew_mw per million people,Extra,10.87 (8.60),550
+ln(renewable MWh),Extra,-0.0711* (0.0358),550
+ln(total MWh),Extra,-0.0035 (0.0196),550

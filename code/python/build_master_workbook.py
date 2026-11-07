@@ -149,6 +149,15 @@ CLEAN = [  # tab, file, sources rule, script, receipt
  ("Fang Split Vars", "data/fang_split_vars.csv", None, "econ499r_starter/scripts/build_fang_tables.py", "fang_panel.md"),
  ("Net Producer Defs", "data/fang_net_producer_definitions.csv", ["seds", "seds_prod", "eia_gen", "eia_sales"], "econ499r_starter/scripts/build_net_producer_defs.py", "seds_fang.md"),
  ("NOAA Degree Days", "data/noaa_degree_days.csv", ["noaa"], "econ499r_starter/scripts/download_noaa_degree_days.py", "noaa.md"),
+ ("SEDS Old Basis", "data/seds_old_basis.csv", ["seds", "seds_archive", "mer_bulk", "seds_phy"], "econ499r_starter/scripts/build_finalize_tables.py", "seds_old_basis.md"),
+ ("Storm Events", "data/storm_events_state.csv", ["noaa_storm"], "econ499r_starter/scripts/build_finalize_tables.py", "noaa_storm_events.md"),
+ ("Extend Outcomes", "data/extend_outcomes.csv", ["eia_gen", "eia_cap", "eia_sales", "eia_emis", "seds", "bea_inc"], "econ499r_starter/scripts/build_extend_tables.py", "extend_outcomes.md"),
+ ("Restructured", "data/extend_restructured.csv", ["eia_sales", "eia861"], "econ499r_starter/scripts/build_extend_tables.py", "extend_outcomes.md"),
+ ("Drivers National", "data/extend_drivers_national.csv", ["crs_ptc", "crs_itc", "pl116260", "pl117169", "lbnl_wind", "lbnl_solar", "eia_hh", "qcew"], "econ499r_starter/scripts/build_drivers_tables.py", "drivers_sources.md"),
+ ("Drivers State", "data/extend_drivers_state.csv", ["eia_gen", "eia_cap"], "econ499r_starter/scripts/build_drivers_tables.py", "drivers_sources.md"),
+ ("AI Index Components", "data/ai_index_components.csv", ["qcew", "oews", "ai2026", "bea_inc"], "econ499r_starter/scripts/build_ai_index.py", "ai_index_section5.md"),
+ ("AI Index", "data/ai_index_state.csv", ["qcew", "oews", "ai2026"], "econ499r_starter/scripts/build_ai_index.py", "ai_index_section5.md"),
+ ("AI Index Cross-State", "data/ai_index_crossstate.csv", ["btos", "quid", "epoch", "eia_sales", "census_gaz"], "econ499r_starter/scripts/build_ai_index.py", "ai_index_section5.md"),
  ("FERC1 Utilities", "data/out/ferc1_utility_financials.csv", ["pudl"], "econ499r_starter/scripts/ferc_fin.py", "ferc_pudl.md"),
  ("FERC1 Cost by Tech", "data/out/ferc1_cost_by_technology.csv", ["pudl"], "econ499r_starter/scripts/ferc_fin.py", "ferc_pudl.md"),
  ("FERC1 Plants", "data/out/ferc1_plant_costs.csv", ["pudl"], "econ499r_starter/scripts/ferc_fin.py", "ferc_pudl.md"),
@@ -220,6 +229,8 @@ ZT = codetext(["code/R/load_panel.R", "code/R/04b*.R", "code/R/04c*.R", "code/R/
 ZINPUT = {"gen_total_mwh", "gen_renew_mwh", "gen_fossil_mwh", "gen_solar_mwh", "gen_wind_mwh", "gen_coal_mwh", "sales_mwh", "revenue_kusd", "population", "population_prev", "cap_renew_prev", "cap_renew_mw", "gdp_real_musd2017", "gdp_nom_musd", "gdp_farm_musd", "gdp_manuf_musd", "dc_jobs", "tech5415_jobs", "total_jobs", "land_sqmi", "sales_mwh_pc", "ee_usd_per_mwh", "ea_nonfarm_gdp_per_sqmi", "dc_suppressed", "co2_power_t"}
 def used_in(tab, v, rawused=None):
     if rawused: return rawused
+    if tab in ("SEDS Old Basis", "Storm Events") and v not in ("state", "year"): return "Fang (08)"
+    if tab in ("Extend Outcomes", "Restructured", "Drivers National", "Drivers State", "AI Index Components", "AI Index", "AI Index Cross-State") and v not in ("state", "year"): return "Extensions (09)"
     if tab in ("FERC1 Utilities", "FERC1 Cost by Tech", "FERC1 Plants", "SEC Companies"): return "finance"
     if tab in ("Epoch by State", "Georgia"): return "Georgia"
     if tab in ("OWID Solar", "LBNL Solar Projects"): return "Georgia"
@@ -254,7 +265,11 @@ def src_keys(tab, v):
     if v.startswith("gdp_"): return ["bea_gdp"]
     sys.exit(f"no source rule: {tab} {v}")
 FAMILY = [("gen_", "green", "N01 fuels sum to total; N02 states sum to U.S."), ("cap_", "green", "C.4 trace; audit cells for new_renew_mw"), ("new_", "green", "C.4 trace; audit cells for new_renew_mw"), ("sales_", "green", "Audit: 3 of 3 sales_mwh cells exact; cross-source vs SEDS"), ("revenue", "green", "D08 price identity"), ("price_com", "green", "D08 price identity"), ("population", "green", "Cross-source: 561 of 561 match Census"), ("gdp_", "green", "N05 states vs U.S.; audit raw-file cells"), ("dc_", "green", "N03 state vs national; R07 top states; audit cells"), ("tech5415", "green", "Audit: 3 of 3 cells exact"), ("total_jobs", "green", "N04 state vs national; audit cells"), ("land_sqmi", "green", "D18"), ("co2_power_t", "yellow", "Ends 2024"), ("seds_total", "yellow", "Ends 2024"), ("sales_mwh_pc", "green", "D12"), ("ee_usd", "green", "D14"), ("ea_nonfarm", "green", "D18"), ("contig48", "green", "P08"), ("is_dc", "green", "P09"), ("state", "green", "P02-P07 keys"), ("year", "green", "P02-P07 keys")]
-SIDE_RATING = {"NOAA Degree Days": ("green", "Cross-source: Climate at a Glance matches nClimDiv on all 528 state-years"), "Net Producer Defs": ("yellow", "Cross-source: none of the rules reaches Fang's 76"), "RPS Targets": ("yellow", "New data, Nov 4: LBNL RPS"), "ACS Broadband": ("yellow", "New data, Nov 4: ACS"), "EPU Annual": ("green", "New data, Nov 4: EPU"), "NSF State RD": ("yellow", "New data, Nov 4: NSF"), "OWID Solar": ("green", "New data, Nov 4: OWID"), "LBNL Solar Projects": ("green", "New data, Nov 4: LBNL solar"), "Epoch by State": ("green, context only", "New data, Nov 4: Epoch"), "AI Job Postings": ("yellow", "Fang data, Nov 4: AI Index"), "AI Postings Overlap": ("yellow", "Fang data, Nov 4: AI Index"), "SEDS Renewables": ("green", "Fang data, Nov 4: SEDS"), "NCSES Bachelors": ("green", "Fang data, Nov 4: NCSES")}
+SIDE_RATING = {"SEDS Old Basis": ("green", "Rebuild matches the June 2023 release once its biomass is used (seds_old_basis.md)"), "Storm Events": ("yellow", "Our counting rule; reporting differs by NWS office (noaa_storm_events.md)"),
+ "Extend Outcomes": ("green", "MW added matches new_solar_mw and new_wind_mw; EIA-861 sales match the panel (extend_outcomes.md)"), "Restructured": ("yellow", "Pre-registered rule plus Texas (deviation X1)"),
+ "Drivers National": ("green", "Coded from CRS, statute and LBNL with page cites (drivers_sources.md)"), "Drivers State": ("yellow", "EIA capacity-factor fallback for NREL (deviation X4)"),
+ "AI Index Components": ("yellow", "QCEW jobs match the panel; OEWS suppression (ai_index_section5.md)"), "AI Index": ("yellow", "No innovation dimension; talent alpha 0.34 (ai_index_section5.md)"),
+ "AI Index Cross-State": ("yellow", "Investment covers one year; BTOS covers 30 index states (ai_index_section5.md)"), "NOAA Degree Days": ("green", "Cross-source: Climate at a Glance matches nClimDiv on all 528 state-years"), "Net Producer Defs": ("yellow", "Cross-source: none of the rules reaches Fang's 76"), "RPS Targets": ("yellow", "New data, Nov 4: LBNL RPS"), "ACS Broadband": ("yellow", "New data, Nov 4: ACS"), "EPU Annual": ("green", "New data, Nov 4: EPU"), "NSF State RD": ("yellow", "New data, Nov 4: NSF"), "OWID Solar": ("green", "New data, Nov 4: OWID"), "LBNL Solar Projects": ("green", "New data, Nov 4: LBNL solar"), "Epoch by State": ("green, context only", "New data, Nov 4: Epoch"), "AI Job Postings": ("yellow", "Fang data, Nov 4: AI Index"), "AI Postings Overlap": ("yellow", "Fang data, Nov 4: AI Index"), "SEDS Renewables": ("green", "Fang data, Nov 4: SEDS"), "NCSES Bachelors": ("green", "Fang data, Nov 4: NCSES")}
 def rating(tab, v):
     if v == "extreme_weather" or v == "extreme_weather_note": return "not run", "Fang's count of extreme hot and cold occurrences wasn't built"
     if tab.startswith("Raw "): return "not rated", "Raw as published; hash on Raw Files tab"
@@ -292,6 +307,12 @@ def gap_reason(tab, v):
     if tab in ("FERC1 Cost by Tech", "FERC1 Plants"): return "Blank in PUDL or not computable for that plant-year"
     if tab == "SEC Companies": return "No fact under the XBRL tags used. NEE, DTE and HASI capex use company-specific tags" if v == "capex_musd" else "No fact under the XBRL tags used, or field not applicable"
     if tab == "AI Postings Overlap": return "Text column; blank means no note"
+    NEW = {"SEDS Old Basis": "RETCB_arch2021 covers 2015-2021 only (June 2023 release); other blanks are blank in SEDS", "Storm Events": "No blanks expected; zero means no qualifying record",
+           "Extend Outcomes": "ln columns are blank where generation is zero; SEDS and CO2 end in 2024; blank in EIA's file otherwise", "Restructured": "Blank where EIA-861 reports no such provider",
+           "Drivers National": "Postings start in 2018; text columns blank where not needed", "Drivers State": "Year blank where the state never has 10 MW of that type",
+           "AI Index Components": "QCEW non-disclosed, OEWS ** or #, or postings before 2018", "AI Index": "Only state-years with every component; sub_talent blank in the 2015-2023 check",
+           "AI Index Cross-State": "BTOS suppressed; Epoch covers 29 states; Quid missing for AR, OK, SD and WV; index needs all components"}
+    if tab in NEW: return NEW[tab]
     return None
 UNKNOWN_GAPS = []
 def def_of(tab, v):
@@ -476,6 +497,8 @@ for r in S.itertuples():
 vrow("Phase 2 Part C", "C.1b full rebuild comparison", "build_panel.py rerun; every cell compared with the saved panel", "PASS", "43,758 cells compared (78 columns x 561 rows), zero differences. Rerun Nov 4 after the dc_wages_usd fix: only that column's 4 suppressed cells changed; see logs/2026-11-04/c1b_dc_wages_changes.csv", "green", "2026-11-02; rerun 2026-11-04")
 for r in md_table(VAL, "## Verdict table"):
     vrow("Part C verdict by variable", strip(r["Variable"]), f"Definition {strip(r['Right definition'])}; numbers {strip(r['Numbers check'])}; reproduces {strip(r['Reproduces'])}", strip(r["Ready"]), strip(r["Note"]), strip(r["Ready"]), "2026-11-02")
+for r in md_table(VAL, "## New data, Nov 7"):
+    vrow("New data, Nov 7", strip(r["File"]), strip(r["Spot checks"]), strip(r["Rating"]), f"{strip(r['Units and coverage'])}. Caveat: {strip(r['Main caveat'])}", strip(r["Rating"]).split(",")[0].lower(), "2026-11-07")
 for r in md_table(VAL, "## New data, Nov 4"):
     vrow("New data, Nov 4", strip(r["File"]), strip(r["Spot checks"]), strip(r["Rating"]), f"{strip(r['Units and coverage'])}. Caveat: {strip(r['Main caveat'])}", strip(r["Rating"]).split(",")[0].lower(), "2026-11-04")
 for r in md_table(VAL, "### RPS coverage check"):

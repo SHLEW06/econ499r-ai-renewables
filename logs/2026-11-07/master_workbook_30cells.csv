@@ -1,0 +1,31 @@
+tab,cell,workbook,source,match
+Net Producer Defs,I83,0,0,True
+Raw Epoch Sites,D84,0,0.0,True
+FERC1 Plants,T19696,4019761,4019761.0,True
+Raw RMI Customers Sales,I27567,36075168,36075168.0,True
+Raw Census Adjacency,D19220,48097,48097,True
+State Centroids,A2,AL,AL,True
+Fang Split Vars,B296,2023,2023,True
+Raw BEA SAGDP2,AF96,5527,5527.0,True
+Raw Epoch Chips,G55,Huawei #confident,Huawei #confident,True
+Raw SEDS Prices,W5698,,,True
+Raw RMI Emission Targets,K8416,306649.8007015088,306649.8007015088,True
+AI All Ownerships,B350,2022,2022,True
+Raw RMI Customers Sales,E35264,commercial,commercial,True
+Raw Census Pop V2025,S60,11868,11868,True
+Raw RMI Reliability,A10127,Electrical Dist No2 Pinal Cnty,Electrical Dist No2 Pinal Cnty,True
+Raw RMI Housing Income,H11914,75393427.00494717,75393427.00494717,True
+Raw EIA Plan Capacity,G93,349.8,349.8,True
+Raw RMI Housing Income,H18170,286202398.8188605,286202398.81886053,True
+Fang Split Vars,I437,Northeast,Northeast,True
+Raw RMI Debt Equity,M4024,,,True
+Raw Epoch Chips,G68,Google #confident,Google #confident,True
+Raw RMI Net Plant,I15704,2421822974.201129,2421822974.201129,True
+Raw Epoch Timelines,J27,23.76283,23.76283,True
+FERC1 Plants,B4229,220,220,True
+Raw Epoch Timelines,L107,0.241736,0.241736,True
+Raw EIA Plan Capacity,C482,Total Electric Power Industry,Total Electric Power Industry,True
+Raw Census Gazetteer,B938,20095,20095,True
+Raw BEA SAGDP9,AE5525,,,True
+Raw Epoch Chillers,I66,Uniflair XRAC/XRAF Brochure,Uniflair XRAC/XRAF Brochure,True
+Raw EIA Capacity,E43893,2,2,True

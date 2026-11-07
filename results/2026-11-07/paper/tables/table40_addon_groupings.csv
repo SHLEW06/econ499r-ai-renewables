@@ -1,0 +1,7 @@
+sample,grouping,tests,min_q,q_below_10
+all50,grp_invest,44,0.18,0
+all50,grp_invest_per_twh,44,0.408,0
+all50,grp_jobs_per_twh,44,0.158,0
+noCACODE,grp_invest,44,0.101,0
+noCACODE,grp_invest_per_twh,44,0.347,0
+noCACODE,grp_jobs_per_twh,44,0.015,2

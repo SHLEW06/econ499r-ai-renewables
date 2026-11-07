@@ -1,0 +1,10 @@
+tag,status,scope,rating,n
+validation_counts_all_green,ok,all,green,178
+validation_counts_all_yellow,ok,all,yellow,43
+validation_counts_all_red,ok,all,red,1
+validation_counts_all_notrun,ok,all,not run,1
+validation_counts_all_total,ok,all,total,223
+validation_counts_model_variables_green,ok,model_variables,green,17
+validation_counts_model_variables_yellow,ok,model_variables,yellow,3
+validation_counts_model_variables_red,ok,model_variables,red,0
+validation_counts_model_variables_total,ok,model_variables,total,20

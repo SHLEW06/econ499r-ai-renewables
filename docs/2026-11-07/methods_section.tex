@@ -1,0 +1,101 @@
+% Methods section draft for Overleaf. Requires amsmath and booktabs.
+% Numbers and tables come from results/2026-11-04/paper/. Use "associated with", not causal language.
+\section{Data and Methods}
+
+\subsection{Data}
+We build a state-year panel of the 50 U.S.\ states for 2015--2025 (DC appears only in the Fang test). Our main measure of AI activity is \emph{private data-center jobs per 1,000 workers}: annual average private employment in NAICS 518210 from the BLS Quarterly Census of Employment and Wages, divided by all covered jobs, times 1,000. It is a proxy for data-center activity, not for AI use: the industry also includes general data processing and hosting, and jobs are not megawatts. BLS suppresses the 2025 count for Alaska, North Dakota, South Dakota and Wyoming; because we lag AI one year, the main sample keeps all state-years.
+
+\begin{table}[ht]\centering\small
+\begin{tabular}{lll}
+\toprule
+Variable & Definition & Source \\
+\midrule
+$AI_{s,t-1}$ & Private data-center jobs per 1,000 workers, lagged & BLS QCEW \\
+$\ln EC$ & Log retail electricity sales per person & EIA, BEA \\
+$\ln EE$ & Log real GDP per MWh sold & BEA, EIA \\
+Renewable share & Renewable share of net generation, utility-scale & EIA \\
+New renewable capacity & Year-on-year change in renewable nameplate MW & EIA \\
+Controls & Log real GDP per person, manufacturing share, & BEA, EIA \\
+ & electricity price, population growth & \\
+Tech share & Computer systems design jobs (NAICS 5415) / all jobs & BLS QCEW \\
+$\ln EA$ & Log nonfarm nominal GDP per square mile & BEA, Census \\
+RPS control & LBNL current RPS/CES schedule, larger of the two & LBNL \\
+\midrule
+\multicolumn{3}{l}{\emph{Fang test}} \\
+$\ln ET$ & Log renewable energy consumption (SEDS) & EIA \\
+$\ln AI^{P}$ & Log AI job postings & Stanford AI Index \\
+$\ln EPU$ & Log economic policy uncertainty, annual mean & Baker, Davis and Levy \\
+$\ln EP$ & Log total energy average price & EIA SEDS \\
+$\ln EDU$ & Log bachelor's degrees per 1,000 aged 18--24 & NCSES \\
+\bottomrule
+\end{tabular}
+\caption{Main variables and sources.}
+\end{table}
+
+\subsection{Baseline: two-way fixed effects}
+Following the structure of Zhang et al.\ (2026), we estimate
+\begin{equation}
+Y_{st} = \alpha_1 AI_{s,t-1} + \beta' X_{st} + \mu_s + \lambda_t + \varepsilon_{st},
+\end{equation}
+with state and year fixed effects and standard errors clustered by state. State effects remove fixed differences between states, year effects remove shocks common to all states, and clustering allows errors to be correlated within a state over time. Outcomes and AI are winsorized at the 1st and 99th percentiles. Driscoll-Kraay standard errors are a sensitivity check only, because they tend to be too small with 11 years.
+
+\subsection{Nonlinearity, heterogeneity and dynamics}
+We add $AI^2$ and use a Lind-Mehlum test, which requires the slope to change sign significantly within the data. We test heterogeneity with interactions in one model and report the AI slope in each group. We examine dynamics with distributed lags and a long difference.
+
+\subsection{Timing tests}
+A next-year placebo replaces $AI_{s,t-1}$ with $AI_{s,t+1}$. Next year's AI cannot affect this year's outcome, so a significant coefficient indicates reverse timing or selection. We also put both in one model. A shift-share instrument interacts each state's 2015 share of national NAICS 518210 jobs with national growth excluding that state; we report the first stage, the reduced form and the Kleibergen-Paap statistics, and treat the instrument as uninformative if the first-stage $F$ is below 10.
+
+One check adds NOAA heating and cooling degree days to the $\ln EC$ model, on the 48 contiguous states, beside the same sample without them.
+
+\subsection{Mediation}
+We use the three-step approach of Zhang et al.\ (2026), with a mediator $M$:
+\begin{align}
+M_{st} &= b_1 AI_{s,t-1} + \beta' X_{st} + \mu_s + \lambda_t + u_{st}, \\
+Y_{st} &= c_1' AI_{s,t-1} + e_1 M_{st} + \beta' X_{st} + \mu_s + \lambda_t + v_{st},
+\end{align}
+and test the indirect effect $b_1 e_1$ with a Sobel test and a cluster bootstrap. The tech-job share is the main H2a mediator. HMA, the memo's version, is built from AI, so its first stage is positive by construction.
+
+\subsection{Spatial models}
+We test for clustering with Moran's $I$, then estimate a spatial Durbin model,
+\begin{equation}
+Y_{st} = \rho \sum_j w_{sj} Y_{jt} + b_1 AI_{s,t-1} + \theta_1 \sum_j w_{sj} AI_{j,t-1} + \beta' X_{st} + \gamma' W X_{st} + \mu_s + \lambda_t + \varepsilon_{st}.
+\end{equation}
+The main $W$ is row-standardized inverse distance between land-weighted state centroids; a border matrix for 48 states is a check. Because neighbors' outcomes feed back through $\rho$, we report direct, indirect and total effects (LeSage and Pace, 2009). A spatial lag of $X$ model gives clustered standard errors as a companion. To test timing, we replace or add $\sum_j w_{sj} AI_{j,t+1}$ on 2015--2023, because 2025 AI is suppressed for four states.
+
+\subsection{The Fang et al.\ (2025) test}
+We also estimate Fang, Lee and Li's equation on their variables, all in logs:
+\begin{equation}
+\ln ET_{st} = \beta_1 \ln AI_{st} + \beta_2 \ln EPU_{st} + \sum_k \beta_k \ln CV_{kst} + \alpha_s + \varepsilon_{st}.
+\end{equation}
+We then change one thing at a time: add year effects, lag AI, cluster by state, extend the sample and drop DC. We run two AI measures side by side: AI job postings, Fang's measure, and data-center jobs. Data-center jobs are one consistent BLS series and the more reliable extension measure. Almost every postings year comes from a different AI Index edition, so a state's year-to-year change mixes real change with method changes; year effects remove only shifts that hit all states proportionally. EIA also changed how SEDS counts wind, solar, hydro and geothermal in October 2023, so we also estimate on the earlier basis (below).
+
+EIA changed how SEDS counts wind, solar, hydro and geothermal in October 2023, from the 2022 data cycle and for all years (\texttt{eia.gov/state/seds/seds-change/index.php}). Our main old-basis outcome is therefore SEDS as published in June 2023 (the archived release, data through 2021). We also rebuild the old accounting year by year on current data: only the electricity parts of the four sources are converted, at each year's fossil-fueled plant heat rate $HR_t$,
+\begin{equation}
+ET^{old}_{it} = BM_{it} + \frac{HR_t}{3.412}\,E_{it} + D_{it},
+\end{equation}
+where $E$ is noncombustible renewable electricity at 3,412 Btu/kWh and $D$ is geothermal and solar direct use. The rebuild matches the June 2023 release when that release's biomass is used; a single factor $k = 2.3$--$2.9$ is kept as a check. We complete Fang's method set: subgroup splits (at the mean and the median, with interaction tests), fossil-fuel consumption as a negative indicator, an extreme-weather split from NOAA Storm Events records, and an event study on each state's 2019 share of postings. We also add a linear year trend and two placebo industries (distilleries and pet care, chosen by national growth before any regression) in place of AI.
+
+\subsection{Extensions}
+All extensions were registered before estimation (\texttt{EXPERIMENTS.md}, section 14). They use the main specification: two-way fixed effects, AI lagged one year, four controls, standard errors clustered by state and 1/99 winsorizing, with both AI measures per 1,000 workers. Within each family of outcomes we report Benjamini--Hochberg $q$-values, and we call a result a finding only if $q<0.10$ and the lead of AI is clearly smaller than its lag.
+
+\paragraph{By renewable type.} Wind, utility-scale solar, hydro, geothermal and biomass: share of in-state generation, log generation and MW added per 1,000 MW of 2015 capacity; SEDS wood and waste, biofuels, and totals without biomass or biofuels.
+
+\paragraph{Other outcomes.} Log electricity sales per person by sector, sector prices (without the average-price control), generation shares of gas, coal and nuclear, capacity added by fuel, net imports and power-sector CO$_2$.
+
+\paragraph{The national trend.} We replace year effects with measured drivers that vary by state: RPS/CES targets, solar and wind resource times solar and wind LCOE (LBNL), times the ITC and PTC (coded from CRS reports R43453 and IF10479 and from P.L.\ 116-260 and 117-169), and 2015 gas share times the Henry Hub price,
+\begin{equation}
+Y_{st} = \mu_s + b_1 RPS_{st} + \sum_j b_j (R_s \times D_{jt}) + c' D_t + a\, AI_{s,t-1} + \gamma' X_{st} + \varepsilon_{st},
+\end{equation}
+and compare the fitted path with the year effects and the AI coefficient across specifications.
+
+\paragraph{A broader AI measure.} An ``infrastructure + talent'' index for 2018--2023: data-center jobs, establishments and wages (QCEW), AI postings and computer and information research scientists (OEWS), z-scored and averaged within and across dimensions (Index A) or combined by principal components (Index B). Before outcome results, we test relevance: whether each measure predicts commercial electricity sales per person, and where Virginia, Texas and Georgia rank among the 50 state-specific slopes. Robustness adds state-specific linear trends.
+
+\subsection{Georgia solar costs}
+For Georgia we apply the learning curve of Bolinger, Wiser and O'Shaughnessy (2022), $C_t = C_{\mathrm{base}} (X_t / X_{\mathrm{base}})^{b}$ with $b = \ln(1 - LR) / \ln 2$, where $X$ is global cumulative solar capacity. Capacity paths use the growth in the International Energy Agency's World Energy Outlook 2025, Annex A: Current Policies (Table A.3a, p.\ 417), Stated Policies (Table A.3b, p.\ 423) and Net Zero Emissions by 2050 (Table A.3c, p.\ 429). This module has no AI variable, and its results are arithmetic rather than forecasts; learning curves are correlations.
+
+\subsection{Why our design differs}
+\paragraph{From the memo.} We report spatial impacts rather than the W$\cdot$AI coefficient, use the tech share as the main mediator, add $AI^2$, interactions, dynamics, a placebo and a spillover placebo, use BEA population throughout, and take land area and centroids from the 2020 Gazetteer.
+
+\paragraph{From Zhang et al.\ (2026).} They study 261 Chinese cities in 2006--2019 with robot density and a shift-share design. We study U.S.\ states with a direct job-based measure, a one-year lag, electricity-based outcomes and U.S.\ controls.
+
+\paragraph{From Fang et al.\ (2025).} They use state fixed effects only, no lag, and four years. We add year effects, the lag, clustering and a longer panel, and treat a difference between groups as real only if an interaction in one model tests it.

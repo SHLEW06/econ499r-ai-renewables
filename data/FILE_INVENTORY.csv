@@ -1,4 +1,7 @@
 path,size,sha256,type,what_it_is,disposition
+data/raw/_to_delete/Fang Supplement.pdf,769667,a5328513320dce43b18297e1f409c69e41f726fa5a2f693617019f47afddd7fd,pdf,_to_delete,Phase 2 raw file; see data/receipts/
+data/raw/_to_delete/R46865 (1).pdf,923792,3992968323fe9910c3388a4f8f49d4100f216b32997d9ea94f9647bdd6061cca,pdf,_to_delete,Phase 2 raw file; see data/receipts/
+data/raw/_to_delete/State_Policy_Uncertainty.xlsx,837999,e244701f6830dfd2845cc6deb87817cfa4c12aefdf6194858e8ca201c2517d19,xlsx,_to_delete,Phase 2 raw file; see data/receipts/
 data/raw/acs/s2801_2015.json,3054,c92a6dc3e64372c80b4cb035c42f6f439153ad75ba781f21ab7a42b940685870,json,Census ACS 1-year S2801 API response or code list; contains no key,Used: acs_broadband.csv
 data/raw/acs/s2801_2016.json,3054,738e494cece3c3b9d50f4d6ac2e0d775e0bb367ee8c8367f3c126ae179428243,json,Census ACS 1-year S2801 API response or code list; contains no key,Used: acs_broadband.csv
 data/raw/acs/s2801_2017.json,3055,b2e680ca43bfc0c31e572c0a79326ddd678b4a80d56f7784506229c93b1056dd,json,Census ACS 1-year S2801 API response or code list; contains no key,Used: acs_broadband.csv
@@ -27,6 +30,9 @@ data/raw/aiindex/ed2025_fig_4.2.10.csv,554,a90210b5fbc2c9250fb5ec4cc66bfabc0687e
 data/raw/aiindex/ed2025_fig_4.2.12.csv,1344,5b8559e6beb1d1e978d703e784219b61b8e5fc83200859124fba6620fdd75164,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/ed2025_fig_4.2.8.csv,514,404d7daa8cb6e0e1bfbabfd1fe651e945b3b9ac4d30d41b7ab471a3be6d246bc,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/ed2025_fig_4.2.9.csv,564,1199959fae303729efb46e210d18f9a76ba3a3fe50dc3ae2e28f5be094b6fbc2,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
+data/raw/aiindex/ed2026_fig_4.2.14.csv,726,e1262539628e13523245764d3c65a0968d381d924b2c7e6a2ea4025ae7bbcfaf,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
+data/raw/aiindex/ed2026_fig_4.2.15.csv,696,e32bca0de63d9cf8c8ad795be0b89de61d2cb423dec26dd541e767aeb9cb7216,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
+data/raw/aiindex/ed2026_fig_4.2.16.csv,1758,8f991781a56d5084ab0a17499bf38c7c43c588f836a6d76a230ef10a1ec6792f,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/ed2026_fig_4.4.10.csv,463,02e77e75c68b04b11473cc58a4031894765d37b0ae96c1d782908fbe8dabd150,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/ed2026_fig_4.4.11.csv,1266,572651636286a5486ddc3a21c07a7cbb0992ec92c6b613a8b092929a7546d50e,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/ed2026_fig_4.4.12.csv,1727,1d9d41894b6de7a03098f2a8229e5ab37067083f0d880b24ce2084c457e8afed,csv,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
@@ -34,6 +40,7 @@ data/raw/aiindex/ed2026_fig_4.4.13.csv,635,08f45d43f03105d18c8eac03b99808efe4fed
 data/raw/aiindex/hai_ai-index-report-2023_chapter_4.pdf,2459998,0b50b02089d2af4f8d4b9b33a1f47af7fdb96c1f8803b513c08a23ed3e405dce,pdf,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/hai_ai-index-report-2024_chapter4.pdf,4165810,5f914854169243fb3313f2bba70c5539a546053690d94f0a439771243c741b4c,pdf,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/aiindex/hai_ai-index-report-2025_chapter4_final.pdf,5303819,e1daf3fc72f58f18dbf9e19872d4c29d18876c30f35af54c8312f1662aeaf0d4,pdf,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
+data/raw/aiindex/~$ed2019_ai_postings_by_state.xlsx,165,7c0b09f0b51532a6994d7eea55bc057725ef496ed51841ef6d4a6f14aea61cba,xlsx,"Stanford AI Index: report PDF, public-data sheet or figure CSV",Used: ai_job_postings_state.csv; Fang test
 data/raw/bea/SAGDP.zip,10381511,3d3c5bc7bd243138cd4ec07d6f5e862bdb533683a538c3a6db61aa2fbc7085ef,zip,BEA state GDP and personal income,Phase 2 raw file; see data/receipts/
 data/raw/bea/SAINC.zip,17620171,cb28a9a200c71b48e283c4e4e6ef1b18524cb6c1edc31d7b768862c766ff770f,zip,BEA state GDP and personal income,Phase 2 raw file; see data/receipts/
 data/raw/bea/sagdp/SAGDP11_AK_1998_2025.csv,23425,4f73db7f1f67c1c3b582cc595e86fa8b69d7f1e68911377baf4b494088c7aeec,csv,BEA state GDP and personal income,Phase 2 raw file; see data/receipts/
@@ -1623,6 +1630,58 @@ data/raw/bea/sainc/SAINC7S__definition.xml,68968,76b4adaceeafa08683bfd5ebb9eead9
 data/raw/bea/sainc/SAINC91__ALL_AREAS_1990_2025.csv,57313,985000f43c3f1c37b2fa3918c185758857e3cec1421c0d82a6343de079298cc3,csv,BEA state GDP and personal income,Phase 2 raw file; see data/receipts/
 data/raw/bea/sainc/SAINC91__Footnotes.html,676,129de06739771717364563a4045ac83ba22509ed87e84f915b2e8ab0249711ac,html,BEA state GDP and personal income,Phase 2 raw file; see data/receipts/
 data/raw/bea/sainc/SAINC91__definition.xml,3913,c193a565721a64d719ded43bf7d396a2666c88031b02d8220cb70dbc9e49fec3,xml,BEA state GDP and personal income,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm15st.zip,6128285,76fe0cb8a10397c79f19c4b197e8a9e6acc82d9fb9ef005f1521ef5112298f25,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm16st.zip,6118466,a53bd9c45786b5f7a8e253a71b3e71ba5a76768ac265de5cf52d351b050e27c5,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm17st.zip,6024998,4ac7aab4272b93e2cc4105a649f0225bbf18f5434a216273a14101b977f116ee,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm18st.zip,6013818,b5b0e2b8825149eaae85dc3a741f4e1d8d33dd73232ba80785f9d5c0c2f0b2da,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm19st.zip,6795106,d121e196beb40053241c02a1f264b459958cf35096e07940c866e68eea971388,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm20st.zip,7026272,fc2d2cd6684f6b1f342a69631efb8d6c8ef375c495c17ccba78e7b05c48ae5dc,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm21st.zip,7525249,a4397cb1524512c21ca900dcc25d6a21d2b6342031efb746494ffd7ffc6c6941,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm22st.zip,7424445,5d1fdf7bd2d011f092df86995e389f83bc958211145b0080f6582e319a8508eb,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm23st.zip,7445440,e76daf090fc4ea8bd2061839dcc151b7fbee7007d9f602cfd1645a2261e9d887,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/oews/oesm24st.zip,7617815,5b66eb673f120c10fd17824d4d1e8bcf2fba0e6b39122b66404ce42cad5fb816,zip,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2014_312140.csv,58899,fad325d2248bba1bbb49904dc68553a9a29b5169fa1633ec57eb0185b551823d,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2014_812910.csv,338785,c6de4498bf290ebc77ef995f053b5e3a261e684fe278cb0a1b3bd8f52ed0b88c,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2015_312140.csv,71241,6f2d0cabc3c25eea5011e68b10cc247f9e89061e99133fb16a12fe871b86f327,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2015_812910.csv,347044,fff696ab4ce68a441861e013620a3484a1683c61c17bead54c000a3c5cdf835b,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2016_312140.csv,77631,431a2d0f7ad9e55bb38e4833b3d51a30887e3b58719ab1bf9b4b604f2932f4d1,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2016_812910.csv,351859,d3f7ea1748ab4788861f9b4c3e28d8630d8161820b6bb6fe41f6874144c83324,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2017_312140.csv,87351,00fca4ece9f452be1140854e0319a34199728914b8cda34462c6167e7006af47,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2017_812910.csv,356942,41c17969f6aa1e8a3f2c34ef23c28ccd324301d54fcac749eefc9ac6d8fc0c22,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_312140.csv,96005,538601120d19926cd48fdbbbd82d655fa065d93faedc237ede28ac1949070cb6,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_541613.csv,338121,88a477f8f28aa44f47d9ce5c0cf46fefd191e80b54f78f083af5d1ac6129d55a,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_541940.csv,506165,88ea93fe10690753d2a7d78135433380b4b804931384a6dbede0b94b79eab414,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_561612.csv,272444,2de615e02ce99819ac7f34f8cb4c715539094c92bcb15a8f761b4a914d08c05f,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_621340.csv,472402,532dac0276f0cdd9c7f7760e8577d29e528fcbffb60973467c845ce84ff02d91,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_621420.csv,346711,75db1214799e787f311b9ea345c227b767fd1b752ff8ed3f3cd5ccdf2c0491ef,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_621493.csv,249409,fb613edbd1d692fbb08dc29bba49f595ef5feac87e164032ae91ab0ee60841a9,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_621511.csv,275690,32c51ef9f49e219270cc3c82b63646beac34c982ab3115c9b6eaafd81d6a41bd,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_621610.csv,475189,2781f25e4930ad1d6867920989640ef01c954e31ea9c24a94352cf2529e33f77,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_624120.csv,613589,cca0dd10da6927b4d4e9fe4387a048bfa95572c61c5d03e98f3946e655c079ca,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_812199.csv,286417,04a1613bf53aa1c52b143cc51e3cc433af11120ff0fe88590a67e888cd983cd4,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2018_812910.csv,366054,00bc9c157cfd6ae85cd86cb6322f9d6b6d5adc803e565f909eb4ad190d45e0d1,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2019_312140.csv,102458,c2242351eea6db6f7ed65770b33dbeb6c42790f063c910327c32e6543e9acce1,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2019_812910.csv,373783,021e099bccb37d5be67338021e25a205342baa1dc3af73543537da302dde9a84,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2020_312140.csv,108062,1c171baf0660e203daca0da4ca03bcedd11c10c0604de5f52cd1fa3c46c217f5,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2020_812910.csv,381780,fba9606c115bbe763d6f7a93700ab1b4d4300b8c7d96f540ea952b8497c9c829,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_312140.csv,117056,982d295de615f63b12d2e4cd49f319754a1aa56daaff92529f2333620dcf7a6c,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_541613.csv,369511,da7d5edc83d9fa64c17ded640c3b00f5a43bf03730e6689884fc7ff495024db9,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_541940.csv,510126,71acd182fa2c0f74be8cc2fd689f7e0e68c07f742164cb7fa0a910626549d90b,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_561612.csv,275235,0a449963df00ae218ff368a5a7df440e6d2cefc1e29ad491d126ff5fa0e302bc,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_621340.csv,484956,663a100c286479cf4cd66c50e946ced11b13ad790dfccad4f9211ab9ae33f265,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_621420.csv,369865,cac20a9b42d8dd86ee503afa80681afa71bcf1236e7a7a317930e10ed7d37caf,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_621493.csv,258081,2fcdf0aafa58312044f54a479cfbeeffad5f80f9662e0c0afc6bbaa9f488ea59,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_621511.csv,282555,a9b8836c8e6928f5c5af7943f9f2aeb8a9c1612fe5530c01bf695430e72a8cac,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_621610.csv,478437,262cd994375549a4cac9d2f798951f487bee42e0c6c2c52f652d2c587866d8d5,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_624120.csv,643474,a1780658d7b4b27b80dfa91ad5f703a5051e7a90bb97c2d02bd52525f1a4658b,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_812199.csv,297841,f2ff503dcdd6f345bfd0bf51f4180988954729b6c8b8bd9b901c3a6bf9ddbdad,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2021_812910.csv,389913,3394ad063cc53ea2e57228adb3952803036153be7969bb4762d126fd45c23a52,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2022_312140.csv,124663,52d7dcc1c963d10cfc94afbf8e0e69f85b6504665562fc4564e1e2f31ac1699b,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2022_812910.csv,400386,f82cd6b7fa1da4b4994ddcc0221094594b79f6ecb152911a4e56988be66121ee,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2023_312140.csv,131125,0d5bd61673b6a483869565b780183440899f58395741c3273b3f0a1f6cec886b,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2023_812910.csv,410877,5e7b819b9aadb3e14980594a9a100b863bcf0c873cd1dc72948b24a6a13f9989,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2024_312140.csv,129077,88518a7a9f9eab8cefcf5c1b7cad926a86efbb326b41a3e1a594fda56f225a3f,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
+data/raw/bls/placebo/qcew_2024_812910.csv,402047,9b35e3ab3233d4ad0dbadb193dac8b83680e322ceb574dcef2a8b2ea139191a4,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
 data/raw/bls/qcew_2014_10.csv,3503742,3b0793bc5a047804899d6b6c06e9efd88491845fd4193632fdfc420df6578e13,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
 data/raw/bls/qcew_2014_518210.csv,264711,bb0a47833a2b470ad5b52bb909323b9ded4573fd403ff9b1b5da83bdbabb7be3,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
 data/raw/bls/qcew_2014_5415.csv,540057,82fcb0c4489abe04f646c346b382bb4438cfbcf7545026ee9d3dd8c5d0ab81fe,csv,BLS QCEW annual employment by NAICS,Phase 2 raw file; see data/receipts/
@@ -1662,18 +1721,37 @@ data/raw/bls/qcew_2025_5415.csv,559735,f5304280483346c4762dd900d7aea80c848b952f2
 data/raw/census/2020_Gaz_counties_national.txt,647629,0f309672a9aa8b1bd34cbcb62d84e7e1bdbb91ceb977f1cbc9d25ab85668c13f,txt,Census county Gazetteer and adjacency,Phase 2 raw file; see data/receipts/
 data/raw/census/county_adj.txt,1116106,df62fedd7d27528af7fd870c7ec92232fb2d6bea3ec6cbc9928946b78e128f64,txt,Census county Gazetteer and adjacency,Phase 2 raw file; see data/receipts/
 data/raw/census/gaz_counties.zip,141524,02ef546e4c4f9c032c19616eabb9526caa016f778f41ede3b8c9755dacce20ef,zip,Census county Gazetteer and adjacency,Phase 2 raw file; see data/receipts/
+data/raw/census_btos/AI_Core_Questions.xlsx,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce,xlsx,census_btos,Phase 2 raw file; see data/receipts/
+data/raw/census_btos/AI_Question_Wording_Updates.pdf,491343,91b018352b693d500258cb649b7c8b1747d5fbfb5f065eeb8969276dd1068c28,pdf,census_btos,Phase 2 raw file; see data/receipts/
+data/raw/census_btos/State.xlsx,4681949,134b30bb209c7835c9faf7403255da3f2bd425a29ca4b4acfe9185805c07f272,xlsx,census_btos,Phase 2 raw file; see data/receipts/
 data/raw/census_pop/NST-EST2025-ALLDATA.csv,53555,92188e29cb0a67dcf95afa7d6c47359409782f086478b70ea4128eb70e223ca9,csv,"Census state population estimates, used only to check BEA population",Used: cross-source check; not in the panel
 data/raw/census_pop/sc-est2020int-alldata6.csv,18292193,a88c2879490e3283896e953d1aeddc8f9afb95cd90ab40f2910304a2548bd654,csv,"Census state population estimates, used only to check BEA population",Used: cross-source check; not in the panel
 data/raw/costs/Lazard_LCOEplus_2026.pdf,1181395,a541d1ecd2e837fb779a6370c76336d899216fc4439e2a8b7b93cb1d046f25b5,pdf,Lazard LCOE+ report,Phase 2 raw file; see data/receipts/
+data/raw/crs/CRS_IF10479_2021-04-23.pdf,503481,b8589c91b3b3325fd4a13733616e7ee6218d3e7fea9c5dc0d2d277693a324be1,pdf,crs,Phase 2 raw file; see data/receipts/
+data/raw/crs/CRS_R43453_2020-04-29.pdf,1266041,115203a603056617d696c7ddbcd59632bc7cf33f8d963e04c20c2dbdb9639ef5,pdf,crs,Phase 2 raw file; see data/receipts/
+data/raw/crs/CRS_R46865_2024-02-26.pdf,923792,3992968323fe9910c3388a4f8f49d4100f216b32997d9ea94f9647bdd6061cca,pdf,crs,Phase 2 raw file; see data/receipts/
+data/raw/crs/PLAW-116publ260.pdf,5627865,32285d91badb98bb2df445ab0e56a3b4ce60225350f694fc03a0e1678cfef1f5,pdf,crs,Phase 2 raw file; see data/receipts/
+data/raw/crs/PLAW-117publ169.pdf,876749,5bd9bebe719d3d1738e751fe7978ef7bf05167ed8150471f306e010185baed4f,pdf,crs,Phase 2 raw file; see data/receipts/
 data/raw/eia/HS861_2010-.xlsx,487659,e4c74d03f4a6b8c68045e3d2d3392b81bb5230f5d9989edd3c7046611092af16,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/annual_generation_state.xlsx,2681286,678535c21b30c98bb1dc27632ec12db1beb3687f3bb524e4c8850f7d89fe71a1,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/emission_annual.xlsx,2108776,cc481709f244412561b9bd65b7363ef204c92a91cf091f51f5c08397f9b9cdc1,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/existcapacity_annual.xlsx,2609961,5d0958ccf4445e7b9f10f1511476080b43b9e26ac8b050af51d30eef6ea19172,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/henry_hub/RNGWHHDa.xls,34816,7a3c4f947d54358792b11bed055f78659eabe671816ed819fbe373100480805a,xls,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/mer/TOTAL.zip,3245210,0d9e1069bfc4fab83d69ce1ceafdb072342607ada6651b084992ea393d379b26,zip,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/mer/_to_delete/MER_TA6.xlsx,77294,f321c39a22530e5e7e5319b40a8bb560fcdd4c5ac4869be4c1fd36099ca813aa,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/mer/_to_delete/full_data_MER.zip,13984834,ef91e697ba8c5d193b8a848d5dbad54c62be121fd18521b3247299c1ee8fc926,zip,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/mer/_to_delete/mer_a.pdf,155748,b58902260c1fc066204689e0bec34dda04b6a19de97aa612bcb7c871fd2207c0,pdf,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/mer/mer_A_FULL.pdf,1099621,2bcc0414f73dc1346e01495ac6c62a73028c4b6a5027074ab9c57e3cc16367f7,pdf,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/plancapacity_annual.xlsx,40162,fa7ae104ab002ad8f3af03b5ef2f098eb40a7e856ec8fe579d0bc2bd15c04f98,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/seds/Codes_and_Descriptions.xlsx,68741,c34324b0ae9c793b45261a1377a2d4fb1ad002d27b54195329bed6514897169f,xlsx,EIA SEDS prices or code list,Used: seds_renewables_state.csv; Fang test
 data/raw/eia/seds/Prod_dataset.xlsx,801275,69adaa926c6100c7642c40bb052bec8d9342fa788f44a731df61fe211593e2a0,xlsx,"EIA SEDS primary energy production by state, 1960-2024",Used: fang_net_producer_definitions.csv; Fang check
 data/raw/eia/seds/pr_all.csv,2060495,c80d9bca62b347514f43ca577f722d38988874e3db34bfce178bb45aef23ab78,csv,EIA SEDS prices or code list,Used: seds_renewables_state.csv; Fang test
+data/raw/eia/seds/seds_change_notice.html,48375,c20b0ec08b1e22445678c334f3a76c2472af5a64dd3431d3d4ba70cd6adeefc4,html,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia/seds/use_all_btu.csv,4277144,cbf0e26022e90303d355856ce750eaeedcb1cc6642c01c8b21f46d0284a9cedc,csv,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/seds/use_all_phy.csv,2715056,efd03111cc2b5b5bc25d94e97340bf19ddad260e81874e4ed6c8d59fcf199f57,csv,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/seds_archive/archive_index.html,78361,d8b96e788418f77fd9795573399f3e074c16c5a38de9796e34fc4e8fb758bfcd,html,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/seds_archive/complete_seds_2021.zip,7814638,46646ef548bc6bdc6a5cd3a3e3ac6f66d165b1779faecd60a766032ce0ac4ca1,zip,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
+data/raw/eia/~$annual_generation_state.xlsx,165,7c0b09f0b51532a6994d7eea55bc057725ef496ed51841ef6d4a6f14aea61cba,xlsx,EIA state electricity and SEDS data,Phase 2 raw file; see data/receipts/
 data/raw/eia_forms/eia8602017.zip,16181258,da9f1a1f8528324ff47019229d0f3648efe8c5997f18449f10d6aad2daa68e5c,zip,"EIA Form 860 data, 2017",Reference: identifies the NE and NM 2017 blank-fuel capacity rows
 data/raw/eia_forms/eia8602025.zip,23622347,2b27929d26cc1da9ad6a530da1cac6718cd8496098ee560c4d47cfffd96d08ba,zip,"EIA Forms 860, 861, 923",Phase 2 raw file; see data/receipts/
 data/raw/eia_forms/f8612025.zip,4756816,f59f6c732bf685fe0a1591b32227f5ce572dc0dfd26bb5caaeed128ac4e3a396,zip,"EIA Forms 860, 861, 923",Phase 2 raw file; see data/receipts/
@@ -1696,6 +1774,7 @@ data/raw/georgia/dkt55378_large_load_report_q1_2026_attachment.xlsx,42604,8c1e4d
 data/raw/georgia/dkt55378_large_load_report_q2_2026.zip,1192071,52f89780cef574bfa888515a2d4a4b0e8366ac2cd4e30d29b95327ff0eb0ff55,zip,Georgia Power IRP and large-load filings,Phase 2 raw file; see data/receipts/
 data/raw/georgia/irp_2025_public_disclosure.zip,103717722,d72ddb87723475599f575acbef01438b08f5aacdf712e5f8fcb653d3ff9cbe6a,zip,Georgia Power IRP and large-load filings,Phase 2 raw file; see data/receipts/
 data/raw/lbnl/Historical RPS & CES Target Achievement and Compliance Costs_June 2026.xlsx,75877,a440248d200198ce13a4a0af8509d922834cd71293f81dc3855352a6ab9f765c,xlsx,"LBNL share of target achieved and compliance costs, June 2026; no target levels",Used: cross-check columns in lbnl_rps_targets.csv
+data/raw/lbnl/LBNL_land_based_wind_data_2026.xlsx,33764384,e8a8e72af7fb8feb52776a05b0a4d15828dd84883a6404387d190f3b4c9fed5e,xlsx,lbnl,Phase 2 raw file; see data/receipts/
 data/raw/lbnl/RPS & CES Targets and Demand_June 2026.xlsx,201978,46f45337966f6e41871f896410e307d9be39ecf295a2aff97266c3e0c4a08521,xlsx,"LBNL RPS and CES target schedule and demand, June 2026",Used: lbnl_rps_targets.csv
 data/raw/lbnl/Utility Scale Solar 2026 Edition Datafile.xlsx,62885230,d3eccb46ec10c9b71cb77314908ad6ac11ebf83d5eac976492801029903ab341,xlsx,"LBNL Utility-Scale Solar, Oct 2026; 2,005 projects",Used: lbnl_utility_solar.csv
 data/raw/lbnl/rps_ces_nominal_percentage_targets_june_2023.xlsx,66554,b7d26058bb3726f948f9387a2197c794d9d075dabf22aac9868697e221aafb65,xlsx,"LBNL RPS and CES target schedule, June 2023 edition",Used: target_pct_ed2023 check in lbnl_rps_targets.csv
@@ -1801,6 +1880,16 @@ data/raw/noaa/WY_hdd_2015_2025.csv,215,9dc302892d39417153dfe87dc33664fcbe9b1795c
 data/raw/noaa/climdiv-cddcst-v1.0.0-20261006,812028,7b0261158383506d684e4893af619f3ec9c6767760b0fa695f164aaa74228faa,0-20261006,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
 data/raw/noaa/climdiv-hddcst-v1.0.0-20261006,812028,321646a5ab826f827c41797b5eb9e3352547bbb04c5ed6a826caa0a61b39da9b,0-20261006,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
 data/raw/noaa/state-readme.txt,18069,b77187cdddfa6ef87c5a5c8eeee2321cbda85e03c0aa6318e547c05236428416,txt,NOAA nClimDiv statewide file format,Reference
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2015_c20260323.csv.gz,10041550,c4a5a24b8c69ad2b6b867790ce298f5b642a60516c9fce5550a8d2f67cd7bf2e,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2016_c20260323.csv.gz,9065715,d8e1389897df3557e74ba36820357f6962a7c0ca922595400fe74d883f7a5036,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2017_c20260519.csv.gz,9340854,bd3ca72b71544222cba8aa2b29eb3f0efe050d3330a0c408e208befb66881750,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2018_c20260323.csv.gz,9585982,19702480f50cd2a8dacce5e57891feba156afb87b1ea5cbb4eaeda69d2b964a4,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2019_c20260323.csv.gz,11602648,f5043ecc776818b0feffdf1e0fcbaf63329db0635eab1057c7b8ba00ef332e3b,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2020_c20260323.csv.gz,10444606,895c56fd46991c4d9a135d67558dc4b447a02a2314efac0ace645135b98f9c9d,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2021_c20260323.csv.gz,10563953,60c1daf96dbe8eafd48c80df5b70df51a0125ab95d467ee7009a646761d57715,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2022_c20260625.csv.gz,11817849,7d6b79d0049a6edec96b061738289daddba90be26fc9afe7b0a6fd617f21452e,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2023_c20260323.csv.gz,12888092,713784bed40d9e5a95b1d6240a654f865f3ef97703713105c7b35437270da134,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz,12693243,2070b83eccab041b36360ab73645b9a249c3eefc5b92b5b3fc0cbba4d9fcc09c,gz,NOAA NCEI statewide heating and cooling degree days,Used: noaa_degree_days.csv; one check only
 data/raw/nsf/nsf20307-tab010.xlsx,19194,3ba1449e34c4cac1a984eb799919806284a34f439bfce7d915665e1f41b1d101,xlsx,"NSF National Patterns Table 10, R&D by state, one data year per edition",Used: nsf_state_rd.csv
 data/raw/nsf/nsf21325-tab010.xlsx,19315,6f3c82cc32f0e4e7eade24db6b3a36b73a3152b7fb444c97f3b4c24b41aa3d38,xlsx,"NSF National Patterns Table 10, R&D by state, one data year per edition",Used: nsf_state_rd.csv
 data/raw/nsf/nsf22320-tab010.xlsx,19473,1ecece3a4a57ad2f31e8567d2bbda3f19e69df371606f57d7d76b591cc5b9b90,xlsx,"NSF National Patterns Table 10, R&D by state, one data year per edition",Used: nsf_state_rd.csv
@@ -1829,3 +1918,5 @@ data/raw/rmi/net_plant_balance.csv,3040809,61534f51d8eac14758797441c655b0ed21aad
 data/raw/rmi/operations_emissions.csv,122758176,18321a2e8f971940b4e6097d3d2ca410eaa2bfb46e2f78d3429f87ae4cd29eb9,csv,RMI Utility Transition Hub,Phase 2 raw file; see data/receipts/
 data/raw/rmi/operations_emissions_by_tech.csv,241934274,991387b996f9cd4d7cd25851968ffaea46339aa5ba2ddf37112b4293611fc84a,csv,RMI Utility Transition Hub,Phase 2 raw file; see data/receipts/
 data/raw/rmi/reliability.csv,4167111,04ff7c30bc8522ababf871ab420c1f9d099c5f67eb4b1935a854ba582a6db5d5,csv,RMI Utility Transition Hub,Phase 2 raw file; see data/receipts/
+data/raw/uspto_aipd/ai_model_predictions_2023.csv.zip,818035211,38c6182750f33db17fe13ebac72fb064afdcfb47b893f12f113f527bda458d9b,zip,uspto_aipd,Phase 2 raw file; see data/receipts/
+data/raw/uspto_aipd/oce-aipd-2023.pdf,1922389,5681377084dfb7978f9a9b7e2bf672b870380b8002841fe6e3ad9d6190ff0cb9,pdf,uspto_aipd,Phase 2 raw file; see data/receipts/

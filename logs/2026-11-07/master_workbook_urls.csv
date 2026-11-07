@@ -1,0 +1,92 @@
+url,status,note,kind
+https://www.eia.gov/electricity/data/state/,206,Service Unavailable,ok
+https://www.eia.gov/electricity/data/state/annual_generation_state.xlsx,200,,ok
+https://www.eia.gov/electricity/data/state/existcapacity_annual.xlsx,200,,ok
+https://www.eia.gov/electricity/data/state/xls/861/HS861%202010-.xlsx,200,,ok
+https://www.eia.gov/electricity/data/state/emission_annual.xlsx,200,,ok
+https://www.eia.gov/electricity/data/state/plancapacity_annual.xlsx,200,,ok
+https://www.eia.gov/state/seds/seds-data-complete.php,206,Service Unavailable,ok
+https://www.eia.gov/state/seds/sep_use/total/csv/use_all_btu.csv,200,,ok
+https://www.eia.gov/state/seds/sep_prices/total/csv/pr_all.csv,200,,ok
+https://www.eia.gov/electricity/data/eia860/,206,Service Unavailable,ok
+https://www.eia.gov/electricity/data/eia860/archive/xls/eia8602017.zip,200,,ok
+https://www.eia.gov/electricity/data/eia861/,206,Service Unavailable,ok
+https://www.eia.gov/electricity/data/eia923/,206,Service Unavailable,ok
+https://www.bls.gov/cew/,200,Forbidden,ok
+https://data.bls.gov/cew/data/api/2025/a/industry/518210.csv,200,,ok
+https://apps.bea.gov/regional/downloadzip.htm,200,,ok
+https://apps.bea.gov/regional/zip/SAGDP.zip,200,,ok
+https://apps.bea.gov/regional/zip/SAINC.zip,200,,ok
+https://www.census.gov/programs-surveys/popest.html,200,,ok
+https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv,200,,ok
+https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.html,200,,ok
+https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_counties_national.zip,200,,ok
+https://www.census.gov/geographies/reference-files/time-series/geo/county-adjacency.html,200,,ok
+https://www2.census.gov/geo/docs/reference/county_adjacency/county_adjacency2023.txt,200,,ok
+https://www.census.gov/programs-surveys/economic-census/guidance-geographies/levels.html,200,,ok
+https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf,200,,ok
+https://data.catalyst.coop/,200,,ok
+https://s3.us-west-2.amazonaws.com/pudl.catalyst.coop/stable/out_ferc1__yearly_all_plants.parquet,200,,ok
+https://www.sec.gov/edgar/sec-api-documentation,200,Forbidden,ok
+https://data.sec.gov/api/xbrl/companyfacts/CIK0000092122.json,200,Forbidden,ok
+https://utilitytransitionhub.rmi.org/data-download/,200,,ok
+https://www.lazard.com/research-insights/levelized-cost-of-energyplus-lcoeplus/,200,,ok
+https://www.lazard.com/media/kcfconhf/lazards-lcoeplus_vf.pdf,200,,ok
+https://psc.ga.gov/search/facts-docket/?docketId=56002,200,,ok
+https://www.selc.org/wp-content/uploads/2025/03/2025-IRP-Main-Document.pdf,200,,ok
+https://psc.ga.gov/search/facts-docket/?docketId=55378,200,,ok
+https://services.psc.ga.gov/api/v1/External/Public/Get/Document/DownloadFile/226607/107887,200,Method Not Allowed,ok
+https://www.kadoa.com/datacenter/power/georgia,200,,ok
+https://eta-publications.lbl.gov/publications/us-state-electricity-resource-0,200,,ok
+https://eta-publications.lbl.gov/sites/default/files/rps_ces_nominal_percentage_targets_june_2023.xlsx,200,,ok
+https://eta-publications.lbl.gov/publications/us-utility-scale-solar-2026-edition,200,,ok
+https://ourworldindata.org/grapher/solar-pv-cumulative-capacity,200,Not Found,ok
+https://www.iea.org/reports/world-energy-outlook-2025,403,Forbidden,blocked to scripts
+https://www.policyuncertainty.com/state_epu.html,200,,ok
+https://www.policyuncertainty.com/media/State_Policy_Uncertainty.xlsx,200,,ok
+https://ncses.nsf.gov/pubs/nsf26313,200,,ok
+https://ncses.nsf.gov/pubs/nsf26313/assets/data-tables/tables/nsf26313-tab010.xlsx,200,,ok
+https://ncses.nsf.gov/indicators/states/indicator/bachelors-degrees-per-1000-18-24-year-olds,200,,ok
+https://www.census.gov/programs-surveys/acs,200,,ok
+https://api.census.gov/data/2024/acs/acs1/subject,200,,ok
+https://epoch.ai/data/ai-data-centers,200,,ok
+https://epoch.ai/data/data_centers/data_centers.csv,200,,ok
+https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series,200,,ok
+https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/statewide/time-series/9/hdd/12/12/2015-2025.csv,200,,ok
+https://www.eia.gov/state/seds/seds-change/index.php,206,Service Unavailable,ok
+https://www.eia.gov/state/seds/sep_prod/xls/Prod_dataset.xlsx,200,,ok
+https://www.eia.gov/state/seds/archive/,206,Service Unavailable,ok
+https://www.eia.gov/state/seds/archive/complete_seds_2021.zip,200,,ok
+https://www.eia.gov/opendata/bulkfiles.php,206,Service Unavailable,ok
+https://api.eia.gov/bulk/TOTAL.zip,200,,ok
+https://www.eia.gov/state/seds/sep_use/total/csv/use_all_phy.csv,200,,ok
+https://www.ncei.noaa.gov/stormevents/,200,,ok
+https://www.ncei.noaa.gov/pub/data/swdi/stormevents/csvfiles/,200,,ok
+https://crsreports.congress.gov/product/pdf/R/R43453,403,Forbidden,blocked to scripts
+https://www.everycrsreport.com/files/20200429_R43453_e0c7214aa1125338b3fb07a9dd116f0381aea83a.pdf,200,,ok
+https://crsreports.congress.gov/product/pdf/IF/IF10479,403,Forbidden,blocked to scripts
+https://www.everycrsreport.com/files/2021-04-23_IF10479_4e2ececbd804346cd63db96f5d9e80cab916f888.pdf,200,,ok
+https://crsreports.congress.gov/product/pdf/R/R46865,403,Forbidden,blocked to scripts
+https://sgp.fas.org/crs/misc/R46865.pdf,200,,ok
+https://www.govinfo.gov/app/details/PLAW-116publ260,200,,ok
+https://www.govinfo.gov/content/pkg/PLAW-116publ260/pdf/PLAW-116publ260.pdf,200,,ok
+https://www.govinfo.gov/app/details/PLAW-117publ169,200,,ok
+https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf,200,,ok
+https://www.eia.gov/dnav/ng/hist/rngwhhdA.htm,206,Service Unavailable,ok
+https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls,200,,ok
+https://emp.lbl.gov/wind-technologies-market-report,403,Forbidden,blocked to scripts
+https://www.bls.gov/oes/tables.htm,200,Forbidden,ok
+https://www.bls.gov/oes/special-requests/oesm24st.zip,206,Forbidden,ok
+https://www.census.gov/hfp/btos/data_downloads,200,,ok
+https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,200,,ok
+https://hai.stanford.edu/ai-index,200,,ok
+https://drive.google.com/uc?export=download&id=1RT5ZLOQFFHBEo9BNi4HRrU7v4vq-H4ZJ,200,,ok
+https://www.uspto.gov/ip-policy/economic-research/research-datasets/artificial-intelligence-patent-dataset,200,,ok
+https://data.uspto.gov/ui/datasets/products/files/ECOPATAI/2023_r1/ai_model_predictions.csv.zip,200,,ok
+https://hai-production.s3.amazonaws.com/files/ai_index_2019_report.pdf,200,,ok
+https://hai-production.s3.amazonaws.com/files/2021-ai-index-report_master.pdf,200,,ok
+https://hai-production.s3.amazonaws.com/files/2022-ai-index-report_chapter-4.pdf,200,,ok
+https://hai-production.s3.amazonaws.com/files/hai_ai-index-report-2023_chapter_4.pdf,200,,ok
+https://hai-production.s3.amazonaws.com/files/hai_ai-index-report-2024_chapter4.pdf,200,,ok
+https://hai-production.s3.amazonaws.com/files/hai_ai-index-report-2025_chapter4_final.pdf,200,,ok
+https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_4_economy.pdf,200,,ok

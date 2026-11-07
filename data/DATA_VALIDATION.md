@@ -337,6 +337,22 @@ Full table at `logs/2026-11-02/build/validation/p12_missingness.csv`.
 
 ---
 
+## New data, Nov 7
+
+**Date:** 2026-11-07. **Scope:** files added for prompts 08 and 09. The master panel wasn't changed. Each file's contents were read, not just its name. Receipts are in `data/receipts/`; build logs are in `logs/2026-11-07/`.
+
+| File | Rating | Product and years (from contents) | Units and coverage | Vintage | Spot checks | Main caveat |
+|---|---|---|---|---|---|---|
+| SEDS archive, June 2023 release (complete_seds_2021.csv) | **Green** | SEDS consumption through 2021 on the fossil-fuel-equivalence basis | Billion Btu; 51 areas x 1960-2021 | Dated 2023-06-22 | Archived FFETK equals the MER-implied heat rate 2015-2021; component ratios match HR/3.412 | Older data vintage: biomass has since been revised |
+| SEDS old-basis rebuild (seds_old_basis.csv) | **Green** | Year-by-year rebuild 2015-2024 | Billion Btu; 51 x 10 | Current SEDS + bulk MER | Matches the June 2023 release to a median 0.00% with the archive's biomass; national sums within 0.51% of EIA's fossil-fuel-equivalent series | Uses current biomass, so it differs from the June 2023 release by EIA's revisions |
+| NOAA Storm Events counts (storm_events_state.csv) | **Yellow** | Heat and cold records 2015-2024 | Count; 51 x 10 | Files dated 2026 | Event types and states read from all ten files | Our counting rule; reporting differs by NWS office |
+| Extension outcomes (extend_outcomes.csv) | **Green** | Shares, ln generation, MW added, sector sales and prices, imports, CO2, SEDS by type, 2015-2025 | 51 x 11 | Panel + EIA files | MW added matches the panel's new_solar_mw and new_wind_mw exactly; EIA-861 sales match the panel exactly | Battery storage and small-scale solar not available |
+| Restructured classification (extend_restructured.csv) | **Yellow** | EIA-861 energy-only share of 2015 sales; 2025 retail power marketer share | Percent; 51 areas | EIA-861 | Texas checked against the 2025 detail file (63.6%) | Texas set by deviation X1 |
+| National and state drivers (extend_drivers_*.csv) | **Green** | PTC, ITC, wind and solar LCOE, Henry Hub, capacity factors | 2015-2025; 50 states | CRS 2020-2021; P.L. 116-260, 117-169; LBNL 2026; EIA | Every tax-credit value cites a printed page [PDF page] | Capacity factors are the EIA fallback for NREL (X4) |
+| BLS OEWS state files 2015-2024 | **Green** | Research scientists (15-1111, then 15-1221) | Jobs; 33-42 states a year after suppression | May 2015-May 2024 | All zips pass unzip -t; codes and titles read from each year | Software developers and data scientists dropped (no consistent series) |
+| AI index (ai_index_*.csv) | **Yellow** | Infrastructure + talent index, 2018-2023 (2024 scored) | z-scores; 43 states | Built 2026-11-07 | QCEW jobs equal the panel's dc_jobs exactly; alpha 0.73; BTOS correlation 0.55 | No innovation dimension; talent rests on two components |
+| Census BTOS AI use; Quid investment (AI Index 2026) | **Yellow** | BTOS 2024 share of firms using AI; 2025 private AI investment | Percent; dollars | 2026 downloads | Question wording read from the files; Quid blanks kept missing | Validation and grouping only |
+
 ## New data, Nov 4
 
 **Date:** 2026-11-04. **Scope:** files added since Phase 2. The master panel wasn't changed. Each file's contents were read, not just its name. Receipts are in `data/receipts/`, and the build output is in `logs/2026-11-04/side_tables_build.log`.
