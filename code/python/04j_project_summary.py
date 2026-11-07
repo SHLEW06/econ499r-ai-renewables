@@ -85,7 +85,7 @@ At the state level over 2015-2025, we don't find that data-center job growth is 
 ## Status and next steps
 
 - **Done:** data, validation, H1-H3, robustness, Fang test (incl. the completed method set, Nov 7), extensions (by type, AI impact, national drivers, AI index, add-on), stretch, Georgia solar, results pack, master workbook.
-- **Pending, needs a person:** Q1-Q4 2024 Georgia large-load reports (browser download from PSC Docket 55378); LBNL Queued Up (refuses scripted download); Fang's supplementary material (Table A1, Supplement B); PatentsView inventor locations, if the innovation dimension is wanted.
+- **Pending, needs a person:** Q1-Q4 2024 Georgia large-load reports (browser download from PSC Docket 55378); LBNL Queued Up (refuses scripted download); PatentsView inventor locations, if the innovation dimension is wanted.
 - **Next:** team review of the results by Nov 17; draft by Nov 24 from `methods_section.tex` and `findings.md`; turn-in Dec 1. `methods_section.tex` hasn't been compiled here, since no LaTeX is installed.
 
 ## Where things are

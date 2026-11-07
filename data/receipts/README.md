@@ -60,11 +60,12 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [lbnl_wind.md](lbnl_wind.md) | LBNL Land-Based Wind data, 2026 edition (hand download) | `data/raw/lbnl/` | Wind cost, section 4 |
 | [bls_oews.md](bls_oews.md) | BLS OEWS state files 2015-2024 (hand download) | `data/raw/bls/oews/` | Section 5 talent dimension |
 | [ai_index_section5.md](ai_index_section5.md) | QCEW 518210, OEWS, AI postings, BTOS, Quid via AI Index 2026, AIPD (unused) | `data/raw/bls/`, `data/raw/census_btos/`, `data/raw/aiindex/`, `data/raw/uspto_aipd/` | `ai_index_components.csv`, `ai_index_state.csv`, `ai_index_crossstate.csv` |
+| [fang_supplement.md](fang_supplement.md) | Fang et al. (2025) supplementary material (hand download, Emory) | `literature/` (not in git) | Table A1 and Supplement B comparisons |
 | [qcew_placebo.md](qcew_placebo.md) | BLS QCEW, two placebo industries | `data/raw/bls/placebo/` | read directly by `09a_fang_crosscheck.R` |
 
 **Moved, not deleted (team decision, 2026-11-07):** `data/raw/eia/mer/_to_delete/` holds `MER_TA6.xlsx` (actually MER Table 1.1), `mer_a.pdf` (Appendix A tables, renumbered) and `full_data_MER.zip` (EV-charging microdata). They were downloaded by mistake on 2026-11-07 and aren't used. Hashes are in `seds_old_basis.md`.
 
-**Filed 2026-11-07 (hand downloads; moves in `logs/2026-11-07/filing_moves.csv`):** the three receipts above. `data/raw/_to_delete/` holds three exact duplicates: `R46865 (1).pdf`, `State_Policy_Uncertainty.xlsx` (same SHA-256 as `data/raw/epu/State_Policy_Uncertainty.xlsx`) and `Fang Supplement.pdf`. The latter has the same SHA-256 as `literature/Assessing_AI_Impact_on_Renewable_Energy_Transition.pdf`, the article itself, **not the supplement**, so Fang's supplementary material (Table A1, Supplement B) is still missing.
+**Filed 2026-11-07 (hand downloads; moves in `logs/2026-11-07/filing_moves.csv`):** the three receipts above. `data/raw/_to_delete/` holds three exact duplicates: `R46865 (1).pdf`, `State_Policy_Uncertainty.xlsx` (same SHA-256 as `data/raw/epu/State_Policy_Uncertainty.xlsx`) and `Fang Supplement.pdf`. The latter has the same SHA-256 as `literature/Assessing_AI_Impact_on_Renewable_Energy_Transition.pdf`, the article itself, **not the supplement**. The real supplement arrived later the same day as `fang supplement.docx` and is filed as `literature/Fang_Lee_Li_2025_supplement.docx` (`fang_supplement.md`).
 
 ## Rebuild steps (from the project root)
 

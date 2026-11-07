@@ -101,7 +101,15 @@ number,document,source_file,source_tag,column,in_document,match
 "4,000",findings.md,"Georgia Power 2025 IRP, Main Document, p. 60 [PDF p. 67]",published,,yes,published; check by hand
 49.0,findings.md,results/2026-11-04/georgia_solar/national_lcoe_lbnl_tab.csv,{'year': 2022},lcoe,yes,yes
 61.0,findings.md,results/2026-11-04/georgia_solar/national_lcoe_lbnl_tab.csv,{'year': 2025},lcoe,yes,yes
--0.32,findings.md,results/2026-11-07/extend/tables/s1_descriptives_comparison.csv,{'variable': 'lnET'},diff_sd,yes,yes
+0.090,findings.md,results/2026-11-07/extend/e1_descriptives_vs_tableA1.csv,ext_a1_lnGDP_,diff,yes,yes
+0.708,findings.md,results/2026-11-07/extend/e1_descriptives_vs_tableA1.csv,ext_a1_lnEPU_,diff,yes,yes
+1.19,findings.md,results/2026-11-07/extend/e1_descriptives_vs_tableA1.csv,ext_a1_lnEPU_,diff_in_our_sd,yes,yes
+0.32,findings.md,results/2026-11-07/extend/e1_descriptives_vs_tableA1.csv,ext_a1_lnET_currentSEDS,diff_in_our_sd,yes,yes
+0.04,findings.md,results/2026-11-07/extend/e1_descriptives_vs_tableA1.csv,ext_a1_lnET_arch_June2023SEDS,diff_in_our_sd,yes,yes
+-0.178,findings.md,"Fang et al. 2025, Supplement Table B1, col. 3",published,,yes,published; check by hand
+-0.119,findings.md,results/2026-11-07/extend/e1_negative_indicator_vs_B1.csv,ext_b1_fang6_aipostings_ln_coal_current,estimate,yes,yes
+0.0160,findings.md,results/2026-11-07/extend/e1_negative_indicator_vs_B1.csv,ext_b1_fang6_aipostings_ln_gas_current,estimate,yes,yes
+0.0067,findings.md,results/2026-11-07/extend/e1_negative_indicator_vs_B1.csv,ext_b1_fang6_aipostings_ln_petroleum_current,estimate,yes,yes
 0.0791,findings.md,results/2026-11-07/extend/p2b_distillery_rerun.csv,ext_p2b_distill_twfe_trend_lnRE_never_suppressed_states,estimate,yes,yes
 0.014,findings.md,results/2026-11-07/extend/p2b_distillery_rerun.csv,ext_p2b_distill_twfe_trend_lnRE_never_suppressed_states,pval,yes,yes
 1,findings.md,results/2026-11-07/paper/tables/ext_summary.csv,ext_bytype_rows_q10,value,yes,yes

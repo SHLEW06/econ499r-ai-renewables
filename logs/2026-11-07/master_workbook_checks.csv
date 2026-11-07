@@ -1,7 +1,7 @@
 check,result,evidence
 LibreOffice did not save the final file,ok,docProps/app.xml Application: Microsoft Excel Compatible / Openpyxl 3.1.5
 Every formula cell has a cached value,ok,"13,923 formula cells; no value []; errors []"
-Link check,ok,"counts {'internal': 3413, 'github_receipt': 1164, 'web': 1212}; problems 0: []"
+Link check,ok,"counts {'internal': 3414, 'github_receipt': 1164, 'web': 1212}; problems 0: []"
 Zero formula errors after recalculation,ok,0 error cells []
 No Census key in any cell,ok,0 cells; key checked without printing
 No email addresses in any cell,ok,0 cells []
@@ -12,7 +12,7 @@ Every tab's row count matches its source,ok,80 data tabs checked; mismatches []
 30 random cells (seed 2026) match their source files,ok,30 of 30 match; 23 tabs; logs/2026-11-07/master_workbook_30cells.csv. Misses: []
 Every registry variable is in the Variable Finder,ok,1103 registry rows; missing []
 Every Finder row links to a real tab and column,ok,1102 internal links; header mismatches []. Rows with tab 'none' are Pending or Not available: ['large_load_q1_q4_2024']
-Receipts tab holds each receipt's exact text,ok,"34 receipts, 3,523 lines; differ []; extra []"
+Receipts tab holds each receipt's exact text,ok,"35 receipts, 3,540 lines; differ []; extra []"
 "Every Finder row's links go to its own tab, column and receipt",ok,1103 rows; wrong []
 "Tabs, frozen headers, filters and Arial are in the final file",ok,73 tabs in order; no freeze []; no filter []; not Arial []
 Live formulas and blue inputs are in the final file,ok,13923 live formulas on Core Panel; input color 000000FF

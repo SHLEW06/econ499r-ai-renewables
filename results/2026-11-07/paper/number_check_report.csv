@@ -102,6 +102,7 @@ number,document,source_file,source_tag,column,in_document,match
 0.121,ECON499R_Results_2026-11-07.pdf,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1trend_fang6trend_aipostings_lnET_arch_51s2018_2021_AI,pval,yes,yes
 0.2980,ECON499R_Results_2026-11-07.pdf,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1placebo_fang6_petcare_lnET_arch_51s2018_2021_AI,estimate,yes,yes
 0.003,ECON499R_Results_2026-11-07.pdf,results/2026-11-07/extend/p2_checks.csv,ext_p2_p1placebo_fang6_petcare_lnET_arch_51s2018_2021_AI,pval,yes,yes
+0.708,ECON499R_Results_2026-11-07.pdf,results/2026-11-07/extend/e1_descriptives_vs_tableA1.csv,ext_a1_lnEPU_,diff,yes,yes
 0.014,ECON499R_Results_2026-11-07.pdf,results/2026-11-07/fang/fang8_results.csv,fang8_es_current_aishare2019_event_state-year_cl-state_lnET_50s2015_2024_joint_pre_2015_2020,pval,yes,yes
 120,ECON499R_Results_2026-11-07.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes
 40,ECON499R_Results_2026-11-07.pdf,results/2026-11-04/fang/net_producer_check.csv,fang_netdef_teprb_gt_tetcb_difference_aipostings_producer_minus_consumer,net_producer_state_years,yes,yes

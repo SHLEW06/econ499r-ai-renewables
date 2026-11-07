@@ -251,10 +251,18 @@ def s_p2(date, E, T, F):
     g1 = lambda blk, spec, m, term="AI": p1[(p1.block == blk) & (p1.spec == spec) & (p1.ai_measure == m) & (p1.term == term)].iloc[0]
     tw = lambda blk, m, y, spec: r[(r.block == blk) & (r.ai_measure == m) & (r.outcome == y) & (r.spec == spec)].iloc[0]
     reg = ds[~ds.variable.str.startswith("lnET") & (ds.variable != "lnAIp")]
-    v = (f"**Verdict.** Our data match Fang's on every regressor: the means implied by Fang's Table 2 constants are within {reg.diff_sd.abs().max():.2f} SD of ours (GDP's gap fits 2012 vs 2017 dollars). "
-         f"The outcome is what differs. On current SEDS, our mean ln renewables is {ds.loc[ds.variable=='lnET','diff_sd'].iloc[0]:.2f} SD below Fang's implied mean, the only flagged row; on the old fossil-fuel-equivalence basis the gap is about 0.04-0.06 SD. "
+    A1 = pd.read_csv(os.path.join(E, "e1_descriptives_vs_tableA1.csv")); NB = pd.read_csv(os.path.join(E, "e1_negative_indicator_vs_B1.csv"))
+    A1.to_csv(os.path.join(T, "s1_descriptives_vs_tableA1.csv"), index=False); NB.to_csv(os.path.join(T, "s1_negative_vs_B1.csv"), index=False)
+    a1 = lambda v_, col: A1.loc[A1.variable == v_, col].iloc[0]
+    nb = lambda o, col: NB.loc[(NB.outcome == o) & (NB.basis == "current"), col].iloc[0]
+    v = (f"**Verdict.** With Fang's Table A1 (supplementary material), our data match Fang's for ln AI postings, EP, POP and EDU to within {max(abs(a1(x, 'diff_in_our_sd')) for x in ['lnAIp', 'lnEP', 'lnPOP', 'lnEDU']):.2f} SD, including min and max, "
+         f"and the same N (204). GDP is {a1('lnGDP', 'diff'):.3f} higher, consistent with chained 2017 vs 2012 dollars. Two rows are flagged. **EPU** is {abs(a1('lnEPU', 'diff')):.3f} lower than Fang's ({abs(a1('lnEPU', 'diff_in_our_sd')):.2f} SD), close to ln 2, "
+         f"which is consistent with Fang's index being about double ours; with state fixed effects in logs, a constant multiple doesn't change any coefficient (the earlier fallback, means implied by Table 2's constants, missed this gap). "
+         f"**Renewables** on current SEDS are {abs(a1('lnET', 'diff_in_our_sd')):.2f} SD below Fang's mean, while SEDS as published in June 2023 is {a1('lnET_arch', 'diff_in_our_sd'):.2f} SD off, consistent with Fang having used the pre-October-2023 basis. "
          f"**SEDS as published in June 2023 largely reproduces Fang:** the same sign, a similar size in columns 1-2 ({a(1).estimate:+.4f} and {a(2).estimate:+.4f} against +0.0428 and +0.0452), and about two-thirds of Fang's size in column 6 "
          f"({a(6).estimate:+.4f}, {fp(a(6).pval)}, against +0.0531). Of the move from current to June 2023 SEDS, {gd.loc[(gd.ai_measure=='ln AI postings')&(gd.column==6),'share_accounting_rebuild'].iloc[0]:.0%} (column 6, postings) comes from the accounting change and the rest from EIA's later data revisions. "
+         f"Supplement B1's negative indicators run on the same samples (N = {int(nb('coal', 'N'))}, {int(nb('gas', 'N'))}, {int(nb('petroleum', 'N'))}): Fang's coal ({nb('coal', 'fang_ai'):+.3f}) and gas ({nb('gas', 'fang_ai'):+.4f}) coefficients fall inside our CIs "
+         f"({nb('coal', 'estimate'):+.3f} and {nb('gas', 'estimate'):+.4f}), petroleum doesn't ({nb('petroleum', 'estimate'):+.4f} against {nb('petroleum', 'fang_ai'):+.4f}), and none is significant in either. "
          f"But Fang's spec has no year effects, and on the June 2023 basis a linear trend turns column 6 to {g1('p1trend','fang6trend','aipostings').estimate:+.4f} ({fp(g1('p1trend','fang6trend','aipostings').pval)}), while pet-care employment, which has nothing to do with energy, "
          f"is associated with renewables more strongly than AI ({g1('p1placebo','fang6','petcare').estimate:+.4f}, {fp(g1('p1placebo','fang6','petcare').pval)}; distilleries {g1('p1placebo','fang6','distilleries').estimate:+.4f}, {fp(g1('p1placebo','fang6','distilleries').pval)}). "
          f"In our final spec, the June 2023 basis gives {tw('p1final','aipostings','lnET_arch','twfe').estimate:+.4f} ({fp(tw('p1final','aipostings','lnET_arch','twfe').pval)}; 2019-2021, the years the release covers) for postings. "

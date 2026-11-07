@@ -27,7 +27,8 @@ table23_gap_decomposition,"Gap between current and June 2023 SEDS, Table 2 colum
 table24_fang_splits,"Fang Tables 3-5 splits: Fang published, our Fang-spec mean and median splits, interaction tests in both specs, and (F27, exploratory, added after Table 2) the June 2023 basis."
 table25_fang_negative_indicator,Negative indicator: SEDS fossil-fuel consumption (ln) and fossil share of total energy.
 table26_fang_event_study,"Event study: 2019 postings share x year, base 2021, two-way FE, ctrl4, 50 states, clustered."
-table27_ext_descriptives,Our descriptives vs means implied by Fang's Table 2 constants (Table A1 not available). Differences in our SD units; flag > 0.25 SD.
+table27_ext_descriptives,Our descriptives vs Fang's Table A1 (supplementary material). Differences in our and Fang's SD units; flag > 0.25 SD.
+table27b_ext_negative_vs_B1,"Negative indicators vs Fang's Supplement Table B1: ln coal, gas and petroleum consumption, Fang's col. 6 spec."
 table28_ext_trend_placebo_june2023,"June 2023 SEDS: Fang col. 6 with a linear trend, placebo industries, and the final spec on the years the release covers."
 table29_ext_state_trends,"Main spec with and without state linear trends: H1 core, by-type, final bridge spec and placebo industries."
 table30_ext_bytype,"AI(t-1) by renewable type, main spec, both AI measures, BH q-values within the family; lead placebo for p < 0.10."
