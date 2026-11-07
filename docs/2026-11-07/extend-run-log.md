@@ -7,7 +7,7 @@ Started 2026-11-07. Plan approved with changes (team, 2026-11-07): two passes. P
 | Prereq: 08 sections 1-2 | **done** | 9a237b7, 5e99ac5 | `docs/2026-11-07/finalize-run-log.md` |
 | 1. Cross-check against Fang | **done** | e4b57ad | Fang's Table A1 not in literature/; means implied by Table 2 constants used. Placebo industries: distilleries, pet care |
 | 2. By type and Georgia | **done** | 7d0f63a | ln geothermal generation not estimable (7 states). Small-scale solar not in the panel |
-| 3. AI-impact family | pending | | |
+| 3. AI-impact family | **done** | 209e302 | No q < 0.10 (min 0.44); no lead placebo or restructuring model needed. Battery storage not in the panel. Deviations X1 (Texas), X2 (price controls) |
 | 4. National trend drivers | pending | | |
 | 5. Better AI measure | pending (pass 2) | | |
 | 6. Notebook 09_extend.ipynb | pending (sections 1-4 in pass 1) | | |
