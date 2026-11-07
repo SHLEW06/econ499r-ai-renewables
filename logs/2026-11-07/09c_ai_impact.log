@@ -1,0 +1,69 @@
+               outcome  ai_measure       est      p     q     N  lead lead_p
+                <char>      <char>     <num>  <num> <num> <int> <num>  <num>
+ 1:    ln_sales_com_pc    ai518210 -0.003720 0.7644 0.929   550    NA     NA
+ 2:    ln_sales_com_pc aipostp1000 -0.004150 0.5315 0.929   350    NA     NA
+ 3:    ln_sales_ind_pc    ai518210 -0.004930 0.7138 0.929   550    NA     NA
+ 4:    ln_sales_ind_pc aipostp1000 -0.006480 0.3054 0.803   350    NA     NA
+ 5:    ln_sales_res_pc    ai518210  0.000576 0.8243 0.929   550    NA     NA
+ 6:    ln_sales_res_pc aipostp1000 -0.000199 0.9253 0.966   350    NA     NA
+ 7: price_com861_c_kwh    ai518210  0.220000 0.3421 0.803   550    NA     NA
+ 8: price_com861_c_kwh aipostp1000  0.196000 0.1940 0.803   350    NA     NA
+ 9:    price_ind_c_kwh    ai518210  0.071600 0.7792 0.929   550    NA     NA
+10:    price_ind_c_kwh aipostp1000  0.138000 0.2186 0.803   350    NA     NA
+11:    price_res_c_kwh    ai518210  0.160000 0.6785 0.929   550    NA     NA
+12:    price_res_c_kwh aipostp1000  0.182000 0.2678 0.803   350    NA     NA
+13:          share_gas    ai518210  0.003430 0.5881 0.929   550    NA     NA
+14:          share_gas aipostp1000 -0.000289 0.9385 0.966   350    NA     NA
+15:         share_coal    ai518210  0.001990 0.7908 0.929   550    NA     NA
+16:         share_coal aipostp1000  0.002840 0.3749 0.803   350    NA     NA
+17:      share_nuclear    ai518210  0.003670 0.3602 0.803   550    NA     NA
+18:      share_nuclear aipostp1000  0.001950 0.2075 0.803   350    NA     NA
+19:    add_gas_per1000    ai518210 -2.750000 0.0448 0.673   550    NA     NA
+20:    add_gas_per1000 aipostp1000  1.480000 0.2521 0.803   350    NA     NA
+21:  add_solar_per1000    ai518210 -0.599000 0.7553 0.929   550    NA     NA
+22:  add_solar_per1000 aipostp1000 -1.500000 0.2114 0.803   350    NA     NA
+23:   add_wind_per1000    ai518210  1.890000 0.0145 0.436   550    NA     NA
+24:   add_wind_per1000 aipostp1000  0.595000 0.4859 0.918   350    NA     NA
+25:        net_imports    ai518210  0.000773 0.9658 0.966   550    NA     NA
+26:        net_imports aipostp1000 -0.014100 0.0910 0.803   350    NA     NA
+27:       ln_co2_power    ai518210 -0.005160 0.8361 0.929   500    NA     NA
+28:       ln_co2_power aipostp1000  0.015500 0.2051 0.803   300    NA     NA
+29:      co2_per_mwh_t    ai518210  0.002450 0.6889 0.929   500    NA     NA
+30:      co2_per_mwh_t aipostp1000  0.002110 0.4897 0.918   300    NA     NA
+               outcome  ai_measure       est      p     q     N  lead lead_p
+                <char>      <char>     <num>  <num> <num> <int> <num>  <num>
+    lag_pl finding
+     <num>  <lgcl>
+ 1:     NA   FALSE
+ 2:     NA   FALSE
+ 3:     NA   FALSE
+ 4:     NA   FALSE
+ 5:     NA   FALSE
+ 6:     NA   FALSE
+ 7:     NA   FALSE
+ 8:     NA   FALSE
+ 9:     NA   FALSE
+10:     NA   FALSE
+11:     NA   FALSE
+12:     NA   FALSE
+13:     NA   FALSE
+14:     NA   FALSE
+15:     NA   FALSE
+16:     NA   FALSE
+17:     NA   FALSE
+18:     NA   FALSE
+19:     NA   FALSE
+20:     NA   FALSE
+21:     NA   FALSE
+22:     NA   FALSE
+23:     NA   FALSE
+24:     NA   FALSE
+25:     NA   FALSE
+26:     NA   FALSE
+27:     NA   FALSE
+28:     NA   FALSE
+29:     NA   FALSE
+30:     NA   FALSE
+    lag_pl finding
+     <num>  <lgcl>
+DONE

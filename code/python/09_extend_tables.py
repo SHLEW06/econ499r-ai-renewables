@@ -153,10 +153,33 @@ def s2(date, E, T, F):
     print(ft.to_string()); print("\n".join(gi.sentence))
 
 
+IMP = {"ln_sales_com_pc": "ln commercial sales per person", "ln_sales_ind_pc": "ln industrial sales per person", "ln_sales_res_pc": "ln residential sales per person",
+       "price_com861_c_kwh": "commercial price, cents/kWh (ctrl3)", "price_ind_c_kwh": "industrial price, cents/kWh (ctrl3)", "price_res_c_kwh": "residential price, cents/kWh (ctrl3)",
+       "share_gas": "gas share of generation", "share_coal": "coal share of generation", "share_nuclear": "nuclear share of generation",
+       "add_gas_per1000": "gas MW added per 1,000 MW", "add_solar_per1000": "solar MW added per 1,000 MW", "add_wind_per1000": "wind MW added per 1,000 MW",
+       "net_imports": "net imports share of retail sales", "ln_co2_power": "ln power-sector CO2", "co2_per_mwh_t": "power-sector CO2 per MWh (t)"}
+
+
+def s3(date, E, T, F):
+    m = pd.read_csv(os.path.join(E, "s3_impact_family.csv"))
+    t = family_table(m); t["outcome_label"] = m.outcome.map(IMP); t.to_csv(os.path.join(T, "s3_impact_table.csv"), index=False)
+    rs = pd.read_csv(os.path.join(E, "s3_impact_restructured.csv")); rs.to_csv(os.path.join(T, "s3_impact_restructured.csv"), index=False)
+    r = pd.read_csv("data/extend_restructured.csv"); r = r[r.state != "DC"].sort_values("energy_only_share_pct_2015", ascending=False)
+    r[["state", "energy_only_share_pct_2015", "rpm_share_pct_2025", "restructured", "restructured_check_rpm2025", "near_cutoff_flag", "near_cutoff_flag_check"]].to_csv(os.path.join(T, "s3_restructured_classification.csv"), index=False)
+    x = m[m.status == "ok"].copy(); x["lab"] = x.outcome.map(IMP) + " | " + x.ai_measure.map({"ai518210": "jobs", "aipostp1000": "postings"})
+    x["z"] = x.estimate / x.se
+    fig, ax = plt.subplots(figsize=(7, 7)); ax.barh(range(len(x)), x.z, color=["#d1495b" if q < .1 else "#9bb7d4" for q in x.qval])
+    ax.set_yticks(range(len(x))); ax.set_yticklabels(x.lab, fontsize=7); ax.axvline(0, color="grey", lw=.8)
+    for v in (-1.96, 1.96): ax.axvline(v, color="grey", lw=.5, ls=":")
+    ax.set_xlabel("t-statistic (red: q < 0.10; none)"); ax.set_title("What AI(t-1) is associated with: main spec"); fig.tight_layout()
+    fig.savefig(os.path.join(F, "fig_s3_impact_t.png"), dpi=150); plt.close(fig)
+    print(t.to_string()); print("min q:", m.qval.min())
+
+
 def main(date, section):
     E = os.path.join("results", date, "extend"); T = os.path.join(E, "tables"); F = os.path.join(E, "figures")
     os.makedirs(T, exist_ok=True); os.makedirs(F, exist_ok=True)
-    {1: s1, 2: s2}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
+    {1: s1, 2: s2, 3: s3}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
 
 
 if __name__ == "__main__":
