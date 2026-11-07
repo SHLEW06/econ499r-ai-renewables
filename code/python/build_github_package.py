@@ -15,7 +15,10 @@ for r, _, fs in os.walk("results"):
     ALLOW += [os.path.join(r, f) for f in fs if os.path.splitext(f)[1].lower() in (".csv", ".tex", ".png", ".md", ".txt") and f != ".DS_Store"]
 CLEAN_IN = {"data/out/state_panel_2015_2025.csv": "EIA, BLS, BEA, Census", "data/out/W_border_binary.csv": "Census", "data/out/W_inverse_distance_rowstd.csv": "Census", "data/out/W_distance_miles.csv": "Census", "data/out/state_centroids_land.csv": "Census", "data/ai_allown_518210.csv": "BLS", "data/seds_renewables_state.csv": "EIA", "data/ncses_bachelors_state.csv": "NCSES (NSF)", "data/nsf_state_rd.csv": "NCSES (NSF)", "data/acs_broadband.csv": "Census", "data/fang_split_vars.csv": "EIA, NSF, BEA, Census", "data/fang_net_producer_definitions.csv": "EIA", "data/noaa_degree_days.csv": "NOAA NCEI", "data/epu_state_annual.csv": "Baker, Davis and Levy, CC BY 4.0", "data/epoch_ai_campuses_by_state.csv": "Epoch AI, CC BY", "data/out/ferc1_utility_financials.csv": "PUDL, CC BY 4.0", "data/out/ferc1_cost_by_technology.csv": "PUDL, CC BY 4.0", "data/out/ferc1_plant_costs.csv": "PUDL, CC BY 4.0"}
 ALLOW += list(CLEAN_IN)
-ALLOW = [f for f in ALLOW if os.path.basename(f) not in ("build_github_package.py", "build_results_package.py")]  # hold the scan patterns; stay in the working repo
+ALLOW = [f for f in ALLOW if os.path.basename(f) not in ("build_github_package.py", "build_results_package.py")]
+_tracked = set(subprocess.run(["git", "ls-files"], capture_output=True, text=True, check=True).stdout.split("\n"))
+_untracked = [f for f in ALLOW if f.startswith("docs/") and f not in _tracked]; ALLOW = [f for f in ALLOW if f not in _untracked]  # uncommitted local docs stay out
+print("left out (docs not tracked in git):", _untracked)  # hold the scan patterns; stay in the working repo
 for f in ALLOW: copy(f)
 # ---- remove local paths from the copies ----
 SCR = re.compile(r"/private/tmp/[^\s\"'`|)]*"); TEXT = (".md", ".py", ".R", ".csv", ".tex", ".ipynb", ".txt")
@@ -88,6 +91,22 @@ Rscript code/R/04e4_weather_check.R --date YYYY-MM-DD
 Rscript code/R/04h_fang_test.R --date YYYY-MM-DD
 Rscript code/R/04h2_fang_net_producer.R --date YYYY-MM-DD
 python3 code/python/04f_georgia_solar.py --date YYYY-MM-DD
+
+# 3b. Prompts 08-09 (Nov 7): side tables, then models (see data/receipts/README.md for downloads)
+python3 $S/build_finalize_tables.py data/raw data logs/YYYY-MM-DD
+python3 $S/build_extend_tables.py data/raw data logs/YYYY-MM-DD
+python3 $S/build_drivers_tables.py data/raw data logs/YYYY-MM-DD
+python3 $S/build_ai_index.py data/raw data logs/YYYY-MM-DD
+Rscript code/R/04h3_fang_finalize.R --date YYYY-MM-DD
+Rscript code/R/09a_fang_crosscheck.R --date YYYY-MM-DD
+Rscript code/R/09b_by_type.R --date YYYY-MM-DD
+Rscript code/R/09c_ai_impact.R --date YYYY-MM-DD
+Rscript code/R/09d_national_drivers.R --date YYYY-MM-DD
+Rscript code/R/09e_pass2_checks.R --date YYYY-MM-DD
+Rscript code/R/09f_index_addon.R --date YYYY-MM-DD
+Rscript code/R/09g_land_sensitivity.R --date YYYY-MM-DD
+python3 code/python/04h3_fang_finalize_tables.py --date YYYY-MM-DD
+for n in 1 2 3 4 25 5; do python3 code/python/09_extend_tables.py --date YYYY-MM-DD --section $n; done
 python3 code/python/04g_results_pack.py --date YYYY-MM-DD
 
 # 4. Master workbook: steps in data/receipts/master_workbook.md
