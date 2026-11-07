@@ -8,7 +8,7 @@ Started 2026-11-07. Plan approved with changes (team, 2026-11-07): two passes. P
 | 1. Cross-check against Fang | **done** | e4b57ad | Fang's Table A1 not in literature/; means implied by Table 2 constants used. Placebo industries: distilleries, pet care |
 | 2. By type and Georgia | **done** | 7d0f63a | ln geothermal generation not estimable (7 states). Small-scale solar not in the panel |
 | 3. AI-impact family | **done** | 209e302 | No q < 0.10 (min 0.44); no lead placebo or restructuring model needed. Battery storage not in the panel. Deviations X1 (Texas), X2 (price controls) |
-| 4. National trend drivers | pending | | |
+| 4. National trend drivers | **done (interim)** | 9fd4fbb | Drivers model without wind cost and PTC (CRS, LBNL wind blocked: HTTP 403). NREL unreachable; EIA CF fallback (X4). Full model in pass 2 if the files are provided |
 | 5. Better AI measure | pending (pass 2) | | |
 | 6. Notebook 09_extend.ipynb | pending (sections 1-4 in pass 1) | | |
 | 7. Refresh outputs | pending (pass 2) | | |
