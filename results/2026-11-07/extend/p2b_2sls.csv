@@ -1,0 +1,13 @@
+tag,sample,outcome,direction,estimate,se,pval,first_stage_F,informative,N
+ext_p2b_2sls_post_lag1_ln_ec_all50,all50,ln_ec,postings instrumented by jobs,0.0366706293991662,0.0981286475602836,0.71023995610779,0.512257570506773,FALSE,350
+ext_p2b_2sls_jobs_lag1_ln_ec_all50,all50,ln_ec,jobs instrumented by postings,-0.0661580750657491,0.187008452858403,0.725028590428035,0.472379490388134,FALSE,350
+ext_p2b_2sls_post_lag1_ln_ee_all50,all50,ln_ee,postings instrumented by jobs,-0.00269732961411064,0.101561030870362,0.978919580361914,0.512257570506773,FALSE,350
+ext_p2b_2sls_jobs_lag1_ln_ee_all50,all50,ln_ee,jobs instrumented by postings,0.0797994350708862,0.216274007906348,0.713736872841637,0.472379490388134,FALSE,350
+ext_p2b_2sls_post_lag1_renew_share_all50,all50,renew_share,postings instrumented by jobs,-0.0739292481614348,0.1060883691648,0.489180437443468,0.512257570506773,FALSE,350
+ext_p2b_2sls_jobs_lag1_renew_share_all50,all50,renew_share,jobs instrumented by postings,-0.216107140397742,0.35285260996581,0.543067239437865,0.472379490388134,FALSE,350
+ext_p2b_2sls_post_lag1_ln_ec_noCACODE,noCACODE,ln_ec,postings instrumented by jobs,0.011979502061001,0.0549521380512943,0.828394217833934,1.53010485815626,FALSE,329
+ext_p2b_2sls_jobs_lag1_ln_ec_noCACODE,noCACODE,ln_ec,jobs instrumented by postings,0.0115784644499365,0.0622952355102888,0.853368319265242,1.53874893001904,FALSE,329
+ext_p2b_2sls_post_lag1_ln_ee_noCACODE,noCACODE,ln_ee,postings instrumented by jobs,0.0214472939315244,0.068978737614626,0.757261385507801,1.53010485815626,FALSE,329
+ext_p2b_2sls_jobs_lag1_ln_ee_noCACODE,noCACODE,ln_ee,jobs instrumented by postings,-0.0337150998001218,0.066533496866682,0.614758674545539,1.53874893001904,FALSE,329
+ext_p2b_2sls_post_lag1_renew_share_noCACODE,noCACODE,renew_share,postings instrumented by jobs,-0.0619394990448639,0.0555586240662581,0.270705793075657,1.53010485815626,FALSE,329
+ext_p2b_2sls_jobs_lag1_renew_share_noCACODE,noCACODE,renew_share,jobs instrumented by postings,-0.0908130587192261,0.104528127066617,0.38947210383519,1.53874893001904,FALSE,329

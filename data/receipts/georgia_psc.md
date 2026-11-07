@@ -33,10 +33,10 @@ processed into tabular data. Key figures extracted manually:
 
 | Metric | Value | Source |
 |---|---|---|
-| Commitments, Oct 2023 to June 30, 2026 | 3,600 MW to 15,600 MW | Q2 2026 Large Load Economic Development Report, filed Aug. 17, 2026, Docket 55378, PDF p. 8: "Customer commitments expanded from 3,600 MW to 15,600 MW" |
+| Commitments, Oct 2023 to June 30, 2026 | 3,600 MW to 15,600 MW | Q2 2026 Large Load Economic Development Report, filed Aug. 17, 2026, Docket 55378, p. 4 [PDF p. 8]: "Customer commitments expanded from 3,600 MW to 15,600 MW" |
 | Load growth, next six years | About 8,500 MW | `2025_IRP_one_page_summary.pdf`, p. 1 |
 | Higher peak by end of 2030 vs the 2023 IRP Update | About 2,600 MW | `2025_IRP_one_page_summary.pdf`, p. 1 |
-| Renewable procurement | Up to 4,000 MW by 2035 | `2025_IRP_Main_Document.pdf`, PDF p. 67 |
+| Renewable procurement | Up to 4,000 MW by 2035 | `2025_IRP_Main_Document.pdf`, p. 60 [PDF p. 67] |
 
 **Which docket:** the cover letter is captioned Docket No. 55378, and the report's page headers say Docket No. 56002, Georgia Power's 2025 IRP docket. The letter says the report responds to orders in both.
 

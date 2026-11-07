@@ -1,0 +1,55 @@
+Gate: QCEW 518210 jobs vs panel dc_jobs, max |diff| = 0.0
+
+Coverage (states with each component, by year):
+ year  c_jobs  c_estab  c_wage  c_post  c_rsci  all_five  infra_plus_rsci
+ 2015      50       50      50       0      33         0               33
+ 2016      50       50      50       0      34         0               34
+ 2017      50       50      50       0      35         0               35
+ 2018      50       50      50      50      39        39               39
+ 2019      50       50      50      50      39        39               39
+ 2020      50       50      50      50      39        39               39
+ 2021      50       50      50      50      37        37               37
+ 2022      50       50      50      50      34        34               34
+ 2023      50       50      50      50      38        38               38
+ 2024      50       50      50      50      34        34               34
+
+Diagnostics:
+                                 statistic      value
+                      N state-years (main) 226.000000
+                             states (main)  43.000000
+              Cronbach alpha, 5 components   0.731618
+            Cronbach alpha, infrastructure   0.764900
+                    Cronbach alpha, talent   0.337015
+                    PC1 variance explained   0.537500
+within-state SD (two-way demeaned) Index A   0.175789
+                   within-state SD Index B   0.364353
+            within-state SD infrastructure   0.188165
+                    within-state SD talent   0.240200
+           N state-years (check 2015-2023) 328.000000
+            PC1 variance explained (check)   0.547291
+
+Loadings (main):
+component  loading  variance_explained_pc1        version
+   c_jobs 0.526059                  0.5375 main_2018_2023
+  c_estab 0.365426                  0.5375 main_2018_2023
+   c_wage 0.571409                  0.5375 main_2018_2023
+   c_post 0.506188                  0.5375 main_2018_2023
+   c_rsci 0.083606                  0.5375 main_2018_2023
+
+Component correlations:
+         c_jobs  c_estab  c_wage  c_post  c_rsci
+c_jobs    1.000    0.261   0.943   0.500   0.007
+c_estab   0.261    1.000   0.357   0.546  -0.014
+c_wage    0.943    0.357   1.000   0.656   0.070
+c_post    0.500    0.546   0.656   1.000   0.203
+c_rsci    0.007   -0.014   0.070   0.203   1.000
+
+Groupings: invest {'lt_100M': 18, '100M_1B': 17, 'ge_1B': 11, nan: 4}; per TWh {'low': 16, 'mid': 15, 'high': 15, nan: 4}; jobs per TWh {'low': 17, 'high': 17, 'mid': 16}; {'invest_per_twh tertile cuts ($ per TWh)': [2451625.0, 9078430.0], 'jobs_per_twh tertile cuts': [39.9, 87.02]}
+
+Investment missing for: AR, OK, SD, WV
+
+Cross-state checks:
+                                    check  N_states  pearson_index_a_2024  spearman_index_a_2024  spearman_index_b_2024
+BTOS 2024 average share of firms using AI        30                 0.551                  0.525                  0.540
+                      Epoch current IT MW        22                 0.062                 -0.023                 -0.010
+          Quid 2025 private AI investment        32                 0.232                  0.485                  0.555

@@ -1,0 +1,119 @@
+Never-suppressed distillery states: 13 CA,FL,IA,KY,LA,ME,MT,NC,NY,OH,PA,SC,TN 
+      sample      ai_measure     slope     p    per_sd     N
+      <char>          <char>     <num> <num>     <num> <int>
+ 1:    all50        ai518210 -0.003720 0.764 -0.001940   550
+ 2:    all50     aipostp1000 -0.004150 0.532 -0.002570   350
+ 3:    all50          indexA  0.012000 0.715  0.002110   225
+ 4:    all50          indexB -0.002320 0.858 -0.000849   225
+ 5:    all50        subInfra -0.013900 0.568 -0.002650   225
+ 6:    all50       subTalent  0.017300 0.478  0.004130   225
+ 7:    all50 indexAcheck1523  0.007090 0.744  0.001630   327
+ 8: noCACODE        ai518210 -0.005760 0.649 -0.002930   517
+ 9: noCACODE     aipostp1000 -0.000596 0.935 -0.000355   329
+10: noCACODE          indexA  0.012000 0.717  0.002120   213
+11: noCACODE          indexB -0.003100 0.816 -0.001140   213
+12: noCACODE        subInfra -0.017600 0.483 -0.003340   213
+13: noCACODE       subTalent  0.017400 0.475  0.004230   213
+14: noCACODE indexAcheck1523  0.006730 0.759  0.001570   309
+      sample  ai_measure  state rank_desc rank_of  slope
+      <char>      <char> <char>     <int>   <int>  <num>
+ 1:    all50    ai518210     VA         3      50 0.2420
+ 2:    all50    ai518210     TX         7      50 0.0980
+ 3:    all50    ai518210     GA        21      50 0.0202
+ 4:    all50 aipostp1000     VA         4      50 0.0563
+ 5:    all50 aipostp1000     TX        10      50 0.0129
+ 6:    all50 aipostp1000     GA         8      50 0.0145
+ 7:    all50      indexA     VA         1      42 0.3630
+ 8:    all50      indexA     TX        11      42 0.0409
+ 9:    all50      indexA     GA         6      42 0.0676
+10: noCACODE    ai518210     VA         4      47 0.2370
+11: noCACODE    ai518210     TX         7      47 0.0891
+12: noCACODE    ai518210     GA        18      47 0.0176
+13: noCACODE aipostp1000     VA         4      47 0.0549
+14: noCACODE aipostp1000     TX         9      47 0.0111
+15: noCACODE aipostp1000     GA         8      47 0.0127
+16: noCACODE      indexA     VA         1      40 0.3560
+17: noCACODE      indexA     TX        11      40 0.0348
+18: noCACODE      indexA     GA         6      40 0.0616
+     sample     n     min_q n_q10 n_find
+     <char> <int>     <num> <int>  <int>
+1:    all50   136 0.8626573     0      0
+2: noCACODE   136 0.9000987     0      0
+Empty data.table (0 rows and 9 cols): sample,index,outcome,est,p,q...
+      sample     outcome                     direction     est     p     F
+      <char>      <char>                        <char>   <num> <num> <num>
+ 1:    all50       ln_ec postings instrumented by jobs  0.0367 0.710   0.5
+ 2:    all50       ln_ec jobs instrumented by postings -0.0662 0.725   0.5
+ 3:    all50       ln_ee postings instrumented by jobs -0.0027 0.979   0.5
+ 4:    all50       ln_ee jobs instrumented by postings  0.0798 0.714   0.5
+ 5:    all50 renew_share postings instrumented by jobs -0.0739 0.489   0.5
+ 6:    all50 renew_share jobs instrumented by postings -0.2160 0.543   0.5
+ 7: noCACODE       ln_ec postings instrumented by jobs  0.0120 0.828   1.5
+ 8: noCACODE       ln_ec jobs instrumented by postings  0.0116 0.853   1.5
+ 9: noCACODE       ln_ee postings instrumented by jobs  0.0214 0.757   1.5
+10: noCACODE       ln_ee jobs instrumented by postings -0.0337 0.615   1.5
+11: noCACODE renew_share postings instrumented by jobs -0.0619 0.271   1.5
+12: noCACODE renew_share jobs instrumented by postings -0.0908 0.389   1.5
+     sample           grouping     n      min_q n_q10
+     <char>             <char> <int>      <num> <int>
+1:    all50         grp_invest    44 0.17979930     0
+2:    all50 grp_invest_per_twh    44 0.40772563     0
+3:    all50   grp_jobs_per_twh    44 0.15778928     0
+4: noCACODE         grp_invest    44 0.10145119     0
+5: noCACODE grp_invest_per_twh    44 0.34749091     0
+6: noCACODE   grp_jobs_per_twh    44 0.01496655     2
+     sample         grouping  ai_measure           outcome joint_p joint_q
+     <char>           <char>      <char>            <char>   <num>   <num>
+1: noCACODE grp_jobs_per_twh    ai518210        ln_gen_geo 0.00034   0.015
+2: noCACODE grp_jobs_per_twh aipostp1000 ln_seds_woodwaste 0.00403   0.089
+   slope_g1 slope_g2 slope_g3
+      <num>    <num>    <num>
+1:   1.1200   0.6910   0.5800
+2:  -0.0206   0.0251   0.0323
+     sample     n        min_q n_q10
+     <char> <int>        <num> <int>
+1:    all50    44 1.005320e-05    11
+2: noCACODE    44 7.059094e-05    11
+                                                                tag
+                                                             <char>
+ 1:        ext_p2b_distill_fang6_notrend_lnET_all_nonsuppressed_obs
+ 2:          ext_p2b_distill_fang6_trend_lnET_all_nonsuppressed_obs
+ 3:   ext_p2b_distill_fang6_notrend_lnET_arch_all_nonsuppressed_obs
+ 4:     ext_p2b_distill_fang6_trend_lnET_arch_all_nonsuppressed_obs
+ 5:      ext_p2b_distill_fang6_notrend_lnET_never_suppressed_states
+ 6:        ext_p2b_distill_fang6_trend_lnET_never_suppressed_states
+ 7: ext_p2b_distill_fang6_notrend_lnET_arch_never_suppressed_states
+ 8:   ext_p2b_distill_fang6_trend_lnET_arch_never_suppressed_states
+ 9:         ext_p2b_distill_twfe_notrend_lnRE_all_nonsuppressed_obs
+10:           ext_p2b_distill_twfe_trend_lnRE_all_nonsuppressed_obs
+11:       ext_p2b_distill_twfe_notrend_lnRE_never_suppressed_states
+12:         ext_p2b_distill_twfe_trend_lnRE_never_suppressed_states
+             spec  trend   outcome                  states   estimate
+           <char> <lgcl>    <char>                  <char>      <num>
+ 1:   Fang col. 6  FALSE      lnET   all_nonsuppressed_obs 0.07791396
+ 2:   Fang col. 6   TRUE      lnET   all_nonsuppressed_obs 0.12104758
+ 3:   Fang col. 6  FALSE lnET_arch   all_nonsuppressed_obs 0.10030885
+ 4:   Fang col. 6   TRUE lnET_arch   all_nonsuppressed_obs 0.07570565
+ 5:   Fang col. 6  FALSE      lnET never_suppressed_states 0.03463787
+ 6:   Fang col. 6   TRUE      lnET never_suppressed_states 0.08459157
+ 7:   Fang col. 6  FALSE lnET_arch never_suppressed_states 0.04409139
+ 8:   Fang col. 6   TRUE lnET_arch never_suppressed_states 0.07848162
+ 9: our main spec  FALSE      lnRE   all_nonsuppressed_obs 0.10619275
+10: our main spec   TRUE      lnRE   all_nonsuppressed_obs 0.06095034
+11: our main spec  FALSE      lnRE never_suppressed_states 0.08910593
+12: our main spec   TRUE      lnRE never_suppressed_states 0.07909612
+            pval     N n_states
+           <num> <int>    <int>
+ 1: 0.1241189784   135       51
+ 2: 0.0333050885   135       51
+ 3: 0.0397177993   135       51
+ 4: 0.1656228914   135       51
+ 5: 0.5936901209    52       13
+ 6: 0.2263743494    52       13
+ 7: 0.4732075732    52       13
+ 8: 0.2449414220    52       13
+ 9: 0.0008787248   298       50
+10: 0.0447423560   298       50
+11: 0.0731570884   130       13
+12: 0.0143452585   130       13
+DONE

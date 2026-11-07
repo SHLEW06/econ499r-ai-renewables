@@ -1,0 +1,13 @@
+tag,spec,trend,outcome,states,estimate,pval,N,n_states
+ext_p2b_distill_fang6_notrend_lnET_all_nonsuppressed_obs,Fang col. 6,FALSE,lnET,all_nonsuppressed_obs,0.0779139561256557,0.124118978396586,135,51
+ext_p2b_distill_fang6_trend_lnET_all_nonsuppressed_obs,Fang col. 6,TRUE,lnET,all_nonsuppressed_obs,0.121047576302991,0.0333050884644783,135,51
+ext_p2b_distill_fang6_notrend_lnET_arch_all_nonsuppressed_obs,Fang col. 6,FALSE,lnET_arch,all_nonsuppressed_obs,0.100308854293406,0.039717799288189,135,51
+ext_p2b_distill_fang6_trend_lnET_arch_all_nonsuppressed_obs,Fang col. 6,TRUE,lnET_arch,all_nonsuppressed_obs,0.0757056475320073,0.165622891441145,135,51
+ext_p2b_distill_fang6_notrend_lnET_never_suppressed_states,Fang col. 6,FALSE,lnET,never_suppressed_states,0.0346378721288202,0.593690120935659,52,13
+ext_p2b_distill_fang6_trend_lnET_never_suppressed_states,Fang col. 6,TRUE,lnET,never_suppressed_states,0.0845915654575441,0.22637434937025,52,13
+ext_p2b_distill_fang6_notrend_lnET_arch_never_suppressed_states,Fang col. 6,FALSE,lnET_arch,never_suppressed_states,0.0440913863915972,0.473207573166977,52,13
+ext_p2b_distill_fang6_trend_lnET_arch_never_suppressed_states,Fang col. 6,TRUE,lnET_arch,never_suppressed_states,0.0784816213860763,0.244941422036467,52,13
+ext_p2b_distill_twfe_notrend_lnRE_all_nonsuppressed_obs,our main spec,FALSE,lnRE,all_nonsuppressed_obs,0.106192752736157,0.000878724813945536,298,50
+ext_p2b_distill_twfe_trend_lnRE_all_nonsuppressed_obs,our main spec,TRUE,lnRE,all_nonsuppressed_obs,0.0609503429390467,0.0447423559668063,298,50
+ext_p2b_distill_twfe_notrend_lnRE_never_suppressed_states,our main spec,FALSE,lnRE,never_suppressed_states,0.0891059342022349,0.0731570883724097,130,13
+ext_p2b_distill_twfe_trend_lnRE_never_suppressed_states,our main spec,TRUE,lnRE,never_suppressed_states,0.0790961178607653,0.0143452584937261,130,13

@@ -37,6 +37,9 @@ data/extend_outcomes.csv
 data/extend_restructured.csv
 data/extend_drivers_national.csv
 data/extend_drivers_state.csv
+data/ai_index_components.csv
+data/ai_index_state.csv
+data/ai_index_crossstate.csv
 data/codebook.csv
 outputs/ECON499R_Data_Workbook_*.xlsx
 outputs/ECON499R_csv_for_R/

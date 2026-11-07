@@ -59,6 +59,7 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [crs_reports.md](crs_reports.md) | CRS R43453, IF10479, R46865 (mirrors; hand download) | `data/raw/crs/` | Tax-credit coding, section 4 |
 | [lbnl_wind.md](lbnl_wind.md) | LBNL Land-Based Wind data, 2026 edition (hand download) | `data/raw/lbnl/` | Wind cost, section 4 |
 | [bls_oews.md](bls_oews.md) | BLS OEWS state files 2015-2024 (hand download) | `data/raw/bls/oews/` | Section 5 talent dimension |
+| [ai_index_section5.md](ai_index_section5.md) | QCEW 518210, OEWS, AI postings, BTOS, Quid via AI Index 2026, AIPD (unused) | `data/raw/bls/`, `data/raw/census_btos/`, `data/raw/aiindex/`, `data/raw/uspto_aipd/` | `ai_index_components.csv`, `ai_index_state.csv`, `ai_index_crossstate.csv` |
 | [qcew_placebo.md](qcew_placebo.md) | BLS QCEW, two placebo industries | `data/raw/bls/placebo/` | read directly by `09a_fang_crosscheck.R` |
 
 **Moved, not deleted (team decision, 2026-11-07):** `data/raw/eia/mer/_to_delete/` holds `MER_TA6.xlsx` (actually MER Table 1.1), `mer_a.pdf` (Appendix A tables, renumbered) and `full_data_MER.zip` (EV-charging microdata). They were downloaded by mistake on 2026-11-07 and aren't used. Hashes are in `seds_old_basis.md`.
@@ -102,6 +103,9 @@ python3 -I $S/build_finalize_tables.py data/raw data logs/2026-11-07
 python3 -I $S/build_extend_tables.py data/raw data logs/2026-11-07
 python3 -I $S/download_extend_sources.py data/raw logs/2026-11-07/extend_downloads.csv drivers   # download
 python3 -I $S/build_drivers_tables.py data/raw data logs/2026-11-07
+python3 -I $S/download_extend_sources.py data/raw logs/2026-11-07/extend_downloads.csv index   # download
+python3 -I $S/download_extend_sources.py data/raw logs/2026-11-07/extend_downloads.csv addon   # download
+python3 -I $S/build_ai_index.py data/raw data logs/2026-11-07
 
 # 5. Compare two builds, cell by cell (C.1b)
 python3 $S/compare_panel_builds.py <before_dir> data/out <out_csv>
