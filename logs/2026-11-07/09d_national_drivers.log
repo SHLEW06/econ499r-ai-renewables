@@ -1,0 +1,52 @@
+        outcome           model correlation r_squared
+         <char>          <char>       <num>     <num>
+1:  renew_share drivers-interim       0.814     0.662
+2:  ln_gen_wind drivers-interim       0.840     0.706
+3: ln_gen_solar drivers-interim       0.765     0.585
+         outcome  ai_measure           model       est     p     N
+          <char>      <char>          <char>     <num> <num> <int>
+ 1:  renew_share    ai518210         statefe -0.012400 0.046   550
+ 2:  renew_share    ai518210 drivers-interim -0.011400 0.071   550
+ 3:  renew_share    ai518210            twfe -0.010100 0.100   550
+ 4:  renew_share aipostp1000         statefe  0.000519 0.774   350
+ 5:  renew_share aipostp1000 drivers-interim -0.000302 0.887   350
+ 6:  renew_share aipostp1000            twfe -0.005680 0.089   350
+ 7:  ln_gen_wind    ai518210         statefe -0.217000 0.008   455
+ 8:  ln_gen_wind    ai518210 drivers-interim -0.201000 0.007   455
+ 9:  ln_gen_wind    ai518210            twfe -0.181000 0.016   455
+10:  ln_gen_wind aipostp1000         statefe -0.001930 0.869   293
+11:  ln_gen_wind aipostp1000 drivers-interim  0.003230 0.832   293
+12:  ln_gen_wind aipostp1000            twfe -0.047700 0.002   293
+13: ln_gen_solar    ai518210         statefe -0.045700 0.794   499
+14: ln_gen_solar    ai518210 drivers-interim  0.034400 0.799   499
+15: ln_gen_solar    ai518210            twfe  0.042000 0.746   499
+16: ln_gen_solar aipostp1000         statefe  0.123000 0.007   333
+17: ln_gen_solar aipostp1000 drivers-interim  0.159000 0.003   333
+18: ln_gen_solar aipostp1000            twfe -0.046000 0.565   333
+         outcome        term       est     p
+          <char>      <char>     <num> <num>
+ 1:  renew_share         rps  0.000252 0.662
+ 2:  renew_share scf_x_slcoe -0.330000 0.266
+ 3:  renew_share   scf_x_itc  2.600000 0.039
+ 4:  renew_share    gas_x_hh -0.010700 0.031
+ 5:  renew_share  solar_lcoe -0.007260 0.892
+ 6:  renew_share         itc -0.540000 0.039
+ 7:  renew_share          hh  0.002320 0.149
+ 8:  ln_gen_wind         rps  0.000271 0.951
+ 9:  ln_gen_wind scf_x_slcoe -2.960000 0.105
+10:  ln_gen_wind   scf_x_itc 19.000000 0.002
+11:  ln_gen_wind    gas_x_hh -0.065500 0.170
+12:  ln_gen_wind  solar_lcoe -0.072700 0.843
+13:  ln_gen_wind         itc -3.200000 0.024
+14:  ln_gen_wind          hh  0.032400 0.099
+15: ln_gen_solar         rps -0.023100 0.112
+16: ln_gen_solar scf_x_slcoe  3.030000 0.725
+17: ln_gen_solar   scf_x_itc 51.300000 0.251
+18: ln_gen_solar    gas_x_hh -0.037300 0.795
+19: ln_gen_solar  solar_lcoe -4.170000 0.022
+20: ln_gen_solar         itc -5.590000 0.546
+21: ln_gen_solar          hh -0.029000 0.618
+         outcome        term       est     p
+          <char>      <char>     <num> <num>
+Drivers model: drivers-interim (wind cost and PTC pending, deviation X3)
+DONE

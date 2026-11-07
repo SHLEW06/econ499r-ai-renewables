@@ -176,10 +176,44 @@ def s3(date, E, T, F):
     print(t.to_string()); print("min q:", m.qval.min())
 
 
+def s4(date, E, T, F):
+    ye = pd.read_csv(os.path.join(E, "s4_year_effects.csv")); dm = pd.read_csv(os.path.join(E, "s4_drivers_models.csv")); pf = pd.read_csv(os.path.join(E, "s4_path_fit.csv"))
+    nat = pd.read_csv("data/extend_drivers_national.csv")
+    nat.to_csv(os.path.join(T, "s4_national_drivers.csv"), index=False); pd.read_csv("data/extend_drivers_state.csv").to_csv(os.path.join(T, "s4_state_resource.csv"), index=False)
+    ye.to_csv(os.path.join(T, "s4_year_effects.csv"), index=False); pf.to_csv(os.path.join(T, "s4_path_fit.csv"), index=False)
+    ai = dm[dm.term == "AI"].copy(); ai["coef"] = ai.apply(lambda r: f"{r.estimate:+.4g}{star(r.pval)} (p={r.pval:.3f})", axis=1)
+    w = ai.pivot_table(index=["outcome", "ai_measure"], columns="model", values="coef", aggfunc="first").reset_index()
+    w.to_csv(os.path.join(T, "s4_ai_three_models.csv"), index=False); dm.to_csv(os.path.join(T, "s4_drivers_models.csv"), index=False)
+    lab = {"renew_share": "Renewable share", "ln_gen_wind": "ln wind generation", "ln_gen_solar": "ln solar generation"}
+    fig, axs = plt.subplots(1, 3, figsize=(12, 3.6))
+    for ax, (y, l) in zip(axs, lab.items()):
+        e = ye[ye.outcome == y]; ax.fill_between(e.year, e.ci_lo, e.ci_hi, color="#9bb7d4", alpha=.5); ax.plot(e.year, e.estimate, "o-", color="#2a6ebb", label="year effect (95% CI)")
+        z = pd.read_csv(os.path.join(E, f"s4_path_{y}.csv")); ax.plot(z.year, z.driver_path, "s--", color="#d1495b", label="fitted driver path (interim)")
+        r = pf[pf.outcome == y].iloc[0]; ax.set_title(f"{l}\ncorr {r.correlation:.2f}, R2 {r.r_squared:.2f}", fontsize=9); ax.axhline(0, color="grey", lw=.6)
+    axs[0].legend(frameon=False, fontsize=7); fig.suptitle("Year effects (two-way model, base 2015) and the path fitted from measured drivers"); fig.tight_layout()
+    fig.savefig(os.path.join(F, "fig_s4_year_effects_drivers.png"), dpi=150); plt.close(fig)
+    g = lambda y, m, mod: ai[(ai.outcome == y) & (ai.ai_measure == m) & (ai.model == mod)].iloc[0]
+    rs = [g("renew_share", "ai518210", k) for k in ["statefe", "drivers-interim", "twfe"]]
+    text = (f"**What drove the national trend (interim; wind cost and the PTC pending).** Year effects from the two-way model rise steadily for all three outcomes (`s4_year_effects.csv`). "
+            f"Measured drivers that vary by state, namely state RPS/CES targets (LBNL), solar resource x utility-scale solar LCOE (LBNL Utility-Scale Solar, 2025 $/MWh, MW-weighted by commercial-operation year), "
+            f"solar resource x the solar ITC (P.L. 117-169, PDF pp. 98 and 103), and 2015 gas share x the Henry Hub price (EIA), reproduce much of that path: correlation "
+            f"{pf.loc[pf.outcome=='renew_share','correlation'].iloc[0]:.2f} (R2 {pf.loc[pf.outcome=='renew_share','r_squared'].iloc[0]:.2f}) for renewable share, "
+            f"{pf.loc[pf.outcome=='ln_gen_wind','correlation'].iloc[0]:.2f} (R2 {pf.loc[pf.outcome=='ln_gen_wind','r_squared'].iloc[0]:.2f}) for ln wind and "
+            f"{pf.loc[pf.outcome=='ln_gen_solar','correlation'].iloc[0]:.2f} (R2 {pf.loc[pf.outcome=='ln_gen_solar','r_squared'].iloc[0]:.2f}) for ln solar, over 11 years. "
+            f"Solar LCOE fell from {nat.solar_lcoe_2025usd_mwh.iloc[0]:.0f} to a low of {nat.solar_lcoe_2025usd_mwh.min():.0f} $/MWh (2022) before rising to {nat.solar_lcoe_2025usd_mwh.iloc[-1]:.0f}, and the ITC stepped from 30% to 26% (2020-2021) and back to 30% under the IRA. "
+            f"AI isn't the national trend: with data-center jobs, the renewable-share coefficient is {rs[0].estimate:+.4f} (p = {rs[0].pval:.3f}) with state FE only, {rs[1].estimate:+.4f} (p = {rs[1].pval:.3f}) with drivers and "
+            f"{rs[2].estimate:+.4f} (p = {rs[2].pval:.3f}) with two-way FE, never positive. The exception is postings and ln solar generation: positive without year effects "
+            f"({g('ln_gen_solar','aipostp1000','statefe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','statefe').pval:.3f}) and with interim drivers "
+            f"({g('ln_gen_solar','aipostp1000','drivers-interim').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','drivers-interim').pval:.3f}), and gone with year effects "
+            f"({g('ln_gen_solar','aipostp1000','twfe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','twfe').pval:.3f}), so postings share a 2019-2025 trend with solar that the interim drivers don't capture. "
+            f"These are associations; the full model adds wind cost (LBNL Land-Based Wind Market Report) and the PTC phase-down (CRS R43453) once those files are downloaded by browser.")
+    open(os.path.join(T, "s4_writeup.md"), "w").write(text + "\n"); print(text); print(w.to_string())
+
+
 def main(date, section):
     E = os.path.join("results", date, "extend"); T = os.path.join(E, "tables"); F = os.path.join(E, "figures")
     os.makedirs(T, exist_ok=True); os.makedirs(F, exist_ok=True)
-    {1: s1, 2: s2, 3: s3}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
+    {1: s1, 2: s2, 3: s3, 4: s4}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
 
 
 if __name__ == "__main__":

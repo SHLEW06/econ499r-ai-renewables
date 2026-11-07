@@ -55,6 +55,7 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [seds_old_basis.md](seds_old_basis.md) | EIA SEDS archive (June 2023), bulk MER, SEDS physical units | `data/raw/eia/seds_archive/`, `data/raw/eia/mer/`, `data/raw/eia/seds/` | `seds_old_basis.csv` |
 | [noaa_storm_events.md](noaa_storm_events.md) | NOAA Storm Events details files | `data/raw/noaa/storm_events/` | `storm_events_state.csv` |
 | [extend_outcomes.md](extend_outcomes.md) | EIA capacity, EIA-861 and SEDS (already downloaded) | `data/raw/eia/`, `data/raw/eia_forms/` | `extend_outcomes.csv`, `extend_restructured.csv` |
+| [drivers_sources.md](drivers_sources.md) | P.L. 117-169 (govinfo), EIA Henry Hub; CRS and LBNL wind blocked | `data/raw/crs/`, `data/raw/eia/henry_hub/` | `extend_drivers_national.csv`, `extend_drivers_state.csv` |
 | [qcew_placebo.md](qcew_placebo.md) | BLS QCEW, two placebo industries | `data/raw/bls/placebo/` | read directly by `09a_fang_crosscheck.R` |
 
 ## Rebuild steps (from the project root)
@@ -92,6 +93,8 @@ python3 -I $S/build_fang_tables.py data/raw data logs/2026-11-04
 python3 -I $S/download_finalize_sources.py data/raw logs/2026-11-07/finalize_downloads.csv   # download
 python3 -I $S/build_finalize_tables.py data/raw data logs/2026-11-07
 python3 -I $S/build_extend_tables.py data/raw data logs/2026-11-07
+python3 -I $S/download_extend_sources.py data/raw logs/2026-11-07/extend_downloads.csv drivers   # download
+python3 -I $S/build_drivers_tables.py data/raw data logs/2026-11-07
 
 # 5. Compare two builds, cell by cell (C.1b)
 python3 $S/compare_panel_builds.py <before_dir> data/out <out_csv>

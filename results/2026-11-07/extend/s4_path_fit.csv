@@ -1,0 +1,4 @@
+tag,outcome,model,years,n_years,correlation,r_squared,slope,note
+ext_natl_pathfit_ai518210_drivers-interim_renew_share,renew_share,drivers-interim,2015-2025,11,0.813611097886726,0.661963018604444,1.62825845643699,"driver path = mean over states of the fitted driver terms, 2015 = 0"
+ext_natl_pathfit_ai518210_drivers-interim_ln_gen_wind,ln_gen_wind,drivers-interim,2015-2025,11,0.840051698069669,0.705686855429734,1.63399891915118,"driver path = mean over states of the fitted driver terms, 2015 = 0"
+ext_natl_pathfit_ai518210_drivers-interim_ln_gen_solar,ln_gen_solar,drivers-interim,2015-2025,11,0.764856950505284,0.585006154736243,1.90579490818094,"driver path = mean over states of the fitted driver terms, 2015 = 0"

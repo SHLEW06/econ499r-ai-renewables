@@ -41,3 +41,5 @@ placebo,https://data.bls.gov/cew/data/api/2021/a/industry/812910.csv,data/raw/bl
 placebo,https://data.bls.gov/cew/data/api/2022/a/industry/812910.csv,data/raw/bls/placebo/qcew_2022_812910.csv,400386,f82cd6b7fa1da4b4994ddcc0221094594b79f6ecb152911a4e56988be66121ee
 placebo,https://data.bls.gov/cew/data/api/2023/a/industry/812910.csv,data/raw/bls/placebo/qcew_2023_812910.csv,410877,5e7b819b9aadb3e14980594a9a100b863bcf0c873cd1dc72948b24a6a13f9989
 placebo,https://data.bls.gov/cew/data/api/2024/a/industry/812910.csv,data/raw/bls/placebo/qcew_2024_812910.csv,402047,9b35e3ab3233d4ad0dbadb193dac8b83680e322ceb574dcef2a8b2ea139191a4
+drivers,https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf,data/raw/crs/PLAW-117publ169.pdf,876749,5bd9bebe719d3d1738e751fe7978ef7bf05167ed8150471f306e010185baed4f
+drivers,https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls,data/raw/eia/henry_hub/RNGWHHDa.xls,34816,7a3c4f947d54358792b11bed055f78659eabe671816ed819fbe373100480805a

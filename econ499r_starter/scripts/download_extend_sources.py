@@ -17,11 +17,14 @@ UA = "Mozilla/5.0 (ECON499R research data pull)"
 CANDIDATES = ["621610", "624120", "621511", "812910", "541940", "621493", "561612", "621420", "812199", "621340", "541613", "312140"]
 QCEW = "https://data.bls.gov/cew/data/api/{y}/a/industry/{c}.csv"
 DRIVERS = [
-    ("crs/R43453.pdf", "https://crsreports.congress.gov/product/pdf/R/R43453"),
-    ("crs/IF10479.pdf", "https://crsreports.congress.gov/product/pdf/IF/IF10479"),
-    ("crs/PLAW-117publ169.pdf", "https://www.congress.gov/117/plaws/publ169/PLAW-117publ169.pdf"),
+    ("crs/PLAW-117publ169.pdf", "https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf"),
     ("eia/henry_hub/RNGWHHDa.xls", "https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls"),
 ]
+# Not fetchable by script (HTTP 403 to scripted requests on 2026-11-07); need a browser download into data/raw/crs/:
+#   https://crsreports.congress.gov/product/pdf/R/R43453  -> crs/R43453.pdf
+#   https://crsreports.congress.gov/product/pdf/IF/IF10479 -> crs/IF10479.pdf
+#   LBNL Land-Based Wind Market Report data file (emp.lbl.gov, HTTP 403) -> lbnl/
+# NREL state resource tables: nrel.gov does not resolve from this machine's sandbox; the prompt's fallback (EIA 2015 capacity factors) is used.
 
 
 def curl(url, path, max_time=300):
