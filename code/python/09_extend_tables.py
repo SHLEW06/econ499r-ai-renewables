@@ -188,7 +188,7 @@ def s4(date, E, T, F):
     fig, axs = plt.subplots(1, 3, figsize=(12, 3.6))
     for ax, (y, l) in zip(axs, lab.items()):
         e = ye[ye.outcome == y]; ax.fill_between(e.year, e.ci_lo, e.ci_hi, color="#9bb7d4", alpha=.5); ax.plot(e.year, e.estimate, "o-", color="#2a6ebb", label="year effect (95% CI)")
-        z = pd.read_csv(os.path.join(E, f"s4_path_{y}.csv")); ax.plot(z.year, z.driver_path, "s--", color="#d1495b", label="fitted driver path (interim)")
+        z = pd.read_csv(os.path.join(E, f"s4_path_{y}.csv")); ax.plot(z.year, z.driver_path, "s--", color="#d1495b", label="fitted driver path" + ("" if (dm.model == "drivers").any() else " (interim)"))
         r = pf[pf.outcome == y].iloc[0]; ax.set_title(f"{l}\ncorr {r.correlation:.2f}, R2 {r.r_squared:.2f}", fontsize=9); ax.axhline(0, color="grey", lw=.6)
     axs[0].legend(frameon=False, fontsize=7); fig.suptitle("Year effects (two-way model, base 2015) and the path fitted from measured drivers"); fig.tight_layout()
     fig.savefig(os.path.join(F, "fig_s4_year_effects_drivers.png"), dpi=150); plt.close(fig)
@@ -199,13 +199,18 @@ def s4(date, E, T, F):
     text = (f"**AI isn't the national trend.** With data-center jobs, the renewable-share coefficient barely moves across the three models: {rs[0].estimate:+.3f} with state FE only (p = {rs[0].pval:.3f}), "
             f"{rs[1].estimate:+.3f} with measured drivers (p = {rs[1].pval:.3f}) and {rs[2].estimate:+.3f} with two-way FE (p = {rs[2].pval:.3f}). Leaving out year effects doesn't make it positive, so the national rise isn't loading on AI. "
             f"**What the drivers show{'' if full else ' (interim: wind cost and the PTC pending)'}.** The year effects rise steadily for all three outcomes. A path fitted from measured drivers that vary by state, namely state RPS/CES targets (LBNL), solar resource x utility-scale solar LCOE "
-            f"(LBNL Utility-Scale Solar), solar resource x the solar ITC (P.L. 117-169, PDF pp. 98 and 103){', wind resource x wind cost (LBNL) and wind resource x the PTC (CRS R43453; P.L. 116-260; P.L. 117-169)' if full else ''} and 2015 gas share x the Henry Hub price (EIA), "
+            f"(LBNL Utility-Scale Solar), solar resource x the solar ITC (CRS IF10479; P.L. 117-169){', wind resource x wind cost (LBNL) and wind resource x the PTC (CRS R43453; P.L. 116-260; P.L. 117-169)' if full else ''} and 2015 gas share x the Henry Hub price (EIA), "
             f"correlates with them at {pf.loc[pf.outcome=='renew_share','correlation'].iloc[0]:.2f} (renewable share), {pf.loc[pf.outcome=='ln_gen_wind','correlation'].iloc[0]:.2f} (ln wind) and {pf.loc[pf.outcome=='ln_gen_solar','correlation'].iloc[0]:.2f} (ln solar) over 11 years. "
             f"That is consistent with these drivers' role but doesn't prove it: any series that rises over 2015-2025 correlates with a national trend. "
             f"Solar LCOE fell from {nat.solar_lcoe_2025usd_mwh.iloc[0]:.0f} to {nat.solar_lcoe_2025usd_mwh.min():.0f} $/MWh (2022) and rose to {nat.solar_lcoe_2025usd_mwh.iloc[-1]:.0f}; the ITC was 30%, 26% for 2020-2021, and 30% again under the IRA. "
-            f"One exception: postings and ln solar generation are positive without year effects ({g('ln_gen_solar','aipostp1000','statefe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','statefe').pval:.3f}) and with drivers "
-            f"({g('ln_gen_solar','aipostp1000',dl).estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000',dl).pval:.3f}), and gone with year effects ({g('ln_gen_solar','aipostp1000','twfe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','twfe').pval:.3f}): "
-            f"a 2019-2025 trend the measured drivers don't capture. All are associations.")
+            + (f"One exception: postings and ln solar generation are positive without year effects ({g('ln_gen_solar','aipostp1000','statefe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','statefe').pval:.3f}) and with drivers "
+               f"({g('ln_gen_solar','aipostp1000',dl).estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000',dl).pval:.3f}), and gone with year effects ({g('ln_gen_solar','aipostp1000','twfe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','twfe').pval:.3f}): "
+               f"a 2019-2025 trend the measured drivers don't capture."
+               if g('ln_gen_solar','aipostp1000',dl).estimate > 0 and g('ln_gen_solar','aipostp1000',dl).pval < .10 else
+               f"Postings and ln solar generation are positive with state FE only ({g('ln_gen_solar','aipostp1000','statefe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','statefe').pval:.3f}), "
+               f"but not once the measured drivers are in ({g('ln_gen_solar','aipostp1000',dl).estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000',dl).pval:.3f}) or with year effects "
+               f"({g('ln_gen_solar','aipostp1000','twfe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','twfe').pval:.3f}): the drivers absorb the shared 2019-2025 trend that the state-FE-only model loads on postings.")
+            + " All are associations.")
     open(os.path.join(T, "s4_writeup.md"), "w").write(text + "\n"); print(text); print(w.to_string())
 
 

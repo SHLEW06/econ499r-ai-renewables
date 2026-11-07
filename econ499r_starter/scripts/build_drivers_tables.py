@@ -14,14 +14,20 @@ import numpy as np, pandas as pd
 
 Y0, Y1 = 2015, 2025
 IRA = "P.L. 117-169 (data/raw/crs/PLAW-117publ169.pdf)"
-# Solar ITC by year construction begins (percent). Each value carries its citation.
-ITC = {y: (30.0, f"{IRA}, PDF p. 98 (136 Stat. 1914): sec. 13102(d)(1) strikes the prior-law '30 percent' base for solar; the 2020-2021 phase-down applies from 2020") for y in range(2015, 2020)}
-ITC.update({y: (26.0, f"{IRA}, PDF p. 98 (136 Stat. 1914): new 48(a)(6), construction begins after Dec. 31, 2019 and placed in service before Jan. 1, 2022: 26 percent") for y in (2020, 2021)})
-ITC.update({y: (30.0, f"{IRA}, PDF p. 98 (136 Stat. 1914) base 6 percent x 5 for projects meeting wage and apprenticeship rules, PDF p. 103 (136 Stat. 1919); placed in service after Dec. 31, 2021") for y in range(2022, Y1 + 1)})
-# Wind PTC as a share of the full credit, by year construction begins. 2017-2021 need CRS R43453 (blocked to scripts).
-PTC = {y: (np.nan, "pending CRS R43453 (crsreports.congress.gov returned HTTP 403 to scripts on 2026-11-07)") for y in range(Y0, 2022)}
-PTC.update({y: (100.0, f"{IRA}, PDF p. 90 (136 Stat. 1906): sec. 13101(e)(2) limits the 45(b)(5) phaseout to wind placed in service before Jan. 1, 2022") for y in range(2022, Y1 + 1)})
-
+# Solar ITC and wind PTC by year construction begins. Printed page first, PDF page in brackets.
+R43453 = "CRS R43453 (Sherlock, updated Apr. 29, 2020; data/raw/crs/CRS_R43453_2020-04-29.pdf)"
+IF10479 = "CRS IF10479 (updated Apr. 23, 2021; data/raw/crs/CRS_IF10479_2021-04-23.pdf)"
+PL116 = "P.L. 116-260 (data/raw/crs/PLAW-116publ260.pdf)"
+ITC = {y: (30.0, f"{IF10479}, p. 1 [PDF p. 1], Table 1: 30% for solar beginning construction through 2019") for y in range(2015, 2020)}
+ITC.update({y: (26.0, f"{IF10479}, p. 1 [PDF p. 1], Table 1: 26% for construction beginning 2020-2022 (pre-IRA); kept by {IRA}, 136 Stat. 1914 [PDF p. 98] for property placed in service before 2022") for y in (2020, 2021)})
+ITC.update({y: (30.0, f"{IRA}: base 6% (136 Stat. 1914 [PDF p. 98]) x 5 with wage and apprenticeship rules (136 Stat. 1919 [PDF p. 103]); placed in service after Dec. 31, 2021") for y in range(2022, Y1 + 1)})
+PTC = {y: (100.0, f"{R43453}, p. 2 [PDF p. 5]: full credit for wind beginning construction through 2016") for y in (2015, 2016)}
+PTC.update({2017: (80.0, f"{R43453}, p. 2 [PDF p. 5]: reduced by 20% for wind beginning construction in 2017"),
+            2018: (60.0, f"{R43453}, p. 2 [PDF p. 5]: reduced by 40% for 2018"),
+            2019: (40.0, f"{R43453}, p. 2 [PDF p. 5]: reduced by 60% for 2019"),
+            2020: (60.0, f"{R43453}, p. 2 [PDF p. 5]: reduced by 40% for 2020 (P.L. 116-94)"),
+            2021: (60.0, f"{PL116}, Div. EE, sec. 131(c)(1), 134 Stat. 3052 [PDF p. 1873]: 45(b)(5)(D), the 40% reduction, extended to construction beginning before Jan. 1, 2022")})
+PTC.update({y: (100.0, f"{IRA}, sec. 13101(e)(2), 136 Stat. 1906 [PDF p. 90]: the 45(b)(5) phaseout applies only to wind placed in service before Jan. 1, 2022") for y in range(2022, Y1 + 1)})
 
 def main(raw, out, logd):
     log = []
@@ -50,7 +56,15 @@ def main(raw, out, logd):
     nat = pd.DataFrame({"year": range(Y0, Y1 + 1)})
     nat["itc_pct"] = nat.year.map(lambda y: ITC[y][0]); nat["itc_source"] = nat.year.map(lambda y: ITC[y][1])
     nat["ptc_pct_of_full"] = nat.year.map(lambda y: PTC[y][0]); nat["ptc_source"] = nat.year.map(lambda y: PTC[y][1])
-    nat["wind_lcoe_2025usd_mwh"] = np.nan; nat["wind_lcoe_source"] = "pending LBNL Land-Based Wind Market Report data file (emp.lbl.gov returned HTTP 403 to scripts on 2026-11-07)"
+    import openpyxl
+    wb = openpyxl.load_workbook(os.path.join(raw, "lbnl/LBNL_land_based_wind_data_2026.xlsx"), read_only=True, data_only=True)
+    wl = {}
+    for r in wb["Wind LCOE Over Time"].iter_rows(min_row=26, values_only=True):
+        if r[0] is not None and str(r[0]).isdigit():
+            wl[int(r[0])] = float(r[1])
+    nat["wind_lcoe_2025usd_mwh"] = nat.year.map(wl)
+    nat["wind_lcoe_source"] = "LBNL Land-Based Wind Energy Technology Data Update 2026 (data/raw/lbnl/LBNL_land_based_wind_data_2026.xlsx), sheet 'Wind LCOE Over Time', generation-weighted, 2025 $/MWh, by commercial-operation year"
+    log.append("Wind LCOE (2025 $/MWh): " + ", ".join(f"{y} {wl[y]:.1f}" for y in range(Y0, Y1 + 1)))
     nat = nat.merge(sl, on="year", how="left").merge(hh, on="year", how="left").merge(ai, on="year", how="left")
     nat.to_csv(os.path.join(out, "extend_drivers_national.csv"), index=False)
     # state: 2015 capacity factors (fallback for NREL resource), 2015 gas share

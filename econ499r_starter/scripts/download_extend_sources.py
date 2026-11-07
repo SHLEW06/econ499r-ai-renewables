@@ -19,6 +19,7 @@ QCEW = "https://data.bls.gov/cew/data/api/{y}/a/industry/{c}.csv"
 DRIVERS = [
     ("crs/PLAW-117publ169.pdf", "https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf"),
     ("eia/henry_hub/RNGWHHDa.xls", "https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls"),
+    ("crs/PLAW-116publ260.pdf", "https://www.govinfo.gov/content/pkg/PLAW-116publ260/pdf/PLAW-116publ260.pdf"),
 ]
 BTOS = "https://www.census.gov/hfp/btos/downloads/"
 INDEX = [
@@ -27,6 +28,12 @@ INDEX = [
     ("census_btos/AI_Question_Wording_Updates.pdf", BTOS + "AI%20Question%20Wording%20Updates.pdf"),
     ("uspto_aipd/oce-aipd-2023.pdf", "https://www.uspto.gov/sites/default/files/documents/oce-aipd-2023.pdf"),
     ("uspto_aipd/ai_model_predictions_2023.csv.zip", "odp:https://data.uspto.gov/ui/datasets/products/files/ECOPATAI/2023_r1/ai_model_predictions.csv.zip"),
+]
+# Section 5 add-on: AI Index 2026, chapter 4 public data (Google Drive folder 4. Economy/Data), Quid private investment by state
+ADDON = [
+    ("aiindex/ed2026_fig_4.2.14.csv", "https://drive.google.com/uc?export=download&id=1HLzDyJ61GL50xmjsF2Bq-fyNI5inDJig"),
+    ("aiindex/ed2026_fig_4.2.15.csv", "https://drive.google.com/uc?export=download&id=1RT5ZLOQFFHBEo9BNi4HRrU7v4vq-H4ZJ"),
+    ("aiindex/ed2026_fig_4.2.16.csv", "https://drive.google.com/uc?export=download&id=1ZswTrGZ3t5ImPaxdo4kGcCyRZnTuo4m3"),
 ]
 # Not fetchable by script (HTTP 403 to scripted requests on 2026-11-07); need a browser download into data/raw/crs/:
 #   https://crsreports.congress.gov/product/pdf/R/R43453  -> crs/R43453.pdf
@@ -72,6 +79,8 @@ def main(raw, log_csv, stage, codes):
         files = DRIVERS
     elif stage == "index":
         files = INDEX
+    elif stage == "addon":
+        files = ADDON
     else:
         sys.exit(f"unknown stage {stage}")
     rows = []

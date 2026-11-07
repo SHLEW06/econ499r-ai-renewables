@@ -41,10 +41,14 @@ placebo,https://data.bls.gov/cew/data/api/2021/a/industry/812910.csv,data/raw/bl
 placebo,https://data.bls.gov/cew/data/api/2022/a/industry/812910.csv,data/raw/bls/placebo/qcew_2022_812910.csv,400386,f82cd6b7fa1da4b4994ddcc0221094594b79f6ecb152911a4e56988be66121ee
 placebo,https://data.bls.gov/cew/data/api/2023/a/industry/812910.csv,data/raw/bls/placebo/qcew_2023_812910.csv,410877,5e7b819b9aadb3e14980594a9a100b863bcf0c873cd1dc72948b24a6a13f9989
 placebo,https://data.bls.gov/cew/data/api/2024/a/industry/812910.csv,data/raw/bls/placebo/qcew_2024_812910.csv,402047,9b35e3ab3233d4ad0dbadb193dac8b83680e322ceb574dcef2a8b2ea139191a4
-drivers,https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf,data/raw/crs/PLAW-117publ169.pdf,876749,5bd9bebe719d3d1738e751fe7978ef7bf05167ed8150471f306e010185baed4f
-drivers,https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls,data/raw/eia/henry_hub/RNGWHHDa.xls,34816,7a3c4f947d54358792b11bed055f78659eabe671816ed819fbe373100480805a
 index,https://www.census.gov/hfp/btos/downloads/State.xlsx,data/raw/census_btos/State.xlsx,4681949,134b30bb209c7835c9faf7403255da3f2bd425a29ca4b4acfe9185805c07f272
 index,https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,data/raw/census_btos/AI_Core_Questions.xlsx,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce
 index,https://www.census.gov/hfp/btos/downloads/AI%20Question%20Wording%20Updates.pdf,data/raw/census_btos/AI_Question_Wording_Updates.pdf,491343,91b018352b693d500258cb649b7c8b1747d5fbfb5f065eeb8969276dd1068c28
 index,https://www.uspto.gov/sites/default/files/documents/oce-aipd-2023.pdf,data/raw/uspto_aipd/oce-aipd-2023.pdf,1922389,5681377084dfb7978f9a9b7e2bf672b870380b8002841fe6e3ad9d6190ff0cb9
 index,https://data.uspto.gov/ui/datasets/products/files/ECOPATAI/2023_r1/ai_model_predictions.csv.zip,data/raw/uspto_aipd/ai_model_predictions_2023.csv.zip,818035211,38c6182750f33db17fe13ebac72fb064afdcfb47b893f12f113f527bda458d9b
+drivers,https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf,data/raw/crs/PLAW-117publ169.pdf,876749,5bd9bebe719d3d1738e751fe7978ef7bf05167ed8150471f306e010185baed4f
+drivers,https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls,data/raw/eia/henry_hub/RNGWHHDa.xls,34816,7a3c4f947d54358792b11bed055f78659eabe671816ed819fbe373100480805a
+drivers,https://www.govinfo.gov/content/pkg/PLAW-116publ260/pdf/PLAW-116publ260.pdf,data/raw/crs/PLAW-116publ260.pdf,5627865,32285d91badb98bb2df445ab0e56a3b4ce60225350f694fc03a0e1678cfef1f5
+addon,https://drive.google.com/uc?export=download&id=1HLzDyJ61GL50xmjsF2Bq-fyNI5inDJig,data/raw/aiindex/ed2026_fig_4.2.14.csv,726,e1262539628e13523245764d3c65a0968d381d924b2c7e6a2ea4025ae7bbcfaf
+addon,https://drive.google.com/uc?export=download&id=1RT5ZLOQFFHBEo9BNi4HRrU7v4vq-H4ZJ,data/raw/aiindex/ed2026_fig_4.2.15.csv,696,e32bca0de63d9cf8c8ad795be0b89de61d2cb423dec26dd541e767aeb9cb7216
+addon,https://drive.google.com/uc?export=download&id=1ZswTrGZ3t5ImPaxdo4kGcCyRZnTuo4m3,data/raw/aiindex/ed2026_fig_4.2.16.csv,1758,8f991781a56d5084ab0a17499bf38c7c43c588f836a6d76a230ef10a1ec6792f
