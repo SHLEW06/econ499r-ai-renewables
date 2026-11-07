@@ -265,10 +265,40 @@ def s_p2(date, E, T, F):
     print(bio.round(4).drop(columns="tag").to_string())
 
 
+def s5(date, E, T, F):
+    L = "logs/2026-11-07/"
+    rel = pd.read_csv(os.path.join(E, "p2b_relevance_index.csv")); rel.to_csv(os.path.join(T, "s5_relevance_first.csv"), index=False)
+    rk = pd.read_csv(os.path.join(E, "p2b_permutation_ranks.csv")); rk.to_csv(os.path.join(T, "s5_state_slope_ranks.csv"), index=False)
+    for f in ["ai_index_coverage", "ai_index_loadings", "ai_index_diagnostics", "ai_index_component_correlations", "ai_index_crossstate_checks", "ai_index_oews_mapping"]:
+        pd.read_csv(L + f + ".csv").to_csv(os.path.join(T, f"s5_{f.replace('ai_index_', '')}.csv"), index=False)
+    ix = pd.read_csv(os.path.join(E, "p2b_index_family.csv")); ix["outcome_label"] = ix.outcome.map(lambda o: IMP.get(o, olab(o)))
+    ix.to_csv(os.path.join(T, "s5_index_family.csv"), index=False)
+    for f, n in [("p2b_2sls", "s5_2sls"), ("p2b_groupings", "addon_groupings"), ("p2b_land_moderator", "addon_land_moderator"), ("p2b_land_moderator_X5", "addon_land_moderator_X5"),
+                 ("p2b_distillery_suppression", "p2_distillery_suppression"), ("p2b_distillery_rerun", "p2_distillery_rerun")]:
+        pd.read_csv(os.path.join(E, f + ".csv")).to_csv(os.path.join(T, n + ".csv"), index=False)
+    # chart: per-state slopes, commercial sales on AI, VA/TX/GA highlighted (jobs, all 50)
+    fig, axs = plt.subplots(1, 3, figsize=(12, 3.6))
+    for ax, (tagm, lab) in zip(axs, [("ai518210", "data-center jobs"), ("aipostp1000", "postings"), ("indexA", "Index A")]):
+        sl = pd.read_csv(os.path.join(E, f"p2b_state_slopes_{tagm}_all50.csv")).sort_values("slope").reset_index(drop=True)
+        ax.bar(range(len(sl)), sl.slope, color=["#d1495b" if s_ in ("VA", "TX", "GA") else "#9bb7d4" for s_ in sl.state])
+        for i, r in sl.iterrows():
+            if r.state in ("VA", "TX", "GA"):
+                ax.annotate(r.state, (i, r.slope), ha="center", va="bottom", fontsize=7, color="#d1495b")
+        ax.axhline(0, color="grey", lw=.6); ax.set_xticks([]); ax.set_title(f"{lab}: one slope per state", fontsize=9)
+    axs[0].set_ylabel("ln commercial sales per person\non AI(t-1), by state"); fig.tight_layout(); fig.savefig(os.path.join(F, "fig_s5_state_slopes.png"), dpi=150); plt.close(fig)
+    x = ix[(ix.status == "ok") & (ix.family == "index") & (ix["sample"] == "all50")].copy(); x["z"] = x.estimate / x.se
+    fig, ax = plt.subplots(figsize=(8, 4))
+    for k, c in zip(["index_a", "index_b", "sub_infra", "sub_talent"], ["#2a6ebb", "#d1495b", "#6a994e", "#bc6c25"]):
+        y = x[x["index"] == k]; ax.scatter(y.z, [k] * len(y), color=c, alpha=.6)
+    for v in (-1.96, 1.96): ax.axvline(v, color="grey", lw=.5, ls=":")
+    ax.set_xlabel("t-statistic, 34 outcomes per index (none with q < 0.10)"); ax.set_title("Index family, 50 states"); fig.tight_layout(); fig.savefig(os.path.join(F, "fig_s5_index_family.png"), dpi=150); plt.close(fig)
+    print(rel[rel.version == "pooled"].round(4).to_string()); print(rk.to_string())
+
+
 def main(date, section):
     E = os.path.join("results", date, "extend"); T = os.path.join(E, "tables"); F = os.path.join(E, "figures")
     os.makedirs(T, exist_ok=True); os.makedirs(F, exist_ok=True)
-    {1: s1, 2: s2, 3: s3, 4: s4, 25: s_p2}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
+    {1: s1, 2: s2, 3: s3, 4: s4, 5: s5, 25: s_p2}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
 
 
 if __name__ == "__main__":
