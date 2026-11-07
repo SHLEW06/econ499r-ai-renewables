@@ -38,10 +38,11 @@ Started 2026-11-07. Plan approved with changes (team, 2026-11-07): two passes. P
 |---|---|---|
 | A. File downloads | **done** (db4ab9b) | CRS R43453, IF10479, R46865; LBNL wind 2026; OEWS 2015-2024. "Fang Supplement.pdf" was the article (same hash), so the supplement is still missing. Duplicates moved to `data/raw/_to_delete/` |
 | B1 full drivers model | **done** (86fa48a) | Section 4 final |
-| B2 Table A1 and Supplement B | **not run** | Supplement not received |
+| B2 Table A1 and Supplement B | superseded below | First reported as not run; the supplement arrived later |
 | B3 section 5 index | **done** | See section 5 |
 | B4 relevance and slope ranks | **done** | |
 | B5 IRP page convention and batteries | **done** | 22 cites rechecked; 500 MW is part of 780 MW |
 | B6 distillery placebo | **done** | 13 never-suppressed states |
 | Add-on A1-A5 | **done** except A4 | Quid covers 2025 only, so grouping; Queued Up 403; X5 land sensitivities post hoc |
 | Section 5 stop rule | resolved | OEWS hand download; three components cover 2015-2023 (QCEW) plus research scientists |
+| B2 Table A1 and Supplement B (late arrival) | **done** (5484ac3) | `fang supplement.docx` arrived after the first section 7 build; filed to `literature/Fang_Lee_Li_2025_supplement.docx`. A1: EPU about ln 2 below Fang's (doubled index); B1: coal and gas inside our CIs, petroleum not. Outputs, workbook and packages rebuilt |
