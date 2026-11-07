@@ -49,6 +49,12 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [ncses.md](ncses.md) | NCSES bachelor's degrees indicator | `data/raw/ncses/` | `ncses_bachelors_state.csv` |
 | [fang_panel.md](fang_panel.md) | Fang panel and split variables | Several | `fang_panel.csv`, `fang_split_vars.csv` |
 
+### Added Nov 7 (prompts 08 and 09; side tables in `data/`; the panel doesn't use them)
+| Receipt | Source | Raw folder | Output |
+|---|---|---|---|
+| [seds_old_basis.md](seds_old_basis.md) | EIA SEDS archive (June 2023), bulk MER, SEDS physical units | `data/raw/eia/seds_archive/`, `data/raw/eia/mer/`, `data/raw/eia/seds/` | `seds_old_basis.csv` |
+| [noaa_storm_events.md](noaa_storm_events.md) | NOAA Storm Events details files | `data/raw/noaa/storm_events/` | `storm_events_state.csv` |
+
 ## Rebuild steps (from the project root)
 
 `data/raw/` is read-only. These commands rebuild everything derived from it; they don't change raw files, except that steps marked *download* add files.
@@ -79,6 +85,10 @@ python3 $S/add_side_tabs_nov4.py <scratch_dir>/wb_base.xlsx data outputs/ECON499
 # Fang test (Phase 4h)
 python3 -I $S/download_fang_sources.py data/raw logs/2026-11-04/fang_downloads.csv   # download
 python3 -I $S/build_fang_tables.py data/raw data logs/2026-11-04
+
+# Finalize and extend (prompts 08 and 09, Nov 7)
+python3 -I $S/download_finalize_sources.py data/raw logs/2026-11-07/finalize_downloads.csv   # download
+python3 -I $S/build_finalize_tables.py data/raw data logs/2026-11-07
 
 # 5. Compare two builds, cell by cell (C.1b)
 python3 $S/compare_panel_builds.py <before_dir> data/out <out_csv>

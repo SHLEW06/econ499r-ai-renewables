@@ -1,0 +1,11 @@
+Heat rate (thousand Btu/kWh): {2015: 9.314, 2016: 9.228, 2017: 9.208, 2018: 9.098, 2019: 8.899, 2020: 8.767, 2021: 8.844, 2022: 8.813, 2023: 8.63, 2024: 8.617}; matches archived SEDS FFETK 2015-2021 to 0.001
+Current SEDS: max |WY+HY+SO+GE+BM - RETCB| = 2.0 billion Btu
+Biomass split: max |WWTCB + BFTCB - BMTCB| = 901.0; share of state-years off by > 1%: 0.020
+vs archive, re_bbtu_rebuilt: median |diff| 0.57%, 90th pct 4.83%, max 23.11%; corr of logs 0.99941
+vs archive, re_bbtu_rebuilt_allconv: median |diff| 1.62%, 90th pct 8.93%, max 22.90%; corr of logs 0.99900
+vs archive, re_bbtu_k26: median |diff| 1.62%, 90th pct 8.47%, max 22.13%; corr of logs 0.99898
+vs archive, re_bbtu_current: median |diff| 26.23%, 90th pct 51.01%, max 61.78%; corr of logs 0.97665
+vs archive, rebuilt_archbiomass: median |diff| 0.00%, 90th pct 0.01%, max 0.19%; corr of logs 1.00000
+National: rebuilt sum of 51 vs EIA REFFBUS, % diff by year: 2015 -0.03, 2016 -0.04, 2017 -0.06, 2018 -0.07, 2019 -0.09, 2020 -0.09, 2021 -0.18, 2022 -0.35, 2023 -0.51, 2024 -0.51
+seds_old_basis.csv: 510 rows, 51 states, 2015-2024; NA in re_bbtu_rebuilt: 0
+storm_events_state.csv: 510 rows. 2018-2021 state mean events: mean 66.5, median 34.5; states above mean 19, zero-event states ['FL', 'HI', 'NH', 'RI']
