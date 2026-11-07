@@ -33,6 +33,8 @@ data/fang_split_vars.csv
 data/fang_panel.csv
 data/seds_old_basis.csv
 data/storm_events_state.csv
+data/extend_outcomes.csv
+data/extend_restructured.csv
 data/codebook.csv
 outputs/ECON499R_Data_Workbook_*.xlsx
 outputs/ECON499R_csv_for_R/

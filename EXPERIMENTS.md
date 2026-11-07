@@ -541,3 +541,46 @@ Follows `prompts/09_extend.md`; run log `docs/2026-11-07/extend-run-log.md`. Out
 | E4 | Trend placebo | ln(industry employment) in place of ln AI. Fang col. 6 (state FE, conventional SEs, 2018-2021, with DC) and our main spec (lag, two-way FE, ctrl4, clustered, 50 states, 2015-2024, ln employment winsorized), outcome ln RE current and rebuilt | Fang's spec: positive for any variable that trends up with renewables; ours: null | **Candidates (chosen before any data):** 621610 home health care; 624120 services for the elderly and disabled; 621511 medical laboratories; 812910 pet care (except veterinary); 541940 veterinary services; 621493 freestanding ambulatory surgical centers; 561612 security guards; 621420 outpatient mental health centers; 812199 other personal care; 621340 offices of physical, occupational and speech therapists; 541613 marketing consulting; 312140 distilleries. **Excluded on purpose:** transportation and warehousing (fuel use, and biofuels sit inside SEDS renewables), utilities, mining, tech and information industries (AI-related), and retail (NAICS 2022 recoded it, breaking 2022-2024). **Selection rule:** national private employment (QCEW US000, own_code 5, annual average), log growth 2018-2021. Keep the two closest to AI postings' 0.760 (sum of 51, 2018 to 2021). Only national growth is looked at before the choice |
 
 **E4 choice (2026-11-07, from national growth only; no regression run yet; `logs/2026-11-07/placebo_industry_selection.csv`):** 312140 distilleries (log growth 2018-2021 = 0.315) and 812910 pet care, except veterinary (0.139). No candidate came close to postings' 0.760, so these are the two closest by the rule, not matches. The other ten grew between -0.033 and 0.122.
+
+### §14.2 By renewable type, pre-registered 2026-11-07 (family "bytype")
+Main spec, both AI measures, BH q-values over all 38 rows (19 outcomes x 2 measures); lead placebo for every row with p < 0.10. Data: `data/extend_outcomes.csv` (`econ499r_starter/scripts/build_extend_tables.py`, same EIA files and filters as `build_panel.py`: Total Electric Power Industry, nameplate capacity). In-state, 2015-2025 (SEDS 2015-2024).
+
+| Outcomes | Measures | Expected sign | Why |
+|---|---|---|---|
+| Wind, utility-scale solar | Share of in-state generation (levels, zeros kept); ln generation (zeros dropped, N reported); MW added per 1,000 MW of 2015 total capacity (net change in nameplate) | Share: negative. ln generation and additions: positive | Data-center load raises total generation, mostly from gas, so shares fall even when wind and solar grow. Corporate procurement by data-center operators would raise wind and solar generation and additions (Fang's story) |
+| Hydro, geothermal, biomass (wood + other biomass) | Same three | Zero | Resource-fixed or declining; no channel from AI |
+| Small-scale solar | — | — | **Not in the panel** (EIA's state generation file is utility-scale); skipped as the prompt allows |
+| SEDS wood and waste (WWTCB); biofuels (BFTCB: fuel ethanol, biodiesel, renewable diesel, other, losses and co-products) | ln consumption, current basis | Wood/waste: zero. Biofuels: zero | Biofuels follow transport fuel demand |
+| SEDS renewables without all biomass (RETCB - BMTCB); without biofuels only (RETCB - BFTCB) | ln consumption, current basis | Without biomass: positive; without biofuels: zero or positive | Tests whether the negative total (bridge, 11-04) is transport fuel rather than power |
+
+Reference row, outside the family: ln RETCB (current) in the main spec.
+
+**Georgia (section 2.4):** implied change = coefficient x Georgia's change in AI(t-1): jobs, 2015 to 2025 (AI 2014 to 2024); postings, 2019 to 2025 (AI 2018 to 2024), the window postings allow. 95% CI from the coefficient's CI. Placed next to Georgia's actual change in the outcome over the same window (SEDS ends 2024). "At most" uses the end of the 95% CI farthest from zero. Not a forecast.
+
+### §14.3 What AI has been associated with, pre-registered 2026-11-07 (family "impact")
+Main spec, both AI measures, BH q-values over all 30 rows (15 outcomes x 2 measures); lead placebo for every row with q < 0.10; for outcomes that pass, one model with AI x restructured.
+
+| Outcome | Expected sign | Why |
+|---|---|---|
+| ln sales per person: commercial | Positive | Much data-center load is billed as commercial |
+| ln sales per person: industrial | Zero or positive | Some data centers take industrial tariffs |
+| ln sales per person: residential | Zero | No direct channel |
+| Retail price, commercial, cents/kWh | Positive | Load growth raises capacity costs |
+| Retail price, industrial | Positive | Same |
+| Retail price, residential | Positive | Costs shifted across classes |
+| Gas share of in-state generation | Positive | New load met mostly by gas |
+| Coal share | Zero or positive | Delayed retirements (e.g. Georgia's 2025 IRP) |
+| Nuclear share | Negative | Fixed output, larger denominator |
+| MW added per 1,000 MW of 2015 capacity: gas | Positive | Capacity for new load |
+| MW added: solar | Positive | Procurement |
+| MW added: wind | Positive | Procurement |
+| Battery storage additions | — | **Not in the panel** (EIA's state capacity file has no storage category); skipped as the prompt allows |
+| Net imports, (retail sales - in-state generation) / retail sales | Positive | Load grows faster than in-state generation |
+| ln power-sector CO2 (`co2_power_t`) | Positive | More fossil generation |
+| Power-sector CO2 per MWh (`co2_per_mwh_t`) | Positive | Gas and coal on the margin |
+
+Note: MW added for solar and wind also appear in the "bytype" family. They are counted in both families, as the prompt lists them in both.
+
+**Restructured market (registered before computing any state's value):** from EIA-861 (`data/raw/eia/HS861_2010-.xlsx`, already downloaded), the share of each state's 2015 total retail sales (MWh) sold by Energy-Only Providers (retail power marketers). **Restructured if the share is >= 10%.** Flag every state within 5 points of the cutoff (5-15%). The list of states on each side goes in `data/extend_restructured.csv` and the notebook. Source: EIA Form 861 annual data, sheets "Total Electric Industry" and "Energy Only Providers".
+
+**Deviation X1 (logged 2026-11-07, after building the classification and before any section 3 model ran):** the pre-registered rule (EIA-861 Energy-Only Providers' share of 2015 retail sales >= 10%) classifies **Texas as regulated (0%)**. EIA's summary sheets don't report Texas's competitive retailers separately: they are bundled-service sellers with ownership "Retail Power Marketer". EIA-861's 2025 detail file (`data/raw/eia_forms/f8612025.zip`, `Sales_Ult_Cust_2025.xlsx`, already downloaded) puts 63.6% of Texas retail sales with retail power marketers. **Main classification:** the pre-registered 2015 rule with Texas set to restructured. 15 restructured states in the 50-state sample: CA, CT, DE, IL, MA, MD, ME, MT, NH, NJ, NY, OH, PA, RI, TX (DC also qualifies but is out of the sample). Near the cutoff (5-15%): CA 11.0, MI 9.1, NV 6.4. **Labeled check:** the share of 2025 sales by Retail Power Marketers >= 10% (bundled and energy-only rows). It moves CA (4.8%) and MT (0.9%) to regulated and keeps TX restructured. If an outcome passes, the AI x restructured model is reported under both.

@@ -1,0 +1,11 @@
+Capacity sources: ['All Sources', 'Coal', 'Geothermal', 'Hydroelectric', 'Natural Gas', 'Nuclear', 'Other', 'Other Biomass', 'Other Gases', 'Petroleum', 'Pumped Storage', 'Solar Thermal and Photovoltaic', 'Wind', 'Wood and Wood Derived Fuels']
+Gate: MW added, solar, vs panel new_solar_mw: max |diff| = 0.000000 MW
+Gate: MW added, wind, vs panel new_wind_mw: max |diff| = 0.000000 MW
+Check: EIA-861 total sales vs panel sales_mwh, max |diff| = 0 MWh
+Check: commercial price vs panel price_com_c_kwh, max |diff| = 0.0050
+extend_outcomes.csv: 561 rows x 43 cols; nonzero generation state-years (50 states): {'wind': 456, 'solar': 499, 'hydro': 528, 'geo': 76, 'bio': 526}
+Restructured (>= 10%): DC 71.3, PA 67.2, IL 67.1, OH 65.2, CT 57.7, MD 52.9, NY 52.7, ME 51.8, MA 51.7, NJ 47.4, NH 45.9, RI 40.5, DE 37.9, MT 19.2, CA 11.0, TX 0.0
+Near cutoff (5-15%): CA 11.0, MI 9.1, NV 6.4
+Main classification (with TX, deviation X1): CA, CT, DC, DE, IL, MA, MD, ME, MT, NH, NJ, NY, OH, PA, RI, TX
+Check, retail power marketers 2025 >= 10%: CT, DC, DE, IL, MA, MD, ME, NH, NJ, NY, OH, PA, RI, TX; near cutoff: NV 8.2
+Regulated, share > 0: MI 9.1, NV 6.4, OR 4.0, WA 2.2, VA 0.2

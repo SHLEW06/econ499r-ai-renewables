@@ -82,10 +82,81 @@ def s1(date, E, T, F):
     print(verdict); print('inside CI, all coefficients:', cnt, '| postings models:', cnt_post, '| postings AI only:', cnt_ai)
 
 
+LAB = {"share": "share of generation", "ln_gen": "ln generation", "add": "MW added per 1,000 MW (2015 cap.)"}
+TYPE = {"wind": "wind", "solar": "utility solar", "hydro": "hydro", "geo": "geothermal", "bio": "biomass"}
+
+
+def olab(o):
+    if o.startswith("ln_seds_"):
+        return {"ln_seds_woodwaste": "SEDS wood and waste (ln)", "ln_seds_biofuels": "SEDS biofuels (ln)", "ln_seds_re_exbiomass": "SEDS renewables excl. all biomass (ln)",
+                "ln_seds_re_exbiofuels": "SEDS renewables excl. biofuels (ln)", "ln_seds_re_total": "SEDS renewables, total (ln)"}[o]
+    for k, v in LAB.items():
+        if o.startswith(k + "_"):
+            t = o[len(k) + 1:].replace("_per1000", "")
+            return f"{TYPE.get(t, t)}: {v}"
+    return o
+
+
+def family_table(m):
+    t = m.copy()
+    t["outcome_label"] = t.outcome.map(olab)
+    t["ai"] = t.ai_measure.map({"ai518210": "jobs per 1,000", "aipostp1000": "postings per 1,000"})
+    t["coef"] = t.apply(lambda r: "" if pd.isna(r.estimate) else f"{r.estimate:+.4g}{star(r.pval)}", axis=1)
+    t["ci95"] = t.apply(lambda r: "" if pd.isna(r.estimate) else f"[{r.ci_lo:+.3g}, {r.ci_hi:+.3g}]", axis=1)
+    t["lead_placebo"] = t.apply(lambda r: "" if pd.isna(r.lead_est) else f"lead {r.lead_est:+.3g} (p={r.lead_p:.3f}) vs lag {r.lag_est_pl:+.3g}", axis=1)
+    return t[["outcome_label", "ai", "coef", "ci95", "pval", "qval", "N", "years", "lead_placebo", "finding", "status", "note", "tag"]]
+
+
+def s2(date, E, T, F):
+    m = pd.read_csv(os.path.join(E, "s2_bytype_family.csv"))
+    ft = family_table(m); ft.to_csv(os.path.join(T, "s2_bytype_table.csv"), index=False)
+    gi = pd.read_csv(os.path.join(E, "s2_georgia_implied.csv"))
+    mix = pd.read_csv(os.path.join(E, "s2_georgia_mix.csv"))
+    none = {t for t in ["wind", "geo"] if (mix[f"share_{t}"].fillna(0) == 0).all()}
+    def sent(r):
+        t = r.outcome.split("_")[-1] if not r.outcome.startswith("add_") else r.outcome.split("_")[1]
+        lab = olab(r.outcome) + (" (jobs)" if r.ai_measure == "ai518210" else " (postings)")
+        if t in none:
+            return f"{lab}: Georgia has no {TYPE[t]} generation in 2015-2025, so this doesn't apply."
+        if pd.isna(r.implied):
+            return f"{lab}: not estimable."
+        if pd.isna(r.actual_change) or r.actual_change == 0:
+            return f"{lab}: implied {r.implied:+.3g} (95% CI {r.implied_lo:+.3g} to {r.implied_hi:+.3g}); Georgia's actual change over {r.window} is zero, so no share can be stated."
+        a = r.at_most_share_of_actual
+        tail = f"at most {100*a:.0f}% of Georgia's actual change" if a <= 1 else f"the CI is wide enough to exceed Georgia's actual change ({a:.1f} times)"
+        sign = "" if np.sign(r.implied) == np.sign(r.actual_change) else "; the point estimate has the opposite sign"
+        return f"{lab}: implied {r.implied:+.3g} (95% CI {r.implied_lo:+.3g} to {r.implied_hi:+.3g}) against an actual {r.actual_change:+.3g} over {r.window}: {tail}{sign}."
+    gi["sentence"] = gi.apply(sent, axis=1)
+    gi["outcome_label"] = gi.outcome.map(olab)
+    gi.to_csv(os.path.join(T, "s2_georgia_implied_vs_actual.csv"), index=False)
+    pd.read_csv(os.path.join(E, "s2_georgia_ai_profile.csv")).to_csv(os.path.join(T, "s2_georgia_ai_profile.csv"), index=False)
+    mix.to_csv(os.path.join(T, "s2_georgia_mix.csv"), index=False)
+    cs = pd.read_csv(os.path.join(E, "s2_cross_state_changes.csv"))
+    fig, axs = plt.subplots(1, 2, figsize=(10, 4.2))
+    for ax, y, lab in [(axs[0], "d_solar", "Change in solar share of generation"), (axs[1], "d_renew", "Change in renewable share of generation")]:
+        ax.scatter(cs.d_ai, cs[y], s=18, color="#9bb7d4")
+        g = cs[cs.state == "GA"].iloc[0]; ax.scatter([g.d_ai], [g[y]], s=40, color="#d1495b"); ax.annotate("GA", (g.d_ai, g[y]), xytext=(4, 4), textcoords="offset points", color="#d1495b")
+        for _, r in cs[cs.d_ai.abs() > cs.d_ai.abs().quantile(.94)].iterrows():
+            if r.state != "GA":
+                ax.annotate(r.state, (r.d_ai, r[y]), xytext=(3, -8), textcoords="offset points", fontsize=7, color="grey")
+        b = np.polyfit(cs.d_ai, cs[y], 1); xs = np.linspace(cs.d_ai.min(), cs.d_ai.max(), 10); ax.plot(xs, b[0] * xs + b[1], color="grey", lw=.8, ls="--")
+        ax.axhline(0, color="grey", lw=.5); ax.set_xlabel("Change in data-center jobs per 1,000 (t-1), 2015-2025"); ax.set_ylabel(lab)
+    fig.suptitle("Across states, 2015-2025 (50 states; Georgia in red; dashed = OLS line, descriptive)"); fig.tight_layout()
+    fig.savefig(os.path.join(F, "fig_s2_cross_state_georgia.png"), dpi=150); plt.close(fig)
+    # family chart
+    x = m[m.status == "ok"].copy(); x["lab"] = x.outcome.map(olab) + " | " + x.ai_measure.map({"ai518210": "jobs", "aipostp1000": "postings"})
+    x["z"] = x.estimate / x.se
+    fig, ax = plt.subplots(figsize=(7, 8)); ax.barh(range(len(x)), x.z, color=["#d1495b" if q < .1 else "#9bb7d4" for q in x.qval])
+    ax.set_yticks(range(len(x))); ax.set_yticklabels(x.lab, fontsize=6.5); ax.axvline(0, color="grey", lw=.8)
+    for v in (-1.96, 1.96): ax.axvline(v, color="grey", lw=.5, ls=":")
+    ax.set_xlabel("t-statistic (red: q < 0.10)"); ax.set_title("AI(t-1) by renewable type, main spec"); fig.tight_layout(); fig.savefig(os.path.join(F, "fig_s2_bytype_t.png"), dpi=150); plt.close(fig)
+    print(ft.to_string()); print("\n".join(gi.sentence))
+
+
 def main(date, section):
     E = os.path.join("results", date, "extend"); T = os.path.join(E, "tables"); F = os.path.join(E, "figures")
     os.makedirs(T, exist_ok=True); os.makedirs(F, exist_ok=True)
-    {1: s1}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
+    {1: s1, 2: s2}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
 
 
 if __name__ == "__main__":

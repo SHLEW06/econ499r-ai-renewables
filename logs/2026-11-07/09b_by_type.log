@@ -1,0 +1,182 @@
+                  outcome  ai_measure  estimate     p     q     N lead_est
+                   <char>      <char>     <num> <num> <num> <int>    <num>
+ 1:            share_wind    ai518210 -8.41e-03 0.213 0.662   550       NA
+ 2:            share_wind aipostp1000 -7.84e-04 0.716 0.777   350       NA
+ 3:           ln_gen_wind    ai518210 -1.81e-01 0.016 0.147   455 -0.27600
+ 4:           ln_gen_wind aipostp1000 -4.77e-02 0.002 0.086   293 -0.00797
+ 5:      add_wind_per1000    ai518210  1.89e+00 0.015 0.147   550  0.79900
+ 6:      add_wind_per1000 aipostp1000  5.95e-01 0.486 0.662   350       NA
+ 7:           share_solar    ai518210 -5.93e-05 0.984 0.984   550       NA
+ 8:           share_solar aipostp1000 -9.75e-04 0.477 0.662   350       NA
+ 9:          ln_gen_solar    ai518210  4.20e-02 0.746 0.777   499       NA
+10:          ln_gen_solar aipostp1000 -4.60e-02 0.565 0.701   333       NA
+11:     add_solar_per1000    ai518210 -5.99e-01 0.755 0.777   550       NA
+12:     add_solar_per1000 aipostp1000 -1.50e+00 0.211 0.662   350       NA
+13:           share_hydro    ai518210 -1.30e-03 0.490 0.662   550       NA
+14:           share_hydro aipostp1000 -2.40e-03 0.285 0.662   350       NA
+15:          ln_gen_hydro    ai518210 -3.39e-02 0.070 0.421   528 -0.00895
+16:          ln_gen_hydro aipostp1000  8.75e-03 0.623 0.724   336       NA
+17:     add_hydro_per1000    ai518210  7.46e-02 0.497 0.662   550       NA
+18:     add_hydro_per1000 aipostp1000 -5.77e-02 0.302 0.662   350       NA
+19:             share_geo    ai518210 -8.84e-05 0.426 0.662   550       NA
+20:             share_geo aipostp1000  1.31e-04 0.427 0.662   350       NA
+21:            ln_gen_geo    ai518210        NA    NA    NA    NA       NA
+22:            ln_gen_geo aipostp1000        NA    NA    NA    NA       NA
+23:       add_geo_per1000    ai518210  2.28e-03 0.731 0.777   550       NA
+24:       add_geo_per1000 aipostp1000  1.08e-02 0.378 0.662   350       NA
+25:             share_bio    ai518210  4.50e-04 0.587 0.704   550       NA
+26:             share_bio aipostp1000 -4.42e-04 0.343 0.662   350       NA
+27:            ln_gen_bio    ai518210 -1.97e-02 0.391 0.662   526       NA
+28:            ln_gen_bio aipostp1000  3.47e-02 0.025 0.182   337  0.01680
+29:       add_bio_per1000    ai518210 -1.36e-01 0.312 0.662   550       NA
+30:       add_bio_per1000 aipostp1000 -1.07e-01 0.319 0.662   350       NA
+31:     ln_seds_woodwaste    ai518210 -2.17e-02 0.347 0.662   500       NA
+32:     ln_seds_woodwaste aipostp1000  1.02e-02 0.426 0.662   300       NA
+33:      ln_seds_biofuels    ai518210  7.41e-03 0.552 0.701   494       NA
+34:      ln_seds_biofuels aipostp1000 -9.18e-03 0.357 0.662   294       NA
+35:  ln_seds_re_exbiomass    ai518210 -5.52e-02 0.183 0.662   500       NA
+36:  ln_seds_re_exbiomass aipostp1000  2.03e-02 0.302 0.662   300       NA
+37: ln_seds_re_exbiofuels    ai518210 -6.19e-02 0.010 0.147   500 -0.06640
+38: ln_seds_re_exbiofuels aipostp1000  9.27e-03 0.380 0.662   300       NA
+                  outcome  ai_measure  estimate     p     q     N lead_est
+                   <char>      <char>     <num> <num> <num> <int>    <num>
+    lead_p finding
+     <num>  <lgcl>
+ 1:     NA   FALSE
+ 2:     NA   FALSE
+ 3:  0.016   FALSE
+ 4:  0.681    TRUE
+ 5:  0.476   FALSE
+ 6:     NA   FALSE
+ 7:     NA   FALSE
+ 8:     NA   FALSE
+ 9:     NA   FALSE
+10:     NA   FALSE
+11:     NA   FALSE
+12:     NA   FALSE
+13:     NA   FALSE
+14:     NA   FALSE
+15:  0.670   FALSE
+16:     NA   FALSE
+17:     NA   FALSE
+18:     NA   FALSE
+19:     NA   FALSE
+20:     NA   FALSE
+21:     NA   FALSE
+22:     NA   FALSE
+23:     NA   FALSE
+24:     NA   FALSE
+25:     NA   FALSE
+26:     NA   FALSE
+27:     NA   FALSE
+28:  0.182   FALSE
+29:     NA   FALSE
+30:     NA   FALSE
+31:     NA   FALSE
+32:     NA   FALSE
+33:     NA   FALSE
+34:     NA   FALSE
+35:     NA   FALSE
+36:     NA   FALSE
+37:  0.008   FALSE
+38:     NA   FALSE
+    lead_p finding
+     <num>  <lgcl>
+Georgia: change in AI(t-1), jobs 2015-2025 = 3.074 per 1,000 (GA 2024 above the winsor cap: FALSE); postings 2019-2025 = 3.028 per 1,000 (above cap: FALSE)
+                                             item jobs_per1000 jobs_rank_of_50
+                                           <char>        <num>           <int>
+1:                                 AI level, 2015     2.010595              22
+2:                                 AI level, 2024     5.044425               3
+3:                                 AI level, 2025     5.034610               2
+4: AI change (jobs 2015-2024; postings 2018-2024)     3.033831               2
+   postings_per1000 postings_rank_of_50
+              <num>               <int>
+1:               NA                  NA
+2:         4.167009                  19
+3:         6.219646                  25
+4:         3.027766                  26
+                  outcome  ai_measure   implied        lo        hi   actual
+                   <char>      <char>     <num>     <num>     <num>    <num>
+ 1:            share_wind    ai518210 -0.025900 -6.71e-02  0.015300  0.00000
+ 2:            share_wind aipostp1000 -0.002370 -1.54e-02  0.010700  0.00000
+ 3:           ln_gen_wind    ai518210 -0.555000 -1.00e+00 -0.107000       NA
+ 4:           ln_gen_wind aipostp1000 -0.144000 -2.35e-01 -0.054300       NA
+ 5:      add_wind_per1000    ai518210  5.800000  1.20e+00 10.400000  0.00000
+ 6:      add_wind_per1000 aipostp1000  1.800000 -3.35e+00  6.950000  0.00000
+ 7:           share_solar    ai518210 -0.000182 -1.86e-02  0.018300  0.07580
+ 8:           share_solar aipostp1000 -0.002950 -1.12e-02  0.005330  0.06000
+ 9:          ln_gen_solar    ai518210  0.129000 -6.69e-01  0.927000  4.46000
+10:          ln_gen_solar aipostp1000 -0.139000 -6.23e-01  0.344000  1.64000
+11:     add_solar_per1000    ai518210 -1.840000 -1.37e+01  9.970000  5.82000
+12:     add_solar_per1000 aipostp1000 -4.560000 -1.18e+01  2.670000 -2.53000
+13:           share_hydro    ai518210 -0.004000 -1.56e-02  0.007570 -0.00435
+14:           share_hydro aipostp1000 -0.007260 -2.08e-02  0.006230 -0.01190
+15:          ln_gen_hydro    ai518210 -0.104000 -2.18e-01  0.008940 -0.08500
+16:          ln_gen_hydro aipostp1000  0.026500 -8.13e-02  0.134000 -0.36700
+17:     add_hydro_per1000    ai518210  0.229000 -4.44e-01  0.902000 -0.97300
+18:     add_hydro_per1000 aipostp1000 -0.175000 -5.11e-01  0.162000  0.00000
+19:             share_geo    ai518210 -0.000272 -9.53e-04  0.000409  0.00000
+20:             share_geo aipostp1000  0.000398 -6.00e-04  0.001400  0.00000
+21:            ln_gen_geo    ai518210        NA        NA        NA       NA
+22:            ln_gen_geo aipostp1000        NA        NA        NA       NA
+23:       add_geo_per1000    ai518210  0.007010 -3.38e-02  0.047800  0.00000
+24:       add_geo_per1000 aipostp1000  0.032700 -4.13e-02  0.107000  0.00000
+25:             share_bio    ai518210  0.001380 -3.70e-03  0.006460 -0.00363
+26:             share_bio aipostp1000 -0.001340 -4.15e-03  0.001470 -0.00866
+27:            ln_gen_bio    ai518210 -0.060600 -2.01e-01  0.080200  0.01900
+28:            ln_gen_bio aipostp1000  0.105000  1.36e-02  0.197000 -0.10800
+29:       add_bio_per1000    ai518210 -0.418000 -1.24e+00  0.403000 -9.76000
+30:       add_bio_per1000 aipostp1000 -0.325000 -9.73e-01  0.324000 -8.60000
+31:     ln_seds_woodwaste    ai518210 -0.066900 -2.08e-01  0.074700 -0.07990
+32:     ln_seds_woodwaste aipostp1000  0.030900 -4.66e-02  0.108000 -0.00156
+33:      ln_seds_biofuels    ai518210  0.022800 -5.37e-02  0.099300 -0.02940
+34:      ln_seds_biofuels aipostp1000 -0.027800 -8.79e-02  0.032300 -0.09720
+35:  ln_seds_re_exbiomass    ai518210 -0.170000 -4.22e-01  0.082500  1.33000
+36:  ln_seds_re_exbiomass aipostp1000  0.061400 -5.70e-02  0.180000  0.66700
+37: ln_seds_re_exbiofuels    ai518210 -0.190000 -3.33e-01 -0.047800  0.06220
+38: ln_seds_re_exbiofuels aipostp1000  0.028100 -3.56e-02  0.091700  0.08760
+                  outcome  ai_measure   implied        lo        hi   actual
+                   <char>      <char>     <num>     <num>     <num>    <num>
+    at_most
+      <num>
+ 1:     Inf
+ 2:     Inf
+ 3:      NA
+ 4:      NA
+ 5:     Inf
+ 6:     Inf
+ 7:    0.25
+ 8:    0.19
+ 9:    0.21
+10:    0.38
+11:    2.35
+12:    4.65
+13:    3.58
+14:    1.74
+15:    2.56
+16:    0.37
+17:    0.93
+18:     Inf
+19:     Inf
+20:     Inf
+21:      NA
+22:      NA
+23:     Inf
+24:     Inf
+25:    1.78
+26:    0.48
+27:   10.58
+28:    1.82
+29:    0.13
+30:    0.11
+31:    2.61
+32:   69.35
+33:    3.37
+34:    0.90
+35:    0.32
+36:    0.27
+37:    5.35
+38:    1.05
+    at_most
+      <num>
+DONE
