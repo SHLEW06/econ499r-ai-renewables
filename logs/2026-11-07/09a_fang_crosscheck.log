@@ -1,0 +1,95 @@
+Warning messages:
+1: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+2: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+3: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+4: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+5: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+6: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+7: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+8: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+9: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+Warning message:
+In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+   variable        basis     N      mean        sd       min       max
+     <char>       <char> <int>     <num>     <num>     <num>     <num>
+1:     lnET current SEDS   204 11.437000 1.1031600  7.721792 13.604272
+2: lnET_k26      k = 2.6   204 11.845833 1.1246940  7.895510 14.154049
+3:  lnET_rb      rebuilt   204 11.826559 1.1292132  7.888409 14.132608
+4:    lnAIp                204  7.700827 1.4792195  4.543295 11.292752
+5:    lnEPU                204  5.382170 0.5970592  4.099573  6.788585
+6:     lnEP                204  2.927463 0.1926844  2.136531  3.486763
+7:    lnGDP                204 12.350495 1.0503179 10.389371 14.968591
+8:    lnPOP                204  8.272442 1.0355252  6.353993 10.585270
+9:    lnEDU                204  4.231702 0.3123345  3.291898  5.284114
+   fang_implied_mean rounding_bound          diff      diff_sd   flag
+               <num>          <num>         <num>        <num> <lgcl>
+1:         11.785895   0.0004452641 -0.3488956047 -0.316269279   TRUE
+2:         11.785895   0.0004452641  0.0599379313  0.053292657  FALSE
+3:         11.785895   0.0004452641  0.0406633338  0.036010325  FALSE
+4:          7.700827   0.0000000000  0.0000000000  0.000000000  FALSE
+5:          5.295140   0.0340226626  0.0870293041  0.145763271  FALSE
+6:          2.923826   0.0072396585  0.0036370594  0.018875736  FALSE
+7:         12.258437   0.0027590706  0.0920578722  0.087647627  FALSE
+8:          8.278250   0.0204193246 -0.0058077600 -0.005608516  FALSE
+9:          4.231157   0.0178256397  0.0005455886  0.001746809  FALSE
+                                                           unit_shift_match
+                                                                     <char>
+1:                                                                         
+2:                                                                         
+3:                                                                         
+4:                                                                         
+5:                                                                         
+6:                                                                         
+7: consistent with chained 2012 vs 2017 dollars (expected 0.073, gap 0.019)
+8:                                                                         
+9:                                                                         
+                                            note
+                                          <char>
+1:                                              
+2:                                              
+3:                                              
+4: anchor: fixed at our mean to solve the system
+5:                                              
+6:                                              
+7:                                              
+8:                                              
+9:                                              
+      block       spec   ai_measure outcome   term estimate     p     N
+     <char>     <char>       <char>  <char> <char>    <num> <num> <int>
+ 1:   trend      fang6   aipostings    lnET     AI  -0.0188 0.317   204
+ 2:   trend fang6trend   aipostings    lnET     AI  -0.0392 0.176   204
+ 3:   trend fang6trend   aipostings    lnET  trend   0.0129 0.354   204
+ 4:   trend      fang6       dcjobs    lnET     AI  -0.0655 0.229   204
+ 5:   trend fang6trend       dcjobs    lnET     AI  -0.0668 0.233   204
+ 6:   trend fang6trend       dcjobs    lnET  trend   0.0010 0.917   204
+ 7:   trend      fang6   aipostings lnET_rb     AI   0.0137 0.500   204
+ 8:   trend fang6trend   aipostings lnET_rb     AI  -0.0555 0.070   204
+ 9:   trend fang6trend   aipostings lnET_rb  trend   0.0435 0.003   204
+10:   trend      fang6       dcjobs lnET_rb     AI  -0.0242 0.681   204
+11:   trend fang6trend       dcjobs lnET_rb     AI  -0.0577 0.330   204
+12:   trend fang6trend       dcjobs lnET_rb  trend   0.0254 0.010   204
+13: placebo      fang6 distilleries    lnET     AI   0.0779 0.124   135
+14: placebo      fang6      petcare    lnET     AI   0.2345 0.025   202
+15: placebo      fang6 distilleries lnET_rb     AI   0.1059 0.054   135
+16: placebo      fang6      petcare lnET_rb     AI   0.3273 0.004   202
+17: placebo       twfe distilleries    lnRE     AI   0.1206 0.000   298
+18: placebo       twfe      petcare    lnRE     AI   0.2287 0.293   494
+19: placebo       twfe     ai518210    lnRE     AI  -0.0214 0.266   500
+20: placebo       twfe  aipostp1000    lnRE     AI   0.0025 0.752   300
+21: placebo       twfe distilleries lnRE_rb     AI   0.1440 0.000   298
+22: placebo       twfe      petcare lnRE_rb     AI   0.1881 0.462   494
+23: placebo       twfe     ai518210 lnRE_rb     AI  -0.0397 0.119   500
+24: placebo       twfe  aipostp1000 lnRE_rb     AI   0.0061 0.544   300
+      block       spec   ai_measure outcome   term estimate     p     N
+     <char>     <char>       <char>  <char> <char>    <num> <num> <int>
+DONE

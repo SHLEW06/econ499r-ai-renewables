@@ -518,3 +518,26 @@ Full tag: `<block>_<model>_<ai-var>_<lag>_<controls>_<winsor>_<se>_<outcome>_<sa
 | 4g — results pack | 2026-11-21 | 3 h | Tables, figures, findings.md |
 | Draft | 2026-11-24 | — | Hard deadline |
 | Turn-in | 2026-12-01 | — | Hard deadline |
+
+---
+
+## §14 Extensions, Nov 2026
+
+Follows `prompts/09_extend.md`; run log `docs/2026-11-07/extend-run-log.md`. Output: `results/2026-11-07/extend/`, tags `ext_...`. Each block is written here before its models run.
+
+### Shared rules for this section
+- **Main spec:** 50 states (no DC), two-way FE (state, year), AI(t-1), ctrl4, SEs clustered by state, outcomes and AI winsorized 1/99 (pooled), via `code/R/load_panel.R`.
+- **Two AI measures in every main-spec model:** (a) private data-center jobs per 1,000 workers (`ai_dc_per1000`, NAICS 518210); (b) AI job postings per 1,000 workers (`ai_postings` / `total_jobs` x 1,000, from `data/fang_panel.csv`). Postings exist 2018-2025, so their lag covers 2019-2025. The edition caveats in section 9b apply. Using postings per 1,000 workers rather than in logs keeps both measures on the same scale as the Zhang test.
+- **Families and BH q-values:** (i) by type (section 2), (ii) AI-impact outcomes (section 3), (iii) AI index (section 5). Within a family, BH q-values run over all its main-spec AI(t-1) rows, both measures pooled.
+- **A finding requires** q < 0.10, plus a lead placebo that is "clearly smaller": AI(t+1) in place of AI(t-1) on the same sample, with |lead| < 0.5 x |lag| and lead p >= 0.10. Lead placebos run for every row with p < 0.10 (section 2) or q < 0.10 (section 3).
+- **Winsorizing new outcomes:** each new outcome is winsorized 1/99, pooled over its available state-years, the same way `load_panel.R` treats the existing outcomes.
+
+### §14.1 Cross-check against Fang (no year FE), pre-registered 2026-11-07
+| # | Item | Spec | Expected | Notes |
+|---|---|---|---|---|
+| E1 | Descriptive statistics | — | — | Fang's Table A1 is in Supplementary Material A, which isn't in `literature/` as of 2026-11-07. Fallback, as the prompt allows: **means implied by Table 2's constants.** With Stata-style FE constants (constant = mean(Y) - sum of b x mean(X)), columns 1-6 give six equations in seven unknown means. We fix one, the mean of ln AI postings, at our value (same AI Index source), then solve the rest column by column. Compared with our means on the three bases (only ET differs). The gap is in our SD units; flag > 0.25 SD. Unit-shift candidates: ln 1,000 = 6.908; chained 2012 vs 2017 dollars (ln of the GDP price index ratio, about 0.07) |
+| E2 | Table 2, columns 1-6, with controls | Fang | — | Reuses the F24 rows (`results/2026-11-07/fang/`): Fang published, current, k = 2.6, rebuilt, plus archived. Fang inside our 95% CI marked |
+| E3 | Linear trend | Fang col. 6 + (year - 2018), current and rebuilt, both AI measures | If Fang's positive comes from shared trends, the trend absorbs it | |
+| E4 | Trend placebo | ln(industry employment) in place of ln AI. Fang col. 6 (state FE, conventional SEs, 2018-2021, with DC) and our main spec (lag, two-way FE, ctrl4, clustered, 50 states, 2015-2024, ln employment winsorized), outcome ln RE current and rebuilt | Fang's spec: positive for any variable that trends up with renewables; ours: null | **Candidates (chosen before any data):** 621610 home health care; 624120 services for the elderly and disabled; 621511 medical laboratories; 812910 pet care (except veterinary); 541940 veterinary services; 621493 freestanding ambulatory surgical centers; 561612 security guards; 621420 outpatient mental health centers; 812199 other personal care; 621340 offices of physical, occupational and speech therapists; 541613 marketing consulting; 312140 distilleries. **Excluded on purpose:** transportation and warehousing (fuel use, and biofuels sit inside SEDS renewables), utilities, mining, tech and information industries (AI-related), and retail (NAICS 2022 recoded it, breaking 2022-2024). **Selection rule:** national private employment (QCEW US000, own_code 5, annual average), log growth 2018-2021. Keep the two closest to AI postings' 0.760 (sum of 51, 2018 to 2021). Only national growth is looked at before the choice |
+
+**E4 choice (2026-11-07, from national growth only; no regression run yet; `logs/2026-11-07/placebo_industry_selection.csv`):** 312140 distilleries (log growth 2018-2021 = 0.315) and 812910 pet care, except veterinary (0.139). No candidate came close to postings' 0.760, so these are the two closest by the rule, not matches. The other ten grew between -0.033 and 0.122.

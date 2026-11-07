@@ -1,0 +1,13 @@
+naics,industry,emp2018,emp2021,log_growth,dist_to_0.760
+312140,Distilleries,15839,21701,0.315,0.445
+812910,Pet care (exc. veterinary),125519,144288,0.139,0.621
+621511,Medical laboratories,200090,225994,0.122,0.638
+541940,Veterinary services,388678,439049,0.122,0.638
+624120,Services for elderly and disabled,1830434,2035523,0.106,0.654
+621493,Freestanding ambulatory surgical centers,153355,168773,0.096,0.664
+621420,Outpatient mental health centers,242586,262665,0.08,0.68
+541613,Marketing consulting,270501,283252,0.046,0.714
+621610,Home health care,1468552,1505518,0.025,0.735
+621340,PT/OT/speech therapist offices,403003,412077,0.022,0.738
+812199,Other personal care,139345,141469,0.015,0.745
+561612,Security guards,731731,708245,-0.033,0.793

@@ -1,0 +1,3 @@
+Fang's descriptive statistics (Table A1) are in Supplementary Material A, which is not in literature/ as of 2026-11-07.
+Fang's Table 2 (PDF p. 5) constants are used instead: 11.4563, 11.5882, 11.1418, 19.3192, 20.0540, 19.2510 (columns 1-6).
+Only means can be implied; SD, min, max and N for Fang are not available.

@@ -1,0 +1,8 @@
+variable,fang_implied_mean,source,sd,min,max,N
+lnAIp,7.70082705665914,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
+lnET,11.785895398025,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
+lnEPU,5.29514031464723,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
+lnEP,2.9238260734706,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
+lnGDP,12.2584371800149,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
+lnPOP,8.27824983497829,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
+lnEDU,4.23115676398602,"Implied by Table 2 constants, PDF p. 5; lnAIp anchored at our mean",,,,204
