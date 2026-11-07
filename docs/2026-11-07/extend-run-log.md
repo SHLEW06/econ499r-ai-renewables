@@ -9,10 +9,10 @@ Started 2026-11-07. Plan approved with changes (team, 2026-11-07): two passes. P
 | 2. By type and Georgia | **done** | 7d0f63a | ln geothermal generation not estimable (7 states). Small-scale solar not in the panel |
 | 3. AI-impact family | **done** | 209e302 | No q < 0.10 (min 0.44); no lead placebo or restructuring model needed. Battery storage not in the panel. Deviations X1 (Texas), X2 (price controls) |
 | 4. National trend drivers | **done (interim)** | 9fd4fbb | Drivers model without wind cost and PTC (CRS, LBNL wind blocked: HTTP 403). NREL unreachable; EIA CF fallback (X4). Full model in pass 2 if the files are provided |
-| 5. Better AI measure | pending (pass 2) | | |
-| 6. Notebook 09_extend.ipynb | **sections 1-4 done**; section 5 pending (pass 2) | debf237 | Executed top to bottom, 6 code cells, 0 errors |
-| 7. Refresh outputs | pending (pass 2) | | |
-| 8. Show me | pending | | |
+| 5. Better AI measure | **done** | 45b6b6f, 0d1b0f4 | Infrastructure + talent index, 2018-2023, 43 states; innovation dropped (no inventor locations); add-on run except Queued Up (403) |
+| 6. Notebook 09_extend.ipynb | **done** (all sections) | debf237 | Executed top to bottom, 6 code cells, 0 errors |
+| 7. Refresh outputs | **done** | 25ceac8, 4b7ed37 | Results pack, findings Extensions, summary, PDF (19 pages: 13 body + 6 appendix), workbook (73 tabs, link check 0 problems), team zip, GitHub copy (scans clean) |
+| 8. Show me | **done** | | Final report in the session |
 
 ## Pass 2 (started 2026-11-07)
 | Item | Status | Commit | Notes |
@@ -32,3 +32,16 @@ Started 2026-11-07. Plan approved with changes (team, 2026-11-07): two passes. P
 | 13 New files | **not present** | | Checked `data/raw/crs/`, `data/raw/lbnl/`, `literature/`, ~/Downloads |
 | Section 5 | **stopped** (stop rule) | | OEWS state zips: HTTP 403 to scripts. PatentsView tables moved to the USPTO portal; no scriptable URL found (old S3 links: Access Denied). AIPD 2023 and BTOS downloaded. Without OEWS and inventor locations, only QCEW (one source) covers 2015-2023 |
 | Sections 6 (section 5 part), 7, 8 | pending | | Waiting on section 5 decision |
+
+## Pass 2, part 2 (after the hand downloads)
+| Item | Status | Notes |
+|---|---|---|
+| A. File downloads | **done** (db4ab9b) | CRS R43453, IF10479, R46865; LBNL wind 2026; OEWS 2015-2024. "Fang Supplement.pdf" was the article (same hash), so the supplement is still missing. Duplicates moved to `data/raw/_to_delete/` |
+| B1 full drivers model | **done** (86fa48a) | Section 4 final |
+| B2 Table A1 and Supplement B | **not run** | Supplement not received |
+| B3 section 5 index | **done** | See section 5 |
+| B4 relevance and slope ranks | **done** | |
+| B5 IRP page convention and batteries | **done** | 22 cites rechecked; 500 MW is part of 780 MW |
+| B6 distillery placebo | **done** | 13 never-suppressed states |
+| Add-on A1-A5 | **done** except A4 | Quid covers 2025 only, so grouping; Queued Up 403; X5 land sensitivities post hoc |
+| Section 5 stop rule | resolved | OEWS hand download; three components cover 2015-2023 (QCEW) plus research scientists |
