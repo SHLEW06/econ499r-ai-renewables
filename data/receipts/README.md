@@ -56,9 +56,14 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [noaa_storm_events.md](noaa_storm_events.md) | NOAA Storm Events details files | `data/raw/noaa/storm_events/` | `storm_events_state.csv` |
 | [extend_outcomes.md](extend_outcomes.md) | EIA capacity, EIA-861 and SEDS (already downloaded) | `data/raw/eia/`, `data/raw/eia_forms/` | `extend_outcomes.csv`, `extend_restructured.csv` |
 | [drivers_sources.md](drivers_sources.md) | P.L. 117-169 (govinfo), EIA Henry Hub; CRS and LBNL wind blocked | `data/raw/crs/`, `data/raw/eia/henry_hub/` | `extend_drivers_national.csv`, `extend_drivers_state.csv` |
+| [crs_reports.md](crs_reports.md) | CRS R43453, IF10479, R46865 (mirrors; hand download) | `data/raw/crs/` | Tax-credit coding, section 4 |
+| [lbnl_wind.md](lbnl_wind.md) | LBNL Land-Based Wind data, 2026 edition (hand download) | `data/raw/lbnl/` | Wind cost, section 4 |
+| [bls_oews.md](bls_oews.md) | BLS OEWS state files 2015-2024 (hand download) | `data/raw/bls/oews/` | Section 5 talent dimension |
 | [qcew_placebo.md](qcew_placebo.md) | BLS QCEW, two placebo industries | `data/raw/bls/placebo/` | read directly by `09a_fang_crosscheck.R` |
 
 **Moved, not deleted (team decision, 2026-11-07):** `data/raw/eia/mer/_to_delete/` holds `MER_TA6.xlsx` (actually MER Table 1.1), `mer_a.pdf` (Appendix A tables, renumbered) and `full_data_MER.zip` (EV-charging microdata). They were downloaded by mistake on 2026-11-07 and aren't used. Hashes are in `seds_old_basis.md`.
+
+**Filed 2026-11-07 (hand downloads; moves in `logs/2026-11-07/filing_moves.csv`):** the three receipts above. `data/raw/_to_delete/` holds three exact duplicates: `R46865 (1).pdf`, `State_Policy_Uncertainty.xlsx` (same SHA-256 as `data/raw/epu/State_Policy_Uncertainty.xlsx`) and `Fang Supplement.pdf`. The latter has the same SHA-256 as `literature/Assessing_AI_Impact_on_Renewable_Energy_Transition.pdf`, the article itself, **not the supplement**, so Fang's supplementary material (Table A1, Supplement B) is still missing.
 
 ## Rebuild steps (from the project root)
 
