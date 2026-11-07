@@ -14,11 +14,11 @@ In October 2023 EIA changed how SEDS counts electricity from wind, solar, hydro 
 | `eia/seds/use_all_phy.csv` | https://www.eia.gov/state/seds/sep_use/total/csv/use_all_phy.csv | 2,715,056 | `efd03111cc2b5b5bc25d94e97340bf19ddad260e81874e4ed6c8d59fcf199f57` | SOR7P (residential small-scale solar PV generation, million kWh) |
 | `eia/seds/seds_change_notice.html` | https://www.eia.gov/state/seds/seds-change/index.php | 48,375 | `c20b0ec08b1e22445678c334f3a76c2472af5a64dd3431d3d4ba70cd6adeefc4` | Citation only |
 | `eia/mer/mer_A_FULL.pdf` | https://www.eia.gov/totalenergy/data/monthly/pdf/mer_A_FULL.pdf | 1,099,621 | `2bcc0414f73dc1346e01495ac6c62a73028c4b6a5027074ab9c57e3cc16367f7` | Table A6 source notes (PDF p. 15: "Approximate Heat Rates for Electricity Net Generation, Total Fossil Fuels") |
-| `eia/mer/MER_TA6.xlsx` | https://www.eia.gov/totalenergy/data/monthly/query/mer_data_excel.asp?table=TA6 | 77,294 | `f321c39a22530e5e7e5319b40a8bb560fcdd4c5ac4869be4c1fd36099ca813aa` | **Unused.** Despite the URL it holds MER Table 1.1 |
-| `eia/mer/mer_a.pdf` | https://www.eia.gov/totalenergy/data/monthly/pdf/mer_a.pdf | 155,748 | `b58902260c1fc066204689e0bec34dda04b6a19de97aa612bcb7c871fd2207c0` | **Unused.** Appendix tables are renumbered; this is population and GDP |
-| `eia/mer/full_data_MER.zip` | https://www.eia.gov/totalenergy/data/monthly/full_data_MER.zip | 13,984,834 | `ef91e697ba8c5d193b8a848d5dbad54c62be121fd18521b3247299c1ee8fc926` | **Unused.** EV-charging microdata (MER Appendix F) |
+| `eia/mer/_to_delete/MER_TA6.xlsx` | https://www.eia.gov/totalenergy/data/monthly/query/mer_data_excel.asp?table=TA6 | 77,294 | `f321c39a22530e5e7e5319b40a8bb560fcdd4c5ac4869be4c1fd36099ca813aa` | **Unused.** Despite the URL it holds MER Table 1.1 |
+| `eia/mer/_to_delete/mer_a.pdf` | https://www.eia.gov/totalenergy/data/monthly/pdf/mer_a.pdf | 155,748 | `b58902260c1fc066204689e0bec34dda04b6a19de97aa612bcb7c871fd2207c0` | **Unused.** Appendix tables are renumbered; this is population and GDP |
+| `eia/mer/_to_delete/full_data_MER.zip` | https://www.eia.gov/totalenergy/data/monthly/full_data_MER.zip | 13,984,834 | `ef91e697ba8c5d193b8a848d5dbad54c62be121fd18521b3247299c1ee8fc926` | **Unused.** EV-charging microdata (MER Appendix F) |
 
-The three unused files can be deleted by team decision; they weren't deleted here.
+The three unused files were moved to `data/raw/eia/mer/_to_delete/` on 2026-11-07 (team decision), not deleted.
 
 ## Heat rate
 MER Table A6's annual values couldn't be pulled by script: the browser's CSV and XLSX exports for TA6 returned empty files. EIA's bulk MER series carry both the fossil-fuel-equivalent and the captured-energy values for each fuel, so HR_t = 3.412 x WYFFBUS / WYTCBUS (thousand Btu/kWh). Hydro gives the same value to 0.002. **It equals the archived SEDS FFETK ("fossil-fueled steam-electric power plant conversion factor") to 0.001 in every year 2015-2021.**

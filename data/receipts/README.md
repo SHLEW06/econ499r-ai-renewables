@@ -58,6 +58,8 @@ Each receipt records a source's link, files, SHA-256 hashes, what was kept, step
 | [drivers_sources.md](drivers_sources.md) | P.L. 117-169 (govinfo), EIA Henry Hub; CRS and LBNL wind blocked | `data/raw/crs/`, `data/raw/eia/henry_hub/` | `extend_drivers_national.csv`, `extend_drivers_state.csv` |
 | [qcew_placebo.md](qcew_placebo.md) | BLS QCEW, two placebo industries | `data/raw/bls/placebo/` | read directly by `09a_fang_crosscheck.R` |
 
+**Moved, not deleted (team decision, 2026-11-07):** `data/raw/eia/mer/_to_delete/` holds `MER_TA6.xlsx` (actually MER Table 1.1), `mer_a.pdf` (Appendix A tables, renumbered) and `full_data_MER.zip` (EV-charging microdata). They were downloaded by mistake on 2026-11-07 and aren't used. Hashes are in `seds_old_basis.md`.
+
 ## Rebuild steps (from the project root)
 
 `data/raw/` is read-only. These commands rebuild everything derived from it; they don't change raw files, except that steps marked *download* add files.
