@@ -1,0 +1,91 @@
+=== GATE ===
+                                                      check     ok
+                                                     <char> <lgcl>
+1:                SEDS side table equals fang_panel re_bbtu   TRUE
+2: k = 2.6 side-table series equals 04h's in-script k = 2.6   TRUE
+3:  Reproduces 11-04 Table 2 col. 6, postings, current SEDS   TRUE
+4:                          Reproduces 11-04 k = 2.6 col. 6   TRUE
+5:       Reproduces 11-04 split (elec mean, high, postings)   TRUE
+6:     N = 204 for rebuilt and archived outcomes, 2018-2021   TRUE
+7:                                  Storm groups: 51 states   TRUE
+                   detail
+                   <char>
+1:                       
+2:                       
+3: -0.018790 vs -0.018790
+4:   0.021636 vs 0.021636
+5:                       
+6:                       
+7:                       
+GATE PASSED
+
+fang8_results.csv: 552 rows
+           spec ai_measure estimate     se     p
+         <char>     <char>    <num>  <num> <num>
+ 1:  c2-current aipostings  -0.0100 0.0139 0.474
+ 2:  c6-current aipostings  -0.0188 0.0187 0.317
+ 3:  c2-current     dcjobs  -0.0503 0.0487 0.303
+ 4:  c6-current     dcjobs  -0.0655 0.0542 0.229
+ 5:      c2-k26 aipostings   0.0342 0.0151 0.025
+ 6:      c6-k26 aipostings   0.0216 0.0202 0.287
+ 7:      c2-k26     dcjobs   0.0299 0.0537 0.578
+ 8:      c6-k26     dcjobs  -0.0218 0.0589 0.711
+ 9:  c2-rebuilt aipostings   0.0269 0.0151 0.077
+10:  c6-rebuilt aipostings   0.0137 0.0202 0.500
+11:  c2-rebuilt     dcjobs   0.0259 0.0535 0.629
+12:  c6-rebuilt     dcjobs  -0.0242 0.0587 0.681
+13: c2-archived aipostings   0.0435 0.0136 0.002
+14: c6-archived aipostings   0.0348 0.0182 0.057
+15: c2-archived     dcjobs   0.0355 0.0491 0.470
+16: c6-archived     dcjobs  -0.0207 0.0533 0.699
+17:  c2-allconv aipostings   0.0253 0.0149 0.092
+18:  c6-allconv aipostings   0.0126 0.0200 0.529
+19:  c2-allconv     dcjobs   0.0233 0.0527 0.659
+20:  c6-allconv     dcjobs  -0.0245 0.0579 0.673
+           spec ai_measure estimate     se     p
+         <char>     <char>    <num>  <num> <num>
+     block    spec ai_measure     outcome estimate     p     N
+    <char>  <char>     <char>      <char>    <num> <num> <int>
+ 1:    neg    fang aipostings    lnFossil  -0.0111 0.224   204
+ 2:    neg    twfe aipostings    lnFossil   0.0296 0.042   300
+ 3:    neg    fang aipostings fossilShare  -0.0014 0.772   204
+ 4:    neg    twfe aipostings fossilShare   0.0136 0.158   300
+ 5:    neg    fang     dcjobs    lnFossil   0.0115 0.666   204
+ 6:    neg    twfe     dcjobs    lnFossil   0.0261 0.272   500
+ 7:    neg    fang     dcjobs fossilShare   0.0045 0.743   204
+ 8:    neg    twfe     dcjobs fossilShare   0.0172 0.364   500
+ 9:  final current aipostings        lnET  -0.0479 0.109   300
+10:  final current     dcjobs        lnET  -0.0567 0.208   500
+11:  final     k26 aipostings    lnET_k26  -0.0472 0.126   300
+12:  final     k26     dcjobs    lnET_k26  -0.0930 0.105   500
+13:  final rebuilt aipostings     lnET_rb  -0.0478 0.127   300
+14:  final rebuilt     dcjobs     lnET_rb  -0.0969 0.095   500
+15:  final allconv aipostings     lnET_ac  -0.0474 0.120   300
+16:  final allconv     dcjobs     lnET_ac  -0.0950 0.100   500
+       spec                 term estimate     p
+     <char>               <char>    <num> <num>
+ 1: current                b2015  -0.0113 0.153
+ 2: current                b2016  -0.0089 0.161
+ 3: current                b2017  -0.0062 0.271
+ 4: current                b2018  -0.0092 0.054
+ 5: current                b2019  -0.0058 0.187
+ 6: current                b2020  -0.0017 0.410
+ 7: current                b2022   0.0046 0.012
+ 8: current                b2023   0.0137 0.000
+ 9: current                b2024   0.0179 0.000
+10: current  joint_pre_2015_2020   3.0127 0.014
+11: current joint_post_2022_2024   5.9843 0.001
+12: rebuilt                b2015  -0.0093 0.308
+13: rebuilt                b2016  -0.0049 0.516
+14: rebuilt                b2017  -0.0018 0.799
+15: rebuilt                b2018  -0.0053 0.333
+16: rebuilt                b2019  -0.0020 0.694
+17: rebuilt                b2020  -0.0016 0.527
+18: rebuilt                b2022   0.0037 0.066
+19: rebuilt                b2023   0.0121 0.002
+20: rebuilt                b2024   0.0151 0.003
+21: rebuilt  joint_pre_2015_2020   1.3928 0.236
+22: rebuilt joint_post_2022_2024   4.6607 0.006
+       spec                 term estimate     p
+     <char>               <char>    <num> <num>
+DONE

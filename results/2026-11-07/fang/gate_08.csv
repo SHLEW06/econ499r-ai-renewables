@@ -1,0 +1,8 @@
+check,ok,detail
+SEDS side table equals fang_panel re_bbtu,TRUE,""
+k = 2.6 side-table series equals 04h's in-script k = 2.6,TRUE,""
+"Reproduces 11-04 Table 2 col. 6, postings, current SEDS",TRUE,-0.018790 vs -0.018790
+Reproduces 11-04 k = 2.6 col. 6,TRUE,0.021636 vs 0.021636
+"Reproduces 11-04 split (elec mean, high, postings)",TRUE,""
+"N = 204 for rebuilt and archived outcomes, 2018-2021",TRUE,""
+Storm groups: 51 states,TRUE,""
