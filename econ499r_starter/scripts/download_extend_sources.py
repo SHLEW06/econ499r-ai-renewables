@@ -20,6 +20,14 @@ DRIVERS = [
     ("crs/PLAW-117publ169.pdf", "https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf"),
     ("eia/henry_hub/RNGWHHDa.xls", "https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls"),
 ]
+BTOS = "https://www.census.gov/hfp/btos/downloads/"
+INDEX = [
+    ("census_btos/State.xlsx", BTOS + "State.xlsx"),
+    ("census_btos/AI_Core_Questions.xlsx", BTOS + "AI%20Core%20Questions.xlsx"),
+    ("census_btos/AI_Question_Wording_Updates.pdf", BTOS + "AI%20Question%20Wording%20Updates.pdf"),
+    ("uspto_aipd/oce-aipd-2023.pdf", "https://www.uspto.gov/sites/default/files/documents/oce-aipd-2023.pdf"),
+    ("uspto_aipd/ai_model_predictions_2023.csv.zip", "odp:https://data.uspto.gov/ui/datasets/products/files/ECOPATAI/2023_r1/ai_model_predictions.csv.zip"),
+]
 # Not fetchable by script (HTTP 403 to scripted requests on 2026-11-07); need a browser download into data/raw/crs/:
 #   https://crsreports.congress.gov/product/pdf/R/R43453  -> crs/R43453.pdf
 #   https://crsreports.congress.gov/product/pdf/IF/IF10479 -> crs/IF10479.pdf
@@ -46,6 +54,13 @@ def sha(path):
     return h.hexdigest()
 
 
+def odp(url, path):
+    """USPTO Open Data Portal: the product URL answers with JSON {"Location": signed URL}; fetch that."""
+    import json
+    r = subprocess.run(["curl", "-sS", "-L", "--max-time", "60", "-A", UA, url], capture_output=True, text=True)
+    curl(json.loads(r.stdout)["Location"], path, max_time=3600)
+
+
 def main(raw, log_csv, stage, codes):
     if stage == "placebo-select":
         files = [(f"bls/placebo/qcew_{y}_{c}.csv", QCEW.format(y=y, c=c)) for c in CANDIDATES for y in (2018, 2021)]
@@ -55,6 +70,8 @@ def main(raw, log_csv, stage, codes):
         files = [(f"bls/placebo/qcew_{y}_{c}.csv", QCEW.format(y=y, c=c)) for c in codes for y in range(2014, 2025)]
     elif stage == "drivers":
         files = DRIVERS
+    elif stage == "index":
+        files = INDEX
     else:
         sys.exit(f"unknown stage {stage}")
     rows = []
@@ -62,7 +79,8 @@ def main(raw, log_csv, stage, codes):
         path = os.path.join(raw, rel)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         if not os.path.exists(path):
-            curl(url, path)
+            odp(url[4:], path) if url.startswith("odp:") else curl(url, path)
+        url = url[4:] if url.startswith("odp:") else url
         rows.append({"stage": stage, "url": url, "path": path, "bytes": os.path.getsize(path), "sha256": sha(path)})
         print(f"{rows[-1]['bytes']:>12,}  {rel}")
     os.makedirs(os.path.dirname(log_csv), exist_ok=True)

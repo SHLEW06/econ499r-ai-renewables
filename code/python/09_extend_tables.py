@@ -193,27 +193,77 @@ def s4(date, E, T, F):
     axs[0].legend(frameon=False, fontsize=7); fig.suptitle("Year effects (two-way model, base 2015) and the path fitted from measured drivers"); fig.tight_layout()
     fig.savefig(os.path.join(F, "fig_s4_year_effects_drivers.png"), dpi=150); plt.close(fig)
     g = lambda y, m, mod: ai[(ai.outcome == y) & (ai.ai_measure == m) & (ai.model == mod)].iloc[0]
-    rs = [g("renew_share", "ai518210", k) for k in ["statefe", "drivers-interim", "twfe"]]
-    text = (f"**What drove the national trend (interim; wind cost and the PTC pending).** Year effects from the two-way model rise steadily for all three outcomes (`s4_year_effects.csv`). "
-            f"Measured drivers that vary by state, namely state RPS/CES targets (LBNL), solar resource x utility-scale solar LCOE (LBNL Utility-Scale Solar, 2025 $/MWh, MW-weighted by commercial-operation year), "
-            f"solar resource x the solar ITC (P.L. 117-169, PDF pp. 98 and 103), and 2015 gas share x the Henry Hub price (EIA), reproduce much of that path: correlation "
-            f"{pf.loc[pf.outcome=='renew_share','correlation'].iloc[0]:.2f} (R2 {pf.loc[pf.outcome=='renew_share','r_squared'].iloc[0]:.2f}) for renewable share, "
-            f"{pf.loc[pf.outcome=='ln_gen_wind','correlation'].iloc[0]:.2f} (R2 {pf.loc[pf.outcome=='ln_gen_wind','r_squared'].iloc[0]:.2f}) for ln wind and "
-            f"{pf.loc[pf.outcome=='ln_gen_solar','correlation'].iloc[0]:.2f} (R2 {pf.loc[pf.outcome=='ln_gen_solar','r_squared'].iloc[0]:.2f}) for ln solar, over 11 years. "
-            f"Solar LCOE fell from {nat.solar_lcoe_2025usd_mwh.iloc[0]:.0f} to a low of {nat.solar_lcoe_2025usd_mwh.min():.0f} $/MWh (2022) before rising to {nat.solar_lcoe_2025usd_mwh.iloc[-1]:.0f}, and the ITC stepped from 30% to 26% (2020-2021) and back to 30% under the IRA. "
-            f"AI isn't the national trend: with data-center jobs, the renewable-share coefficient is {rs[0].estimate:+.4f} (p = {rs[0].pval:.3f}) with state FE only, {rs[1].estimate:+.4f} (p = {rs[1].pval:.3f}) with drivers and "
-            f"{rs[2].estimate:+.4f} (p = {rs[2].pval:.3f}) with two-way FE, never positive. The exception is postings and ln solar generation: positive without year effects "
-            f"({g('ln_gen_solar','aipostp1000','statefe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','statefe').pval:.3f}) and with interim drivers "
-            f"({g('ln_gen_solar','aipostp1000','drivers-interim').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','drivers-interim').pval:.3f}), and gone with year effects "
-            f"({g('ln_gen_solar','aipostp1000','twfe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','twfe').pval:.3f}), so postings share a 2019-2025 trend with solar that the interim drivers don't capture. "
-            f"These are associations; the full model adds wind cost (LBNL Land-Based Wind Market Report) and the PTC phase-down (CRS R43453) once those files are downloaded by browser.")
+    rs = [g("renew_share", "ai518210", k) for k in ["statefe", ("drivers" if (ai.model == "drivers").any() else "drivers-interim"), "twfe"]]
+    full = not ai.model.str.contains("interim").any()
+    dl = "drivers" if full else "drivers-interim"
+    text = (f"**AI isn't the national trend.** With data-center jobs, the renewable-share coefficient barely moves across the three models: {rs[0].estimate:+.3f} with state FE only (p = {rs[0].pval:.3f}), "
+            f"{rs[1].estimate:+.3f} with measured drivers (p = {rs[1].pval:.3f}) and {rs[2].estimate:+.3f} with two-way FE (p = {rs[2].pval:.3f}). Leaving out year effects doesn't make it positive, so the national rise isn't loading on AI. "
+            f"**What the drivers show{'' if full else ' (interim: wind cost and the PTC pending)'}.** The year effects rise steadily for all three outcomes. A path fitted from measured drivers that vary by state, namely state RPS/CES targets (LBNL), solar resource x utility-scale solar LCOE "
+            f"(LBNL Utility-Scale Solar), solar resource x the solar ITC (P.L. 117-169, PDF pp. 98 and 103){', wind resource x wind cost (LBNL) and wind resource x the PTC (CRS R43453; P.L. 116-260; P.L. 117-169)' if full else ''} and 2015 gas share x the Henry Hub price (EIA), "
+            f"correlates with them at {pf.loc[pf.outcome=='renew_share','correlation'].iloc[0]:.2f} (renewable share), {pf.loc[pf.outcome=='ln_gen_wind','correlation'].iloc[0]:.2f} (ln wind) and {pf.loc[pf.outcome=='ln_gen_solar','correlation'].iloc[0]:.2f} (ln solar) over 11 years. "
+            f"That is consistent with these drivers' role but doesn't prove it: any series that rises over 2015-2025 correlates with a national trend. "
+            f"Solar LCOE fell from {nat.solar_lcoe_2025usd_mwh.iloc[0]:.0f} to {nat.solar_lcoe_2025usd_mwh.min():.0f} $/MWh (2022) and rose to {nat.solar_lcoe_2025usd_mwh.iloc[-1]:.0f}; the ITC was 30%, 26% for 2020-2021, and 30% again under the IRA. "
+            f"One exception: postings and ln solar generation are positive without year effects ({g('ln_gen_solar','aipostp1000','statefe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','statefe').pval:.3f}) and with drivers "
+            f"({g('ln_gen_solar','aipostp1000',dl).estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000',dl).pval:.3f}), and gone with year effects ({g('ln_gen_solar','aipostp1000','twfe').estimate:+.3f}, p = {g('ln_gen_solar','aipostp1000','twfe').pval:.3f}): "
+            f"a 2019-2025 trend the measured drivers don't capture. All are associations.")
     open(os.path.join(T, "s4_writeup.md"), "w").write(text + "\n"); print(text); print(w.to_string())
+
+
+def s_p2(date, E, T, F):
+    """Pass 2 additions (EXPERIMENTS.md 14.5): P1, P2, P4, P8, P9, P11."""
+    r = pd.read_csv(os.path.join(E, "p2_checks.csv")); f8 = pd.read_csv(os.path.join("results", date, "fang", "fang8_results.csv"))
+    # P11 gap decomposition
+    rows = []
+    for m, lab in [("aipostings", "ln AI postings"), ("dcjobs", "ln data-center jobs")]:
+        for c in (1, 2, 6):
+            v = {b: f8[(f8.block == "t2") & (f8.spec == f"c{c}-{b}") & (f8.ai_measure == m) & (f8.term == "AI")].iloc[0] for b in ["current", "rebuilt", "archived"]}
+            gap = v["archived"].estimate - v["current"].estimate
+            rows.append({"ai_measure": lab, "column": c, "current": round(v["current"].estimate, 4), "rebuilt": round(v["rebuilt"].estimate, 4), "june2023": round(v["archived"].estimate, 4),
+                         "gap_june2023_minus_current": round(gap, 4), "share_accounting_rebuild": round((v["rebuilt"].estimate - v["current"].estimate) / gap, 3),
+                         "share_later_data_revisions": round((v["archived"].estimate - v["rebuilt"].estimate) / gap, 3), "fang": FANG_T2["AI"][c - 1],
+                         "june2023_as_share_of_fang": round(v["archived"].estimate / FANG_T2["AI"][c - 1], 3), "tags": "; ".join(x.tag for x in v.values())})
+    gd = pd.DataFrame(rows); gd.to_csv(os.path.join(T, "p2_gap_decomposition.csv"), index=False)
+    # P1 June 2023 rows, added to section 1 tables
+    p1 = r[r.block.str.startswith("p1")]; p1.to_csv(os.path.join(T, "s1_june2023_trend_placebo_final.csv"), index=False)
+    # P2 side by side
+    w = r[r.block.str.startswith("p2") & (r.status == "ok")].pivot_table(index=["block", "ai_measure", "outcome"], columns="spec", values=["estimate", "se", "pval", "N"]).reset_index()
+    w.columns = ["_".join([c for c in col if c]).replace("-", "_") for col in w.columns]
+    w.to_csv(os.path.join(T, "p2_state_trends_side_by_side.csv"), index=False)
+    # P4 biomass rows
+    bt = pd.read_csv(os.path.join(E, "s2_bytype_results.csv"))
+    bio = bt[bt.outcome.isin(["ln_seds_re_total", "ln_seds_woodwaste", "ln_seds_biofuels", "ln_seds_re_exbiomass", "ln_seds_re_exbiofuels", "share_bio", "ln_gen_bio"]) & bt.model.isin(["twfe"])]
+    bio = bio[["outcome", "ai_measure", "estimate", "ci_lo", "ci_hi", "pval", "qval", "N", "tag"]].copy(); bio["outcome_label"] = bio.outcome.map(olab); bio.to_csv(os.path.join(T, "p2_biomass_rows.csv"), index=False)
+    # P8 section 3 bounds per within-state SD
+    m3 = pd.read_csv(os.path.join(E, "s3_impact_family.csv"))
+    m3["per_sd"] = m3.estimate * m3.sd_within_ai; m3["per_sd_lo"] = m3.ci_lo * m3.sd_within_ai; m3["per_sd_hi"] = m3.ci_hi * m3.sd_within_ai
+    m3["outcome_label"] = m3.outcome.map(IMP)
+    m3[["outcome_label", "ai_measure", "sd_within_ai", "estimate", "ci_lo", "ci_hi", "per_sd", "per_sd_lo", "per_sd_hi", "pval", "qval", "tag"]].to_csv(os.path.join(T, "s3_bounds_per_within_sd.csv"), index=False)
+    # P9 relevance
+    rel = pd.read_csv(os.path.join(E, "p2_relevance.csv")); rel.to_csv(os.path.join(T, "p2_relevance.csv"), index=False)
+    # Verdict, pass 2 wording (team items 1 and 10): June 2023 SEDS is the main old basis
+    ds = pd.read_csv(os.path.join(T, "s1_descriptives_comparison.csv")); tp = pd.read_csv(os.path.join(E, "e3_e4_trend_placebo.csv"))
+    a = lambda c: f8[(f8.block == "t2") & (f8.spec == f"c{c}-archived") & (f8.ai_measure == "aipostings") & (f8.term == "AI")].iloc[0]
+    g1 = lambda blk, spec, m, term="AI": p1[(p1.block == blk) & (p1.spec == spec) & (p1.ai_measure == m) & (p1.term == term)].iloc[0]
+    tw = lambda blk, m, y, spec: r[(r.block == blk) & (r.ai_measure == m) & (r.outcome == y) & (r.spec == spec)].iloc[0]
+    reg = ds[~ds.variable.str.startswith("lnET") & (ds.variable != "lnAIp")]
+    v = (f"**Verdict.** Our data match Fang's on every regressor: the means implied by Fang's Table 2 constants are within {reg.diff_sd.abs().max():.2f} SD of ours (GDP's gap fits 2012 vs 2017 dollars). "
+         f"The outcome is what differs. On current SEDS, our mean ln renewables is {ds.loc[ds.variable=='lnET','diff_sd'].iloc[0]:.2f} SD below Fang's implied mean, the only flagged row; on the old fossil-fuel-equivalence basis the gap is about 0.04-0.06 SD. "
+         f"**SEDS as published in June 2023 largely reproduces Fang:** the same sign, a similar size in columns 1-2 ({a(1).estimate:+.4f} and {a(2).estimate:+.4f} against +0.0428 and +0.0452), and about two-thirds of Fang's size in column 6 "
+         f"({a(6).estimate:+.4f}, {fp(a(6).pval)}, against +0.0531). Of the move from current to June 2023 SEDS, {gd.loc[(gd.ai_measure=='ln AI postings')&(gd.column==6),'share_accounting_rebuild'].iloc[0]:.0%} (column 6, postings) comes from the accounting change and the rest from EIA's later data revisions. "
+         f"But Fang's spec has no year effects, and on the June 2023 basis a linear trend turns column 6 to {g1('p1trend','fang6trend','aipostings').estimate:+.4f} ({fp(g1('p1trend','fang6trend','aipostings').pval)}), while pet-care employment, which has nothing to do with energy, "
+         f"is associated with renewables more strongly than AI ({g1('p1placebo','fang6','petcare').estimate:+.4f}, {fp(g1('p1placebo','fang6','petcare').pval)}; distilleries {g1('p1placebo','fang6','distilleries').estimate:+.4f}, {fp(g1('p1placebo','fang6','distilleries').pval)}). "
+         f"In our final spec, the June 2023 basis gives {tw('p1final','aipostings','lnET_arch','twfe').estimate:+.4f} ({fp(tw('p1final','aipostings','lnET_arch','twfe').pval)}; 2019-2021, the years the release covers) for postings. "
+         f"Year effects remove national trends but not state-specific ones: distillery employment stays significant in our spec even with state linear trends "
+         f"({tw('p2placebo','distilleries','lnRE','twfe-trend').estimate:+.4f}, {fp(tw('p2placebo','distilleries','lnRE','twfe-trend').pval)}).")
+    open(os.path.join(T, "s1_verdict.md"), "w").write(v + "\n"); print(v)
+    print(gd.drop(columns="tags").to_string()); print(m3[["outcome_label", "ai_measure", "sd_within_ai", "per_sd", "per_sd_lo", "per_sd_hi"]].round(4).to_string())
+    print(bio.round(4).drop(columns="tag").to_string())
 
 
 def main(date, section):
     E = os.path.join("results", date, "extend"); T = os.path.join(E, "tables"); F = os.path.join(E, "figures")
     os.makedirs(T, exist_ok=True); os.makedirs(F, exist_ok=True)
-    {1: s1, 2: s2, 3: s3, 4: s4}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
+    {1: s1, 2: s2, 3: s3, 4: s4, 25: s_p2}.get(section, lambda *a: (_ for _ in ()).throw(SystemExit(f"section {section} not built yet")))(date, E, T, F)
 
 
 if __name__ == "__main__":

@@ -26,5 +26,20 @@ Sources are only the Georgia PSC documents already in the project (`data/raw/geo
 - An expedited certification application for **500 MW of Company-owned battery storage** (filed Aug. 16, 2024). The Commission certified the Moody, Robins, Hammond and McGrau Ford Phase II battery projects on Dec. 12, 2024, and the Winter 2027/2028 battery RFP went out on Aug. 9, 2024 (PDF p. 18).
 - The 65 MW, 4-hour Mossy Branch battery has operated since October 2024 (PDF p. 77).
 
+## New and extended resources the IRP itself quantifies, by type
+The IRP doesn't break the "up to 9,500 MW" of RFP capacity (PDF p. 10) down by fuel. These are the resources its pages do quantify. It isn't a full breakdown, and the rows overlap in time.
+
+| Type | MW | What it is | Docket 56002, 2025 IRP |
+|---|---:|---|---|
+| Gas/oil combustion turbines | 1,323 (summer; 1,070 winter) | Plant Yates Units 8-10, company-owned, in service 12/2026-08/2027 | PDF p. 133 (Attachment C.1) |
+| Batteries | about 780 (nameplate) | Planned company-owned batteries in service 2026-2027: McGrau Ford 265, McGrau Ford Phase 2 265, Robins 128, Hammond 57.5, Moody 49.5, Fort Stewart 13, demo 2 | PDF p. 135 (Attachment C.3) |
+| Batteries and combustion turbines, combined | more than 2,065 | Additions by the end of 2027 | PDF p. 10 |
+| Coal (extended, not new) | about 1,100 | Extended operation of Plants Scherer and Gaston | PDF p. 9 |
+| Nuclear and gas upgrades | up to 400 | Upgrades at existing units | PDF p. 9 |
+| Renewables (procurement targets) | more than 3,500 by 2030; up to 4,000 more by 2035 | Active RFPs; new RFPs | PDF pp. 10, 67 |
+
 ## Reading
-Georgia Power's own filings link new gas capacity, delayed coal retirements, battery storage and more solar to large-load growth, with data centers the largest segment of committed large load. These are the utility's plans and statements, not estimates of ours. Our panel estimates (section 2.4b) can't attribute Georgia's solar growth to AI.
+Georgia Power's 2025 IRP plans for about 8,200 MW of load growth through winter 2030/2031, driven largely by large-load customers, and meets it with a mix of new combustion turbines, batteries, coal-unit extensions, upgrades and renewable procurement. The pages don't say which fuel will serve the new large loads, and the 9,500 MW of RFP capacity isn't split by fuel. Data centers are the largest segment of committed large load in the Q2 2026 report's attachment. These are the utility's plans and statements, not estimates of ours. Our panel estimates (section 2.4b) can't attribute Georgia's solar growth to AI.
+
+## Page check (team item 5, 2026-11-07)
+In the Q2 2026 report PDF, "15,600 MW" appears on two pages. On PDF p. 5, commitments are "reaching a total of 15,600 MW across 32 customers". On PDF p. 8, "Customer commitments expanded from 3,600 MW to 15,600 MW", and Table 2 is there too. Each citation in the project points to the page that states its claim: the Nov 4 summary cites p. 8 for "15,600 MW … up from 3,600 MW", and this note cites p. 5 for "across 32 customers". Both are correct, so no citation was changed. `code/python/build_georgia_tables.py` stops if a figure isn't on its cited page.

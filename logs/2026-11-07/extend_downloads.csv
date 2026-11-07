@@ -43,3 +43,8 @@ placebo,https://data.bls.gov/cew/data/api/2023/a/industry/812910.csv,data/raw/bl
 placebo,https://data.bls.gov/cew/data/api/2024/a/industry/812910.csv,data/raw/bls/placebo/qcew_2024_812910.csv,402047,9b35e3ab3233d4ad0dbadb193dac8b83680e322ceb574dcef2a8b2ea139191a4
 drivers,https://www.govinfo.gov/content/pkg/PLAW-117publ169/pdf/PLAW-117publ169.pdf,data/raw/crs/PLAW-117publ169.pdf,876749,5bd9bebe719d3d1738e751fe7978ef7bf05167ed8150471f306e010185baed4f
 drivers,https://www.eia.gov/dnav/ng/hist_xls/RNGWHHDa.xls,data/raw/eia/henry_hub/RNGWHHDa.xls,34816,7a3c4f947d54358792b11bed055f78659eabe671816ed819fbe373100480805a
+index,https://www.census.gov/hfp/btos/downloads/State.xlsx,data/raw/census_btos/State.xlsx,4681949,134b30bb209c7835c9faf7403255da3f2bd425a29ca4b4acfe9185805c07f272
+index,https://www.census.gov/hfp/btos/downloads/AI%20Core%20Questions.xlsx,data/raw/census_btos/AI_Core_Questions.xlsx,1109824,e058a098af64427b0cf0c1455435023aeb9a84142a55175d322687e61a3da3ce
+index,https://www.census.gov/hfp/btos/downloads/AI%20Question%20Wording%20Updates.pdf,data/raw/census_btos/AI_Question_Wording_Updates.pdf,491343,91b018352b693d500258cb649b7c8b1747d5fbfb5f065eeb8969276dd1068c28
+index,https://www.uspto.gov/sites/default/files/documents/oce-aipd-2023.pdf,data/raw/uspto_aipd/oce-aipd-2023.pdf,1922389,5681377084dfb7978f9a9b7e2bf672b870380b8002841fe6e3ad9d6190ff0cb9
+index,https://data.uspto.gov/ui/datasets/products/files/ECOPATAI/2023_r1/ai_model_predictions.csv.zip,data/raw/uspto_aipd/ai_model_predictions_2023.csv.zip,818035211,38c6182750f33db17fe13ebac72fb064afdcfb47b893f12f113f527bda458d9b

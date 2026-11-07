@@ -1,0 +1,69 @@
+Warning messages:
+1: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+2: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+3: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+4: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+5: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+6: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+7: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+8: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+9: In require_bit64_if_needed(ans) :
+  Some columns are type 'integer64' but package bit64 is not installed. Those columns will print as strange looking floating point data. There is no need to reload the data. Simply install.packages('bit64') to obtain the integer64 print method and print the data again.
+        block       spec   ai_measure   outcome   term     est     p     N
+       <char>     <char>       <char>    <char> <char>   <num> <num> <int>
+ 1:   p1trend      fang6   aipostings lnET_arch     AI  0.0348 0.057   204
+ 2:   p1trend fang6trend   aipostings lnET_arch     AI -0.0419 0.121   204
+ 3:   p1trend fang6trend   aipostings lnET_arch  trend  0.0482 0.000   204
+ 4:   p1trend      fang6       dcjobs lnET_arch     AI -0.0207 0.699   204
+ 5:   p1trend fang6trend       dcjobs lnET_arch     AI -0.0674 0.195   204
+ 6:   p1trend fang6trend       dcjobs lnET_arch  trend  0.0353 0.000   204
+ 7: p1placebo      fang6 distilleries lnET_arch     AI  0.1000 0.040   135
+ 8: p1placebo fang6trend distilleries lnET_arch     AI  0.0757 0.166   135
+ 9: p1placebo      fang6      petcare lnET_arch     AI  0.2980 0.003   202
+10: p1placebo fang6trend      petcare lnET_arch     AI  0.1340 0.250   202
+11:   p1final       twfe   aipostings      lnET     AI -0.0776 0.146   150
+12:   p1final       twfe   aipostings   lnET_rb     AI -0.0699 0.199   150
+13:   p1final       twfe   aipostings lnET_arch     AI -0.0211 0.635   150
+14:   p1final       twfe       dcjobs      lnET     AI -0.0487 0.258   350
+15:   p1final       twfe       dcjobs   lnET_rb     AI -0.0836 0.144   350
+16:   p1final       twfe       dcjobs lnET_arch     AI -0.0689 0.197   350
+Key: <block, ai_measure, outcome>
+        block   ai_measure     outcome         twfe    twfe-trend
+       <char>       <char>      <char>        <num>         <num>
+ 1:  p2bridge   aipostings        lnET -0.047861722 -0.0264868424
+ 2:  p2bridge   aipostings   lnET_arch -0.021134174  0.0097607643
+ 3:  p2bridge   aipostings     lnET_rb -0.047792498 -0.0439652414
+ 4:  p2bridge       dcjobs        lnET -0.056717758 -0.0073812751
+ 5:  p2bridge       dcjobs   lnET_arch -0.068855062  0.0062083556
+ 6:  p2bridge       dcjobs     lnET_rb -0.096921668 -0.0030702272
+ 7:      p2h1     ai518210       ln_ec -0.001565486  0.0021903999
+ 8:      p2h1     ai518210       ln_ee  0.002205590 -0.0001854501
+ 9:      p2h1     ai518210 renew_share -0.010129271  0.0059618961
+10:      p2h1  aipostp1000       ln_ec -0.001739227 -0.0028071923
+11:      p2h1  aipostp1000       ln_ee  0.002097845  0.0038342093
+12:      p2h1  aipostp1000 renew_share -0.005681233 -0.0030016431
+13: p2placebo distilleries        lnRE  0.120601657  0.0674688338
+14: p2placebo distilleries     lnRE_rb  0.143973791  0.0797926463
+15: p2placebo      petcare        lnRE  0.228742483  0.0768604070
+16: p2placebo      petcare     lnRE_rb  0.188135997  0.1019042254
+     ai_measure        version    slope     p   per_sd
+         <char>         <char>    <num> <num>    <num>
+ 1:    ai518210         pooled -0.00372 0.764 -0.00194
+ 2:    ai518210 rest of states -0.01190 0.309 -0.00622
+ 3:    ai518210             VA  0.23300 0.000  0.12100
+ 4:    ai518210             TX  0.07800 0.005  0.04060
+ 5:    ai518210             GA  0.01690 0.005  0.00879
+ 6: aipostp1000         pooled -0.00415 0.532 -0.00257
+ 7: aipostp1000 rest of states -0.00938 0.030 -0.00580
+ 8: aipostp1000             VA  0.05170 0.000  0.03200
+ 9: aipostp1000             TX  0.00838 0.285  0.00518
+10: aipostp1000             GA  0.00687 0.211  0.00425
+DONE
