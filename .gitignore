@@ -85,3 +85,11 @@ release/
 
 # Georgia case-box tables, rebuilt from raw filings
 data/georgia_*.csv
+
+# Interview recordings and transcripts: private, never commit
+notes/*interview*
+notes/*transcript*
+*.m4a
+*.mp3
+*.wav
+*.vtt
