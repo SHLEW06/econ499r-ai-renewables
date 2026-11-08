@@ -1,0 +1,50 @@
+path,category,reason
+_to_delete/Historical RPS & CES Target Achievement and Compliance Costs_June 2026.xlsx,_to_delete,Holding folder for files awaiting deletion
+_to_delete/dkt55378_large_load_report_q1_2026.pdf,_to_delete,Holding folder for files awaiting deletion
+_to_delete/econ499r_methods_review_and_prompts_2026-11-01.zip,_to_delete,Holding folder for files awaiting deletion
+_to_delete/finish_prompts_2026-11-04.zip,_to_delete,Holding folder for files awaiting deletion
+_to_delete/finish_prompts_2026-11-04_root-copy.zip,_to_delete,Holding folder for files awaiting deletion
+_to_delete/irp_2023_update_main_document.pdf,_to_delete,Holding folder for files awaiting deletion
+_to_delete/irp_2025_main_document.pdf,_to_delete,Holding folder for files awaiting deletion
+_to_delete/irp_2025_one_page_summary.pdf,_to_delete,Holding folder for files awaiting deletion
+_to_delete/irp_2025_table_of_contents.pdf,_to_delete,Holding folder for files awaiting deletion
+_to_delete/prompts_update_2026-11-03.zip,_to_delete,Holding folder for files awaiting deletion
+data/raw/_to_delete/Fang Supplement.pdf,_to_delete,"Holding folder for files awaiting deletion; duplicates or mistaken downloads, not used"
+data/raw/_to_delete/R46865 (1).pdf,_to_delete,"Holding folder for files awaiting deletion; duplicates or mistaken downloads, not used"
+data/raw/_to_delete/State_Policy_Uncertainty.xlsx,_to_delete,"Holding folder for files awaiting deletion; duplicates or mistaken downloads, not used"
+data/raw/eia/mer/_to_delete/MER_TA6.xlsx,_to_delete,"Holding folder for files awaiting deletion; duplicates or mistaken downloads, not used"
+data/raw/eia/mer/_to_delete/full_data_MER.zip,_to_delete,"Holding folder for files awaiting deletion; duplicates or mistaken downloads, not used"
+data/raw/eia/mer/_to_delete/mer_a.pdf,_to_delete,"Holding folder for files awaiting deletion; duplicates or mistaken downloads, not used"
+*/_unsorted/*  (no such file here),_unsorted,Unfiled material; not used by the pipeline
+data/bea/*,duplicate,Phase 1 human-readable copy of data/raw/bea/; no script reads it (2 files)
+data/bls/*,duplicate,Phase 1 human-readable copy of data/raw/bls/; no script reads it (3 files)
+data/census/*,duplicate,Phase 1 human-readable copy of data/raw/census/; no script reads it (1 files)
+data/data_download_all_pt1.zip,duplicate,"Phase 1 zip of downloads; duplicates data/raw/, no script reads it"
+data/eia/*,duplicate,Phase 1 human-readable copy of data/raw/eia/; no script reads it (10 files)
+data/ferc/*,duplicate,Phase 1 human-readable copy of data/raw/pudl/ outputs; no script reads it (4 files)
+notes/Grijalva_interview_transcript_2026-10-28.txt,interview,Interview transcript; private to the team
+literature/AI_Impact_China.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Assessing_AI_Impact_on_Renewable_Energy_Transition.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Can_AI_Grow_Green.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Can_AI_Help_Accelerate_Transition_to_RE.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Cost_Benefit_Wind_Farm_Monitoring_Strategy.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Deep_Learning_Materials_Discovery.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Fang_Lee_Li_2025_supplement.docx,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Lazard_LCOE_Plus.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Levelized_Costs_Learning_Analysis_Wind_Solar.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Offshore_Wind_Forecasting_Value_NY_Grid.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Transferable_Energy_Storage_Bidder.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+literature/Wind_Power_Forecasting_Grid_Integration.pdf,journal_pdf,"Journal articles and publisher supplements (Emory Libraries access); get them by DOI, see README"
+data/raw/bloomberg/*  (no such file here),licensed,"Bloomberg data, Emory-licensed; can't be redistributed"
+data/raw/sec/cache/*  (no such file here),licensed/personal,SEC API cache; carries the personal SEC_USER_AGENT; rebuild with sec_fin.py
+notes/Methods_Memo_AI_Renewable_Energy_US_Test_Zhang_2026.pdf,methods_memo,"Methods Memo PDF; course document, ask the team"
+data/raw/.DS_Store,os_junk,macOS folder metadata
+data/raw/aiindex/~$ed2019_ai_postings_by_state.xlsx,os_junk,"Office lock file left by an open workbook, not data"
+data/raw/bea/.DS_Store,os_junk,macOS folder metadata
+data/raw/eia/~$annual_generation_state.xlsx,os_junk,"Office lock file left by an open workbook, not data"
+data/raw/rmi/._operations_emissions.csv,os_junk,"macOS AppleDouble resource-fork file, not data"
+data/raw/rmi/._operations_emissions_by_tech.csv,os_junk,"macOS AppleDouble resource-fork file, not data"
+archive/*,private,Saved Claude chats (20 files)
+outputs/*,rebuilt,Workbooks and reports; rebuilt by code/python/build_master_workbook.py and companions (20 files)
+release/*,rebuilt,Packages; rebuilt by script (1959 files)
+.env,secret,Census API key; each collaborator makes their own from .env.example
