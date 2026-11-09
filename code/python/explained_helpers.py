@@ -236,7 +236,7 @@ class Tracer:
         hdr = [_expand(h, seen, g) for h in header]
         body = [[_expand(str(c), seen, g) for c in r] for r in rows]
         nt = _expand(note, seen, g) if note else None
-        keep = len(rows) <= 14 if keep is None else keep
+        keep = len(rows) <= 8 if keep is None else keep
         def esc(s):
             s = _html.escape(s)
             return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)

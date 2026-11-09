@@ -61,7 +61,7 @@ def ci(src, scale=1.0, sig=2, lo="ci_lo", hi="ci_hi", **f):
     return f"{v(src, lo, scale=scale, sig=sig, **f)} to {v(src, hi, scale=scale, sig=sig, **f)}"
 
 display(HTML("""<style>
-.jp-RenderedHTMLCommon, .jp-RenderedMarkdown { font-size: 10pt !important; line-height: 1.38 !important; color: #0b0b0b; }
+.jp-RenderedHTMLCommon, .jp-RenderedMarkdown { font-size: 10pt !important; line-height: 1.33 !important; color: #0b0b0b; }
 .jp-RenderedHTMLCommon p, .jp-RenderedHTMLCommon li { font-size: 10pt !important; margin-bottom: 0.4em; }
 .jp-RenderedHTMLCommon h1 { font-size: 18pt !important; border-bottom: 2px solid #2a78d6; padding-bottom: 3px; margin-top: 1.0em; }
 .jp-RenderedHTMLCommon h2 { font-size: 15pt !important; margin-top: 1.1em; }
@@ -114,7 +114,7 @@ md(f"""**What they mean.** Over 2015-2025, we find no sign that data-center grow
 **What we can't say:** that AI has no effect. Jobs are a rough stand-in for data-center power use, most of the data-center boom comes after our data end, and state totals can't see national or cross-state effects. Georgia Power alone reports large-load commitments of {gi('commit_q2')} as of June 30, 2026, for load scheduled through the mid-2030s, {gi('commit_2829')} of it by winter 2028/2029 (Q2 2026 large-load report to the Georgia PSC, {gc('commit_q2')}); our data end in 2025.""")
 
 %%code
-fig, ax = plt.subplots(figsize=(7.0, 2.2))
+fig, ax = plt.subplots(figsize=(7.0, 2.02))
 rows = [("Electricity use per person (%)", "ln_ec"), ("GDP per MWh of electricity (%)", "ln_ee"), ("Renewable share (percentage points)", "renew_share")]
 tags = {k: f"rob_base_ai518210_lag1_ctrl4_w9901_cl-state_{k}_50s2015_2025" for _, k in rows}
 coefplot(ax, [r[0] for r in rows], [raw(RO, "estimate_per_sd", tag=tags[k]) for _, k in rows],
@@ -215,7 +215,7 @@ outs = [("Electricity use per person (log)", "ln_ec", H1C, h1("ln_ec")), ("GDP p
 T(["Outcome", "Coefficient", "95% confidence interval", "p-value", "State-years"],
   [[lab, est(src, tag=tg), ci(src, sig=3, tag=tg), p(src, tag=tg), n(src, "N", tag=tg)] for lab, _, src, tg in outs],
   "H1 results: last year's data-center jobs per 1,000 workers, state and year fixed effects, four controls, standard errors clustered by state, 50 states, 2015-2025.")
-fig, ax = plt.subplots(figsize=(7.0, 2.11))
+fig, ax = plt.subplots(figsize=(7.0, 1.94))
 lab3 = ["Electricity use per person (%)", "GDP per MWh (%)", "Renewable share (percentage points)"]
 tg3 = [h1("ln_ec"), h1("ln_ee"), h1("renew_share")]
 coefplot(ax, lab3, [100 * raw(H1C, "estimate", tag=t) for t in tg3], [100 * raw(H1C, "ci_lo", tag=t) for t in tg3],
@@ -258,7 +258,7 @@ lab = {"techshare": "Tech jobs", "hma": "AI-tech index", "lnea": "Density", "ln_
 def btag(m, y):
     hb = "h2b" if m == "lnea" else "h2a"; mm = {"techshare": "techshare", "hma": "hma", "lnea": "lnea"}[m]
     return f"{hb}_med_ai518210_lag1_M-{mm}_ctrl4_w9901_cl-state_{y}_50s2015_2025_indirect-bootstrap"
-fig, ax = plt.subplots(figsize=(7.0, 2.64))
+fig, ax = plt.subplots(figsize=(7.0, 2.43))
 coefplot(ax, [f"{lab[m]} to {lab[y]}" for m, y in pairs], [100 * raw(H2, "estimate", tag=btag(m, y)) for m, y in pairs],
          [100 * raw(H2, "ci_lo", tag=btag(m, y)) for m, y in pairs], [100 * raw(H2, "ci_hi", tag=btag(m, y)) for m, y in pairs],
          unit="Indirect association x 100 (percent or percentage points)")
@@ -314,7 +314,7 @@ T(["Test (renewable share)", "Estimate", "95% interval or note", "p-value"], [
  ["Timing, inverse distance: past AI", v(PSLX, 'estimate', tag=I_LAG), "2015-2023, lag and lead together", p(PSLX, tag=I_LAG)],
  ["Timing, inverse distance: future AI", v(PSLX, 'estimate', tag=I_LEAD), "2015-2023, lag and lead together", p(PSLX, tag=I_LEAD)],
 ], "H3 results for the renewable share (0-1 scale). SDM is the main specification (maximum likelihood, inverse-distance weights).")
-fig, (a1, a2) = plt.subplots(1, 2, figsize=(7.4, 2.46), gridspec_kw=dict(width_ratios=[1, 1.3]))
+fig, (a1, a2) = plt.subplots(1, 2, figsize=(7.4, 2.26), gridspec_kw=dict(width_ratios=[1, 1.3]))
 a1.plot(yrs, [Ivals[y] for y in yrs], "-o", color=BLUE, lw=2, ms=6, mec="white")
 a1.axhline(0, color=INK2, lw=1); a1.set_title("Neighbors look alike more each year"); a1.set_ylabel("Moran's I, renewable share"); a1.set_xlabel("Year")
 labs = ["Spillover, full sample", "Neighbors' past AI (border)", "Neighbors' future AI (border)"]
@@ -361,7 +361,7 @@ rr = [[lab, v(src, "estimate", scale=100, **f), ci(src, scale=100, **f), p(src, 
 rr.append(["With state trends", v(STR, "estimate_twfe_trend", scale=100, block="p2h1", ai_measure="ai518210", outcome=rs), "", p(STR, "pval_twfe_trend", block="p2h1", ai_measure="ai518210", outcome=rs)])
 T(["Version (renewable share)", "Coefficient (percentage points)", "95% interval", "p-value"], rr,
   "Robustness of the renewable-share association, per extra data-center job per 1,000 workers.")
-fig, ax = plt.subplots(figsize=(7.0, 2.9))
+fig, ax = plt.subplots(figsize=(7.0, 2.67))
 labs = [r[0] for r in rob_rows]
 coefplot(ax, labs, [100 * raw(src, "estimate", **f) for _, src, f in rob_rows], [100 * raw(src, "ci_lo", **f) for _, src, f in rob_rows],
          [100 * raw(src, "ci_hi", **f) for _, src, f in rob_rows], colors=[BLUE, ORANGE, BLUE, ORANGE] + [BLUE] * 6,
@@ -399,7 +399,7 @@ T(["Quantity", "Estimate", "95% interval", "p-value"], [
  ["Renewable share, IV", est(ST, tag=IVB + "renew_share_50s2015_2025_iv_second_stage"), ci(ST, sig=2, tag=IVB + "renew_share_50s2015_2025_iv_second_stage"), p(ST, tag=IVB + "renew_share_50s2015_2025_iv_second_stage")],
  ["Electricity use, IV", est(ST, tag=IVB + "ln_ec_50s2015_2025_iv_second_stage"), ci(ST, sig=2, tag=IVB + "ln_ec_50s2015_2025_iv_second_stage"), p(ST, tag=IVB + "ln_ec_50s2015_2025_iv_second_stage")],
 ], "Shift-share IV, 2015 base shares, clustered by state.")
-fig, ax = plt.subplots(figsize=(7.0, 1.58))
+fig, ax = plt.subplots(figsize=(7.0, 1.45))
 tg = [IVB + "renew_share_50s2015_2025_ols_same_sample", IVB + "renew_share_50s2015_2025_iv_second_stage"]
 coefplot(ax, ["Ordinary regression", "Instrumental variable"], [100 * raw(ST, "estimate", tag=t) for t in tg],
          [100 * raw(ST, "ci_lo", tag=t) for t in tg], [100 * raw(ST, "ci_hi", tag=t) for t in tg], colors=[BLUE, ORANGE],
@@ -433,7 +433,7 @@ T(["Outcome", "Curvature $\\beta_2$", "p-value", "t at lowest AI", "t at highest
     v(LMP, "t_slope_min", sig=2, outcome=y, controls="ctrl4"), v(LMP, "t_slope_max", sig=2, outcome=y, controls="ctrl4"),
     "Yes" if str(L.row(LMP, outcome=y, controls="ctrl4")["lm_pass"]).upper() == "TRUE" else "No"] for y in outs8],
   "AI squared, H1 design. Read from the corrected file results/2026-11-09/h1/lm_proper.csv.")
-fig, ax = plt.subplots(figsize=(7.0, 2.64))
+fig, ax = plt.subplots(figsize=(7.0, 2.43))
 yy = np.arange(len(outs8))[::-1]
 ax.axvspan(-1.645, 1.645, color=GRID, alpha=0.6, lw=0, label="Not significant (|t| below 1.645)")
 ax.axvline(0, color=INK2, lw=1)
@@ -471,7 +471,7 @@ rows = [["Fang's published value", v(T2, "fang_published", ai_measure="ln AI pos
 rows += [[lab, est(F8, tag=t2(b)), ci(F8, sig=2, tag=t2(b)), p(F8, tag=t2(b))] for lab, b in bases]
 T(["EIA data version", "AI coefficient", "95% interval", "p-value"], rows,
   f"Fang's Table 2, column 6, on each SEDS version, 2018-2021 with DC, {n(F8, 'N', tag=t2('current'))} state-years.")
-fig, ax = plt.subplots(figsize=(7.0, 2.11))
+fig, ax = plt.subplots(figsize=(7.0, 1.94))
 coefplot(ax, [b[0] for b in bases], [raw(F8, "estimate", tag=t2(b)) for _, b in bases], [raw(F8, "ci_lo", tag=t2(b)) for _, b in bases],
          [raw(F8, "ci_hi", tag=t2(b)) for _, b in bases], ref=raw(T2, "fang_published", ai_measure="ln AI postings", term="AI", column=6),
          ref_label="Fang's value", unit="Elasticity: % change in renewable use per 1% more AI postings")
@@ -515,7 +515,7 @@ def btg(st, m):
 T(["Step", "AI postings", "p-value", "Data-center jobs", "p-value"],
   [[lab, est(FR, tag=btg(st, "aipostings")), p(FR, tag=btg(st, "aipostings")), est(FR, tag=btg(st, "dcjobs")), p(FR, tag=btg(st, "dcjobs"))] for st, lab in steps],
   "Bridge from Fang's model to ours on today's EIA SEDS: AI coefficient (elasticity) at each step.")
-fig, ax = plt.subplots(figsize=(7.0, 2.64))
+fig, ax = plt.subplots(figsize=(7.0, 2.43))
 yy = np.arange(len(steps))[::-1]
 for k, (m, c, off, lab) in enumerate([("aipostings", BLUE, 0.15, "AI postings"), ("dcjobs", AQUA, -0.15, "Data-center jobs")]):
     for i, (st, _) in enumerate(steps):
@@ -548,7 +548,7 @@ TT = [("Fang's model, AI postings", "ext_p2_p1trend_fang6_aipostings_lnET_arch_5
 T(["Version (June 2023 SEDS)", "Coefficient", "95% interval", "p-value", "State-years"],
   [[lab, est(P2, tag=tg), ci(P2, sig=2, tag=tg), p(P2, tag=tg), n(P2, "N", tag=tg)] for lab, tg in TT],
   "Fang's column 6 on the June 2023 SEDS data that reproduce Fang: trend test and placebo industries.")
-fig, ax = plt.subplots(figsize=(7.0, 2.02))
+fig, ax = plt.subplots(figsize=(7.0, 1.86))
 coefplot(ax, [r[0] for r in TT], [raw(P2, "estimate", tag=t) for _, t in TT], [raw(P2, "ci_lo", tag=t) for _, t in TT],
          [raw(P2, "ci_hi", tag=t) for _, t in TT], colors=[BLUE, BLUE, AQUA, AQUA], unit="Elasticity of renewable use")
 ax.set_title("An unrelated industry passes Fang's test; AI doesn't survive a trend")
@@ -569,7 +569,7 @@ E1 = "fang_mod_fang-lnEPUS_aipostings_contemp_state_iid_lnET_51s2018_2021_AI_x_E
 T(["Design", "Interaction $\\phi$", "95% interval", "p-value"],
   [["Fang's design", est(FR, tag=E1), ci(FR, sig=2, tag=E1), p(FR, tag=E1)], ["Our design", est(FR, tag=E2), ci(FR, sig=2, tag=E2), p(FR, tag=E2)]],
   "AI postings x state EPU, today's SEDS.")
-fig, ax = plt.subplots(figsize=(7.0, 1.41))
+fig, ax = plt.subplots(figsize=(7.0, 1.3))
 coefplot(ax, ["Fang's design", "Our design"], [raw(FR, "estimate", tag=t) for t in (E1, E2)], [raw(FR, "ci_lo", tag=t) for t in (E1, E2)],
          [raw(FR, "ci_hi", tag=t) for t in (E1, E2)], colors=[ORANGE, BLUE], unit="Interaction coefficient")
 ax.set_title("The EPU interaction holds only without year effects")
@@ -591,10 +591,43 @@ T(["Renewable type", "Fang's design", "p-value", "Our design", "p-value"],
   "AI postings and each renewable type, today's SEDS (elasticities).")
 md(f"""By type, solar is strongly positive in Fang's design ({p(FR, tag=tyt('fang', 'lnSolar'))}) and not in ours ({p(FR, tag=tyt('twfe', 'lnSolar'))}): solar grew everywhere over these years, and year effects absorb that.
 
-**Subgroups.** Fang split states by electricity price and by whether they produce more electricity than they use. Fang's headline price and net-producer splits don't reproduce on today's data. Who counts as a "net producer" depends on the definition: our rule gives {n(NPC, 'net_producer_state_years', tag='fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer')} producer state-years against Fang's count in their Table 3, and the producer-minus-consumer gap is significant only on our rule. We treat the splits as exploratory.
-
-**Supplement B (fossil fuels).** Fang check that AI goes with *less* fossil fuel. On the same samples, Fang's coal coefficient ({v(B1, 'fang_ai', tag='ext_b1_fang6_aipostings_ln_coal_current')}) falls inside our interval (ours {est(B1, tag='ext_b1_fang6_aipostings_ln_coal_current')}), and so does gas; petroleum doesn't (Fang {v(B1, 'fang_ai', tag='ext_b1_fang6_aipostings_ln_petroleum_current')}, ours {est(B1, tag='ext_b1_fang6_aipostings_ln_petroleum_current')}). None is significant in either study.""")
-md("""**Verdict: why Fang found a positive association and we don't.** Three things, in order of size. **First, the data version:** EIA's 2023 change in how SEDS counts wind, solar, hydro and geothermal shrank renewable energy in a way that differs by state; on the old data we get most of Fang's number back. **Second, year effects:** renewables and AI postings both rose nationally in 2018-2021, so without year effects any growing series, including pet-care jobs, looks associated with renewables. **Third, timing and sample:** with last year's AI, clustered errors and a longer sample, neither AI measure is significant. Fang's data are fine (Table A1 matches); the design is what differs.""")
+**Subgroups.** Fang split states into groups (Tables 3-5) and summarize the results in their Table A3. Who counts as a "net producer" depends on the definition: our rule gives {n(NPC, 'net_producer_state_years', tag='fang_netdef_gen_gt_sales_difference_aipostings_producer_minus_consumer')} producer state-years against Fang's {L.rx(SPL, 'fang_high', r"N (\d+)", group='Net producer (high = producer)', ai_measure='ln AI postings')} (their Table 3). The table below checks each Table A3 claim on the June 2023 data, the version that reproduces Fang's main result, with AI postings and Fang's mean splits.""")
+A3 = [("High electricity prices", "Electricity price", "mean", "high"), ("Low electricity consumption", "Electricity consumption", "mean", "low"),
+      ("Net electricity importers", "Net producer (high = producer)", "binary", "low"), ("High income", "Per capita income", "mean", "high"),
+      ("Low tech (low R&D funding)", "R&D funding", "mean", "low"), ("Frequent extreme weather", "Extreme weather", "mean", "high"),
+      ("West", "Region: West", "region", "high"), ("Midwest", "Region: Midwest", "region", "high")]
+def a3(g, sp, side):
+    f = dict(group=g, split=sp, ai_measure="ln AI postings")
+    verdict = str(L.row(SPL, **f)["matches_fang_pattern_archived"])
+    return [s(SPL, f"fang_{side}", **f), s(SPL, f"archived_{side}", **f), "Reproduces" if verdict == "matches" else f"Doesn't ({verdict})"]
+T(["Fang's Table A3 claim: AI is associated with renewables in", "Fang's estimate for that group", "Ours, June 2023 SEDS", "Reproduces?"],
+  [[c] + a3(g, sp, side) for c, g, sp, side in A3],
+  "Fang's Table A3 subgroup claims against our estimates on SEDS as published in June 2023 (AI postings, Fang's model).",
+  "Stars: * p < 0.1, ** p < 0.05, *** p < 0.01. \"Reproduces\" means the same ordering and significance as Fang's groups. Exploratory: the June 2023 rows were added after seeing Table 2. Full results, including median splits and data-center jobs: results/2026-11-07/fang/tables/fang8_splits_table.csv.")
+md("""**Supplement B.** Fang's supplement reports robustness checks in Tables B1 (other measures, including fossil fuels, which should *not* rise with AI) and B2 (winsorized data and extra controls). We ran each on both data versions.""")
+def fsb(tg):
+    r = L.row(FSB, tag=tg)
+    if r["status"] != "ok":
+        return "not run"
+    return f"{v(FSB, 'estimate', tag=tg)} ({p(FSB, tag=tg)})"
+def fb1(o, b):
+    tg = f"ext_b1_fang6_aipostings_ln_{o}_{b}"
+    return f"{est(B1, tag=tg)} ({p(B1, tag=tg)})"
+rows = []
+for col, lab in [(1, "B1 (1): AI share of job postings"), (2, "B1 (2): renewable production instead of use")]:
+    tg = f"supp_b1_c{col}"
+    rows.append([lab, f"{v(FSB, 'fang_ai', tag=tg + '_june2023_fang6')} (t {v(FSB, 'fang_t', dec=2, tag=tg + '_june2023_fang6')})", fsb(tg + "_june2023_fang6"), fsb(tg + "_current_fang6")])
+for col, o, lab in [(3, "coal", "B1 (3): coal use"), (4, "gas", "B1 (4): natural gas use"), (5, "petroleum", "B1 (5): petroleum use")]:
+    tg = f"ext_b1_fang6_aipostings_ln_{o}_current"
+    rows.append([lab, f"{v(B1, 'fang_ai', tag=tg)} (t {v(B1, 'fang_t', dec=2, tag=tg)})", fb1(o, "june2023"), fb1(o, "current")])
+for col, lab in [(1, "B2 (1): winsorized"), (2, "B2 (2): + energy intensity"), (3, "B2 (3): + HDD"), (4, "B2 (4): + CDD"), (5, "B2 (5): + energy spending per person")]:
+    tg = f"supp_b2_c{col}"
+    rows.append([lab, f"{v(FSB, 'fang_ai', tag=tg + '_june2023_fang6')} (t {v(FSB, 'fang_t', dec=2, tag=tg + '_june2023_fang6')})", fsb(tg + "_june2023_fang6"), fsb(tg + "_current_fang6")])
+T(["Fang's check", "Fang's AI coefficient", "Ours, June 2023 SEDS", "Ours, today's SEDS"], rows,
+  "Fang's Supplement Tables B1 and B2 next to ours: AI coefficient (p-value), Fang's model, 2018-2021.",
+  "Fang's B1 columns 1 and 2 report identical numbers in every cell (coefficients, t statistics and constants), so one is likely a duplicated column. B2 columns 3-5: our degree days cover the 48 contiguous states (192 state-years against Fang's 203). B2 column 5 on today's SEDS isn't run: today's expenditure data aren't in our files. Pre-registered in EXPERIMENTS.md section 14.7.")
+md("""**In plain English.** On the June 2023 data, our estimates are positive and Fang's values fall inside our 95% intervals in every column of B1 and B2, though the coefficient shrinks and loses significance once degree days are added for the 48 contiguous states. On today's SEDS, every comparable estimate is negative or near zero, and Fang's values fall outside our intervals. The fossil-fuel checks show no significant association on either version, in Fang's results or ours.""")
+md("""**Verdict: why Fang found a positive association and we don't.** Three things. **The data version:** EIA's 2023 change in how SEDS counts wind, solar, hydro and geothermal shrank renewable energy in a way that differs by state; on the old data we get most of Fang's number back. **Year effects:** renewables and AI postings both rose nationally in 2018-2021, so without year effects any growing series, including pet-care jobs, looks associated with renewables. **Timing and sample:** with last year's AI, clustered errors and a longer sample, neither AI measure is significant. Fang's data were accurate for the version available then (Table A1 matches ours on that version); what differs is the data version and the design.""")
 
 %%code
 L.section(6, "Extensions")
@@ -628,7 +661,7 @@ dm = [("State effects only", "ext_natl_statefe_ai518210_lag1_ctrl4_w9901_cl-stat
       ("State and year effects (H1)", "ext_natl_twfe_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s")]
 T(["Model (renewable share)", "AI coefficient", "p-value"], [[lab, est(DRV, tag=tg), p(DRV, tag=tg)] for lab, tg in dm], "The AI coefficient barely moves across ways of handling the national trend.")
 pth = tbl(PATH)
-fig, ax = plt.subplots(figsize=(7.0, 2.29))
+fig, ax = plt.subplots(figsize=(7.0, 2.11))
 ax.plot(pth.year, 100 * pth.year_effect, "-o", color=BLUE, lw=2, ms=5, mec="white", label="Nationwide rise (year effects)")
 ax.plot(pth.year, 100 * pth.driver_path, "-s", color=ORANGE, lw=2, ms=5, mec="white", label="Path fitted from measured drivers")
 ax.axhline(0, color=INK2, lw=1); ax.set_xlabel("Year"); ax.set_ylabel("Percentage points since 2015"); ax.legend(loc="upper left")
@@ -649,7 +682,7 @@ T(["Version", "Slope", "Rank among 50 states", "Note"], [
  ["Georgia", v(RNK, "slope", sig=2, tag=GAt), n(RNK, "rank_desc", tag=GAt), "Descriptive: one state"],
 ], "Commercial electricity sales per person on data-center jobs: pooled slope and per-state slopes.")
 sl = tbl(SLP).sort_values("slope", ascending=False).reset_index(drop=True)
-fig, ax = plt.subplots(figsize=(7.0, 2.29))
+fig, ax = plt.subplots(figsize=(7.0, 2.11))
 cols = [ORANGE if st_ in ("VA", "TX") else (AQUA if st_ == "GA" else "#b9c9e3") for st_ in sl.state]
 ax.bar(range(len(sl)), sl.slope, color=cols, width=0.8)
 for st_, nm in [("VA", "Virginia"), ("TX", "Texas"), ("GA", "Georgia")]:
@@ -663,26 +696,27 @@ md(f"""**In plain English.** Pooled across states, data-center jobs don't track 
 
 %%code
 L.section(7, "Does data-center demand drive more solar? A team hypothesis")
-md("""The hypothesis is a chain with three links: **data-center growth → more electricity demand → utilities add capacity → more of that capacity is solar.** If all three links hold, states with faster data-center growth should add more solar. We test each link with the H1 design ($y_{st} = \\beta AI_{s,t-1} + \\text{controls} + \\alpha_s + \\delta_t + \\varepsilon_{st}$). **Analogy:** a row of dominoes falls only if every domino hits the next. **"Yes"** would be a clearly positive association at every link, with clean timing.""")
+md("""The hypothesis is a chain with three links: **data-center growth → more electricity demand → utilities add capacity → more of that capacity is solar.** If all three links hold, states with faster data-center growth should add more solar. We check each step with the H1 design ($y_{st} = \\beta AI_{s,t-1} + \\text{controls} + \\alpha_s + \\delta_t + \\varepsilon_{st}$). **Analogy:** a row of dominoes falls only if every domino hits the next. **"Yes"** would be a clearly positive association at every link, with clean timing.""")
 L1 = "ext_impact_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_sales_com_pc_50s"
 T(["Link", "What we measured", "Coefficient", "p-value", "Reading"], [
- ["1. Data centers to demand", "Commercial electricity sales per person (log)", est(IMP, tag=L1), p(IMP, tag=L1), "Not in pooled data; only Virginia and Texas"],
- ["1. Data centers to demand", "Total electricity use per person (log, H1)", est(H1C, tag=h1('ln_ec')), p(H1C, tag=h1('ln_ec')), "No association"],
- ["2. Demand to new capacity", "New renewable capacity, MW (H1)", est(H1X, tag=NRW), p(H1X, tag=NRW), "Positive in MW, but not per 1,000 MW, and the lead is positive too"],
- ["2. Demand to new capacity", "Gas added per 1,000 MW", est(IMP, tag=itg('add_gas_per1000')), p(IMP, tag=itg('add_gas_per1000')), f"Fails multiple testing (q = {v(IMP, 'qval', dec=3, tag=itg('add_gas_per1000'))})"],
- ["3. Capacity to solar", "Solar added per 1,000 MW", est(BT, tag='ext_bytype_twfe_ai518210_lag1_ctrl4_w9901_cl-state_add_solar_per1000_50s'), p(BT, tag='ext_bytype_twfe_ai518210_lag1_ctrl4_w9901_cl-state_add_solar_per1000_50s'), "No association"],
- ["3. Capacity to solar", "Solar share of generation", est(BT, tag=SS), p(BT, tag=SS), "No association"],
-], "Each link of the chain, with data-center jobs as the AI measure, 50 states, 2015-2025.")
-fig, ax = plt.subplots(figsize=(7.0, 1.94))
+ ["1. AI jobs → demand", "Commercial electricity sales per person (log)", est(IMP, tag=L1), p(IMP, tag=L1), "Not in pooled data; only Virginia and Texas"],
+ ["1. AI jobs → demand", "Total electricity use per person (log, H1)", est(H1C, tag=h1('ln_ec')), p(H1C, tag=h1('ln_ec')), "No association"],
+ ["2. AI jobs → new capacity", "New renewable capacity, MW (H1)", est(H1X, tag=NRW), p(H1X, tag=NRW), "Positive in MW, but not per 1,000 MW, and the lead is positive too"],
+ ["2. AI jobs → new capacity", "Gas added per 1,000 MW", est(IMP, tag=itg('add_gas_per1000')), p(IMP, tag=itg('add_gas_per1000')), f"Fails multiple testing (q = {v(IMP, 'qval', dec=3, tag=itg('add_gas_per1000'))})"],
+ ["3. AI jobs → solar", "Solar added per 1,000 MW", est(BT, tag='ext_bytype_twfe_ai518210_lag1_ctrl4_w9901_cl-state_add_solar_per1000_50s'), p(BT, tag='ext_bytype_twfe_ai518210_lag1_ctrl4_w9901_cl-state_add_solar_per1000_50s'), "No association"],
+ ["3. AI jobs → solar", "Solar share of generation", est(BT, tag=SS), p(BT, tag=SS), "No association"],
+], "Each step of the chain checked against data-center jobs (the AI measure), 50 states, 2015-2025.",
+  "We can't estimate the demand → capacity link directly; we can only check whether faster data-center growth goes with each step.", keep=True)
+fig, ax = plt.subplots(figsize=(7.0, 1.78))
 chain = [("Commercial sales (%)", IMP, L1, 100), ("Electricity use (%)", H1C, h1("ln_ec"), 100), ("Solar share (percentage points)", BT, SS, 100)]
 coefplot(ax, [c[0] for c in chain], [k * raw(src, "estimate", tag=t) for _, src, t, k in chain], [k * raw(src, "ci_lo", tag=t) for _, src, t, k in chain],
          [k * raw(src, "ci_hi", tag=t) for _, src, t, k in chain], unit="Change per extra data-center job per 1,000 workers")
-ax.set_title("The chain breaks at the first link")
+ax.set_title("Data-center jobs don't move with demand or solar")
 L.fig(fig, "Associations at the demand link and the solar link, with 95% intervals.")
-md(f"""**In plain English.** The first domino doesn't fall in our data: across states, data-center jobs aren't associated with more electricity use, except in Virginia and Texas. And at the end of the chain, solar shows no association at all ({p(BT, tag=SS)}).
+md(f"""**In plain English.** The first step doesn't show up in our data: across states, data-center jobs aren't associated with more electricity use, except in Virginia and Texas. And at the end of the chain, solar shows no association at all ({p(BT, tag=SS)}).
 
 **Why the hypothesis could still be true but invisible here.**
-- **Timing.** Most data-center power demand arrives after 2022, and much of it after our data end in 2025. Georgia Power's commitments alone went from {s(GFF, 'value', figure='Commitments, Oct 2023 to June 30, 2026')} between October 2023 and June 2026.
+- **Timing.** Most data-center power demand arrives after 2022, and much of it after our data end in 2025. Georgia Power's large-load commitments alone went from {gi('commit_base')} in October 2023 to {gi('commit_q2')} on June 30, 2026 (Q2 2026 large-load report, {gc('commit_base')}).
 - **Purchases across state lines.** Tech companies often buy solar power from projects in other states. Our outcomes count solar where it's built, not where it's bought.
 - **Planned, not built.** Much of the response is still in plans and interconnection queues, which our capacity data (built plants only) don't show.
 - **National effects.** If data-center demand lowers solar costs or raises solar build-out everywhere, year effects absorb it, and state comparisons can't see it.
@@ -697,29 +731,30 @@ md(f"""Georgia is a useful case: a fast-growing data-center market served mostly
 
 **The solar boom.** Solar's share of Georgia's in-state generation rose from {v(GMX, 'share_solar', scale=100, dec=1, year=2015)}% in 2015 to {v(GMX, 'share_solar', scale=100, dec=1, year=2025)}% in 2025.""")
 g = tbl(GMX)
-fig, ax = plt.subplots(figsize=(7.0, 2.11))
+fig, ax = plt.subplots(figsize=(7.0, 1.94))
 ax.plot(g.year, 100 * g.share_solar, "-o", color=ORANGE, lw=2, ms=5, mec="white", label="Solar")
 ax.plot(g.year, 100 * g.renew_share, "-s", color=BLUE, lw=2, ms=5, mec="white", label="All renewables")
 ax.set_ylim(0, 1.45 * 100 * g.renew_share.max()); ax.set_xlabel("Year"); ax.set_ylabel("Share of generation (%)"); ax.legend(loc="upper left", ncol=2)
 ax.set_title("Georgia's solar share rose steadily")
 L.fig(fig, "Solar and total renewable share of Georgia's in-state utility-scale generation.")
-md(f"""**What our estimates imply for Georgia.** Taking our national solar-share association and Georgia's actual rise in data-center jobs, the association could account for at most {v(GIM, 'at_most_share_of_actual', scale=100, sig=2, tag=SS)}% of Georgia's solar-share rise, using the end of the confidence interval most favorable to AI, and the point estimate has the opposite sign. Georgia's solar boom is associated with falling costs, tax credits and the utility's plans, not with anything our data link to AI.""")
-irp = [("2025 IRP summary: load growth, next six years", "IRP one-page summary"), ("2025 IRP: renewable procurement", "IRP main document"),
-       ("2025 IRP: battery storage in progress", "IRP main document"), ("Commitments at the 2023 IRP Update, Oct 2023", "Large-load report, Q1 2026"),
-       ("Commitments, June 30, 2026", "Large-load report, Q2 2026"), ("Commitments by winter 2028/2029, Q2 2026", "Large-load report, Q2 2026"),
-       ("Total pipeline, Q2 2026", "Large-load report, Q2 2026")]
-T(["Item", "Figure", "Document", "PDF page"], [[f, s(GFF, "value", figure=f), d, s(GFF, "pdf_page", figure=f)] for f, d in irp],
-  "Georgia Power's IRP response and large-load reporting, as filed with the Georgia PSC (Dockets 56002 and 55378).",
-  "These are the utility's own figures, quoted from the filings; they aren't our estimates.")
-md(f"""**Georgia Power's response.** The utility's 2025 IRP plans for about {s(GFF, 'value', figure='2025 IRP summary: load growth, next six years')} of load growth over six years, mostly from large customers such as data centers, and responds with a mix: renewable procurement of {s(GFF, 'value', figure='2025 IRP: renewable procurement')} (PDF page {s(GFF, 'pdf_page', figure='2025 IRP: renewable procurement')}), battery storage, new gas turbines and extended coal units. So the utility's response to data-center demand includes solar, but not only solar.""")
+md(f"""**What our estimates imply for Georgia.** Taking our national solar-share association and Georgia's actual rise in data-center jobs, the association could account for at most {v(GIM, 'at_most_share_of_actual', scale=100, sig=2, tag=SS)}% of Georgia's solar-share rise, using the end of the confidence interval most favorable to AI, and the point estimate has the opposite sign. Georgia's solar boom coincides with falling costs, tax credits and the utility's procurement plans; we didn't estimate those for Georgia, and our data don't link the boom to AI.""")
+SHORT = {"Georgia Power 2025 IRP, main document (Georgia PSC Docket 56002)": "2025 IRP", "Georgia Power 2025 IRP, one-page summary": "IRP summary",
+         "Georgia Power Q2 2026 Large Load Economic Development Report (Georgia PSC Docket 55378)": "Q2 2026 report"}
+ids = ["load_irp", "load_summary", "commit_base", "commit_q2", "commit_2829", "pipeline", "rfp_all", "renew_2030", "renew_2035", "batt_ct", "batteries", "ct", "coal"]
+T(["Item", "Figure", "What it measures", "Document", "Page"],
+  [[s(GIRP, "item", id=i), gi(i), s(GIRP, "measures", id=i), SHORT[str(L.row(GIRP, id=i)["document"])], gc(i)] for i in ids],
+  "Georgia Power's figures, each with what it measures and one cite (printed page, PDF page in brackets). Documents: 2025 IRP = Georgia Power 2025 IRP, main document (Georgia PSC Docket 56002); IRP summary = the plan's one-page summary; Q2 2026 report = Q2 2026 Large Load Economic Development Report (Docket 55378).",
+  "These are the utility's own figures, quoted from the filings and checked against each page (results/2026-11-09/georgia/irp_figures.csv); they aren't our estimates. The two load-growth figures cover different periods. The 2,065 MW is batteries and combustion turbines together.")
+md(f"""**Georgia Power's response.** The 2025 IRP forecasts {gi('load_irp')} of load growth from winter 2024/2025 through winter 2030/2031 (2025 IRP, {gc('load_irp')}). That forecast includes the utility's pipeline of potential and committed large-load customers (same page), and data centers are the largest segment of committed large load in the Q2 2026 report's attachment ({n(ATT, 'projects', report='Q2 2026', stage='Contract for Electric Service', Segment='Data Center/Crypto')} projects, {n(ATT, 'announced_load_mw', report='Q2 2026', stage='Contract for Electric Service', Segment='Data Center/Crypto')} MW with a Contract for Electric Service). The summary issued after the plan's approval gives {gi('load_summary')} over the next six years (IRP summary, {gc('load_summary')}). The plan responds with a mix: renewables ({gi('renew_2030')} in active requests by 2030, {gc('renew_2030')}; {gi('renew_2035')} in new requests by 2035, {gc('renew_2035')}), batteries ({gi('batteries')}, {gc('batteries')}), new combustion turbines ({gi('ct')}, {gc('ct')}) and coal units kept running ({gi('coal')}, {gc('coal')}). So the utility's response to data-center demand includes solar, but not only solar.""")
 
 %%code
 md("## The solar cost projection to 2035")
 md(r"""**The question.** If solar keeps getting cheaper as the world builds more of it, what would new Georgia solar cost in 2035?
-$$C_{2035} = C_{2025} \times \left(\frac{X_{2035}}{X_{2025}}\right)^{b}, \qquad b = \log_2(1 - LR)$$""")
+$$C_t = C_{base} \times \left(\frac{X_t}{X_{base}}\right)^{b}, \qquad b = \log_2(1 - LR)$$""")
+md(f"""**The base.** The starting point is Georgia's {n(GBC, 'n_projects', area='Georgia')} utility-scale solar projects that began operating in 2023-2025: $C_{{base}}$ is their capacity-weighted LCOE, {v(GBC, 'lcoe_capacity_weighted', dec=2, area='Georgia')} dollars per MWh, and $X_{{base}}$ is global solar capacity in each project's start year, weighted the same way, {v(GBC, 'x_base_gw', dec=1, area='Georgia')} GW (roughly mid-2024). The 2025 column below differs by learning rate because global capacity had already grown from that base to {v(GPL, 'global_pv_gw', dec=0, lr_label='24% (main)', path='Central', year=2025)} GW in 2025, and each learning rate turns that growth into a different cost drop.""")
 T(["Symbol", "Plain meaning"], [
- ["$C$", "LCOE of new utility-scale solar in Georgia, 2025 dollars per MWh, without tax credits"],
- ["$X$", "Cumulative global solar PV capacity, from IEA WEO 2025 scenario paths"],
+ ["$C_t$, $C_{base}$", "LCOE of new utility-scale solar in Georgia in year $t$ and at the base, 2025 dollars per MWh, without tax credits"],
+ ["$X_t$, $X_{base}$", "Cumulative global solar PV capacity in year $t$ (IEA WEO 2025 scenario paths) and at the base"],
  ["$LR$", "Learning rate: the cost drop for each doubling of cumulative capacity"],
  ["$b$", "The curve's slope, set by the learning rate"],
 ], "Symbols in the learning-curve projection.")
@@ -729,7 +764,7 @@ T(["Learning rate", "Capacity path", "2025", "2035", "Change 2025-2035 (%)"],
    for lr, pth_ in [("12%", "Low"), ("24% (main)", "Low"), ("24% (main)", "Central"), ("24% (main)", "High"), ("45% (2014-2020 epoch)", "High")]],
   "Georgia solar LCOE, 2025 dollars per MWh. Paths from IEA WEO 2025, Annex A: Low = Current Policies (Table A.3a, p. 417), Central = Stated Policies (Table A.3b, p. 423), High = Net Zero Emissions by 2050 (Table A.3c, p. 429).")
 gl = tbl(GPL)
-fig, ax = plt.subplots(figsize=(7.0, 2.29))
+fig, ax = plt.subplots(figsize=(7.0, 2.11))
 for lr, c in [("12%", AQUA), ("24% (main)", BLUE), ("45% (2014-2020 epoch)", ORANGE)]:
     for pth_, ls in [("Low", ":"), ("Central", "-"), ("High", "--")]:
         d = gl[(gl.lr_label == lr) & (gl.path == pth_)]
@@ -749,7 +784,7 @@ md(f"""- **Jobs aren't megawatts.** Data-center jobs in NAICS 518210 include gen
 - **The EIA accounting change** affects every SEDS-based renewable number, and results differ by data version.
 - **Weather** enters one check only, for the 48 contiguous states.
 - **Georgia** is regulated, so its utility's behavior may not generalize to states with competitive power markets.
-- **Pending:** the rerun of Fang's model with GDP in chained 2012 dollars (section 5.2).""")
+- **Pending:** the rerun of Fang's model with GDP in chained 2012 dollars (section 5.2). BEA's archive of the 2012-dollar data has to be downloaded by a person.""")
 
 %%code
 L.section(10, "FAQ")
@@ -761,7 +796,7 @@ md(f"""**Is a null result a failure?** No. A precise null rules things out. Our 
 
 **Why so many data sources?** No agency measures AI, electricity and policy together. Each source answers one piece, and each is the standard source for its piece.
 
-**Could AI still matter?** Yes. Our results describe 2015-2025 and data-center *jobs*. The data-center build-out now under way is far larger: Georgia Power's large-load pipeline alone is {s(GFF, 'value', figure='Total pipeline, Q2 2026')}. Megawatt-based data and a few more years could show what jobs can't.""")
+**Could AI still matter?** Yes. Our results describe 2015-2025 and data-center *jobs*. The data-center build-out now under way is far larger: Georgia Power's large-load pipeline alone is {gi('pipeline')} through the mid-2030s (Q2 2026 large-load report, {gc('pipeline')}). Megawatt-based data and a few more years could show what jobs can't.""")
 
 %%code
 L.section(11, "Glossary")
