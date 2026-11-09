@@ -6,7 +6,7 @@ if os.path.basename(os.getcwd()) == "notebooks":
 sys.path.insert(0, "code/python")
 from explained_helpers import *
 L = Tracer("ECON499R_explained.ipynb", "results/2026-11-09/explained")
-v, p, n, s, md, T, raw = L.v, L.p, L.n, L.s, L.md, L.table, L.raw
+v, p, n, s, md, T, raw, v2 = L.v, L.p, L.n, L.s, L.md, L.table, L.raw, L.v2
 
 # result files
 H1C = "results/2026-11-02/h1/h1_core.csv";  H1X = "results/2026-11-02/h1/h1_extras.csv"
@@ -34,6 +34,10 @@ GIM = "results/2026-11-07/extend/s2_georgia_implied.csv"; GFF = "data/georgia_fi
 GBC = "results/2026-11-04/georgia_solar/base_cost.csv"; GPT = "results/2026-11-04/georgia_solar/projection_table.csv"
 GPL = "results/2026-11-04/georgia_solar/projection_long.csv"; NLC = "results/2026-11-04/georgia_solar/national_lcoe_series.csv"
 REG = "data/variable_registry.csv"
+GIRP = "results/2026-11-09/georgia/irp_figures.csv"; ATT = "data/georgia_large_load_attachment.csv"
+FSB = "results/2026-11-09/fang_supp/fang_supp_b.csv"; IMPL = "results/2026-11-07/extend/e1_descriptives_vs_fang_implied.csv"
+def gi(i): return s(GIRP, "value", id=i)
+def gc(i): return s(GIRP, "cite", id=i)
 
 # tags used often
 def h1(y): return f"h1_twfe_ai518210_lag1_ctrl4_w9901_cl-state_{y}_50s2015_2025"
@@ -68,6 +72,7 @@ display(HTML("""<style>
 .jp-RenderedHTMLCommon table.ex td.nw { white-space: nowrap; }
 .jp-RenderedHTMLCommon table.ex th { background: #eef3fb; font-weight: 600; }
 .jp-RenderedHTMLCommon table.ex tbody tr:nth-child(odd) { background: #fafaf8; }
+.tw.keep { break-inside: avoid; page-break-inside: avoid; }
 .tnote, .figcap { font-size: 10pt !important; color: #52514e; margin: 2px 0 12px 0; }
 .jp-OutputArea-output img { max-width: 100%; height: auto; }
 .glossary { column-count: 2; column-gap: 22px; }
@@ -84,6 +89,8 @@ display(HTML("""<style>
 %%code
 md(f"""# AI and renewable energy across U.S. states, explained
 
+This notebook explains a study of AI (artificial intelligence) and renewable energy across U.S. states.
+
 *ECON 499R, Emory University, Fall 2026. Shunji Lewandowski and Alexander Hendricks; advisor Prof. Fohlin. Written for a reader who hasn't taken econometrics. Every number in this document is read from the project's result files and logged in `results/2026-11-09/explained/number_check.csv`.*
 
 **Everything here is an association.** Our data and methods can show that two things move together. They can't show that one causes the other, so we never say AI "causes," "drives" or "raises" anything.""")
@@ -96,15 +103,15 @@ Our AI measure is private data-center jobs per 1,000 workers, from BLS records o
 md(f"""**The five main findings.**
 
 1. **Electricity use and efficiency: no association.** A state's data-center jobs aren't associated with its electricity use per person ({est(H1C, tag=h1('ln_ec'))}, {p(H1C, tag=h1('ln_ec'))}) or with how much economic output it gets per unit of electricity ({est(H1C, tag=h1('ln_ee'))}, {p(H1C, tag=h1('ln_ee'))}).
-2. **Renewable share: a negative association that fails a timing test.** More data-center jobs go with a slightly lower renewable share ({v(H1C, 'estimate', scale=100, tag=h1('renew_share'))} percentage points per extra job per 1,000 workers, {p(H1C, tag=h1('renew_share'))}). But *next* year's AI jobs are associated with *this* year's share even more strongly ({v(ROB, 'estimate', scale=100, tag=lead('renew_share'))} points, {p(ROB, tag=lead('renew_share'))}). A cause can't come after its effect, so this pattern reflects where and when data-center jobs grow, not AI lowering the renewable share.
+2. **Renewable share: a negative association that fails a timing test.** More data-center jobs go with a slightly lower renewable share ({v(H1C, 'estimate', scale=100, tag=h1('renew_share'))} percentage points per extra job per 1,000 workers, {p(H1C, tag=h1('renew_share'))}). But *next* year's AI jobs are associated with *this* year's share even more strongly ({v(ROB, 'estimate', scale=100, tag=lead('renew_share'))} points, {p(ROB, tag=lead('renew_share'))}). A cause can't come after its effect, so this points to where and when data-center jobs grow, rather than AI lowering the renewable share.
 3. **New renewable capacity: positive in raw megawatts, but not robust.** States add {est(H1X, tag=NRW)} MW more renewable capacity per extra job per 1,000 workers ({p(H1X, tag=NRW)}), but the result disappears once we account for the size of each state's grid ({p(H1X, tag=NRW1000)}), and future AI jobs "predict" it too.
-4. **No channel and no spillover.** AI jobs aren't associated with the share of tech jobs, the channel Zhang et al. propose ({p(H2, tag='h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_renew_share_50s2015_2025_eq-a')}). A spillover onto neighboring states' renewable share ({v(SDMI, 'plugin', scale=100, tag=SDM, effect='indirect')} points, {p(SDMI, 'p', tag=SDM, effect='indirect')}) also fails the timing test.
-5. **Fang's positive result depends on the data version and on leaving out year effects.** On today's EIA data, Fang's main coefficient ({v(T2, 'fang_published', ai_measure='ln AI postings', term='AI', column=6)}) becomes {est(F8, tag=t2('current'))} ({p(F8, tag=t2('current'))}). On the data as published before EIA changed how it counts wind and solar, it is {est(F8, tag=t2('archived'))} ({p(F8, tag=t2('archived'))}). Once we allow for nationwide trends, it isn't positive in any version.""")
+4. **No channel and no spillover.** AI jobs aren't associated with the share of tech jobs, the channel Zhang et al. propose ({p(H2, tag='h2a_med_ai518210_lag1_M-techshare_ctrl4_w9901_cl-state_renew_share_50s2015_2025_eq-a')}). A spillover onto neighboring states' renewable share ({v(SDMI, 'plugin', scale=100, tag=SDM, effect='indirect')} points per extra job per 1,000 workers, about {v(I1SD, 'indirect_per_1sd', scale=100, sig=2, W_version='invdist50', estimator='ML')} points for a typical within-state swing; {p(SDMI, 'p', tag=SDM, effect='indirect')}) also fails the timing test.
+5. **Fang's positive result depends on the data version and on leaving out year effects.** On today's EIA data, Fang's main coefficient ({v(T2, 'fang_published', ai_measure='ln AI postings', term='AI', column=6)}) becomes {est(F8, tag=t2('current'))} ({p(F8, tag=t2('current'))}). On the data as published before EIA changed how it counts wind and solar, it is {est(F8, tag=t2('archived'))} ({p(F8, tag=t2('archived'))}). Once we allow for nationwide trends, it is never significantly positive; the estimates are near zero or negative.""")
 md(f"""**What they mean.** Over 2015-2025, we find no sign that data-center growth went with lower efficiency, higher electricity use or a lower renewable share once timing is taken into account. Neither the "blessing" nor the "peril" holds up in state data.
 
 **What we can say:** a typical within-state swing in data-center jobs (one SD, {v(RO, 'sd_ai', sig=3, tag='rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025')} jobs per 1,000 workers) isn't associated with a fall in electricity use of more than {v(RO, 'ci_lo_per_sd', sig=2, scale=-1, tag='rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025')}% or a rise of more than {v(RO, 'ci_hi_per_sd', sig=2, tag='rob_base_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_50s2015_2025')}%, or with a fall in the renewable share of more than {v(RO, 'ci_lo_per_sd', sig=2, scale=-1, tag='rob_base_ai518210_lag1_ctrl4_w9901_cl-state_renew_share_50s2015_2025')} percentage points.
 
-**What we can't say:** that AI has no effect. Jobs are a rough stand-in for data-center power use, most of the data-center boom comes after our data end, and state totals can't see national or cross-state effects. Georgia Power alone reports large-load commitments of {s(GFF, 'value', figure='Commitments, June 30, 2026')} in its Q2 2026 large-load report to the Georgia PSC (PDF page {s(GFF, 'pdf_page', figure='Commitments, June 30, 2026')}), most of it scheduled after 2025.""")
+**What we can't say:** that AI has no effect. Jobs are a rough stand-in for data-center power use, most of the data-center boom comes after our data end, and state totals can't see national or cross-state effects. Georgia Power alone reports large-load commitments of {gi('commit_q2')} as of June 30, 2026, for load scheduled through the mid-2030s, {gi('commit_2829')} of it by winter 2028/2029 (Q2 2026 large-load report to the Georgia PSC, {gc('commit_q2')}); our data end in 2025.""")
 
 %%code
 fig, ax = plt.subplots(figsize=(7.0, 2.2))
@@ -319,7 +326,7 @@ a2.set_title("The spillover fails the timing test")
 L.fig(fig, "Left: Moran's I for the renewable share each year. Right: the full-sample spillover (spatial Durbin model), and on 2015-2023 the association with neighbors' past and future AI (border weights), with 95% intervals.")
 md(f"""**In plain English.** Neighboring states do have similar renewable shares, and the similarity grows over time. The full-sample model finds a negative spillover ({p(SDMI, 'p', tag=SDM, effect='indirect')}). But when we add neighbors' *future* AI, it's the future AI that carries the association with border weights ({p(PSLX, tag=B_LEAD)}), not the past ({p(PSLX, tag=B_LAG)}). A ripple that arrives before the stone is dropped isn't a ripple, so H3 is not supported.
 
-**What we can rule out.** Per typical within-state swing in neighbors' AI, the full-sample spillover is {v(I1SD, 'indirect_per_1sd', scale=100, W_version='invdist50', estimator='ML')} percentage points; because it can't be separated from reverse timing, we don't read it as a spillover at all.""")
+**What we can rule out.** Per typical within-state swing in neighbors' AI, the full-sample spillover is {v(I1SD, 'indirect_per_1sd', scale=100, W_version='invdist50', estimator='ML')} percentage points, with a 95% interval of {v2(I1SD, 'ci_lo', 'sd_wai', 'mul', scale=100, sig=2, W_version='invdist50', estimator='ML')} to {v2(I1SD, 'ci_hi', 'sd_wai', 'mul', scale=100, sig=2, W_version='invdist50', estimator='ML')} points. That rules out a positive spillover and a negative one much larger than the lower end. Because it can't be separated from reverse timing, we don't read it as a spillover at all.""")
 
 %%code
 md("## 4.4 Robustness: lead, lags, long difference, state trends")
@@ -361,9 +368,9 @@ coefplot(ax, labs, [100 * raw(src, "estimate", **f) for _, src, f in rob_rows], 
          unit="Percentage points per extra data-center job per 1,000 workers")
 ax.set_title("Next year's AI (orange) carries the association")
 L.fig(fig, "Renewable-share coefficient under each version, with 95% intervals. Orange rows use next year's AI.")
-md(f"""**In plain English.** Every version gives about the same small negative number, but the lead test breaks the story: next year's AI is associated with this year's renewable share ({p(ROB, tag=lead(rs))}), and with both in the model, last year's AI drops to about zero ({v(ROB, 'estimate', scale=100, tag=jlag(rs))} points, {p(ROB, tag=jlag(rs))}). The negative association reflects where and when data-center jobs grow, not AI lowering the share. New renewable capacity has the same problem: its lead is also positive ({est(ROB, tag=lead('new_renew_mw'))} MW, {p(ROB, tag=lead('new_renew_mw'))}).
+md(f"""**In plain English.** Every version gives about the same small negative number, but the lead test breaks the story: next year's AI is associated with this year's renewable share ({p(ROB, tag=lead(rs))}), and with both in the model, last year's AI drops to about zero ({v(ROB, 'estimate', scale=100, tag=jlag(rs))} points, {p(ROB, tag=jlag(rs))}). The negative association points to where and when data-center jobs grow, rather than AI lowering the share. New renewable capacity has the same problem: its lead is also positive ({est(ROB, tag=lead('new_renew_mw'))} MW, {p(ROB, tag=lead('new_renew_mw'))}).
 
-Two more checks change nothing. Holding the Gavins Point dam in Nebraska gives {est(ROB, tag='rob_gavins-ne_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025')} MW for new capacity. Adding NOAA HDD and CDD to the electricity-use model on the 48 contiguous states gives {est(WX, tag='rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1')} ({p(WX, tag='rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1')}), against {est(WX, tag='rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1')} without them.
+Two more checks change nothing. Assigning the Gavins Point dam (on the Nebraska-South Dakota border) to a single state gives {est(ROB, tag='rob_gavins-ne_ai518210_lag1_ctrl4_w9901_cl-state_new_renew_mw_50s2015_2025')} MW for new capacity. Adding NOAA HDD and CDD to the electricity-use model on the 48 contiguous states gives {est(WX, tag='rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1')} ({p(WX, tag='rob_weather-hddcdd_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1')}), against {est(WX, tag='rob_weather-base48_ai518210_lag1_ctrl4_w9901_cl-state_ln_ec_48s2015_2025_ai_dc_per1000_lag1')} without them.
 
 **What we can rule out.** With both lead and lag in the model, the interval for last year's AI is {ci(ROB, scale=100, tag=jlag(rs))} percentage points per extra job per 1,000 workers.""")
 
@@ -481,12 +488,16 @@ a1rows = [("ln AI postings", "ext_a1_lnAIp_"), ("ln energy price", "ext_a1_lnEP_
           ("ln GDP", "ext_a1_lnGDP_"), ("ln EPU", "ext_a1_lnEPU_"), ("ln renewables, today's SEDS", "ext_a1_lnET_currentSEDS"), ("ln renewables, June 2023 SEDS", "ext_a1_lnET_arch_June2023SEDS")]
 T(["Variable", "Our mean", "Fang's mean", "Difference in our SDs", "Reading"],
   [[lab, v(A1, "mean", sig=4, tag=tg), v(A1, "fang_mean", sig=4, tag=tg), v(A1, "diff_in_our_sd", sig=2, tag=tg),
-    {"ext_a1_lnGDP_": "GDP base year: 2017 vs 2012 dollars", "ext_a1_lnEPU_": "Fang's index is about double ours; drops out in logs with state effects",
+    {"ext_a1_lnGDP_": "GDP base year: 2017 vs 2012 dollars", "ext_a1_lnEPU_": "Lower on average, but not by a constant ratio (see text)",
      "ext_a1_lnET_currentSEDS": "Today's data sit below Fang's", "ext_a1_lnET_arch_June2023SEDS": "Matches: Fang used the old data"}.get(tg, "Matches")]
    for lab, tg in a1rows],
   f"Our 2018-2021 data against Fang's Table A1, {n(A1, 'N', tag='ext_a1_lnAIp_')} state-years each.",
-  "Pending: a rerun of Fang's model with GDP in chained 2012 dollars (BEA's earlier base year) hasn't been done. The 0.09 log-point GDP gap is the size a base-year change would give, and a constant shift drops out with state fixed effects, but chain revisions vary by state and year, so the rerun is still owed.")
-md(f"""**In plain English.** Our AI series is the same as Fang's: the means differ by {v(A1, 'diff_in_our_sd', sig=1, tag='ext_a1_lnAIp_')} SD, and the minimum and maximum match too. Renewable use matches only on the June 2023 data, which is how we know Fang used the old accounting. **Pending:** the GDP rerun in 2012 dollars, flagged in the table note.""")
+  "Pending: a rerun of Fang's model with GDP in chained 2012 dollars (BEA's earlier base year). BEA's archive of earlier releases lists its files only in a web browser, so the data couldn't be fetched by script; a person needs to download them. The 0.09 log-point GDP gap is the size a base-year change would give, and a constant shift would drop out with state fixed effects, but chain revisions vary by state and year, so the rerun is still owed.")
+md(f"""**In plain English.** Our AI series is the same as Fang's: the means differ by {v(A1, 'diff_in_our_sd', sig=1, tag='ext_a1_lnAIp_')} SD, and the minimum and maximum match too. Renewable use matches only on the June 2023 data, which is how we know Fang used the old accounting.
+
+**EPU.** Our mean ln EPU is {v2(A1, 'mean', 'fang_mean', 'sub', sig=2, scale=-1, tag='ext_a1_lnEPU_')} below Fang's Table A1 mean. But Fang's own Table 2 constants imply a mean of about {v(IMPL, 'fang_implied_mean', sig=2, variable='lnEPU')}, close to ours ({v(A1, 'mean', sig=3, tag='ext_a1_lnEPU_')}), so Table A1 may describe a different version of the index than the regressions use. A constant ratio between the two indexes would drop out with state effects, but the gap isn't constant: our minimum is {v2(A1, 'min', 'fang_min', 'sub', sig=2, scale=-1, tag='ext_a1_lnEPU_')} below Fang's and our maximum {v2(A1, 'max', 'fang_max', 'sub', sig=2, scale=-1, tag='ext_a1_lnEPU_')} below. So we can't say the difference drops out.
+
+**Pending:** the GDP rerun in 2012 dollars, flagged in the table note.""")
 
 %%code
 md("## 5.3 The bridge from Fang's design to ours")
@@ -516,7 +527,7 @@ ax.set_xlabel("Elasticity of renewable use"); ax.legend(loc="upper center", bbox
 L.fig(fig, "AI coefficient at each step of the bridge, with 95% intervals, for both AI measures.")
 md(f"""**In plain English.** On today's data, Fang's model already gives a small negative number, and adding year effects makes it clearly negative ({p(FR, tag=btg('s1-yearfe', 'aipostings'))}). By our final design neither measure is significant: postings {est(FR, tag=BR_P)} ({p(FR, tag=BR_P)}) and data-center jobs {est(FR, tag=BR_J)} ({p(FR, tag=BR_J)}). Data-center jobs are the more reliable measure for longer samples, because almost every postings year comes from a different AI Index edition.
 
-**What we can rule out.** In our design, per typical within-state swing in log postings, renewable use moves between {ci(RO, lo='ci_lo_per_sd', hi='ci_hi_per_sd', tag=BR_P)}%; for data-center jobs, {ci(RO, lo='ci_lo_per_sd', hi='ci_hi_per_sd', tag=BR_J)}%.""")
+**What we can rule out.** In our design, per typical within-state swing in log postings, renewable use moves between {v(RO, 'ci_lo_per_sd', sig=2, tag=BR_P)}% and {v(RO, 'ci_hi_per_sd', sig=2, tag=BR_P)}%; for data-center jobs, between {v(RO, 'ci_lo_per_sd', sig=2, tag=BR_J)}% and {v(RO, 'ci_hi_per_sd', sig=2, tag=BR_J)}%.""")
 
 %%code
 md("## 5.4 The trend test and placebo industries")
@@ -540,9 +551,9 @@ T(["Version (June 2023 SEDS)", "Coefficient", "95% interval", "p-value", "State-
 fig, ax = plt.subplots(figsize=(7.0, 2.02))
 coefplot(ax, [r[0] for r in TT], [raw(P2, "estimate", tag=t) for _, t in TT], [raw(P2, "ci_lo", tag=t) for _, t in TT],
          [raw(P2, "ci_hi", tag=t) for _, t in TT], colors=[BLUE, BLUE, AQUA, AQUA], unit="Elasticity of renewable use")
-ax.set_title("Pet care 'predicts' renewables better than AI does")
+ax.set_title("An unrelated industry passes Fang's test; AI doesn't survive a trend")
 L.fig(fig, "Trend test and placebo industries in Fang's model on June 2023 SEDS, with 95% intervals. Green rows are placebo industries.")
-md(f"""**In plain English.** A simple trend turns Fang's positive coefficient negative ({est(P2, tag=TT[1][1])}, {p(P2, tag=TT[1][1])}), and pet-care jobs are associated with renewables more strongly than AI postings ({est(P2, tag=TT[2][1])}, {p(P2, tag=TT[2][1])}). Fang's model picks up anything that grew over 2018-2021.
+md(f"""**In plain English.** A simple trend turns Fang's positive coefficient negative ({est(P2, tag=TT[1][1])}, {p(P2, tag=TT[1][1])}), and pet-care jobs are significantly associated with renewables in Fang's model ({est(P2, tag=TT[2][1])}, {p(P2, tag=TT[2][1])}), while AI postings are not once a trend is included ({p(P2, tag=TT[1][1])}). The two coefficients belong to different variables, so their sizes can't be compared. Fang's model picks up anything that grew over 2018-2021.
 
 **What we can rule out.** That the association is specific to AI in Fang's design.""")
 
@@ -606,7 +617,7 @@ def itg(y):
     return tbl(IMP).query("ai_measure=='ai518210' and outcome==@y").tag.iloc[0]
 T(["Outcome (data-center jobs)", "Coefficient", "p-value", "q-value"], [[lab, est(IMP, tag=itg(y)), p(IMP, tag=itg(y)), v(IMP, "qval", dec=3, tag=itg(y))] for lab, y in imp],
   "What data-center jobs are associated with: selected outcomes from the 30-row family.")
-md(f"""**In plain English.** None of the 30 rows (15 outcomes, two AI measures) passes the bar; the smallest q-value is {v(EXS, 'value', dec=3, tag='ext_impact_min_q')}. Per typical within-state swing in data-center jobs, commercial electricity sales per person move between {ci(BND, scale=100, lo='per_sd_lo', hi='per_sd_hi', tag='ext_impact_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_sales_com_pc_50s')}%.""")
+md(f"""**In plain English.** None of the 30 rows (15 outcomes, two AI measures) passes the bar; the smallest q-value is {v(EXS, 'value', dec=3, tag='ext_impact_min_q')}. Per typical within-state swing in data-center jobs, commercial electricity sales per person move between {v(BND, 'per_sd_lo', scale=100, sig=2, tag='ext_impact_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_sales_com_pc_50s')}% and {v(BND, 'per_sd_hi', scale=100, sig=2, tag='ext_impact_twfe_ai518210_lag1_ctrl4_w9901_cl-state_ln_sales_com_pc_50s')}%.""")
 
 %%code
 md("## 6.3 What drove the national renewables trend")
@@ -621,7 +632,7 @@ fig, ax = plt.subplots(figsize=(7.0, 2.29))
 ax.plot(pth.year, 100 * pth.year_effect, "-o", color=BLUE, lw=2, ms=5, mec="white", label="Nationwide rise (year effects)")
 ax.plot(pth.year, 100 * pth.driver_path, "-s", color=ORANGE, lw=2, ms=5, mec="white", label="Path fitted from measured drivers")
 ax.axhline(0, color=INK2, lw=1); ax.set_xlabel("Year"); ax.set_ylabel("Percentage points since 2015"); ax.legend(loc="upper left")
-ax.set_title("Costs, tax credits and mandates track the national rise")
+ax.set_title("Measured national drivers line up with the national rise")
 L.fig(fig, "The national rise in the renewable share (year effects, relative to 2015) and the path fitted from measured national drivers.")
 md(f"""**In plain English.** The AI coefficient is nearly the same whether we use state effects only ({est(DRV, tag=dm[0][1])}), measured drivers ({est(DRV, tag=dm[1][1])}) or year effects ({est(DRV, tag=dm[2][1])}), so the national rise isn't loading on AI. The drivers' fitted path correlates with the year effects at {v(PF, 'correlation', sig=2, tag='ext_natl_pathfit_ai518210_drivers_renew_share')}. That's consistent with costs, tax credits and mandates driving the trend, but not proof: any rising series correlates with a rising trend.""")
 

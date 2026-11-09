@@ -81,10 +81,13 @@ ACRONYMS = {
     "CC BY": "Creative Commons Attribution license",
 }
 _KEYS = sorted(ACRONYMS, key=len, reverse=True)
-_PROTECT = re.compile(r"(\$\$.+?\$\$|\$[^$\n]+?\$|`[^`]*`|\]\([^)]*\)|<[^>]+>|https?://\S+)", re.S)
+# Spelled out once in the whole document (common units and terms); the rest once per section and per table.
+GLOBAL_ONCE = {"AI", "GDP", "MW", "MWh", "kWh", "SD", "DC"}
+NEVER_AUTO = {"PDF"}          # only in citations here; spelled out in the glossary
+_PROTECT = re.compile(r"(\$\$.+?\$\$|\$[^$\n]+?\$|`[^`]*`|\]\([^)]*\)|<[^>]+>|https?://\S+|^#+ [^\n]*)", re.S | re.M)
 
 
-def _expand(text, seen):
+def _expand(text, seen, gseen):
     bad = [c for c in "\t\r\b\f\a\v" if c in text]
     if bad:   # a LaTeX command lost its backslash to a Python escape (\times -> tab)
         raise ValueError(f"control character {bad!r} in text: {text[:120]!r}")
@@ -94,7 +97,8 @@ def _expand(text, seen):
         if i % 2 == 1:          # protected: math, code, link targets, HTML tags, URLs
             out.append(seg); continue
         for k in _KEYS:
-            if k in seen:
+            book = gseen if k in GLOBAL_ONCE else seen
+            if k in NEVER_AUTO or k in book:
                 continue
             m = re.search(r"(?<![\w&])" + re.escape(k) + r"(?![\w&])", seg)
             if not m:
@@ -102,12 +106,12 @@ def _expand(text, seen):
             full = ACRONYMS[k]
             before = ("".join(out) + seg[:m.start()]).lower()
             if before.rstrip().endswith(full.lower() + " (") or seg[m.end():].lower().startswith(f" ({full.lower()})"):
-                seen.add(k)                    # already written as "full name (ACR)" or "ACR (full name)"
+                book.add(k)                    # already written as "full name (ACR)" or "ACR (full name)"
                 if k == "NAICS 518210":
                     seen.add("NAICS")
                 continue
             seg = seg[:m.end()] + f" ({full})" + seg[m.end():]
-            seen.add(k)
+            book.add(k)
             if k == "NAICS 518210":
                 seen.add("NAICS")
         out.append(seg)
@@ -159,7 +163,7 @@ class Tracer:
     def __init__(self, doc, outdir):
         self.doc, self.outdir = doc, outdir
         self.rows, self.texts = [], []
-        self.sec, self.seen = "0", set()
+        self.sec, self.seen, self.gseen = "0", set(), set()
         self.n_tables = self.n_figs = 0
 
     # -- reading --
@@ -167,6 +171,8 @@ class Tracer:
         d = tbl(src)
         for k, val in f.items():
             d = d[d[k].astype(str) == val] if isinstance(val, str) else d[d[k] == val]
+        if len(d) > 1 and len(d.drop_duplicates()) == 1:
+            d = d.iloc[:1]                      # the same row repeated in the file
         if len(d) != 1:
             raise ValueError(f"{src} {f}: {len(d)} rows")
         return d.iloc[0]
@@ -197,6 +203,18 @@ class Tracer:
         s = str(self.row(src, **f)[col])
         return self._log(s, src, col, f, dict(kind="text"))
 
+    def v2(self, src, col_a, col_b, op, sig=3, dec=None, scale=1.0, plus=False, **f):
+        """A number derived from two cells of one row: op is "mul" (a x b) or "sub" (a - b), times scale."""
+        r = self.row(src, **f); a, b = float(r[col_a]), float(r[col_b])
+        x = (a * b if op == "mul" else a - b) * scale
+        s = fmt(x, sig=sig, dec=dec, plus=plus)
+        return self._log(s, src, f"{col_a} {op} {col_b}", f, dict(kind="op", a=col_a, b=col_b, op=op, sig=sig, dec=dec, scale=scale, plus=plus))
+
+    def rx(self, src, col, pattern, **f):
+        """Part of a text cell, the first group of a regular expression (e.g. Fang's N inside "(SE 0.034, N 76)")."""
+        s = re.search(pattern, str(self.row(src, **f)[col])).group(1)
+        return self._log(s, src, col, f, dict(kind="rx", pattern=pattern))
+
     def raw(self, src, col, **f):
         """A value for charts or arithmetic; not shown as text, so not logged."""
         return float(self.row(src, **f)[col])
@@ -207,31 +225,32 @@ class Tracer:
         self.md(f"# {num}. {title}" if num != "" else f"# {title}")
 
     def md(self, text):
-        text = _expand(text, self.seen)
+        text = _expand(text, self.seen, self.gseen)
         self.texts.append(dict(section=self.sec, kind="md", text=text))
         display(Markdown(text))
 
-    def table(self, header, rows, caption, note=None, widths=None):
+    def table(self, header, rows, caption, note=None, widths=None, keep=None):
         self.n_tables += 1
-        seen = set()
-        cap = _expand(f"Table {self.n_tables}. {caption}", seen)
-        hdr = [_expand(h, seen) for h in header]
-        body = [[_expand(str(c), seen) for c in r] for r in rows]
-        nt = _expand(note, seen) if note else None
+        seen, g = set(), self.gseen
+        cap = _expand(f"Table {self.n_tables}. {caption}", seen, g)
+        hdr = [_expand(h, seen, g) for h in header]
+        body = [[_expand(str(c), seen, g) for c in r] for r in rows]
+        nt = _expand(note, seen, g) if note else None
+        keep = len(rows) <= 14 if keep is None else keep
         def esc(s):
             s = _html.escape(s)
             return re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
         if widths is None and len(header) == 2:
             widths = [27, 73]
         style = ' style="table-layout: fixed"' if widths else ""
-        h = [f'<table class="ex"{style}>', f'<caption>{esc(cap)}</caption>']
+        h = [f'<div class="tw{" keep" if keep else ""}"><table class="ex"{style}>', f'<caption>{esc(cap)}</caption>']
         if widths:
             h.append("<colgroup>" + "".join(f'<col style="width:{w}%">' for w in widths) + "</colgroup>")
         h.append("<thead><tr>")
         h += [f"<th>{esc(x)}</th>" for x in hdr] + ["</tr></thead><tbody>"]
         for r in body:
             h.append("<tr>" + "".join(f'<td class="nw">{esc(c)}</td>' if len(c) <= 14 and " " not in c.strip() or re.fullmatch(r"p [=<] [\d.]+|\d{4}-\d{4}", c) else f"<td>{esc(c)}</td>" for c in r) + "</tr>")
-        h.append("</tbody></table>")
+        h.append("</tbody></table></div>")
         if nt:
             h.append(f'<p class="tnote">{esc(nt)}</p>')
         txt = "\n".join([cap, " | ".join(hdr)] + [" | ".join(r) for r in body] + ([nt] if nt else []))
@@ -241,10 +260,10 @@ class Tracer:
     def deflist(self, items, caption):
         """A two-column list of term: definition (used for the glossary)."""
         seen = set()
-        cap = _expand(caption, seen)
+        cap = _expand(caption, seen, self.gseen)
         out, txt = [], [cap]
         for term, d in items:
-            t2, d2 = _expand(term, seen), _expand(d, seen)
+            t2, d2 = _expand(term, seen, self.gseen), _expand(d, seen, self.gseen)
             out.append(f"<p class='gl'><b>{_html.escape(t2)}.</b> {_html.escape(d2)}</p>")
             txt.append(f"{t2}. {d2}")
         self.texts.append(dict(section=self.sec, kind="list", text="\n".join(txt)))
@@ -254,7 +273,7 @@ class Tracer:
         self.n_figs += 1
         fig.tight_layout()
         plt.show()
-        cap = _expand(f"Figure {self.n_figs}. {caption}", set())
+        cap = _expand(f"Figure {self.n_figs}. {caption}", self.seen, self.gseen)
         self.texts.append(dict(section=self.sec, kind="figcap", text=cap))
         display(HTML(f'<p class="figcap">{_html.escape(cap)}</p>'))
 
@@ -268,6 +287,11 @@ class Tracer:
             row = self.row(r["source_file"], **f)
             if spec["kind"] == "text":
                 again = str(row[r["column"]])
+            elif spec["kind"] == "rx":
+                again = re.search(spec["pattern"], str(row[r["column"]])).group(1)
+            elif spec["kind"] == "op":
+                a, b = float(row[spec["a"]]), float(row[spec["b"]])
+                again = fmt((a * b if spec["op"] == "mul" else a - b) * spec["scale"], sig=spec["sig"], dec=spec["dec"], plus=spec["plus"])
             elif spec["kind"] == "p":
                 again = fmt_p(float(row[r["column"]]))
             elif spec["kind"] == "int":

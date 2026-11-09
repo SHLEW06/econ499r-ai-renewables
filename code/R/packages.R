@@ -29,6 +29,7 @@ pins <- c(
   maps         = "3.4.4",
   boot         = "1.3.32",
   dplyr        = "1.2.1",
+  readxl       = "1.6.0",   # 09i_fang_supplement_b.R (current SEDS production)
   IRkernel     = "1.3.2",   # only for the two R-kernel notebooks
   renv         = "1.3.1"    # only for `exact`
 )
