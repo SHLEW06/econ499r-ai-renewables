@@ -1,0 +1,1912 @@
+path,status,read_by
+data/raw/acs/s2801_2015.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2016.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2017.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2018.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2019.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2021.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2022.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2023.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_2024.json,kept: source or license file,build_raw_file_shapes.py
+data/raw/acs/s2801_variable_codes.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/aiindex/2021-ai-index-report_master.pdf,used,build_fang_tables.py(subproc)
+data/raw/aiindex/2022-ai-index-report_chapter-4.pdf,used,build_fang_tables.py(subproc)
+data/raw/aiindex/ai_index_2019_report.pdf,used,build_fang_tables.py(subproc)
+data/raw/aiindex/ai_index_report_2026_chapter_4_economy.pdf,used,build_fang_tables.py(subproc)
+data/raw/aiindex/ed2019_ai_postings_by_state.xlsx,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2021_burning_glass.xlsx,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2022_emsi_burning_glass.xlsx,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2023_fig_4.1.10.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2023_fig_4.1.6.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2023_fig_4.1.7.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2023_fig_4.1.8.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2024_fig_4.2.11.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2024_fig_4.2.7.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2024_fig_4.2.8.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2025_fig_4.2.10.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2025_fig_4.2.12.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2025_fig_4.2.8.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2025_fig_4.2.9.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.2.14.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.2.15.csv,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.2.16.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.4.10.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.4.11.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.4.12.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/ed2026_fig_4.4.13.csv,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/aiindex/hai_ai-index-report-2023_chapter_4.pdf,used,build_fang_tables.py(subproc)
+data/raw/aiindex/hai_ai-index-report-2024_chapter4.pdf,used,build_fang_tables.py(subproc)
+data/raw/aiindex/hai_ai-index-report-2025_chapter4_final.pdf,used,build_fang_tables.py(subproc)
+data/raw/bea/SAGDP.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/SAINC.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_AK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_AL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_AR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_AZ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_CA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_CO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_CT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_DC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_DE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_FL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_FWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_GA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_GLAK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_HI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_IA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_ID_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_IL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_IN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_KS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_KY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_LA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_ME_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_MT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_ND_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NENG_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NJ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NM_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_NY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_OH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_OK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_OR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_PA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_PLNS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_RI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_RKMT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_SC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_SD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_SEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_SWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_TN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_TX_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_US_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_UT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_VA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_VT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_WA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_WI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_WV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11_WY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11__ALL_AREAS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP11__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP11__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP1__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP1__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP1__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP2_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP2__ALL_AREAS_1997_2025.csv,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py; validate_panel.py
+data/raw/bea/sagdp/SAGDP2__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP2__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP3_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP3__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP3__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP4_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP4__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP4__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP5_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP5__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP5__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP6_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP6__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP6__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP7_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP7__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP7__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP8_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8__ALL_AREAS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP8__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP8__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP9_AK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_AL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_AR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_AZ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_CA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_CO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_CT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_DC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_DE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_FL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_FWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_GA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_GLAK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_HI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_IA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_ID_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_IL_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_IN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_KS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_KY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_LA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_ME_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MO_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_MT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_ND_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NENG_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NE_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NJ_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NM_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_NY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_OH_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_OK_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_OR_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_PA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_PLNS_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_RI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_RKMT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_SC_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_SD_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_SEST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_SWST_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_TN_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_TX_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_US_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_UT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_VA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_VT_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_WA_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_WI_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_WV_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9_WY_1997_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sagdp/SAGDP9__ALL_AREAS_1997_2025.csv,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/bea/sagdp/SAGDP9__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sagdp/SAGDP9__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC11_AK_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_AL_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_AR_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_AZ_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_CA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_CO_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_CT_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_DC_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_DE_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_FL_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_FWST_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_GA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_GLAK_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_HI_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_IA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_ID_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_IL_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_IN_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_KS_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_KY_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_LA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MD_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MEST_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_ME_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MI_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MN_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MO_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MS_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_MT_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NC_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_ND_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NENG_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NE_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NH_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NJ_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NM_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NV_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_NY_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_OH_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_OK_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_OR_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_PA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_PLNS_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_RI_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_RKMT_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_SC_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_SD_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_SEST_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_SWST_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_TN_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_TX_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_US_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_UT_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_VA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_VT_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_WA_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_WI_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_WV_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11_WY_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11__ALL_AREAS_1999_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC11__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC11__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC12_AK_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_AL_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_AR_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_AZ_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_CA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_CO_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_CT_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_DC_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_DE_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_FL_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_FWST_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_GA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_GLAK_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_HI_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_IA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_ID_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_IL_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_IN_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_KS_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_KY_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_LA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MD_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MEST_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_ME_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MI_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MN_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MO_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MS_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_MT_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NC_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_ND_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NENG_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NE_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NH_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NJ_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NM_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NV_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_NY_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_OH_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_OK_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_OR_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_PA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_PLNS_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_RI_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_RKMT_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_SC_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_SD_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_SEST_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_SWST_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_TN_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_TX_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_US_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_UT_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_VA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_VT_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_WA_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_WI_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_WV_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12_WY_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12__ALL_AREAS_1930_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC12__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC12__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC1__ALL_AREAS_1929_2025.csv,used,build_fang_tables.py; build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/bea/sainc/SAINC1__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC1__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC30_AK_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_AL_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_AR_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_AZ_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_CA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_CO_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_CT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_DC_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_DE_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_FL_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_FWST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_GA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_GLAK_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_HI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_IA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_ID_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_IL_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_IN_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_KS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_KY_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_LA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MD_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MEST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_ME_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MN_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MO_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_MT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NC_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_ND_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NENG_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NE_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NH_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NJ_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NM_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NV_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_NY_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_OH_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_OK_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_OR_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_PA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_PLNS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_RI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_RKMT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_SC_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_SD_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_SEST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_SWST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_TN_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_TX_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_US_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_UT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_VA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_VT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_WA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_WI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_WV_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30_WY_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30__ALL_AREAS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC30__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC30__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC35_AK_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_AL_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_AR_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_AZ_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_CA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_CO_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_CT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_DC_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_DE_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_FL_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_FWST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_GA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_GLAK_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_HI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_IA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_ID_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_IL_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_IN_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_KS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_KY_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_LA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MD_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MEST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_ME_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MN_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MO_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_MT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NC_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_ND_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NENG_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NE_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NH_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NJ_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NM_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NV_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_NY_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_OH_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_OK_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_OR_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_PA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_PLNS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_RI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_RKMT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_SC_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_SD_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_SEST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_SWST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_TN_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_TX_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_US_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_UT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_VA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_VT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_WA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_WI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_WV_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35_WY_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35__ALL_AREAS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC35__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC35__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC40_AK_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_AL_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_AR_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_AZ_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_CA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_CO_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_CT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_DC_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_DE_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_FL_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_FWST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_GA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_GLAK_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_HI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_IA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_ID_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_IL_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_IN_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_KS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_KY_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_LA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MD_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MEST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_ME_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MN_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MO_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_MT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NC_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_ND_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NENG_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NE_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NH_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NJ_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NM_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NV_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_NY_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_OH_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_OK_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_OR_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_PA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_PLNS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_RI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_RKMT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_SC_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_SD_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_SEST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_SWST_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_TN_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_TX_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_US_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_UT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_VA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_VT_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_WA_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_WI_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_WV_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40_WY_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40__ALL_AREAS_1958_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC40__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC40__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC4_AK_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_AL_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_AR_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_AZ_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_CA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_CO_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_CT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_DC_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_DE_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_FL_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_FWST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_GA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_GLAK_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_HI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_IA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_ID_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_IL_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_IN_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_KS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_KY_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_LA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MD_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MEST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_ME_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MN_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MO_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_MT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NC_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_ND_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NENG_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NE_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NH_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NJ_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NM_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NV_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_NY_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_OH_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_OK_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_OR_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_PA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_PLNS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_RI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_RKMT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_SC_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_SD_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_SEST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_SWST_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_TN_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_TX_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_US_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_UT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_VA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_VT_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_WA_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_WI_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_WV_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4_WY_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4__ALL_AREAS_1929_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC4__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC4__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC50_AK_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_AL_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_AR_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_AZ_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_CA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_CO_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_CT_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_DC_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_DE_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_FL_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_FWST_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_GA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_GLAK_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_HI_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_IA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_ID_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_IL_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_IN_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_KS_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_KY_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_LA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MD_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MEST_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_ME_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MI_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MN_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MO_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MS_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_MT_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NC_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_ND_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NENG_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NE_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NH_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NJ_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NM_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NV_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_NY_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_OH_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_OK_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_OR_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_PA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_PLNS_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_RI_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_RKMT_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_SC_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_SD_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_SEST_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_SWST_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_TN_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_TX_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_US_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_UT_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_VA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_VT_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_WA_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_WI_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_WV_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50_WY_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50__ALL_AREAS_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC50__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC50__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC51__ALL_AREAS_1948_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC51__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC51__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC5H_AK_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_AL_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_AR_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_AZ_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_CA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_CO_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_CT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_DC_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_DE_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_FL_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_FWST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_GA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_GLAK_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_HI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_IA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_ID_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_IL_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_IN_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_KS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_KY_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_LA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MD_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MEST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_ME_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MN_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MO_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_MT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NC_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_ND_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NENG_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NE_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NH_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NJ_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NM_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NV_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_NY_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_OH_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_OK_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_OR_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_PA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_PLNS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_RI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_RKMT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_SC_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_SD_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_SEST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_SWST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_TN_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_TX_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_US_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_UT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_VA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_VT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_WA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_WI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_WV_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H_WY_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H__ALL_AREAS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5H__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC5H__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC5N_AK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_AL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_AR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_AZ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_CA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_CO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_CT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_DC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_DE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_FL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_FWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_GA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_GLAK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_HI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_IA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_ID_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_IL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_IN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_KS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_KY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_LA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_ME_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_MT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_ND_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NENG_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NJ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NM_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_NY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_OH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_OK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_OR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_PA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_PLNS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_RI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_RKMT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_SC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_SD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_SEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_SWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_TN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_TX_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_US_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_UT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_VA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_VT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_WA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_WI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_WV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N_WY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N__ALL_AREAS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5N__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC5N__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC5S_AK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_AL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_AR_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_AZ_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_CA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_CO_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_CT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_DC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_DE_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_FL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_FWST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_GA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_GLAK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_HI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_IA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_ID_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_IL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_IN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_KS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_KY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_LA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MD_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MEST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_ME_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MO_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_MT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_ND_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NENG_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NE_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NH_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NJ_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NM_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NV_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_NY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_OH_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_OK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_OR_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_PA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_PLNS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_RI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_RKMT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_SC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_SD_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_SEST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_SWST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_TN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_TX_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_US_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_UT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_VA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_VT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_WA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_WI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_WV_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S_WY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S__ALL_AREAS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC5S__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC5S__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC6N_AK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_AL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_AR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_AZ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_CA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_CO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_CT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_DC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_DE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_FL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_FWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_GA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_GLAK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_HI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_IA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_ID_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_IL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_IN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_KS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_KY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_LA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_ME_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_MT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_ND_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NENG_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NJ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NM_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_NY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_OH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_OK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_OR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_PA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_PLNS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_RI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_RKMT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_SC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_SD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_SEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_SWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_TN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_TX_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_US_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_UT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_VA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_VT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_WA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_WI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_WV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N_WY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N__ALL_AREAS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6N__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC6N__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC6S_AK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_AL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_AR_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_AZ_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_CA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_CO_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_CT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_DC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_DE_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_FL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_FWST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_GA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_GLAK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_HI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_IA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_ID_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_IL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_IN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_KS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_KY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_LA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MD_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MEST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_ME_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MO_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_MT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_ND_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NENG_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NE_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NH_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NJ_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NM_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NV_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_NY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_OH_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_OK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_OR_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_PA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_PLNS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_RI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_RKMT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_SC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_SD_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_SEST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_SWST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_TN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_TX_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_US_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_UT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_VA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_VT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_WA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_WI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_WV_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S_WY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S__ALL_AREAS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC6S__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC6S__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC70_AK_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_AL_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_AR_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_AZ_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_CA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_CO_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_CT_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_DC_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_DE_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_FL_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_FWST_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_GA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_GLAK_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_HI_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_IA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_ID_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_IL_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_IN_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_KS_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_KY_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_LA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MD_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MEST_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_ME_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MI_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MN_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MO_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MS_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_MT_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NC_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_ND_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NENG_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NE_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NH_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NJ_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NM_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NV_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_NY_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_OH_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_OK_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_OR_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_PA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_PLNS_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_RI_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_RKMT_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_SC_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_SD_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_SEST_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_SWST_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_TN_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_TX_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_US_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_UT_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_VA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_VT_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_WA_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_WI_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_WV_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70_WY_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70__ALL_AREAS_2000_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC70__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC70__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC7H_AK_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_AL_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_AR_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_AZ_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_CA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_CO_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_CT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_DC_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_DE_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_FL_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_FWST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_GA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_GLAK_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_HI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_IA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_ID_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_IL_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_IN_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_KS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_KY_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_LA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MD_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MEST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_ME_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MN_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MO_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_MT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NC_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_ND_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NENG_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NE_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NH_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NJ_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NM_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NV_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_NY_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_OH_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_OK_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_OR_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_PA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_PLNS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_RI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_RKMT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_SC_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_SD_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_SEST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_SWST_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_TN_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_TX_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_US_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_UT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_VA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_VT_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_WA_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_WI_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_WV_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H_WY_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H__ALL_AREAS_1929_1957.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7H__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC7H__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC7N_AK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_AL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_AR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_AZ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_CA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_CO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_CT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_DC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_DE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_FL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_FWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_GA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_GLAK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_HI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_IA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_ID_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_IL_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_IN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_KS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_KY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_LA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_ME_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MO_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_MT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_ND_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NENG_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NE_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NJ_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NM_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_NY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_OH_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_OK_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_OR_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_PA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_PLNS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_RI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_RKMT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_SC_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_SD_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_SEST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_SWST_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_TN_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_TX_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_US_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_UT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_VA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_VT_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_WA_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_WI_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_WV_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N_WY_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N__ALL_AREAS_1998_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7N__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC7N__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC7S_AK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_AL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_AR_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_AZ_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_CA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_CO_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_CT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_DC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_DE_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_FL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_FWST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_GA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_GLAK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_HI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_IA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_ID_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_IL_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_IN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_KS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_KY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_LA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MD_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MEST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_ME_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MO_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_MT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_ND_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NENG_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NE_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NH_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NJ_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NM_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NV_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_NY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_OH_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_OK_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_OR_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_PA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_PLNS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_RI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_RKMT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_SC_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_SD_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_SEST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_SWST_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_TN_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_TX_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_US_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_UT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_VA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_VT_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_WA_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_WI_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_WV_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S_WY_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S__ALL_AREAS_1958_2001.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC7S__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC7S__definition.xml,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC91__ALL_AREAS_1990_2025.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bea/sainc/SAINC91__Footnotes.html,unused (data/raw_unused.csv),
+data/raw/bea/sainc/SAINC91__definition.xml,unused (data/raw_unused.csv),
+data/raw/bls/oews/oesm15st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm16st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm17st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm18st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm19st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm20st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm21st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm22st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm23st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/oews/oesm24st.zip,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2014_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2014_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2015_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2015_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2016_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2016_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2017_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2017_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2018_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2018_541613.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_541940.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_561612.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_621340.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_621420.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_621493.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_621511.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_621610.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_624120.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_812199.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2018_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2019_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2019_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2020_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2020_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2021_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2021_541613.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_541940.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_561612.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_621340.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_621420.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_621493.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_621511.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_621610.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_624120.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_812199.csv,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/bls/placebo/qcew_2021_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2022_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2022_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2023_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2023_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2024_312140.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/placebo/qcew_2024_812910.csv,used,build_raw_file_shapes.py; 09a/09e/09f R drivers (static)
+data/raw/bls/qcew_2014_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2014_518210.csv,used,build_ai_allown.py; build_fang_tables.py; build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2014_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2015_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2015_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2015_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2016_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2016_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2016_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2017_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2017_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2017_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2018_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2018_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2018_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2019_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2019_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py; 09a_fang_crosscheck.R (static)
+data/raw/bls/qcew_2019_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2020_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2020_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2020_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2021_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2021_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2021_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2022_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2022_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2022_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2023_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2023_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2023_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2024_10.csv,used,build_ai_allown.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2024_518210.csv,used,build_ai_allown.py; build_ai_index.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2024_5415.csv,used,build_panel.py; build_raw_file_shapes.py
+data/raw/bls/qcew_2025_10.csv,used,build_ai_allown.py; build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2025_518210.csv,used,build_ai_allown.py; build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; validate_panel.py
+data/raw/bls/qcew_2025_5415.csv,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py
+data/raw/census/2020_Gaz_counties_national.txt,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/census/county_adj.txt,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/census/gaz_counties.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/census_btos/AI_Core_Questions.xlsx,used,build_ai_index.py; build_raw_file_shapes.py
+data/raw/census_btos/AI_Question_Wording_Updates.pdf,unused (data/raw_unused.csv),
+data/raw/census_btos/State.xlsx,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/census_pop/NST-EST2025-ALLDATA.csv,used,build_cross_source_checks.py; build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/census_pop/sc-est2020int-alldata6.csv,used,build_cross_source_checks.py; build_master_workbook.py; build_raw_file_shapes.py
+data/raw/costs/Lazard_LCOEplus_2026.pdf,unused (data/raw_unused.csv),
+data/raw/crs/CRS_IF10479_2021-04-23.pdf,unused (data/raw_unused.csv),
+data/raw/crs/CRS_R43453_2020-04-29.pdf,unused (data/raw_unused.csv),
+data/raw/crs/CRS_R46865_2024-02-26.pdf,unused (data/raw_unused.csv),
+data/raw/crs/PLAW-116publ260.pdf,unused (data/raw_unused.csv),
+data/raw/crs/PLAW-117publ169.pdf,unused (data/raw_unused.csv),
+data/raw/eia/HS861_2010-.xlsx,used,build_extend_tables.py; build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/eia/annual_generation_state.xlsx,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py; validate_panel.py
+data/raw/eia/emission_annual.xlsx,used,build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/eia/existcapacity_annual.xlsx,used,build_drivers_tables.py; build_extend_tables.py; build_master_workbook.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/eia/henry_hub/RNGWHHDa.xls,used,build_drivers_tables.py
+data/raw/eia/mer/TOTAL.zip,used,build_finalize_tables.py; build_raw_file_shapes.py
+data/raw/eia/mer/mer_A_FULL.pdf,unused (data/raw_unused.csv),
+data/raw/eia/plancapacity_annual.xlsx,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/eia/seds/Codes_and_Descriptions.xlsx,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/eia/seds/Prod_dataset.xlsx,used,build_cross_source_checks.py; build_net_producer_defs.py; build_raw_file_shapes.py
+data/raw/eia/seds/pr_all.csv,used,build_fang_tables.py; build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/eia/seds/seds_change_notice.html,unused (data/raw_unused.csv),
+data/raw/eia/seds/use_all_btu.csv,used,build_cross_source_checks.py; build_fang_tables.py; build_finalize_tables.py; build_master_workbook.py; build_net_producer_defs.py; build_panel.py; build_raw_file_shapes.py; check_master_workbook.py; 09h_fang_supplement.R (static)
+data/raw/eia/seds/use_all_phy.csv,used,build_finalize_tables.py; build_raw_file_shapes.py
+data/raw/eia/seds_archive/archive_index.html,unused (data/raw_unused.csv),
+data/raw/eia/seds_archive/complete_seds_2021.zip,used,build_finalize_tables.py; build_raw_file_shapes.py; 09h_fang_supplement.R (static)
+data/raw/eia_forms/eia8602017.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/eia_forms/eia8602025.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/eia_forms/f8612025.zip,used,build_extend_tables.py; build_raw_file_shapes.py
+data/raw/eia_forms/f923_2025.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/eia_forms/september_generator2026.xlsx,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/epoch/README.md,kept: source or license file,
+data/raw/epoch/chip_types.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/epoch/data_center_chillers.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/epoch/data_center_chip_quantities.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/epoch/data_center_cooling_towers.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/epoch/data_center_timelines.csv,used,build_georgia_tables.py; build_master_workbook.py; build_raw_file_shapes.py; build_side_tables_nov4.py; check_master_workbook.py
+data/raw/epoch/data_centers.csv,used,build_georgia_tables.py; build_master_workbook.py; build_raw_file_shapes.py; build_side_tables_nov4.py; check_master_workbook.py
+data/raw/epu/State_Policy_Uncertainty.xlsx,used,build_master_workbook.py; build_raw_file_shapes.py; build_side_tables_nov4.py; check_master_workbook.py
+data/raw/georgia/2023_IRP_Update_Main_Document.pdf,unused (data/raw_unused.csv),
+data/raw/georgia/2025_IRP_Main_Document.pdf,used,build_georgia_tables.py(subproc)
+data/raw/georgia/2025_IRP_TOC.pdf,unused (data/raw_unused.csv),
+data/raw/georgia/2025_IRP_one_page_summary.pdf,used,build_georgia_tables.py(subproc)
+data/raw/georgia/LargeLoad_Report_Q1_2026.pdf,used,build_georgia_tables.py(subproc)
+data/raw/georgia/dkt55378_large_load_report_q1_2026_attachment.xlsx,used,build_georgia_tables.py; build_raw_file_shapes.py
+data/raw/georgia/dkt55378_large_load_report_q2_2026.zip,used,build_georgia_tables.py; build_raw_file_shapes.py
+data/raw/georgia/irp_2025_public_disclosure.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/lbnl/Historical RPS & CES Target Achievement and Compliance Costs_June 2026.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/lbnl/LBNL_land_based_wind_data_2026.xlsx,used,build_drivers_tables.py; build_raw_file_shapes.py
+data/raw/lbnl/RPS & CES Targets and Demand_June 2026.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py; check_rps_vintages.py
+data/raw/lbnl/Utility Scale Solar 2026 Edition Datafile.xlsx,used,04f_georgia_solar.py; build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/lbnl/rps_ces_nominal_percentage_targets_june_2023.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/ncses/bachelors-degrees-per-1000-18-24-year-olds.json,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/ncses/degconferred-bach.json,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/ncses/population18-24.json,used,build_fang_tables.py; build_raw_file_shapes.py
+data/raw/noaa/AL_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/AL_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/AR_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/AR_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/AZ_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/AZ_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/CA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/CA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/CO_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/CO_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/CT_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/CT_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/DE_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/DE_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/FL_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/FL_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/GA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/GA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/IA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/IA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/ID_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/ID_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/IL_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/IL_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/IN_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/IN_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/KS_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/KS_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/KY_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/KY_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/LA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/LA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MD_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MD_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/ME_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/ME_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MI_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MI_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MN_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MN_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MO_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MO_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MS_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MS_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MT_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/MT_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NC_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NC_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/ND_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/ND_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NE_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NE_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NH_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NH_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NJ_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NJ_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NM_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NM_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NV_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NV_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NY_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/NY_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/OH_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/OH_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/OK_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/OK_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/OR_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/OR_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/PA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/PA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/RI_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/RI_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/SC_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/SC_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/SD_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/SD_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/TN_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/TN_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/TX_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/TX_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/UT_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/UT_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/VA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/VA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/VT_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/VT_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WA_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WA_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WI_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WI_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WV_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WV_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WY_cdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/WY_hdd_2015_2025.csv,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/climdiv-cddcst-v1.0.0-20261006,used,build_cross_source_checks.py
+data/raw/noaa/climdiv-hddcst-v1.0.0-20261006,used,build_cross_source_checks.py
+data/raw/noaa/state-readme.txt,kept: source or license file,build_raw_file_shapes.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2015_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2016_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2017_c20260519.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2018_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2019_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2020_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2021_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2022_c20260625.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2023_c20260323.csv.gz,used,build_finalize_tables.py
+data/raw/noaa/storm_events/StormEvents_details-ftp_v1.0_d2024_c20260728.csv.gz,used,build_finalize_tables.py
+data/raw/nsf/nsf20307-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf21325-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf22320-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf23321-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf24318-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf25326-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf26313-tab010.xlsx,used,build_raw_file_shapes.py; build_side_tables_nov4.py
+data/raw/nsf/nsf27300-tab010.xlsx,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/owid/readme.md,kept: source or license file,
+data/raw/owid/solar-pv-cumulative-capacity.csv,used,build_master_workbook.py; build_raw_file_shapes.py; build_side_tables_nov4.py; check_master_workbook.py
+data/raw/owid/solar-pv-cumulative-capacity.metadata.json,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/pudl/out_eia__yearly_utilities.parquet,used,ferc_fin.py
+data/raw/pudl/out_ferc1__yearly_all_plants.parquet,used,ferc_fin.py
+data/raw/pudl/out_ferc1__yearly_income_statements_sched114.parquet,used,ferc_fin.py
+data/raw/pudl/out_ferc1__yearly_plant_in_service_sched204.parquet,used,ferc_fin.py
+data/raw/pudl/out_ferc1__yearly_steam_plants_fuel_by_plant_sched402.parquet,used,ferc_fin.py
+data/raw/rmi/assets_earnings_investments.csv,used,build_master_workbook.py; build_raw_file_shapes.py
+data/raw/rmi/customers_sales.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/rmi/debt_equity_returns.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/rmi/emissions_targets.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/rmi/expenditure_bills_burden.csv,used,build_master_workbook.py; build_raw_file_shapes.py
+data/raw/rmi/housing_units_income.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/rmi/net_plant_balance.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/rmi/operations_emissions.csv,used,build_master_workbook.py; build_raw_file_shapes.py
+data/raw/rmi/operations_emissions_by_tech.csv,used,build_master_workbook.py; build_raw_file_shapes.py
+data/raw/rmi/reliability.csv,used,build_master_workbook.py; build_raw_file_shapes.py; check_master_workbook.py
+data/raw/uspto_aipd/ai_model_predictions_2023.csv.zip,unused (data/raw_unused.csv),build_raw_file_shapes.py
+data/raw/uspto_aipd/oce-aipd-2023.pdf,unused (data/raw_unused.csv),

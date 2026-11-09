@@ -11,7 +11,9 @@ Writes:
     logs/<date>/data_manifest_receipt_check.csv    each bundled file's hash against the receipts
 
 What goes in: every file under data/raw/ and data/out/, plus the gitignored side
-tables in data/ (data/*.csv) that the R and Python scripts read. Nothing that git
+tables in data/ (data/*.csv) that the R and Python scripts read. Raw files that no
+script reads are left out: they're listed, with source URLs, in data/raw_unused.csv
+(committed), and stay on disk. How that list was made: docs/2026-11-09/. Nothing that git
 tracks goes in; the collaborator gets those from the clone.
 
 The hashes are checked against what the receipts recorded: data/FILE_INVENTORY.csv,
@@ -162,11 +164,16 @@ def main():
 
     cand = candidates()
     ignored = git_ignored(cand)
+    with open(ROOT / "data/raw_unused.csv", newline="") as f:
+        unused = {r["path"]: r["group"] for r in csv.DictReader(f)}
+    unused_groups = {}
     include, excluded = [], []
     for p in cand:
         hit = rule_for(p, EXCLUDE_RULES)
         if hit:
             excluded.append((p, *hit))
+        elif p in unused:
+            unused_groups[unused[p]] = unused_groups.get(unused[p], 0) + 1
         elif p not in ignored:
             pass  # tracked by git: the collaborator gets it from the clone
         else:
@@ -182,6 +189,9 @@ def main():
             excluded += [(h, cat, why) for h in hits if not any(h == e[0] for e in excluded)]
         else:
             excluded.append((pat, cat, f"{why} ({len(hits)} files)"))
+    for g, n in unused_groups.items():
+        excluded.append((f"data/raw_unused.csv: {g}", "unused",
+                         f"No script reads it; stays on disk; source URL in data/raw_unused.csv ({n} files)"))
     # Rules that matched nothing still go in the log so the reader sees they were applied.
     for pat, cat, why, *_ in EXCLUDE_RULES + NOT_SHARED:
         if not any(e[0] == pat or fnmatch.fnmatchcase(e[0], pat) for e in excluded):
@@ -248,6 +258,7 @@ def main():
     print(f"bundle: {rel(out)}  {out.stat().st_size / 1e6:,.1f} MB zipped, "
           f"{len(rows)} files, {tot / 1e6:,.1f} MB unzipped")
     print(f"receipt check: {st['match']} match, {st['not_recorded']} not recorded, {st['MISMATCH']} mismatch")
+    print(f"unused raw files left out: {sum(unused_groups.values())} (data/raw_unused.csv)")
     print(f"excluded: {len(excluded)} entries -> {rel(logdir / 'data_bundle_exclusions.csv')}")
     print(f"census key scan: {'clean' if key else 'no key in .env, scan skipped'}")
 

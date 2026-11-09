@@ -12,6 +12,9 @@ and has the listed SHA-256. It reports:
     HASH       right size, wrong SHA-256
     EXTRA      under data/raw/ or data/out/ but not in the manifest (info only)
 
+Raw files listed in data/raw_unused.csv aren't in the bundle (no script reads them);
+if you have them anyway, they're counted, not listed as EXTRA.
+
 Exit code 0 when nothing is missing or mismatched, 1 otherwise. EXTRA files don't fail
 the check: rebuilding the panel or adding downloads can create them.
 
@@ -62,13 +65,19 @@ def main():
         if i % 250 == 0:
             print(f"  checked {i:,} of {len(rows):,}", file=sys.stderr)
 
-    extra = []
+    unused = set()
+    if (root / "data" / "raw_unused.csv").exists():
+        with open(root / "data" / "raw_unused.csv", newline="") as f:
+            unused = {r["path"] for r in csv.DictReader(f)}
+    extra, n_unused = [], 0
     junk = {".DS_Store"}
     for top in ("data/raw", "data/out"):
         for dirpath, _, names in os.walk(root / top):
             for n in names:
                 p = (Path(dirpath) / n).relative_to(root).as_posix()
-                if p not in listed and n not in junk and not n.startswith(("._", "~$")) \
+                if p in unused:
+                    n_unused += 1
+                elif p not in listed and n not in junk and not n.startswith(("._", "~$")) \
                         and "/_to_delete/" not in p:
                     extra.append(p)
 
@@ -81,7 +90,8 @@ def main():
     ok = len(rows) - n_bad
     print(f"\n{ok:,} of {len(rows):,} files OK; {len(problems['MISSING'])} missing, "
           f"{len(problems['SIZE'])} wrong size, {len(problems['HASH'])} wrong hash; "
-          f"{len(extra)} extra (not checked)")
+          f"{len(extra)} extra (not checked)"
+          + (f"; {n_unused} unused raw files present (data/raw_unused.csv)" if n_unused else ""))
     print("RESULT: PASS" if n_bad == 0 else "RESULT: FAIL")
     sys.exit(0 if n_bad == 0 else 1)
 
