@@ -41,8 +41,6 @@ data/ai_index_components.csv
 data/ai_index_state.csv
 data/ai_index_crossstate.csv
 data/codebook.csv
-outputs/ECON499R_Data_Workbook_*.xlsx
-outputs/ECON499R_csv_for_R/
 
 # Licensed and personal data — never commit
 data/raw/bloomberg/
@@ -50,6 +48,7 @@ data/raw/sec/cache/
 
 # OS / editor
 .DS_Store
+~$*
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
@@ -67,6 +66,9 @@ data/georgia_psc/*.zip
 # All PDFs, except figures generated in results/ (those are model outputs)
 *.pdf
 !results/**/*.pdf
+# outputs/ is committed (team decision, 2026-11-09): reports, workbooks and their PDFs
+!outputs/*.pdf
+!outputs/**/*.pdf
 
 # Georgia PSC raw filings, all file types
 data/georgia_psc/
@@ -78,10 +80,6 @@ _to_delete/
 archive/
 
 # Master workbook and packages: rebuilt by script, never committed
-outputs/ECON499R_Master_Data_*.xlsx
-outputs/ECON499R_Results_*
-outputs/ECON499R_Explained_*
-outputs/old/
 release/
 
 # Georgia case-box tables, rebuilt from raw filings
