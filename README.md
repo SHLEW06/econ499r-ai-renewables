@@ -35,6 +35,8 @@ python3 -I code/python/verify_data.py
 
 It checks every file against [`data/MANIFEST.csv`](data/MANIFEST.csv) (path, size, SHA-256) and lists any file that's missing or doesn't match. It should end with `RESULT: PASS`. A `HASH` line under `data/raw/` means a damaged or different download; get the bundle again.
 
+If you later rebuild the side tables with pip-installed numpy, `data/ai_index_state.csv` and `data/ai_index_crossstate.csv` can fail the size or hash check: pip's numpy uses OpenBLAS and ours used Apple Accelerate, and a few values then differ in the 16th significant digit. Nothing reported changes. The panel and every other table rebuild byte for byte either way.
+
 ### 4. Census key
 
 Copy `.env.example` to `.env` and paste in your own free key from https://api.census.gov/data/key_signup.html:
