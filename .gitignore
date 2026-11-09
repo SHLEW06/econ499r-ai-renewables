@@ -80,6 +80,7 @@ archive/
 # Master workbook and packages: rebuilt by script, never committed
 outputs/ECON499R_Master_Data_*.xlsx
 outputs/ECON499R_Results_*
+outputs/ECON499R_Explained_*
 outputs/old/
 release/
 
