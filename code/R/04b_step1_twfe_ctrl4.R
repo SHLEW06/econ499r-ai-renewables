@@ -56,7 +56,21 @@ cat("\n=== 04b ctrl4 rerun ===\n")
 cat("ctrl4 =", ctrl4, "\n\n")
 
 write_append <- function(df, fname) {
+  # Appended rows must match the file's header (fix of 2026-11-09: lm_proper.csv got
+  # ctrl4 rows with a 'controls' column its header lacked; docs/2026-11-09/lm-proper-header-fix.md).
+  # Columns the header has but df lacks are filled with NA; columns df has but the header
+  # lacks stop the run rather than shifting fields.
   path <- file.path(OUT, fname)
+  df <- as.data.table(df)
+  if (file.exists(path)) {
+    have  <- strsplit(readLines(path, n = 1L), ",", fixed = TRUE)[[1]]   # header line as written; fread may guess on a ragged file
+    extra <- setdiff(names(df), have)
+    if (length(extra))
+      stop(sprintf("%s: new rows have column(s) the header lacks: %s. Write a new file or align the writers.",
+                   path, paste(extra, collapse = ", ")))
+    for (m in setdiff(have, names(df))) df[, (m) := NA]
+    setcolorder(df, have)
+  }
   fwrite(df, path, append = file.exists(path))
   invisible(path)
 }

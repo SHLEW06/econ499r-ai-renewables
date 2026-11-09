@@ -42,7 +42,7 @@ for nm, t in ex:
 save(pd.DataFrame(rows), "table2_h1", "H1: AI(t-1) with two-way FE, ctrl4, clustered by state. * p<0.1, ** p<0.05, *** p<0.01.")
 
 # ---- Table 3: nonlinearity and heterogeneity ----
-n = pd.read_csv(f"{H1}/nonlinearity.csv"); n = n[n.tag.str.contains("ctrl4")]; lm = list(csv.reader(open(f"{H1}/lm_proper.csv"))); lmh = lm[0]; lmd = {r[0]: r[lmh.index("lm_pass") + 1] for r in lm[1:] if r[1] == "ctrl4"}  # The file holds a ctrl5 block, then ctrl4 rows with an extra column
+n = pd.read_csv(f"{H1}/nonlinearity.csv"); n = n[n.tag.str.contains("ctrl4")]; lm = pd.read_csv("results/2026-11-09/h1/lm_proper.csv", dtype={"lm_pass": str}); lmd = dict(zip(lm.outcome[lm.controls == "ctrl4"], lm.lm_pass[lm.controls == "ctrl4"].str.upper()))  # Corrected copy: the 2026-11-02 file's header lacks the controls column of its ctrl4 rows (docs/2026-11-09/lm-proper-header-fix.md)
 assert len(lmd) == 8 and set(lmd.values()) <= {"TRUE", "FALSE"}, lmd
 rows = []
 for y in n.outcome.unique():

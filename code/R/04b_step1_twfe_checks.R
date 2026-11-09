@@ -278,6 +278,7 @@ for (y in outcomes_nl) {
 
   lm_rows[[y]] <- data.table(
     outcome      = y,
+    controls     = "ctrl5",   # 2026-11-09: same columns as the ctrl4 rows 04b_step1_twfe_ctrl4.R appends
     b2           = b2,
     b2_se        = b2_se,
     b2_pval      = b2_p,
